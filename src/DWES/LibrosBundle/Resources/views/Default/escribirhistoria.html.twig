@@ -61,7 +61,7 @@
                         <div class="col-md-12">
                             <div class="md-form">
                            
-                                <input type="text" id="titulocapitulo" class="form-control reset" name="titulocapitulo" value="{{titulocapitulo}}">
+                                <input type="text" id="titulocapitulo" class="form-control" name="titulocapitulo" value="{{titulocapitulo}}">
                                 <label for="titulocapitulo" class="">Título del capítulo</label>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <textarea type="text" id="contCapitulo" class="md-textarea form-control reset" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>
+                                <textarea type="text" id="contCapitulo" class="md-textarea form-control" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>
                                 <label for="contCapitulo">Contenido del capítulo</label>
                             </div>
 
@@ -84,21 +84,16 @@
                 </div>
                 <div id="ins"></div>
                 <div class="text-center text-md-left mt-4">
-                   <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Añadir capítulo"></input>
-                   
+                   <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Añadir capítulo" onclick="toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});"></input>
                 </div>
-              
+                <iframe name="frame" style="display: none"></iframe> 
             </form>
-           
-           <iframe name="frame" style="display: none"></iframe> 
-           
-        </div
+        </div>
         <!--/.Panel 1-->
 
         <!--Panel 2-->
         <div class="tab-pane fade " id="panel2" role="tabpanel">
             <br>
-            
             <form name="formBusqueda" action="{{ path('dwes_libros_contacto') }}" method="POST">
 
 
@@ -223,7 +218,5 @@
             </form>
         </div>
         <!--/.Panel 3-->
-        
     </div>
-    
     {% endblock %}
