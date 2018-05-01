@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="full-height">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    </head>
+    <body class="creative-lp" style="background-color: #f4f5f6;">
+    <style>
+        body {
+            font-weight: 400;
+        }
+
+        h6 {
+            line-height: 1.7;
+        }
+
+    </style>
+     
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

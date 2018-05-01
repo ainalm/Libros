@@ -1,0 +1,38 @@
+security:
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        DWES\LibrosBundle\Entity\Usuario:
+            algorithm: sha1
+            iterations: 1
+            encode_as_base64: false
+
+    role_hierarchy:
+        ROLE_ADMIN: [ ROLE_REGISTRADO ]
+
+    providers:
+        main:
+            entity: {class: DWESLibrosBundle:Usuario, property: username}
+
+    firewalls:
+        main:
+            pattern:    ^/
+            anonymous: ~
+            form_login:
+                login_path: dwes_libros_login
+                check_path: dwes_libros_login_check
+        
+            logout:
+                path: dwes_libros_logout
+                target: dwes_libros_homepage 
+
+
+    
+        
+    access_control:
+
+        - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/index$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(registro|contacto), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_REGISTRADO }

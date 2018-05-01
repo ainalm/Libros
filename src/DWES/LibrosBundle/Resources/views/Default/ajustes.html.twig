@@ -1,0 +1,97 @@
+{% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}
+<!--Intro Section-->
+<!--Intro Section-->
+<div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">
+    <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">
+        <div class="container my-5 pt-5">
+
+            <!-- Section heading -->
+            <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>AJUSTES</strong>
+            </h3>
+            <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Configura tu cuenta</h6>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} {% block contenido %}
+
+<div class="container">
+    <!-- Second section -->
+    <section id="services" class="section feature-box pt-4 pb-5">
+        <!--Secion heading-->
+        <h2 class=" text-center  font-weight-bold my-5 pb-3 pt-4 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">¿Qué te gustaría actualizar?</h2>
+        <!-- First row -->
+        <div class="row text-center wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+            <!-- First column -->
+            <div class="col-md-3 mb-5 pt-1">
+                <!--Panel-->
+                <a href="{{ path('dwes_libros_crearperfil') }}">
+                    <div class="card card-body hoverable">
+                        <i class="mb-2">
+                            <img src="{{ asset('bundles/dweslibros/img/user.png') }}"> </img>
+                        </i>
+                        <h5 class="feature-title mb-4">Mis datos</h5>
+                        {#
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> #}
+                    </div>
+                </a>
+                <!--/.Panel-->
+            </div>
+            <!-- /First column -->
+            <!-- Second column -->
+            <div class="col-md-3 mb-5">
+                <!--Panel-->
+                <a href="{{ path('dwes_libros_crearperfil') }}">
+                    <div class="card card-body hoverable cajaAjustes">
+                        <i class="mb-2">
+                            <img src="{{ asset('bundles/dweslibros/img/pin-code.png') }}"> </img>
+                        </i>
+                        <h5 class="feature-title mb-4">Mi contraseña</h5>
+
+                    </div>
+                </a>
+                <!--/.Panel-->
+            </div>
+            <!-- /.Second column -->
+            <!-- Third column -->
+            <div class="col-md-3 mb-5">
+                <!--Panel-->
+                <a href="{{ path('dwes_libros_crearperfil') }}">
+                    <div class="card card-body hoverable cajaAjustes">
+                        <i class="mb-2">
+                            <img src="{{ asset('bundles/dweslibros/img/detective.png') }}"> </img>
+                        </i>
+                        <h5 class="feature-title mb-4">Mi privacidad</h5>
+
+                    </div>
+                </a>
+                <!--/.Panel-->
+            </div>
+            <!-- /.Third column -->
+
+            <!-- Fourth column -->
+            <div class="col-md-3 mb-5">
+                <!--Panel-->
+                <a href="{{ path('dwes_libros_crearperfil') }}">
+                    <div class="card card-body hoverable cajaAjustes">
+                        <i class="mb-2">
+                            <img src="{{ asset('bundles/dweslibros/img/credit-card.png') }}"> </img>
+                        </i>
+                        <h5 class="feature-title mb-4">Suscripción</h5>
+                    </div>
+                </a>
+                <!--/.Panel-->
+            </div>
+            <!-- /.Fourth column -->
+        </div>
+        <!-- /.First row -->
+    </section>
+    <!-- /.Second section -->
+</div>
+
+{% endblock %}

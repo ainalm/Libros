@@ -1,0 +1,4 @@
+services:
+#    dwes_libros.example:
+#        class: DWES\LibrosBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

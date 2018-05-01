@@ -1,0 +1,26 @@
+{
+    "favorites.sortDirection": "ASC",
+    "favorites.groupsFirst": true,
+    "favorites.root": [
+        {
+            "type": "File",
+            "name": "src\\DWES\\LibrosBundle\\Controller\\DefaultController.php"
+        },
+        {
+            "type": "File",
+            "name": "src\\DWES\\LibrosBundle\\Resources\\config\\routing.yml"
+        },
+        {
+            "type": "Directory",
+            "name": "src\\DWES\\LibrosBundle\\Resources\\views"
+        },
+        {
+            "type": "Directory",
+            "name": "web\\bundles\\dweslibros\\css"
+        },
+        {
+            "type": "Directory",
+            "name": "web\\bundles\\dweslibros\\js"
+        }
+    ]
+}

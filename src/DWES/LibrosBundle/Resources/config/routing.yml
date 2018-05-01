@@ -1,0 +1,45 @@
+dwes_libros_login:
+    path: /login
+    defaults: { _controller: DWESLibrosBundle:Default:login }
+
+dwes_libros_login_check:
+    path: /login_check
+    
+dwes_libros_logout:
+    path: /logout
+
+dwes_libros_homepage:
+    path:     /
+    defaults: { _controller: DWESLibrosBundle:Default:index }
+
+dwes_libros_registro:
+    path: /registro/
+    defaults: { _controller: DWESLibrosBundle:Default:registro }
+
+dwes_libros_crearperfil:
+    path: /crearperfil/
+    defaults: { _controller: DWESLibrosBundle:Default:crearperfil }
+
+dwes_libros_contacto:
+    path: /contacto/
+    defaults: { _controller: DWESLibrosBundle:Default:contacto }
+
+dwes_libros_escribirhistoria:
+    path: /escribirhistoria/
+    defaults: { _controller: DWESLibrosBundle:Default:escribirhistoria }
+
+dwes_libros_perfil:
+    path: /perfil/
+    defaults: { _controller: DWESLibrosBundle:Default:perfil }
+
+dwes_libros_biblioteca:
+    path: /biblioteca/
+    defaults: { _controller: DWESLibrosBundle:Default:biblioteca }
+
+dwes_libros_ajustes:
+    path: /ajustes/
+    defaults: { _controller: DWESLibrosBundle:Default:ajustes }
+
+dwes_libros_newCapitulo:
+    path: /newCapitulo/
+    defaults: { _controller: DWESLibrosBundle:Default:newCapitulo }
