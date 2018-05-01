@@ -198,6 +198,7 @@ class DefaultController extends Controller
 		$result = $statement->fetchAll(); //Obtengo los datos		
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', array('suscripciones' =>$result));
+		//Deberia desaparecer esta linea
 	}
 
 }
