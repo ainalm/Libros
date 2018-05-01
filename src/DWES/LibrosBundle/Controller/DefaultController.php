@@ -159,8 +159,9 @@ class DefaultController extends Controller
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 		}
 		
-		
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro);
+		$capitulosInsertados = $connection->fetchAll('SELECT * FROM operacionlibros, capitulo WHERE capitulo.idLibro=operacionlibros.idLibro and operacionlibros.username="' . $userlog . '" and operacionlibros.idLibro="' . $IdLibroInsertado . '"');
+			
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados);
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 

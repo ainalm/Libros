@@ -1,8 +1,26 @@
 $(document).ready(function() {
 
+
+
+  $('#toggleC li').on('click', function(){
+    $(this).toggleClass('active');
+ 
+ });
+ 
   //post();
   $("#titHistoria").hide();
+  
+  
+
+  $("#paso1muestraCP").click(function() {
+
+
+
+    $("#contCapitulos").toggle();
+ 
+  });
   let cloneCount = 1;
+  
 
   $("#paso1").click(function() {
 

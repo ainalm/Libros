@@ -144,6 +144,69 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                 </div>
                 <iframe name=\"frame\" style=\"display: none\"></iframe> 
             </form>
+          
+ <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1muestraCP\" type=\"submit\" value=\"Ver capítulos\"></input>
+<!--  Contenido capitulos -->
+<div class=\"row\" id=\"contCapitulos\">
+    <div class=\"col-md-3\">
+        <ul class=\"nav  md-pills pills-primary flex-column\" role=\"tablist\"  id=\"toggleC\">
+";
+        // line 97
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["capitulosInsertados"]) ? $context["capitulosInsertados"] : $this->getContext($context, "capitulosInsertados")));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 98
+            echo "            <li class=\"nav-item \">
+                <a class=\"nav-link\" data-toggle=\"tab\" href=\"#";
+            // line 99
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
+            echo "\" role=\"tab\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
+            echo "
+                </a>
+            </li>
+            
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 103
+        echo "    
+        </ul>
+    </div>
+    <div class=\"col-md-9\">
+        <!-- Tab panels -->
+        <div class=\"tab-content vertical\">
+        <!--Panel 1-->
+        ";
+        // line 110
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["capitulosInsertados"]) ? $context["capitulosInsertados"] : $this->getContext($context, "capitulosInsertados")));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 111
+            echo "        <div class=\"tab-pane fade in \" id=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
+            echo "\" role=\"tabpanel\">
+
+            <h5 class=\"my-2 h5\">";
+            // line 113
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "contenidoCap", array()), "html", null, true);
+            echo "</h5>
+
+        </div>
+        <!--/.Panel 1-->
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 117
+        echo "   
+        </div>
+    </div>
+</div>
+<!--./ Contenido capitulos -->
         </div>
         <!--/.Panel 1-->
 
@@ -151,7 +214,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <div class=\"tab-pane fade \" id=\"panel2\" role=\"tabpanel\">
             <br>
             <form name=\"formBusqueda\" action=\"";
-        // line 97
+        // line 128
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" method=\"POST\">
 
@@ -246,7 +309,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <div class=\"tab-pane fade\" id=\"panel3\" role=\"tabpanel\">
             <br>
             <form name=\"formBusqueda\" action=\"";
-        // line 189
+        // line 220
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" method=\"POST\">
                 <div class=\"row flex-center\">
@@ -296,7 +359,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  250 => 189,  155 => 97,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  313 => 220,  218 => 128,  205 => 117,  194 => 113,  188 => 111,  184 => 110,  175 => 103,  162 => 99,  159 => 98,  155 => 97,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -389,6 +452,37 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 </div>*/
 /*                 <iframe name="frame" style="display: none"></iframe> */
 /*             </form>*/
+/*           */
+/*  <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1muestraCP" type="submit" value="Ver capítulos"></input>*/
+/* <!--  Contenido capitulos -->*/
+/* <div class="row" id="contCapitulos">*/
+/*     <div class="col-md-3">*/
+/*         <ul class="nav  md-pills pills-primary flex-column" role="tablist"  id="toggleC">*/
+/* {% for item in capitulosInsertados %}*/
+/*             <li class="nav-item ">*/
+/*                 <a class="nav-link" data-toggle="tab" href="#{{item.tituloCap}}" role="tab">{{item.tituloCap}}*/
+/*                 </a>*/
+/*             </li>*/
+/*             */
+/*         {% endfor %}    */
+/*         </ul>*/
+/*     </div>*/
+/*     <div class="col-md-9">*/
+/*         <!-- Tab panels -->*/
+/*         <div class="tab-content vertical">*/
+/*         <!--Panel 1-->*/
+/*         {% for item in capitulosInsertados %}*/
+/*         <div class="tab-pane fade in " id="{{item.tituloCap}}" role="tabpanel">*/
+/* */
+/*             <h5 class="my-2 h5">{{item.contenidoCap}}</h5>*/
+/* */
+/*         </div>*/
+/*         <!--/.Panel 1-->*/
+/*         {% endfor %}   */
+/*         </div>*/
+/*     </div>*/
+/* </div>*/
+/* <!--./ Contenido capitulos -->*/
 /*         </div>*/
 /*         <!--/.Panel 1-->*/
 /* */
