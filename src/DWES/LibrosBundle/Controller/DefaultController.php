@@ -119,7 +119,7 @@ class DefaultController extends Controller
 		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
-	
+
 			//Obtengo el valor de los campos del Form
 		$titulohistoria = $peticion->request->get('titulohistoria');
 		$titulocapitulo = $peticion->request->get('titulocapitulo');
@@ -175,7 +175,9 @@ class DefaultController extends Controller
 		$fotodPefil = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username = "' . $userlog . '"');
 		//$imagen = base64_encode(stream_get_contents($fotodPefil));
 		$imagen = base64_encode($fotodPefil);
+
 		return $this->render('DWESLibrosBundle:Default:perfil.html.twig', array('test' => $get_info, 'fotoPerfil' => $imagen));
+
 	}
 
 	public function bibliotecaAction()
@@ -186,8 +188,16 @@ class DefaultController extends Controller
 
 	public function ajustesAction()
 	{
+		$em = $this->getDoctrine()->getManager(); //Llamada a la BD
+
+        $QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
+        
+        $statement = $em->getConnection()->prepare($QUERY); //Preparo la consulta  
+        $statement->execute(); 	//Ejecuto consulta
+
+		$result = $statement->fetchAll(); //Obtengo los datos		
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', $params);
+		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', array('suscripciones' =>$result));
 	}
 
 }
