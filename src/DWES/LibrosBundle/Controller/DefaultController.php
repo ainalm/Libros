@@ -190,14 +190,15 @@ class DefaultController extends Controller
 	{
 		$em = $this->getDoctrine()->getManager(); //Llamada a la BD
 
-        $QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
+        $QUERY = 'UPDATE suscripcion SET numAnuncios = 11 WHERE suscripcion.tipoSuscripcion = "basica"'; //Consulta SQL
         
         $statement = $em->getConnection()->prepare($QUERY); //Preparo la consulta  
         $statement->execute(); 	//Ejecuto consulta
 
-		$result = $statement->fetchAll(); //Obtengo los datos		
+		//$result = $statement->fetchAll(); //Obtengo los datos		
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', array('suscripciones' =>$result));
+		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', $params);
+		
 	}
 
 }
