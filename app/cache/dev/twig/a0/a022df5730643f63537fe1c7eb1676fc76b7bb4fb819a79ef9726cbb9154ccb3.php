@@ -89,35 +89,21 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                 <!--Grid row-->
                 <div class=\"row\">
                     <div class=\"col-md-12\">
-                    ";
-        // line 48
-        if (array_key_exists("tituloLibro", $context)) {
-            // line 49
-            echo "  <h2 id=\"titHistoria\"> ";
-            echo twig_escape_filter($this->env, (isset($context["tituloLibro"]) ? $context["tituloLibro"] : $this->getContext($context, "tituloLibro")), "html", null, true);
-            echo "</h2>
-                        <div class=\"md-form ocultaTitulo\" style=\"display:none\">
+                
+  <h2 id=\"titHistoria\"> ";
+        // line 49
+        echo twig_escape_filter($this->env, (isset($context["tituloHistoria"]) ? $context["tituloHistoria"] : $this->getContext($context, "tituloHistoria")), "html", null, true);
+        echo " </h2>
+    <div class=\"md-form ocultaTitulo\" >
                             <input type=\"text\" id=\"titulohistoria\" class=\"form-control\" name=\"titulohistoria\" value=\"";
-            // line 51
-            echo twig_escape_filter($this->env, (isset($context["tituloLibro"]) ? $context["tituloLibro"] : $this->getContext($context, "tituloLibro")), "html", null, true);
-            echo "\">
-                            <label for=\"titulohistoria\" class=\"\">Título de la historia</label>
-                        </div>
-";
-        } else {
-            // line 55
-            echo "    <div class=\"md-form\" >
-                            <input type=\"text\" id=\"titulohistoria\" class=\"form-control\" name=\"titulohistoria\" value=\"";
-            // line 56
-            echo twig_escape_filter($this->env, (isset($context["titulohistoria"]) ? $context["titulohistoria"] : $this->getContext($context, "titulohistoria")), "html", null, true);
-            echo "\">
+        // line 51
+        echo twig_escape_filter($this->env, (isset($context["titulohistoria"]) ? $context["titulohistoria"] : $this->getContext($context, "titulohistoria")), "html", null, true);
+        echo "\">
                             <label for=\"titulohistoria\" class=\"\">Título de la historia</label>
                         </div>
                     </div>
-";
-        }
-        // line 61
-        echo "                      
+
+                      
                 </div>
                 <!--Grid row-->
                 <div id=\"cln\">
@@ -126,7 +112,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             <div class=\"md-form\">
                            
                                 <input type=\"text\" id=\"titulocapitulo\" class=\"form-control\" name=\"titulocapitulo\" value=\"";
-        // line 69
+        // line 64
         echo twig_escape_filter($this->env, (isset($context["titulocapitulo"]) ? $context["titulocapitulo"] : $this->getContext($context, "titulocapitulo")), "html", null, true);
         echo "\">
                                 <label for=\"titulocapitulo\" class=\"\">Título del capítulo</label>
@@ -141,7 +127,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                             <div class=\"md-form\">
                                 <textarea type=\"text\" id=\"contCapitulo\" class=\"md-textarea form-control\" rows=\"6\" name=\"contCapitulo\" value=\"";
-        // line 81
+        // line 76
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
         echo "\"></textarea>
                                 <label for=\"contCapitulo\">Contenido del capítulo</label>
@@ -165,7 +151,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <div class=\"tab-pane fade \" id=\"panel2\" role=\"tabpanel\">
             <br>
             <form name=\"formBusqueda\" action=\"";
-        // line 102
+        // line 97
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" method=\"POST\">
 
@@ -260,7 +246,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <div class=\"tab-pane fade\" id=\"panel3\" role=\"tabpanel\">
             <br>
             <form name=\"formBusqueda\" action=\"";
-        // line 194
+        // line 189
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" method=\"POST\">
                 <div class=\"row flex-center\">
@@ -310,7 +296,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  264 => 194,  169 => 102,  145 => 81,  130 => 69,  120 => 61,  112 => 56,  109 => 55,  102 => 51,  96 => 49,  94 => 48,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  250 => 189,  155 => 97,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -360,19 +346,14 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 <!--Grid row-->*/
 /*                 <div class="row">*/
 /*                     <div class="col-md-12">*/
-/*                     {% if tituloLibro is defined %}*/
-/*   <h2 id="titHistoria"> {{tituloLibro}}</h2>*/
-/*                         <div class="md-form ocultaTitulo" style="display:none">*/
-/*                             <input type="text" id="titulohistoria" class="form-control" name="titulohistoria" value="{{tituloLibro}}">*/
-/*                             <label for="titulohistoria" class="">Título de la historia</label>*/
-/*                         </div>*/
-/* {% else %}*/
-/*     <div class="md-form" >*/
+/*                 */
+/*   <h2 id="titHistoria"> {{tituloHistoria}} </h2>*/
+/*     <div class="md-form ocultaTitulo" >*/
 /*                             <input type="text" id="titulohistoria" class="form-control" name="titulohistoria" value="{{titulohistoria}}">*/
 /*                             <label for="titulohistoria" class="">Título de la historia</label>*/
 /*                         </div>*/
 /*                     </div>*/
-/* {% endif %}*/
+/* */
 /*                       */
 /*                 </div>*/
 /*                 <!--Grid row-->*/

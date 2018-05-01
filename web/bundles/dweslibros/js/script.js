@@ -1,14 +1,14 @@
 $(document).ready(function() {
 
   //post();
-  //$("#titHistoria").hide();
+  $("#titHistoria").hide();
   let cloneCount = 1;
 
   $("#paso1").click(function() {
 
 
-/*     $("#titHistoria").show();
-    $(".ocultaTitulo").hide(); */
+     $("#titHistoria").show();
+    $(".ocultaTitulo").hide(); 
 
 
     /* 

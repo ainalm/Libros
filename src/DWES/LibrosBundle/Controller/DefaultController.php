@@ -116,7 +116,7 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		
 			/* Guardo en el array los campos del form*/
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '');
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>'');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
@@ -156,11 +156,11 @@ class DefaultController extends Controller
 
 
 			
-			
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 		}
-	
-
+		
+		
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro);
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 

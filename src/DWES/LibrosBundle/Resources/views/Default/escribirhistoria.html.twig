@@ -45,19 +45,14 @@
                 <!--Grid row-->
                 <div class="row">
                     <div class="col-md-12">
-                    {% if tituloLibro is defined %}
-  <h2 id="titHistoria"> {{tituloLibro}}</h2>
-                        <div class="md-form ocultaTitulo" style="display:none">
-                            <input type="text" id="titulohistoria" class="form-control" name="titulohistoria" value="{{tituloLibro}}">
-                            <label for="titulohistoria" class="">Título de la historia</label>
-                        </div>
-{% else %}
-    <div class="md-form" >
+                
+  <h2 id="titHistoria"> {{tituloHistoria}} </h2>
+    <div class="md-form ocultaTitulo" >
                             <input type="text" id="titulohistoria" class="form-control" name="titulohistoria" value="{{titulohistoria}}">
                             <label for="titulohistoria" class="">Título de la historia</label>
                         </div>
                     </div>
-{% endif %}
+
                       
                 </div>
                 <!--Grid row-->
