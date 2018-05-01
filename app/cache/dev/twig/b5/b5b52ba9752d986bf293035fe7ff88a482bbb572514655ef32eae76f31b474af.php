@@ -152,12 +152,23 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
     </section>
     <!-- /.Second section -->
 </div>
-
-    ";
-        // line 97
-        echo twig_escape_filter($this->env, (isset($context["suscripciones"]) ? $context["suscripciones"] : $this->getContext($context, "suscripciones")), "html", null, true);
+";
+        // line 96
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["suscripciones"]) ? $context["suscripciones"] : $this->getContext($context, "suscripciones")));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 97
+            echo "    ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
+            echo "
+ ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 99
         echo "
-
+ 
 ";
     }
 
@@ -173,7 +184,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 
     public function getDebugInfo()
     {
-        return array (  158 => 97,  141 => 83,  135 => 80,  119 => 67,  113 => 64,  98 => 52,  92 => 49,  82 => 41,  76 => 36,  70 => 33,  57 => 22,  54 => 21,  31 => 2,  11 => 1,);
+        return array (  170 => 99,  161 => 97,  157 => 96,  141 => 83,  135 => 80,  119 => 67,  113 => 64,  98 => 52,  92 => 49,  82 => 41,  76 => 36,  70 => 33,  57 => 22,  54 => 21,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -271,7 +282,9 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*     </section>*/
 /*     <!-- /.Second section -->*/
 /* </div>*/
+/* {% for item in suscripciones %}*/
+/*     {{item.tipoSuscripcion}}*/
+/*  {% endfor %}*/
 /* */
-/*     {{suscripciones}}*/
-/* */
+/*  */
 /* {% endblock %}*/

@@ -6,11 +6,10 @@ $(document).ready(function() {
 
   $("#paso1").click(function() {
 
-
+      toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});
      $("#titHistoria").show();
     $(".ocultaTitulo").hide(); 
-
-
+   // $(".reset").val(""); 
     /* 
       var clone = $('#cln').clone();
  clone.find("input").val("");

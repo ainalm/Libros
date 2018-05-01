@@ -111,7 +111,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         <div class=\"col-md-12\">
                             <div class=\"md-form\">
                            
-                                <input type=\"text\" id=\"titulocapitulo\" class=\"form-control\" name=\"titulocapitulo\" value=\"";
+                                <input type=\"text\" id=\"titulocapitulo\" class=\"form-control reset\" name=\"titulocapitulo\" value=\"";
         // line 64
         echo twig_escape_filter($this->env, (isset($context["titulocapitulo"]) ? $context["titulocapitulo"] : $this->getContext($context, "titulocapitulo")), "html", null, true);
         echo "\">
@@ -126,7 +126,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         <div class=\"col-md-12\">
 
                             <div class=\"md-form\">
-                                <textarea type=\"text\" id=\"contCapitulo\" class=\"md-textarea form-control\" rows=\"6\" name=\"contCapitulo\" value=\"";
+                                <textarea type=\"text\" id=\"contCapitulo\" class=\"md-textarea form-control reset\" rows=\"6\" name=\"contCapitulo\" value=\"";
         // line 76
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
         echo "\"></textarea>
@@ -140,18 +140,23 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                 </div>
                 <div id=\"ins\"></div>
                 <div class=\"text-center text-md-left mt-4\">
-                   <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" type=\"submit\" value=\"Añadir capítulo\" onclick=\"toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});\"></input>
+                   <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" type=\"submit\" value=\"Añadir capítulo\"></input>
+                   
                 </div>
-                <iframe name=\"frame\" style=\"display: none\"></iframe> 
+              
             </form>
-        </div>
+           
+           <iframe name=\"frame\" style=\"display: none\"></iframe> 
+           
+        </div
         <!--/.Panel 1-->
 
         <!--Panel 2-->
         <div class=\"tab-pane fade \" id=\"panel2\" role=\"tabpanel\">
             <br>
+            
             <form name=\"formBusqueda\" action=\"";
-        // line 97
+        // line 102
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" method=\"POST\">
 
@@ -246,7 +251,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <div class=\"tab-pane fade\" id=\"panel3\" role=\"tabpanel\">
             <br>
             <form name=\"formBusqueda\" action=\"";
-        // line 189
+        // line 194
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" method=\"POST\">
                 <div class=\"row flex-center\">
@@ -280,7 +285,9 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
             </form>
         </div>
         <!--/.Panel 3-->
+        
     </div>
+    
     ";
     }
 
@@ -296,7 +303,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  250 => 189,  155 => 97,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  255 => 194,  160 => 102,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -362,7 +369,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         <div class="col-md-12">*/
 /*                             <div class="md-form">*/
 /*                            */
-/*                                 <input type="text" id="titulocapitulo" class="form-control" name="titulocapitulo" value="{{titulocapitulo}}">*/
+/*                                 <input type="text" id="titulocapitulo" class="form-control reset" name="titulocapitulo" value="{{titulocapitulo}}">*/
 /*                                 <label for="titulocapitulo" class="">Título del capítulo</label>*/
 /*                             </div>*/
 /*                         </div>*/
@@ -374,7 +381,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         <div class="col-md-12">*/
 /* */
 /*                             <div class="md-form">*/
-/*                                 <textarea type="text" id="contCapitulo" class="md-textarea form-control" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>*/
+/*                                 <textarea type="text" id="contCapitulo" class="md-textarea form-control reset" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>*/
 /*                                 <label for="contCapitulo">Contenido del capítulo</label>*/
 /*                             </div>*/
 /* */
@@ -385,16 +392,21 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 </div>*/
 /*                 <div id="ins"></div>*/
 /*                 <div class="text-center text-md-left mt-4">*/
-/*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Añadir capítulo" onclick="toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});"></input>*/
+/*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Añadir capítulo"></input>*/
+/*                    */
 /*                 </div>*/
-/*                 <iframe name="frame" style="display: none"></iframe> */
+/*               */
 /*             </form>*/
-/*         </div>*/
+/*            */
+/*            <iframe name="frame" style="display: none"></iframe> */
+/*            */
+/*         </div*/
 /*         <!--/.Panel 1-->*/
 /* */
 /*         <!--Panel 2-->*/
 /*         <div class="tab-pane fade " id="panel2" role="tabpanel">*/
 /*             <br>*/
+/*             */
 /*             <form name="formBusqueda" action="{{ path('dwes_libros_contacto') }}" method="POST">*/
 /* */
 /* */
@@ -519,5 +531,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*             </form>*/
 /*         </div>*/
 /*         <!--/.Panel 3-->*/
+/*         */
 /*     </div>*/
+/*     */
 /*     {% endblock %}*/

@@ -84,7 +84,7 @@ class DefaultController extends Controller
 
 	}
 
-	public function newCapituloAction()
+	public function verCapituloAction()
 	{//TODO:
 		
 		/* Guardo en el array los campos del form*/
@@ -98,12 +98,18 @@ class DefaultController extends Controller
 		$contCapitulo = $peticion->request->get('contCapitulo');
 		$userlog = $this->getUser()->getUsername();
 
-		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
+		
+			$em = $this->getDoctrine()->getManager(); //Llamada a la BD
 
-
-		}
-
-		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
+			$QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
+			
+			$statement = $em->getConnection()->prepare($QUERY); //Preparo la consulta  
+			$statement->execute(); 	//Ejecuto consulta
+	
+			$result = $statement->fetchAll(); //Obtengo los datos		
+			$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+			return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', array('suscripciones' =>$result));
+	
 	}
 
 	public function contactoAction()
@@ -116,12 +122,12 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		
 			/* Guardo en el array los campos del form*/
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>'');
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>'','suscripciones' => '');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
 			//Obtengo el valor de los campos del Form
-		$titulohistoria = $peticion->request->get('titulohistoria');
+			$titulohistoria = $peticion->request->get('titulohistoria');
 		$titulocapitulo = $peticion->request->get('titulocapitulo');
 		$contCapitulo = $peticion->request->get('contCapitulo');
 		$userlog = $this->getUser()->getUsername();
@@ -131,7 +137,7 @@ class DefaultController extends Controller
 			//Mostrar los datos insertados
 			$tituloLibro = $connection->fetchColumn('SELECT titulo  from libro WHERE username="admin" AND idLibro = ' . $IdLibroInsertado);
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-			
+		
 				/* Si el título no está vacío hago 2 inserts :1º Añadir libro, 2º Registro la acción en opereacionlibro */
 			if ($titulohistoria != $tituloLibro) {
 				$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion) VALUES (NULL,"' . $userlog . '","0","' . $titulohistoria . '",NULL,NULL);');
@@ -154,13 +160,12 @@ class DefaultController extends Controller
 
 			}
 
-
-			
+		
+			$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro);
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 		}
-		
-		
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro);
+		//FIXME: RESET FORM
+		$params = array('titulohistoria' => '', 'titulocapitulo' => $titulocapitulo, 'contCapitulo' => $contCapitulo,'tituloHistoria'=>$tituloLibro);
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
