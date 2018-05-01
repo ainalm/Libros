@@ -125,7 +125,8 @@ class DefaultController extends Controller
 		$titulocapitulo = $peticion->request->get('titulocapitulo');
 		$contCapitulo = $peticion->request->get('contCapitulo');
 		$userlog = $this->getUser()->getUsername();
-		$connection = $this->get("database_connection");	//Conexión con la BD 
+		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
+
 		$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"');
 			//Mostrar los datos insertados
 			$tituloLibro = $connection->fetchColumn('SELECT titulo  from libro WHERE username="admin" AND idLibro = ' . $IdLibroInsertado);
