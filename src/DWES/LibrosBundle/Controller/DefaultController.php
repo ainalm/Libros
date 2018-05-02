@@ -32,22 +32,24 @@ class DefaultController extends Controller
 	public function registroAction()
 	{
 		/* Guardo en el array los campos del form*/
-		$params = array('username' => '', 'email' => '', 'password' => '');
+		$params = array('username' => '', 'email' => '', 'password' => '','sexo'=>'');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
 		$username = $peticion->request->get('username');
 		$email = $peticion->request->get('email');
-
 		$password = sha1($peticion->request->get('password')); // Contraseña encriptada en la BD
+		$sexo=$peticion->request->get('sexo');
 
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
 
 			if (!empty($username) && !empty($email) && !empty($password)) {
 
-				$connection = $this->get("database_connection");		//Conexión con la BD 
-				$connection->executeUpdate('INSERT INTO usuario (id, username, nombre, fechaNacimiento, biografia,paginaWeb, fotoPerfil, apellidos, salt, password, email, isActive, tokenRegistro) VALUES (NULL, "' . $username . '", "", NULL, NULL, NULL, NULL, "", "", "' . $password . '", "' . $email . '", "1", "");');
-
+				$connection = $this->get("database_connection");		//Conexión con la BD  TODO: Actualizar Insert
+											//INSERT INTO `usuario` (`username`, `id`, `nombre`, `sexo`, `tipoUser`, `fechaNacimiento`, `biografia`, `paginaWeb`, `fotoPerfil`, `apellidos`, `salt`, `password`, `email`, `isActive`, `tokenRegistro`) VALUES ('juaan', NULL, '', 'mujer', 'usuario', NULL, NULL, NULL, NULL, '', '', 'password', 'email', '1', '')
+				$connection->executeUpdate('INSERT INTO usuario (id, username, nombre,sexo, fechaNacimiento, biografia,paginaWeb, fotoPerfil, apellidos, salt, password, email, isActive, tokenRegistro) VALUES (NULL, "' . $username . '", "' . $sexo . '","", NULL, NULL, NULL, NULL, "", "", "' . $password . '", "' . $email . '", "1", "");');
+var_dump($sexo);
+exit;
 				return $this->redirect($this->generateUrl('dwes_libros_crearperfil')); 		//Redirección al registrarse para crear el perfil
 
 			}
@@ -80,8 +82,8 @@ class DefaultController extends Controller
 
 			return $this->redirect($this->generateUrl('dwes_libros_perfil'));
 		}
+		//Relleno los datos para editar
 		$nombre = $connection->fetchColumn('SELECT nombre FROM usuario WHERE username = "' . $userlog . '"');
-	
 		$apellidos = $connection->fetchColumn('SELECT apellidos FROM usuario WHERE username = "' . $userlog . '"');
 		$fnacimiento = $connection->fetchColumn('SELECT fechaNacimiento FROM usuario WHERE username = "' . $userlog . '"');
 		$pweb = $connection->fetchColumn('SELECT paginaWeb FROM usuario WHERE username = "' . $userlog . '"');

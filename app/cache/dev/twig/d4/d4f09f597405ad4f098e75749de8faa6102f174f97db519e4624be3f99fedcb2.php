@@ -168,14 +168,31 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-pass\" id=\"labelPassword\"  class=\"valL\">Tu contraseña</label>
                              </div>
- 
+                             <div class=\"row mt-3\">
+
+                                <!--Grid column-->
+                                <div class=\"col-sm-3 mb-6 \">
+                                    <input class=\"form-check-input\" name=\"sexo\" type=\"radio\" id=\"radio1\" value=\"Mujer\">
+                                    <label class=\"form-check-label\" for=\"radio1\">Mujer</label>
+                                </div>
+                                <!--Grid column-->
+    
+                                <!--Grid column-->
+                                <div class=\"col-sm-3  mb-6\">
+                                    <input class=\"form-check-input\" name=\"sexo\" type=\"radio\" id=\"radio2\" value=\"Hombre\">
+                                    <label class=\"form-check-label\" for=\"radio2\">Hombre</label>
+                                </div>
+                                <!--Grid column-->
+                            </div>  
                              <div class=\"text-center\">
                                  <button class=\"btn pink-gradient btn-rounded mt-3 waves-effect waves-light\" id=\"crearCuenta\" type=\"submit\" name=\"crearCuenta\" value=\"crearCuenta\">Crear cuenta</button>
                              </div>
-                             </form>
+                             
+                            </form>
                              <div class=\"text-center\">
                                  <p class=\"font-small grey-text d-flex justify-content-end\">¿Ya tienes cuenta? <a href=\"#\" class=\"blue-text ml-1\"> Entrar</a></p>
                              </div>
+                             
  
                          </div>
                          <!--Grid column-->
@@ -341,14 +358,31 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                                  <input type="password" id="orangeForm-pass" name="password" value="{{password}}" class="form-control valI">*/
 /*                                  <label for="orangeForm-pass" id="labelPassword"  class="valL">Tu contraseña</label>*/
 /*                              </div>*/
-/*  */
+/*                              <div class="row mt-3">*/
+/* */
+/*                                 <!--Grid column-->*/
+/*                                 <div class="col-sm-3 mb-6 ">*/
+/*                                     <input class="form-check-input" name="sexo" type="radio" id="radio1" value="Mujer">*/
+/*                                     <label class="form-check-label" for="radio1">Mujer</label>*/
+/*                                 </div>*/
+/*                                 <!--Grid column-->*/
+/*     */
+/*                                 <!--Grid column-->*/
+/*                                 <div class="col-sm-3  mb-6">*/
+/*                                     <input class="form-check-input" name="sexo" type="radio" id="radio2" value="Hombre">*/
+/*                                     <label class="form-check-label" for="radio2">Hombre</label>*/
+/*                                 </div>*/
+/*                                 <!--Grid column-->*/
+/*                             </div>  */
 /*                              <div class="text-center">*/
 /*                                  <button class="btn pink-gradient btn-rounded mt-3 waves-effect waves-light" id="crearCuenta" type="submit" name="crearCuenta" value="crearCuenta">Crear cuenta</button>*/
 /*                              </div>*/
-/*                              </form>*/
+/*                              */
+/*                             </form>*/
 /*                              <div class="text-center">*/
 /*                                  <p class="font-small grey-text d-flex justify-content-end">¿Ya tienes cuenta? <a href="#" class="blue-text ml-1"> Entrar</a></p>*/
 /*                              </div>*/
+/*                              */
 /*  */
 /*                          </div>*/
 /*                          <!--Grid column-->*/
