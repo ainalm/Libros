@@ -125,7 +125,7 @@
         <!--Panel 2-->
         <div class="tab-pane fade " id="panel2" role="tabpanel">
             <br>
-            <form name="formBusqueda" action="{{ path('dwes_libros_contacto') }}" method="POST">
+            <form name="formBusqueda" action="{{ path('dwes_libros_describirLib') }}" method="POST">
 
 
                 <!--Grid row-->
@@ -135,7 +135,7 @@
                     <div class="col-md-12">
 
                         <div class="md-form mb-5">
-                            <textarea type="text" id="contact-message" class="md-textarea form-control" rows="6"></textarea>
+                            <textarea type="text" id="contact-message" class="md-textarea form-control" rows="6" name="resuHist" value="{{resuHist}}"></textarea>
                             <label for="contact-message">Resume tu historia:</label>
 
                         </div>
@@ -148,27 +148,27 @@
 
                             <!--Grid column-->
                             <div class="col-sm-3 mb-2 ">
-                                <input class="form-check-input" name="genero" type="radio" id="radio1">
+                                <input class="form-check-input" name="genero" type="radio" id="radio1" value="{{Aventura}}">
                                 <label class="form-check-label" for="radio1">Aventura</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class="col-sm-3  mb-2">
-                                <input class="form-check-input" name="genero" type="radio" id="radio3">
+                                <input class="form-check-input" name="genero" type="radio" id="radio3" value="{{Acción}}">
                                 <label class="form-check-label" for="radio3">Acción</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class="col-sm-3  mb-2">
-                                <input class="form-check-input" name="genero" type="radio" id="radio4">
+                                <input class="form-check-input" name="genero" type="radio" id="radio4" value="{{Terror}}">
                                 <label class="form-check-label" for="radio4">Terror</label>
                             </div>
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class="col-sm-3  mb-2">
-                                <input class="form-check-input" name="genero" type="radio" id="radio5">
+                                <input class="form-check-input" name="genero" type="radio" id="radio5"  value="{{Fantasía}}">
                                 <label class="form-check-label" for="radio5">Fantasía</label>
                             </div>
                             <!--Grid column-->
@@ -177,27 +177,27 @@
 
                             <!--Grid column-->
                             <div class="col-sm-3 mb-2 ">
-                                <input class="form-check-input" name="genero" type="radio" id="radio6">
+                                <input class="form-check-input" name="genero" type="radio" id="radio6" value="{{Misterio}}">
                                 <label class="form-check-label" for="radio6">Misterio</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class="col-sm-3  mb-2">
-                                <input class="form-check-input" name="genero" type="radio" id="radio7">
+                                <input class="form-check-input" name="genero" type="radio" id="radio7" value="{{Poesía}}">
                                 <label class="form-check-label" for="radio7">Poesía</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class="col-sm-3  mb-2">
-                                <input class="form-check-input" name="genero" type="radio" id="radio8">
+                                <input class="form-check-input" name="genero" type="radio" id="radio8" value="{{Romance}}">
                                 <label class="form-check-label" for="radio8">Romance</label>
                             </div>
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class="col-sm-3  mb-2">
-                                <input class="form-check-input" name="genero" type="radio" id="radio9">
+                                <input class="form-check-input" name="genero" type="radio" id="radio9" value="{{Drama}}">
                                 <label class="form-check-label" for="radio9">Drama</label>
                             </div>
                             <!--Grid column-->
@@ -207,7 +207,7 @@
 
                 <!--Grid row-->
                 <div class="text-center text-md-left mt-4">
-                    <a class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" onclick="toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});">Guardar</a>
+                      <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="submit" value="Guardar" ></input>
                 </div>
 
             </form>

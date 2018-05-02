@@ -215,7 +215,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
             <br>
             <form name=\"formBusqueda\" action=\"";
         // line 128
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_describirLib");
         echo "\" method=\"POST\">
 
 
@@ -226,7 +226,10 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                     <div class=\"col-md-12\">
 
                         <div class=\"md-form mb-5\">
-                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control\" rows=\"6\"></textarea>
+                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control\" rows=\"6\" name=\"resuHist\" value=\"";
+        // line 138
+        echo twig_escape_filter($this->env, (isset($context["resuHist"]) ? $context["resuHist"] : $this->getContext($context, "resuHist")), "html", null, true);
+        echo "\"></textarea>
                             <label for=\"contact-message\">Resume tu historia:</label>
 
                         </div>
@@ -239,27 +242,39 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                             <!--Grid column-->
                             <div class=\"col-sm-3 mb-2 \">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio1\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio1\" value=\"";
+        // line 151
+        echo twig_escape_filter($this->env, (isset($context["Aventura"]) ? $context["Aventura"] : $this->getContext($context, "Aventura")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio1\">Aventura</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio3\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio3\" value=\"";
+        // line 158
+        echo twig_escape_filter($this->env, (isset($context["Acción"]) ? $context["Acción"] : $this->getContext($context, "Acción")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio3\">Acción</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio4\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio4\" value=\"";
+        // line 165
+        echo twig_escape_filter($this->env, (isset($context["Terror"]) ? $context["Terror"] : $this->getContext($context, "Terror")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio4\">Terror</label>
                             </div>
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio5\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio5\"  value=\"";
+        // line 171
+        echo twig_escape_filter($this->env, (isset($context["Fantasía"]) ? $context["Fantasía"] : $this->getContext($context, "Fantasía")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio5\">Fantasía</label>
                             </div>
                             <!--Grid column-->
@@ -268,27 +283,39 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                             <!--Grid column-->
                             <div class=\"col-sm-3 mb-2 \">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio6\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio6\" value=\"";
+        // line 180
+        echo twig_escape_filter($this->env, (isset($context["Misterio"]) ? $context["Misterio"] : $this->getContext($context, "Misterio")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio6\">Misterio</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio7\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio7\" value=\"";
+        // line 187
+        echo twig_escape_filter($this->env, (isset($context["Poesía"]) ? $context["Poesía"] : $this->getContext($context, "Poesía")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio7\">Poesía</label>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio8\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio8\" value=\"";
+        // line 194
+        echo twig_escape_filter($this->env, (isset($context["Romance"]) ? $context["Romance"] : $this->getContext($context, "Romance")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio8\">Romance</label>
                             </div>
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio9\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio9\" value=\"";
+        // line 200
+        echo twig_escape_filter($this->env, (isset($context["Drama"]) ? $context["Drama"] : $this->getContext($context, "Drama")), "html", null, true);
+        echo "\">
                                 <label class=\"form-check-label\" for=\"radio9\">Drama</label>
                             </div>
                             <!--Grid column-->
@@ -298,7 +325,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                 <!--Grid row-->
                 <div class=\"text-center text-md-left mt-4\">
-                    <a class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" onclick=\"toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});\">Guardar</a>
+                      <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" type=\"submit\" value=\"Guardar\" ></input>
                 </div>
 
             </form>
@@ -359,7 +386,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  313 => 220,  218 => 128,  205 => 117,  194 => 113,  188 => 111,  184 => 110,  175 => 103,  162 => 99,  159 => 98,  155 => 97,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  340 => 220,  317 => 200,  308 => 194,  298 => 187,  288 => 180,  276 => 171,  267 => 165,  257 => 158,  247 => 151,  231 => 138,  218 => 128,  205 => 117,  194 => 113,  188 => 111,  184 => 110,  175 => 103,  162 => 99,  159 => 98,  155 => 97,  131 => 76,  116 => 64,  100 => 51,  95 => 49,  84 => 42,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -489,7 +516,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*         <!--Panel 2-->*/
 /*         <div class="tab-pane fade " id="panel2" role="tabpanel">*/
 /*             <br>*/
-/*             <form name="formBusqueda" action="{{ path('dwes_libros_contacto') }}" method="POST">*/
+/*             <form name="formBusqueda" action="{{ path('dwes_libros_describirLib') }}" method="POST">*/
 /* */
 /* */
 /*                 <!--Grid row-->*/
@@ -499,7 +526,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     <div class="col-md-12">*/
 /* */
 /*                         <div class="md-form mb-5">*/
-/*                             <textarea type="text" id="contact-message" class="md-textarea form-control" rows="6"></textarea>*/
+/*                             <textarea type="text" id="contact-message" class="md-textarea form-control" rows="6" name="resuHist" value="{{resuHist}}"></textarea>*/
 /*                             <label for="contact-message">Resume tu historia:</label>*/
 /* */
 /*                         </div>*/
@@ -512,27 +539,27 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3 mb-2 ">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio1">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio1" value="{{Aventura}}">*/
 /*                                 <label class="form-check-label" for="radio1">Aventura</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio3">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio3" value="{{Acción}}">*/
 /*                                 <label class="form-check-label" for="radio3">Acción</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio4">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio4" value="{{Terror}}">*/
 /*                                 <label class="form-check-label" for="radio4">Terror</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio5">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio5"  value="{{Fantasía}}">*/
 /*                                 <label class="form-check-label" for="radio5">Fantasía</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
@@ -541,27 +568,27 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3 mb-2 ">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio6">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio6" value="{{Misterio}}">*/
 /*                                 <label class="form-check-label" for="radio6">Misterio</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio7">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio7" value="{{Poesía}}">*/
 /*                                 <label class="form-check-label" for="radio7">Poesía</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio8">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio8" value="{{Romance}}">*/
 /*                                 <label class="form-check-label" for="radio8">Romance</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio9">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio9" value="{{Drama}}">*/
 /*                                 <label class="form-check-label" for="radio9">Drama</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
@@ -571,7 +598,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                 <!--Grid row-->*/
 /*                 <div class="text-center text-md-left mt-4">*/
-/*                     <a class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" onclick="toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});">Guardar</a>*/
+/*                       <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="submit" value="Guardar" ></input>*/
 /*                 </div>*/
 /* */
 /*             </form>*/

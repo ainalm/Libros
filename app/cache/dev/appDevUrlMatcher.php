@@ -216,13 +216,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::ajustesAction',  '_route' => 'dwes_libros_ajustes',);
         }
 
-        // dwes_libros_newCapitulo
-        if (rtrim($pathinfo, '/') === '/newCapitulo') {
+        // dwes_libros_describirLib
+        if (rtrim($pathinfo, '/') === '/describirLib') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_newCapitulo');
+                return $this->redirect($pathinfo.'/', 'dwes_libros_describirLib');
             }
 
-            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::newCapituloAction',  '_route' => 'dwes_libros_newCapitulo',);
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::describirLibAction',  '_route' => 'dwes_libros_describirLib',);
         }
 
         // homepage

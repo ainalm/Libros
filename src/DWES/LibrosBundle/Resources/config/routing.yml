@@ -40,6 +40,6 @@ dwes_libros_ajustes:
     path: /ajustes/
     defaults: { _controller: DWESLibrosBundle:Default:ajustes }
 
-dwes_libros_newCapitulo:
-    path: /newCapitulo/
-    defaults: { _controller: DWESLibrosBundle:Default:newCapitulo }
+dwes_libros_describirLib:
+    path: /describirLib/
+    defaults: { _controller: DWESLibrosBundle:Default:describirLib }

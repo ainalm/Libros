@@ -84,24 +84,32 @@ class DefaultController extends Controller
 
 	}
 
-	public function newCapituloAction()
+	public function describirLibAction()
 	{//TODO:
 		
 		/* Guardo en el array los campos del form*/
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '');
+		$params = array('resuHist' => '','genero'=>'');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
 		//Obtengo el valor de los campos del Form
-		$titulohistoria = $peticion->request->get('titulohistoria');
-		$titulocapitulo = $peticion->request->get('titulocapitulo');
-		$contCapitulo = $peticion->request->get('contCapitulo');
+		$resuHist = $peticion->request->get('resuHist');
+		$genero = $peticion->request->get('genero');
 		$userlog = $this->getUser()->getUsername();
-
+		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-
-
+		
+			$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"');
+			//Mostrar los datos insertados
+			$tituloLibro = $connection->fetchColumn('SELECT titulo  from libro WHERE username="admin" AND idLibro = ' . $IdLibroInsertado);
+		
+			//Update descripción del último libro insertado
+			$connection->executeUpdate('UPDATE libro SET descripcion = "' . $resuHist . '" WHERE libro.idLibro = "' . $IdLibroInsertado . '"');
+			
 		}
+		$generos=array('Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
+		//$params = array('Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'','Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
 
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
@@ -116,7 +124,7 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		
 			/* Guardo en el array los campos del form*/
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>'');
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
@@ -160,9 +168,10 @@ class DefaultController extends Controller
 		}
 		
 		$capitulosInsertados = $connection->fetchAll('SELECT * FROM operacionlibros, capitulo WHERE capitulo.idLibro=operacionlibros.idLibro and operacionlibros.username="' . $userlog . '" and operacionlibros.idLibro="' . $IdLibroInsertado . '"');
-			
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados);
-		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
+	//$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
+	$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'','Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
+		
+	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
 
