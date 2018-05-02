@@ -92,8 +92,7 @@ class DefaultController extends Controller
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
-		//Generos:
-		/*
+		/*Generos:
 		0:Default
 		1:Aventura
 		2:Acción
@@ -111,13 +110,10 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();
 		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-		
-			$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"');
-			//Mostrar los datos insertados
-			$tituloLibro = $connection->fetchColumn('SELECT titulo  from libro WHERE username="admin" AND idLibro = ' . $IdLibroInsertado);
-		
-
-			$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"');
+			
+			$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"'); //Libro insertado
+			
+			$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
 			//Update descripción del último libro insertado
 			$connection->executeUpdate('UPDATE libro SET descripcion = "' . $resuHist . '",idGenero="' . $idGeneroSelecc . '" WHERE libro.idLibro = "' . $IdLibroInsertado . '"');
 			

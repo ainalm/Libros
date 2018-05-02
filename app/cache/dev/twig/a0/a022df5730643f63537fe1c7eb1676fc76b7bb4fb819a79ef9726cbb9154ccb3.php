@@ -249,7 +249,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio3\" value=\"Acción\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio3\" value=\"Accion\">
                                 <label class=\"form-check-label\" for=\"radio3\">Acción</label>
                             </div>
                             <!--Grid column-->
@@ -262,7 +262,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio5\"  value=\"Fantasía\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio5\"  value=\"Fantasia\">
                                 <label class=\"form-check-label\" for=\"radio5\">Fantasía</label>
                             </div>
                             <!--Grid column-->
@@ -278,7 +278,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                             <!--Grid column-->
                             <div class=\"col-sm-3  mb-2\">
-                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio7\" value=\"Poesía\">
+                                <input class=\"form-check-input\" name=\"genero\" type=\"radio\" id=\"radio7\" value=\"Poesia\">
                                 <label class=\"form-check-label\" for=\"radio7\">Poesía</label>
                             </div>
                             <!--Grid column-->
@@ -522,7 +522,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio3" value="Acción">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio3" value="Accion">*/
 /*                                 <label class="form-check-label" for="radio3">Acción</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
@@ -535,7 +535,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                             <!--Grid column-->*/
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio5"  value="Fantasía">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio5"  value="Fantasia">*/
 /*                                 <label class="form-check-label" for="radio5">Fantasía</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
@@ -551,7 +551,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                             <!--Grid column-->*/
 /*                             <div class="col-sm-3  mb-2">*/
-/*                                 <input class="form-check-input" name="genero" type="radio" id="radio7" value="Poesía">*/
+/*                                 <input class="form-check-input" name="genero" type="radio" id="radio7" value="Poesia">*/
 /*                                 <label class="form-check-label" for="radio7">Poesía</label>*/
 /*                             </div>*/
 /*                             <!--Grid column-->*/
