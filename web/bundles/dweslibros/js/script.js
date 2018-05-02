@@ -1,35 +1,18 @@
 $(document).ready(function() {
-
-
-
-  $('#toggleC li').on('click', function(){
-    $(this).toggleClass('active');
- 
- });
- 
-  //post();
-  $("#titHistoria").hide();
-  
-  
+  $("#titHistoria").hide(); //Titulo hisotoria se muestra al crear un libro
 
   $("#paso1muestraCP").click(function() {
-
-
-
+    //  Muestra/Oculta Capitulos
     $("#contCapitulos").toggle();
- 
   });
-  let cloneCount = 1;
-  
+
 
   $("#paso1").click(function() {
-
-
-     $("#titHistoria").show();
-    $(".ocultaTitulo").hide(); 
-
+    $("#titHistoria").show();
+    $(".ocultaTitulo").hide();
 
     /* 
+      let cloneCount = 1;
       var clone = $('#cln').clone();
  clone.find("input").val("");
  clone.find("textarea").val("");
@@ -38,34 +21,10 @@ $(document).ready(function() {
  clone.insertBefore('#ins');
  */
   });
-
- 
 });
-//FIXME: Envio del form con Ajax
-/* function post() {
-  var titulohistoria = $("#titulohistoria").val();
-  var titulocapitulo = $("#titulocapitulo").val();
-  var contCapitulo = $("#contCapitulo").val();
-  if (titulohistoria && titulocapitulo && contCapitulo) {
-    $.ajax({
-      type: "post",
-      url: "{{ path('dwes_libros_escribirhistoria') }}",
-      data: {
-        titulohistoria: titulohistoria,
-        titulocapitulo: titulocapitulo,
-        contCapitulo: contCapitulo
-      },
-      success: function(response) {
-        alert("enviado correctament");
-      }
-    });
-  }
 
-  return false;
-}
- */
 $("#crearCuenta").on("click", function(e) {
-  //Validate form and submit
+  //Valida form Crear Cuenta
 
   if (
     $("#orangeForm-name").val() == "" ||
@@ -82,20 +41,44 @@ $("#crearCuenta").on("click", function(e) {
     $("#orangeForm-pass").css("border-bottom", " 1px solid red ");
     $("#labelPassword").css("color", "red ");
   }
-
-  $("#entrar").on("click", function(e) {
-    //Validate form and submit
-
-    if ($("#Form-email2").val() == "" || $("#Form-pass2").val() == "") {
-      e.preventDefault();
-      //$('#errormsg').text('Fill in both fields').show();
-
-      $("#Form-email2").css("border-bottom", " 1px solid red ");
-      $("#labelUsername").css("color", "red ");
-      $("#Form-pass2").css("border-bottom", " 1px solid red ");
-      $("#labelPass").css("color", "red ");
-    } else {
-      // do nothing and let the form post
-    }
-  });
 });
+$("#entrar").on("click", function(e) {
+  //Valida form Login
+
+ var email=$("#Form-email2");
+ var labelEmail=$("#labelUsername");
+ var password=$("#Form-pass2");
+ var labelPass= $("#labelPass");
+  if (email.val() == "" || password.val() == "") {
+    e.preventDefault();
+    //$('#errormsg').text('Fill in both fields').show();
+    email.css("border-bottom", " 1px solid red ");
+   labelEmail.css("color", "red ");
+    password.css("border-bottom", " 1px solid red ");
+    labelPass.css("color", "red ");
+  } 
+
+  email.keydown(function(event) {
+    validaCampo(email, labelEmail);
+        
+  })
+
+  password.keydown(function(event) {
+    validaCampo(password, labelPass);
+        
+  })
+
+
+});
+
+function validaCampo($input,$label) {
+  if ( $input !="") {
+          
+    $input.css("border-bottom", " 1px solid green ");
+    $label.css("color", "green ");
+      }
+        else{
+          $input.css("border-bottom", " 1px solid red ");
+          $label.css("color", "red ");
+        }
+}

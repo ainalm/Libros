@@ -103,7 +103,6 @@ class DefaultController extends Controller
 		7:Romance
 		8:Drama
 */
-
 		//Obtengo el valor de los campos del Form
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
@@ -119,7 +118,6 @@ class DefaultController extends Controller
 			
 		}
 		
-		//$params = array('Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
 		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
 
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
