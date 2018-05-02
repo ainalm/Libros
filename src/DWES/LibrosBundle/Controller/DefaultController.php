@@ -92,6 +92,19 @@ class DefaultController extends Controller
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
+		//Generos:
+		/*
+		0:Default
+		1:Aventura
+		2:Acción
+		3:Terror	
+		4:Fantasía
+		5:Misterio
+		6:Poesía
+		7:Romance
+		8:Drama
+*/
+
 		//Obtengo el valor de los campos del Form
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
@@ -103,13 +116,15 @@ class DefaultController extends Controller
 			//Mostrar los datos insertados
 			$tituloLibro = $connection->fetchColumn('SELECT titulo  from libro WHERE username="admin" AND idLibro = ' . $IdLibroInsertado);
 		
+
+			$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"');
 			//Update descripción del último libro insertado
-			$connection->executeUpdate('UPDATE libro SET descripcion = "' . $resuHist . '" WHERE libro.idLibro = "' . $IdLibroInsertado . '"');
+			$connection->executeUpdate('UPDATE libro SET descripcion = "' . $resuHist . '",idGenero="' . $idGeneroSelecc . '" WHERE libro.idLibro = "' . $IdLibroInsertado . '"');
 			
 		}
-		$generos=array('Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
+		
 		//$params = array('Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'','Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
 
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
@@ -168,8 +183,8 @@ class DefaultController extends Controller
 		}
 		
 		$capitulosInsertados = $connection->fetchAll('SELECT * FROM operacionlibros, capitulo WHERE capitulo.idLibro=operacionlibros.idLibro and operacionlibros.username="' . $userlog . '" and operacionlibros.idLibro="' . $IdLibroInsertado . '"');
-	//$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
-	$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'','Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
+	$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
+	//$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'','Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
 		
 	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
