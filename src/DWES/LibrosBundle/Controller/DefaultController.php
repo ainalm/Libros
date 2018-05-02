@@ -65,21 +65,30 @@ class DefaultController extends Controller
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
 		//Obtengo el valor de los campos del Form
-
+		$nombre=$peticion->request->get('nombre');
 		$apellidos = $peticion->request->get('apellidos');
 		$fnacimiento = $peticion->request->get('fnacimiento');
 		$pweb = $peticion->request->get('pweb');
 		$biografia = $peticion->request->get('biografia');
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
 		$fotoSubida = addslashes(file_get_contents($_FILES["fotoSubida"]));
-
+		$connection = $this->get("database_connection");	//Conexión con la BD 
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
 
-			$connection = $this->get("database_connection");	//Conexión con la BD 
+			
 			$connection->executeUpdate('UPDATE usuario SET nombre = "' . $nombre . '", fechaNacimiento = "' . $fnacimiento . '", biografia = "' . $biografia . '", paginaWeb = "' . $pweb . '", apellidos = "' . $apellidos . '" WHERE usuario.username = "' . $userlog . '";');
 
 			return $this->redirect($this->generateUrl('dwes_libros_perfil'));
 		}
+		$nombre = $connection->fetchColumn('SELECT nombre FROM usuario WHERE username = "' . $userlog . '"');
+	
+		$apellidos = $connection->fetchColumn('SELECT apellidos FROM usuario WHERE username = "' . $userlog . '"');
+		$fnacimiento = $connection->fetchColumn('SELECT fechaNacimiento FROM usuario WHERE username = "' . $userlog . '"');
+		$pweb = $connection->fetchColumn('SELECT paginaWeb FROM usuario WHERE username = "' . $userlog . '"');
+		$biografia = $connection->fetchColumn('SELECT biografia FROM usuario WHERE username = "' . $userlog . '"');
+
+		$params = array('nombre' => $nombre, 'apellidos' => $apellidos, 'fnacimiento' => $fnacimiento, 'pweb' => $pweb, 'biografia' => $biografia, 'fotoSubida' => '');
+
 		return $this->render('DWESLibrosBundle:Default:crearperfil.html.twig', $params);
 
 	}
@@ -151,6 +160,9 @@ class DefaultController extends Controller
 			
 				/* Si el título no está vacío hago 2 inserts :1º Añadir libro, 2º Registro la acción en opereacionlibro */
 			if ($titulohistoria != $tituloLibro) {
+				if (isset($titulohistoria) && isset($titulocapitulo) && isset($contCapitulo) ) {
+					# code...
+				
 				$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion) VALUES (NULL,"' . $userlog . '","0","' . $titulohistoria . '",NULL,NULL);');
 				$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"');
 				$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $IdLibroInsertado . '","' . $userlog . '","Libro Añadido")');
@@ -158,9 +170,10 @@ class DefaultController extends Controller
 				$ultimoCapitulo = $SelectultimoCapitulo + 1;
 					/* Inserto el capítulo */
 				$connection->executeUpdate('INSERT INTO capitulo (idLibro, numCapitulo, tituloCap, contenidoCap) VALUES (' . $IdLibroInsertado . ',"' . $ultimoCapitulo . '","' . $titulocapitulo . '","' . $contCapitulo . '")');
-
+			}
 
 			} else {
+				if (isset($titulocapitulo) && isset($contCapitulo) ) {
 				/* 	Si el libro existe, le añado un capítulo */
 				$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"');
 				/* Selecciono el ultimo capítulo para incrementarlo*/
@@ -168,7 +181,7 @@ class DefaultController extends Controller
 				$ultimoCapitulo = $SelectultimoCapitulo + 1;
 				/* Inserto el capítulo */
 				$connection->executeUpdate('INSERT INTO capitulo (idLibro, numCapitulo, tituloCap, contenidoCap) VALUES (' . $IdLibroInsertado . ',"' . $ultimoCapitulo . '","' . $titulocapitulo . '","' . $contCapitulo . '")');
-
+				}
 			}
 
 
@@ -178,7 +191,6 @@ class DefaultController extends Controller
 		
 		$capitulosInsertados = $connection->fetchAll('SELECT * FROM operacionlibros, capitulo WHERE capitulo.idLibro=operacionlibros.idLibro and operacionlibros.username="' . $userlog . '" and operacionlibros.idLibro="' . $IdLibroInsertado . '"');
 	$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
-	//$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'','Aventura'=>'','Acción'=>'','Terror'=>'','Fantasía'=>'','Misterio'=>'','Poesía'=>'','Romance'=>'','Drama'=>'');
 		
 	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}

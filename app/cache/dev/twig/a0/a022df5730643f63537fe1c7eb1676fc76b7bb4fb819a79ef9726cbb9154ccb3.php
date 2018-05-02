@@ -95,11 +95,11 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         echo twig_escape_filter($this->env, (isset($context["tituloHistoria"]) ? $context["tituloHistoria"] : $this->getContext($context, "tituloHistoria")), "html", null, true);
         echo " </h2>
     <div class=\"md-form ocultaTitulo\" >
-                            <input type=\"text\" id=\"titulohistoria\" class=\"form-control\" name=\"titulohistoria\" value=\"";
+                            <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"";
         // line 51
         echo twig_escape_filter($this->env, (isset($context["titulohistoria"]) ? $context["titulohistoria"] : $this->getContext($context, "titulohistoria")), "html", null, true);
         echo "\">
-                            <label for=\"titulohistoria\" class=\"\">Título de la historia</label>
+                            <label for=\"titulohistoria\" class=\"Ltitulohistoria valL\">Título de la historia</label>
                         </div>
                     </div>
 
@@ -111,11 +111,11 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         <div class=\"col-md-12\">
                             <div class=\"md-form\">
                            
-                                <input type=\"text\" id=\"titulocapitulo\" class=\"form-control\" name=\"titulocapitulo\" value=\"";
+                                <input type=\"text\" id=\"titulocapitulo\" class=\"form-control valI\" name=\"titulocapitulo\" value=\"";
         // line 64
         echo twig_escape_filter($this->env, (isset($context["titulocapitulo"]) ? $context["titulocapitulo"] : $this->getContext($context, "titulocapitulo")), "html", null, true);
         echo "\">
-                                <label for=\"titulocapitulo\" class=\"\">Título del capítulo</label>
+                                <label for=\"titulocapitulo\" class=\"Ltitulocapitulo valL\">Título del capítulo</label>
                             </div>
                         </div>
                     </div>
@@ -126,11 +126,11 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         <div class=\"col-md-12\">
 
                             <div class=\"md-form\">
-                                <textarea type=\"text\" id=\"contCapitulo\" class=\"md-textarea form-control\" rows=\"6\" name=\"contCapitulo\" value=\"";
+                                <textarea type=\"text\" id=\"contCapitulo\" class=\"md-textarea form-control valI\" rows=\"6\" name=\"contCapitulo\" value=\"";
         // line 76
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
         echo "\"></textarea>
-                                <label for=\"contCapitulo\">Contenido del capítulo</label>
+                                <label for=\"contCapitulo\" class=\"LcontCapitulo valL\">Contenido del capítulo</label>
                             </div>
 
                         </div>
@@ -415,8 +415,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 */
 /*   <h2 id="titHistoria"> {{tituloHistoria}} </h2>*/
 /*     <div class="md-form ocultaTitulo" >*/
-/*                             <input type="text" id="titulohistoria" class="form-control" name="titulohistoria" value="{{titulohistoria}}">*/
-/*                             <label for="titulohistoria" class="">Título de la historia</label>*/
+/*                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="{{titulohistoria}}">*/
+/*                             <label for="titulohistoria" class="Ltitulohistoria valL">Título de la historia</label>*/
 /*                         </div>*/
 /*                     </div>*/
 /* */
@@ -428,8 +428,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         <div class="col-md-12">*/
 /*                             <div class="md-form">*/
 /*                            */
-/*                                 <input type="text" id="titulocapitulo" class="form-control" name="titulocapitulo" value="{{titulocapitulo}}">*/
-/*                                 <label for="titulocapitulo" class="">Título del capítulo</label>*/
+/*                                 <input type="text" id="titulocapitulo" class="form-control valI" name="titulocapitulo" value="{{titulocapitulo}}">*/
+/*                                 <label for="titulocapitulo" class="Ltitulocapitulo valL">Título del capítulo</label>*/
 /*                             </div>*/
 /*                         </div>*/
 /*                     </div>*/
@@ -440,8 +440,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         <div class="col-md-12">*/
 /* */
 /*                             <div class="md-form">*/
-/*                                 <textarea type="text" id="contCapitulo" class="md-textarea form-control" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>*/
-/*                                 <label for="contCapitulo">Contenido del capítulo</label>*/
+/*                                 <textarea type="text" id="contCapitulo" class="md-textarea form-control valI" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>*/
+/*                                 <label for="contCapitulo" class="LcontCapitulo valL">Contenido del capítulo</label>*/
 /*                             </div>*/
 /* */
 /*                         </div>*/

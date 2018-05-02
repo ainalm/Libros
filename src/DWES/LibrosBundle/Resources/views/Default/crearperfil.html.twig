@@ -35,6 +35,7 @@
                             <!--/Card image-->
      <!-- Card content -->
             <form name="formUpdatePerfil" action="{{ path('dwes_libros_crearperfil') }}" method="POST">
+            
                             <div class="card-body text-center">
                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto">
 
@@ -92,7 +93,7 @@
                                         <!--First column-->
                                         <div class="col-md-12">
                                             <div class="md-form">
-                                                <textarea type="text" id="form78" class="md-textarea form-control" rows="3"  name="biografia" value="{{biografia}}"></textarea>
+                                                <textarea type="text" id="form78" class="md-textarea form-control" rows="3"  name="biografia" value="{{biografia}}">{{biografia}}</textarea>
                                                 <label for="form78" >Sobre mí:</label>
                                             </div>
                                         </div>

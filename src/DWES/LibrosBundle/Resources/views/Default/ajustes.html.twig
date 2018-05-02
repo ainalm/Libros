@@ -97,36 +97,4 @@
     {{item.tipoSuscripcion}}
  {% endfor %}
 
-
- <!-- Nav tabs -->
-<div class="row">
-    <div class="col-md-3">
-        <ul class="nav  md-pills pills-primary flex-column" role="tablist"  id="toggleC">
-{% for item in suscripciones %}
-            <li class="nav-item active">
-                <a class="nav-link" data-toggle="tab" href="#{{item.tipoSuscripcion}}" role="tab">{{item.tipoSuscripcion}}
-                <i class="fa fa-download ml-2"></i>
-                </a>
-            </li>
-            
-        {% endfor %}    
-        </ul>
-    </div>
-    <div class="col-md-9">
-        <!-- Tab panels -->
-        <div class="tab-content vertical">
-        <!--Panel 1-->
-        {% for item in suscripciones %}
-        <div class="tab-pane fade in show active" id="{{item.tipoSuscripcion}}" role="tabpanel">
-
-            <h5 class="my-2 h5"> ESTAS EN UNA SUBSCRIPCIÓN:{{item.tipoSuscripcion}}</h5>
-
-        </div>
-        <!--/.Panel 1-->
-        {% endfor %}   
-        </div>
-    </div>
-</div>
-<!-- Nav tabs -->
-
 {% endblock %}

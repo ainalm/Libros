@@ -168,70 +168,6 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 99
         echo "
-
- <!-- Nav tabs -->
-<div class=\"row\">
-    <div class=\"col-md-3\">
-        <ul class=\"nav  md-pills pills-primary flex-column\" role=\"tablist\"  id=\"toggleC\">
-";
-        // line 105
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["suscripciones"]) ? $context["suscripciones"] : $this->getContext($context, "suscripciones")));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 106
-            echo "            <li class=\"nav-item active\">
-                <a class=\"nav-link\" data-toggle=\"tab\" href=\"#";
-            // line 107
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
-            echo "\" role=\"tab\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
-            echo "
-                <i class=\"fa fa-download ml-2\"></i>
-                </a>
-            </li>
-            
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 112
-        echo "    
-        </ul>
-    </div>
-    <div class=\"col-md-9\">
-        <!-- Tab panels -->
-        <div class=\"tab-content vertical\">
-        <!--Panel 1-->
-        ";
-        // line 119
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["suscripciones"]) ? $context["suscripciones"] : $this->getContext($context, "suscripciones")));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 120
-            echo "        <div class=\"tab-pane fade in show active\" id=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
-            echo "\" role=\"tabpanel\">
-
-            <h5 class=\"my-2 h5\"> ESTAS EN UNA SUBSCRIPCIÓN:";
-            // line 122
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
-            echo "</h5>
-
-        </div>
-        <!--/.Panel 1-->
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 126
-        echo "   
-        </div>
-    </div>
-</div>
-<!-- Nav tabs -->
-
 ";
     }
 
@@ -247,7 +183,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 
     public function getDebugInfo()
     {
-        return array (  229 => 126,  218 => 122,  212 => 120,  208 => 119,  199 => 112,  185 => 107,  182 => 106,  178 => 105,  170 => 99,  161 => 97,  157 => 96,  141 => 83,  135 => 80,  119 => 67,  113 => 64,  98 => 52,  92 => 49,  82 => 41,  76 => 36,  70 => 33,  57 => 22,  54 => 21,  31 => 2,  11 => 1,);
+        return array (  170 => 99,  161 => 97,  157 => 96,  141 => 83,  135 => 80,  119 => 67,  113 => 64,  98 => 52,  92 => 49,  82 => 41,  76 => 36,  70 => 33,  57 => 22,  54 => 21,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -348,37 +284,5 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /* {% for item in suscripciones %}*/
 /*     {{item.tipoSuscripcion}}*/
 /*  {% endfor %}*/
-/* */
-/* */
-/*  <!-- Nav tabs -->*/
-/* <div class="row">*/
-/*     <div class="col-md-3">*/
-/*         <ul class="nav  md-pills pills-primary flex-column" role="tablist"  id="toggleC">*/
-/* {% for item in suscripciones %}*/
-/*             <li class="nav-item active">*/
-/*                 <a class="nav-link" data-toggle="tab" href="#{{item.tipoSuscripcion}}" role="tab">{{item.tipoSuscripcion}}*/
-/*                 <i class="fa fa-download ml-2"></i>*/
-/*                 </a>*/
-/*             </li>*/
-/*             */
-/*         {% endfor %}    */
-/*         </ul>*/
-/*     </div>*/
-/*     <div class="col-md-9">*/
-/*         <!-- Tab panels -->*/
-/*         <div class="tab-content vertical">*/
-/*         <!--Panel 1-->*/
-/*         {% for item in suscripciones %}*/
-/*         <div class="tab-pane fade in show active" id="{{item.tipoSuscripcion}}" role="tabpanel">*/
-/* */
-/*             <h5 class="my-2 h5"> ESTAS EN UNA SUBSCRIPCIÓN:{{item.tipoSuscripcion}}</h5>*/
-/* */
-/*         </div>*/
-/*         <!--/.Panel 1-->*/
-/*         {% endfor %}   */
-/*         </div>*/
-/*     </div>*/
-/* </div>*/
-/* <!-- Nav tabs -->*/
 /* */
 /* {% endblock %}*/

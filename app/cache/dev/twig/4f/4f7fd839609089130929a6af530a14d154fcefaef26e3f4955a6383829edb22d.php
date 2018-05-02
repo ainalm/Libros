@@ -81,16 +81,16 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 
                     <!--Body-->
                     <div class=\"md-form\">
-                        <input type=\"text\" id=\"Form-email2\"  class=\"form-control\" name=\"_username\" value=\"";
+                        <input type=\"text\" id=\"Form-email2\"  class=\"form-control valI\" name=\"_username\" value=\"";
         // line 43
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
         echo "\">
-                        <label id=\"labelUsername\" for=\"Form-email2\" class=\"\"> Username</label>
+                        <label id=\"labelUsername\" for=\"Form-email2\" class=\"valL\"> Username</label>
                     </div>
 
                     <div class=\"md-form pb-3\">
-                        <input type=\"password\" id=\"Form-pass2\" class=\"form-control\"   name=\"_password\">
-                        <label  id=\"labelPass\" for=\"Form-pass2\" class=\"\">Contraseña</label>
+                        <input type=\"password\" id=\"Form-pass2\" class=\"form-control valI\"   name=\"_password\">
+                        <label  id=\"labelPass\" for=\"Form-pass2\" class=\"valL\">Contraseña</label>
                      
                     </div>
 
@@ -196,13 +196,13 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 /* */
 /*                     <!--Body-->*/
 /*                     <div class="md-form">*/
-/*                         <input type="text" id="Form-email2"  class="form-control" name="_username" value="{{ last_username }}">*/
-/*                         <label id="labelUsername" for="Form-email2" class=""> Username</label>*/
+/*                         <input type="text" id="Form-email2"  class="form-control valI" name="_username" value="{{ last_username }}">*/
+/*                         <label id="labelUsername" for="Form-email2" class="valL"> Username</label>*/
 /*                     </div>*/
 /* */
 /*                     <div class="md-form pb-3">*/
-/*                         <input type="password" id="Form-pass2" class="form-control"   name="_password">*/
-/*                         <label  id="labelPass" for="Form-pass2" class="">Contraseña</label>*/
+/*                         <input type="password" id="Form-pass2" class="form-control valI"   name="_password">*/
+/*                         <label  id="labelPass" for="Form-pass2" class="valL">Contraseña</label>*/
 /*                      */
 /*                     </div>*/
 /* */

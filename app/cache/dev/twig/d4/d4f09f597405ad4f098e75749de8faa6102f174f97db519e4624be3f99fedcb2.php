@@ -148,16 +148,16 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                                  <input type=\"text\" id=\"orangeForm-name\" name=\"username\" value=\"";
         // line 113
         echo twig_escape_filter($this->env, (isset($context["username"]) ? $context["username"] : $this->getContext($context, "username")), "html", null, true);
-        echo "\" class=\"form-control\">
-                                 <label for=\"orangeForm-name\" id=\"labelNombre\">Tu nombre de usuario</label>
+        echo "\" class=\"form-control valI\">
+                                 <label for=\"orangeForm-name\" id=\"labelNombre\"  class=\"valL\">Tu nombre de usuario</label>
                              </div>
                              <div class=\"md-form\">
                                
-                                 <input type=\"text\" id=\"orangeForm-email\" name=\"email\" value=\"";
+                                 <input type=\"email\" id=\"orangeForm-email\" name=\"email\" value=\"";
         // line 118
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
-        echo "\" class=\"form-control\">
-                                 <label for=\"orangeForm-email\" id=\"labelEmail\">Tu email</label>
+        echo "\" class=\"form-control valI\">
+                                 <label for=\"orangeForm-email\" id=\"labelEmail\" class=\"valL\">Tu email</label>
                              </div>
  
                              <div class=\"md-form\">
@@ -165,8 +165,8 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                                  <input type=\"password\" id=\"orangeForm-pass\" name=\"password\" value=\"";
         // line 124
         echo twig_escape_filter($this->env, (isset($context["password"]) ? $context["password"] : $this->getContext($context, "password")), "html", null, true);
-        echo "\" class=\"form-control\">
-                                 <label for=\"orangeForm-pass\" id=\"labelPassword\">Tu contraseña</label>
+        echo "\" class=\"form-control valI\">
+                                 <label for=\"orangeForm-pass\" id=\"labelPassword\"  class=\"valL\">Tu contraseña</label>
                              </div>
  
                              <div class=\"text-center\">
@@ -327,19 +327,19 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                              <!--Body-->*/
 /*                              <div class="md-form">*/
 /*                                  */
-/*                                  <input type="text" id="orangeForm-name" name="username" value="{{username}}" class="form-control">*/
-/*                                  <label for="orangeForm-name" id="labelNombre">Tu nombre de usuario</label>*/
+/*                                  <input type="text" id="orangeForm-name" name="username" value="{{username}}" class="form-control valI">*/
+/*                                  <label for="orangeForm-name" id="labelNombre"  class="valL">Tu nombre de usuario</label>*/
 /*                              </div>*/
 /*                              <div class="md-form">*/
 /*                                */
-/*                                  <input type="text" id="orangeForm-email" name="email" value="{{email}}" class="form-control">*/
-/*                                  <label for="orangeForm-email" id="labelEmail">Tu email</label>*/
+/*                                  <input type="email" id="orangeForm-email" name="email" value="{{email}}" class="form-control valI">*/
+/*                                  <label for="orangeForm-email" id="labelEmail" class="valL">Tu email</label>*/
 /*                              </div>*/
 /*  */
 /*                              <div class="md-form">*/
 /*                                */
-/*                                  <input type="password" id="orangeForm-pass" name="password" value="{{password}}" class="form-control">*/
-/*                                  <label for="orangeForm-pass" id="labelPassword">Tu contraseña</label>*/
+/*                                  <input type="password" id="orangeForm-pass" name="password" value="{{password}}" class="form-control valI">*/
+/*                                  <label for="orangeForm-pass" id="labelPassword"  class="valL">Tu contraseña</label>*/
 /*                              </div>*/
 /*  */
 /*                              <div class="text-center">*/
