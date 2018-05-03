@@ -27,7 +27,7 @@ class DefaultController extends Controller
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:index.html.twig', $params);
 	}
-
+     
 
 	public function registroAction()
 	{

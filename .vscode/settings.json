@@ -4,23 +4,28 @@
     "favorites.root": [
         {
             "type": "File",
-            "name": "src\\DWES\\LibrosBundle\\Controller\\DefaultController.php"
+            "name": "src\\DWES\\LibrosBundle\\Controller\\DefaultController.php",
+            "id": "yi7ujYd6f4LpTkKF"
         },
         {
             "type": "File",
-            "name": "src\\DWES\\LibrosBundle\\Resources\\config\\routing.yml"
+            "name": "src\\DWES\\LibrosBundle\\Resources\\config\\routing.yml",
+            "id": "bvU8ZzD5oPJ62wkx"
         },
         {
             "type": "Directory",
-            "name": "src\\DWES\\LibrosBundle\\Resources\\views"
+            "name": "src\\DWES\\LibrosBundle\\Resources\\views",
+            "id": "bdV6rhIyUT9Zf50c"
         },
         {
             "type": "Directory",
-            "name": "web\\bundles\\dweslibros\\css"
+            "name": "web\\bundles\\dweslibros\\css",
+            "id": "aMVuhYAm9jSGH3TP"
         },
         {
             "type": "Directory",
-            "name": "web\\bundles\\dweslibros\\js"
+            "name": "web\\bundles\\dweslibros\\js",
+            "id": "WwC4unhHdTatz5F3"
         }
     ]
 }
