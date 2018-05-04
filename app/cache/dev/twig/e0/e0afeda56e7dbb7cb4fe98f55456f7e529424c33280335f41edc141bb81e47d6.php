@@ -30,7 +30,10 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
     {
         // line 5
         echo "    <!--Intro Section-->
-   <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');\">
+   <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
+        echo "');\">
             <div class=\"flex-center  \" style=\"       background-color: rgba(17, 27, 43, 0.7);\">
                 <div class=\"container my-5 pt-5\">
 
@@ -85,35 +88,49 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
                         </div>
 
                         <!--Avatar-->
-                        <div class=\"avatar mx-auto white\">
+                        <div class=\"avatar mx-auto white rad\" >
                          ";
             // line 50
             if ((isset($context["fotoPerfil"]) ? $context["fotoPerfil"] : $this->getContext($context, "fotoPerfil"))) {
                 // line 51
                 echo "                          <img src=\"data:image/jpeg;base64,";
                 echo twig_escape_filter($this->env, (isset($context["fotoPerfil"]) ? $context["fotoPerfil"] : $this->getContext($context, "fotoPerfil")), "html", null, true);
-                echo "\" class=\" img-fluid\" alt=\"First sample avatar image\">
+                echo "\" class=\" img-fluid rad\" alt=\"First sample avatar image\">
 \t                    
                         ";
             } else {
                 // line 54
-                echo "                            <img src=\"https://i.pinimg.com/236x/f8/2f/59/f82f5916dfb1370c8375654408fdc450--glyphs-smileys.jpg\" class=\" img-fluid\" alt=\"First sample avatar image\">
+                echo "                             ";
+                if (($this->getAttribute($context["item"], "sexo", array()) == "Mujer")) {
+                    // line 55
+                    echo "                            <img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Perfil/avatarM.jpg"), "html", null, true);
+                    echo "\" class=\" img-fluid rad\" alt=\"First sample avatar image\">
+                             ";
+                } else {
+                    // line 57
+                    echo "                               <img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Perfil/avatarH.jpg"), "html", null, true);
+                    echo "\" class=\" img-fluid rad\" alt=\"First sample avatar image\">
                               ";
+                }
+                // line 59
+                echo "                        ";
             }
-            // line 56
+            // line 60
             echo "                       
                         </div>
 
                         <!--Content-->
                         <div class=\"card-body container\">
                             <h4 class=\"mt-1\"> ";
-            // line 61
+            // line 65
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
             echo "  ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "apellidos", array()), "html", null, true);
             echo "</h4>
                             <p class=\"font-weight-bold dark-grey-text\"> ";
-            // line 62
+            // line 66
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "paginaWeb", array()), "html", null, true);
             echo "</p>
                             <!--Triggering button-->
@@ -123,7 +140,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
                         </h4>
                         <hr>
                         <p>";
-            // line 69
+            // line 73
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "biografia", array()), "html", null, true);
             echo " 
                       
@@ -198,7 +215,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 
     public function getDebugInfo()
     {
-        return array (  127 => 69,  117 => 62,  111 => 61,  104 => 56,  100 => 54,  93 => 51,  91 => 50,  68 => 29,  64 => 28,  59 => 27,  43 => 14,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  144 => 73,  134 => 66,  128 => 65,  121 => 60,  118 => 59,  112 => 57,  106 => 55,  103 => 54,  96 => 51,  94 => 50,  71 => 29,  67 => 28,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -206,7 +223,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /* */
 /* {% block portada %}*/
 /*     <!--Intro Section-->*/
-/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">*/
+/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');">*/
 /*             <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">*/
 /*                 <div class="container my-5 pt-5">*/
 /* */
@@ -249,13 +266,17 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /*                         </div>*/
 /* */
 /*                         <!--Avatar-->*/
-/*                         <div class="avatar mx-auto white">*/
+/*                         <div class="avatar mx-auto white rad" >*/
 /*                          {% if fotoPerfil %}*/
-/*                           <img src="data:image/jpeg;base64,{{ fotoPerfil }}" class=" img-fluid" alt="First sample avatar image">*/
+/*                           <img src="data:image/jpeg;base64,{{ fotoPerfil }}" class=" img-fluid rad" alt="First sample avatar image">*/
 /* 	                    */
 /*                         {% else %}*/
-/*                             <img src="https://i.pinimg.com/236x/f8/2f/59/f82f5916dfb1370c8375654408fdc450--glyphs-smileys.jpg" class=" img-fluid" alt="First sample avatar image">*/
+/*                              {% if item.sexo == "Mujer" %}*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/Perfil/avatarM.jpg') }}" class=" img-fluid rad" alt="First sample avatar image">*/
+/*                              {% else %}*/
+/*                                <img src="{{ asset('bundles/dweslibros/img/Perfil/avatarH.jpg') }}" class=" img-fluid rad" alt="First sample avatar image">*/
 /*                               {% endif %}*/
+/*                         {% endif %}*/
 /*                        */
 /*                         </div>*/
 /* */

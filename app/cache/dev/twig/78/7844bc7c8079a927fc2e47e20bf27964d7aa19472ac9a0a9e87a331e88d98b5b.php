@@ -38,8 +38,6 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                     <h3 class=\"text-center pt-5 pb-5 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                         <strong>Mis Datos</strong>
                     </h3>
-                    
-
                 </div>
             </div>
         </div> 
@@ -48,7 +46,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 ";
     }
 
-    // line 23
+    // line 21
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
@@ -66,19 +64,19 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                             <!--/Card image-->
      <!-- Card content -->
             <form name=\"formUpdatePerfil\" action=\"";
-        // line 37
+        // line 35
         echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
         echo "\" method=\"POST\">
             
                             <div class=\"card-body text-center\">
                                 <img src=\"https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg\" alt=\"User Photo\" class=\"z-depth-1 mb-3 mx-auto\">
-
+<form name=\"formUpdatePerfil\" action=\"";
+        // line 39
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
+        echo "\" method=\"POST\">
                                 <p class=\"text-muted\"><small>Sube una nueva foto de perfil</small></p>
                                 <div class=\"row flex-center\">
-                                    <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"fotoSubida\" value=\"";
-        // line 44
-        echo twig_escape_filter($this->env, (isset($context["fotoSubida"]) ? $context["fotoSubida"] : $this->getContext($context, "fotoSubida")), "html", null, true);
-        echo "\" id=\"file-upload\" type=\"file\"/>
+                                    <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"fotoSubida\"  id=\"file-upload\" type=\"file\"/>
                                     <button class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light\">Borrar</button>
                                 </div>
                             </div>
@@ -86,17 +84,14 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                             <!-- Card content -->
                             <div class=\"card-body text-center\">
                                 <!-- Edit Form -->
-                                <form name=\"formUpdatePerfil\" action=\"";
-        // line 52
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
-        echo "\" method=\"POST\">
+                                
                                     <!--First row-->
                                     <div class=\"row\">
                                         <!--First column-->
                                        <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form81\" class=\"form-control validate\"  name=\"nombre\" value=\"";
-        // line 58
+        // line 56
         echo twig_escape_filter($this->env, (isset($context["nombre"]) ? $context["nombre"] : $this->getContext($context, "nombre")), "html", null, true);
         echo "\">
                                                 <label for=\"form81\">Nombre </label>
@@ -106,7 +101,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form2\" class=\"form-control validate\" name=\"apellidos\" value=\"";
-        // line 65
+        // line 63
         echo twig_escape_filter($this->env, (isset($context["apellidos"]) ? $context["apellidos"] : $this->getContext($context, "apellidos")), "html", null, true);
         echo "\">
                                                 <label for=\"form2\" >Apellidos</label>
@@ -122,7 +117,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form76\" class=\"form-control validate\" name=\"fnacimiento\" value=\"";
-        // line 78
+        // line 76
         echo twig_escape_filter($this->env, (isset($context["fnacimiento"]) ? $context["fnacimiento"] : $this->getContext($context, "fnacimiento")), "html", null, true);
         echo "\"> 
                                                 <label for=\"form76\" class=\"\">Fecha de nacimiento</label>
@@ -132,7 +127,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form77\" class=\"form-control validate\"  name=\"pweb\" value=\"";
-        // line 85
+        // line 83
         echo twig_escape_filter($this->env, (isset($context["pweb"]) ? $context["pweb"] : $this->getContext($context, "pweb")), "html", null, true);
         echo "\">
                                                 <label for=\"form77\" class=\"\">Página web</label>
@@ -146,7 +141,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-12\">
                                             <div class=\"md-form\">
                                                 <textarea type=\"text\" id=\"form78\" class=\"md-textarea form-control\" rows=\"3\"  name=\"biografia\" value=\"";
-        // line 96
+        // line 94
         echo twig_escape_filter($this->env, (isset($context["biografia"]) ? $context["biografia"] : $this->getContext($context, "biografia")), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, (isset($context["biografia"]) ? $context["biografia"] : $this->getContext($context, "biografia")), "html", null, true);
@@ -191,7 +186,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 
     public function getDebugInfo()
     {
-        return array (  150 => 96,  136 => 85,  126 => 78,  110 => 65,  100 => 58,  91 => 52,  80 => 44,  70 => 37,  52 => 23,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  145 => 94,  131 => 83,  121 => 76,  105 => 63,  95 => 56,  75 => 39,  68 => 35,  50 => 21,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -207,8 +202,6 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                     <h3 class="text-center pt-5 pb-5 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                         <strong>Mis Datos</strong>*/
 /*                     </h3>*/
-/*                     */
-/* */
 /*                 </div>*/
 /*             </div>*/
 /*         </div> */
@@ -234,10 +227,10 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*             */
 /*                             <div class="card-body text-center">*/
 /*                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto">*/
-/* */
+/* <form name="formUpdatePerfil" action="{{ path('dwes_libros_crearperfil') }}" method="POST">*/
 /*                                 <p class="text-muted"><small>Sube una nueva foto de perfil</small></p>*/
 /*                                 <div class="row flex-center">*/
-/*                                     <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida" value="{{fotoSubida}}" id="file-upload" type="file"/>*/
+/*                                     <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida"  id="file-upload" type="file"/>*/
 /*                                     <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Borrar</button>*/
 /*                                 </div>*/
 /*                             </div>*/
@@ -245,7 +238,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                             <!-- Card content -->*/
 /*                             <div class="card-body text-center">*/
 /*                                 <!-- Edit Form -->*/
-/*                                 <form name="formUpdatePerfil" action="{{ path('dwes_libros_crearperfil') }}" method="POST">*/
+/*                                 */
 /*                                     <!--First row-->*/
 /*                                     <div class="row">*/
 /*                                         <!--First column-->*/

@@ -3,8 +3,8 @@
 
 {% block portada %}
     <!--Intro Section-->
-   <div  class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">
-            <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">
+   <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');">
+            <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">
                 <div class="container my-5 pt-5">
 
                     <!-- Section heading -->
@@ -46,13 +46,17 @@
                         </div>
 
                         <!--Avatar-->
-                        <div class="avatar mx-auto white">
+                        <div class="avatar mx-auto white rad" >
                          {% if fotoPerfil %}
-                          <img src="data:image/jpeg;base64,{{ fotoPerfil }}" class=" img-fluid" alt="First sample avatar image">
+                          <img src="data:image/jpeg;base64,{{ fotoPerfil }}" class=" img-fluid rad" alt="First sample avatar image">
 	                    
                         {% else %}
-                            <img src="https://i.pinimg.com/236x/f8/2f/59/f82f5916dfb1370c8375654408fdc450--glyphs-smileys.jpg" class=" img-fluid" alt="First sample avatar image">
+                             {% if item.sexo == "Mujer" %}
+                            <img src="{{ asset('bundles/dweslibros/img/Perfil/avatarM.jpg') }}" class=" img-fluid rad" alt="First sample avatar image">
+                             {% else %}
+                               <img src="{{ asset('bundles/dweslibros/img/Perfil/avatarH.jpg') }}" class=" img-fluid rad" alt="First sample avatar image">
                               {% endif %}
+                        {% endif %}
                        
                         </div>
 

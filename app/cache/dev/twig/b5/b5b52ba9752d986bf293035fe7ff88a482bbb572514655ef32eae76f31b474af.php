@@ -73,7 +73,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 36
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/user.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/user.png"), "html", null, true);
         echo "\"> </img>
                         </i>
                         <h5 class=\"feature-title mb-4\">Mis datos</h5>
@@ -95,7 +95,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 52
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/pin-code.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/pin-code.png"), "html", null, true);
         echo "\"> </img>
                         </i>
                         <h5 class=\"feature-title mb-4\">Mi contraseña</h5>
@@ -116,7 +116,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 67
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/detective.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/detective.png"), "html", null, true);
         echo "\"> </img>
                         </i>
                         <h5 class=\"feature-title mb-4\">Mi privacidad</h5>
@@ -138,7 +138,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 83
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/credit-card.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/credit-card.png"), "html", null, true);
         echo "\"> </img>
                         </i>
                         <h5 class=\"feature-title mb-4\">Suscripción</h5>
@@ -221,7 +221,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*                 <a href="{{ path('dwes_libros_crearperfil') }}">*/
 /*                     <div class="card card-body hoverable">*/
 /*                         <i class="mb-2">*/
-/*                             <img src="{{ asset('bundles/dweslibros/img/user.png') }}"> </img>*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/user.png') }}"> </img>*/
 /*                         </i>*/
 /*                         <h5 class="feature-title mb-4">Mis datos</h5>*/
 /*                         {#*/
@@ -237,7 +237,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*                 <a href="{{ path('dwes_libros_crearperfil') }}">*/
 /*                     <div class="card card-body hoverable cajaAjustes">*/
 /*                         <i class="mb-2">*/
-/*                             <img src="{{ asset('bundles/dweslibros/img/pin-code.png') }}"> </img>*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/pin-code.png') }}"> </img>*/
 /*                         </i>*/
 /*                         <h5 class="feature-title mb-4">Mi contraseña</h5>*/
 /* */
@@ -252,7 +252,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*                 <a href="{{ path('dwes_libros_crearperfil') }}">*/
 /*                     <div class="card card-body hoverable cajaAjustes">*/
 /*                         <i class="mb-2">*/
-/*                             <img src="{{ asset('bundles/dweslibros/img/detective.png') }}"> </img>*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/detective.png') }}"> </img>*/
 /*                         </i>*/
 /*                         <h5 class="feature-title mb-4">Mi privacidad</h5>*/
 /* */
@@ -268,7 +268,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*                 <a href="{{ path('dwes_libros_crearperfil') }}">*/
 /*                     <div class="card card-body hoverable cajaAjustes">*/
 /*                         <i class="mb-2">*/
-/*                             <img src="{{ asset('bundles/dweslibros/img/credit-card.png') }}"> </img>*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/credit-card.png') }}"> </img>*/
 /*                         </i>*/
 /*                         <h5 class="feature-title mb-4">Suscripción</h5>*/
 /*                     </div>*/

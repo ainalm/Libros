@@ -45,11 +45,8 @@ class DefaultController extends Controller
 
 			if (!empty($username) && !empty($email) && !empty($password)) {
 
-				$connection = $this->get("database_connection");		//Conexión con la BD  TODO: Actualizar Insert
-											//INSERT INTO `usuario` (`username`, `id`, `nombre`, `sexo`, `tipoUser`, `fechaNacimiento`, `biografia`, `paginaWeb`, `fotoPerfil`, `apellidos`, `salt`, `password`, `email`, `isActive`, `tokenRegistro`) VALUES ('juaan', NULL, '', 'mujer', 'usuario', NULL, NULL, NULL, NULL, '', '', 'password', 'email', '1', '')
-				$connection->executeUpdate('INSERT INTO usuario (id, username, nombre,sexo, fechaNacimiento, biografia,paginaWeb, fotoPerfil, apellidos, salt, password, email, isActive, tokenRegistro) VALUES (NULL, "' . $username . '", "' . $sexo . '","", NULL, NULL, NULL, NULL, "", "", "' . $password . '", "' . $email . '", "1", "");');
-var_dump($sexo);
-exit;
+				$connection = $this->get("database_connection");		//Conexión con la BD  
+				$connection->executeUpdate('INSERT INTO usuario (username, id, nombre,sexo,tipoUser, fechaNacimiento, biografia,paginaWeb, fotoPerfil, apellidos, salt, password, email, isActive, tokenRegistro) VALUES ("' . $username . '",NULL ,"", "' . $sexo . '","usuario", NULL, NULL, NULL, NULL, "", "", "' . $password . '", "' . $email . '", "1", "");');
 				return $this->redirect($this->generateUrl('dwes_libros_crearperfil')); 		//Redirección al registrarse para crear el perfil
 
 			}
@@ -77,7 +74,6 @@ exit;
 		$connection = $this->get("database_connection");	//Conexión con la BD 
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
 
-			
 			$connection->executeUpdate('UPDATE usuario SET nombre = "' . $nombre . '", fechaNacimiento = "' . $fnacimiento . '", biografia = "' . $biografia . '", paginaWeb = "' . $pweb . '", apellidos = "' . $apellidos . '" WHERE usuario.username = "' . $userlog . '";');
 
 			return $this->redirect($this->generateUrl('dwes_libros_perfil'));

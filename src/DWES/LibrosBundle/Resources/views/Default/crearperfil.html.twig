@@ -11,8 +11,6 @@
                     <h3 class="text-center pt-5 pb-5 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
                         <strong>Mis Datos</strong>
                     </h3>
-                    
-
                 </div>
             </div>
         </div> 
@@ -38,10 +36,10 @@
             
                             <div class="card-body text-center">
                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto">
-
+<form name="formUpdatePerfil" action="{{ path('dwes_libros_crearperfil') }}" method="POST">
                                 <p class="text-muted"><small>Sube una nueva foto de perfil</small></p>
                                 <div class="row flex-center">
-                                    <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida" value="{{fotoSubida}}" id="file-upload" type="file"/>
+                                    <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida"  id="file-upload" type="file"/>
                                     <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Borrar</button>
                                 </div>
                             </div>
@@ -49,7 +47,7 @@
                             <!-- Card content -->
                             <div class="card-body text-center">
                                 <!-- Edit Form -->
-                                <form name="formUpdatePerfil" action="{{ path('dwes_libros_crearperfil') }}" method="POST">
+                                
                                     <!--First row-->
                                     <div class="row">
                                         <!--First column-->
