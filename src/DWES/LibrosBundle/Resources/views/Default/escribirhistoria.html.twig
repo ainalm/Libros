@@ -21,13 +21,13 @@
     <!-- Navegación-->
     <ul class="nav nav-tabs nav-justified view gradient-card-header blue-gradient" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">01.Escribe</a>
+            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">01.Ponle un título</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">02. Describe</a>
+            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">02. Personaliza</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">03. Personaliza</a>
+            <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">03. ¡Empieza ya!</a>
         </li>
     </ul>
     <!--/. Navegación-->
@@ -36,100 +36,27 @@
      
         <div class="tab-pane fade active show" id="panel1" role="tabpanel">
             <br>
-                  {% if tit is defined %}
-                 <h2 id="titHistoria"> {{tit}}</h2>
-                {% endif %}
-            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}" target="frame" method="POST"  > 
+                
+              
+            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  > 
                     <!-- target="frame" -->
 
                 <!--Grid row-->
                 <div class="row">
                     <div class="col-md-12">
                 
-  <h2 id="titHistoria"> {{tituloHistoria}} </h2>
-    <div class="md-form ocultaTitulo" >
+
+                <div class="md-form" >
                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="{{titulohistoria}}">
                             <label for="titulohistoria" class="Ltitulohistoria valL">Título de la historia</label>
                         </div>
-                    </div>
+                </div>
 
                       
                 </div>
                 <!--Grid row-->
-                <div id="cln">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="md-form">
-                           
-                                <input type="text" id="titulocapitulo" class="form-control valI" name="titulocapitulo" value="{{titulocapitulo}}">
-                                <label for="titulocapitulo" class="Ltitulocapitulo valL">Título del capítulo</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Grid row-->
-                    <div class="row">
-
-                        <!--Grid column-->
-                        <div class="col-md-12">
-
-                            <div class="md-form">
-                                <textarea type="text" id="contCapitulo" class="md-textarea form-control valI" rows="6" name="contCapitulo" value="{{contCapitulo}}"></textarea>
-                                <label for="contCapitulo" class="LcontCapitulo valL">Contenido del capítulo</label>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--Grid row-->
-
-                </div>
-                <div id="ins"></div>
-                <div class="text-center text-md-left mt-4">
-                   <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Añadir capítulo" onclick="toastr.success('Capítulo añadido con éxito.', '', {positionClass: 'toast-bottom-right'});"></input>
-                </div>
-                <iframe name="frame" style="display: none"></iframe> 
-            </form>
-          
- <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1muestraCP" type="submit" value="Ver capítulos"></input>
-<!--  Contenido capitulos -->
-<div class="row" id="contCapitulos">
-    <div class="col-md-3">
-        <ul class="nav  md-pills pills-primary flex-column" role="tablist"  id="toggleC">
-{% for item in capitulosInsertados %}
-            <li class="nav-item ">
-                <a class="nav-link" data-toggle="tab" href="#{{item.tituloCap}}" role="tab">{{item.tituloCap}}
-                </a>
-            </li>
-            
-        {% endfor %}    
-        </ul>
-    </div>
-    <div class="col-md-9">
-        <!-- Tab panels -->
-        <div class="tab-content vertical">
-        <!--Panel 1-->
-        {% for item in capitulosInsertados %}
-        <div class="tab-pane fade in " id="{{item.tituloCap}}" role="tabpanel">
-
-            <h5 class="my-2 h5">{{item.contenidoCap}}</h5>
-
-        </div>
-        <!--/.Panel 1-->
-        {% endfor %}   
-        </div>
-    </div>
-</div>
-<!--./ Contenido capitulos -->
-        </div>
-        <!--/.Panel 1-->
-
-        <!--Panel 2-->
-        <div class="tab-pane fade " id="panel2" role="tabpanel">
-            <br>
-            <form name="formBusqueda" action="{{ path('dwes_libros_describirLib') }}" method="POST">
-
-
-                <!--Grid row-->
-                <div class="row">
+                 <!--Grid row-->
+                 <div class="row">
 
                     <!--Grid column-->
                     <div class="col-md-12">
@@ -140,10 +67,6 @@
 
                         </div>
                         <h5 class="pb-5">Selecciona un género</h5>
-
-
-
-
                         <div class="row">
 
                             <!--Grid column-->
@@ -204,20 +127,21 @@
                         </div>
                     </div>
                 </div>
-
-                <!--Grid row-->
+                <div id="ins"></div>
                 <div class="text-center text-md-left mt-4">
-                      <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="submit" value="Guardar" ></input>
+                   <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Siguiente: 02.Personaliza" ></input>
                 </div>
+            
+          
+ 
 
-            </form>
         </div>
-        <!--/.Panel 2-->
+        <!--/.Panel 1-->
 
-        <!--Panel 3-->
-        <div class="tab-pane fade" id="panel3" role="tabpanel">
+        <!--Panel 2-->
+        <div class="tab-pane fade " id="panel2" role="tabpanel">
             <br>
-            <form name="formBusqueda" action="{{ path('dwes_libros_contacto') }}" method="POST">
+          
                 <div class="row flex-center">
                     <div class="col-lg-4 col-md-12 mb-4" style="max-width: 200px;">
 
@@ -243,9 +167,46 @@
 
 
                 <div class="text-center text-md-left mt-4">
-                    <a class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso3">Publicar</a>
+                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="submit" value="Siguiente: 03. ¡Empieza ya!" ></input>
                 </div>
 
+                <div class="text-center text-md-left mt-4">
+                     
+                </div>
+        </div>
+        <!--/.Panel 2-->
+
+        <!--Panel 3-->
+        <div class="tab-pane fade" id="panel3" role="tabpanel">
+            <br>
+                <div class="row flex-center">
+                    <div class="col-lg-4 col-md-12 mb-4" style="max-width: 200px;">
+
+                        <div class="view text-center " style="    max-width: 200px;
+                    min-height: 300px;">
+                            <img src="" class="img-fluid" alt="">
+                            <div class="mask flex-center rgba-blue-grey-strong">
+                                <p class="white-text">Título de la historia</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card-body text-center">
+                        <p class="text-muted">Resumen</p>
+                        <div class="row flex-center">
+
+                            <div class="container ml-5 mr-5 mb-4 text-justify ">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                           <br><input type="submit" class="btn pink-gradient btn-rounded waves-effect waves-light" name="empezar" value="Empezar historia" id="paso1" />
+                        </div>
+                </div>   
+               <iframe name="frame" style="display: none"></iframe> 
             </form>
         </div>
         <!--/.Panel 3-->

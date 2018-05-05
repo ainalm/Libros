@@ -1,10 +1,7 @@
 $(document).ready(function() {
-  $("#titHistoria").hide(); //Titulo hisotoria se muestra al crear un libro
+ 
 
-  $("#paso1muestraCP").click(function() {
-    //  Muestra/Oculta Capitulos
-    $("#contCapitulos").toggle();
-  });
+ 
 
   $("#paso1").click(function() {
    
