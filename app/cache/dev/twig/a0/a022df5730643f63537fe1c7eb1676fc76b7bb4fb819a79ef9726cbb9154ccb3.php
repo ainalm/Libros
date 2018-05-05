@@ -186,30 +186,65 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <!--Panel 2-->
         <div class=\"tab-pane fade \" id=\"panel2\" role=\"tabpanel\">
             <br>
-          
-                <div class=\"row flex-center\">
-                    <div class=\"col-lg-4 col-md-12 mb-4\" style=\"max-width: 200px;\">
-
-                        <div class=\"view text-center \" style=\"    max-width: 200px;
-                    min-height: 300px;\">
-                            <img src=\"\" class=\"img-fluid\" alt=\"\">
-                            <div class=\"mask flex-center rgba-blue-grey-strong\">
-                                <p class=\"white-text titPortada\" >Título de la historia</p>
+            <div class=\"container\">
+                
+                <div class=\"row\">
+                  <div class=\"col-8 \">
+                        <div class=\"wrp\">
+                                <div class=\" text-center\">
+                                    <h5 class=\"mb-3 mt-5\">Añade una portada a tu historia</h5>
+                                    <div class=\"row flex-center\">
+                                        <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"fotoSubida\" value=\"\" id=\"file-upload\" type=\"file\">
+                                        <button class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light\">Borrar</button>
+                                    </div>
+                                    <h5 class=\"mb-3 mt-5 mb-4\">O selecciona un color de fondo:</h5>
+                            </div> 
+                                <div class=\"row\" style=\"
+                                margin-left: 20% !important;
+                            \">
+                                  <div class=\"col-3 color rgba-blue-strong\" id=\"rgba-blue-strong\"><div class=\"\"></div></div>
+                                  <div class=\"col-3 color  rgba-red-strong\" id=\"rgba-red-strong\"><div class=\" \"></div></div>
+                                  <div class=\"col-3 color rgba-pink-strong\" id=\"rgba-pink-strong\"><div class=\" \"></div></div>
+                                  <div class=\"col-3 color rgba-indigo-strong\" id=\"rgba-indigo-strong\"><div class=\" \"></div></div>
+                                </div>
+                                <div class=\"row\" style=\"
+                                margin-left: 20% !important;
+                            \">
+                                  <div class=\"col-3 color rgba-teal-strong\" id=\"rgba-teal-strong\"><div class=\"  \"></div></div>
+                                  <div class=\"col-3 color rgba-orange-strong\" id=\" rgba-orange-strong\"><div class=\" \"></div></div>
+                                  <div class=\"col-3 color  rgba-blue-grey-strong\" id=\"rgba-blue-grey-strong\"><div class=\" \"></div></div>
+                                  <div class=\"col-3 color rgba-black-strong\" id=\"rgba-black-strong\"><div class=\" \"></div></div>
+                                </div>
+                                </div>
+                  </div>
+                  <div class=\"col-lg-4 \">
+                    <div class=\"row flex-center\">
+                        <div class=\" col-md-12 \" style=\"max-width: 200px;\">
+    
+                            <div class=\"view text-center \" style=\"    max-width: 200px;
+                        min-height: 300px;\">
+                                <img src=\"\" class=\"img-fluid\" alt=\"\">
+                                <div class=\"mask flex-center rgba-blue-grey-strong \" id=\"colorSelecc\">
+                                    <p class=\"white-text titPortada\" >Título de la historia</p>
+                                </div>
+    
                             </div>
-
+    
                         </div>
-
+    
                     </div>
-
+                    
+                  
+                  
+                  </div>
+               
                 </div>
                 
-                <div class=\"card-body text-center\">
-                        <p class=\"text-muted\"><small>Añade una foto de portada a tu historia</small></p>
-                        <div class=\"row flex-center\">
-                            <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"fotoSubida\" value=\"\" id=\"file-upload\" type=\"file\"/>
-                            <button class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light\">Borrar</button>
-                        </div>
-                </div>   
+                
+                
+              </div>
+
+                  
 
 
                 <div class=\"text-center text-md-left mt-4\">
@@ -231,7 +266,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         <div class=\"view text-center \" style=\"    max-width: 200px;
                     min-height: 300px;\">
                             <img src=\"\" class=\"img-fluid\" alt=\"\">
-                            <div class=\"mask flex-center rgba-blue-grey-strong\">
+                            <div class=\"mask flex-center rgba-blue-grey-strong \"  id=\"colorSelecc1\"> 
                                 <p class=\"white-text titPortada\">Ponme un título</p>
                             </div>
 
@@ -419,30 +454,65 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*         <!--Panel 2-->*/
 /*         <div class="tab-pane fade " id="panel2" role="tabpanel">*/
 /*             <br>*/
-/*           */
-/*                 <div class="row flex-center">*/
-/*                     <div class="col-lg-4 col-md-12 mb-4" style="max-width: 200px;">*/
-/* */
-/*                         <div class="view text-center " style="    max-width: 200px;*/
-/*                     min-height: 300px;">*/
-/*                             <img src="" class="img-fluid" alt="">*/
-/*                             <div class="mask flex-center rgba-blue-grey-strong">*/
-/*                                 <p class="white-text titPortada" >Título de la historia</p>*/
+/*             <div class="container">*/
+/*                 */
+/*                 <div class="row">*/
+/*                   <div class="col-8 ">*/
+/*                         <div class="wrp">*/
+/*                                 <div class=" text-center">*/
+/*                                     <h5 class="mb-3 mt-5">Añade una portada a tu historia</h5>*/
+/*                                     <div class="row flex-center">*/
+/*                                         <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida" value="" id="file-upload" type="file">*/
+/*                                         <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Borrar</button>*/
+/*                                     </div>*/
+/*                                     <h5 class="mb-3 mt-5 mb-4">O selecciona un color de fondo:</h5>*/
+/*                             </div> */
+/*                                 <div class="row" style="*/
+/*                                 margin-left: 20% !important;*/
+/*                             ">*/
+/*                                   <div class="col-3 color rgba-blue-strong" id="rgba-blue-strong"><div class=""></div></div>*/
+/*                                   <div class="col-3 color  rgba-red-strong" id="rgba-red-strong"><div class=" "></div></div>*/
+/*                                   <div class="col-3 color rgba-pink-strong" id="rgba-pink-strong"><div class=" "></div></div>*/
+/*                                   <div class="col-3 color rgba-indigo-strong" id="rgba-indigo-strong"><div class=" "></div></div>*/
+/*                                 </div>*/
+/*                                 <div class="row" style="*/
+/*                                 margin-left: 20% !important;*/
+/*                             ">*/
+/*                                   <div class="col-3 color rgba-teal-strong" id="rgba-teal-strong"><div class="  "></div></div>*/
+/*                                   <div class="col-3 color rgba-orange-strong" id=" rgba-orange-strong"><div class=" "></div></div>*/
+/*                                   <div class="col-3 color  rgba-blue-grey-strong" id="rgba-blue-grey-strong"><div class=" "></div></div>*/
+/*                                   <div class="col-3 color rgba-black-strong" id="rgba-black-strong"><div class=" "></div></div>*/
+/*                                 </div>*/
+/*                                 </div>*/
+/*                   </div>*/
+/*                   <div class="col-lg-4 ">*/
+/*                     <div class="row flex-center">*/
+/*                         <div class=" col-md-12 " style="max-width: 200px;">*/
+/*     */
+/*                             <div class="view text-center " style="    max-width: 200px;*/
+/*                         min-height: 300px;">*/
+/*                                 <img src="" class="img-fluid" alt="">*/
+/*                                 <div class="mask flex-center rgba-blue-grey-strong " id="colorSelecc">*/
+/*                                     <p class="white-text titPortada" >Título de la historia</p>*/
+/*                                 </div>*/
+/*     */
 /*                             </div>*/
-/* */
+/*     */
 /*                         </div>*/
-/* */
+/*     */
 /*                     </div>*/
-/* */
+/*                     */
+/*                   */
+/*                   */
+/*                   </div>*/
+/*                */
 /*                 </div>*/
 /*                 */
-/*                 <div class="card-body text-center">*/
-/*                         <p class="text-muted"><small>Añade una foto de portada a tu historia</small></p>*/
-/*                         <div class="row flex-center">*/
-/*                             <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida" value="" id="file-upload" type="file"/>*/
-/*                             <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Borrar</button>*/
-/*                         </div>*/
-/*                 </div>   */
+/*                 */
+/*                 */
+/*               </div>*/
+/* */
+/*                   */
 /* */
 /* */
 /*                 <div class="text-center text-md-left mt-4">*/
@@ -464,7 +534,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         <div class="view text-center " style="    max-width: 200px;*/
 /*                     min-height: 300px;">*/
 /*                             <img src="" class="img-fluid" alt="">*/
-/*                             <div class="mask flex-center rgba-blue-grey-strong">*/
+/*                             <div class="mask flex-center rgba-blue-grey-strong "  id="colorSelecc1"> */
 /*                                 <p class="white-text titPortada">Ponme un título</p>*/
 /*                             </div>*/
 /* */

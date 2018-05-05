@@ -86,3 +86,14 @@ input[type="file"] {
   
     border-radius: 50%;
 }
+
+
+.color{
+  min-height: 100px;
+  max-width: 100px;
+  min-width: 100px;
+cursor: pointer;
+  margin:10px;
+ 
+}
+

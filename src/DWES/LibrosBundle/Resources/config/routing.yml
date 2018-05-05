@@ -43,3 +43,9 @@ dwes_libros_ajustes:
 dwes_libros_describirLib:
     path: /describirLib/
     defaults: { _controller: DWESLibrosBundle:Default:describirLib }
+
+dwes_chistes_capitulo:    
+    path: /capitulo/{id}/
+    defaults: { _controller: DWESChistesBundle:Default:capitulo }
+    requirements:
+        page: \d+

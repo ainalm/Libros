@@ -91,7 +91,7 @@ class DefaultController extends Controller
 
 	}
 
-	public function describirLibAction()
+	public function personalizarLibAction()
 	{//TODO:
 		
 		/* Guardo en el array los campos del form*/
@@ -130,11 +130,7 @@ class DefaultController extends Controller
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
-	public function contactoAction()
-	{
-		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:contacto.html.twig', $params);
-	}
+
 	public function escribirhistoriaAction()
 	{
 			/*Generos:
@@ -148,19 +144,15 @@ class DefaultController extends Controller
 		7:Romance
 		8:Drama
 */
-
 		$userlog = $this->getUser()->getUsername();
 		$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'');/* Guardo en el array los campos del form*/
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
-		
 		$titulohistoria = $peticion->request->get('titulohistoria'); //Obtengo el valor de los campos del Form
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
 
-		
-			
 		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
 		$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
 		$numExist=$connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
@@ -169,19 +161,13 @@ class DefaultController extends Controller
 				/* FIXME: Titulo duplicado */
 			if (empty($numExist) && $numExist== 0) {
 				if (isset($titulohistoria) && isset($resuHist) && isset($genero) ) {
-					
 					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", NULL, "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL);');
-		
 			}
-
 			}else {
 				var_dump("ya existe el libro");
 				exit;
 			}
-
-
-			
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 		}
 	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
@@ -223,6 +209,10 @@ class DefaultController extends Controller
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', array('suscripciones' =>$result));
 	}
-
+	public function contactoAction()
+	{
+		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		return $this->render('DWESLibrosBundle:Default:contacto.html.twig', $params);
+	}
 }
 ?>
