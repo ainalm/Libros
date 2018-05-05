@@ -56,13 +56,13 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
     <!-- Navegación-->
     <ul class=\"nav nav-tabs nav-justified view gradient-card-header blue-gradient\" role=\"tablist\">
         <li class=\"nav-item\">
-            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#panel1\" role=\"tab\">01.Ponle un título</a>
+            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#panel1\" id=\"ap1\" role=\"tab\">01.Ponle un título</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#panel2\" role=\"tab\">02. Personaliza</a>
+            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#panel2\" id=\"ap2\" role=\"tab\">02. Personaliza</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#panel3\" role=\"tab\">03. ¡Empieza ya!</a>
+            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#panel3\" id=\"ap3\"  role=\"tab\">03. ¡Empieza ya!</a>
         </li>
     </ul>
     <!--/. Navegación-->
@@ -76,7 +76,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
             <form name=\"formNuevoCapitulo\" action=\"";
         // line 41
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria");
-        echo "\"  method=\"POST\"  > 
+        echo "\" target=\"frame\" method=\"POST\"  > 
                     <!-- target=\"frame\" -->
 
                 <!--Grid row-->
@@ -194,7 +194,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                     min-height: 300px;\">
                             <img src=\"\" class=\"img-fluid\" alt=\"\">
                             <div class=\"mask flex-center rgba-blue-grey-strong\">
-                                <p class=\"white-text\">Título de la historia</p>
+                                <p class=\"white-text titPortada\" >Título de la historia</p>
                             </div>
 
                         </div>
@@ -232,7 +232,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                     min-height: 300px;\">
                             <img src=\"\" class=\"img-fluid\" alt=\"\">
                             <div class=\"mask flex-center rgba-blue-grey-strong\">
-                                <p class=\"white-text\">Título de la historia</p>
+                                <p class=\"white-text titPortada\">Ponme un título</p>
                             </div>
 
                         </div>
@@ -244,10 +244,12 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         <p class=\"text-muted\">Resumen</p>
                         <div class=\"row flex-center\">
 
-                            <div class=\"container ml-5 mr-5 mb-4 text-justify \">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class=\"container ml-5 mr-5 mb-4 text-justify text-center\">
+                            <div class=\"alert alert-danger contrAlert\" role=\"alert\">
+                            Vuelve al  <a  id=\"back\" href=\"#\" class=\"alert-link\">PASO 1</a> y ponme una descripción atractiva!.
+                            </div>
+
+                            <p id=\"resumen\"></p>
                             </div>
                            <br><input  class=\"btn pink-gradient btn-rounded waves-effect waves-light\" name=\"empezar\" value=\"Empezar historia\" id=\"paso3\" type=\"submit\"/>
                         </div>
@@ -296,13 +298,13 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*     <!-- Navegación-->*/
 /*     <ul class="nav nav-tabs nav-justified view gradient-card-header blue-gradient" role="tablist">*/
 /*         <li class="nav-item">*/
-/*             <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">01.Ponle un título</a>*/
+/*             <a class="nav-link active" data-toggle="tab" href="#panel1" id="ap1" role="tab">01.Ponle un título</a>*/
 /*         </li>*/
 /*         <li class="nav-item">*/
-/*             <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">02. Personaliza</a>*/
+/*             <a class="nav-link" data-toggle="tab" href="#panel2" id="ap2" role="tab">02. Personaliza</a>*/
 /*         </li>*/
 /*         <li class="nav-item">*/
-/*             <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">03. ¡Empieza ya!</a>*/
+/*             <a class="nav-link" data-toggle="tab" href="#panel3" id="ap3"  role="tab">03. ¡Empieza ya!</a>*/
 /*         </li>*/
 /*     </ul>*/
 /*     <!--/. Navegación-->*/
@@ -313,7 +315,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*             <br>*/
 /*                 */
 /*               */
-/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  > */
+/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}" target="frame" method="POST"  > */
 /*                     <!-- target="frame" -->*/
 /* */
 /*                 <!--Grid row-->*/
@@ -425,7 +427,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     min-height: 300px;">*/
 /*                             <img src="" class="img-fluid" alt="">*/
 /*                             <div class="mask flex-center rgba-blue-grey-strong">*/
-/*                                 <p class="white-text">Título de la historia</p>*/
+/*                                 <p class="white-text titPortada" >Título de la historia</p>*/
 /*                             </div>*/
 /* */
 /*                         </div>*/
@@ -463,7 +465,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     min-height: 300px;">*/
 /*                             <img src="" class="img-fluid" alt="">*/
 /*                             <div class="mask flex-center rgba-blue-grey-strong">*/
-/*                                 <p class="white-text">Título de la historia</p>*/
+/*                                 <p class="white-text titPortada">Ponme un título</p>*/
 /*                             </div>*/
 /* */
 /*                         </div>*/
@@ -475,10 +477,12 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         <p class="text-muted">Resumen</p>*/
 /*                         <div class="row flex-center">*/
 /* */
-/*                             <div class="container ml-5 mr-5 mb-4 text-justify ">*/
-/*                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/
-/*                             Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/
-/*                             Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>*/
+/*                             <div class="container ml-5 mr-5 mb-4 text-justify text-center">*/
+/*                             <div class="alert alert-danger contrAlert" role="alert">*/
+/*                             Vuelve al  <a  id="back" href="#" class="alert-link">PASO 1</a> y ponme una descripción atractiva!.*/
+/*                             </div>*/
+/* */
+/*                             <p id="resumen"></p>*/
 /*                             </div>*/
 /*                            <br><input  class="btn pink-gradient btn-rounded waves-effect waves-light" name="empezar" value="Empezar historia" id="paso3" type="submit"/>*/
 /*                         </div>*/

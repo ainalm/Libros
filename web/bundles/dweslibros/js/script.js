@@ -1,21 +1,10 @@
 $(document).ready(function() {
  
-
- 
-
-  $("#paso1").click(function() {
-   
-
-    /* 
-      let cloneCount = 1;
-      var clone = $('#cln').clone();
- clone.find("input").val("");
- clone.find("textarea").val("");
- clone.find("#titulocapitulo").attr('id', 'titulocapitulo'+ cloneCount++);
- clone.find("#contCapitulo").attr('id', 'contCapitulo'+ cloneCount++);
- clone.insertBefore('#ins');
- */
-  });
+  $("#contact-message").bind("keyup change", function(e) {
+    // do stuff!
+    console.log("e");
+    $('.contrAlert').hide();
+})
 });
 
 
@@ -55,36 +44,96 @@ $("#crearCuenta").on("click", function(e) {
 $("#paso1").on("click", function(e) {
   //Valida form Escribir capitulos
   var titulo= $("#titulohistoria");
-  var Ltitulo= $(".Ltitulohistoria");
 
   var resumen= $("#contact-message");
+  var Ltitulo= $(".Ltitulohistoria");
+
   var Lresumen= $(".Lcontact-message");
+
+  var isChecked = jQuery("input[name=genero]:checked").val();
   if (
-    titulo.val() == "" || resumen.val() == "") {
+    titulo.val() == "" || resumen.val() == "" ) {
     e.preventDefault();
     $(".valI").css("border-bottom", " 1px solid red ");
     $(".valL").css("color", "red ");
+  
+  }else{
+   
   }
 
 
   titulo.keydown(function(event) {
     validaCampo(titulo, Ltitulo);
+  
   });
 
   resumen.keydown(function(event) {
     validaCampo(resumen, Lresumen);
+   
   });
 
   //Check género seleccionado
-  var isChecked = jQuery("input[name=genero]:checked").val();
+
      if(!isChecked){
       $(".form-check-label").css("color","red");
      }else{
          //alert('You have selected :'+isChecked);
          $(".form-check-label").css("color","black");
+         
      }
 
 
+//Lleva al siguiente tab
+
+if (
+  titulo.val() !== "" &&  resumen.val() !== "" && isChecked) {
+    $("#ap1").attr("class", "nav-link");
+    $("#ap1").attr("aria-selected", "false");
+    $("#panel1").attr("class", "tab-pane fade");
+  
+    $("#ap2").attr("class", "nav-link active show");
+    $("#ap2").attr("aria-selected", "true");
+    $("#panel2").attr("class", "tab-pane fade active show");
+
+ //Muestro los datos del libro insertado
+    $(".titPortada").text(titulo.val());
+    $("#resumen").text(resumen.val());
+    
+}
+
+
+});
+
+
+
+if($("#contact-message").val() !==""){
+  alert("no está vacio")
+  $('.contrAlert').hide();
+}
+$("#back").on("click", function(e) {
+
+  $
+
+  $("#ap3").attr("class", "nav-link");
+  $("#ap3").attr("aria-selected", "false");
+  $("#panel3").attr("class", "tab-pane fade");
+
+  $("#ap1").attr("class", "nav-link active show");
+  $("#ap1").attr("aria-selected", "true");
+  $("#panel1").attr("class", "tab-pane fade active show");
+});
+
+$("#paso2").on("click", function(e) {
+
+  
+
+  $("#ap2").attr("class", "nav-link");
+  $("#ap2").attr("aria-selected", "false");
+  $("#panel2").attr("class", "tab-pane fade");
+
+  $("#ap3").attr("class", "nav-link active show");
+  $("#ap3").attr("aria-selected", "true");
+  $("#panel3").attr("class", "tab-pane fade active show");
 });
 
 $("#entrar").on("click", function(e) {

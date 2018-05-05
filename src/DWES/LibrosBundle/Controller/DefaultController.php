@@ -162,17 +162,22 @@ class DefaultController extends Controller
 		
 			
 		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
+		$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
+		$numExist=$connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
 
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
-				/* Si el título no está vacío hago 2 inserts :1º Añadir libro, 2º Registro la acción en opereacionlibro */
-			if ($titulohistoria != $tituloLibro) {
+				/* FIXME: Titulo duplicado */
+			if (empty($numExist) && $numExist== 0) {
 				if (isset($titulohistoria) && isset($resuHist) && isset($genero) ) {
-					$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
+					
 					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", NULL, "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL);');
 		
 			}
 
+			}else {
+				var_dump("ya existe el libro");
+				exit;
 			}
 
 
