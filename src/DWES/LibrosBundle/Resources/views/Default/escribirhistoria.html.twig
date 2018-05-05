@@ -38,7 +38,7 @@
             <br>
                 
               
-            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}" target="frame" method="POST"  > 
+            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  > 
                     <!-- target="frame" -->
 
                 <!--Grid row-->
@@ -129,10 +129,10 @@
                 </div>
                 <div id="ins"></div>
                 <div class="text-center text-md-left mt-4">
-                   <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Siguiente: 02.Personaliza" ></input>
+                   <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" value="Siguiente: 02.Personaliza" ></input>
                 </div>
              <iframe name="frame" style="display: none"></iframe> 
-            </form>
+         
           
  
 
@@ -216,7 +216,6 @@
         <!--Panel 3-->
         <div class="tab-pane fade" id="panel3" role="tabpanel">
             <br>
-            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}" target="frame" method="POST"  > 
                 <div class="row flex-center">
                     <div class="col-lg-4 col-md-12 mb-4" style="max-width: 200px;">
 
@@ -243,10 +242,14 @@
 
                             <p id="resumen"></p>
                             </div>
-                           <br><input  class="btn pink-gradient btn-rounded waves-effect waves-light" name="empezar" value="Empezar historia" id="paso3" type="submit"/>
+                            {% if idLibro is defined %}
+                            {{idLibro}}
+                          {% endif %}
+                           <br> <button type="submit">AQUI</button>
+                           
                         </div>
                 </div> 
-                </form>
+            </form>
         </div>
         <!--/.Panel 3-->
     </div>

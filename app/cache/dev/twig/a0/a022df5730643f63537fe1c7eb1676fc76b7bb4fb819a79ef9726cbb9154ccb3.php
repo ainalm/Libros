@@ -76,7 +76,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
             <form name=\"formNuevoCapitulo\" action=\"";
         // line 41
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria");
-        echo "\" target=\"frame\" method=\"POST\"  > 
+        echo "\"  method=\"POST\"  > 
                     <!-- target=\"frame\" -->
 
                 <!--Grid row-->
@@ -173,10 +173,10 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                 </div>
                 <div id=\"ins\"></div>
                 <div class=\"text-center text-md-left mt-4\">
-                   <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" type=\"submit\" value=\"Siguiente: 02.Personaliza\" ></input>
+                   <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" value=\"Siguiente: 02.Personaliza\" ></input>
                 </div>
              <iframe name=\"frame\" style=\"display: none\"></iframe> 
-            </form>
+         
           
  
 
@@ -286,9 +286,21 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                             <p id=\"resumen\"></p>
                             </div>
-                           <br><input  class=\"btn pink-gradient btn-rounded waves-effect waves-light\" name=\"empezar\" value=\"Empezar historia\" id=\"paso3\" type=\"submit\"/>
+                            ";
+        // line 245
+        if (array_key_exists("idLibro", $context)) {
+            // line 246
+            echo "                            ";
+            echo twig_escape_filter($this->env, (isset($context["idLibro"]) ? $context["idLibro"] : $this->getContext($context, "idLibro")), "html", null, true);
+            echo "
+                          ";
+        }
+        // line 248
+        echo "                           <br> <button type=\"submit\">AQUI</button>
+                           
                         </div>
                 </div> 
+            </form>
         </div>
         <!--/.Panel 3-->
     </div>
@@ -307,7 +319,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  299 => 248,  293 => 246,  291 => 245,  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -350,7 +362,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*             <br>*/
 /*                 */
 /*               */
-/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}" target="frame" method="POST"  > */
+/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  > */
 /*                     <!-- target="frame" -->*/
 /* */
 /*                 <!--Grid row-->*/
@@ -441,10 +453,10 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 </div>*/
 /*                 <div id="ins"></div>*/
 /*                 <div class="text-center text-md-left mt-4">*/
-/*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Siguiente: 02.Personaliza" ></input>*/
+/*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" value="Siguiente: 02.Personaliza" ></input>*/
 /*                 </div>*/
 /*              <iframe name="frame" style="display: none"></iframe> */
-/*             </form>*/
+/*          */
 /*           */
 /*  */
 /* */
@@ -554,9 +566,14 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                             <p id="resumen"></p>*/
 /*                             </div>*/
-/*                            <br><input  class="btn pink-gradient btn-rounded waves-effect waves-light" name="empezar" value="Empezar historia" id="paso3" type="submit"/>*/
+/*                             {% if idLibro is defined %}*/
+/*                             {{idLibro}}*/
+/*                           {% endif %}*/
+/*                            <br> <button type="submit">AQUI</button>*/
+/*                            */
 /*                         </div>*/
 /*                 </div> */
+/*             </form>*/
 /*         </div>*/
 /*         <!--/.Panel 3-->*/
 /*     </div>*/

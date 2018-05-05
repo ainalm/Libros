@@ -30,7 +30,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
         // line 2
         echo "<!--Intro Section-->
 <!--Intro Section-->
-<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');\">
+<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;\">
     <div class=\"flex-center  \" style=\"       background-color: rgba(17, 27, 43, 0.7);\">
         <div class=\"container my-5 pt-5\">
 
@@ -132,7 +132,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
                 <!--Panel-->
                 <a href=\"";
         // line 80
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_suscripcion");
         echo "\">
                     <div class=\"card card-body hoverable cajaAjustes\">
                         <i class=\"mb-2\">
@@ -152,22 +152,8 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
     </section>
     <!-- /.Second section -->
 </div>
-";
-        // line 96
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["suscripciones"]) ? $context["suscripciones"] : $this->getContext($context, "suscripciones")));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 97
-            echo "    ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
-            echo "
- ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
-        echo "
+
+
 ";
     }
 
@@ -183,13 +169,13 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 
     public function getDebugInfo()
     {
-        return array (  170 => 99,  161 => 97,  157 => 96,  141 => 83,  135 => 80,  119 => 67,  113 => 64,  98 => 52,  92 => 49,  82 => 41,  76 => 36,  70 => 33,  57 => 22,  54 => 21,  31 => 2,  11 => 1,);
+        return array (  141 => 83,  135 => 80,  119 => 67,  113 => 64,  98 => 52,  92 => 49,  82 => 41,  76 => 36,  70 => 33,  57 => 22,  54 => 21,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
 /* <!--Intro Section-->*/
 /* <!--Intro Section-->*/
-/* <div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;">*/
 /*     <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">*/
 /*         <div class="container my-5 pt-5">*/
 /* */
@@ -265,7 +251,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*             <!-- Fourth column -->*/
 /*             <div class="col-md-3 mb-5">*/
 /*                 <!--Panel-->*/
-/*                 <a href="{{ path('dwes_libros_crearperfil') }}">*/
+/*                 <a href="{{ path('dwes_libros_suscripcion') }}">*/
 /*                     <div class="card card-body hoverable cajaAjustes">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/credit-card.png') }}"> </img>*/
@@ -281,8 +267,6 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*     </section>*/
 /*     <!-- /.Second section -->*/
 /* </div>*/
-/* {% for item in suscripciones %}*/
-/*     {{item.tipoSuscripcion}}*/
-/*  {% endfor %}*/
+/* */
 /* */
 /* {% endblock %}*/

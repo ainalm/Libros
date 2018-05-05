@@ -1,7 +1,7 @@
 {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}
 <!--Intro Section-->
 <!--Intro Section-->
-<div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">
+<div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;">
     <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">
         <div class="container my-5 pt-5">
 
@@ -77,7 +77,7 @@
             <!-- Fourth column -->
             <div class="col-md-3 mb-5">
                 <!--Panel-->
-                <a href="{{ path('dwes_libros_crearperfil') }}">
+                <a href="{{ path('dwes_libros_suscripcion') }}">
                     <div class="card card-body hoverable cajaAjustes">
                         <i class="mb-2">
                             <img src="{{ asset('bundles/dweslibros/img/icons/credit-card.png') }}"> </img>
@@ -93,8 +93,6 @@
     </section>
     <!-- /.Second section -->
 </div>
-{% for item in suscripciones %}
-    {{item.tipoSuscripcion}}
- {% endfor %}
+
 
 {% endblock %}

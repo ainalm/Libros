@@ -225,13 +225,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::describirLibAction',  '_route' => 'dwes_libros_describirLib',);
         }
 
-        // dwes_chistes_capitulo
-        if (0 === strpos($pathinfo, '/capitulo') && preg_match('#^/capitulo/(?P<id>[^/]++)/?$#s', $pathinfo, $matches)) {
+        // dwes_libros_capitulo
+        if (rtrim($pathinfo, '/') === '/capitulo') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_chistes_capitulo');
+                return $this->redirect($pathinfo.'/', 'dwes_libros_capitulo');
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_chistes_capitulo')), array (  '_controller' => 'DWESChistesBundle:Default:capitulo',));
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::capituloAction',  '_route' => 'dwes_libros_capitulo',);
+        }
+
+        // dwes_libros_suscripcion
+        if (rtrim($pathinfo, '/') === '/suscripcion') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_suscripcion');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::suscripcionAction',  '_route' => 'dwes_libros_suscripcion',);
         }
 
         // homepage

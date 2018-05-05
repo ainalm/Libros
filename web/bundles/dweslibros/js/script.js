@@ -6,6 +6,7 @@ $(document).ready(function() {
   });
 });
 
+
 /********************************
  * VALIDACIÓN FORMS
  *******************************/
@@ -37,6 +38,7 @@ $("#crearCuenta").on("click", function(e) {
 });
 
 $("#paso1").on("click", function(e) {
+  
   //Valida form Escribir capitulos
   var titulo = $("#titulohistoria");
 
@@ -73,6 +75,7 @@ $("#paso1").on("click", function(e) {
   //Lleva al siguiente tab
 
   if (titulo.val() !== "" && resumen.val() !== "" && isChecked) {
+
     $("#ap1").attr("class", "nav-link");
     $("#ap1").attr("aria-selected", "false");
     $("#panel1").attr("class", "tab-pane fade");

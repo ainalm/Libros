@@ -143,7 +143,7 @@ class DefaultController extends Controller
 		6:Poesía
 		7:Romance
 		8:Drama
-*/
+		*/
 		$userlog = $this->getUser()->getUsername();
 		$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'');/* Guardo en el array los campos del form*/
 
@@ -154,26 +154,37 @@ class DefaultController extends Controller
 		$genero = $peticion->request->get('genero');
 
 		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
-		$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
+		$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id del genero seleccionado
 		$numExist=$connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
 
+		$idLibro= "" ;
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
-				/* FIXME: Titulo duplicado */
+				/* FIXME: Evitar meter libros duplicado */
 			if (empty($numExist) && $numExist== 0) {
 				if (isset($titulohistoria) && isset($resuHist) && isset($genero) ) {
 					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", NULL, "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL);');
-			}
+			$idLibro=$connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
+			
+				
+		}
 			}else {
 				var_dump("ya existe el libro");
 				exit;
 			}
-		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
+			
+			$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'','idLibro'=>$idLibro);
+			
+		//return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
+		return $this->redirect($this->generateUrl('dwes_libros_capitulo'));
 		}
 	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
-
+public function capituloAction(){
+	$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
+}
 
 	public function perfilAction()
 	{
@@ -198,6 +209,18 @@ class DefaultController extends Controller
 
 	public function ajustesAction()
 	{
+
+		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', $params);
+	}
+	public function contactoAction()
+	{
+		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		return $this->render('DWESLibrosBundle:Default:contacto.html.twig', $params);
+	}
+	public function suscripcionAction()
+	{
+		
 		$em = $this->getDoctrine()->getManager(); //Llamada a la BD
 
         $QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
@@ -207,12 +230,7 @@ class DefaultController extends Controller
 
 		$result = $statement->fetchAll(); //Obtengo los datos		
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', array('suscripciones' =>$result));
-	}
-	public function contactoAction()
-	{
-		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:contacto.html.twig', $params);
+		return $this->render('DWESLibrosBundle:Default:suscripcion.html.twig', array('suscripciones' =>$result));
 	}
 }
 ?>
