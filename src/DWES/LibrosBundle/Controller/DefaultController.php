@@ -137,36 +137,42 @@ class DefaultController extends Controller
 	}
 	public function escribirhistoriaAction()
 	{
+			/*Generos:
+		0:Default
+		1:Aventura
+		2:Acción
+		3:Terror	
+		4:Fantasía
+		5:Misterio
+		6:Poesía
+		7:Romance
+		8:Drama
+*/
+
 		$userlog = $this->getUser()->getUsername();
-		
-			/* Guardo en el array los campos del form*/
-		$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'');
+		$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'');/* Guardo en el array los campos del form*/
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
-		//Obtengo el valor de los campos del Form
-		$titulohistoria = $peticion->request->get('titulohistoria');
+		
+		$titulohistoria = $peticion->request->get('titulohistoria'); //Obtengo el valor de los campos del Form
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
 
 		
-		//Conexión con la BD 1º Metodo
-		$connection = $this->get("database_connection");	
+			
+		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
 
-		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-				var_dump("hola");
-				exit;
+		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
 				/* Si el título no está vacío hago 2 inserts :1º Añadir libro, 2º Registro la acción en opereacionlibro */
 			if ($titulohistoria != $tituloLibro) {
-				if (isset($titulohistoria) && isset($titulocapitulo) && isset($contCapitulo) ) {
-	
-				
+				if (isset($titulohistoria) && isset($resuHist) && isset($genero) ) {
+					$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
+					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma)
+					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", NULL, "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL);');
 		
 			}
 
-			} else {
-				if (isset($titulocapitulo) && isset($contCapitulo) ) {
-				}
 			}
 
 

@@ -57,30 +57,32 @@ $("#paso1").on("click", function(e) {
   var titulo= $("#titulohistoria");
   var Ltitulo= $(".Ltitulohistoria");
 
-  var titulocp= $("#titulocapitulo");
-  var Ltitulocp= $(".Ltitulocapitulo");
-
-  var contCapitulo= $("#contCapitulo");
-  var LcontCapitulo= $(".LcontCapitulo");
+  var resumen= $("#contact-message");
+  var Lresumen= $(".Lcontact-message");
   if (
-    titulo.val() == "" || titulocp.val() == "" || contCapitulo.val() == "") {
+    titulo.val() == "" || resumen.val() == "") {
     e.preventDefault();
     $(".valI").css("border-bottom", " 1px solid red ");
     $(".valL").css("color", "red ");
   }
- $("#titHistoria").show();
-    $(".ocultaTitulo").hide();
+
+
   titulo.keydown(function(event) {
     validaCampo(titulo, Ltitulo);
   });
 
-  titulocp.keydown(function(event) {
-    validaCampo(titulocp, Ltitulocp);
+  resumen.keydown(function(event) {
+    validaCampo(resumen, Lresumen);
   });
 
-  contCapitulo.keydown(function(event) {
-    validaCampo(contCapitulo, LcontCapitulo);
-  });
+  //Check género seleccionado
+  var isChecked = jQuery("input[name=genero]:checked").val();
+     if(!isChecked){
+      $(".form-check-label").css("color","red");
+     }else{
+         //alert('You have selected :'+isChecked);
+         $(".form-check-label").css("color","black");
+     }
 
 
 });

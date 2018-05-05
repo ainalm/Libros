@@ -103,11 +103,11 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                     <div class=\"col-md-12\">
 
                         <div class=\"md-form mb-5\">
-                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control\" rows=\"6\" name=\"resuHist\" value=\"";
+                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"6\" name=\"resuHist\" value=\"";
         // line 65
         echo twig_escape_filter($this->env, (isset($context["resuHist"]) ? $context["resuHist"] : $this->getContext($context, "resuHist")), "html", null, true);
         echo "\"></textarea>
-                            <label for=\"contact-message\">Resume tu historia:</label>
+                            <label for=\"contact-message\" class=\"Lcontact-message valL\">Resume tu historia:</label>
 
                         </div>
                         <h5 class=\"pb-5\">Selecciona un género</h5>
@@ -175,7 +175,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                 <div class=\"text-center text-md-left mt-4\">
                    <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" type=\"submit\" value=\"Siguiente: 02.Personaliza\" ></input>
                 </div>
-            
+             <iframe name=\"frame\" style=\"display: none\"></iframe> 
+            </form>
           
  
 
@@ -201,6 +202,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                     </div>
 
                 </div>
+                
                 <div class=\"card-body text-center\">
                         <p class=\"text-muted\"><small>Añade una foto de portada a tu historia</small></p>
                         <div class=\"row flex-center\">
@@ -247,11 +249,9 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
-                           <br><input type=\"submit\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" name=\"empezar\" value=\"Empezar historia\" id=\"paso1\" />
+                           <br><input  class=\"btn pink-gradient btn-rounded waves-effect waves-light\" name=\"empezar\" value=\"Empezar historia\" id=\"paso3\" type=\"submit\"/>
                         </div>
-                </div>   
-               <iframe name=\"frame\" style=\"display: none\"></iframe> 
-            </form>
+                </div> 
         </div>
         <!--/.Panel 3-->
     </div>
@@ -337,8 +337,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     <div class="col-md-12">*/
 /* */
 /*                         <div class="md-form mb-5">*/
-/*                             <textarea type="text" id="contact-message" class="md-textarea form-control" rows="6" name="resuHist" value="{{resuHist}}"></textarea>*/
-/*                             <label for="contact-message">Resume tu historia:</label>*/
+/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="6" name="resuHist" value="{{resuHist}}"></textarea>*/
+/*                             <label for="contact-message" class="Lcontact-message valL">Resume tu historia:</label>*/
 /* */
 /*                         </div>*/
 /*                         <h5 class="pb-5">Selecciona un género</h5>*/
@@ -406,7 +406,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 <div class="text-center text-md-left mt-4">*/
 /*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" type="submit" value="Siguiente: 02.Personaliza" ></input>*/
 /*                 </div>*/
-/*             */
+/*              <iframe name="frame" style="display: none"></iframe> */
+/*             </form>*/
 /*           */
 /*  */
 /* */
@@ -432,6 +433,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     </div>*/
 /* */
 /*                 </div>*/
+/*                 */
 /*                 <div class="card-body text-center">*/
 /*                         <p class="text-muted"><small>Añade una foto de portada a tu historia</small></p>*/
 /*                         <div class="row flex-center">*/
@@ -478,11 +480,9 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                             Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/
 /*                             Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>*/
 /*                             </div>*/
-/*                            <br><input type="submit" class="btn pink-gradient btn-rounded waves-effect waves-light" name="empezar" value="Empezar historia" id="paso1" />*/
+/*                            <br><input  class="btn pink-gradient btn-rounded waves-effect waves-light" name="empezar" value="Empezar historia" id="paso3" type="submit"/>*/
 /*                         </div>*/
-/*                 </div>   */
-/*                <iframe name="frame" style="display: none"></iframe> */
-/*             </form>*/
+/*                 </div> */
 /*         </div>*/
 /*         <!--/.Panel 3-->*/
 /*     </div>*/
