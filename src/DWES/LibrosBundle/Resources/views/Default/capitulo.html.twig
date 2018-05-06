@@ -35,8 +35,11 @@
             <!-- SideNav slide-out button -->
           
             <!-- Breadcrumb-->
-            <div class="breadcrumb-dn mr-auto">
-                <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p>
+            <div class="">
+                {# <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}
+                <button type="button" class="btn purple-gradient btn-sm">Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>
+                <span class="text-dark small pr-2 cl"> 2018-05-04 18:39</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>
+                <span class="text-dark  font-weight-bold pr-2 cl" id="palab">- 0</span><span class="text-dark  pr-2 cl">palabras</span>
             </div>
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
           
@@ -57,12 +60,12 @@
                 </li>
                  <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Aumentar letra" > <i class="mb-2">
-                            <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letra+"> </img> 
+                            <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letraUp"> </img> 
                         </i></a>
                 </li>
                   <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Desminuir letra" > <i class="mb-2">
-                            <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letra-"> </img> 
+                            <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letraDown"> </img> 
                         </i></a>
                 </li>
                 <li class="nav-item">
@@ -94,7 +97,7 @@
 
                 <div class="md-form" >
                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="">
-                            <label for="titulohistoria" class="Ltitulohistoria valL">Título del capítulo #1</label>
+                            <label for="titulohistoria" class="Ltitulohistoria valL cl"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>
                         </div>
                 </div>
 
@@ -107,7 +110,7 @@
 
                         <div class="md-form mb-5">
                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="14"  name="resuHist" value=""></textarea>
-                            <label for="contact-message" class="Lcontact-message valL">Escriba su historia aquí...</label>
+                            <label for="contact-message" class="Lcontact-message valL cl">Escriba su historia aquí...</label>
 
                         </div>
                     </div>

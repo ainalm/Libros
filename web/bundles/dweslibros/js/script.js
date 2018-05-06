@@ -170,7 +170,7 @@ var elem = document.getElementById('colorSelecc');
  });
 
 
- 
+ //Cambio el color de la página según el icono seleccionado (CAPITULO)
 
  $("#sefia").on("click",function(e) {
   console.log($(this).attr('src'));
@@ -181,6 +181,13 @@ var elem = document.getElementById('colorSelecc');
   $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/sunset-selec.png");
   $("#negra").attr("src","/Libros/web/bundles/dweslibros/img/icons/moon.png");
   $("#blanca").attr("src","/Libros/web/bundles/dweslibros/img/icons/sun.png");
+
+   //Color de fuente
+   $("#contact-message").css("color", " black");
+   $("#titulohistoria").css("color", " black");
+   
+ 
+   $('.cl').attr('style', 'color: #4285f4 !important');
 });
 
 
@@ -196,6 +203,13 @@ $("#blanca").on("click",function(e) {
   $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/sun-selec.png");
   $("#sefia").attr("src","/Libros/web/bundles/dweslibros/img/icons/sunset.png");
   $("#negra").attr("src","/Libros/web/bundles/dweslibros/img/icons/moon.png");
+
+  //Color de fuente
+  $("#contact-message").css("color", " black");
+  $("#titulohistoria").css("color", " black");
+  
+
+  $('.cl').attr('style', 'color: #4285f4 !important');
 });
 
 $("#negra").on("click",function(e) {
@@ -206,4 +220,54 @@ $("#negra").on("click",function(e) {
   $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/moon-selec.png");
   $("#sefia").attr("src","/Libros/web/bundles/dweslibros/img/icons/dark-sunset.png");
   $("#blanca").attr("src","/Libros/web/bundles/dweslibros/img/icons/dark-sun.png");
+  $("#contact-message").css("color", " #efe8e8");
+  $("#titulohistoria").css("color", " #efe8e8");
+ 
+  $('.cl').attr('style', 'color: #d65d69 !important');
+});
+
+//Cuento los carácteres y palabras introducidas
+
+
+
+$("#contact-message").keydown(function(event) {
+  char_count = $("#contact-message").val().length;
+word_count = $("#contact-message").val().split(" ").length;
+
+  $("#carac").text(char_count);
+  $("#palab").text(word_count);
+  
+});
+
+
+//Cambio del tamaño fuente (CAPITULO)
+// When + or - buttons are clicked the font size of the h1 is increased/decreased by 2
+// The max is set to 50px for this demo, the min is set by min font in the user's style sheet
+
+function getSize() {
+  size = $( "#contact-message" ).css( "font-size" );
+  size = parseInt(size, 10);
+ // $( "#font-size" ).text(  size  );
+}
+
+//Valor inicial de fontSize
+getSize();
+
+$( "#letraUp" ).on( "click", function() {
+  console.log("+")
+  
+  // parse font size
+  if ((size + 2) <= 50) {
+    $( "#contact-message" ).css( "font-size", "+=2" );
+   
+  }
+});
+
+$( "#letraDown" ).on( "click", function() {
+  console.log("-")
+  
+  if ((size - 2) >= 12) {
+    $( "#contact-message" ).css( "font-size", "-=2" );
+  
+  }
 });

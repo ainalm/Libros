@@ -69,15 +69,19 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
             <!-- SideNav slide-out button -->
           
             <!-- Breadcrumb-->
-            <div class=\"breadcrumb-dn mr-auto\">
-                <p><i class=\"fa fa-book pr-2\" aria-hidden=\"true\"></i>Título de la Historia</p>
+            <div class=\"\">
+                ";
+        // line 40
+        echo "                <button type=\"button\" class=\"btn purple-gradient btn-sm\">Guardar</button> <span class=\"green-text font-weight-bold pr-2 small\">Grabado</span>
+                <span class=\"text-dark small pr-2 cl\"> 2018-05-04 18:39</span><span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"carac\">| 0</span><span class=\"text-dark  cl\">caráceteres </span>
+                <span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"palab\">- 0</span><span class=\"text-dark  pr-2 cl\">palabras</span>
             </div>
             <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
           
                 <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla blanca\"> <i class=\"mb-2\">
                             <img src=\"";
-        // line 45
+        // line 48
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sun-selec.png"), "html", null, true);
         echo "\" id=\"blanca\" > </img>
                         </i></a>
@@ -85,7 +89,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                 <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla sefia\" > <i class=\"mb-2\">
                             <img src=\"";
-        // line 50
+        // line 53
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sunset.png"), "html", null, true);
         echo "\" id=\"sefia\"> </img>
                         </i></a>
@@ -93,7 +97,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                 <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla negra\" >  <i class=\"mb-2\">
                             <img src=\"";
-        // line 55
+        // line 58
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/moon.png"), "html", null, true);
         echo "\" id=\"negra\"> </img>
                         </i></a>
@@ -101,29 +105,29 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                  <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aumentar letra\" > <i class=\"mb-2\">
                             <img src=\"";
-        // line 60
+        // line 63
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font+.png"), "html", null, true);
-        echo "\" id=\"letra+\"> </img> 
+        echo "\" id=\"letraUp\"> </img> 
                         </i></a>
                 </li>
                   <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Desminuir letra\" > <i class=\"mb-2\">
                             <img src=\"";
-        // line 65
+        // line 68
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font-.png"), "html", null, true);
-        echo "\" id=\"letra-\"> </img> 
+        echo "\" id=\"letraDown\"> </img> 
                         </i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"Para despublicar este capítulo, debes de cambiar su estado de publicación desde el Perfil de Historia\"> <i class=\"mb-2\">
                             <span class=\"orange-text font-weight-bold\">Borrador</span> ";
-        // line 71
+        // line 74
         echo "                        </i></a>
                 </li>
                 
                
               ";
-        // line 85
+        // line 88
         echo "            </ul>
         </nav>
         </div>
@@ -136,7 +140,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
                 <div class=\"md-form\" >
                             <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"\">
-                            <label for=\"titulohistoria\" class=\"Ltitulohistoria valL\">Título del capítulo #1</label>
+                            <label for=\"titulohistoria\" class=\"Ltitulohistoria valL cl\"><span class=\"font-weight-bold pr-1 idCap\">#1</span>Título del capítulo </label>
                         </div>
                 </div>
 
@@ -149,7 +153,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
                         <div class=\"md-form mb-5\">
                             <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"14\"  name=\"resuHist\" value=\"\"></textarea>
-                            <label for=\"contact-message\" class=\"Lcontact-message valL\">Escriba su historia aquí...</label>
+                            <label for=\"contact-message\" class=\"Lcontact-message valL cl\">Escriba su historia aquí...</label>
 
                         </div>
                     </div>
@@ -176,7 +180,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  127 => 85,  121 => 71,  113 => 65,  105 => 60,  97 => 55,  89 => 50,  81 => 45,  60 => 28,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  131 => 88,  125 => 74,  117 => 68,  109 => 63,  101 => 58,  93 => 53,  85 => 48,  75 => 40,  60 => 28,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -216,8 +220,11 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*             <!-- SideNav slide-out button -->*/
 /*           */
 /*             <!-- Breadcrumb-->*/
-/*             <div class="breadcrumb-dn mr-auto">*/
-/*                 <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p>*/
+/*             <div class="">*/
+/*                 {# <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}*/
+/*                 <button type="button" class="btn purple-gradient btn-sm">Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>*/
+/*                 <span class="text-dark small pr-2 cl"> 2018-05-04 18:39</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>*/
+/*                 <span class="text-dark  font-weight-bold pr-2 cl" id="palab">- 0</span><span class="text-dark  pr-2 cl">palabras</span>*/
 /*             </div>*/
 /*             <ul class="nav navbar-nav nav-flex-icons ml-auto">*/
 /*           */
@@ -238,12 +245,12 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                 </li>*/
 /*                  <li class="nav-item">*/
 /*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Aumentar letra" > <i class="mb-2">*/
-/*                             <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letra+"> </img> */
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letraUp"> </img> */
 /*                         </i></a>*/
 /*                 </li>*/
 /*                   <li class="nav-item">*/
 /*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Desminuir letra" > <i class="mb-2">*/
-/*                             <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letra-"> </img> */
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letraDown"> </img> */
 /*                         </i></a>*/
 /*                 </li>*/
 /*                 <li class="nav-item">*/
@@ -275,7 +282,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /*                 <div class="md-form" >*/
 /*                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="">*/
-/*                             <label for="titulohistoria" class="Ltitulohistoria valL">Título del capítulo #1</label>*/
+/*                             <label for="titulohistoria" class="Ltitulohistoria valL cl"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>*/
 /*                         </div>*/
 /*                 </div>*/
 /* */
@@ -288,7 +295,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /*                         <div class="md-form mb-5">*/
 /*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="14"  name="resuHist" value=""></textarea>*/
-/*                             <label for="contact-message" class="Lcontact-message valL">Escriba su historia aquí...</label>*/
+/*                             <label for="contact-message" class="Lcontact-message valL cl">Escriba su historia aquí...</label>*/
 /* */
 /*                         </div>*/
 /*                     </div>*/
