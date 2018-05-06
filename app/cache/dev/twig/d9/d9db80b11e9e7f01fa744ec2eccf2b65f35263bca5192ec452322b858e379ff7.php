@@ -35,15 +35,19 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
         echo "');margin-top: 27px;\">
             <div class=\"flex-center\" style=\"background-color: rgba(17, 27, 43, 0.7);\">
-                <div class=\"container my-5 pt-5\">
+                <div class=\"container my-4 pt-5\">
 
                     <!-- Section heading -->
-                    <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+                    <h3 class=\"text-center pt-4  white-text font-weight-bold wow fadeIn mb-4\" data-wow-delay=\"0.2s\">
                         <strong>Título del libro</strong>
+                             
                     </h3>
-                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">by @Usuario</h6>
+                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\"> <span class=\"mb-5\">by @Usuario</span>
+                    <br>
+                <button type=\"button\" class=\"btn peach-gradient btn-lg mt-4\">Cerrar e ir al perfil de la Historia</button>
                     
-
+                    </h6>
+                    
                 </div>
             </div>
         </div> 
@@ -52,27 +56,111 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 ";
     }
 
-    // line 24
+    // line 28
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
-<div class=\"row\" style=\"background-color: #f4f5f6;\">
+
+<div class=\"container-fluid pl-0 pr-0\" style=\"background-color: #f4f5f6;\" id=\"container1\">
 
         <!--Grid column-->
-        <div class=\"col-lg-12 col-md-12 mb-12\">
-
-            <!--Rotating card-->
-            <div class=\"card-wrapper\">
-               
+        <div class=\"col-lg-12 col-md-12 mb-12 pl-0 pr-0\">
+<nav class=\"navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav indigo-text\">
+            <!-- SideNav slide-out button -->
+          
+            <!-- Breadcrumb-->
+            <div class=\"breadcrumb-dn mr-auto\">
+                <p><i class=\"fa fa-book pr-2\" aria-hidden=\"true\"></i>Título de la Historia</p>
             </div>
-            <!--Rotating card-->
-
+            <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
+          
+                <li class=\"nav-item\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla blanca\"> <i class=\"mb-2\">
+                            <img src=\"";
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sun-selec.png"), "html", null, true);
+        echo "\" id=\"blanca\" > </img>
+                        </i></a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla sefia\" > <i class=\"mb-2\">
+                            <img src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sunset.png"), "html", null, true);
+        echo "\" id=\"sefia\"> </img>
+                        </i></a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla negra\" >  <i class=\"mb-2\">
+                            <img src=\"";
+        // line 55
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/moon.png"), "html", null, true);
+        echo "\" id=\"negra\"> </img>
+                        </i></a>
+                </li>
+                 <li class=\"nav-item\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aumentar letra\" > <i class=\"mb-2\">
+                            <img src=\"";
+        // line 60
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font+.png"), "html", null, true);
+        echo "\" id=\"letra+\"> </img> 
+                        </i></a>
+                </li>
+                  <li class=\"nav-item\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Desminuir letra\" > <i class=\"mb-2\">
+                            <img src=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font-.png"), "html", null, true);
+        echo "\" id=\"letra-\"> </img> 
+                        </i></a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"Para despublicar este capítulo, debes de cambiar su estado de publicación desde el Perfil de Historia\"> <i class=\"mb-2\">
+                            <span class=\"orange-text font-weight-bold\">Borrador</span> ";
+        // line 71
+        echo "                        </i></a>
+                </li>
+                
+               
+              ";
+        // line 85
+        echo "            </ul>
+        </nav>
         </div>
         <!--Grid column-->
 
-        
+<div class=\"container card mt-3\" id=\"container2\">
+        <div class=\"row mt-4 \">
+                    <div class=\"col-md-12\">
+                
+
+                <div class=\"md-form\" >
+                            <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"\">
+                            <label for=\"titulohistoria\" class=\"Ltitulohistoria valL\">Título del capítulo #1</label>
+                        </div>
+                </div>
+
+                      
+                </div>
+                <div class=\"row mt-3\">
+
+                    <!--Grid column-->
+                    <div class=\"col-md-12\">
+
+                        <div class=\"md-form mb-5\">
+                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"14\"  name=\"resuHist\" value=\"\"></textarea>
+                            <label for=\"contact-message\" class=\"Lcontact-message valL\">Escriba su historia aquí...</label>
+
+                        </div>
+                    </div>
+                </div>
+
+
 
     </div>
+
+
+    <div>
 ";
     }
 
@@ -88,7 +176,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  56 => 24,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  127 => 85,  121 => 71,  113 => 65,  105 => 60,  97 => 55,  89 => 50,  81 => 45,  60 => 28,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -99,15 +187,19 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*     <!--Intro Section-->*/
 /*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');margin-top: 27px;">*/
 /*             <div class="flex-center" style="background-color: rgba(17, 27, 43, 0.7);">*/
-/*                 <div class="container my-5 pt-5">*/
+/*                 <div class="container my-4 pt-5">*/
 /* */
 /*                     <!-- Section heading -->*/
-/*                     <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*                     <h3 class="text-center pt-4  white-text font-weight-bold wow fadeIn mb-4" data-wow-delay="0.2s">*/
 /*                         <strong>Título del libro</strong>*/
+/*                              */
 /*                     </h3>*/
-/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">by @Usuario</h6>*/
+/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s"> <span class="mb-5">by @Usuario</span>*/
+/*                     <br>*/
+/*                 <button type="button" class="btn peach-gradient btn-lg mt-4">Cerrar e ir al perfil de la Historia</button>*/
 /*                     */
-/* */
+/*                     </h6>*/
+/*                     */
 /*                 </div>*/
 /*             </div>*/
 /*         </div> */
@@ -115,21 +207,97 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /* {% endblock %}*/
 /* {% block contenido %} */
-/* <div class="row" style="background-color: #f4f5f6;">*/
+/* */
+/* <div class="container-fluid pl-0 pr-0" style="background-color: #f4f5f6;" id="container1">*/
 /* */
 /*         <!--Grid column-->*/
-/*         <div class="col-lg-12 col-md-12 mb-12">*/
-/* */
-/*             <!--Rotating card-->*/
-/*             <div class="card-wrapper">*/
-/*                */
+/*         <div class="col-lg-12 col-md-12 mb-12 pl-0 pr-0">*/
+/* <nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav indigo-text">*/
+/*             <!-- SideNav slide-out button -->*/
+/*           */
+/*             <!-- Breadcrumb-->*/
+/*             <div class="breadcrumb-dn mr-auto">*/
+/*                 <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p>*/
 /*             </div>*/
-/*             <!--Rotating card-->*/
-/* */
+/*             <ul class="nav navbar-nav nav-flex-icons ml-auto">*/
+/*           */
+/*                 <li class="nav-item">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla blanca"> <i class="mb-2">*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/sun-selec.png') }}" id="blanca" > </img>*/
+/*                         </i></a>*/
+/*                 </li>*/
+/*                 <li class="nav-item">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla sefia" > <i class="mb-2">*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/sunset.png') }}" id="sefia"> </img>*/
+/*                         </i></a>*/
+/*                 </li>*/
+/*                 <li class="nav-item">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla negra" >  <i class="mb-2">*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/moon.png') }}" id="negra"> </img>*/
+/*                         </i></a>*/
+/*                 </li>*/
+/*                  <li class="nav-item">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Aumentar letra" > <i class="mb-2">*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letra+"> </img> */
+/*                         </i></a>*/
+/*                 </li>*/
+/*                   <li class="nav-item">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Desminuir letra" > <i class="mb-2">*/
+/*                             <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letra-"> </img> */
+/*                         </i></a>*/
+/*                 </li>*/
+/*                 <li class="nav-item">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Para despublicar este capítulo, debes de cambiar su estado de publicación desde el Perfil de Historia"> <i class="mb-2">*/
+/*                             <span class="orange-text font-weight-bold">Borrador</span> {# success-text #}*/
+/*                         </i></a>*/
+/*                 </li>*/
+/*                 */
+/*                */
+/*               {#   <li class="nav-item dropdown">*/
+/*                     <a class="nav-link dropdown-toggle waves-effect waves-light indigo-text" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">*/
+/*                         Dropdown*/
+/*                     </a>*/
+/*                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">*/
+/*                         <a class="dropdown-item waves-effect waves-light" href="#">Action</a>*/
+/*                         <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>*/
+/*                         <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>*/
+/*                     </div>*/
+/*                 </li> #}*/
+/*             </ul>*/
+/*         </nav>*/
 /*         </div>*/
 /*         <!--Grid column-->*/
 /* */
-/*         */
+/* <div class="container card mt-3" id="container2">*/
+/*         <div class="row mt-4 ">*/
+/*                     <div class="col-md-12">*/
+/*                 */
+/* */
+/*                 <div class="md-form" >*/
+/*                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="">*/
+/*                             <label for="titulohistoria" class="Ltitulohistoria valL">Título del capítulo #1</label>*/
+/*                         </div>*/
+/*                 </div>*/
+/* */
+/*                       */
+/*                 </div>*/
+/*                 <div class="row mt-3">*/
+/* */
+/*                     <!--Grid column-->*/
+/*                     <div class="col-md-12">*/
+/* */
+/*                         <div class="md-form mb-5">*/
+/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="14"  name="resuHist" value=""></textarea>*/
+/*                             <label for="contact-message" class="Lcontact-message valL">Escriba su historia aquí...</label>*/
+/* */
+/*                         </div>*/
+/*                     </div>*/
+/*                 </div>*/
+/* */
+/* */
 /* */
 /*     </div>*/
+/* */
+/* */
+/*     <div>*/
 /* {%endblock %}*/

@@ -5,7 +5,10 @@ $(document).ready(function() {
     $(".contrAlert").hide();
   });
 });
-
+// Tooltips Initialization
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 /********************************
  * VALIDACIÓN FORMS
@@ -165,3 +168,42 @@ var elem = document.getElementById('colorSelecc');
   $('#colorSelecc1').removeClass(elem.className.split(' ')[2]).addClass(color);
     
  });
+
+
+ 
+
+ $("#sefia").on("click",function(e) {
+  console.log($(this).attr('src'));
+  $("#container1").css("background-color", "beige");
+  $("#container2").css("background-color", "rgb(255, 249, 236)");
+
+  
+  $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/sunset-selec.png");
+  $("#negra").attr("src","/Libros/web/bundles/dweslibros/img/icons/moon.png");
+  $("#blanca").attr("src","/Libros/web/bundles/dweslibros/img/icons/sun.png");
+});
+
+
+
+
+
+$("#blanca").on("click",function(e) {
+ 
+  $("#container1").css("background-color", "#f4f5f6");
+  $("#container2").css("background-color", "#fff");
+
+  
+  $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/sun-selec.png");
+  $("#sefia").attr("src","/Libros/web/bundles/dweslibros/img/icons/sunset.png");
+  $("#negra").attr("src","/Libros/web/bundles/dweslibros/img/icons/moon.png");
+});
+
+$("#negra").on("click",function(e) {
+  console.log($(this).attr('src'));
+  $("#container1").css("background-color", "rgb(30, 42, 50)");
+  $("#container2").css("background-color", "rgb(37, 50, 56)");
+
+  $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/moon-selec.png");
+  $("#sefia").attr("src","/Libros/web/bundles/dweslibros/img/icons/dark-sunset.png");
+  $("#blanca").attr("src","/Libros/web/bundles/dweslibros/img/icons/dark-sun.png");
+});
