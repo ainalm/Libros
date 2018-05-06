@@ -296,7 +296,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                           ";
         }
         // line 248
-        echo "                           <br> <button type=\"submit\">AQUI</button>
+        echo "                           <br> <button class=\"btn pink-gradient btn-rounded waves-effect waves-light\" type=\"submit\">Empezar Hisotria</button>
                            
                         </div>
                 </div> 
@@ -569,7 +569,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                             {% if idLibro is defined %}*/
 /*                             {{idLibro}}*/
 /*                           {% endif %}*/
-/*                            <br> <button type="submit">AQUI</button>*/
+/*                            <br> <button class="btn pink-gradient btn-rounded waves-effect waves-light" type="submit">Empezar Hisotria</button>*/
 /*                            */
 /*                         </div>*/
 /*                 </div> */

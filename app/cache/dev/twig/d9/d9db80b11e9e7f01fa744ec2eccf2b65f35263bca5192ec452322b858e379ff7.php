@@ -33,15 +33,15 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
    <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
         // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
-        echo "');margin-top: 57px;\">
+        echo "');margin-top: 27px;\">
             <div class=\"flex-center\" style=\"background-color: rgba(17, 27, 43, 0.7);\">
                 <div class=\"container my-5 pt-5\">
 
                     <!-- Section heading -->
                     <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
-                        <strong>BIBLIOTECA</strong>
+                        <strong>Título del libro</strong>
                     </h3>
-                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">¡Es gratis!</h6>
+                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">by @Usuario</h6>
                     
 
                 </div>
@@ -56,7 +56,23 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
+<div class=\"row\" style=\"background-color: #f4f5f6;\">
 
+        <!--Grid column-->
+        <div class=\"col-lg-12 col-md-12 mb-12\">
+
+            <!--Rotating card-->
+            <div class=\"card-wrapper\">
+               
+            </div>
+            <!--Rotating card-->
+
+        </div>
+        <!--Grid column-->
+
+        
+
+    </div>
 ";
     }
 
@@ -81,15 +97,15 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /* {% block portada %}*/
 /*     <!--Intro Section-->*/
-/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');margin-top: 57px;">*/
+/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');margin-top: 27px;">*/
 /*             <div class="flex-center" style="background-color: rgba(17, 27, 43, 0.7);">*/
 /*                 <div class="container my-5 pt-5">*/
 /* */
 /*                     <!-- Section heading -->*/
 /*                     <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
-/*                         <strong>BIBLIOTECA</strong>*/
+/*                         <strong>Título del libro</strong>*/
 /*                     </h3>*/
-/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">¡Es gratis!</h6>*/
+/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">by @Usuario</h6>*/
 /*                     */
 /* */
 /*                 </div>*/
@@ -99,5 +115,21 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /* {% endblock %}*/
 /* {% block contenido %} */
+/* <div class="row" style="background-color: #f4f5f6;">*/
 /* */
+/*         <!--Grid column-->*/
+/*         <div class="col-lg-12 col-md-12 mb-12">*/
+/* */
+/*             <!--Rotating card-->*/
+/*             <div class="card-wrapper">*/
+/*                */
+/*             </div>*/
+/*             <!--Rotating card-->*/
+/* */
+/*         </div>*/
+/*         <!--Grid column-->*/
+/* */
+/*         */
+/* */
+/*     </div>*/
 /* {%endblock %}*/

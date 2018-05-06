@@ -73,17 +73,13 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
             echo "    ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
             echo "
-    suscripciones
-    ";
-            // line 33
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["item"], "tipoSuscripcion", array()), 0, array(), "array"), "html", null, true);
-            echo "
+  
  ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 34
         echo " 
                 <!--Section heading-->
                 <h1 class=\"section-heading h1 pt-4\">Nuestros planes</h1>
@@ -194,7 +190,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
     public function getDebugInfo()
     {
-        return array (  87 => 35,  79 => 33,  73 => 31,  69 => 30,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  83 => 34,  73 => 31,  69 => 30,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -228,8 +224,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /* <section class="section pb-3 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">*/
 /* {% for item in suscripciones %}*/
 /*     {{item.tipoSuscripcion}}*/
-/*     suscripciones*/
-/*     {{item.tipoSuscripcion[0]}}*/
+/*   */
 /*  {% endfor %}*/
 /*  */
 /*                 <!--Section heading-->*/
