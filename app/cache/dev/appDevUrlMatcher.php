@@ -243,6 +243,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::suscripcionAction',  '_route' => 'dwes_libros_suscripcion',);
         }
 
+        // dwes_libros_perfilhistoria
+        if (rtrim($pathinfo, '/') === '/perfilhistoria') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_perfilhistoria');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilhistoriaAction',  '_route' => 'dwes_libros_perfilhistoria',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

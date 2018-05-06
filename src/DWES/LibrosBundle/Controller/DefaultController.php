@@ -232,5 +232,10 @@ public function capituloAction(){
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:suscripcion.html.twig', array('suscripciones' =>$result));
 	}
+	public function perfilHistoriaAction()
+	{
+		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		return $this->render('DWESLibrosBundle:Default:perfilhistoria.html.twig', $params);
+	}
 }
 ?>
