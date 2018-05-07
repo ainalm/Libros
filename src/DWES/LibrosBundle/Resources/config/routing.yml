@@ -45,8 +45,10 @@ dwes_libros_describirLib:
     defaults: { _controller: DWESLibrosBundle:Default:describirLib }
 
 dwes_libros_capitulo:
-    path: /capitulo/
-    defaults: { _controller: DWESLibrosBundle:Default:capitulo }    
+    path: /capitulo/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:capitulo }
+    requirements:
+        page: \d+    
 
 dwes_libros_suscripcion:
     path: /suscripcion/

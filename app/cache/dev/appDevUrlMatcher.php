@@ -226,12 +226,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // dwes_libros_capitulo
-        if (rtrim($pathinfo, '/') === '/capitulo') {
+        if (0 === strpos($pathinfo, '/capitulo') && preg_match('#^/capitulo/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'dwes_libros_capitulo');
             }
 
-            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::capituloAction',  '_route' => 'dwes_libros_capitulo',);
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_capitulo')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::capituloAction',));
         }
 
         // dwes_libros_suscripcion

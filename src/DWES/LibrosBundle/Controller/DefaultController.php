@@ -176,7 +176,10 @@ class DefaultController extends Controller
 			$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'','idLibro'=>$idLibro);
 			
 		//return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
-		return $this->redirect($this->generateUrl('dwes_libros_capitulo'));
+		//return $this->redirect($this->generateUrl('dwes_libros_capitulo'));
+
+	//return	$this->redirect('dwes_libros_capitulo', array('idLibro' => 295));
+	return $this->redirect($this->generateUrl('dwes_libros_capitulo',array('idLibro' => $idLibro)));
 		}
 	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
