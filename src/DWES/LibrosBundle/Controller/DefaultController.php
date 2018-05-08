@@ -27,19 +27,19 @@ class DefaultController extends Controller
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:index.html.twig', $params);
 	}
-     
+
 
 	public function registroAction()
 	{
 		/* Guardo en el array los campos del form*/
-		$params = array('username' => '', 'email' => '', 'password' => '','sexo'=>'');
+		$params = array('username' => '', 'email' => '', 'password' => '', 'sexo' => '');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
 		$username = $peticion->request->get('username');
 		$email = $peticion->request->get('email');
 		$password = sha1($peticion->request->get('password')); // Contraseña encriptada en la BD
-		$sexo=$peticion->request->get('sexo');
+		$sexo = $peticion->request->get('sexo');
 
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
 
@@ -64,7 +64,7 @@ class DefaultController extends Controller
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
 		//Obtengo el valor de los campos del Form
-		$nombre=$peticion->request->get('nombre');
+		$nombre = $peticion->request->get('nombre');
 		$apellidos = $peticion->request->get('apellidos');
 		$fnacimiento = $peticion->request->get('fnacimiento');
 		$pweb = $peticion->request->get('pweb');
@@ -95,7 +95,7 @@ class DefaultController extends Controller
 	{//TODO:
 		
 		/* Guardo en el array los campos del form*/
-		$params = array('resuHist' => '','genero'=>'');
+		$params = array('resuHist' => '', 'genero' => '');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
@@ -109,23 +109,23 @@ class DefaultController extends Controller
 		6:Poesía
 		7:Romance
 		8:Drama
-*/
+		 */
 		//Obtengo el valor de los campos del Form
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
 		$userlog = $this->getUser()->getUsername();
 		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-			
+
 			$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"'); //Libro insertado
-			
-			$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
+
+			$idGeneroSelecc = $connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
 			//Update descripción del último libro insertado
 			$connection->executeUpdate('UPDATE libro SET descripcion = "' . $resuHist . '",idGenero="' . $idGeneroSelecc . '" WHERE libro.idLibro = "' . $IdLibroInsertado . '"');
-			
+
 		}
-		
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '','tituloHistoria'=>$tituloLibro,'capitulosInsertados'=>$capitulosInsertados,'resuHist'=>'');
+
+		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '', 'tituloHistoria' => $tituloLibro, 'capitulosInsertados' => $capitulosInsertados, 'resuHist' => '');
 
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
@@ -143,9 +143,9 @@ class DefaultController extends Controller
 		6:Poesía
 		7:Romance
 		8:Drama
-		*/
+		 */
 		$userlog = $this->getUser()->getUsername();
-		$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'');/* Guardo en el array los campos del form*/
+		$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '');/* Guardo en el array los campos del form*/
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
 
@@ -154,40 +154,78 @@ class DefaultController extends Controller
 		$genero = $peticion->request->get('genero');
 
 		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
-		$idGeneroSelecc=$connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id del genero seleccionado
-		$numExist=$connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
+		$idGeneroSelecc = $connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id del genero seleccionado
+		$numExist = $connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
 
-		$idLibro= "" ;
+		$idLibro = "";
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
 				/* FIXME: Evitar meter libros duplicado */
-			if (empty($numExist) && $numExist== 0) {
-				if (isset($titulohistoria) && isset($resuHist) && isset($genero) ) {
+			if (empty($numExist) && $numExist == 0) {
+			/* INSERT LIBRO  CREADO*/
+				if (isset($titulohistoria) && isset($resuHist) && isset($genero)) {
 					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", NULL, "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL);');
-			$idLibro=$connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
-			
-				
-		}
-			}else {
+
+			/*	SELECT Id del libro creado */		
+					$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
+
+			/* INSERT OPERACIÓN Añadir Libro */
+					$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
+
+
+				}
+			} else {
 				var_dump("ya existe el libro");
 				exit;
 			}
-			
-			$params = array('titulohistoria' => '', 'resuHist' => '','genero'=>'','idLibro'=>$idLibro);
+
+			$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'idLibro' => $idLibro);
 			
 		//return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 		//return $this->redirect($this->generateUrl('dwes_libros_capitulo'));
 
 	//return	$this->redirect('dwes_libros_capitulo', array('idLibro' => 295));
-	return $this->redirect($this->generateUrl('dwes_libros_capitulo',array('idLibro' => $idLibro)));
+			return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro)));
 		}
-	return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
+		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
-public function capituloAction(){
-	$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+	public function capituloAction($idLibro)
+	{
+		
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+		
+			/* Guardo en el array los campos del form*/
+		$params = array( 'titulocapitulo' => '', 'contCapitulo' => '','idLibro'=>'');
+
+		$peticion = $this->getRequest(); 	//Llamada al Form
+
+	
+		$titulocapitulo = $peticion->request->get('titulocapitulo');
+		$contCapitulo = $peticion->request->get('contCapitulo');
+		
+		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
+		var_dump($idLibro);
+		
+		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
+			var_dump($idLibro);
+		
+				if (isset($titulocapitulo) && isset($contCapitulo) ) {
+				/* Selecciono el ultimo capítulo para incrementarlo*/
+				$SelectultimoCapitulo = $connection->fetchColumn('SELECT MAX(numCapitulo) FROM operacionlibros, capitulo WHERE capitulo.idLibro=operacionlibros.idLibro and operacionlibros.username="' . $userlog . '" and operacionlibros.idLibro="' . $idLibro . '"');
+				$ultimoCapitulo = $SelectultimoCapitulo + 1;
+
+				/* INSERT DEL CAPITULO */
+				$connection->executeUpdate('INSERT INTO capitulo (idLibro, numCapitulo, tituloCap, contenidoCap) VALUES (' . $idLibro . ',"' . $ultimoCapitulo . '","' . $titulocapitulo . '","' . $contCapitulo . '")');
+				}
+				return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
+				
+		}
+		$params = array( 'titulocapitulo' => '', 'contCapitulo' => '','idLibro'=>'',array('idLibro' => $idLibro));
+		
+		
 		return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
-}
+	}
 
 	public function perfilAction()
 	{
@@ -223,17 +261,17 @@ public function capituloAction(){
 	}
 	public function suscripcionAction()
 	{
-		
+
 		$em = $this->getDoctrine()->getManager(); //Llamada a la BD
 
-        $QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
-        
-        $statement = $em->getConnection()->prepare($QUERY); //Preparo la consulta  
-        $statement->execute(); 	//Ejecuto consulta
+		$QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
+
+		$statement = $em->getConnection()->prepare($QUERY); //Preparo la consulta  
+		$statement->execute(); 	//Ejecuto consulta
 
 		$result = $statement->fetchAll(); //Obtengo los datos		
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:suscripcion.html.twig', array('suscripciones' =>$result));
+		return $this->render('DWESLibrosBundle:Default:suscripcion.html.twig', array('suscripciones' => $result));
 	}
 	public function perfilHistoriaAction()
 	{

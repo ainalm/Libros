@@ -60,7 +60,11 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
-
+ <form name=\"formCapitulo\" action=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_capitulo", array("idLibro" => (isset($context["idLibro"]) ? $context["idLibro"] : $this->getContext($context, "idLibro")))), "html", null, true);
+        echo "\" method=\"POST\" ";
+        echo " class=\"ml-4\">
 <div class=\"container-fluid pl-0 pr-0\" style=\"background-color: #f4f5f6;\" id=\"container1\">
 
         <!--Grid column-->
@@ -72,7 +76,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
             <div class=\"\">
                 ";
         // line 40
-        echo "                <button type=\"button\" class=\"btn purple-gradient btn-sm\">Guardar</button> <span class=\"green-text font-weight-bold pr-2 small\">Grabado</span>
+        echo "                <button type=\"submit\" class=\"btn purple-gradient btn-sm\">Guardar</button> <span class=\"green-text font-weight-bold pr-2 small\">Grabado</span>
                 <span class=\"text-dark small pr-2 cl\"> 2018-05-04 18:39</span><span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"carac\">| 0</span><span class=\"text-dark  cl\">caráceteres </span>
                 <span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"palab\">- 0</span><span class=\"text-dark  pr-2 cl\">palabras</span>
             </div>
@@ -139,7 +143,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                 
 
                 <div class=\"md-form\" >
-                            <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"\">
+                            <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"tituloCapitulo\">
                             <label for=\"titulohistoria\" class=\"Ltitulohistoria valL cl\"><span class=\"font-weight-bold pr-1 idCap\">#1</span>Título del capítulo </label>
                         </div>
                 </div>
@@ -152,7 +156,10 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                     <div class=\"col-md-12\">
 
                         <div class=\"md-form mb-5\">
-                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"14\"  name=\"resuHist\" value=\"\"></textarea>
+                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"14\"  name=\"resuHist\" value=\"";
+        // line 112
+        echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
+        echo "\"></textarea>
                             <label for=\"contact-message\" class=\"Lcontact-message valL cl\">Escriba su historia aquí...</label>
 
                         </div>
@@ -165,6 +172,8 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
 
     <div>
+
+    <form>
 ";
     }
 
@@ -180,7 +189,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  131 => 88,  125 => 74,  117 => 68,  109 => 63,  101 => 58,  93 => 53,  85 => 48,  75 => 40,  60 => 28,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  161 => 112,  135 => 88,  129 => 74,  121 => 68,  113 => 63,  105 => 58,  97 => 53,  89 => 48,  79 => 40,  65 => 29,  60 => 28,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -211,7 +220,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /* {% endblock %}*/
 /* {% block contenido %} */
-/* */
+/*  <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro': idLibro}) }}" method="POST" {# target="frame" #} class="ml-4">*/
 /* <div class="container-fluid pl-0 pr-0" style="background-color: #f4f5f6;" id="container1">*/
 /* */
 /*         <!--Grid column-->*/
@@ -222,7 +231,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*             <!-- Breadcrumb-->*/
 /*             <div class="">*/
 /*                 {# <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}*/
-/*                 <button type="button" class="btn purple-gradient btn-sm">Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>*/
+/*                 <button type="submit" class="btn purple-gradient btn-sm">Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>*/
 /*                 <span class="text-dark small pr-2 cl"> 2018-05-04 18:39</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>*/
 /*                 <span class="text-dark  font-weight-bold pr-2 cl" id="palab">- 0</span><span class="text-dark  pr-2 cl">palabras</span>*/
 /*             </div>*/
@@ -281,7 +290,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                 */
 /* */
 /*                 <div class="md-form" >*/
-/*                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="">*/
+/*                             <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="tituloCapitulo">*/
 /*                             <label for="titulohistoria" class="Ltitulohistoria valL cl"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>*/
 /*                         </div>*/
 /*                 </div>*/
@@ -294,7 +303,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                     <div class="col-md-12">*/
 /* */
 /*                         <div class="md-form mb-5">*/
-/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="14"  name="resuHist" value=""></textarea>*/
+/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="14"  name="resuHist" value="{{contCapitulo}}"></textarea>*/
 /*                             <label for="contact-message" class="Lcontact-message valL cl">Escriba su historia aquí...</label>*/
 /* */
 /*                         </div>*/
@@ -307,4 +316,6 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /* */
 /*     <div>*/
+/* */
+/*     <form>*/
 /* {%endblock %}*/
