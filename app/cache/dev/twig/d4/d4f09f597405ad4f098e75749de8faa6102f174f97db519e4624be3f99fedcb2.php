@@ -135,7 +135,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                                      <strong>o:</strong>
                                  </h4>
  
-                             </div>
+                             </div> 
                              <!--/Grid row-->
     <form name=\"formCrearCuenta\" action=\"";
         // line 109
@@ -338,7 +338,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                                      <strong>o:</strong>*/
 /*                                  </h4>*/
 /*  */
-/*                              </div>*/
+/*                              </div> */
 /*                              <!--/Grid row-->*/
 /*     <form name="formCrearCuenta" action="{{ path('dwes_libros_registro') }}" method="POST" {# target="frame" #} class="ml-4">*/
 /*                              <!--Body-->*/

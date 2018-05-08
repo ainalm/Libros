@@ -10,10 +10,10 @@
 
                     <!-- Section heading -->
                     <h3 class="text-center pt-4  white-text font-weight-bold wow fadeIn mb-4" data-wow-delay="0.2s">
-                        <strong>Título del libro</strong>
+                        <strong>{{tituloLibro}}</strong>
                              
                     </h3>
-                    <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s"> <span class="mb-5">by @Usuario</span>
+                    <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s"> <span class="mb-5">by @{{autor}}</span>
                     <br>
                 <button type="button" class="btn peach-gradient btn-lg mt-4">Cerrar e ir al perfil de la Historia</button>
                     
@@ -25,8 +25,21 @@
             
 
 {% endblock %}
-{% block contenido %} 
- <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro': idLibro}) }}" method="POST" {# target="frame" #} class="ml-4">
+
+
+{% block contenido %}
+{# 
+URL:
+{{ app.request.getRequestUri() }} 
+{% set path = app.request.pathInfo %}
+{{ path|split('/')|last }}
+Parámetro:
+{{ app.request.get('idLibro') }}
+#}
+
+
+  <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro')}) }}" method="POST"  target="frame"  class="ml-4"> 
+  <iframe name="frame" style="display: none"></iframe>
 <div class="container-fluid pl-0 pr-0" style="background-color: #f4f5f6;" id="container1">
 
         <!--Grid column-->
@@ -37,7 +50,8 @@
             <!-- Breadcrumb-->
             <div class="">
                 {# <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}
-                <button type="submit" class="btn purple-gradient btn-sm">Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>
+                
+                <button type="submit" class="btn purple-gradient btn-sm" id="gcapitulo" >Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>
                 <span class="text-dark small pr-2 cl"> 2018-05-04 18:39</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>
                 <span class="text-dark  font-weight-bold pr-2 cl" id="palab">- 0</span><span class="text-dark  pr-2 cl">palabras</span>
             </div>
@@ -90,14 +104,14 @@
         </div>
         <!--Grid column-->
 
-<div class="container card mt-3" id="container2">
+<div class="container card mt-1 mb-1" id="container2">
         <div class="row mt-4 ">
                     <div class="col-md-12">
                 
 
                 <div class="md-form" >
-                            <input type="text" id="titulohistoria" class="form-control valI" name="titulohistoria" value="tituloCapitulo">
-                            <label for="titulohistoria" class="Ltitulohistoria valL cl"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>
+                            <input type="text" id="titulohistoria" class="form-control valI" name="tituloCapitulo" value="{{tituloCapitulo}}">
+                            <label for="titulohistoria" class="Ltitulohistoria valL cl" id="labelTitC"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>
                         </div>
                 </div>
 
@@ -109,8 +123,8 @@
                     <div class="col-md-12">
 
                         <div class="md-form mb-5">
-                            <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="14"  name="resuHist" value="{{contCapitulo}}"></textarea>
-                            <label for="contact-message" class="Lcontact-message valL cl">Escriba su historia aquí...</label>
+                            <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}"></textarea>
+                            <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Escriba su historia aquí...</label>
 
                         </div>
                     </div>
@@ -122,6 +136,6 @@
 
 
     <div>
-
-    <form>
+    
+     <form> 
 {%endblock %}

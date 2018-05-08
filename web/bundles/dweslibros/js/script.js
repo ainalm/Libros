@@ -143,14 +143,44 @@ $("#entrar").on("click", function(e) {
   });
 });
 
+var tituloC = $("#titulohistoria");
+var labeltituloC = $("#labelTitC");
+var contC = $("#contact-message");
+var labelcontC = $("#labelContC");
+
+
+contC.keydown(function(event) {
+  validaCampo(contC, labelcontC);
+});
+
+$("#gcapitulo").on("click", function(e) {
+  //Valida form CAPITULO
+
+  if (tituloC.val() == "" ||contC.val() == "" ) {
+    e.preventDefault();
+    $(".valI").css("border-bottom", " 1px solid red ");
+    $('.valL').attr('style', 'color: #d65d69 !important');
+  }
+
+  tituloC.keydown(function(event) {
+    validaCampo(tituloC, labeltituloC);
+  });
+
+  contC.keydown(function(event) {
+    validaCampo(contC, labelcontC);
+  });
+});
 function validaCampo($input, $label) {
   if ($input != "") {
+    console.log($input);
     $input.css("border-bottom", " 1px solid green ");
     $label.css("color", "green ");
-  } else {
+  }
+   else {
     $input.css("border-bottom", " 1px solid red ");
     $label.css("color", "red ");
   }
+
 }
 
 /********************************
@@ -271,3 +301,4 @@ $( "#letraDown" ).on( "click", function() {
   
   }
 });
+

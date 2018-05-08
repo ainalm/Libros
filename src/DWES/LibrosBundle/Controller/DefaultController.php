@@ -181,10 +181,7 @@ class DefaultController extends Controller
 
 			$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'idLibro' => $idLibro);
 			
-		//return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
-		//return $this->redirect($this->generateUrl('dwes_libros_capitulo'));
 
-	//return	$this->redirect('dwes_libros_capitulo', array('idLibro' => 295));
 			return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro)));
 		}
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
@@ -192,36 +189,50 @@ class DefaultController extends Controller
 
 	public function capituloAction($idLibro)
 	{
-		
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
-		
+		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
+
+
+		$tituloH = $connection->fetchColumn('SELECT titulo FROM libro WHERE idLibro="' . $idLibro . '"'); //Titulo  historia
+		$usuarioH = $connection->fetchColumn('SELECT username FROM operacionlibros WHERE idLibro="' . $idLibro . '"GROUP BY username'); //Autor historia
+
 			/* Guardo en el array los campos del form*/
-		$params = array( 'titulocapitulo' => '', 'contCapitulo' => '','idLibro'=>'');
+		$params = array( 'tituloCapitulo' => '', 'contCapitulo' => '','tituloLibro'=>$tituloH,'autor'=>$usuarioH);
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
-
+		$idLibroBueno=$idLibro;
 	
-		$titulocapitulo = $peticion->request->get('titulocapitulo');
+		$titulocapitulo = $peticion->request->get('tituloCapitulo');
 		$contCapitulo = $peticion->request->get('contCapitulo');
 		
-		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
-		var_dump($idLibro);
+	
+		$capExist = $connection->fetchColumn('SELECT COUNT(idLibro) FROM operacionlibros WHERE 
+		username="' . $userlog . '" and idLibro="' . $idLibro . '" AND codOperacion =2'); //Id genero seleccionado
+if (empty($capExist)) {
+		$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, fechaOL, motivoOL) VALUES (2, ' . $idLibro . ', "' . $userlog . '", CURRENT_TIMESTAMP, "Capitlo añadido");');
 		
+}
+
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-			var_dump($idLibro);
 		
 				if (isset($titulocapitulo) && isset($contCapitulo) ) {
 				/* Selecciono el ultimo capítulo para incrementarlo*/
-				$SelectultimoCapitulo = $connection->fetchColumn('SELECT MAX(numCapitulo) FROM operacionlibros, capitulo WHERE capitulo.idLibro=operacionlibros.idLibro and operacionlibros.username="' . $userlog . '" and operacionlibros.idLibro="' . $idLibro . '"');
+				$SelectultimoCapitulo = $connection->fetchColumn('	SELECT MAX(numCapitulo) FROM capitulo WHERE idLibro ='.$idLibro.'');
+				
 				$ultimoCapitulo = $SelectultimoCapitulo + 1;
-
 				/* INSERT DEL CAPITULO */
 				$connection->executeUpdate('INSERT INTO capitulo (idLibro, numCapitulo, tituloCap, contenidoCap) VALUES (' . $idLibro . ',"' . $ultimoCapitulo . '","' . $titulocapitulo . '","' . $contCapitulo . '")');
-				}
+			/* 	$connection->executeUpdate('UPDATE operacionlibros SET idLibro = "' . $idLibro . '" WHERE operacionlibros.codOperacion = 2
+				AND operacionlibros.idLibro = "' . $idLibro . '" AND operacionlibros.username = "' . $userlog . '")');
+				 */
+			
+				
+			
+			}
 				return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
 				
 		}
-		$params = array( 'titulocapitulo' => '', 'contCapitulo' => '','idLibro'=>'',array('idLibro' => $idLibro));
+		
 		
 		
 		return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
