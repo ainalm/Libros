@@ -244,12 +244,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // dwes_libros_perfilhistoria
-        if (rtrim($pathinfo, '/') === '/perfilhistoria') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_perfilhistoria');
-            }
-
-            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilhistoriaAction',  '_route' => 'dwes_libros_perfilhistoria',);
+        if (0 === strpos($pathinfo, '/perfilhistoria') && preg_match('#^/perfilhistoria/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_perfilhistoria')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilhistoriaAction',));
         }
 
         // homepage

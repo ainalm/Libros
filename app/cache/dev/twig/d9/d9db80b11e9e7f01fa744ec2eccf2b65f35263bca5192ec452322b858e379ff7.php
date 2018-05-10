@@ -50,8 +50,11 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
         echo twig_escape_filter($this->env, (isset($context["autor"]) ? $context["autor"] : $this->getContext($context, "autor")), "html", null, true);
         echo "</span>
                     <br>
-                <button type=\"button\" class=\"btn peach-gradient btn-lg mt-4\">Cerrar e ir al perfil de la Historia</button>
-                    
+                    <a href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfilhistoria", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+        echo "\"  class=\"btn peach-gradient btn-lg mt-4\">Cerrar e ir al perfil de la Historia</a> 
+                     
                     </h6>
                     
                 </div>
@@ -71,7 +74,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
   <form name=\"formCapitulo\" action=\"";
         // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_capitulo", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-        echo "\" method=\"POST\"  target=\"frame\"  class=\"ml-4\"> 
+        echo "\" method=\"POST\"  target=\"frame\"  > 
   <iframe name=\"frame\" style=\"display: none\"></iframe>
 <div class=\"container-fluid pl-0 pr-0\" style=\"background-color: #f4f5f6;\" id=\"container1\">
 
@@ -86,7 +89,10 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
         // line 53
         echo "                
                 <button type=\"submit\" class=\"btn purple-gradient btn-sm\" id=\"gcapitulo\" >Guardar</button> <span class=\"green-text font-weight-bold pr-2 small\">Grabado</span>
-                <span class=\"text-dark small pr-2 cl\"> 2018-05-04 18:39</span><span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"carac\">| 0</span><span class=\"text-dark  cl\">caráceteres </span>
+                <span class=\"text-dark small pr-2 cl\"> ";
+        // line 55
+        echo twig_escape_filter($this->env, (isset($context["fecha"]) ? $context["fecha"] : $this->getContext($context, "fecha")), "html", null, true);
+        echo "</span><span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"carac\">| 0</span><span class=\"text-dark  cl\">caráceteres </span>
                 <span class=\"text-dark  font-weight-bold pr-2 cl\" id=\"palab\">- 0</span><span class=\"text-dark  pr-2 cl\">palabras</span>
             </div>
             <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
@@ -143,10 +149,10 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
         // line 102
         echo "            </ul>
         </nav>
-        </div>
+        </div> 
         <!--Grid column-->
 
-<div class=\"container card mt-1 mb-1\" id=\"container2\">
+<div class=\"container card mt-1 pb-1\" id=\"container2\">
         <div class=\"row mt-4 \">
                     <div class=\"col-md-12\">
                 
@@ -201,7 +207,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  173 => 126,  157 => 113,  144 => 102,  138 => 88,  130 => 82,  122 => 77,  114 => 72,  106 => 67,  98 => 62,  87 => 53,  73 => 41,  69 => 39,  66 => 30,  50 => 16,  44 => 13,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  179 => 126,  163 => 113,  150 => 102,  144 => 88,  136 => 82,  128 => 77,  120 => 72,  112 => 67,  104 => 62,  94 => 55,  90 => 53,  76 => 41,  72 => 39,  69 => 30,  55 => 18,  50 => 16,  44 => 13,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -221,8 +227,8 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                     </h3>*/
 /*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s"> <span class="mb-5">by @{{autor}}</span>*/
 /*                     <br>*/
-/*                 <button type="button" class="btn peach-gradient btn-lg mt-4">Cerrar e ir al perfil de la Historia</button>*/
-/*                     */
+/*                     <a href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}"  class="btn peach-gradient btn-lg mt-4">Cerrar e ir al perfil de la Historia</a> */
+/*                      */
 /*                     </h6>*/
 /*                     */
 /*                 </div>*/
@@ -244,7 +250,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* #}*/
 /* */
 /* */
-/*   <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro')}) }}" method="POST"  target="frame"  class="ml-4"> */
+/*   <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro')}) }}" method="POST"  target="frame"  > */
 /*   <iframe name="frame" style="display: none"></iframe>*/
 /* <div class="container-fluid pl-0 pr-0" style="background-color: #f4f5f6;" id="container1">*/
 /* */
@@ -258,7 +264,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                 {# <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}*/
 /*                 */
 /*                 <button type="submit" class="btn purple-gradient btn-sm" id="gcapitulo" >Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>*/
-/*                 <span class="text-dark small pr-2 cl"> 2018-05-04 18:39</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>*/
+/*                 <span class="text-dark small pr-2 cl"> {{fecha}}</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>*/
 /*                 <span class="text-dark  font-weight-bold pr-2 cl" id="palab">- 0</span><span class="text-dark  pr-2 cl">palabras</span>*/
 /*             </div>*/
 /*             <ul class="nav navbar-nav nav-flex-icons ml-auto">*/
@@ -307,10 +313,10 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                 </li> #}*/
 /*             </ul>*/
 /*         </nav>*/
-/*         </div>*/
+/*         </div> */
 /*         <!--Grid column-->*/
 /* */
-/* <div class="container card mt-1 mb-1" id="container2">*/
+/* <div class="container card mt-1 pb-1" id="container2">*/
 /*         <div class="row mt-4 ">*/
 /*                     <div class="col-md-12">*/
 /*                 */

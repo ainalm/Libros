@@ -90,10 +90,58 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                         </div>
 
                         <!--Avatar-->
-                        <div class=\"avatar ml-5 white \"  style=\"min-width: 176px !important;
+                        <div class=\"avatar ml-5 white \"  style=\"max-width: 176px !important;
     min-height: 200px !important;    margin-top: -205px;     margin-left: 120px !important;\">
                       
-                          <img src=\"https://books.google.com/books/content/images/frontcover/vxaKBAAAQBAJ?fife=w200-h300\" class=\" img-fluid img-thumbnail\" alt=\"First sample avatar image\">
+                         <div class=\"card\">
+
+                            <!--Card image-->
+                            <div class=\"view overlay\">
+                                <img src=\"https://mdbootstrap.com/img/Photos/Others/images/20.jpg\" class=\"card-img-top\" alt=\"\">
+                                <a>
+                                    <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Card content-->
+                            <div class=\"card-body\">
+                                <!--Title-->
+                                <h5 class=\"card-title dark-grey-text text-center grey lighten-4 py-2\">
+                                    <strong>Título historia</strong>
+                                </h5>
+
+                                <!--Description-->
+                                <p class=\"mt-3 dark-grey-text font-small text-center\">
+                                    <em>Hello, I'm Anna. I love travel around the world and take photos of landscapes and local
+                                        people.
+                                    </em>
+                                </p>
+
+                                <ul class=\"list-unstyled list-inline-item circle-icons list-unstyled flex-center\">
+                                    <!--Facebook-->
+                                    <li>
+                                        <a class=\"fb-ic\">
+                                            <i class=\"fa fa-facebook\"> </i>
+                                        </a>
+                                    </li>
+                                    <!--Twitter-->
+                                    <li>
+                                        <a class=\"tw-ic\">
+                                            <i class=\"fa fa-twitter mx-3\"> </i>
+                                        </a>
+                                    </li>
+                                    <!--Google +-->
+                                    <li>
+                                        <a class=\"gplus-ic\">
+                                            <i class=\"fa fa-google-plus\"> </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
 \t                    
                       
                        
@@ -237,10 +285,58 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                         </div>*/
 /* */
 /*                         <!--Avatar-->*/
-/*                         <div class="avatar ml-5 white "  style="min-width: 176px !important;*/
+/*                         <div class="avatar ml-5 white "  style="max-width: 176px !important;*/
 /*     min-height: 200px !important;    margin-top: -205px;     margin-left: 120px !important;">*/
 /*                       */
-/*                           <img src="https://books.google.com/books/content/images/frontcover/vxaKBAAAQBAJ?fife=w200-h300" class=" img-fluid img-thumbnail" alt="First sample avatar image">*/
+/*                          <div class="card">*/
+/* */
+/*                             <!--Card image-->*/
+/*                             <div class="view overlay">*/
+/*                                 <img src="https://mdbootstrap.com/img/Photos/Others/images/20.jpg" class="card-img-top" alt="">*/
+/*                                 <a>*/
+/*                                     <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
+/*                                 </a>*/
+/*                             </div>*/
+/*                             <!--/.Card image-->*/
+/* */
+/*                             <!--Card content-->*/
+/*                             <div class="card-body">*/
+/*                                 <!--Title-->*/
+/*                                 <h5 class="card-title dark-grey-text text-center grey lighten-4 py-2">*/
+/*                                     <strong>Título historia</strong>*/
+/*                                 </h5>*/
+/* */
+/*                                 <!--Description-->*/
+/*                                 <p class="mt-3 dark-grey-text font-small text-center">*/
+/*                                     <em>Hello, I'm Anna. I love travel around the world and take photos of landscapes and local*/
+/*                                         people.*/
+/*                                     </em>*/
+/*                                 </p>*/
+/* */
+/*                                 <ul class="list-unstyled list-inline-item circle-icons list-unstyled flex-center">*/
+/*                                     <!--Facebook-->*/
+/*                                     <li>*/
+/*                                         <a class="fb-ic">*/
+/*                                             <i class="fa fa-facebook"> </i>*/
+/*                                         </a>*/
+/*                                     </li>*/
+/*                                     <!--Twitter-->*/
+/*                                     <li>*/
+/*                                         <a class="tw-ic">*/
+/*                                             <i class="fa fa-twitter mx-3"> </i>*/
+/*                                         </a>*/
+/*                                     </li>*/
+/*                                     <!--Google +-->*/
+/*                                     <li>*/
+/*                                         <a class="gplus-ic">*/
+/*                                             <i class="fa fa-google-plus"> </i>*/
+/*                                         </a>*/
+/*                                     </li>*/
+/*                                 </ul>*/
+/*                             </div>*/
+/*                             <!--/.Card content-->*/
+/* */
+/*                         </div>*/
 /* 	                    */
 /*                       */
 /*                        */

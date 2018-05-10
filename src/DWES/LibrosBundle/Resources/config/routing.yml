@@ -56,5 +56,7 @@ dwes_libros_suscripcion:
     defaults: { _controller: DWESLibrosBundle:Default:suscripcion }
 
 dwes_libros_perfilhistoria:
-    path: /perfilhistoria/
-    defaults: { _controller: DWESLibrosBundle:Default:perfilhistoria }     
+    path: /perfilhistoria/{idLibro}
+    defaults: { _controller: DWESLibrosBundle:Default:perfilhistoria }
+    requirements:
+        page: \d+     

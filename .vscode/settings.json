@@ -5,27 +5,32 @@
         {
             "type": "File",
             "name": "src\\DWES\\LibrosBundle\\Controller\\DefaultController.php",
-            "id": "yi7ujYd6f4LpTkKF"
+            "id": "yi7ujYd6f4LpTkKF",
+            "workspacePath": "src\\DWES\\LibrosBundle\\Controller\\DefaultController.php"
         },
         {
             "type": "File",
             "name": "src\\DWES\\LibrosBundle\\Resources\\config\\routing.yml",
-            "id": "bvU8ZzD5oPJ62wkx"
+            "id": "bvU8ZzD5oPJ62wkx",
+            "workspacePath": "src\\DWES\\LibrosBundle\\Resources\\config\\routing.yml"
         },
         {
             "type": "Directory",
             "name": "src\\DWES\\LibrosBundle\\Resources\\views",
-            "id": "bdV6rhIyUT9Zf50c"
+            "id": "bdV6rhIyUT9Zf50c",
+            "workspacePath": "src\\DWES\\LibrosBundle\\Resources\\views"
         },
         {
             "type": "Directory",
             "name": "web\\bundles\\dweslibros\\css",
-            "id": "aMVuhYAm9jSGH3TP"
+            "id": "aMVuhYAm9jSGH3TP",
+            "workspacePath": "web\\bundles\\dweslibros\\css"
         },
         {
             "type": "Directory",
             "name": "web\\bundles\\dweslibros\\js",
-            "id": "WwC4unhHdTatz5F3"
+            "id": "WwC4unhHdTatz5F3",
+            "workspacePath": "web\\bundles\\dweslibros\\js"
         }
     ]
 }
