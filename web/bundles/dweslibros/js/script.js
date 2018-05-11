@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  $('#example').DataTable();
   $("#contact-message").bind("keyup change", function(e) {
     // do stuff!
     console.log("e");

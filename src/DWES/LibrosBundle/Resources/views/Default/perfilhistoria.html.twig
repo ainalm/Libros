@@ -246,7 +246,7 @@
 
                         <div class="table-responsive">
                             <!--Table-->
-                            <table class="table table-hover mb-0">
+                            <table class="table table-hover mb-0" id="xample">
 
                                 <!--Table head-->
                                 <thead>
@@ -315,10 +315,11 @@
                                 <!--Table body-->
                             </table>
                             <!--Table-->
+                         
                         </div>
 
                         <hr class="my-0">
-
+    
                         <!--Bottom Table UI-->
                         <div class="d-flex justify-content-between">
 
@@ -394,5 +395,38 @@
 
 </div>
 <br>
+   
 {% endfor %}
+<table id="example" >
+        <thead>
+            <tr>
+                <th>Capítulo</th>
+                <th>Título</th>
+                <th>Última actualización</th>
+                <th>Estado de publicación</th>
+                <th>Acción</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in infoCapitulo %}
+            <tr>
+                <td>#{{item.numCapitulo}}</td>
+                <td>{{item.tituloCap}}</td>
+                <td>{{item.actualizado}}</td>
+                <td><select >
+                <option value="1">{{item.estado}}</option>
+                <option value="2"></option>
+            </select></td>
+                <td> <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4" href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >
+       <i class="fas fa-pencil-alt"></i></a>
+      <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient " href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >
+      <i class="fa fa-remove mt-0"></i></a> </td>
+               
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
 {% endblock %}
+

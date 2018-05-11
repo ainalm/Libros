@@ -319,7 +319,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
                         <div class=\"table-responsive\">
                             <!--Table-->
-                            <table class=\"table table-hover mb-0\">
+                            <table class=\"table table-hover mb-0\" id=\"xample\">
 
                                 <!--Table head-->
                                 <thead>
@@ -422,10 +422,11 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                 <!--Table body-->
                             </table>
                             <!--Table-->
+                         
                         </div>
 
                         <hr class=\"my-0\">
-
+    
                         <!--Bottom Table UI-->
                         <div class=\"d-flex justify-content-between\">
 
@@ -501,11 +502,73 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
 </div>
 <br>
+   
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 400
+        echo "<table id=\"example\" >
+        <thead>
+            <tr>
+                <th>Capítulo</th>
+                <th>Título</th>
+                <th>Última actualización</th>
+                <th>Estado de publicación</th>
+                <th>Acción</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 412
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["infoCapitulo"]) ? $context["infoCapitulo"] : $this->getContext($context, "infoCapitulo")));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 413
+            echo "            <tr>
+                <td>#";
+            // line 414
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 415
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 416
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "actualizado", array()), "html", null, true);
+            echo "</td>
+                <td><select >
+                <option value=\"1\">";
+            // line 418
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "estado", array()), "html", null, true);
+            echo "</option>
+                <option value=\"2\"></option>
+            </select></td>
+                <td> <a   data-toggle=\"tooltip\" data-placement=\"top\" title=\"Editar capítulo\" class=\" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4\" href=\"";
+            // line 421
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_capitulo", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
+            echo "\" >
+       <i class=\"fas fa-pencil-alt\"></i></a>
+      <a   data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar capítulo\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \" href=\"";
+            // line 423
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
+            echo "\" >
+      <i class=\"fa fa-remove mt-0\"></i></a> </td>
+               
+            </tr>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 428
+        echo "            
+        </tbody>
+    </table>
+";
     }
 
     public function getTemplateName()
@@ -520,7 +583,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
     public function getDebugInfo()
     {
-        return array (  419 => 312,  408 => 307,  403 => 305,  397 => 302,  392 => 300,  388 => 299,  384 => 298,  379 => 296,  375 => 295,  369 => 291,  365 => 290,  310 => 238,  305 => 236,  295 => 229,  259 => 196,  251 => 191,  86 => 28,  82 => 27,  79 => 26,  74 => 25,  59 => 16,  54 => 14,  48 => 11,  39 => 5,  36 => 4,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  568 => 428,  557 => 423,  552 => 421,  546 => 418,  541 => 416,  537 => 415,  533 => 414,  530 => 413,  526 => 412,  512 => 400,  419 => 312,  408 => 307,  403 => 305,  397 => 302,  392 => 300,  388 => 299,  384 => 298,  379 => 296,  375 => 295,  369 => 291,  365 => 290,  310 => 238,  305 => 236,  295 => 229,  259 => 196,  251 => 191,  86 => 28,  82 => 27,  79 => 26,  74 => 25,  59 => 16,  54 => 14,  48 => 11,  39 => 5,  36 => 4,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} */
@@ -771,7 +834,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /* */
 /*                         <div class="table-responsive">*/
 /*                             <!--Table-->*/
-/*                             <table class="table table-hover mb-0">*/
+/*                             <table class="table table-hover mb-0" id="xample">*/
 /* */
 /*                                 <!--Table head-->*/
 /*                                 <thead>*/
@@ -840,10 +903,11 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                                 <!--Table body-->*/
 /*                             </table>*/
 /*                             <!--Table-->*/
+/*                          */
 /*                         </div>*/
 /* */
 /*                         <hr class="my-0">*/
-/* */
+/*     */
 /*                         <!--Bottom Table UI-->*/
 /*                         <div class="d-flex justify-content-between">*/
 /* */
@@ -919,5 +983,39 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /* */
 /* </div>*/
 /* <br>*/
+/*    */
 /* {% endfor %}*/
+/* <table id="example" >*/
+/*         <thead>*/
+/*             <tr>*/
+/*                 <th>Capítulo</th>*/
+/*                 <th>Título</th>*/
+/*                 <th>Última actualización</th>*/
+/*                 <th>Estado de publicación</th>*/
+/*                 <th>Acción</th>*/
+/*                */
+/*             </tr>*/
+/*         </thead>*/
+/*         <tbody>*/
+/*             {% for item in infoCapitulo %}*/
+/*             <tr>*/
+/*                 <td>#{{item.numCapitulo}}</td>*/
+/*                 <td>{{item.tituloCap}}</td>*/
+/*                 <td>{{item.actualizado}}</td>*/
+/*                 <td><select >*/
+/*                 <option value="1">{{item.estado}}</option>*/
+/*                 <option value="2"></option>*/
+/*             </select></td>*/
+/*                 <td> <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4" href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >*/
+/*        <i class="fas fa-pencil-alt"></i></a>*/
+/*       <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient " href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >*/
+/*       <i class="fa fa-remove mt-0"></i></a> </td>*/
+/*                */
+/*             </tr>*/
+/*             {% endfor %}*/
+/*             */
+/*         </tbody>*/
+/*     </table>*/
 /* {% endblock %}*/
+/* */
+/* */
