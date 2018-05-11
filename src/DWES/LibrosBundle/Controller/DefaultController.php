@@ -90,38 +90,7 @@ class DefaultController extends Controller
 		return $this->render('DWESLibrosBundle:Default:crearperfil.html.twig', $params);
 
 	}
-
-	public function personalizarLibAction()
-	{//TODO:
-		
-		/* Guardo en el array los campos del form*/
-		$params = array('resuHist' => '', 'genero' => '');
-
-		$peticion = $this->getRequest(); 	//Llamada al Form
-
-	
-		 
-		//Obtengo el valor de los campos del Form
-		$resuHist = $peticion->request->get('resuHist');
-		$genero = $peticion->request->get('genero');
-		$userlog = $this->getUser()->getUsername();
-		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
-		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-
-			$IdLibroInsertado = $connection->fetchColumn('SELECT MAX(idLibro) from libro WHERE username="' . $userlog . '"'); //Libro insertado
-
-			$idGeneroSelecc = $connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id genero seleccionado
-			//Update descripción del último libro insertado
-			$connection->executeUpdate('UPDATE libro SET descripcion = "' . $resuHist . '",idGenero="' . $idGeneroSelecc . '" WHERE libro.idLibro = "' . $IdLibroInsertado . '"');
-
-		}
-
-		$params = array('titulohistoria' => '', 'titulocapitulo' => '', 'contCapitulo' => '', 'tituloHistoria' => $tituloLibro, 'capitulosInsertados' => $capitulosInsertados, 'resuHist' => '');
-
-		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
-	}
-
-
+                                    
 	public function escribirhistoriaAction()
 	{
 			/*Generos:
@@ -165,7 +134,7 @@ class DefaultController extends Controller
 			
 			/*  INSERT 1º Capitulo  FANTASMA*/
 
-					$connection->executeUpdate('INSERT INTO capitulo (idCapitulo, idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES (0, "' . $idLibro . '", 1, 0, 0, "Fantasma");');
+					$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", 1, 0, 0, "Fantasma");');
 				}
 			} else {
 				var_dump("ya existe el libro");
@@ -173,8 +142,6 @@ class DefaultController extends Controller
 			}
 
 			$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'idLibro' => $idLibro);
-
-
 			return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro)));
 		}
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
@@ -258,7 +225,7 @@ class DefaultController extends Controller
 		return $this->render('DWESLibrosBundle:Default:contacto.html.twig', $params);
 	}
 	public function suscripcionAction()
-	{
+	{ 
 
 		$em = $this->getDoctrine()->getManager(); //Llamada a la BD
 
@@ -273,7 +240,9 @@ class DefaultController extends Controller
 	}
 	public function perfilHistoriaAction($idLibro)
 	{
-		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
+		$libro = $connection->fetchAll('SELECT * FROM libro WHERE idLibro="' . $idLibro . '"'); //Titulo  historia (Se muestra en el Header)
+		$params = array('infoLibro' => $libro);
 		return $this->render('DWESLibrosBundle:Default:perfilhistoria.html.twig', $params);
 	}
 }
