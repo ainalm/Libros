@@ -134,7 +134,7 @@ class DefaultController extends Controller
 			
 			/*  INSERT 1º Capitulo  FANTASMA*/
 
-					$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", 1, 0, 0, "Fantasma");');
+					$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", 1, "", "", "Fantasma");');
 				}
 			} else {
 				var_dump("ya existe el libro");
@@ -142,21 +142,44 @@ class DefaultController extends Controller
 			}
 
 			$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'idLibro' => $idLibro);
-			return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro)));
+			return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro,'numCapitulo'=>1)));
 		}
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
-	public function capituloAction($idLibro)
+	public function nuevoCapAction($idLibro){
+		$userlog = $this->getUser()->getUsername();
+		$connection = $this->get("database_connection");
+		$SelectultimoCapitulo = $connection->fetchColumn('SELECT MAX(numCapitulo) FROM capitulo WHERE idLibro =' . $idLibro . '');
+			// Selecciono el ultimo capítulo para incrementarlo
+				$ultimoCapitulo = $SelectultimoCapitulo + 1;
+			///Hace la INSERT del capitulo
+				$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", "' . $ultimoCapitulo . '", "", "", "Fantasma");');
+			//INSERT de la operación realizada
+
+				
+				return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro,'numCapitulo'=>$ultimoCapitulo)));
+	}
+
+	public function eliminarCapAction($idLibro,$numCapitulo){
+	
+		$connection = $this->get("database_connection");
+	
+				$connection->executeUpdate('DELETE FROM capitulo WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $numCapitulo . '";');
+				return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
+	}
+
+	public function capituloAction($idLibro,$numCapitulo)
 	{
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
-
+	
 
 		$tituloH = $connection->fetchColumn('SELECT titulo FROM libro WHERE idLibro="' . $idLibro . '"'); //Titulo  historia (Se muestra en el Header)
 		$usuarioH = $connection->fetchColumn('SELECT username FROM operacionlibros WHERE idLibro="' . $idLibro . '"GROUP BY username'); //Autor historia (Se muestra en el Header)
 		$fechaM = $connection->fetchColumn('SELECT fechaOL FROM operacionlibros WHERE idLibro = "' . $idLibro . '" AND codOperacion = 2'); //Fecha Update
-		
+		$tituloBD=trim($connection->fetchColumn('SELECT tituloCap FROM capitulo WHERE idLibro = "' . $idLibro . '" AND numCapitulo ="' . $numCapitulo . '"')); //Título de la BD Update
+		$contBD=trim($connection->fetchColumn('SELECT contenidoCap FROM capitulo WHERE idLibro = "' . $idLibro . '" AND numCapitulo ="' . $numCapitulo . '"')); //Contenido de la BD
 			/* Guardo en el array los campos del form*/
 		$params = array('tituloCapitulo' => '', 'contCapitulo' => '', 'tituloLibro' => $tituloH, 'autor' => $usuarioH, 'fecha' => $fechaM);
 
@@ -183,14 +206,14 @@ class DefaultController extends Controller
 			if (isset($titulocapitulo) && isset($contCapitulo)) {
 				/* INSERT DEL CAPITULO */
 				$connection->executeUpdate('UPDATE capitulo SET   tituloCap = "' . $titulocapitulo . '", contenidoCap = "' . $contCapitulo . '" , estado = "Borrador" 
-					WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $SelectultimoCapitulo . '";');
+					WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $numCapitulo . '";');
 				/* UPDATE OPERACIÓN INSERTAR */
 				$connection->executeUpdate('UPDATE operacionlibros SET motivoOL = "Capitulo grabado" , fechaOL = CURRENT_TIMESTAMP
 					 WHERE operacionlibros.codOperacion = 2 AND operacionlibros.idLibro = "' . $idLibro . '" AND operacionlibros.username = "' . $userlog . '"');
 			}
-
 			return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
 		}
+		$params = array('tituloCapitulo' => $tituloBD, 'contCapitulo' => $contBD, 'tituloLibro' => $tituloH, 'autor' => $usuarioH, 'fecha' => $fechaM);
 
 		return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
 	}
@@ -242,7 +265,12 @@ class DefaultController extends Controller
 	{
 		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
 		$libro = $connection->fetchAll('SELECT * FROM libro WHERE idLibro="' . $idLibro . '"'); //Titulo  historia (Se muestra en el Header)
-		$params = array('infoLibro' => $libro);
+		$capitulo=$connection->fetchAll('SELECT numCapitulo,tituloCap,estado,max(operacionlibros.fechaOL) actualizado
+		 FROM `capitulo` INNER JOIN operacionlibros WHERE capitulo.idLibro="' . $idLibro . '"GROUP BY numCapitulo'); 
+		
+		
+		$params = array('infoLibro' => $libro,'infoCapitulo'=> $capitulo);
+
 		return $this->render('DWESLibrosBundle:Default:perfilhistoria.html.twig', $params);
 	}
 }

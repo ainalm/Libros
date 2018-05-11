@@ -64,28 +64,25 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                 </div> 
             </div>
         </div> 
-            
-
-
 <br>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 25
         echo "
 ";
     }
 
-    // line 29
+    // line 26
     public function block_contenido($context, array $blocks = array())
     {
-        // line 30
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["infoLibro"]) ? $context["infoLibro"] : $this->getContext($context, "infoLibro")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 31
+            // line 28
             echo "<div class=\"container \">
 
 
@@ -250,7 +247,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     <!--Title-->
                                     <h5 class=\"card-title dark-grey-text text-center grey lighten-4 py-2\">
                                         <strong>";
-            // line 194
+            // line 191
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
             echo "</strong>
                                     </h5>
@@ -258,7 +255,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     <!--Description-->
                                     <p class=\"mt-3 dark-grey-text font-small text-center\">
                                         <em>";
-            // line 199
+            // line 196
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "descripcion", array()), "html", null, true);
             echo "
                                         </em>
@@ -291,26 +288,28 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                     <div class=\"view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center\">
 
                         <div>
-                            <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\">
-                                <i class=\"fa fa-th-large mt-0\"></i>
-                            </button>
-                            <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\">
-                                <i class=\"fa fa-columns mt-0\"></i>
-                            </button>
+                        
+                               
+                            <a  data-toggle=\"tooltip\" data-placement=\"top\" title=\"Añadir capítulo\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\" href=\"";
+            // line 229
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_nuevoCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+            echo "\" > <i class=\"fas fa-plus\"></i></a>
+                           
                         </div>
 
                         <a href=\"\" class=\"white-text mx-3\">Capítulos de Título historia</a>
 
                         <div>
-                            <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\">
-                                <i class=\"fa fa-pencil mt-0\"></i>
-                            </button>
-                            <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\">
-                                <i class=\"fa fa-remove mt-0\"></i>
-                            </button>
-                            <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\">
-                                <i class=\"fa fa-info-circle mt-0\"></i>
-                            </button>
+                            <a   data-toggle=\"tooltip\" data-placement=\"top\" title=\"Editar capítulo\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\" href=\"";
+            // line 236
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfilhistoria", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+            echo "\" >
+                               <i class=\"fas fa-pencil-alt\"></i></a>
+                              <a   data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar capítulo\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\" href=\"";
+            // line 238
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfilhistoria", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+            echo "\" >
+                              <i class=\"fa fa-remove mt-0\"></i></a>
                         </div>
 
                     </div>
@@ -345,106 +344,79 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                             </a>
                                         </th>
                                         <th class=\"th-lg\">
-                                            <a href=\"\">Me gusta
-                                                <i class=\"fa fa-sort ml-1\"></i>
-                                            </a>
-                                        </th> 
-                                        <th class=\"th-lg\">
-                                            <a href=\"\">Comentarios
+                                            <a href=\"\">Estado de publicación
                                                 <i class=\"fa fa-sort ml-1\"></i>
                                             </a>
                                         </th>
                                         <th class=\"th-lg\">
-                                            <a href=\"\">Estado de publicación
-                                                <i class=\"fa fa-sort ml-1\"></i>
+                                            <a href=\"\">Acción
+                                               
                                             </a>
                                         </th>
                                     </tr>
                                 </thead>
                                 <!--Table head-->
-
+      
                                 <!--Table body-->
                                 <tbody>
+                                   
+                                      ";
+            // line 290
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["infoCapitulo"]) ? $context["infoCapitulo"] : $this->getContext($context, "infoCapitulo")));
+            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+                // line 291
+                echo "        
+       
                                     <tr>
                                         <th scope=\"row\">
-                                            <input type=\"checkbox\" id=\"checkbox1\">
-                                            <label for=\"checkbox1\" class=\"label-table\"></label>
+                                            <input type=\"checkbox\" id=\"checkbox";
+                // line 295
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
+                echo "\">
+                                            <label for=\"checkbox";
+                // line 296
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
+                echo "\" class=\"label-table\"></label>
                                         </th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>markotto@gmail.com</td>
-                                        <td>USA</td>
+                                        <td>#";
+                // line 298
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
+                echo "</td>
+                                        <td>";
+                // line 299
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
+                echo "</td>
+                                        <td>";
+                // line 300
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "actualizado", array()), "html", null, true);
+                echo "</td>
                                         <td><select class=\"mdb-select colorful-select dropdown-primary\">
-                                        <option value=\"1\">Borrador</option>
-                                        <option value=\"2\">Publicado</option>
-                                       
+                                        <option value=\"1\">";
+                // line 302
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "estado", array()), "html", null, true);
+                echo "</option>
+                                        <option value=\"2\"></option>
                                     </select></td>
+                                         <td> <a   data-toggle=\"tooltip\" data-placement=\"top\" title=\"Editar capítulo\" class=\" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4\" href=\"";
+                // line 305
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_capitulo", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
+                echo "\" >
+                               <i class=\"fas fa-pencil-alt\"></i></a>
+                              <a   data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar capítulo\" class=\"btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \" href=\"";
+                // line 307
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
+                echo "\" >
+                              <i class=\"fa fa-remove mt-0\"></i></a> </td>
                                     </tr>
                                     <tr>
-                                        <th scope=\"row\">
-                                            <input type=\"checkbox\" id=\"checkbox2\">
-                                            <label for=\"checkbox2\" class=\"label-table\"></label>
-                                        </th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>jacobt@gmail.com</td>
-                                        <td>France</td>
-                                        <td><select class=\"mdb-select colorful-select dropdown-primary\">
-                                        <option value=\"1\">Borrador</option>
-                                        <option value=\"2\">Publicado</option>
-                                       
-                                    </select></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope=\"row\">
-                                            <input type=\"checkbox\" id=\"checkbox3\">
-                                            <label for=\"checkbox3\" class=\"label-table\"></label>
-                                        </th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>larrybird@gmail.com</td>
-                                        <td>Germany</td>
-                                        <td><select class=\"mdb-select colorful-select dropdown-primary\">
-                                        <option value=\"1\">Borrador</option>
-                                        <option value=\"2\">Publicado</option>
-                                       
-                                    </select></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope=\"row\">
-                                            <input type=\"checkbox\" id=\"checkbox4\">
-                                            <label for=\"checkbox4\" class=\"label-table\"></label>
-                                        </th>
-                                        <td>Paul</td>
-                                        <td>Topolski</td>
-                                        <td>@P_Topolski</td>
-                                        <td>ptopolski@gmail.com</td>
-                                        <td>Poland</td>
-                                        <td><select class=\"mdb-select colorful-select dropdown-primary\">
-                                        <option value=\"1\">Borrador</option>
-                                        <option value=\"2\">Publicado</option>
-                                       
-                                    </select></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope=\"row\">
-                                            <input type=\"checkbox\" id=\"checkbox5\">
-                                            <label for=\"checkbox5\" class=\"label-table\"></label>
-                                        </th>
-                                        <td>Anna</td>
-                                        <td>Doe</td>
-                                        <td>@andy</td>
-                                        <td>annadoe@gmail.com</td>
-                                        <td>Spain</td>
-                                        <td><select class=\"mdb-select colorful-select dropdown-primary\">
-                                        <option value=\"1\">Borrador</option>
-                                        <option value=\"2\">Publicado</option>
-                                        
-                                    </select></td>
-                                    </tr>
+                                     ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 312
+            echo "                                        
                                    
                                 </tbody>
                                 <!--Table body-->
@@ -548,7 +520,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
     public function getDebugInfo()
     {
-        return array (  262 => 199,  254 => 194,  89 => 31,  85 => 30,  82 => 29,  77 => 28,  59 => 16,  54 => 14,  48 => 11,  39 => 5,  36 => 4,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  419 => 312,  408 => 307,  403 => 305,  397 => 302,  392 => 300,  388 => 299,  384 => 298,  379 => 296,  375 => 295,  369 => 291,  365 => 290,  310 => 238,  305 => 236,  295 => 229,  259 => 196,  251 => 191,  86 => 28,  82 => 27,  79 => 26,  74 => 25,  59 => 16,  54 => 14,  48 => 11,  39 => 5,  36 => 4,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} */
@@ -573,9 +545,6 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                 </div> */
 /*             </div>*/
 /*         </div> */
-/*             */
-/* */
-/* */
 /* <br>*/
 /* {% endfor %}*/
 /* */
@@ -780,26 +749,19 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                     <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">*/
 /* */
 /*                         <div>*/
-/*                             <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">*/
-/*                                 <i class="fa fa-th-large mt-0"></i>*/
-/*                             </button>*/
-/*                             <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">*/
-/*                                 <i class="fa fa-columns mt-0"></i>*/
-/*                             </button>*/
+/*                         */
+/*                                */
+/*                             <a  data-toggle="tooltip" data-placement="top" title="Añadir capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_nuevoCap', {'idLibro' : app.request.get('idLibro')}) }}" > <i class="fas fa-plus"></i></a>*/
+/*                            */
 /*                         </div>*/
 /* */
 /*                         <a href="" class="white-text mx-3">Capítulos de Título historia</a>*/
 /* */
 /*                         <div>*/
-/*                             <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">*/
-/*                                 <i class="fa fa-pencil mt-0"></i>*/
-/*                             </button>*/
-/*                             <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">*/
-/*                                 <i class="fa fa-remove mt-0"></i>*/
-/*                             </button>*/
-/*                             <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">*/
-/*                                 <i class="fa fa-info-circle mt-0"></i>*/
-/*                             </button>*/
+/*                             <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}" >*/
+/*                                <i class="fas fa-pencil-alt"></i></a>*/
+/*                               <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}" >*/
+/*                               <i class="fa fa-remove mt-0"></i></a>*/
 /*                         </div>*/
 /* */
 /*                     </div>*/
@@ -834,106 +796,45 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                                             </a>*/
 /*                                         </th>*/
 /*                                         <th class="th-lg">*/
-/*                                             <a href="">Me gusta*/
-/*                                                 <i class="fa fa-sort ml-1"></i>*/
-/*                                             </a>*/
-/*                                         </th> */
-/*                                         <th class="th-lg">*/
-/*                                             <a href="">Comentarios*/
+/*                                             <a href="">Estado de publicación*/
 /*                                                 <i class="fa fa-sort ml-1"></i>*/
 /*                                             </a>*/
 /*                                         </th>*/
 /*                                         <th class="th-lg">*/
-/*                                             <a href="">Estado de publicación*/
-/*                                                 <i class="fa fa-sort ml-1"></i>*/
+/*                                             <a href="">Acción*/
+/*                                                */
 /*                                             </a>*/
 /*                                         </th>*/
 /*                                     </tr>*/
 /*                                 </thead>*/
 /*                                 <!--Table head-->*/
-/* */
+/*       */
 /*                                 <!--Table body-->*/
 /*                                 <tbody>*/
+/*                                    */
+/*                                       {% for item in infoCapitulo %}*/
+/*         */
+/*        */
 /*                                     <tr>*/
 /*                                         <th scope="row">*/
-/*                                             <input type="checkbox" id="checkbox1">*/
-/*                                             <label for="checkbox1" class="label-table"></label>*/
+/*                                             <input type="checkbox" id="checkbox{{item.numCapitulo}}">*/
+/*                                             <label for="checkbox{{item.numCapitulo}}" class="label-table"></label>*/
 /*                                         </th>*/
-/*                                         <td>Mark</td>*/
-/*                                         <td>Otto</td>*/
-/*                                         <td>@mdo</td>*/
-/*                                         <td>markotto@gmail.com</td>*/
-/*                                         <td>USA</td>*/
+/*                                         <td>#{{item.numCapitulo}}</td>*/
+/*                                         <td>{{item.tituloCap}}</td>*/
+/*                                         <td>{{item.actualizado}}</td>*/
 /*                                         <td><select class="mdb-select colorful-select dropdown-primary">*/
-/*                                         <option value="1">Borrador</option>*/
-/*                                         <option value="2">Publicado</option>*/
-/*                                        */
+/*                                         <option value="1">{{item.estado}}</option>*/
+/*                                         <option value="2"></option>*/
 /*                                     </select></td>*/
+/*                                          <td> <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4" href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >*/
+/*                                <i class="fas fa-pencil-alt"></i></a>*/
+/*                               <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient " href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >*/
+/*                               <i class="fa fa-remove mt-0"></i></a> </td>*/
 /*                                     </tr>*/
 /*                                     <tr>*/
-/*                                         <th scope="row">*/
-/*                                             <input type="checkbox" id="checkbox2">*/
-/*                                             <label for="checkbox2" class="label-table"></label>*/
-/*                                         </th>*/
-/*                                         <td>Jacob</td>*/
-/*                                         <td>Thornton</td>*/
-/*                                         <td>@fat</td>*/
-/*                                         <td>jacobt@gmail.com</td>*/
-/*                                         <td>France</td>*/
-/*                                         <td><select class="mdb-select colorful-select dropdown-primary">*/
-/*                                         <option value="1">Borrador</option>*/
-/*                                         <option value="2">Publicado</option>*/
-/*                                        */
-/*                                     </select></td>*/
-/*                                     </tr>*/
-/*                                     <tr>*/
-/*                                         <th scope="row">*/
-/*                                             <input type="checkbox" id="checkbox3">*/
-/*                                             <label for="checkbox3" class="label-table"></label>*/
-/*                                         </th>*/
-/*                                         <td>Larry</td>*/
-/*                                         <td>the Bird</td>*/
-/*                                         <td>@twitter</td>*/
-/*                                         <td>larrybird@gmail.com</td>*/
-/*                                         <td>Germany</td>*/
-/*                                         <td><select class="mdb-select colorful-select dropdown-primary">*/
-/*                                         <option value="1">Borrador</option>*/
-/*                                         <option value="2">Publicado</option>*/
-/*                                        */
-/*                                     </select></td>*/
-/*                                     </tr>*/
-/*                                     <tr>*/
-/*                                         <th scope="row">*/
-/*                                             <input type="checkbox" id="checkbox4">*/
-/*                                             <label for="checkbox4" class="label-table"></label>*/
-/*                                         </th>*/
-/*                                         <td>Paul</td>*/
-/*                                         <td>Topolski</td>*/
-/*                                         <td>@P_Topolski</td>*/
-/*                                         <td>ptopolski@gmail.com</td>*/
-/*                                         <td>Poland</td>*/
-/*                                         <td><select class="mdb-select colorful-select dropdown-primary">*/
-/*                                         <option value="1">Borrador</option>*/
-/*                                         <option value="2">Publicado</option>*/
-/*                                        */
-/*                                     </select></td>*/
-/*                                     </tr>*/
-/*                                     <tr>*/
-/*                                         <th scope="row">*/
-/*                                             <input type="checkbox" id="checkbox5">*/
-/*                                             <label for="checkbox5" class="label-table"></label>*/
-/*                                         </th>*/
-/*                                         <td>Anna</td>*/
-/*                                         <td>Doe</td>*/
-/*                                         <td>@andy</td>*/
-/*                                         <td>annadoe@gmail.com</td>*/
-/*                                         <td>Spain</td>*/
-/*                                         <td><select class="mdb-select colorful-select dropdown-primary">*/
-/*                                         <option value="1">Borrador</option>*/
-/*                                         <option value="2">Publicado</option>*/
+/*                                      {% endfor %}*/
 /*                                         */
-/*                                     </select></td>*/
-/*                                     </tr>*/
 /*                                    */
 /*                                 </tbody>*/
 /*                                 <!--Table body-->*/

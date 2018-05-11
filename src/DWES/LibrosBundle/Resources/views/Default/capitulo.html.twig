@@ -15,7 +15,7 @@
                     </h3>
                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s"> <span class="mb-5">by @{{autor}}</span>
                     <br>
-                    <a href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}"  class="btn peach-gradient btn-lg mt-4">Cerrar e ir al perfil de la Historia</a> 
+                    <a href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}"  class="btn peach-gradient btn-lg mt-4 gcapitulo">Cerrar e ir al perfil de la Historia</a> 
                      
                     </h6>
                     
@@ -28,17 +28,16 @@
 
 
 {% block contenido %}
-{# 
-URL:
-{{ app.request.getRequestUri() }} 
+
+
 {% set path = app.request.pathInfo %}
-{{ path|split('/')|last }}
-Parámetro:
-{{ app.request.get('idLibro') }}
-#}
 
 
-  <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro')}) }}" method="POST"  target="frame"  > 
+
+
+
+
+  <form name="formCapitulo" action="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo': path|split('/')|last }) }}" target="frame" method="POST"   > 
   <iframe name="frame" style="display: none"></iframe>
 <div class="container-fluid pl-0 pr-0" style="background-color: #f4f5f6;" id="container1">
 
@@ -51,7 +50,7 @@ Parámetro:
             <div class="">
                 {# <p><i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}
                 
-                <button type="submit" class="btn purple-gradient btn-sm" id="gcapitulo" >Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>
+                <button type="submit" class="btn purple-gradient btn-sm gcapitulo" >Guardar</button> <span class="green-text font-weight-bold pr-2 small">Grabado</span>
                 <span class="text-dark small pr-2 cl"> {{fecha}}</span><span class="text-dark  font-weight-bold pr-2 cl" id="carac">| 0</span><span class="text-dark  cl">caráceteres </span>
                 <span class="text-dark  font-weight-bold pr-2 cl" id="palab">- 0</span><span class="text-dark  pr-2 cl">palabras</span>
             </div>
@@ -114,16 +113,13 @@ Parámetro:
                             <label for="titulohistoria" class="Ltitulohistoria valL cl" id="labelTitC"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>
                         </div>
                 </div>
-
-                      
                 </div>
                 <div class="row mt-3">
-
                     <!--Grid column-->
                     <div class="col-md-12">
 
                         <div class="md-form mb-5">
-                            <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}"></textarea>
+                            <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}</textarea>
                             <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Escriba su historia aquí...</label>
 
                         </div>

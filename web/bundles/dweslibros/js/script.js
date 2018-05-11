@@ -153,7 +153,7 @@ contC.keydown(function(event) {
   validaCampo(contC, labelcontC);
 });
 
-$("#gcapitulo").on("click", function(e) {
+$(".gcapitulo").on("click", function(e) {
   //Valida form CAPITULO
 
   if (tituloC.val() == "" ||contC.val() == "" ) {

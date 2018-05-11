@@ -20,9 +20,6 @@
                 </div> 
             </div>
         </div> 
-            
-
-
 <br>
 {% endfor %}
 
@@ -227,26 +224,19 @@
                     <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
                         <div>
-                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">
-                                <i class="fa fa-th-large mt-0"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">
-                                <i class="fa fa-columns mt-0"></i>
-                            </button>
+                        
+                               
+                            <a  data-toggle="tooltip" data-placement="top" title="Añadir capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_nuevoCap', {'idLibro' : app.request.get('idLibro')}) }}" > <i class="fas fa-plus"></i></a>
+                           
                         </div>
 
                         <a href="" class="white-text mx-3">Capítulos de Título historia</a>
 
                         <div>
-                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">
-                                <i class="fa fa-pencil mt-0"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">
-                                <i class="fa fa-remove mt-0"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light">
-                                <i class="fa fa-info-circle mt-0"></i>
-                            </button>
+                            <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}" >
+                               <i class="fas fa-pencil-alt"></i></a>
+                              <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}" >
+                              <i class="fa fa-remove mt-0"></i></a>
                         </div>
 
                     </div>
@@ -281,106 +271,45 @@
                                             </a>
                                         </th>
                                         <th class="th-lg">
-                                            <a href="">Me gusta
-                                                <i class="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th> 
-                                        <th class="th-lg">
-                                            <a href="">Comentarios
+                                            <a href="">Estado de publicación
                                                 <i class="fa fa-sort ml-1"></i>
                                             </a>
                                         </th>
                                         <th class="th-lg">
-                                            <a href="">Estado de publicación
-                                                <i class="fa fa-sort ml-1"></i>
+                                            <a href="">Acción
+                                               
                                             </a>
                                         </th>
                                     </tr>
                                 </thead>
                                 <!--Table head-->
-
+      
                                 <!--Table body-->
                                 <tbody>
+                                   
+                                      {% for item in infoCapitulo %}
+        
+       
                                     <tr>
                                         <th scope="row">
-                                            <input type="checkbox" id="checkbox1">
-                                            <label for="checkbox1" class="label-table"></label>
+                                            <input type="checkbox" id="checkbox{{item.numCapitulo}}">
+                                            <label for="checkbox{{item.numCapitulo}}" class="label-table"></label>
                                         </th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>markotto@gmail.com</td>
-                                        <td>USA</td>
+                                        <td>#{{item.numCapitulo}}</td>
+                                        <td>{{item.tituloCap}}</td>
+                                        <td>{{item.actualizado}}</td>
                                         <td><select class="mdb-select colorful-select dropdown-primary">
-                                        <option value="1">Borrador</option>
-                                        <option value="2">Publicado</option>
-                                       
+                                        <option value="1">{{item.estado}}</option>
+                                        <option value="2"></option>
                                     </select></td>
+                                         <td> <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4" href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >
+                               <i class="fas fa-pencil-alt"></i></a>
+                              <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient " href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}" >
+                              <i class="fa fa-remove mt-0"></i></a> </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
-                                            <input type="checkbox" id="checkbox2">
-                                            <label for="checkbox2" class="label-table"></label>
-                                        </th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>jacobt@gmail.com</td>
-                                        <td>France</td>
-                                        <td><select class="mdb-select colorful-select dropdown-primary">
-                                        <option value="1">Borrador</option>
-                                        <option value="2">Publicado</option>
-                                       
-                                    </select></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input type="checkbox" id="checkbox3">
-                                            <label for="checkbox3" class="label-table"></label>
-                                        </th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>larrybird@gmail.com</td>
-                                        <td>Germany</td>
-                                        <td><select class="mdb-select colorful-select dropdown-primary">
-                                        <option value="1">Borrador</option>
-                                        <option value="2">Publicado</option>
-                                       
-                                    </select></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input type="checkbox" id="checkbox4">
-                                            <label for="checkbox4" class="label-table"></label>
-                                        </th>
-                                        <td>Paul</td>
-                                        <td>Topolski</td>
-                                        <td>@P_Topolski</td>
-                                        <td>ptopolski@gmail.com</td>
-                                        <td>Poland</td>
-                                        <td><select class="mdb-select colorful-select dropdown-primary">
-                                        <option value="1">Borrador</option>
-                                        <option value="2">Publicado</option>
-                                       
-                                    </select></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input type="checkbox" id="checkbox5">
-                                            <label for="checkbox5" class="label-table"></label>
-                                        </th>
-                                        <td>Anna</td>
-                                        <td>Doe</td>
-                                        <td>@andy</td>
-                                        <td>annadoe@gmail.com</td>
-                                        <td>Spain</td>
-                                        <td><select class="mdb-select colorful-select dropdown-primary">
-                                        <option value="1">Borrador</option>
-                                        <option value="2">Publicado</option>
+                                     {% endfor %}
                                         
-                                    </select></td>
-                                    </tr>
                                    
                                 </tbody>
                                 <!--Table body-->

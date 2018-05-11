@@ -226,12 +226,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // dwes_libros_capitulo
-        if (0 === strpos($pathinfo, '/capitulo') && preg_match('#^/capitulo/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/capitulo') && preg_match('#^/capitulo/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_capitulo')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::capituloAction',));
+        }
+
+        // dwes_libros_nuevoCap
+        if (0 === strpos($pathinfo, '/nuevoCap') && preg_match('#^/nuevoCap/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_capitulo');
+                return $this->redirect($pathinfo.'/', 'dwes_libros_nuevoCap');
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_capitulo')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::capituloAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_nuevoCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::nuevoCapAction',));
+        }
+
+        // dwes_libros_eliminarCap
+        if (0 === strpos($pathinfo, '/eliminarCap') && preg_match('#^/eliminarCap/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarCapAction',));
         }
 
         // dwes_libros_suscripcion
