@@ -325,7 +325,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                 <thead>
                                     <tr>
                                         <th>
-                                            <input type=\"checkbox\" id=\"checkbox\">
+                                           
                                             <label for=\"checkbox\" class=\"mr-2 label-table\"></label>
                                         </th>
                                         <th class=\"th-lg\">
@@ -370,10 +370,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
        
                                     <tr>
                                         <th scope=\"row\">
-                                            <input type=\"checkbox\" id=\"checkbox";
-                // line 295
-                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
-                echo "\">
+                                           
                                             <label for=\"checkbox";
                 // line 296
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
@@ -520,7 +517,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
     public function getDebugInfo()
     {
-        return array (  419 => 312,  408 => 307,  403 => 305,  397 => 302,  392 => 300,  388 => 299,  384 => 298,  379 => 296,  375 => 295,  369 => 291,  365 => 290,  310 => 238,  305 => 236,  295 => 229,  259 => 196,  251 => 191,  86 => 28,  82 => 27,  79 => 26,  74 => 25,  59 => 16,  54 => 14,  48 => 11,  39 => 5,  36 => 4,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  416 => 312,  405 => 307,  400 => 305,  394 => 302,  389 => 300,  385 => 299,  381 => 298,  376 => 296,  369 => 291,  365 => 290,  310 => 238,  305 => 236,  295 => 229,  259 => 196,  251 => 191,  86 => 28,  82 => 27,  79 => 26,  74 => 25,  59 => 16,  54 => 14,  48 => 11,  39 => 5,  36 => 4,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} */
@@ -777,7 +774,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                                 <thead>*/
 /*                                     <tr>*/
 /*                                         <th>*/
-/*                                             <input type="checkbox" id="checkbox">*/
+/*                                            */
 /*                                             <label for="checkbox" class="mr-2 label-table"></label>*/
 /*                                         </th>*/
 /*                                         <th class="th-lg">*/
@@ -817,7 +814,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*        */
 /*                                     <tr>*/
 /*                                         <th scope="row">*/
-/*                                             <input type="checkbox" id="checkbox{{item.numCapitulo}}">*/
+/*                                            */
 /*                                             <label for="checkbox{{item.numCapitulo}}" class="label-table"></label>*/
 /*                                         </th>*/
 /*                                         <td>#{{item.numCapitulo}}</td>*/

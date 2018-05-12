@@ -64,7 +64,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                         <a class=\"dropdown-item\" href=\"";
         // line 41
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria");
-        echo "\">Escribir novela</a>
+        echo "\">Nueva historia</a>
                         <a class=\"dropdown-item\" href=\"../features/feature-detail.html\">Anunciar mi libro</a>
                     </div>
                 </li>
@@ -433,7 +433,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                 <li class="nav-item dropdown ml-4">*/
 /*                     <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crear </a>*/
 /*                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_escribirhistoria') }}">Escribir novela</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_escribirhistoria') }}">Nueva historia</a>*/
 /*                         <a class="dropdown-item" href="../features/feature-detail.html">Anunciar mi libro</a>*/
 /*                     </div>*/
 /*                 </li>*/
