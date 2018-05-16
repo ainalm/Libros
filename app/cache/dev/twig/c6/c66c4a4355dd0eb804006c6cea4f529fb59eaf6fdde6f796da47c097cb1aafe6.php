@@ -294,9 +294,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/css/bootstrap.min.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 <!-- Material Design Bootstrap -->
-";
-        // line 10
-        echo "<!-- Versión PRO Material Design Bootstrap -->
+<link href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/css/mdb.min.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" /> 
+<!-- Versión PRO Material Design Bootstrap -->
 <link href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/css/compiled.min.css"), "html", null, true);
@@ -390,7 +392,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     public function getDebugInfo()
     {
-        return array (  367 => 214,  362 => 212,  356 => 209,  350 => 206,  345 => 204,  341 => 202,  338 => 201,  332 => 103,  321 => 94,  312 => 15,  307 => 13,  302 => 11,  299 => 10,  294 => 7,  288 => 3,  285 => 2,  271 => 191,  265 => 190,  261 => 189,  230 => 160,  226 => 159,  169 => 104,  167 => 103,  157 => 95,  153 => 94,  139 => 82,  133 => 79,  129 => 78,  125 => 77,  120 => 76,  117 => 75,  112 => 74,  107 => 73,  103 => 71,  101 => 70,  82 => 54,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
+        return array (  369 => 214,  364 => 212,  358 => 209,  352 => 206,  347 => 204,  343 => 202,  340 => 201,  334 => 103,  323 => 94,  314 => 15,  309 => 13,  304 => 11,  299 => 9,  294 => 7,  288 => 3,  285 => 2,  271 => 191,  265 => 190,  261 => 189,  230 => 160,  226 => 159,  169 => 104,  167 => 103,  157 => 95,  153 => 94,  139 => 82,  133 => 79,  129 => 78,  125 => 77,  120 => 76,  117 => 75,  112 => 74,  107 => 73,  103 => 71,  101 => 70,  82 => 54,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
     }
 }
 /* */
@@ -401,7 +403,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* <!-- Bootstrap core CSS -->*/
 /* <link href="{{ asset('bundles/dweslibros/MDB/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />*/
 /* <!-- Material Design Bootstrap -->*/
-/* {#<link href="{{ asset('bundles/dweslibros/MDB/css/mdb.min.css') }}" type="text/css" rel="stylesheet" /> #}*/
+/* <link href="{{ asset('bundles/dweslibros/MDB/css/mdb.min.css') }}" type="text/css" rel="stylesheet" /> */
 /* <!-- Versión PRO Material Design Bootstrap -->*/
 /* <link href="{{ asset('bundles/dweslibros/MDB/css/compiled.min.css') }}" type="text/css" rel="stylesheet" />*/
 /* <!-- Material Design Bootstrap -->*/

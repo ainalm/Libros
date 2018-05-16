@@ -105,3 +105,8 @@ cursor: pointer;
 .cl{
   color:#4285f4 !important
 }
+.clr{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mlADLFGgp2cVcCMjDSHP7PxNeZ0xfgD8pZaDkmOv1a9L8RH4nw) !important;
+  background-size: cover;
+  /* filter: blur(15px) !important; */
+}

@@ -301,5 +301,24 @@ $( "#letraDown" ).on( "click", function() {
     $( "#contact-message" ).css( "font-size", "-=2" );
   
   }
+
+ 
+
 });
 
+$( "#updatePerfil" ).on( "click", function() {
+//Previsualiza la imagen seleccionada de perfil antes de actualizar el perfil
+  var image_name = $('#file-upload').val();
+                var extension = $('#file-upload').val().split('.').pop().toLowerCase();  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','']) == -1)  
+                {  
+                     alert('Formato de imagen inválido');  
+                     $('#file-upload').val('');  
+                     return false;  
+                }  
+});
+
+$( ".borrarImg" ).on( "click", function() {
+  $("#camb").attr("src","http://www.iconarchive.com/download/i86027/graphicloads/100-flat-2/arrow-upload.ico");
+
+});

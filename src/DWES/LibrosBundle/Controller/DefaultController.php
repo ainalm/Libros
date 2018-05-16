@@ -59,10 +59,11 @@ class DefaultController extends Controller
 	public function crearperfilAction()
 	{
 		/* Guardo en el array los campos del form*/
-		$params = array('nombre' => '', 'apellidos' => '', 'fnacimiento' => '', 'pweb' => '', 'biografia' => '', 'fotoSubida' => '');
+		$params = array('nombre' => '', 'apellidos' => '', 'fnacimiento' => '', 'pweb' => '', 'biografia' => '', 'file_upload' => '','fotoPerfil'=>'');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
-
+		$request->files;
+	
 		//Obtengo el valor de los campos del Form
 		$nombre = $peticion->request->get('nombre');
 		$apellidos = $peticion->request->get('apellidos');
@@ -70,12 +71,18 @@ class DefaultController extends Controller
 		$pweb = $peticion->request->get('pweb');
 		$biografia = $peticion->request->get('biografia');
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
-		$fotoSubida = addslashes(file_get_contents($_FILES["fotoSubida"]));
+		  
+		$fotoSubida = addslashes(file_get_contents($_FILES['file_upload']['tmp_name'])); //Imagen Subida del  usuario
 		$connection = $this->get("database_connection");	//Conexión con la BD 
+		
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-
+	
+			$query = 'INSERT INTO tbl_images(name) VALUES ("'.$contImagen.'")'; 
 			$connection->executeUpdate('UPDATE usuario SET nombre = "' . $nombre . '", fechaNacimiento = "' . $fnacimiento . '", biografia = "' . $biografia . '", paginaWeb = "' . $pweb . '", apellidos = "' . $apellidos . '" WHERE usuario.username = "' . $userlog . '";');
+	
+			$connection->executeUpdate('UPDATE `usuario` SET fotoPerfil ="'. $fotoSubida .'" WHERE username ="'. $userlog .'" ;');
 
+			//var_dump('INSERT INTO test(imagen) VALUES ("'. $contImagen .'");');exit;
 			return $this->redirect($this->generateUrl('dwes_libros_perfil'));
 		}
 		//Relleno los datos para editar
@@ -84,8 +91,9 @@ class DefaultController extends Controller
 		$fnacimiento = $connection->fetchColumn('SELECT fechaNacimiento FROM usuario WHERE username = "' . $userlog . '"');
 		$pweb = $connection->fetchColumn('SELECT paginaWeb FROM usuario WHERE username = "' . $userlog . '"');
 		$biografia = $connection->fetchColumn('SELECT biografia FROM usuario WHERE username = "' . $userlog . '"');
-
-		$params = array('nombre' => $nombre, 'apellidos' => $apellidos, 'fnacimiento' => $fnacimiento, 'pweb' => $pweb, 'biografia' => $biografia, 'fotoSubida' => '');
+		$fotoP = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username = "' . $userlog . '"');
+		$imagen = base64_encode($fotoP);
+		$params = array('nombre' => $nombre, 'apellidos' => $apellidos, 'fnacimiento' => $fnacimiento, 'pweb' => $pweb, 'biografia' => $biografia, 'fotoPerfil' => $imagen);
 
 		return $this->render('DWESLibrosBundle:Default:crearperfil.html.twig', $params);
 
@@ -119,6 +127,7 @@ class DefaultController extends Controller
 
 		$idLibro = "";
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
+			
 				/* FIXME: Evitar meter libros duplicado */
 			if (empty($numExist) && $numExist == 0) {
 			/* INSERT LIBRO  CREADO*/

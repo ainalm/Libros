@@ -67,7 +67,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
     </ul>
     <!--/. Navegación-->
     <div class=\"tab-content card\">
-        <!--Panel 1-->
+        <!--Panel 1--> 
      
         <div class=\"tab-pane fade active show\" id=\"panel1\" role=\"tabpanel\">
             <br>
@@ -221,11 +221,12 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                     <div class=\"row flex-center\">
                         <div class=\" col-md-12 \" style=\"max-width: 200px;\">
     
-                            <div class=\"view text-center \" style=\"    max-width: 200px;
+                            <div class=\"view text-center clr\" style=\"    max-width: 200px;
                         min-height: 300px;\">
-                                <img src=\"\" class=\"img-fluid\" alt=\"\">
                                 <div class=\"mask flex-center rgba-blue-grey-strong \" id=\"colorSelecc\">
-                                    <p class=\"white-text titPortada\" >Título de la historia</p>
+                                   ";
+        // line 184
+        echo "                                    <img  class=\"img-fluid \"  src=\"https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d\">
                                 </div>
     
                             </div>
@@ -296,8 +297,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                           ";
         }
         // line 248
-        echo "                           <br> <button class=\"btn pink-gradient btn-rounded waves-effect waves-light\" type=\"submit\">Empezar Hisotria</button>
-                           
+        echo "                           <br><button class=\"btn pink-gradient btn-rounded waves-effect waves-light\" type=\"submit\">Empezar Hisotria</button>
                         </div>
                 </div> 
             </form>
@@ -319,7 +319,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  299 => 248,  293 => 246,  291 => 245,  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  300 => 248,  294 => 246,  292 => 245,  229 => 184,  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -356,7 +356,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*     </ul>*/
 /*     <!--/. Navegación-->*/
 /*     <div class="tab-content card">*/
-/*         <!--Panel 1-->*/
+/*         <!--Panel 1--> */
 /*      */
 /*         <div class="tab-pane fade active show" id="panel1" role="tabpanel">*/
 /*             <br>*/
@@ -501,11 +501,11 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     <div class="row flex-center">*/
 /*                         <div class=" col-md-12 " style="max-width: 200px;">*/
 /*     */
-/*                             <div class="view text-center " style="    max-width: 200px;*/
+/*                             <div class="view text-center clr" style="    max-width: 200px;*/
 /*                         min-height: 300px;">*/
-/*                                 <img src="" class="img-fluid" alt="">*/
 /*                                 <div class="mask flex-center rgba-blue-grey-strong " id="colorSelecc">*/
-/*                                     <p class="white-text titPortada" >Título de la historia</p>*/
+/*                                    {#  <p class="white-text titPortada" >Título de la historia</p> #}*/
+/*                                     <img  class="img-fluid "  src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d">*/
 /*                                 </div>*/
 /*     */
 /*                             </div>*/
@@ -569,8 +569,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                             {% if idLibro is defined %}*/
 /*                             {{idLibro}}*/
 /*                           {% endif %}*/
-/*                            <br> <button class="btn pink-gradient btn-rounded waves-effect waves-light" type="submit">Empezar Hisotria</button>*/
-/*                            */
+/*                            <br><button class="btn pink-gradient btn-rounded waves-effect waves-light" type="submit">Empezar Hisotria</button>*/
 /*                         </div>*/
 /*                 </div> */
 /*             </form>*/
