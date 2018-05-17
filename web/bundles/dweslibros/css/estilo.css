@@ -110,3 +110,12 @@ cursor: pointer;
   background-size: cover;
   /* filter: blur(15px) !important; */
 }
+
+
+.activeL{
+  background-color: #e3e3e3;
+}
+
+.navL :hover{
+  color: #e55a7a !important;
+}

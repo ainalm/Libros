@@ -23,8 +23,46 @@
 <br>
 {% endfor %}
 
-{% endblock %} {% block contenido %}
+{% endblock %} 
+
+{% block contenido %}
 {% for item in infoLibro %}
+
+
+<!--Modal: Login with Avatar Form-->
+<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+ 
+            <!--Header-->
+            <div class="modal-header">
+                <img src="data:image/jpeg;base64,{{foto}}" alt="avatar" class="img-responsive">
+            </div>
+            <!--Body-->
+            <div class="modal-body text-center mb-1">
+
+                <h5 class="mt-1 mb-2">Maria Doe</h5>
+
+                <div class="md-form ml-0 mr-0">
+                    <input type="text" type="text" id="form29" class="form-control form-control-sm validate ml-0" name="tituloHis" value="{{item.titulo}}">
+                    <label  for="form29" class="ml-0">Título del libro</label>
+                </div>
+                 <div class="md-form ml-0 mr-0">
+                    <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="">{{item.descripcion}}</textarea>
+                            <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Resumen</label>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-cyan mt-1">Actualizar</button>
+                </div>
+            </div>
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Login with Avatar Form-->
+             
 <div class="container ">
 
 
@@ -79,7 +117,7 @@
                                     <!--/Blue select-->
 
                                     <!--Date pickers-->
-                                    <p class="lead mt-5">
+                                    <p class="lead ">
                                         <span class="badge info-color p-2">Clasificación de edad</span>
                                     </p>
                                     <br>
@@ -122,7 +160,7 @@
                                     <!--/Blue select-->
 
                                     <!--Date pickers-->
-                                    <p class="lead mt-5">
+                                    <p class="lead ">
                                         <span class="badge info-color p-2">Idioma</span>
                                     </p>
                                     <br>
@@ -156,7 +194,7 @@
                         </div>
                         <!--/.Card content-->
 
-                    </div>
+                    </div> 
                     <!--Grid column-->
 
                     <!--Grid column-->
@@ -175,9 +213,11 @@
 
                             <div class="card">
 
-                                <!--Card image-->
+                                <!--Card image TODO: Imagen libro-->
                                 <div class="view overlay">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/20.jpg" class="card-img-top" alt="">
+                                    <img src="data:image/jpeg;base64,{{foto}}" class="card-img-top" alt="" style="
+    max-height: 180px;
+">
                                     <a>
                                         <div class="mask rgba-white-slight waves-effect waves-light"></div>
                                     </a>
@@ -188,12 +228,22 @@
                                 <div class="card-body">
                                     <!--Title-->
                                     <h5 class="card-title dark-grey-text text-center grey lighten-4 py-2">
-                                        <strong>{{item.titulo}}</strong>
+                                        <strong>{{item.titulo}}</strong> <a href=""  data-toggle="modal" data-target="#modalLoginAvatar">
+    
+    <span data-toggle="tooltip" data-placement="top" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4" href="#" data-original-title="Editar información del libro">
+                               <i class="fas fa-pencil-alt"></i></span>
+    </a>
                                     </h5>
 
                                     <!--Description-->
-                                    <p class="mt-3 dark-grey-text font-small text-center">
-                                        <em>{{item.descripcion}}
+                                    <p class="mt-3 dark-grey-text font-small text-center" style=" 
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;">
+                                        <em>{{item.descripcion}}<div class="text-center">
+   
+</div>
                                         </em>
                                     </p>
 
@@ -224,26 +274,19 @@
                     <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
                         <div>
-                        
-                               
                             <a  data-toggle="tooltip" data-placement="top" title="Añadir capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_nuevoCap', {'idLibro' : app.request.get('idLibro')}) }}" > <i class="fas fa-plus"></i></a>
-                           
                         </div>
-
                         <a href="" class="white-text mx-3">Capítulos de Título historia</a>
-
                         <div>
                             <a   data-toggle="tooltip" data-placement="top" title="Editar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}" >
                                <i class="fas fa-pencil-alt"></i></a>
                               <a   data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : app.request.get('idLibro')}) }}" >
                               <i class="fa fa-remove mt-0"></i></a>
                         </div>
-
                     </div>
                     <!--/Card image-->
 
                     <div class="px-4">
-
                         <div class="table-responsive">
                             <!--Table-->
                             <table class="table table-hover mb-0">
@@ -252,7 +295,6 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                           
                                             <label for="checkbox" class="mr-2 label-table"></label>
                                         </th>
                                         <th class="th-lg">

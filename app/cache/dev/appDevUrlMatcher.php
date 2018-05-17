@@ -239,9 +239,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_nuevoCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::nuevoCapAction',));
         }
 
-        // dwes_libros_eliminarCap
-        if (0 === strpos($pathinfo, '/eliminarCap') && preg_match('#^/eliminarCap/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarCapAction',));
+        if (0 === strpos($pathinfo, '/eliminar')) {
+            // dwes_libros_eliminarCap
+            if (0 === strpos($pathinfo, '/eliminarCap') && preg_match('#^/eliminarCap/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarCapAction',));
+            }
+
+            // dwes_libros_eliminarLib
+            if (0 === strpos($pathinfo, '/eliminarLib') && preg_match('#^/eliminarLib/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarLib')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarLibAction',));
+            }
+
         }
 
         // dwes_libros_suscripcion

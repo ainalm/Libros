@@ -76,7 +76,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
             <form name=\"formNuevoCapitulo\" action=\"";
         // line 41
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria");
-        echo "\"  method=\"POST\"  > 
+        echo "\"  method=\"POST\"  enctype=\"multipart/form-data\"> 
                     <!-- target=\"frame\" -->
 
                 <!--Grid row-->
@@ -194,62 +194,49 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                                 <div class=\" text-center\">
                                     <h5 class=\"mb-3 mt-5\">Añade una portada a tu historia</h5>
                                     <div class=\"row flex-center\">
-                                        <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"fotoSubida\" value=\"\" id=\"file-upload\" type=\"file\">
-                                        <button class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light\">Borrar</button>
+                                        <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light \"> Subir Foto</label><br><input name=\"file_upload\"  id=\"file-upload\" class=\"portLibr\" type=\"file\" onchange=\"document.getElementById('cambL').src = window.URL.createObjectURL(this.files[0]); \$('.titPortada').css('display', 'none');\"/>
+                                         <label for=\"borrarImg\" class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImgL\" id=\"\"> Borrar</label><br>
                                     </div>
-                                    <h5 class=\"mb-3 mt-5 mb-4\">O selecciona un color de fondo:</h5>
+                                    <h5 class=\"mb-3 mt-5 mb-4\">O selecciona un color de fondo:</h5> 
                             </div> 
-                                <div class=\"row\" style=\"
-                                margin-left: 20% !important;
-                            \">
+                                <div class=\"row\" style=\"margin-left: 20% !important;\">
                                   <div class=\"col-3 color rgba-blue-strong\" id=\"rgba-blue-strong\"><div class=\"\"></div></div>
-                                  <div class=\"col-3 color  rgba-red-strong\" id=\"rgba-red-strong\"><div class=\" \"></div></div>
-                                  <div class=\"col-3 color rgba-pink-strong\" id=\"rgba-pink-strong\"><div class=\" \"></div></div>
+                                  <div class=\"col-3 color  rgba-red-strong\" id=\"rgba-red-strong\"><div class=\"\"></div></div>
+                                  <div class=\"col-3 color rgba-pink-strong\" id=\"rgba-pink-strong\"><div class=\"\"></div></div>
                                   <div class=\"col-3 color rgba-indigo-strong\" id=\"rgba-indigo-strong\"><div class=\" \"></div></div>
                                 </div>
-                                <div class=\"row\" style=\"
-                                margin-left: 20% !important;
-                            \">
-                                  <div class=\"col-3 color rgba-teal-strong\" id=\"rgba-teal-strong\"><div class=\"  \"></div></div>
-                                  <div class=\"col-3 color rgba-orange-strong\" id=\" rgba-orange-strong\"><div class=\" \"></div></div>
-                                  <div class=\"col-3 color  rgba-blue-grey-strong\" id=\"rgba-blue-grey-strong\"><div class=\" \"></div></div>
-                                  <div class=\"col-3 color rgba-black-strong\" id=\"rgba-black-strong\"><div class=\" \"></div></div>
+                                <div class=\"row\" style=\"margin-left: 20% !important;\">
+                                  <div class=\"col-3 color rgba-teal-strong\" id=\"rgba-teal-strong\"><div class=\"\"></div></div>
+                                  <div class=\"col-3 color rgba-orange-strong\" id=\" rgba-orange-strong\"><div class=\"\"></div></div>
+                                  <div class=\"col-3 color  rgba-blue-grey-strong\" id=\"rgba-blue-grey-strong\"><div class=\"\"></div></div>
+                                  <div class=\"col-3 color rgba-black-strong\" id=\"rgba-black-strong\"><div class=\"\"></div></div>
                                 </div>
                                 </div>
+                                <input type=\"text\" id=\"colorF\" style=\"display:none\" name=\"colorFondo\" value=\"";
+        // line 171
+        echo twig_escape_filter($this->env, (isset($context["colorFondo"]) ? $context["colorFondo"] : $this->getContext($context, "colorFondo")), "html", null, true);
+        echo "\">
+                                
                   </div>
-                  <div class=\"col-lg-4 \">
+                  <div class=\"col-lg-4\">
                     <div class=\"row flex-center\">
                         <div class=\" col-md-12 \" style=\"max-width: 200px;\">
     
-                            <div class=\"view text-center clr\" style=\"    max-width: 200px;
+                            <div class=\"view text-center clrno\" style=\"    max-width: 200px;
                         min-height: 300px;\">
-                                <div class=\"mask flex-center rgba-blue-grey-strong \" id=\"colorSelecc\">
-                                   ";
-        // line 184
-        echo "                                    <img  class=\"img-fluid \"  src=\"https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d\">
+                                <div class=\"mask flex-center rgba-blue-grey-strong clrno\" id=\"colorSelecc\">
+                                    <p class=\"white-text titPortada\" >Título de la historia</p> 
+                                    <img  id=\"cambL\" class=\"img-fluid\"  src=\"\">
                                 </div>
-    
                             </div>
-    
                         </div>
-    
                     </div>
-                    
-                  
-                  
                   </div>
-               
                 </div>
-                
-                
-                
               </div>
 
-                  
-
-
                 <div class=\"text-center text-md-left mt-4\">
-                    <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" type=\"submit\" value=\"Siguiente: 03. ¡Empieza ya!\" ></input>
+                <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" type=\"button\" value=\"Siguiente: 03. ¡Empieza ya!\" ></input>
                 </div>
 
                 <div class=\"text-center text-md-left mt-4\">
@@ -266,12 +253,14 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                         <div class=\"view text-center \" style=\"    max-width: 200px;
                     min-height: 300px;\">
-                            <img src=\"\" class=\"img-fluid\" alt=\"\">
+                           
                             <div class=\"mask flex-center rgba-blue-grey-strong \"  id=\"colorSelecc1\"> 
                                 <p class=\"white-text titPortada\">Ponme un título</p>
+                                 <img src=\"\" class=\"img-fluid imgLibro\" alt=\"\" >
                             </div>
 
                         </div>
+                        
 
                     </div>
 
@@ -288,16 +277,16 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             <p id=\"resumen\"></p>
                             </div>
                             ";
-        // line 245
+        // line 232
         if (array_key_exists("idLibro", $context)) {
-            // line 246
+            // line 233
             echo "                            ";
             echo twig_escape_filter($this->env, (isset($context["idLibro"]) ? $context["idLibro"] : $this->getContext($context, "idLibro")), "html", null, true);
             echo "
                           ";
         }
-        // line 248
-        echo "                           <br><button class=\"btn pink-gradient btn-rounded waves-effect waves-light\" type=\"submit\">Empezar Hisotria</button>
+        // line 235
+        echo "                           <br><button  type=\"submit\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" >Empezar Hisotria</button>
                         </div>
                 </div> 
             </form>
@@ -319,7 +308,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  300 => 248,  294 => 246,  292 => 245,  229 => 184,  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  289 => 235,  283 => 233,  281 => 232,  217 => 171,  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -362,7 +351,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*             <br>*/
 /*                 */
 /*               */
-/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  > */
+/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  enctype="multipart/form-data"> */
 /*                     <!-- target="frame" -->*/
 /* */
 /*                 <!--Grid row-->*/
@@ -474,61 +463,46 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                                 <div class=" text-center">*/
 /*                                     <h5 class="mb-3 mt-5">Añade una portada a tu historia</h5>*/
 /*                                     <div class="row flex-center">*/
-/*                                         <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="fotoSubida" value="" id="file-upload" type="file">*/
-/*                                         <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Borrar</button>*/
+/*                                         <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light "> Subir Foto</label><br><input name="file_upload"  id="file-upload" class="portLibr" type="file" onchange="document.getElementById('cambL').src = window.URL.createObjectURL(this.files[0]); $('.titPortada').css('display', 'none');"/>*/
+/*                                          <label for="borrarImg" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImgL" id=""> Borrar</label><br>*/
 /*                                     </div>*/
-/*                                     <h5 class="mb-3 mt-5 mb-4">O selecciona un color de fondo:</h5>*/
+/*                                     <h5 class="mb-3 mt-5 mb-4">O selecciona un color de fondo:</h5> */
 /*                             </div> */
-/*                                 <div class="row" style="*/
-/*                                 margin-left: 20% !important;*/
-/*                             ">*/
+/*                                 <div class="row" style="margin-left: 20% !important;">*/
 /*                                   <div class="col-3 color rgba-blue-strong" id="rgba-blue-strong"><div class=""></div></div>*/
-/*                                   <div class="col-3 color  rgba-red-strong" id="rgba-red-strong"><div class=" "></div></div>*/
-/*                                   <div class="col-3 color rgba-pink-strong" id="rgba-pink-strong"><div class=" "></div></div>*/
+/*                                   <div class="col-3 color  rgba-red-strong" id="rgba-red-strong"><div class=""></div></div>*/
+/*                                   <div class="col-3 color rgba-pink-strong" id="rgba-pink-strong"><div class=""></div></div>*/
 /*                                   <div class="col-3 color rgba-indigo-strong" id="rgba-indigo-strong"><div class=" "></div></div>*/
 /*                                 </div>*/
-/*                                 <div class="row" style="*/
-/*                                 margin-left: 20% !important;*/
-/*                             ">*/
-/*                                   <div class="col-3 color rgba-teal-strong" id="rgba-teal-strong"><div class="  "></div></div>*/
-/*                                   <div class="col-3 color rgba-orange-strong" id=" rgba-orange-strong"><div class=" "></div></div>*/
-/*                                   <div class="col-3 color  rgba-blue-grey-strong" id="rgba-blue-grey-strong"><div class=" "></div></div>*/
-/*                                   <div class="col-3 color rgba-black-strong" id="rgba-black-strong"><div class=" "></div></div>*/
+/*                                 <div class="row" style="margin-left: 20% !important;">*/
+/*                                   <div class="col-3 color rgba-teal-strong" id="rgba-teal-strong"><div class=""></div></div>*/
+/*                                   <div class="col-3 color rgba-orange-strong" id=" rgba-orange-strong"><div class=""></div></div>*/
+/*                                   <div class="col-3 color  rgba-blue-grey-strong" id="rgba-blue-grey-strong"><div class=""></div></div>*/
+/*                                   <div class="col-3 color rgba-black-strong" id="rgba-black-strong"><div class=""></div></div>*/
 /*                                 </div>*/
 /*                                 </div>*/
+/*                                 <input type="text" id="colorF" style="display:none" name="colorFondo" value="{{colorFondo}}">*/
+/*                                 */
 /*                   </div>*/
-/*                   <div class="col-lg-4 ">*/
+/*                   <div class="col-lg-4">*/
 /*                     <div class="row flex-center">*/
 /*                         <div class=" col-md-12 " style="max-width: 200px;">*/
 /*     */
-/*                             <div class="view text-center clr" style="    max-width: 200px;*/
+/*                             <div class="view text-center clrno" style="    max-width: 200px;*/
 /*                         min-height: 300px;">*/
-/*                                 <div class="mask flex-center rgba-blue-grey-strong " id="colorSelecc">*/
-/*                                    {#  <p class="white-text titPortada" >Título de la historia</p> #}*/
-/*                                     <img  class="img-fluid "  src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d">*/
+/*                                 <div class="mask flex-center rgba-blue-grey-strong clrno" id="colorSelecc">*/
+/*                                     <p class="white-text titPortada" >Título de la historia</p> */
+/*                                     <img  id="cambL" class="img-fluid"  src="">*/
 /*                                 </div>*/
-/*     */
 /*                             </div>*/
-/*     */
 /*                         </div>*/
-/*     */
 /*                     </div>*/
-/*                     */
-/*                   */
-/*                   */
 /*                   </div>*/
-/*                */
 /*                 </div>*/
-/*                 */
-/*                 */
-/*                 */
 /*               </div>*/
 /* */
-/*                   */
-/* */
-/* */
 /*                 <div class="text-center text-md-left mt-4">*/
-/*                     <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="submit" value="Siguiente: 03. ¡Empieza ya!" ></input>*/
+/*                 <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="button" value="Siguiente: 03. ¡Empieza ya!" ></input>*/
 /*                 </div>*/
 /* */
 /*                 <div class="text-center text-md-left mt-4">*/
@@ -545,12 +519,14 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /* */
 /*                         <div class="view text-center " style="    max-width: 200px;*/
 /*                     min-height: 300px;">*/
-/*                             <img src="" class="img-fluid" alt="">*/
+/*                            */
 /*                             <div class="mask flex-center rgba-blue-grey-strong "  id="colorSelecc1"> */
 /*                                 <p class="white-text titPortada">Ponme un título</p>*/
+/*                                  <img src="" class="img-fluid imgLibro" alt="" >*/
 /*                             </div>*/
 /* */
 /*                         </div>*/
+/*                         */
 /* */
 /*                     </div>*/
 /* */
@@ -569,7 +545,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                             {% if idLibro is defined %}*/
 /*                             {{idLibro}}*/
 /*                           {% endif %}*/
-/*                            <br><button class="btn pink-gradient btn-rounded waves-effect waves-light" type="submit">Empezar Hisotria</button>*/
+/*                            <br><button  type="submit" class="btn pink-gradient btn-rounded waves-effect waves-light" >Empezar Hisotria</button>*/
 /*                         </div>*/
 /*                 </div> */
 /*             </form>*/

@@ -55,6 +55,8 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
+
+
   <div class=\"container-fluid\">
 
                 <!--Blog-->
@@ -67,32 +69,36 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 
                                 <ul class=\"list-group z-depth-1\">
 
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center\">
-                                        <a class=\"dark-grey-text font-small\">
-                                            <i class=\"fa fa-laptop dark-grey-text mr-2\" aria-hidden=\"true\"></i> Mi lista de deseos</a>
+                                    <li class=\"list-group-item d-flex justify-content-between align-items-center \">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                            Mi lista de deseos</a>
                                         <a href=\"\"></a>
-                                        <span class=\"badge badge-danger badge-pill\">43</span>
+                                        <span class=\"badge badge-danger badge-pill\">?</span>
                                         
                                     </li>
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center\">
-                                        <a class=\"dark-grey-text font-small\">
-                                            <i class=\"fa fa-mobile-phone dark-grey-text mr-3\" aria-hidden=\"true\"></i> Mi lista de lectura</a>
-                                        <span class=\"badge badge-danger badge-pill\">32</span>
+                                    <li class=\"list-group-item d-flex justify-content-between align-items-center   activeL\">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                            Mi lista de lectura</a>
+                                        <span class=\"badge badge-danger badge-pill\">?</span>
                                     </li>
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center\">
-                                        <a class=\"dark-grey-text font-small\">
-                                            <i class=\"fa fa-tablet dark-grey-text mr-3\" aria-hidden=\"true\"></i> Mis libros en venta</a>
-                                        <span class=\"badge badge-danger badge-pill\">18</span>
+                                    <li class=\"list-group-item d-flex justify-content-between align-items-center \">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                            Mis libros en venta</a>
+                                        <span class=\"badge badge-danger badge-pill\">?</span>
                                     </li>
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center\">
-                                        <a class=\"dark-grey-text font-small\">
-                                            <i class=\"fa fa-headphones dark-grey-text mr-3\" aria-hidden=\"true\"></i>Mis libros publicados</a>
-                                        <span class=\"badge badge-danger badge-pill\">37</span>
+
+                                    <li class=\"list-group-item d-flex justify-content-between align-items-center \">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                          Mis libros publicados</a>
+                                        <span class=\"badge badge-danger badge-pill\">";
+        // line 61
+        echo twig_escape_filter($this->env, (isset($context["clibros"]) ? $context["clibros"] : $this->getContext($context, "clibros")), "html", null, true);
+        echo "</span>
                                     </li>
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center\">
-                                        <a class=\"dark-grey-text font-small\">
-                                            <i class=\"fa fa-camera-retro dark-grey-text mr-3\" aria-hidden=\"true\"></i>Favoritos</a>
-                                        <span class=\"badge badge-danger badge-pill\">15</span>
+                                    <li class=\"list-group-item d-flex justify-content-between align-items-center \">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                          Favoritos</a>
+                                        <span class=\"badge badge-danger badge-pill\">?</span>
                                     </li>
 
                                 </ul>
@@ -106,312 +112,16 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 
                         <!--Section: Blog v.3-->
                         <section class=\"section extra-margins pb-3 text-center text-lg-left\">
-
-                           
-
-                            
-
                             <!--Grid row-->
                             <div class=\"row text-center\">
-
-                               <div class=\"col-md-4 mb-4\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
-                                 <div class=\"card-share\">
-                                    <div class=\"social-reveal\">
-                                        <!--Facebook-->
-                                        <a type=\"button\" class=\"btn-floating btn-fb waves-effect waves-light\"><i class=\"fa fa-facebook\"></i></a>
-                                        <!--Twitter-->
-                                        <a type=\"button\" class=\"btn-floating btn-tw waves-effect waves-light\"><i class=\"fa fa-twitter\"></i></a>
-                                        <!--Google -->
-                                        <a type=\"button\" class=\"btn-floating btn-gplus waves-effect waves-light\"><i class=\"fa fa-google-plus\"></i></a>
-                                    </div>
-                                    <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
-                                </div>
-                                 <!--/. Buttons-->
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
-                                                    <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
-                                                </a>
-                                            </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                  
-
-                                </div>
-                                <!--/.Card-->
-
-                                </div>
-
-                                <!--Grid column-->
-                                 <div class=\"col-md-4 mb-4\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
-                                 <div class=\"card-share\">
-                                    <div class=\"social-reveal\">
-                                        <!--Facebook-->
-                                        <a type=\"button\" class=\"btn-floating btn-fb waves-effect waves-light\"><i class=\"fa fa-facebook\"></i></a>
-                                        <!--Twitter-->
-                                        <a type=\"button\" class=\"btn-floating btn-tw waves-effect waves-light\"><i class=\"fa fa-twitter\"></i></a>
-                                        <!--Google -->
-                                        <a type=\"button\" class=\"btn-floating btn-gplus waves-effect waves-light\"><i class=\"fa fa-google-plus\"></i></a>
-                                    </div>
-                                    <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
-                                </div>
-                                 <!--/. Buttons-->
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
-                                                    <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
-                                                </a>
-                                            </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-
-                                </div>
-                                <!--/.Card-->
-
-                                     </div>
-                                <!--Grid column-->
-                                    <div class=\"col-md-4 mb-4\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
-                                 <div class=\"card-share\">
-                                    <div class=\"social-reveal\">
-                                        <!--Facebook-->
-                                        <a type=\"button\" class=\"btn-floating btn-fb waves-effect waves-light\"><i class=\"fa fa-facebook\"></i></a>
-                                        <!--Twitter-->
-                                        <a type=\"button\" class=\"btn-floating btn-tw waves-effect waves-light\"><i class=\"fa fa-twitter\"></i></a>
-                                        <!--Google -->
-                                        <a type=\"button\" class=\"btn-floating btn-gplus waves-effect waves-light\"><i class=\"fa fa-google-plus\"></i></a>
-                                    </div>
-                                    <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
-                                </div>
-                                 <!--/. Buttons-->
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
-                                                    <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
-                                                </a>
-                                            </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-
-                                </div>
-                                <!--/.Card-->
-
-                                </div>
-                            </div>
-                            <!--/Grid row-->
+                            ";
+        // line 83
+        $this->loadTemplate("DWESLibrosBundle:Default:_librospublicados.html.twig", "DWESLibrosBundle:Default:biblioteca.html.twig", 83)->display(array_merge($context, array("libros" =>         // line 84
+(isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")))));
+        // line 86
+        echo "                            <!--/Grid row-->
                         <!--Grid row-->
-                            <div class=\"row text-center\">
-
-                               <div class=\"col-md-4 mb-4\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
-                                 <div class=\"card-share\">
-                                    <div class=\"social-reveal\">
-                                        <!--Facebook-->
-                                        <a type=\"button\" class=\"btn-floating btn-fb waves-effect waves-light\"><i class=\"fa fa-facebook\"></i></a>
-                                        <!--Twitter-->
-                                        <a type=\"button\" class=\"btn-floating btn-tw waves-effect waves-light\"><i class=\"fa fa-twitter\"></i></a>
-                                        <!--Google -->
-                                        <a type=\"button\" class=\"btn-floating btn-gplus waves-effect waves-light\"><i class=\"fa fa-google-plus\"></i></a>
-                                    </div>
-                                    <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
-                                </div>
-                                 <!--/. Buttons-->
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
-                                                    <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
-                                                </a>
-                                            </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                  
-
-                                </div>
-                                <!--/.Card-->
-
-                            </div>
-
-                                <!--Grid column-->
-                                 <div class=\"col-md-4 mb-4\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
-                                 <div class=\"card-share\">
-                                    <div class=\"social-reveal\">
-                                        <!--Facebook-->
-                                        <a type=\"button\" class=\"btn-floating btn-fb waves-effect waves-light\"><i class=\"fa fa-facebook\"></i></a>
-                                        <!--Twitter-->
-                                        <a type=\"button\" class=\"btn-floating btn-tw waves-effect waves-light\"><i class=\"fa fa-twitter\"></i></a>
-                                        <!--Google -->
-                                        <a type=\"button\" class=\"btn-floating btn-gplus waves-effect waves-light\"><i class=\"fa fa-google-plus\"></i></a>
-                                    </div>
-                                    <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
-                                </div>
-                                 <!--/. Buttons-->
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
-                                                    <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
-                                                </a>
-                                            </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-
-                                </div>
-                                <!--/.Card-->
-
-                            </div>
-                                <!--Grid column-->
-                <div class=\"col-md-4 mb-4\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
-                                 <div class=\"card-share\">
-                                    <div class=\"social-reveal\">
-                                        <!--Facebook-->
-                                        <a type=\"button\" class=\"btn-floating btn-fb waves-effect waves-light\"><i class=\"fa fa-facebook\"></i></a>
-                                        <!--Twitter-->
-                                        <a type=\"button\" class=\"btn-floating btn-tw waves-effect waves-light\"><i class=\"fa fa-twitter\"></i></a>
-                                        <!--Google -->
-                                        <a type=\"button\" class=\"btn-floating btn-gplus waves-effect waves-light\"><i class=\"fa fa-google-plus\"></i></a>
-                                    </div>
-                                    <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
-                                </div>
-                                 <!--/. Buttons-->
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
-                                                    <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
-                                                </a>
-                                            </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-
-                                </div>
-                                <!--/.Card-->
-
-                            </div>
-                            </div>
-                            <!--/Grid row-->
+                            
                       
 
                         </section>
@@ -480,7 +190,7 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 
     public function getDebugInfo()
     {
-        return array (  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  122 => 86,  120 => 84,  119 => 83,  95 => 61,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -508,6 +218,8 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 /* {% endblock %} */
 /* */
 /* {% block contenido %} */
+/* */
+/* */
 /*   <div class="container-fluid">*/
 /* */
 /*                 <!--Blog-->*/
@@ -520,32 +232,33 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 /* */
 /*                                 <ul class="list-group z-depth-1">*/
 /* */
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                                         <a class="dark-grey-text font-small">*/
-/*                                             <i class="fa fa-laptop dark-grey-text mr-2" aria-hidden="true"></i> Mi lista de deseos</a>*/
+/*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                             Mi lista de deseos</a>*/
 /*                                         <a href=""></a>*/
-/*                                         <span class="badge badge-danger badge-pill">43</span>*/
+/*                                         <span class="badge badge-danger badge-pill">?</span>*/
 /*                                         */
 /*                                     </li>*/
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                                         <a class="dark-grey-text font-small">*/
-/*                                             <i class="fa fa-mobile-phone dark-grey-text mr-3" aria-hidden="true"></i> Mi lista de lectura</a>*/
-/*                                         <span class="badge badge-danger badge-pill">32</span>*/
+/*                                     <li class="list-group-item d-flex justify-content-between align-items-center   activeL">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                             Mi lista de lectura</a>*/
+/*                                         <span class="badge badge-danger badge-pill">?</span>*/
 /*                                     </li>*/
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                                         <a class="dark-grey-text font-small">*/
-/*                                             <i class="fa fa-tablet dark-grey-text mr-3" aria-hidden="true"></i> Mis libros en venta</a>*/
-/*                                         <span class="badge badge-danger badge-pill">18</span>*/
+/*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                             Mis libros en venta</a>*/
+/*                                         <span class="badge badge-danger badge-pill">?</span>*/
 /*                                     </li>*/
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                                         <a class="dark-grey-text font-small">*/
-/*                                             <i class="fa fa-headphones dark-grey-text mr-3" aria-hidden="true"></i>Mis libros publicados</a>*/
-/*                                         <span class="badge badge-danger badge-pill">37</span>*/
+/* */
+/*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                           Mis libros publicados</a>*/
+/*                                         <span class="badge badge-danger badge-pill">{{clibros}}</span>*/
 /*                                     </li>*/
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                                         <a class="dark-grey-text font-small">*/
-/*                                             <i class="fa fa-camera-retro dark-grey-text mr-3" aria-hidden="true"></i>Favoritos</a>*/
-/*                                         <span class="badge badge-danger badge-pill">15</span>*/
+/*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                           Favoritos</a>*/
+/*                                         <span class="badge badge-danger badge-pill">?</span>*/
 /*                                     </li>*/
 /* */
 /*                                 </ul>*/
@@ -559,312 +272,15 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 /* */
 /*                         <!--Section: Blog v.3-->*/
 /*                         <section class="section extra-margins pb-3 text-center text-lg-left">*/
-/* */
-/*                            */
-/* */
-/*                             */
-/* */
 /*                             <!--Grid row-->*/
 /*                             <div class="row text-center">*/
-/* */
-/*                                <div class="col-md-4 mb-4">*/
-/*                                 <!--Card-->*/
-/*                                 <div class="card">*/
-/* */
-/*                                     <!--Card image-->*/
-/*                                     <div class="view overlay">*/
-/*                                         <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="card-img-top" alt="sample image">*/
-/*                                         <a>*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                                         </a>*/
-/*                                     </div>*/
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
-/*                                  <div class="card-share">*/
-/*                                     <div class="social-reveal">*/
-/*                                         <!--Facebook-->*/
-/*                                         <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>*/
-/*                                         <!--Twitter-->*/
-/*                                         <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>*/
-/*                                         <!--Google -->*/
-/*                                         <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>*/
-/*                                     </div>*/
-/*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
-/*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
-/*                                     <!--Card content-->*/
-/*                                     <div class="card-body">*/
-/*                                         <!--Title-->*/
-/*                                         <h4 class="card-title"><strong>Card title</strong></h4>*/
-/*                                         <hr>*/
-/*                                         <!--Text-->*/
-/*                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's*/
-/*                                             content.*/
-/*                                         </p>*/
-/*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
-/*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
-/*                                                 </a>*/
-/*                                             </p>*/
-/*                                     </div>*/
-/*                                     <!--/.Card content-->*/
-/* */
-/*                                   */
-/* */
-/*                                 </div>*/
-/*                                 <!--/.Card-->*/
-/* */
-/*                                 </div>*/
-/* */
-/*                                 <!--Grid column-->*/
-/*                                  <div class="col-md-4 mb-4">*/
-/*                                 <!--Card-->*/
-/*                                 <div class="card">*/
-/* */
-/*                                     <!--Card image-->*/
-/*                                     <div class="view overlay">*/
-/*                                         <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="card-img-top" alt="sample image">*/
-/*                                         <a>*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                                         </a>*/
-/*                                     </div>*/
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
-/*                                  <div class="card-share">*/
-/*                                     <div class="social-reveal">*/
-/*                                         <!--Facebook-->*/
-/*                                         <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>*/
-/*                                         <!--Twitter-->*/
-/*                                         <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>*/
-/*                                         <!--Google -->*/
-/*                                         <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>*/
-/*                                     </div>*/
-/*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
-/*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
-/*                                     <!--Card content-->*/
-/*                                     <div class="card-body">*/
-/*                                         <!--Title-->*/
-/*                                         <h4 class="card-title"><strong>Card title</strong></h4>*/
-/*                                         <hr>*/
-/*                                         <!--Text-->*/
-/*                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's*/
-/*                                             content.*/
-/*                                         </p>*/
-/*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
-/*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
-/*                                                 </a>*/
-/*                                             </p>*/
-/*                                     </div>*/
-/*                                     <!--/.Card content-->*/
-/* */
-/* */
-/*                                 </div>*/
-/*                                 <!--/.Card-->*/
-/* */
-/*                                      </div>*/
-/*                                 <!--Grid column-->*/
-/*                                     <div class="col-md-4 mb-4">*/
-/*                                 <!--Card-->*/
-/*                                 <div class="card">*/
-/* */
-/*                                     <!--Card image-->*/
-/*                                     <div class="view overlay">*/
-/*                                         <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="card-img-top" alt="sample image">*/
-/*                                         <a>*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                                         </a>*/
-/*                                     </div>*/
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
-/*                                  <div class="card-share">*/
-/*                                     <div class="social-reveal">*/
-/*                                         <!--Facebook-->*/
-/*                                         <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>*/
-/*                                         <!--Twitter-->*/
-/*                                         <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>*/
-/*                                         <!--Google -->*/
-/*                                         <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>*/
-/*                                     </div>*/
-/*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
-/*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
-/*                                     <!--Card content-->*/
-/*                                     <div class="card-body">*/
-/*                                         <!--Title-->*/
-/*                                         <h4 class="card-title"><strong>Card title</strong></h4>*/
-/*                                         <hr>*/
-/*                                         <!--Text-->*/
-/*                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's*/
-/*                                             content.*/
-/*                                         </p>*/
-/*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
-/*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
-/*                                                 </a>*/
-/*                                             </p>*/
-/*                                     </div>*/
-/*                                     <!--/.Card content-->*/
-/* */
-/* */
-/*                                 </div>*/
-/*                                 <!--/.Card-->*/
-/* */
-/*                                 </div>*/
-/*                             </div>*/
+/*                             {%*/
+/*                             include 'DWESLibrosBundle:Default:_librospublicados.html.twig' */
+/*                             with {'libros': libros}*/
+/*                             %}*/
 /*                             <!--/Grid row-->*/
 /*                         <!--Grid row-->*/
-/*                             <div class="row text-center">*/
-/* */
-/*                                <div class="col-md-4 mb-4">*/
-/*                                 <!--Card-->*/
-/*                                 <div class="card">*/
-/* */
-/*                                     <!--Card image-->*/
-/*                                     <div class="view overlay">*/
-/*                                         <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="card-img-top" alt="sample image">*/
-/*                                         <a>*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                                         </a>*/
-/*                                     </div>*/
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
-/*                                  <div class="card-share">*/
-/*                                     <div class="social-reveal">*/
-/*                                         <!--Facebook-->*/
-/*                                         <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>*/
-/*                                         <!--Twitter-->*/
-/*                                         <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>*/
-/*                                         <!--Google -->*/
-/*                                         <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>*/
-/*                                     </div>*/
-/*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
-/*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
-/*                                     <!--Card content-->*/
-/*                                     <div class="card-body">*/
-/*                                         <!--Title-->*/
-/*                                         <h4 class="card-title"><strong>Card title</strong></h4>*/
-/*                                         <hr>*/
-/*                                         <!--Text-->*/
-/*                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's*/
-/*                                             content.*/
-/*                                         </p>*/
-/*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
-/*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
-/*                                                 </a>*/
-/*                                             </p>*/
-/*                                     </div>*/
-/*                                     <!--/.Card content-->*/
-/* */
-/*                                   */
-/* */
-/*                                 </div>*/
-/*                                 <!--/.Card-->*/
-/* */
-/*                             </div>*/
-/* */
-/*                                 <!--Grid column-->*/
-/*                                  <div class="col-md-4 mb-4">*/
-/*                                 <!--Card-->*/
-/*                                 <div class="card">*/
-/* */
-/*                                     <!--Card image-->*/
-/*                                     <div class="view overlay">*/
-/*                                         <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="card-img-top" alt="sample image">*/
-/*                                         <a>*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                                         </a>*/
-/*                                     </div>*/
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
-/*                                  <div class="card-share">*/
-/*                                     <div class="social-reveal">*/
-/*                                         <!--Facebook-->*/
-/*                                         <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>*/
-/*                                         <!--Twitter-->*/
-/*                                         <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>*/
-/*                                         <!--Google -->*/
-/*                                         <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>*/
-/*                                     </div>*/
-/*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
-/*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
-/*                                     <!--Card content-->*/
-/*                                     <div class="card-body">*/
-/*                                         <!--Title-->*/
-/*                                         <h4 class="card-title"><strong>Card title</strong></h4>*/
-/*                                         <hr>*/
-/*                                         <!--Text-->*/
-/*                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's*/
-/*                                             content.*/
-/*                                         </p>*/
-/*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
-/*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
-/*                                                 </a>*/
-/*                                             </p>*/
-/*                                     </div>*/
-/*                                     <!--/.Card content-->*/
-/* */
-/* */
-/*                                 </div>*/
-/*                                 <!--/.Card-->*/
-/* */
-/*                             </div>*/
-/*                                 <!--Grid column-->*/
-/*                 <div class="col-md-4 mb-4">*/
-/*                                 <!--Card-->*/
-/*                                 <div class="card">*/
-/* */
-/*                                     <!--Card image-->*/
-/*                                     <div class="view overlay">*/
-/*                                         <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="card-img-top" alt="sample image">*/
-/*                                         <a>*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                                         </a>*/
-/*                                     </div>*/
-/*                                     */
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
-/*                                  <div class="card-share">*/
-/*                                     <div class="social-reveal">*/
-/*                                         <!--Facebook-->*/
-/*                                         <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>*/
-/*                                         <!--Twitter-->*/
-/*                                         <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>*/
-/*                                         <!--Google -->*/
-/*                                         <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>*/
-/*                                     </div>*/
-/*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
-/*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
-/*                                     <!--Card content-->*/
-/*                                     <div class="card-body">*/
-/*                                         <!--Title-->*/
-/*                                         <h4 class="card-title"><strong>Card title</strong></h4>*/
-/*                                         <hr>*/
-/*                                         <!--Text-->*/
-/*                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's*/
-/*                                             content.*/
-/*                                         </p>*/
-/*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
-/*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
-/*                                                 </a>*/
-/*                                             </p>*/
-/*                                     </div>*/
-/*                                     <!--/.Card content-->*/
-/* */
-/* */
-/*                                 </div>*/
-/*                                 <!--/.Card-->*/
-/* */
-/*                             </div>*/
-/*                             </div>*/
-/*                             <!--/Grid row-->*/
+/*                             */
 /*                       */
 /* */
 /*                         </section>*/

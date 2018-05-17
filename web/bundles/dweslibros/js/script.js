@@ -114,6 +114,20 @@ $("#paso2").on("click", function(e) {
   $("#ap3").attr("class", "nav-link active show");
   $("#ap3").attr("aria-selected", "true");
   $("#panel3").attr("class", "tab-pane fade active show");
+  $imagenL=$("#cambL").attr("src");
+  $(".imgLibro").attr("src", $imagenL);
+//FIXME: No pasar al siguiente TAB 
+  var image_name = $('#file-upload').val();
+  var extension = $('#file-upload').val().split('.').pop().toLowerCase();  
+  if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','']) == -1)  
+  {  
+       alert('Formato de imagen inválido');  
+       $('#file-upload').val('');  
+       return false;  
+  }else{
+    e.preventDefault();
+   
+  }
 });
 
 $("#entrar").on("click", function(e) {
@@ -190,6 +204,7 @@ function validaCampo($input, $label) {
 
  $(".color").on("click",function(e) {
 var color =$(this).attr('id');
+$("#colorF").val(color)
 
 var elem = document.getElementById('colorSelecc');
   //$("#colorSelecc").addClass(color);
@@ -302,7 +317,7 @@ $( "#letraDown" ).on( "click", function() {
   
   }
 
- 
+  
 
 });
 
@@ -321,4 +336,12 @@ $( "#updatePerfil" ).on( "click", function() {
 $( ".borrarImg" ).on( "click", function() {
   $("#camb").attr("src","http://www.iconarchive.com/download/i86027/graphicloads/100-flat-2/arrow-upload.ico");
 
+});
+
+
+$( ".borrarImgL" ).on( "click", function() {
+
+  $("#cambL").attr("src","");
+
+  $(".titPortada").css("display", "initial");
 });

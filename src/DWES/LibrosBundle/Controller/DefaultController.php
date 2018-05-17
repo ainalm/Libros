@@ -62,8 +62,7 @@ class DefaultController extends Controller
 		$params = array('nombre' => '', 'apellidos' => '', 'fnacimiento' => '', 'pweb' => '', 'biografia' => '', 'file_upload' => '','fotoPerfil'=>'');
 
 		$peticion = $this->getRequest(); 	//Llamada al Form
-		$request->files;
-	
+		
 		//Obtengo el valor de los campos del Form
 		$nombre = $peticion->request->get('nombre');
 		$apellidos = $peticion->request->get('apellidos');
@@ -76,8 +75,8 @@ class DefaultController extends Controller
 		$connection = $this->get("database_connection");	//Conexión con la BD 
 		
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-	
-			$query = 'INSERT INTO tbl_images(name) VALUES ("'.$contImagen.'")'; 
+			
+			
 			$connection->executeUpdate('UPDATE usuario SET nombre = "' . $nombre . '", fechaNacimiento = "' . $fnacimiento . '", biografia = "' . $biografia . '", paginaWeb = "' . $pweb . '", apellidos = "' . $apellidos . '" WHERE usuario.username = "' . $userlog . '";');
 	
 			$connection->executeUpdate('UPDATE `usuario` SET fotoPerfil ="'. $fotoSubida .'" WHERE username ="'. $userlog .'" ;');
@@ -112,28 +111,28 @@ class DefaultController extends Controller
 		7:Romance
 		8:Drama
 		 */
+		
+		$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'file_upload' => '','colorFondo'=>'');/* Guardo en el array los campos del form*/
 		$userlog = $this->getUser()->getUsername();
-		$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '');/* Guardo en el array los campos del form*/
-
 		$peticion = $this->getRequest(); 	//Llamada al Form
-
+		$request->files;
 		$titulohistoria = $peticion->request->get('titulohistoria'); //Obtengo el valor de los campos del Form
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
-
+		$colorFondo = $peticion->request->get('colorFondo');
+		$fotoSubida = addslashes(file_get_contents($_FILES['file_upload']['tmp_name'])); //Imagen Subida del  usuario
 		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
 		$idGeneroSelecc = $connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id del genero seleccionado
 		$numExist = $connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
-
 		$idLibro = "";
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
-			
 				/* FIXME: Evitar meter libros duplicado */
 			if (empty($numExist) && $numExist == 0) {
 			/* INSERT LIBRO  CREADO*/
 				if (isset($titulohistoria) && isset($resuHist) && isset($genero)) {
-					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma)
-					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", NULL, "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL);');
+					//$connection->executeUpdate('UPDATE `usuario` SET fotoPerfil ="'. $fotoSubida .'" WHERE username ="'. $userlog .'" ;');
+					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
+					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", "'. $fotoSubida .'", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"'. $colorFondo .'");');
 
 			/*	SELECT Id del libro creado */
 					$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
@@ -142,7 +141,7 @@ class DefaultController extends Controller
 					$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
 			
 			/*  INSERT 1º Capitulo  FANTASMA*/
-
+			
 					$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", 1, "", "", "Fantasma");');
 				}
 			} else {
@@ -165,8 +164,6 @@ class DefaultController extends Controller
 			///Hace la INSERT del capitulo
 				$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", "' . $ultimoCapitulo . '", "", "", "Fantasma");');
 			//INSERT de la operación realizada
-
-				
 				return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro,'numCapitulo'=>$ultimoCapitulo)));
 	}
 
@@ -177,7 +174,18 @@ class DefaultController extends Controller
 				$connection->executeUpdate('DELETE FROM capitulo WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $numCapitulo . '";');
 				return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
 	}
+	public function eliminarLibAction($idLibro){
+	
+		$connection = $this->get("database_connection");
+	
+				$connection->executeUpdate('DELETE FROM operacionlibros WHERE idLibro = "' . $idLibro . '";');
+				$connection->executeUpdate('DELETE FROM capitulo WHERE idLibro = "' . $idLibro . '";');
+				$connection->executeUpdate('DELETE FROM libro WHERE idLibro = "' . $idLibro . '";');
+				
 
+			
+				return $this->redirect($this->generateUrl('dwes_libros_biblioteca', array('idLibro' => $idLibro)));
+	}
 	public function capituloAction($idLibro,$numCapitulo)
 	{
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
@@ -240,7 +248,20 @@ class DefaultController extends Controller
 
 	public function bibliotecaAction()
 	{
-		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+		$connection = $this->get("database_connection");
+		$librosPub = $connection->fetchAll('SELECT * FROM libro WHERE username = "' . $userlog . '"');
+		$fotoPub = $connection->fetchAll('SELECT fotoPort FROM libro WHERE username = "' . $userlog . '" ');
+	/* 	foreach ($fotoPub as $productIndex => $product)
+		{
+			$imagen=$product;
+			var_dump($imagen);
+		} */
+		
+
+		$imagen = base64_encode($fotoPub);
+		$librosPubCount = $connection->fetchColumn('SELECT count(*) FROM libro WHERE username = "' . $userlog . '"');
+		$params = array('libros' => $librosPub,'clibros'=>$librosPubCount);
 		return $this->render('DWESLibrosBundle:Default:biblioteca.html.twig', $params);
 	}
 
@@ -275,9 +296,11 @@ class DefaultController extends Controller
 		$libro = $connection->fetchAll('SELECT * FROM libro WHERE idLibro="' . $idLibro . '"'); //Titulo  historia (Se muestra en el Header)
 		$capitulo=$connection->fetchAll('SELECT numCapitulo,tituloCap,estado,max(operacionlibros.fechaOL) actualizado
 		 FROM `capitulo` INNER JOIN operacionlibros WHERE capitulo.idLibro="' . $idLibro . '"GROUP BY numCapitulo'); 
+		$fotoLibro= $connection->fetchColumn('SELECT fotoPort FROM libro WHERE idLibro="' . $idLibro . '"'); 
+		$imagen = base64_encode($fotoLibro);
+
 		
-		
-		$params = array('infoLibro' => $libro,'infoCapitulo'=> $capitulo);
+		$params = array('infoLibro' => $libro,'infoCapitulo'=> $capitulo,'foto' => $imagen);
 
 		return $this->render('DWESLibrosBundle:Default:perfilhistoria.html.twig', $params);
 	}

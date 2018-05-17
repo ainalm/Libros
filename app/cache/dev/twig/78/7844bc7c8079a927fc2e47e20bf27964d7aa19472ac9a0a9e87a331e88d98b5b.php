@@ -63,9 +63,10 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                             </div>
                             <!--/Card image-->
      <!-- Card content -->
-            <form name=\"formUpdatePerfil\" ";
+            <form name=\"formUpdatePerfil\"  action=\"";
         // line 35
-        echo " method=\"POST\" enctype=\"multipart/form-data\" >
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
+        echo "\"  method=\"POST\" enctype=\"multipart/form-data\" >
               <iframe name=\"frame\" style=\"display: none\"></iframe> 
                             <div class=\"card-body text-center\">
                             ";
@@ -76,11 +77,10 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
             echo twig_escape_filter($this->env, (isset($context["fotoPerfil"]) ? $context["fotoPerfil"] : $this->getContext($context, "fotoPerfil")), "html", null, true);
             echo "\" alt=\"User Photo\" class=\"z-depth-1 mb-3 mx-auto\" id=\"camb\" style=\"
                 max-width: 100px;
-                max-height: 100px;
-            \"> 
+                max-height: 100px;\"> 
                         ";
         } else {
-            // line 44
+            // line 43
             echo "
                                 <img src=\"http://www.iconarchive.com/download/i86027/graphicloads/100-flat-2/arrow-upload.ico\" alt=\"User Photo\" class=\"z-depth-1 mb-3 mx-auto\" id=\"camb\" style=\"
                             max-width: 100px;
@@ -88,12 +88,12 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                         \">
                         ";
         }
-        // line 50
-        echo "
+        // line 49
+        echo " 
                                 <p class=\"text-muted\"><small>Sube una nueva foto de perfil</small></p>
                                 <div class=\"row flex-center\">
                                     <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"file_upload\"  id=\"file-upload\" type=\"file\" onchange=\"document.getElementById('camb').src = window.URL.createObjectURL(this.files[0])\"/>
-                             <label for=\"borrarImg\" class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImg\"> Borrar</label><br>
+                             <label for=\"borrarImg\" class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImgL\"> Borrar</label><br>
                                 </div>
                             </div>
                             <!-- /.Card content -->
@@ -107,7 +107,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                        <div class=\"col-md-6\">
                                             <div class=\"md-form\"> 
                                                 <input type=\"text\" id=\"form81\" class=\"form-control validate\"  name=\"nombre\" value=\"";
-        // line 67
+        // line 66
         echo twig_escape_filter($this->env, (isset($context["nombre"]) ? $context["nombre"] : $this->getContext($context, "nombre")), "html", null, true);
         echo "\">
                                                 <label for=\"form81\">Nombre </label>
@@ -117,7 +117,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form2\" class=\"form-control validate\" name=\"apellidos\" value=\"";
-        // line 74
+        // line 73
         echo twig_escape_filter($this->env, (isset($context["apellidos"]) ? $context["apellidos"] : $this->getContext($context, "apellidos")), "html", null, true);
         echo "\">
                                                 <label for=\"form2\" >Apellidos</label>
@@ -133,7 +133,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form76\" class=\"form-control validate\" name=\"fnacimiento\" value=\"";
-        // line 87
+        // line 86
         echo twig_escape_filter($this->env, (isset($context["fnacimiento"]) ? $context["fnacimiento"] : $this->getContext($context, "fnacimiento")), "html", null, true);
         echo "\"> 
                                                 <label for=\"form76\" class=\"\">Fecha de nacimiento</label>
@@ -143,7 +143,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-6\">
                                             <div class=\"md-form\">
                                                 <input type=\"text\" id=\"form77\" class=\"form-control validate\"  name=\"pweb\" value=\"";
-        // line 94
+        // line 93
         echo twig_escape_filter($this->env, (isset($context["pweb"]) ? $context["pweb"] : $this->getContext($context, "pweb")), "html", null, true);
         echo "\">
                                                 <label for=\"form77\" class=\"\">Página web</label>
@@ -157,7 +157,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                         <div class=\"col-md-12\">
                                             <div class=\"md-form\">
                                                 <textarea type=\"text\" id=\"form78\" class=\"md-textarea form-control\" rows=\"3\"  name=\"biografia\" value=\"";
-        // line 105
+        // line 104
         echo twig_escape_filter($this->env, (isset($context["biografia"]) ? $context["biografia"] : $this->getContext($context, "biografia")), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, (isset($context["biografia"]) ? $context["biografia"] : $this->getContext($context, "biografia")), "html", null, true);
@@ -202,7 +202,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 
     public function getDebugInfo()
     {
-        return array (  161 => 105,  147 => 94,  137 => 87,  121 => 74,  111 => 67,  92 => 50,  84 => 44,  75 => 39,  73 => 38,  68 => 35,  50 => 21,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  161 => 104,  147 => 93,  137 => 86,  121 => 73,  111 => 66,  92 => 49,  84 => 43,  76 => 39,  74 => 38,  68 => 35,  50 => 21,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -239,14 +239,13 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                             </div>*/
 /*                             <!--/Card image-->*/
 /*      <!-- Card content -->*/
-/*             <form name="formUpdatePerfil" {# action="{{ path('dwes_libros_crearperfil') }}" #} method="POST" enctype="multipart/form-data" >*/
+/*             <form name="formUpdatePerfil"  action="{{ path('dwes_libros_crearperfil') }}"  method="POST" enctype="multipart/form-data" >*/
 /*               <iframe name="frame" style="display: none"></iframe> */
 /*                             <div class="card-body text-center">*/
 /*                             {% if fotoPerfil %}*/
 /*                          <img src="data:image/jpeg;base64,{{ fotoPerfil }}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
 /*                 max-width: 100px;*/
-/*                 max-height: 100px;*/
-/*             "> */
+/*                 max-height: 100px;"> */
 /*                         {% else %}*/
 /* */
 /*                                 <img src="http://www.iconarchive.com/download/i86027/graphicloads/100-flat-2/arrow-upload.ico" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
@@ -254,11 +253,11 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                             max-height: 100px;*/
 /*                         ">*/
 /*                         {% endif %}*/
-/* */
+/*  */
 /*                                 <p class="text-muted"><small>Sube una nueva foto de perfil</small></p>*/
 /*                                 <div class="row flex-center">*/
 /*                                     <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="file_upload"  id="file-upload" type="file" onchange="document.getElementById('camb').src = window.URL.createObjectURL(this.files[0])"/>*/
-/*                              <label for="borrarImg" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImg"> Borrar</label><br>*/
+/*                              <label for="borrarImg" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImgL"> Borrar</label><br>*/
 /*                                 </div>*/
 /*                             </div>*/
 /*                             <!-- /.Card content -->*/

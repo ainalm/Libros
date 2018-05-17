@@ -61,6 +61,12 @@ dwes_libros_eliminarCap:
     requirements:
         page: \d+
 
+dwes_libros_eliminarLib:
+    path: /eliminarLib/{idLibro}
+    defaults: { _controller: DWESLibrosBundle:Default:eliminarLib }
+    requirements:
+        page: \d+
+
 dwes_libros_suscripcion:
     path: /suscripcion/
     defaults: { _controller: DWESLibrosBundle:Default:suscripcion }
