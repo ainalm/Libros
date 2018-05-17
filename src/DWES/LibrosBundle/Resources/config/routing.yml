@@ -66,6 +66,11 @@ dwes_libros_eliminarLib:
     defaults: { _controller: DWESLibrosBundle:Default:eliminarLib }
     requirements:
         page: \d+
+dwes_libros_historia:
+    path: /historia/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:historia }
+    requirements:
+        page: \d+
 
 dwes_libros_suscripcion:
     path: /suscripcion/

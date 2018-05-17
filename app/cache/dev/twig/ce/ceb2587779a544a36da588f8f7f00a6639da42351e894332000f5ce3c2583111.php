@@ -34,7 +34,10 @@ class __TwigTemplate_76c94e69c94a57200e16f8b6ce074905897cf91c83997dffe8cdce0a934
             echo "\">
                                         <img src=\"https://books.google.com/books/content/images/frontcover/wDumDAAAQBAJ?fife=w200-h300\" style=\"height:200px ; width:150px;\" class=\" mx-auto\" alt=\"sample image\">
  
-                                        <a>
+                                        <a href=\"";
+            // line 14
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
+            echo "\">
                                             <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
                                         </a>
                                     </div>
@@ -109,7 +112,7 @@ class __TwigTemplate_76c94e69c94a57200e16f8b6ce074905897cf91c83997dffe8cdce0a934
 
     public function getDebugInfo()
     {
-        return array (  97 => 57,  76 => 42,  65 => 34,  54 => 26,  49 => 24,  33 => 11,  26 => 6,  22 => 2,  19 => 1,);
+        return array (  100 => 57,  79 => 42,  68 => 34,  57 => 26,  52 => 24,  39 => 14,  33 => 11,  26 => 6,  22 => 2,  19 => 1,);
     }
 }
 /* <div class="row text-center col-12">*/
@@ -125,7 +128,7 @@ class __TwigTemplate_76c94e69c94a57200e16f8b6ce074905897cf91c83997dffe8cdce0a934
 /*                                     <div class="view overlay {{libro.colorPortada}}">*/
 /*                                         <img src="https://books.google.com/books/content/images/frontcover/wDumDAAAQBAJ?fife=w200-h300" style="height:200px ; width:150px;" class=" mx-auto" alt="sample image">*/
 /*  */
-/*                                         <a>*/
+/*                                         <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">*/
 /*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
 /*                                         </a>*/
 /*                                     </div>*/

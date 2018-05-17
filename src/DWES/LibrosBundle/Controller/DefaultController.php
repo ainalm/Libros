@@ -264,13 +264,27 @@ class DefaultController extends Controller
 		$params = array('libros' => $librosPub,'clibros'=>$librosPubCount);
 		return $this->render('DWESLibrosBundle:Default:biblioteca.html.twig', $params);
 	}
+	public function historiaAction($idLibro)
+	{//TODO:
 
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+		$connection = $this->get("database_connection");
+		$libro = $connection->fetchAll('SELECT idLibro,video,username,progreso,RestEdad,Idioma,colorPortada,nombre,titulo,fotoPort, libro.descripcion as descLib FROM libro,genero WHERE libro.idLibro = "' . $idLibro . '" and genero.idGenero=libro.idGenero');
+		$capitulos = $connection->fetchAll('SELECT * FROM libro,capitulo,genero WHERE libro.idLibro = capitulo.idLibro and genero.idGenero=libro.idGenero GROUP BY libro.idLibro ');
+
+		$fotoLibro= $connection->fetchColumn('SELECT fotoPort FROM libro WHERE idLibro="' . $idLibro . '"'); 
+		$imagen = base64_encode($fotoLibro);
+
+		$params = array('libro' => $libro,'foto'=>$imagen);
+		return $this->render('DWESLibrosBundle:Default:historia.html.twig', $params);
+	}
 	public function ajustesAction()
 	{
 
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', $params);
 	}
+
 	public function contactoAction()
 	{
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
