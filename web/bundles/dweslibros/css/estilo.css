@@ -119,3 +119,33 @@ cursor: pointer;
 .navL :hover{
   color: #e55a7a !important;
 }
+
+
+#enbiblioteca{
+  cursor: pointer;
+}
+#enfavoritos{
+  cursor: pointer;
+}
+
+.cl{
+
+  color: #4285f4 !important
+}
+
+.lineas{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    min-width: 567px;
+}
+
+.dataTables_empty{
+    min-width: 700px;
+}
+#capitulos1_filter{
+  margin-left: 100px;
+
+}

@@ -230,6 +230,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_capitulo')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::capituloAction',));
         }
 
+        // dwes_libros_eliminarCap
+        if (0 === strpos($pathinfo, '/eliminarCap') && preg_match('#^/eliminarCap/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarCapAction',));
+        }
+
         // dwes_libros_nuevoCap
         if (0 === strpos($pathinfo, '/nuevoCap') && preg_match('#^/nuevoCap/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
@@ -239,17 +244,48 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_nuevoCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::nuevoCapAction',));
         }
 
-        if (0 === strpos($pathinfo, '/eliminar')) {
-            // dwes_libros_eliminarCap
-            if (0 === strpos($pathinfo, '/eliminarCap') && preg_match('#^/eliminarCap/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarCapAction',));
+        // dwes_libros_addbiblioteca
+        if (0 === strpos($pathinfo, '/addbiblioteca') && preg_match('#^/addbiblioteca/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_addbiblioteca');
             }
 
-            // dwes_libros_eliminarLib
-            if (0 === strpos($pathinfo, '/eliminarLib') && preg_match('#^/eliminarLib/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarLib')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarLibAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_addbiblioteca')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::addbibliotecaAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/del')) {
+            // dwes_libros_delbiblioteca
+            if (0 === strpos($pathinfo, '/delbiblioteca') && preg_match('#^/delbiblioteca/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_delbiblioteca');
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delbiblioteca')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delbibliotecaAction',));
             }
 
+            // dwes_libros_delfavoritos
+            if (0 === strpos($pathinfo, '/delfavoritos') && preg_match('#^/delfavoritos/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_delfavoritos');
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delfavoritos')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delfavoritosAction',));
+            }
+
+        }
+
+        // dwes_libros_addfavoritos
+        if (0 === strpos($pathinfo, '/addfavoritos') && preg_match('#^/addfavoritos/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_addfavoritos');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_addfavoritos')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::addfavoritosAction',));
+        }
+
+        // dwes_libros_eliminarLib
+        if (0 === strpos($pathinfo, '/eliminarLib') && preg_match('#^/eliminarLib/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarLib')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarLibAction',));
         }
 
         // dwes_libros_historia

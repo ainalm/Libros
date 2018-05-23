@@ -37,7 +37,7 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 
             <!-- Section heading -->
             <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
-                <strong>Biblioteca</strong>
+                <strong>BIBLIOTECA</strong>
             </h3>
             <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mis libros publicados</h6>
 
@@ -68,7 +68,16 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
                             <section class=\"section\">
 
                                 <ul class=\"list-group z-depth-1\">
-
+                                 <li class=\"list-group-item d-flex justify-content-between align-items-center   \">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                            Mi lista de lectura</a>
+                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                    </li>
+                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
+                                        <a class=\"dark-grey-text font-small navL\">
+                                          Favoritos</a>
+                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                    </li>
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                                         <a class=\"dark-grey-text font-small navL\">
                                             Mi lista de deseos</a>
@@ -76,30 +85,22 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
                                         <span class=\"badge badge-danger badge-pill\">?</span>
                                         
                                     </li>
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center   activeL\">
+                                    <li class=\"list-group-item d-flex justify-content-between align-items-center activeL\">
                                         <a class=\"dark-grey-text font-small navL\">
-                                            Mi lista de lectura</a>
-                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                          Mis libros publicados</a>
+                                        <span class=\"badge badge-danger badge-pill\">";
+        // line 59
+        echo twig_escape_filter($this->env, (isset($context["clibros"]) ? $context["clibros"] : $this->getContext($context, "clibros")), "html", null, true);
+        echo "</span>
                                     </li>
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                                         <a class=\"dark-grey-text font-small navL\">
                                             Mis libros en venta</a>
                                         <span class=\"badge badge-danger badge-pill\">?</span>
                                     </li>
-
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center \">
-                                        <a class=\"dark-grey-text font-small navL\">
-                                          Mis libros publicados</a>
-                                        <span class=\"badge badge-danger badge-pill\">";
-        // line 61
-        echo twig_escape_filter($this->env, (isset($context["clibros"]) ? $context["clibros"] : $this->getContext($context, "clibros")), "html", null, true);
-        echo "</span>
-                                    </li>
-                                    <li class=\"list-group-item d-flex justify-content-between align-items-center \">
-                                        <a class=\"dark-grey-text font-small navL\">
-                                          Favoritos</a>
-                                        <span class=\"badge badge-danger badge-pill\">?</span>
-                                    </li>
+                                   
+                                   
+                                    
 
                                 </ul>
                             </section>
@@ -115,10 +116,10 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
                             <!--Grid row-->
                             <div class=\"row text-center\">
                             ";
-        // line 83
-        $this->loadTemplate("DWESLibrosBundle:Default:_librospublicados.html.twig", "DWESLibrosBundle:Default:biblioteca.html.twig", 83)->display(array_merge($context, array("libros" =>         // line 84
+        // line 84
+        $this->loadTemplate("DWESLibrosBundle:Default:_librospublicados.html.twig", "DWESLibrosBundle:Default:biblioteca.html.twig", 84)->display(array_merge($context, array("libros" =>         // line 85
 (isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")))));
-        // line 86
+        // line 87
         echo "                            <!--/Grid row-->
                         <!--Grid row-->
                             
@@ -190,7 +191,7 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 
     public function getDebugInfo()
     {
-        return array (  122 => 86,  120 => 84,  119 => 83,  95 => 61,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  123 => 87,  121 => 85,  120 => 84,  93 => 59,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -204,7 +205,7 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 /* */
 /*             <!-- Section heading -->*/
 /*             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
-/*                 <strong>Biblioteca</strong>*/
+/*                 <strong>BIBLIOTECA</strong>*/
 /*             </h3>*/
 /*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mis libros publicados</h6>*/
 /* */
@@ -231,7 +232,16 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 /*                             <section class="section">*/
 /* */
 /*                                 <ul class="list-group z-depth-1">*/
-/* */
+/*                                  <li class="list-group-item d-flex justify-content-between align-items-center   ">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                             Mi lista de lectura</a>*/
+/*                                         <span class="badge badge-danger badge-pill">?</span>*/
+/*                                     </li>*/
+/*                                      <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                           Favoritos</a>*/
+/*                                         <span class="badge badge-danger badge-pill">?</span>*/
+/*                                     </li>*/
 /*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
 /*                                         <a class="dark-grey-text font-small navL">*/
 /*                                             Mi lista de deseos</a>*/
@@ -239,27 +249,19 @@ class __TwigTemplate_6c63002c867e5bc11de730f0eb5dea08b45b1b95f4adcfc367310272f3d
 /*                                         <span class="badge badge-danger badge-pill">?</span>*/
 /*                                         */
 /*                                     </li>*/
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center   activeL">*/
-/*                                         <a class="dark-grey-text font-small navL">*/
-/*                                             Mi lista de lectura</a>*/
-/*                                         <span class="badge badge-danger badge-pill">?</span>*/
-/*                                     </li>*/
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                                         <a class="dark-grey-text font-small navL">*/
-/*                                             Mis libros en venta</a>*/
-/*                                         <span class="badge badge-danger badge-pill">?</span>*/
-/*                                     </li>*/
-/* */
-/*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                     <li class="list-group-item d-flex justify-content-between align-items-center activeL">*/
 /*                                         <a class="dark-grey-text font-small navL">*/
 /*                                           Mis libros publicados</a>*/
 /*                                         <span class="badge badge-danger badge-pill">{{clibros}}</span>*/
 /*                                     </li>*/
 /*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
 /*                                         <a class="dark-grey-text font-small navL">*/
-/*                                           Favoritos</a>*/
+/*                                             Mis libros en venta</a>*/
 /*                                         <span class="badge badge-danger badge-pill">?</span>*/
 /*                                     </li>*/
+/*                                    */
+/*                                    */
+/*                                     */
 /* */
 /*                                 </ul>*/
 /*                             </section>*/

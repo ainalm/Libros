@@ -364,3 +364,89 @@ $(".video").click(function () {
       console.log($(".videof").attr('src'));
      
     });
+
+    //Toggle añadir a biblioteca / Favoritos
+/* 
+urlAñadir=""
+    $("#enbiblioteca").click(function () { 
+      icon=$(".bibIco");
+      if ($(icon).hasClass('select')) {
+        $(icon).attr("class", "fas fa-plus mr-1 font-weight-bold favoritIcon deselect bibIco");
+        $(this).html("<a class='text-dark cl' href='#'><i class='fas fa-plus mr-1 font-weight-bold favoritIcon deselect bibIco' ></i>  Añadir a  mi lista</a>");
+        $('.cl').attr('style', 'color: #4285f4 !important');  
+         add=$("#addBiblio").attr("href");
+          $(".addhref").attr("href",add);
+          return false; 
+    }
+    else {
+        $(icon).removeClass('deselect').addClass('select');
+        $(icon).attr("class", " far fa-bookmark mr-1 font-weight-bold select bibIco");
+        $(this).html(" <a class='text-dark addhref cl' href='#' > <i class='far fa-bookmark mr-1 font-weight-bold select bibIco' ></i>En mi lista</a>");
+        $('.cl').attr('style', 'color: #4285f4 !important');  
+
+    
+        
+    }
+
+    });
+
+
+    $("#enfavoritos").click(function () { 
+      icon=$(".favIco");
+      if ($(icon).hasClass('select')) {
+        $(icon).attr("class", "fas fa-plus mr-1 font-weight-bold favoritIcon deselect favIco");
+        $(this).html("<i class='fas fa-plus mr-1 font-weight-bold favoritIcon deselect favIco' ></i> <a class='text-dark cl' href='#'> Añadir a favoritos</a>");
+        $('.cl').attr('style', 'color: #4285f4 !important');   
+    }
+    else {
+        $(icon).removeClass('deselect').addClass('select');
+        $(icon).attr("class", " far fa-bookmark mr-1 font-weight-bold select favIco");
+        $(this).html("<i class='far fa-bookmark mr-1 font-weight-bold select favIco' ></i> <a class='text-dark' href='#'> En favoritos</a>");
+        $('.cl').attr('style', 'color: #4285f4 !important');  
+    }
+
+    });
+ */
+
+   
+
+
+ /*     "oLanguage": {
+      "oPaginate": {
+        "sFirst": "Primera" //Primera página
+      }}
+
+        "oLanguage": {
+      "oPaginate": {
+        "sLast": "Última" //Última página
+      }}
+      "oLanguage": {
+      "oPaginate": {
+        "sNext": "Siguiente" //Página siguiente
+      }
+    }
+      "oLanguage": {
+      "oPaginate": {
+        "sPrevious": "Anterior" //Página anterior
+      }
+    }
+      "oLanguage": {
+      "sInfoEmpty": "No hay entradas para mostrar"
+    }
+
+     "oLanguage": {
+      "sInfoFiltered": " - resultados de _MAX_ records"
+    }
+
+
+    "language": {
+      "lengthMenu": "Display _MENU_ records per page",
+      "zeroRecords": "Vaya..sin resultados - Lo sentimos",
+      "info": "  _PAGE_ página de _PAGES_",
+      "infoEmpty": "No hay resultados",
+      "infoFiltered": "(filtrado de un total de   _MAX_ resultados)"
+  }
+         */
+
+   
+    

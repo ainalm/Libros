@@ -42,6 +42,9 @@
                         <a class="dropdown-item" href="../features/feature-detail.html">Anunciar mi libro</a>
                     </div>
                 </li>
+                 <li class="nav-item ml-4">
+                    <a class="nav-link title" href="{{ path('dwes_libros_biblioteca') }}" data-offset="90">Mi Biblioteca</a>
+                </li>
                 <li class="nav-item dropdown ml-4">
                     <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorar </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -212,6 +215,21 @@
 <script src="{{ asset('bundles/dweslibros/MDB/js/mdb.min.js') }}" type="text/javascript"></script>
 <!-- Mi JavaScript -->
 <script src="{{ asset('bundles/dweslibros/js/script.js') }}" type="text/javascript"></script>
+
+  {#   <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
+
+ #}
+     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/dweslibros/dataTable/css/material.min.css') }}" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/dweslibros/dataTable/css/dataTables.material.min.css') }}" /> 
+
+     <script src="{{ asset('bundles/dweslibros/dataTable/js/jquery.dataTables.min.js') }}"></script> 
+     <script src="{{ asset('bundles/dweslibros/dataTable/js/dataTables.material.min.js') }}"></script> 
+ 
+
+
+
+
+    
 <script>
     //Animación de Inicio
     new WOW().init();
@@ -219,6 +237,48 @@
     // Material Select Initialization
     $(document).ready(function () {
         $('.mdb-select').material_select();
+       $('.capitulos').DataTable( {
+            "info":     false,
+            "lengthChange": false,
+            "iDisplayLength":5,
+             "language": {
+                 "sZeroRecords": "No hay resultados que mostrar",
+                 "sSearch": "Buscar",
+                    "paginate": {
+                    "previous": "Atrás",
+                    "sNext": "Siguiente"
+                    }
+  }
+       
+    } ); 
+   
+   $('#capitulos1').DataTable( {
+      
+            "info":     false,
+            "lengthChange": false,
+            "iDisplayLength":5,
+             "language": {
+                 "sZeroRecords": "No hay resultados que mostrar",
+                 "sSearch": "Buscar",
+                    "paginate": {
+                    "previous": "Atrás",
+                    "sNext": "Siguiente"
+                    }
+  }    
+    } ); 
+               
+$('.dt-table').addClass('col-lg-12');
+$("#capitulos1_filter").insertAfter(".dt-table");
+
+//$("#capitulos2_filter").insertAfter(".dt-table");
     });
 </script>
-{% endblock %}
+
+ {#  columnDefs: [
+            {
+                targets: [ 0, 1, 2 ],
+                className: 'mdl-data-table__cell--non-numeric'
+               
+            }
+        ] #}
+{% endblock %}  

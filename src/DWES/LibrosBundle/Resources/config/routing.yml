@@ -49,15 +49,38 @@ dwes_libros_capitulo:
     defaults: { _controller: DWESLibrosBundle:Default:capitulo }
     requirements:
         page: \d+
-            
+dwes_libros_eliminarCap:
+    path: /eliminarCap/{idLibro}/{numCapitulo}
+    defaults: { _controller: DWESLibrosBundle:Default:eliminarCap }
+    requirements:
+        page: \d+
+
 dwes_libros_nuevoCap:
     path: /nuevoCap/{idLibro}/
     defaults: { _controller: DWESLibrosBundle:Default:nuevoCap }
     requirements:
         page: \d+
-dwes_libros_eliminarCap:
-    path: /eliminarCap/{idLibro}/{numCapitulo}
-    defaults: { _controller: DWESLibrosBundle:Default:eliminarCap }
+
+dwes_libros_addbiblioteca:
+    path: /addbiblioteca/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:addbiblioteca }
+    requirements:
+        page: \d+
+dwes_libros_delbiblioteca:
+    path: /delbiblioteca/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:delbiblioteca }
+    requirements:
+        page: \d+
+
+dwes_libros_delfavoritos:
+    path: /delfavoritos/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:delfavoritos }
+    requirements:
+        page: \d+
+
+dwes_libros_addfavoritos:
+    path: /addfavoritos/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:addfavoritos }
     requirements:
         page: \d+
 
@@ -66,6 +89,8 @@ dwes_libros_eliminarLib:
     defaults: { _controller: DWESLibrosBundle:Default:eliminarLib }
     requirements:
         page: \d+
+
+
 dwes_libros_historia:
     path: /historia/{idLibro}/
     defaults: { _controller: DWESLibrosBundle:Default:historia }

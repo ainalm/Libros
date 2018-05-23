@@ -80,7 +80,10 @@ class __TwigTemplate_76c94e69c94a57200e16f8b6ce074905897cf91c83997dffe8cdce0a934
             echo "
                                         </p>
                                         <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
-                                                <a>read more
+                                                <a href=\"";
+            // line 45
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
+            echo "\">Leer más
                                                     <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
                                                 </a>
                                             </p>
@@ -112,7 +115,7 @@ class __TwigTemplate_76c94e69c94a57200e16f8b6ce074905897cf91c83997dffe8cdce0a934
 
     public function getDebugInfo()
     {
-        return array (  100 => 57,  79 => 42,  68 => 34,  57 => 26,  52 => 24,  39 => 14,  33 => 11,  26 => 6,  22 => 2,  19 => 1,);
+        return array (  103 => 57,  85 => 45,  79 => 42,  68 => 34,  57 => 26,  52 => 24,  39 => 14,  33 => 11,  26 => 6,  22 => 2,  19 => 1,);
     }
 }
 /* <div class="row text-center col-12">*/
@@ -159,7 +162,7 @@ class __TwigTemplate_76c94e69c94a57200e16f8b6ce074905897cf91c83997dffe8cdce0a934
 /*                                         ">{{libro.descripcion}}*/
 /*                                         </p>*/
 /*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a>read more*/
+/*                                                 <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">Leer más*/
 /*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
 /*                                                 </a>*/
 /*                                             </p>*/

@@ -68,6 +68,12 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                         <a class=\"dropdown-item\" href=\"../features/feature-detail.html\">Anunciar mi libro</a>
                     </div>
                 </li>
+                 <li class=\"nav-item ml-4\">
+                    <a class=\"nav-link title\" href=\"";
+        // line 46
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_biblioteca");
+        echo "\" data-offset=\"90\">Mi Biblioteca</a>
+                </li>
                 <li class=\"nav-item dropdown ml-4\">
                     <a class=\"nav-link dropdown-toggle title\" id=\"navbarDropdownMenuLink2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Explorar </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
@@ -78,7 +84,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 </li>
                 <li class=\"nav-item ml-4\">
                     <a class=\"nav-link title\" href=\"";
-        // line 54
+        // line 57
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" data-offset=\"90\">Contacto</a>
                 </li>
@@ -97,45 +103,45 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
                         <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">
                             ";
-        // line 70
+        // line 73
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 71
+            // line 74
             echo "                            <i></i>
                             ";
         } else {
-            // line 73
+            // line 76
             echo "                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_login");
             echo "\">Iniciar sesión</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 74
+            // line 77
             echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
             echo "\">Crear cuenta</a>
                             ";
         }
-        // line 75
+        // line 78
         echo " ";
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_REGISTRADO"))) {
-            // line 76
+            // line 79
             echo "                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_perfil");
             echo "\">Mi perfil</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 77
+            // line 80
             echo $this->env->getExtension('routing')->getPath("dwes_libros_biblioteca");
             echo "\">Mi biblioteca</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 78
+            // line 81
             echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
             echo "\">Ajustes</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 79
+            // line 82
             echo $this->env->getExtension('routing')->getPath("dwes_libros_logout");
             echo "\">Cerrar sesión</a>
 
                             ";
         }
-        // line 82
+        // line 85
         echo "
                         </div>
                     </li>
@@ -149,11 +155,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
 ";
-        // line 94
+        // line 97
         $this->displayBlock('portadaInicio', $context, $blocks);
         echo " ";
         $this->displayBlock('portada', $context, $blocks);
-        // line 95
+        // line 98
         echo "
 <!-- Navigation & Intro -->
 
@@ -163,9 +169,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
     ";
-        // line 103
+        // line 106
         $this->displayBlock('contenido', $context, $blocks);
-        // line 104
+        // line 107
         echo "
 </main>
 
@@ -222,11 +228,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 <p>
                     <a href=\"#!\">Eliminar cuenta</a>
                     ";
-        // line 159
+        // line 162
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
             echo " ";
         }
-        // line 160
+        // line 163
         echo "                </p>
             </div>
             <!--/.Third column-->
@@ -257,17 +263,17 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
             © 2018 Copyright:
             <a href=\"#\" target=\"_blank\"> Aina Lahmam </a>
             ";
-        // line 189
+        // line 192
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
             echo " ¡Bienvenido,
             <b>";
-            // line 190
+            // line 193
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</b>! ";
         } else {
             echo " -DWES- ";
         }
-        // line 191
+        // line 194
         echo "
         </div>
     </div>
@@ -319,7 +325,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 ";
     }
 
-    // line 94
+    // line 97
     public function block_portadaInicio($context, array $blocks = array())
     {
         echo " ";
@@ -330,44 +336,69 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo " ";
     }
 
-    // line 103
+    // line 106
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 201
+    // line 204
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 202
+        // line 205
         echo "<!-- SCRIPTS -->
 <!-- JQuery -->
 <script src=\"";
-        // line 204
+        // line 207
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap tooltips -->
 <script src=\"";
-        // line 206
+        // line 209
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/popper.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap core JavaScript -->
 
 <script src=\"";
-        // line 209
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- MDB core JavaScript -->
 
 <script src=\"";
-        // line 212
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/mdb.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Mi JavaScript -->
 <script src=\"";
-        // line 214
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/script.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
+
+  ";
+        // line 222
+        echo "     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/material.min.css"), "html", null, true);
+        echo "\" /> 
+    <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
+        // line 223
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/dataTables.material.min.css"), "html", null, true);
+        echo "\" /> 
+
+     <script src=\"";
+        // line 225
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/jquery.dataTables.min.js"), "html", null, true);
+        echo "\"></script> 
+     <script src=\"";
+        // line 226
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/dataTables.material.min.js"), "html", null, true);
+        echo "\"></script> 
+ 
+
+
+
+
+    
 <script>
     //Animación de Inicio
     new WOW().init();
@@ -375,9 +406,44 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
     // Material Select Initialization
     \$(document).ready(function () {
         \$('.mdb-select').material_select();
+       \$('.capitulos').DataTable( {
+            \"info\":     false,
+            \"lengthChange\": false,
+            \"iDisplayLength\":5,
+             \"language\": {
+                 \"sZeroRecords\": \"No hay resultados que mostrar\",
+                 \"sSearch\": \"Buscar\",
+                    \"paginate\": {
+                    \"previous\": \"Atrás\",
+                    \"sNext\": \"Siguiente\"
+                    }
+  }
+       
+    } ); 
+   
+   \$('#capitulos1').DataTable( {
+      
+            \"info\":     false,
+            \"lengthChange\": false,
+            \"iDisplayLength\":5,
+             \"language\": {
+                 \"sZeroRecords\": \"No hay resultados que mostrar\",
+                 \"sSearch\": \"Buscar\",
+                    \"paginate\": {
+                    \"previous\": \"Atrás\",
+                    \"sNext\": \"Siguiente\"
+                    }
+  }    
+    } ); 
+               
+\$('.dt-table').addClass('col-lg-12');
+\$(\"#capitulos1_filter\").insertAfter(\".dt-table\");
+
+//\$(\"#capitulos2_filter\").insertAfter(\".dt-table\");
     });
 </script>
-";
+
+ ";
     }
 
     public function getTemplateName()
@@ -392,7 +458,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     public function getDebugInfo()
     {
-        return array (  369 => 214,  364 => 212,  358 => 209,  352 => 206,  347 => 204,  343 => 202,  340 => 201,  334 => 103,  323 => 94,  314 => 15,  309 => 13,  304 => 11,  299 => 9,  294 => 7,  288 => 3,  285 => 2,  271 => 191,  265 => 190,  261 => 189,  230 => 160,  226 => 159,  169 => 104,  167 => 103,  157 => 95,  153 => 94,  139 => 82,  133 => 79,  129 => 78,  125 => 77,  120 => 76,  117 => 75,  112 => 74,  107 => 73,  103 => 71,  101 => 70,  82 => 54,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
+        return array (  394 => 226,  390 => 225,  385 => 223,  380 => 222,  375 => 217,  370 => 215,  364 => 212,  358 => 209,  353 => 207,  349 => 205,  346 => 204,  340 => 106,  329 => 97,  320 => 15,  315 => 13,  310 => 11,  305 => 9,  300 => 7,  294 => 3,  291 => 2,  277 => 194,  271 => 193,  267 => 192,  236 => 163,  232 => 162,  175 => 107,  173 => 106,  163 => 98,  159 => 97,  145 => 85,  139 => 82,  135 => 81,  131 => 80,  126 => 79,  123 => 78,  118 => 77,  113 => 76,  109 => 74,  107 => 73,  88 => 57,  74 => 46,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
     }
 }
 /* */
@@ -438,6 +504,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_escribirhistoria') }}">Nueva historia</a>*/
 /*                         <a class="dropdown-item" href="../features/feature-detail.html">Anunciar mi libro</a>*/
 /*                     </div>*/
+/*                 </li>*/
+/*                  <li class="nav-item ml-4">*/
+/*                     <a class="nav-link title" href="{{ path('dwes_libros_biblioteca') }}" data-offset="90">Mi Biblioteca</a>*/
 /*                 </li>*/
 /*                 <li class="nav-item dropdown ml-4">*/
 /*                     <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorar </a>*/
@@ -609,6 +678,21 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* <script src="{{ asset('bundles/dweslibros/MDB/js/mdb.min.js') }}" type="text/javascript"></script>*/
 /* <!-- Mi JavaScript -->*/
 /* <script src="{{ asset('bundles/dweslibros/js/script.js') }}" type="text/javascript"></script>*/
+/* */
+/*   {#   <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />*/
+/* */
+/*  #}*/
+/*      <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/dweslibros/dataTable/css/material.min.css') }}" /> */
+/*     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/dweslibros/dataTable/css/dataTables.material.min.css') }}" /> */
+/* */
+/*      <script src="{{ asset('bundles/dweslibros/dataTable/js/jquery.dataTables.min.js') }}"></script> */
+/*      <script src="{{ asset('bundles/dweslibros/dataTable/js/dataTables.material.min.js') }}"></script> */
+/*  */
+/* */
+/* */
+/* */
+/* */
+/*     */
 /* <script>*/
 /*     //Animación de Inicio*/
 /*     new WOW().init();*/
@@ -616,6 +700,48 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*     // Material Select Initialization*/
 /*     $(document).ready(function () {*/
 /*         $('.mdb-select').material_select();*/
+/*        $('.capitulos').DataTable( {*/
+/*             "info":     false,*/
+/*             "lengthChange": false,*/
+/*             "iDisplayLength":5,*/
+/*              "language": {*/
+/*                  "sZeroRecords": "No hay resultados que mostrar",*/
+/*                  "sSearch": "Buscar",*/
+/*                     "paginate": {*/
+/*                     "previous": "Atrás",*/
+/*                     "sNext": "Siguiente"*/
+/*                     }*/
+/*   }*/
+/*        */
+/*     } ); */
+/*    */
+/*    $('#capitulos1').DataTable( {*/
+/*       */
+/*             "info":     false,*/
+/*             "lengthChange": false,*/
+/*             "iDisplayLength":5,*/
+/*              "language": {*/
+/*                  "sZeroRecords": "No hay resultados que mostrar",*/
+/*                  "sSearch": "Buscar",*/
+/*                     "paginate": {*/
+/*                     "previous": "Atrás",*/
+/*                     "sNext": "Siguiente"*/
+/*                     }*/
+/*   }    */
+/*     } ); */
+/*                */
+/* $('.dt-table').addClass('col-lg-12');*/
+/* $("#capitulos1_filter").insertAfter(".dt-table");*/
+/* */
+/* //$("#capitulos2_filter").insertAfter(".dt-table");*/
 /*     });*/
 /* </script>*/
-/* {% endblock %}*/
+/* */
+/*  {#  columnDefs: [*/
+/*             {*/
+/*                 targets: [ 0, 1, 2 ],*/
+/*                 className: 'mdl-data-table__cell--non-numeric'*/
+/*                */
+/*             }*/
+/*         ] #}*/
+/* {% endblock %}  */
