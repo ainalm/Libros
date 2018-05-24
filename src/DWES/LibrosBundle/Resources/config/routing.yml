@@ -25,16 +25,24 @@ dwes_libros_contacto:
     defaults: { _controller: DWESLibrosBundle:Default:contacto }
 
 dwes_libros_escribirhistoria:
-    path: /escribirhistoria/
+    path: /escribirhistoria/{tipo}
     defaults: { _controller: DWESLibrosBundle:Default:escribirhistoria }
 
 dwes_libros_perfil:
     path: /perfil/
     defaults: { _controller: DWESLibrosBundle:Default:perfil }
 
-dwes_libros_biblioteca:
-    path: /biblioteca/
-    defaults: { _controller: DWESLibrosBundle:Default:biblioteca }
+dwes_libros_publicadosBib:
+    path: /publicadosBib/
+    defaults: { _controller: DWESLibrosBundle:Default:publicadosBib }
+
+dwes_libros_favoritoBib:
+    path: /favoritoBib/
+    defaults: { _controller: DWESLibrosBundle:Default:favoritoBib }
+
+dwes_libros_listaBib:
+    path: /listaBib/
+    defaults: { _controller: DWESLibrosBundle:Default:listaBib }
 
 dwes_libros_ajustes:
     path: /ajustes/

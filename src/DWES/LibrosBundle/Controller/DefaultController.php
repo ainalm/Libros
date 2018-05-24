@@ -98,7 +98,7 @@ class DefaultController extends Controller
 
 	}
 
-	public function escribirhistoriaAction()
+	public function escribirhistoriaAction($tipo)
 	{
 			/*Generos:
 		0:Default
@@ -112,7 +112,7 @@ class DefaultController extends Controller
 		8:Drama
 		 */
 
-		$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'file_upload' => '', 'colorFondo' => '');/* Guardo en el array los campos del form*/
+		$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'file_upload' => '', 'colorFondo' => '','tipoLib'=>'');/* Guardo en el array los campos del form*/
 		$userlog = $this->getUser()->getUsername();
 		$peticion = $this->getRequest(); 	//Llamada al Form
 		$request->files;
@@ -120,20 +120,28 @@ class DefaultController extends Controller
 		$resuHist = $peticion->request->get('resuHist');
 		$genero = $peticion->request->get('genero');
 		$colorFondo = $peticion->request->get('colorFondo');
+		$tipoLib = $peticion->request->get('tipoLib');
 		$fotoSubida = addslashes(file_get_contents($_FILES['file_upload']['tmp_name'])); //Imagen Subida del  usuario
 		$connection = $this->get("database_connection"); //Conexión con la BD 1º Metodo
 		$idGeneroSelecc = $connection->fetchColumn('SELECT idGenero from genero WHERE nombre="' . $genero . '"'); //Id del genero seleccionado
 		$numExist = $connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
 		$idLibro = "";
+		$red=$tipo;
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
 				/* FIXME: Evitar meter libros duplicado */
 			if (empty($numExist) && $numExist == 0) {
 			/* INSERT LIBRO  CREADO*/
 				if (isset($titulohistoria) && isset($resuHist) && isset($genero)) {
 					//$connection->executeUpdate('UPDATE `usuario` SET fotoPerfil ="'. $fotoSubida .'" WHERE username ="'. $userlog .'" ;');
-					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
-					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"' . $colorFondo . '");');
-
+					
+				if ($tipo == "anuncio") {
+					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
+					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Anuncio", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"' . $colorFondo . '");');
+				} elseif ($tipo == "gratis"){
+					$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
+					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Gratis", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"' . $colorFondo . '");');
+				}
+				
 			/*	SELECT Id del libro creado */
 					$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
 
@@ -150,8 +158,17 @@ class DefaultController extends Controller
 			}
 
 			$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'idLibro' => $idLibro);
-			return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro, 'numCapitulo' => 1)));
+			
+			if ($tipo == "anuncio") {
+				return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
+			} elseif ($tipo == "gratis"){
+				return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro, 'numCapitulo' => 1)));
+			}
+			
+			
+			
 		}
+	
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
 	}
 
@@ -187,7 +204,7 @@ class DefaultController extends Controller
 				
 
 				//Rediriga a la página de Biblioteca con un parámetro
-		return $this->redirect($this->generateUrl('dwes_libros_biblioteca', array('idLibro' => $idLibro)));
+		return $this->redirect($this->generateUrl('dwes_libros_publicadosBib', array('idLibro' => $idLibro)));
 	}
 	public function capituloAction($idLibro, $numCapitulo)
 	{
@@ -249,7 +266,7 @@ class DefaultController extends Controller
 
 	}
 
-	public function bibliotecaAction()
+	public function publicadosBibAction()
 	{
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		$connection = $this->get("database_connection");
@@ -263,9 +280,47 @@ class DefaultController extends Controller
 
 
 		$imagen = base64_encode($fotoPub);
+		$librosFavCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Favorito"');
 		$librosPubCount = $connection->fetchColumn('SELECT count(*) FROM libro WHERE username = "' . $userlog . '"');
-		$params = array('libros' => $librosPub, 'clibros' => $librosPubCount);
-		return $this->render('DWESLibrosBundle:Default:biblioteca.html.twig', $params);
+		$librosLisCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Lista"');
+		$params = array('libros' => $librosPub, 'clibros' => $librosPubCount,'favCount'=>$librosFavCount,'clibrosLis'=>$librosLisCount);
+		return $this->render('DWESLibrosBundle:Default:publicadosBib.html.twig', $params);
+	}
+	public function favoritoBibAction()
+	{
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+		$connection = $this->get("database_connection");
+		$librosPub = $connection->fetchAll('SELECT distinct libro.username ,libro.titulo,libro.idLibro,libro.colorPortada,libro.fotoPort,libro.descripcion 
+		FROM enbiblioteca,libro WHERE enbiblioteca.idLibro= libro.idLibro AND enbiblioteca.username="' .$userlog . '"
+		 and enbiblioteca.tipo="Favorito" GROUP BY enbiblioteca.idLibro');
+
+		
+		$fotoPub = $connection->fetchAll('SELECT fotoPort FROM libro WHERE username = "' . $userlog . '" ');
+
+		$imagen = base64_encode($fotoPub);
+		$librosPubCount = $connection->fetchColumn('SELECT count(*) FROM libro WHERE username = "' . $userlog . '"');
+		$librosFavCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Favorito"');
+		$librosLisCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Lista"');
+		$params = array('libros' => $librosPub, 'clibrosPub' => $librosPubCount,'clibrosFav'=>$librosFavCount,'clibrosLis'=>$librosLisCount);
+		return $this->render('DWESLibrosBundle:Default:favoritoBib.html.twig', $params);
+	}
+	public function listaBibAction()
+	{
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+		$connection = $this->get("database_connection");
+		$librosPub = $connection->fetchAll('SELECT distinct libro.username ,libro.titulo,libro.idLibro,libro.colorPortada,libro.fotoPort,libro.descripcion 
+		FROM enbiblioteca,libro WHERE enbiblioteca.idLibro= libro.idLibro  AND enbiblioteca.username="' .$userlog . '"
+		 and enbiblioteca.tipo="Lista" GROUP BY enbiblioteca.idLibro');
+
+		
+		$fotoPub = $connection->fetchAll('SELECT fotoPort FROM libro WHERE username = "' . $userlog . '" ');
+
+		$imagen = base64_encode($fotoPub);
+		$librosPubCount = $connection->fetchColumn('SELECT count(*) FROM libro WHERE username = "' . $userlog . '"');
+		$librosFavCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Favorito"');
+		$librosLisCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Lista"');
+		$params = array('libros' => $librosPub, 'clibrosPub' => $librosPubCount,'clibrosFav'=>$librosFavCount,'clibrosLis'=>$librosLisCount);
+		return $this->render('DWESLibrosBundle:Default:listaBib.html.twig', $params);
 	}
 	public function historiaAction($idLibro)
 	{//TODO:
@@ -318,7 +373,7 @@ class DefaultController extends Controller
 		}
 	}
 
-	public function addbibliotecaAction($idLibro)
+	public function addbibliotecaAction($idLibro) 
 	{
 		$connection = $this->get("database_connection");
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
@@ -352,6 +407,9 @@ class DefaultController extends Controller
 		$connection->executeUpdate('DELETE FROM enbiblioteca WHERE username = "' . $userlog . '" AND idLibro = "' . $idLibro . '" AND tipo = "Favorito"');
 		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
 	}
+
+
+
 	public function ajustesAction()
 	{
 

@@ -71,13 +71,27 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
      
         <div class=\"tab-pane fade active show\" id=\"panel1\" role=\"tabpanel\">
             <br>
-                
-              
+                ";
+        // line 39
+        if (($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "tipo"), "method") == "anuncio")) {
+            // line 40
+            echo "                           
             <form name=\"formNuevoCapitulo\" action=\"";
-        // line 41
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria");
-        echo "\"  method=\"POST\"  enctype=\"multipart/form-data\"> 
-                    <!-- target=\"frame\" -->
+            // line 41
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "anuncio"));
+            echo "\"  method=\"POST\"  enctype=\"multipart/form-data\"> 
+                        
+              ";
+        } else {
+            // line 44
+            echo "            <form name=\"formNuevoCapitulo\" action=\"";
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "gratis"));
+            echo "\"  method=\"POST\"  enctype=\"multipart/form-data\"> 
+
+ ";
+        }
+        // line 47
+        echo "                    <!-- target=\"frame\" -->
 
                 <!--Grid row-->
                 <div class=\"row\">
@@ -86,7 +100,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                 <div class=\"md-form\" >
                             <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"";
-        // line 50
+        // line 55
         echo twig_escape_filter($this->env, (isset($context["titulohistoria"]) ? $context["titulohistoria"] : $this->getContext($context, "titulohistoria")), "html", null, true);
         echo "\">
                             <label for=\"titulohistoria\" class=\"Ltitulohistoria valL\">Título de la historia</label>
@@ -104,7 +118,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                         <div class=\"md-form mb-5\">
                             <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"6\" name=\"resuHist\" value=\"";
-        // line 65
+        // line 70
         echo twig_escape_filter($this->env, (isset($context["resuHist"]) ? $context["resuHist"] : $this->getContext($context, "resuHist")), "html", null, true);
         echo "\"></textarea>
                             <label for=\"contact-message\" class=\"Lcontact-message valL\">Resume tu historia:</label>
@@ -213,7 +227,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                                 </div>
                                 </div>
                                 <input type=\"text\" id=\"colorF\" style=\"display:none\" name=\"colorFondo\" value=\"";
-        // line 171
+        // line 176
         echo twig_escape_filter($this->env, (isset($context["colorFondo"]) ? $context["colorFondo"] : $this->getContext($context, "colorFondo")), "html", null, true);
         echo "\">
                                 
@@ -277,16 +291,18 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             <p id=\"resumen\"></p>
                             </div>
                             ";
-        // line 232
+        // line 237
         if (array_key_exists("idLibro", $context)) {
-            // line 233
+            // line 238
             echo "                            ";
             echo twig_escape_filter($this->env, (isset($context["idLibro"]) ? $context["idLibro"] : $this->getContext($context, "idLibro")), "html", null, true);
             echo "
                           ";
         }
-        // line 235
+        // line 240
         echo "                           <br><button  type=\"submit\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" >Empezar Hisotria</button>
+  
+                           
                         </div>
                 </div> 
             </form>
@@ -308,7 +324,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  289 => 235,  283 => 233,  281 => 232,  217 => 171,  108 => 65,  90 => 50,  78 => 41,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  303 => 240,  297 => 238,  295 => 237,  231 => 176,  122 => 70,  104 => 55,  94 => 47,  87 => 44,  81 => 41,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -349,9 +365,14 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*      */
 /*         <div class="tab-pane fade active show" id="panel1" role="tabpanel">*/
 /*             <br>*/
-/*                 */
-/*               */
-/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  enctype="multipart/form-data"> */
+/*                 {% if  app.request.get('tipo') =="anuncio" %}*/
+/*                            */
+/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}"  method="POST"  enctype="multipart/form-data"> */
+/*                         */
+/*               {% else %}*/
+/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}"  method="POST"  enctype="multipart/form-data"> */
+/* */
+/*  {% endif %}*/
 /*                     <!-- target="frame" -->*/
 /* */
 /*                 <!--Grid row-->*/
@@ -546,6 +567,8 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                             {{idLibro}}*/
 /*                           {% endif %}*/
 /*                            <br><button  type="submit" class="btn pink-gradient btn-rounded waves-effect waves-light" >Empezar Hisotria</button>*/
+/*   */
+/*                            */
 /*                         </div>*/
 /*                 </div> */
 /*             </form>*/

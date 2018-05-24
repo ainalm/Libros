@@ -36,9 +36,14 @@
      
         <div class="tab-pane fade active show" id="panel1" role="tabpanel">
             <br>
-                
-              
-            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria') }}"  method="POST"  enctype="multipart/form-data"> 
+                {% if  app.request.get('tipo') =="anuncio" %}
+                           
+            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}"  method="POST"  enctype="multipart/form-data"> 
+                        
+              {% else %}
+            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}"  method="POST"  enctype="multipart/form-data"> 
+
+ {% endif %}
                     <!-- target="frame" -->
 
                 <!--Grid row-->
@@ -233,6 +238,8 @@
                             {{idLibro}}
                           {% endif %}
                            <br><button  type="submit" class="btn pink-gradient btn-rounded waves-effect waves-light" >Empezar Hisotria</button>
+  
+                           
                         </div>
                 </div> 
             </form>

@@ -181,30 +181,47 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // dwes_libros_escribirhistoria
-        if (rtrim($pathinfo, '/') === '/escribirhistoria') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_escribirhistoria');
-            }
-
-            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::escribirhistoriaAction',  '_route' => 'dwes_libros_escribirhistoria',);
+        if (0 === strpos($pathinfo, '/escribirhistoria') && preg_match('#^/escribirhistoria/(?P<tipo>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_escribirhistoria')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::escribirhistoriaAction',));
         }
 
-        // dwes_libros_perfil
-        if (rtrim($pathinfo, '/') === '/perfil') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_perfil');
+        if (0 === strpos($pathinfo, '/p')) {
+            // dwes_libros_perfil
+            if (rtrim($pathinfo, '/') === '/perfil') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_perfil');
+                }
+
+                return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilAction',  '_route' => 'dwes_libros_perfil',);
             }
 
-            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilAction',  '_route' => 'dwes_libros_perfil',);
+            // dwes_libros_publicadosBib
+            if (rtrim($pathinfo, '/') === '/publicadosBib') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_publicadosBib');
+                }
+
+                return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::publicadosBibAction',  '_route' => 'dwes_libros_publicadosBib',);
+            }
+
         }
 
-        // dwes_libros_biblioteca
-        if (rtrim($pathinfo, '/') === '/biblioteca') {
+        // dwes_libros_favoritoBib
+        if (rtrim($pathinfo, '/') === '/favoritoBib') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_biblioteca');
+                return $this->redirect($pathinfo.'/', 'dwes_libros_favoritoBib');
             }
 
-            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::bibliotecaAction',  '_route' => 'dwes_libros_biblioteca',);
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::favoritoBibAction',  '_route' => 'dwes_libros_favoritoBib',);
+        }
+
+        // dwes_libros_listaBib
+        if (rtrim($pathinfo, '/') === '/listaBib') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_listaBib');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::listaBibAction',  '_route' => 'dwes_libros_listaBib',);
         }
 
         // dwes_libros_ajustes
