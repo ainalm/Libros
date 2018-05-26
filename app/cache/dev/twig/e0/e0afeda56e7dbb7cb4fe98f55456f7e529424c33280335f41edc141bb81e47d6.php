@@ -143,39 +143,11 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
             // line 73
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "biografia", array()), "html", null, true);
             echo " 
-                      
-                      
-
-
                        <br> 
-                       
                        
                         </p>
                         <hr>
-                        <!--Social Icons-->
-                        <ul class=\"list-inline list-unstyled\">
-                            <li class=\"list-inline-item\">
-                                <a class=\"icons-sm fb-ic\">
-                                    <i class=\"fa fa-facebook\"></i>
-                                </a>
-                            </li>
-                            <li class=\"list-inline-item\">
-                                <a class=\"icons-sm pin-ic\">
-                                    <i class=\"fa fa-pinterest\"> </i>
-                                </a>
-                            </li>
-                            <li class=\"list-inline-item\">
-                                <a class=\"icons-sm ins-ic\">
-                                    <i class=\"fa fa-instagram\"> </i>
-                                </a>
-                            </li>
-                            <li class=\"list-inline-item\">
-                                <a class=\"icons-sm tw-ic\">
-                                    <i class=\"fa fa-twitter\"> </i>
-                                </a>
-                            </li>
-                        </ul>
-                       
+                     
 
                         </div>
 
@@ -291,39 +263,11 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /*                         </h4>*/
 /*                         <hr>*/
 /*                         <p>{{item.biografia}} */
-/*                       */
-/*                       */
-/* */
-/* */
 /*                        <br> */
-/*                        */
 /*                        */
 /*                         </p>*/
 /*                         <hr>*/
-/*                         <!--Social Icons-->*/
-/*                         <ul class="list-inline list-unstyled">*/
-/*                             <li class="list-inline-item">*/
-/*                                 <a class="icons-sm fb-ic">*/
-/*                                     <i class="fa fa-facebook"></i>*/
-/*                                 </a>*/
-/*                             </li>*/
-/*                             <li class="list-inline-item">*/
-/*                                 <a class="icons-sm pin-ic">*/
-/*                                     <i class="fa fa-pinterest"> </i>*/
-/*                                 </a>*/
-/*                             </li>*/
-/*                             <li class="list-inline-item">*/
-/*                                 <a class="icons-sm ins-ic">*/
-/*                                     <i class="fa fa-instagram"> </i>*/
-/*                                 </a>*/
-/*                             </li>*/
-/*                             <li class="list-inline-item">*/
-/*                                 <a class="icons-sm tw-ic">*/
-/*                                     <i class="fa fa-twitter"> </i>*/
-/*                                 </a>*/
-/*                             </li>*/
-/*                         </ul>*/
-/*                        */
+/*                      */
 /* */
 /*                         </div>*/
 /* */

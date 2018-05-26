@@ -40,9 +40,16 @@ dwes_libros_favoritoBib:
     path: /favoritoBib/
     defaults: { _controller: DWESLibrosBundle:Default:favoritoBib }
 
+dwes_libros_deseadoBib:
+    path: /deseadoBib/
+    defaults: { _controller: DWESLibrosBundle:Default:deseadoBib }
+
 dwes_libros_listaBib:
     path: /listaBib/
     defaults: { _controller: DWESLibrosBundle:Default:listaBib }
+dwes_libros_ventaBib:
+    path: /ventaBib/
+    defaults: { _controller: DWESLibrosBundle:Default:ventaBib }
 
 dwes_libros_ajustes:
     path: /ajustes/
@@ -92,6 +99,18 @@ dwes_libros_addfavoritos:
     requirements:
         page: \d+
 
+dwes_libros_deldeseos:
+    path: /deldeseos/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:deldeseos }
+    requirements:
+        page: \d+
+
+dwes_libros_adddeseos:
+    path: /adddeseos/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:adddeseos }
+    requirements:
+        page: \d+
+
 dwes_libros_eliminarLib:
     path: /eliminarLib/{idLibro}
     defaults: { _controller: DWESLibrosBundle:Default:eliminarLib }
@@ -113,4 +132,34 @@ dwes_libros_perfilhistoria:
     path: /perfilhistoria/{idLibro}
     defaults: { _controller: DWESLibrosBundle:Default:perfilhistoria }
     requirements:
-        page: \d+     
+        page: \d+
+        
+dwes_libros_updateDescLibro:
+    path: /updateDescLibro/{idLibro}
+    defaults: { _controller: DWESLibrosBundle:Default:updateDescLibro }
+    requirements:
+        page: \d+
+
+dwes_libros_addEnlaceLibro:
+    path: /addEnlace/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:addEnlace }
+    requirements:
+        page: \d+
+
+dwes_libros_eliminarEnlace:
+    path: /eliminarEnlace/{idLibro}/{idEnlace}
+    defaults: { _controller: DWESLibrosBundle:Default:eliminarEnlace }
+    requirements:
+        page: \d+
+
+dwes_libros_editarEnlace:
+    path: /editarEnlace/{idLibro}/{idEnlace}
+    defaults: { _controller: DWESLibrosBundle:Default:editarEnlace }
+    requirements:
+        page: \d+
+
+dwes_libros_updateInfoLibro:
+    path: /updateInfoLibro/{idLibro}
+    defaults: { _controller: DWESLibrosBundle:Default:updateInfoLibro }
+    requirements:
+        page: \d+        

@@ -102,14 +102,23 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                                         <a class=\"dark-grey-text font-small navL\">
                                             Mi lista de deseos</a>
                                         <a href=\"\"></a>
-                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                        <span class=\"badge badge-danger badge-pill\">";
+        // line 58
+        echo twig_escape_filter($this->env, (isset($context["cDeseo"]) ? $context["cDeseo"] : $this->getContext($context, "cDeseo")), "html", null, true);
+        echo "</span>
                                         
                                     </li>
                                    
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
-                                        <a class=\"dark-grey-text font-small navL\">
+                                       <a   href=\"";
+        // line 63
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_ventaBib");
+        echo "\" class=\"dark-grey-text font-small navL\">
                                             Mis libros en venta</a>
-                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                        <span class=\"badge badge-danger badge-pill\">";
+        // line 65
+        echo twig_escape_filter($this->env, (isset($context["cVenta"]) ? $context["cVenta"] : $this->getContext($context, "cVenta")), "html", null, true);
+        echo "</span>
                                     </li>
 
                                 </ul>
@@ -140,40 +149,6 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 
                         <!--Pagination dark grey-->
                         <nav class=\"mb-5 pb-2\">
-                            <ul class=\"pagination pg-darkgrey flex-center\">
-                                <!--Arrow left-->
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\" aria-label=\"Previous\">
-                                        <span aria-hidden=\"true\">«</span>
-                                        <span class=\"sr-only\">Previous</span>
-                                    </a>
-                                </li>
-
-                                <!--Numbers-->
-                                <li class=\"page-item active\">
-                                    <a class=\"page-link waves-effect waves-effect\">1</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">2</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">3</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">4</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">5</a>
-                                </li>
-
-                                <!--Arrow right-->
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\" aria-label=\"Next\">
-                                        <span aria-hidden=\"true\">»</span>
-                                        <span class=\"sr-only\">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </nav>
                         <!--Pagination dark grey-->
 
@@ -201,7 +176,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 
     public function getDebugInfo()
     {
-        return array (  133 => 85,  131 => 83,  130 => 82,  98 => 52,  93 => 50,  87 => 47,  79 => 42,  74 => 40,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  142 => 85,  140 => 83,  139 => 82,  120 => 65,  115 => 63,  107 => 58,  98 => 52,  93 => 50,  87 => 47,  79 => 42,  74 => 40,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -261,14 +236,14 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*                                         <a class="dark-grey-text font-small navL">*/
 /*                                             Mi lista de deseos</a>*/
 /*                                         <a href=""></a>*/
-/*                                         <span class="badge badge-danger badge-pill">?</span>*/
+/*                                         <span class="badge badge-danger badge-pill">{{cDeseo}}</span>*/
 /*                                         */
 /*                                     </li>*/
 /*                                    */
 /*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                        <a   href="{{ path('dwes_libros_ventaBib') }}" class="dark-grey-text font-small navL">*/
 /*                                             Mis libros en venta</a>*/
-/*                                         <span class="badge badge-danger badge-pill">?</span>*/
+/*                                         <span class="badge badge-danger badge-pill">{{cVenta}}</span>*/
 /*                                     </li>*/
 /* */
 /*                                 </ul>*/
@@ -298,40 +273,6 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /* */
 /*                         <!--Pagination dark grey-->*/
 /*                         <nav class="mb-5 pb-2">*/
-/*                             <ul class="pagination pg-darkgrey flex-center">*/
-/*                                 <!--Arrow left-->*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect" aria-label="Previous">*/
-/*                                         <span aria-hidden="true">«</span>*/
-/*                                         <span class="sr-only">Previous</span>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/* */
-/*                                 <!--Numbers-->*/
-/*                                 <li class="page-item active">*/
-/*                                     <a class="page-link waves-effect waves-effect">1</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">2</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">3</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">4</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">5</a>*/
-/*                                 </li>*/
-/* */
-/*                                 <!--Arrow right-->*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect" aria-label="Next">*/
-/*                                         <span aria-hidden="true">»</span>*/
-/*                                         <span class="sr-only">Next</span>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                             </ul>*/
 /*                         </nav>*/
 /*                         <!--Pagination dark grey-->*/
 /* */

@@ -62,7 +62,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                 <h5 class=\"mb-0 font-weight-bold\">Mi perfil</h5>
                             </div>
                             <!--/Card image-->
-     <!-- Card content -->
+     <!-- Card content --> 
             <form name=\"formUpdatePerfil\"  action=\"";
         // line 35
         echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
@@ -76,8 +76,8 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
             echo "                         <img src=\"data:image/jpeg;base64,";
             echo twig_escape_filter($this->env, (isset($context["fotoPerfil"]) ? $context["fotoPerfil"] : $this->getContext($context, "fotoPerfil")), "html", null, true);
             echo "\" alt=\"User Photo\" class=\"z-depth-1 mb-3 mx-auto\" id=\"camb\" style=\"
-                max-width: 100px;
-                max-height: 100px;\"> 
+                        max-width: 100px;
+                        max-height: 100px;\"> 
                         ";
         } else {
             // line 43
@@ -93,7 +93,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                                 <p class=\"text-muted\"><small>Sube una nueva foto de perfil</small></p>
                                 <div class=\"row flex-center\">
                                     <label for=\"file-upload\" class=\"btn btn-info btn-rounded btn-sm waves-effect waves-light\"> Subir Foto</label><br><input name=\"file_upload\"  id=\"file-upload\" type=\"file\" onchange=\"document.getElementById('camb').src = window.URL.createObjectURL(this.files[0])\"/>
-                             <label for=\"borrarImg\" class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImgL\"> Borrar</label><br>
+                             <label for=\"borrarImg\" class=\"btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImg\"> Borrar</label><br>
                                 </div>
                             </div>
                             <!-- /.Card content -->
@@ -238,14 +238,14 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                                 <h5 class="mb-0 font-weight-bold">Mi perfil</h5>*/
 /*                             </div>*/
 /*                             <!--/Card image-->*/
-/*      <!-- Card content -->*/
+/*      <!-- Card content --> */
 /*             <form name="formUpdatePerfil"  action="{{ path('dwes_libros_crearperfil') }}"  method="POST" enctype="multipart/form-data" >*/
 /*               <iframe name="frame" style="display: none"></iframe> */
 /*                             <div class="card-body text-center">*/
 /*                             {% if fotoPerfil %}*/
 /*                          <img src="data:image/jpeg;base64,{{ fotoPerfil }}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
-/*                 max-width: 100px;*/
-/*                 max-height: 100px;"> */
+/*                         max-width: 100px;*/
+/*                         max-height: 100px;"> */
 /*                         {% else %}*/
 /* */
 /*                                 <img src="http://www.iconarchive.com/download/i86027/graphicloads/100-flat-2/arrow-upload.ico" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
@@ -257,7 +257,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                                 <p class="text-muted"><small>Sube una nueva foto de perfil</small></p>*/
 /*                                 <div class="row flex-center">*/
 /*                                     <label for="file-upload" class="btn btn-info btn-rounded btn-sm waves-effect waves-light"> Subir Foto</label><br><input name="file_upload"  id="file-upload" type="file" onchange="document.getElementById('camb').src = window.URL.createObjectURL(this.files[0])"/>*/
-/*                              <label for="borrarImg" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImgL"> Borrar</label><br>*/
+/*                              <label for="borrarImg" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light borrarImg"> Borrar</label><br>*/
 /*                                 </div>*/
 /*                             </div>*/
 /*                             <!-- /.Card content -->*/

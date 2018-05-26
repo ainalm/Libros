@@ -134,16 +134,37 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <!-- Section: Categories -->
                     <section class=\"section\">
 
-                        <div class=\"view overlay \">
-                            <img src=\"data:image/jpeg;base64,";
-            // line 84
-            echo twig_escape_filter($this->env, (isset($context["foto"]) ? $context["foto"] : $this->getContext($context, "foto")), "html", null, true);
-            echo "\" style=\"height:270px ; width:180px;\" class=\" mx-auto\" alt=\"sample image\">
 
-                            <a>
-                                <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                            </a>
-                        </div>
+
+                        <!--Card image TODO: Imagen libro view overlay  -->
+                        <div class=\"  view overlay\">
+                            ";
+            // line 87
+            if ((isset($context["foto"]) ? $context["foto"] : $this->getContext($context, "foto"))) {
+                // line 88
+                echo "                            <img src=\"data:image/jpeg;base64,";
+                echo twig_escape_filter($this->env, (isset($context["foto"]) ? $context["foto"] : $this->getContext($context, "foto")), "html", null, true);
+                echo "\" style=\"height:270px ; width:180px;\" class=\" mx-auto\" alt=\"sample image\"> ";
+            } else {
+                // line 89
+                echo "                            <div class=\"  ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "colorPortada", array()), "html", null, true);
+                echo " \" style=\"height:270px;width:180px;\">
+                                <div class=\" flex-center text-center\" alt=\"sample image\">
+                                    <p>";
+                // line 91
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
+                echo "</p>
+                                </div>
+                                <a>
+                                    <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
+                                </a>
+                            </div>
+                            ";
+            }
+            // line 98
+            echo "                        </div>
+                        <!--/.Card image-->
                     </section>
                     <!-- Section: Categories -->
 
@@ -157,18 +178,18 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                             <div>
                                 <a>
                                     <span class=\"badge badge-danger\">";
-            // line 102
+            // line 112
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
             echo "</span>
                                 </a>
                                 <h2 class=\"card-title font-weight-bold pt-2  \" style=\"color:  black;\">
                                     <strong>";
-            // line 105
+            // line 115
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
             echo "</strong>
                                 </h2>
                                 <p style=\"min-height: 120px;color:  black;\">";
-            // line 107
+            // line 117
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "descLib", array()), "html", null, true);
             echo " </p>
                                 <!-- Button  modal -->
@@ -196,14 +217,14 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 128
+        // line 138
         echo " ";
     }
 
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
-        // line 138
+        // line 148
         echo "
 <div class=\"container-fluid pl-0 pr-0\" style=\"background-color: #f4f5f6;\" id=\"container1\">
 
@@ -215,96 +236,123 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             <!-- Breadcrumb-->
             <div class=\"\">
                 ";
-        // line 151
+        // line 161
         echo "                <div>
                     <a id=\"addBiblio\" href=\"";
-        // line 152
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
         echo "\"></a>
 
 
                     <a id=\"delBiblio\" href=\"";
-        // line 155
+        // line 165
         echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
         echo "\"></a>
                 </div>
                 <button type=\"button\" class=\"btn purple-gradient btn-sm gcapitulo \" data-toggle=\"modal\" data-target=\"#ModalCapitulos\">
                     <i class=\"fab fa-readme mr-2\"></i>
                     <span>";
-        // line 159
+        // line 169
         echo twig_escape_filter($this->env, (isset($context["numCap"]) ? $context["numCap"] : $this->getContext($context, "numCap")), "html", null, true);
         echo "</span> Capítulos
                 </button>
                 ";
-        // line 163
+        // line 173
         echo "
                 <span class=\"green-text font-weight-bold pr-2 small\">En progreso</span>
                 ";
-        // line 168
-        echo "                    <span class=\"text-dark  pr-2 cl\" id=\"enbiblioteca\">
-                        ";
-        // line 171
+        // line 177
         echo " ";
-        if ((isset($context["lista"]) ? $context["lista"] : $this->getContext($context, "lista"))) {
-            // line 172
-            echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
-                        <a href=\"";
-            // line 173
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-            echo "\" class=\"text-dark cl \">Eliminar de mi lista</a>
+        if (((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Gratis")) {
+            // line 178
+            echo "                    <span class=\"text-dark  pr-2 cl\" id=\"enbiblioteca\">
                         ";
-        } else {
-            // line 175
-            echo "                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
+            // line 179
+            if ((isset($context["lista"]) ? $context["lista"] : $this->getContext($context, "lista"))) {
+                // line 180
+                echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href=\"";
-            // line 176
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-            echo "\" class=\"text-dark cl \"> Añadir a mi lista</a>
+                // line 181
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+                echo "\" class=\"text-dark cl \">Eliminar de mi lista</a>
+                        ";
+            } else {
+                // line 183
+                echo "                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
+                        <a href=\"";
+                // line 184
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+                echo "\" class=\"text-dark cl \"> Añadir a mi lista</a>
 
                         ";
-        }
-        // line 179
-        echo "                    </span>
+            }
+            // line 187
+            echo "                    </span>
 
                     <span class=\"text-dark   pr-2 cl\" id=\"enfavoritos\">
                         ";
-        // line 184
-        echo " ";
-        if ((isset($context["favorito"]) ? $context["favorito"] : $this->getContext($context, "favorito"))) {
-            // line 185
-            echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
+            // line 190
+            if ((isset($context["favorito"]) ? $context["favorito"] : $this->getContext($context, "favorito"))) {
+                // line 191
+                echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href=\"";
-            // line 186
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-            echo "\" class=\"text-dark cl \"> Eliminar de favoritos</a>
+                // line 192
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+                echo "\" class=\"text-dark cl \"> Eliminar de favoritos</a>
                         ";
-        } else {
-            // line 188
-            echo "                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
+            } else {
+                // line 194
+                echo "                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
                         <a href=\"";
-            // line 189
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-            echo "\" class=\"text-dark cl \"> Añadir a favoritos</a>
+                // line 195
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+                echo "\" class=\"text-dark cl \"> Añadir a favoritos</a>
 
                         ";
+            }
+            // line 198
+            echo "                    </span>
+                    ";
         }
-        // line 192
-        echo "                    </span>
+        // line 199
+        echo " ";
+        if (((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Anuncio")) {
+            // line 200
+            echo "                    <span class=\"text-dark   pr-2 cl\">
+                        ";
+            // line 201
+            if ((isset($context["deseo"]) ? $context["deseo"] : $this->getContext($context, "deseo"))) {
+                // line 202
+                echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
+                        <a href=\"";
+                // line 203
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_deldeseos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+                echo "\" class=\"text-dark cl \"> En lista de deseos</a>
+                        ";
+            } else {
+                // line 205
+                echo "
 
-
-
-
-
-
-
-            </div>
+                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
+                        <a href=\"";
+                // line 208
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_adddeseos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
+                echo "\" class=\"text-dark cl \"> Añadir a lista de deseos</a>
+                        ";
+            }
+            // line 210
+            echo "                    </span>
+                    ";
+        }
+        // line 212
+        echo "            </div>
             <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
 
                 <li class=\"nav-item\">
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla blanca\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 206
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sun-selec.png"), "html", null, true);
         echo "\" id=\"blanca\"> </img>
                         </i>
@@ -314,7 +362,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla sefia\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 213
+        // line 225
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sunset.png"), "html", null, true);
         echo "\" id=\"sefia\"> </img>
                         </i>
@@ -324,7 +372,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla negra\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 220
+        // line 232
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/moon.png"), "html", null, true);
         echo "\" id=\"negra\"> </img>
                         </i>
@@ -334,7 +382,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aumentar letra\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 227
+        // line 239
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font+.png"), "html", null, true);
         echo "\" id=\"letraUp\"> </img>
                         </i>
@@ -344,14 +392,14 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Desminuir letra\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 234
+        // line 246
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font-.png"), "html", null, true);
         echo "\" id=\"letraDown\"> </img>
                         </i>
                     </a>
                 </li>
                 ";
-        // line 250
+        // line 262
         echo "            </ul>
         </nav>
     </div>
@@ -361,27 +409,27 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
         <div class=\"card-body\">
             ";
-        // line 258
+        // line 270
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["capitulos"]) ? $context["capitulos"] : $this->getContext($context, "capitulos")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 259
+            // line 271
             echo "            <div class=\"capitulo\">
                 <!--Title-->
                 <h4 class=\"card-title text-center\">
                     <span class=\"text-info font-weight-bold pr-2 small\">#";
-            // line 262
+            // line 274
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo "</span>
                     <strong>";
-            // line 263
+            // line 275
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
             echo "</strong>
                 </h4>
                 <hr>
                 <!--Text-->
                 <p class=\"card-text\" style=\"    \">";
-            // line 267
+            // line 279
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "contenidoCap", array()), "html", null, true);
             echo "
                 </p>
@@ -391,7 +439,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 271
+        // line 283
         echo "        </div>
 
 
@@ -448,7 +496,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
     public function getDebugInfo()
     {
-        return array (  395 => 271,  385 => 267,  378 => 263,  374 => 262,  369 => 259,  365 => 258,  355 => 250,  348 => 234,  338 => 227,  328 => 220,  318 => 213,  308 => 206,  292 => 192,  286 => 189,  283 => 188,  278 => 186,  275 => 185,  272 => 184,  267 => 179,  261 => 176,  258 => 175,  253 => 173,  250 => 172,  247 => 171,  244 => 168,  240 => 163,  235 => 159,  228 => 155,  222 => 152,  219 => 151,  207 => 138,  200 => 128,  172 => 107,  167 => 105,  161 => 102,  140 => 84,  129 => 75,  111 => 53,  102 => 50,  98 => 49,  94 => 48,  91 => 47,  87 => 46,  66 => 28,  42 => 7,  35 => 2,  11 => 1,);
+        return array (  443 => 283,  433 => 279,  426 => 275,  422 => 274,  417 => 271,  413 => 270,  403 => 262,  396 => 246,  386 => 239,  376 => 232,  366 => 225,  356 => 218,  348 => 212,  344 => 210,  339 => 208,  334 => 205,  329 => 203,  326 => 202,  324 => 201,  321 => 200,  318 => 199,  314 => 198,  308 => 195,  305 => 194,  300 => 192,  297 => 191,  295 => 190,  290 => 187,  284 => 184,  281 => 183,  276 => 181,  273 => 180,  271 => 179,  268 => 178,  265 => 177,  261 => 173,  256 => 169,  249 => 165,  243 => 162,  240 => 161,  228 => 148,  221 => 138,  193 => 117,  188 => 115,  182 => 112,  166 => 98,  156 => 91,  150 => 89,  145 => 88,  143 => 87,  129 => 75,  111 => 53,  102 => 50,  98 => 49,  94 => 48,  91 => 47,  87 => 46,  66 => 28,  42 => 7,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %} {% for item in libro %}*/
@@ -533,13 +581,23 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                     <!-- Section: Categories -->*/
 /*                     <section class="section">*/
 /* */
-/*                         <div class="view overlay ">*/
-/*                             <img src="data:image/jpeg;base64,{{foto}}" style="height:270px ; width:180px;" class=" mx-auto" alt="sample image">*/
 /* */
-/*                             <a>*/
-/*                                 <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
-/*                             </a>*/
+/* */
+/*                         <!--Card image TODO: Imagen libro view overlay  -->*/
+/*                         <div class="  view overlay">*/
+/*                             {% if foto %}*/
+/*                             <img src="data:image/jpeg;base64,{{foto}}" style="height:270px ; width:180px;" class=" mx-auto" alt="sample image"> {% else %}*/
+/*                             <div class="  {{item.colorPortada}} " style="height:270px;width:180px;">*/
+/*                                 <div class=" flex-center text-center" alt="sample image">*/
+/*                                     <p>{{item.titulo}}</p>*/
+/*                                 </div>*/
+/*                                 <a>*/
+/*                                     <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
+/*                                 </a>*/
+/*                             </div>*/
+/*                             {% endif %}*/
 /*                         </div>*/
+/*                         <!--/.Card image-->*/
 /*                     </section>*/
 /*                     <!-- Section: Categories -->*/
 /* */
@@ -616,12 +674,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /* */
 /*                 <span class="green-text font-weight-bold pr-2 small">En progreso</span>*/
 /*                 {#*/
-/*                 <form name="formUpdatePerfil" action="{{ path('dwes_libros_addbiblioteca'),{'idLibro':app.request.get('idLibro')} }}"*/
-/*                     method="POST" enctype="multipart/form-data"> #}*/
+/*                 <form name="formUpdatePerfil" action="{{ path('dwes_libros_addbiblioteca'),{'idLibro':app.request.get('idLibro')} }}" method="POST"*/
+/*                     enctype="multipart/form-data"> #} {% if tipoLibro == "Gratis" %}*/
 /*                     <span class="text-dark  pr-2 cl" id="enbiblioteca">*/
-/*                         {#<i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>*/
-/*                         <a href="{{ path('dwes_libros_addbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl ">*/
-/*                         Añadir a mi lista</a> #} {% if lista %}*/
+/*                         {% if lista %}*/
 /*                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>*/
 /*                         <a href="{{ path('dwes_libros_delbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl ">Eliminar de mi lista</a>*/
 /*                         {% else %}*/
@@ -632,9 +688,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                     </span>*/
 /* */
 /*                     <span class="text-dark   pr-2 cl" id="enfavoritos">*/
-/*                         {#*/
-/*                         <i class="fas fa-plus mr-1 font-weight-bold favoritIcon deselect favIco "></i>*/
-/*                         <a href="#" class="text-dark cl"> Añadir a favoritos</a> #} {% if favorito %}*/
+/*                         {% if favorito %}*/
 /*                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>*/
 /*                         <a href="{{ path('dwes_libros_delfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> Eliminar de favoritos</a>*/
 /*                         {% else %}*/
@@ -643,13 +697,19 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /* */
 /*                         {% endif %}*/
 /*                     </span>*/
+/*                     {% endif %} {% if tipoLibro == "Anuncio" %}*/
+/*                     <span class="text-dark   pr-2 cl">*/
+/*                         {% if deseo %}*/
+/*                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>*/
+/*                         <a href="{{ path('dwes_libros_deldeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> En lista de deseos</a>*/
+/*                         {% else %}*/
 /* */
 /* */
-/* */
-/* */
-/* */
-/* */
-/* */
+/*                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>*/
+/*                         <a href="{{ path('dwes_libros_adddeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> Añadir a lista de deseos</a>*/
+/*                         {% endif %}*/
+/*                     </span>*/
+/*                     {% endif %}*/
 /*             </div>*/
 /*             <ul class="nav navbar-nav nav-flex-icons ml-auto">*/
 /* */

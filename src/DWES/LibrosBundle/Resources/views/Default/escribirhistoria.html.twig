@@ -4,11 +4,20 @@
         <div class="container my-5 pt-5">
 
             <!-- Section heading -->
+          
+            {% if  app.request.get('tipo') =="anuncio" %}
+                           
+             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>Anuncia tu libro</strong>
+            </h3>
+            <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Haz llegar tus historias a más gente</h6>
+                        
+              {% else %}
             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
                 <strong>Crea tu historia</strong>
             </h3>
             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Deja volar tu imaginación</h6>
-
+            {% endif %}
 
         </div>
     </div>
@@ -21,16 +30,16 @@
     <!-- Navegación-->
     <ul class="nav nav-tabs nav-justified view gradient-card-header blue-gradient" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#panel1" id="ap1" role="tab">01.Ponle un título</a>
+            <a class="nav-link active"  href="#panel1" id="ap1" role="tab">01.Ponle un título</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel2" id="ap2" role="tab">02. Personaliza</a>
+            <a class="nav-link"  href="#panel2" id="ap2" role="tab">02. Personaliza</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel3" id="ap3"  role="tab">03. ¡Empieza ya!</a>
+            <a class="nav-link"  href="#panel3" id="ap3"  role="tab">03. ¡Empieza ya!</a>
         </li>
     </ul>
-    <!--/. Navegación-->
+    <!--/. data-toggle="tab" Navegación-->
     <div class="tab-content card">
         <!--Panel 1--> 
      
@@ -38,8 +47,7 @@
             <br>
                 {% if  app.request.get('tipo') =="anuncio" %}
                            
-            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}"  method="POST"  enctype="multipart/form-data"> 
-                        
+            <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}"  method="POST"  enctype="multipart/form-data">   
               {% else %}
             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}"  method="POST"  enctype="multipart/form-data"> 
 
@@ -137,10 +145,6 @@
                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" value="Siguiente: 02.Personaliza" ></input>
                 </div>
              <iframe name="frame" style="display: none"></iframe> 
-         
-          
- 
-
         </div>
         <!--/.Panel 1-->
 

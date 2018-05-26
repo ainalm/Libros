@@ -33,12 +33,28 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         <div class=\"container my-5 pt-5\">
 
             <!-- Section heading -->
-            <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+          
+            ";
+        // line 8
+        if (($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "tipo"), "method") == "anuncio")) {
+            // line 9
+            echo "                           
+             <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+                <strong>Anuncia tu libro</strong>
+            </h3>
+            <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Haz llegar tus historias a más gente</h6>
+                        
+              ";
+        } else {
+            // line 16
+            echo "            <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>Crea tu historia</strong>
             </h3>
             <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Deja volar tu imaginación</h6>
-
-
+            ";
+        }
+        // line 21
+        echo "
         </div>
     </div>
 </div>
@@ -48,49 +64,48 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 ";
     }
 
-    // line 19
+    // line 28
     public function block_contenido($context, array $blocks = array())
     {
-        // line 20
+        // line 29
         echo "<div class=\"container mt-4 mb-4\">
     <!-- Navegación-->
     <ul class=\"nav nav-tabs nav-justified view gradient-card-header blue-gradient\" role=\"tablist\">
         <li class=\"nav-item\">
-            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#panel1\" id=\"ap1\" role=\"tab\">01.Ponle un título</a>
+            <a class=\"nav-link active\"  href=\"#panel1\" id=\"ap1\" role=\"tab\">01.Ponle un título</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#panel2\" id=\"ap2\" role=\"tab\">02. Personaliza</a>
+            <a class=\"nav-link\"  href=\"#panel2\" id=\"ap2\" role=\"tab\">02. Personaliza</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#panel3\" id=\"ap3\"  role=\"tab\">03. ¡Empieza ya!</a>
+            <a class=\"nav-link\"  href=\"#panel3\" id=\"ap3\"  role=\"tab\">03. ¡Empieza ya!</a>
         </li>
     </ul>
-    <!--/. Navegación-->
+    <!--/. data-toggle=\"tab\" Navegación-->
     <div class=\"tab-content card\">
         <!--Panel 1--> 
      
         <div class=\"tab-pane fade active show\" id=\"panel1\" role=\"tabpanel\">
             <br>
                 ";
-        // line 39
+        // line 48
         if (($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "tipo"), "method") == "anuncio")) {
-            // line 40
+            // line 49
             echo "                           
             <form name=\"formNuevoCapitulo\" action=\"";
-            // line 41
+            // line 50
             echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "anuncio"));
-            echo "\"  method=\"POST\"  enctype=\"multipart/form-data\"> 
-                        
+            echo "\"  method=\"POST\"  enctype=\"multipart/form-data\">   
               ";
         } else {
-            // line 44
+            // line 52
             echo "            <form name=\"formNuevoCapitulo\" action=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "gratis"));
             echo "\"  method=\"POST\"  enctype=\"multipart/form-data\"> 
 
  ";
         }
-        // line 47
+        // line 55
         echo "                    <!-- target=\"frame\" -->
 
                 <!--Grid row-->
@@ -100,7 +115,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                 <div class=\"md-form\" >
                             <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"titulohistoria\" value=\"";
-        // line 55
+        // line 63
         echo twig_escape_filter($this->env, (isset($context["titulohistoria"]) ? $context["titulohistoria"] : $this->getContext($context, "titulohistoria")), "html", null, true);
         echo "\">
                             <label for=\"titulohistoria\" class=\"Ltitulohistoria valL\">Título de la historia</label>
@@ -118,7 +133,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
                         <div class=\"md-form mb-5\">
                             <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"6\" name=\"resuHist\" value=\"";
-        // line 70
+        // line 78
         echo twig_escape_filter($this->env, (isset($context["resuHist"]) ? $context["resuHist"] : $this->getContext($context, "resuHist")), "html", null, true);
         echo "\"></textarea>
                             <label for=\"contact-message\" class=\"Lcontact-message valL\">Resume tu historia:</label>
@@ -190,10 +205,6 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                    <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" value=\"Siguiente: 02.Personaliza\" ></input>
                 </div>
              <iframe name=\"frame\" style=\"display: none\"></iframe> 
-         
-          
- 
-
         </div>
         <!--/.Panel 1-->
 
@@ -227,7 +238,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                                 </div>
                                 </div>
                                 <input type=\"text\" id=\"colorF\" style=\"display:none\" name=\"colorFondo\" value=\"";
-        // line 176
+        // line 180
         echo twig_escape_filter($this->env, (isset($context["colorFondo"]) ? $context["colorFondo"] : $this->getContext($context, "colorFondo")), "html", null, true);
         echo "\">
                                 
@@ -291,15 +302,15 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             <p id=\"resumen\"></p>
                             </div>
                             ";
-        // line 237
+        // line 241
         if (array_key_exists("idLibro", $context)) {
-            // line 238
+            // line 242
             echo "                            ";
             echo twig_escape_filter($this->env, (isset($context["idLibro"]) ? $context["idLibro"] : $this->getContext($context, "idLibro")), "html", null, true);
             echo "
                           ";
         }
-        // line 240
+        // line 244
         echo "                           <br><button  type=\"submit\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" >Empezar Hisotria</button>
   
                            
@@ -324,7 +335,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  303 => 240,  297 => 238,  295 => 237,  231 => 176,  122 => 70,  104 => 55,  94 => 47,  87 => 44,  81 => 41,  78 => 40,  76 => 39,  55 => 20,  52 => 19,  31 => 2,  11 => 1,);
+        return array (  314 => 244,  308 => 242,  306 => 241,  242 => 180,  137 => 78,  119 => 63,  109 => 55,  102 => 52,  97 => 50,  94 => 49,  92 => 48,  71 => 29,  68 => 28,  57 => 21,  50 => 16,  41 => 9,  39 => 8,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -333,11 +344,20 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*         <div class="container my-5 pt-5">*/
 /* */
 /*             <!-- Section heading -->*/
+/*           */
+/*             {% if  app.request.get('tipo') =="anuncio" %}*/
+/*                            */
+/*              <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*                 <strong>Anuncia tu libro</strong>*/
+/*             </h3>*/
+/*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Haz llegar tus historias a más gente</h6>*/
+/*                         */
+/*               {% else %}*/
 /*             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>Crea tu historia</strong>*/
 /*             </h3>*/
 /*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Deja volar tu imaginación</h6>*/
-/* */
+/*             {% endif %}*/
 /* */
 /*         </div>*/
 /*     </div>*/
@@ -350,16 +370,16 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*     <!-- Navegación-->*/
 /*     <ul class="nav nav-tabs nav-justified view gradient-card-header blue-gradient" role="tablist">*/
 /*         <li class="nav-item">*/
-/*             <a class="nav-link active" data-toggle="tab" href="#panel1" id="ap1" role="tab">01.Ponle un título</a>*/
+/*             <a class="nav-link active"  href="#panel1" id="ap1" role="tab">01.Ponle un título</a>*/
 /*         </li>*/
 /*         <li class="nav-item">*/
-/*             <a class="nav-link" data-toggle="tab" href="#panel2" id="ap2" role="tab">02. Personaliza</a>*/
+/*             <a class="nav-link"  href="#panel2" id="ap2" role="tab">02. Personaliza</a>*/
 /*         </li>*/
 /*         <li class="nav-item">*/
-/*             <a class="nav-link" data-toggle="tab" href="#panel3" id="ap3"  role="tab">03. ¡Empieza ya!</a>*/
+/*             <a class="nav-link"  href="#panel3" id="ap3"  role="tab">03. ¡Empieza ya!</a>*/
 /*         </li>*/
 /*     </ul>*/
-/*     <!--/. Navegación-->*/
+/*     <!--/. data-toggle="tab" Navegación-->*/
 /*     <div class="tab-content card">*/
 /*         <!--Panel 1--> */
 /*      */
@@ -367,8 +387,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*             <br>*/
 /*                 {% if  app.request.get('tipo') =="anuncio" %}*/
 /*                            */
-/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}"  method="POST"  enctype="multipart/form-data"> */
-/*                         */
+/*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}"  method="POST"  enctype="multipart/form-data">   */
 /*               {% else %}*/
 /*             <form name="formNuevoCapitulo" action="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}"  method="POST"  enctype="multipart/form-data"> */
 /* */
@@ -466,10 +485,6 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" value="Siguiente: 02.Personaliza" ></input>*/
 /*                 </div>*/
 /*              <iframe name="frame" style="display: none"></iframe> */
-/*          */
-/*           */
-/*  */
-/* */
 /*         </div>*/
 /*         <!--/.Panel 1-->*/
 /* */

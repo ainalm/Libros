@@ -215,6 +215,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::favoritoBibAction',  '_route' => 'dwes_libros_favoritoBib',);
         }
 
+        // dwes_libros_deseadoBib
+        if (rtrim($pathinfo, '/') === '/deseadoBib') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_deseadoBib');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::deseadoBibAction',  '_route' => 'dwes_libros_deseadoBib',);
+        }
+
         // dwes_libros_listaBib
         if (rtrim($pathinfo, '/') === '/listaBib') {
             if (substr($pathinfo, -1) !== '/') {
@@ -222,6 +231,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::listaBibAction',  '_route' => 'dwes_libros_listaBib',);
+        }
+
+        // dwes_libros_ventaBib
+        if (rtrim($pathinfo, '/') === '/ventaBib') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_ventaBib');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::ventaBibAction',  '_route' => 'dwes_libros_ventaBib',);
         }
 
         // dwes_libros_ajustes
@@ -300,6 +318,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_addfavoritos')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::addfavoritosAction',));
         }
 
+        // dwes_libros_deldeseos
+        if (0 === strpos($pathinfo, '/deldeseos') && preg_match('#^/deldeseos/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_deldeseos');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_deldeseos')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::deldeseosAction',));
+        }
+
+        // dwes_libros_adddeseos
+        if (0 === strpos($pathinfo, '/adddeseos') && preg_match('#^/adddeseos/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_adddeseos');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_adddeseos')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::adddeseosAction',));
+        }
+
         // dwes_libros_eliminarLib
         if (0 === strpos($pathinfo, '/eliminarLib') && preg_match('#^/eliminarLib/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarLib')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarLibAction',));
@@ -326,6 +362,38 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // dwes_libros_perfilhistoria
         if (0 === strpos($pathinfo, '/perfilhistoria') && preg_match('#^/perfilhistoria/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_perfilhistoria')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilhistoriaAction',));
+        }
+
+        // dwes_libros_updateDescLibro
+        if (0 === strpos($pathinfo, '/updateDescLibro') && preg_match('#^/updateDescLibro/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_updateDescLibro')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::updateDescLibroAction',));
+        }
+
+        // dwes_libros_addEnlaceLibro
+        if (0 === strpos($pathinfo, '/addEnlace') && preg_match('#^/addEnlace/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_addEnlaceLibro');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_addEnlaceLibro')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::addEnlaceAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/e')) {
+            // dwes_libros_eliminarEnlace
+            if (0 === strpos($pathinfo, '/eliminarEnlace') && preg_match('#^/eliminarEnlace/(?P<idLibro>[^/]++)/(?P<idEnlace>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_eliminarEnlace')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::eliminarEnlaceAction',));
+            }
+
+            // dwes_libros_editarEnlace
+            if (0 === strpos($pathinfo, '/editarEnlace') && preg_match('#^/editarEnlace/(?P<idLibro>[^/]++)/(?P<idEnlace>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_editarEnlace')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::editarEnlaceAction',));
+            }
+
+        }
+
+        // dwes_libros_updateInfoLibro
+        if (0 === strpos($pathinfo, '/updateInfoLibro') && preg_match('#^/updateInfoLibro/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_updateInfoLibro')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::updateInfoLibroAction',));
         }
 
         // homepage

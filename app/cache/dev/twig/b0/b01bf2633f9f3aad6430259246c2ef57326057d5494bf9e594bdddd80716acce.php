@@ -67,49 +67,65 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
                             <!-- Section: Categories -->
                             <section class=\"section\">
 
+                               
                                 <ul class=\"list-group z-depth-1\">
-                                 <li class=\"list-group-item d-flex justify-content-between align-items-center \">
+                                 <li class=\"list-group-item d-flex justify-content-between align-items-center navL\">
                                         <a href=\"";
-        // line 40
+        // line 41
         echo $this->env->getExtension('routing')->getPath("dwes_libros_publicadosBib");
         echo "\" class=\"dark-grey-text font-small navL\">
                                           Mis libros publicados</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 42
+        // line 43
         echo twig_escape_filter($this->env, (isset($context["clibrosPub"]) ? $context["clibrosPub"] : $this->getContext($context, "clibrosPub")), "html", null, true);
         echo "</span>
                                     </li>
                                  <li class=\"list-group-item d-flex justify-content-between align-items-center   \">
                                         <a href=\"";
-        // line 45
+        // line 46
         echo $this->env->getExtension('routing')->getPath("dwes_libros_listaBib");
         echo "\" class=\"dark-grey-text font-small navL\">
                                             Mi lista de lectura</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 47
+        // line 48
         echo twig_escape_filter($this->env, (isset($context["clibrosLis"]) ? $context["clibrosLis"] : $this->getContext($context, "clibrosLis")), "html", null, true);
         echo "</span>
                                     </li>
                                      <li class=\"list-group-item d-flex justify-content-between align-items-center activeL\">
-                                        <a  class=\"dark-grey-text font-small navL\">
+                                        <a  href=\"";
+        // line 51
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_favoritoBib");
+        echo "\"class=\"dark-grey-text font-small \">
                                           Favoritos</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 52
+        // line 53
         echo twig_escape_filter($this->env, (isset($context["clibrosFav"]) ? $context["clibrosFav"] : $this->getContext($context, "clibrosFav")), "html", null, true);
         echo "</span>
                                     </li>
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
-                                        <a class=\"dark-grey-text font-small navL\">
+                                        <a  href=\"";
+        // line 56
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_deseadoBib");
+        echo "\" class=\"dark-grey-text font-small navL\">
                                             Mi lista de deseos</a>
                                         <a href=\"\"></a>
-                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                        <span class=\"badge badge-danger badge-pill\">";
+        // line 59
+        echo twig_escape_filter($this->env, (isset($context["cDeseo"]) ? $context["cDeseo"] : $this->getContext($context, "cDeseo")), "html", null, true);
+        echo "</span>
                                         
                                     </li>
                                    
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
-                                        <a class=\"dark-grey-text font-small navL\">
+                                       <a   href=\"";
+        // line 64
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_ventaBib");
+        echo "\" class=\"dark-grey-text font-small navL\">
                                             Mis libros en venta</a>
-                                        <span class=\"badge badge-danger badge-pill\">?</span>
+                                        <span class=\"badge badge-danger badge-pill\">";
+        // line 66
+        echo twig_escape_filter($this->env, (isset($context["cVenta"]) ? $context["cVenta"] : $this->getContext($context, "cVenta")), "html", null, true);
+        echo "</span>
                                     </li>
 
                                 </ul>
@@ -126,10 +142,10 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
                             <!--Grid row-->
                             <div class=\"row text-center\">
                             ";
-        // line 82
-        $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:favoritoBib.html.twig", 82)->display(array_merge($context, array("libros" =>         // line 83
+        // line 83
+        $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:favoritoBib.html.twig", 83)->display(array_merge($context, array("libros" =>         // line 84
 (isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")))));
-        // line 85
+        // line 86
         echo "                            <!--/Grid row-->
                         <!--Grid row-->
                             
@@ -201,7 +217,7 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
 
     public function getDebugInfo()
     {
-        return array (  133 => 85,  131 => 83,  130 => 82,  98 => 52,  90 => 47,  85 => 45,  79 => 42,  74 => 40,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  149 => 86,  147 => 84,  146 => 83,  127 => 66,  122 => 64,  114 => 59,  108 => 56,  102 => 53,  97 => 51,  91 => 48,  86 => 46,  80 => 43,  75 => 41,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -241,8 +257,9 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
 /*                             <!-- Section: Categories -->*/
 /*                             <section class="section">*/
 /* */
+/*                                */
 /*                                 <ul class="list-group z-depth-1">*/
-/*                                  <li class="list-group-item d-flex justify-content-between align-items-center ">*/
+/*                                  <li class="list-group-item d-flex justify-content-between align-items-center navL">*/
 /*                                         <a href="{{ path('dwes_libros_publicadosBib') }}" class="dark-grey-text font-small navL">*/
 /*                                           Mis libros publicados</a>*/
 /*                                         <span class="badge badge-danger badge-pill">{{clibrosPub}}</span>*/
@@ -253,22 +270,22 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
 /*                                         <span class="badge badge-danger badge-pill">{{clibrosLis}}</span>*/
 /*                                     </li>*/
 /*                                      <li class="list-group-item d-flex justify-content-between align-items-center activeL">*/
-/*                                         <a  class="dark-grey-text font-small navL">*/
+/*                                         <a  href="{{ path('dwes_libros_favoritoBib') }}"class="dark-grey-text font-small ">*/
 /*                                           Favoritos</a>*/
 /*                                         <span class="badge badge-danger badge-pill">{{clibrosFav}}</span>*/
 /*                                     </li>*/
 /*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                         <a  href="{{ path('dwes_libros_deseadoBib') }}" class="dark-grey-text font-small navL">*/
 /*                                             Mi lista de deseos</a>*/
 /*                                         <a href=""></a>*/
-/*                                         <span class="badge badge-danger badge-pill">?</span>*/
+/*                                         <span class="badge badge-danger badge-pill">{{cDeseo}}</span>*/
 /*                                         */
 /*                                     </li>*/
 /*                                    */
 /*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                        <a   href="{{ path('dwes_libros_ventaBib') }}" class="dark-grey-text font-small navL">*/
 /*                                             Mis libros en venta</a>*/
-/*                                         <span class="badge badge-danger badge-pill">?</span>*/
+/*                                         <span class="badge badge-danger badge-pill">{{cVenta}}</span>*/
 /*                                     </li>*/
 /* */
 /*                                 </ul>*/

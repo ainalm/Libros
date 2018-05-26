@@ -106,9 +106,9 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
 }
 /* <div class="row text-center col-12">*/
 /* {% for libro in libros %}*/
-/* {#  <img src="data:image/jpeg;base64,{{libro.fotoPort}}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
+/* {#   <img src="data:image/jpeg;base64,{{libro.fotoPort}}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
 /*                 max-width: 100px;*/
-/*                 max-height: 100px;"> #}*/
+/*                 max-height: 100px;">  #}*/
 /*                                <div class="col-md-4 mb-4">*/
 /*                                 <!--Card-->*/
 /*                                 <div class="card">*/
