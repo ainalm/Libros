@@ -228,7 +228,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                     <div class=\"col-xl-8 col-lg-12 mr-0\">
 
                         <!--Card image-->
-                        <div class=\"view gradient-card-header \" style=\"background-color: #d8dde3;\">
+                        <div class=\"view gradient-card-header \" style=\"background-color: #c6d2e3;\">
                             <h2 class=\"h2-responsive mb-0\">Información</h2>
                         </div>
                         <!--/Card image-->
@@ -876,7 +876,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                     <div class="col-xl-8 col-lg-12 mr-0">*/
 /* */
 /*                         <!--Card image-->*/
-/*                         <div class="view gradient-card-header " style="background-color: #d8dde3;">*/
+/*                         <div class="view gradient-card-header " style="background-color: #c6d2e3;">*/
 /*                             <h2 class="h2-responsive mb-0">Información</h2>*/
 /*                         </div>*/
 /*                         <!--/Card image-->*/
