@@ -75,20 +75,53 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 <li class=\"nav-item dropdown ml-4\">
                     <a class=\"nav-link dropdown-toggle title\" id=\"navbarDropdownMenuLink2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Explorar </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                        <a class=\"dropdown-item\" href=\"../pages/about.html\">Leer historias gratis</a>
-                        <a class=\"dropdown-item\" href=\"../pages/testimonials.html\">Leer historias publicadas</a>
-
+                       ";
+        // line 57
+        echo "
+                         <a class=\"dropdown-item\" href=\"";
+        // line 58
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 1)), "html", null, true);
+        echo "\">Aventura</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 2)), "html", null, true);
+        echo "\">Acción</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 60
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 3)), "html", null, true);
+        echo "\">Terror</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 4)), "html", null, true);
+        echo "\">Fantasía</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 62
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 5)), "html", null, true);
+        echo "\">Misterio</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 63
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 6)), "html", null, true);
+        echo "\">Poesía</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 64
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 7)), "html", null, true);
+        echo "\">Romance</a>
+                        <a class=\"dropdown-item\" href=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 8)), "html", null, true);
+        echo "\">Drama</a>
                     </div>
                 </li>
+
                  <li class=\"nav-item ml-4\">
                     <a class=\"nav-link title\" href=\"";
-        // line 55
+        // line 70
         echo $this->env->getExtension('routing')->getPath("dwes_libros_publicadosBib");
         echo "\" data-offset=\"90\">Mi Biblioteca</a>
                 </li>
                 <li class=\"nav-item ml-4\">
                     <a class=\"nav-link title\" href=\"";
-        // line 58
+        // line 73
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" data-offset=\"90\">Contacto</a>
                 </li>
@@ -102,41 +135,41 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                     <a class=\"nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold\" id=\"navbarDropdownMenuLink3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-user\"></i>Mi cuenta </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                          ";
-        // line 69
+        // line 84
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 70
+            // line 85
             echo "                            <i></i>
                             ";
         } else {
-            // line 72
+            // line 87
             echo "                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_login");
             echo "\">Iniciar sesión</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 73
+            // line 88
             echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
             echo "\">Crear cuenta</a>
                             ";
         }
-        // line 74
+        // line 89
         echo " ";
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_REGISTRADO"))) {
-            // line 75
+            // line 90
             echo "                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_perfil");
             echo "\">Perfil</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 76
+            // line 91
             echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
             echo "\">Ajustes</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 77
+            // line 92
             echo $this->env->getExtension('routing')->getPath("dwes_libros_logout");
             echo "\">Cerrar sesión</a>
 
                             ";
         }
-        // line 80
+        // line 95
         echo "                    </div>
                 </li>
 
@@ -149,11 +182,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
 ";
-        // line 91
+        // line 106
         $this->displayBlock('portadaInicio', $context, $blocks);
         echo " ";
         $this->displayBlock('portada', $context, $blocks);
-        // line 92
+        // line 107
         echo "
 <!-- Navigation & Intro -->
 
@@ -163,9 +196,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
     ";
-        // line 100
+        // line 115
         $this->displayBlock('contenido', $context, $blocks);
-        // line 101
+        // line 116
         echo "
 </main>
 
@@ -198,9 +231,6 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 <p>Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla. </p>
             </div>
             <!--/.First column-->
-
-
-
             <!--Third column-->
             <div class=\"col-md-3 col-lg-2 col-xl-2 mx-auto mb-5\">
                 <h6 class=\"spacing font-weight-bold\">
@@ -222,11 +252,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 <p>
                     <a href=\"#!\">Eliminar cuenta</a>
                     ";
-        // line 156
+        // line 168
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
             echo " ";
         }
-        // line 157
+        // line 169
         echo "                </p>
             </div>
             <!--/.Third column-->
@@ -257,17 +287,17 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
             © 2018 Copyright:
             <a href=\"#\" target=\"_blank\"> Aina Lahmam </a>
             ";
-        // line 186
+        // line 198
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
             echo " ¡Bienvenido,
             <b>";
-            // line 187
+            // line 199
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</b>! ";
         } else {
             echo " -DWES- ";
         }
-        // line 188
+        // line 200
         echo "
         </div>
     </div>
@@ -319,7 +349,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 ";
     }
 
-    // line 91
+    // line 106
     public function block_portadaInicio($context, array $blocks = array())
     {
         echo " ";
@@ -330,66 +360,80 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo " ";
     }
 
-    // line 100
+    // line 115
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 198
+    // line 210
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 199
+        // line 211
         echo "<!-- SCRIPTS -->
 <!-- JQuery -->
 <script src=\"";
-        // line 201
+        // line 213
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap tooltips -->
 <script src=\"";
-        // line 203
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/popper.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap core JavaScript -->
 
 <script src=\"";
-        // line 206
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- MDB core JavaScript -->
 
 <script src=\"";
-        // line 209
+        // line 221
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/mdb.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Mi JavaScript -->
 <script src=\"";
-        // line 211
+        // line 223
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/script.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
   ";
-        // line 216
+        // line 228
         echo "     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/material.min.css"), "html", null, true);
         echo "\" /> 
     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-        // line 217
+        // line 229
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/dataTables.material.min.css"), "html", null, true);
         echo "\" /> 
 
      <script src=\"";
-        // line 219
+        // line 231
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script> 
      <script src=\"";
-        // line 220
+        // line 232
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/dataTables.material.min.js"), "html", null, true);
         echo "\"></script> 
- 
+ ";
+        // line 234
+        echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js\"></script>
+";
+        // line 236
+        echo " <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script>
+ <script>
+    \tangular.module(\"textAngularTest\", ['textAngular']);
+\t    function wysiwygeditor(\$scope) {
+\t\t\$scope.orightml = '<h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style=\"color: green;\">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class=\"text-danger\">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href=\"https://github.com/fraywing/textAngular\">Here</a> </p>';
+\t\t\$scope.htmlcontent = \$scope.orightml;
+\t\t\$scope.disabled = false;
+\t};
 
-
+</script>
 
 
     
@@ -452,7 +496,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     public function getDebugInfo()
     {
-        return array (  388 => 220,  384 => 219,  379 => 217,  374 => 216,  369 => 211,  364 => 209,  358 => 206,  352 => 203,  347 => 201,  343 => 199,  340 => 198,  334 => 100,  323 => 91,  314 => 15,  309 => 13,  304 => 11,  299 => 9,  294 => 7,  288 => 3,  285 => 2,  271 => 188,  265 => 187,  261 => 186,  230 => 157,  226 => 156,  169 => 101,  167 => 100,  157 => 92,  153 => 91,  140 => 80,  134 => 77,  130 => 76,  125 => 75,  122 => 74,  117 => 73,  112 => 72,  108 => 70,  106 => 69,  92 => 58,  86 => 55,  70 => 42,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
+        return array (  425 => 236,  422 => 234,  418 => 232,  414 => 231,  409 => 229,  404 => 228,  399 => 223,  394 => 221,  388 => 218,  382 => 215,  377 => 213,  373 => 211,  370 => 210,  364 => 115,  353 => 106,  344 => 15,  339 => 13,  334 => 11,  329 => 9,  324 => 7,  318 => 3,  315 => 2,  301 => 200,  295 => 199,  291 => 198,  260 => 169,  256 => 168,  202 => 116,  200 => 115,  190 => 107,  186 => 106,  173 => 95,  167 => 92,  163 => 91,  158 => 90,  155 => 89,  150 => 88,  145 => 87,  141 => 85,  139 => 84,  125 => 73,  119 => 70,  111 => 65,  107 => 64,  103 => 63,  99 => 62,  95 => 61,  91 => 60,  87 => 59,  83 => 58,  80 => 57,  70 => 42,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
     }
 }
 /* */
@@ -503,11 +547,26 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                 <li class="nav-item dropdown ml-4">*/
 /*                     <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorar </a>*/
 /*                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">*/
-/*                         <a class="dropdown-item" href="../pages/about.html">Leer historias gratis</a>*/
-/*                         <a class="dropdown-item" href="../pages/testimonials.html">Leer historias publicadas</a>*/
+/*                        {#  <a class="dropdown-item" href="{{ path('dwes_libros_gAventura', {'tipo':"gratis"}) }}">Aventura</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gAccion', {'tipo':"gratis"}) }}">Acción</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gTerror', {'tipo':"gratis"}) }}">Terror</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gFantasia',{ 'tipo':"gratis"}) }}">Fantasía</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gMisterio', {'tipo':"gratis"}) }}">Misterio</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gPoesia', {'tipo':"gratis"}) }}">Poesía</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gRomance', {'tipo':"gratis"}) }}">Romance</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_gDrama', {'tipo':"gratis"}) }}">Drama</a> #}*/
 /* */
+/*                          <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':1}) }}">Aventura</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':2}) }}">Acción</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':3}) }}">Terror</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero',{ 'tipo':"gratis",'idGenero':4}) }}">Fantasía</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':5}) }}">Misterio</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':6}) }}">Poesía</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':7}) }}">Romance</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':8}) }}">Drama</a>*/
 /*                     </div>*/
 /*                 </li>*/
+/* */
 /*                  <li class="nav-item ml-4">*/
 /*                     <a class="nav-link title" href="{{ path('dwes_libros_publicadosBib') }}" data-offset="90">Mi Biblioteca</a>*/
 /*                 </li>*/
@@ -587,9 +646,6 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                 <p>Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla. </p>*/
 /*             </div>*/
 /*             <!--/.First column-->*/
-/* */
-/* */
-/* */
 /*             <!--Third column-->*/
 /*             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-5">*/
 /*                 <h6 class="spacing font-weight-bold">*/
@@ -675,9 +731,21 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* */
 /*      <script src="{{ asset('bundles/dweslibros/dataTable/js/jquery.dataTables.min.js') }}"></script> */
 /*      <script src="{{ asset('bundles/dweslibros/dataTable/js/dataTables.material.min.js') }}"></script> */
-/*  */
+/*  {# Librería PDF #}*/
+/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>*/
+/* {# Librería Editor de Textos #}*/
+/*  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js'></script>*/
+/*   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js'></script>*/
+/*   <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script>*/
+/*  <script>*/
+/*     	angular.module("textAngularTest", ['textAngular']);*/
+/* 	    function wysiwygeditor($scope) {*/
+/* 		$scope.orightml = '<h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style="color: green;">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class="text-danger">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p>';*/
+/* 		$scope.htmlcontent = $scope.orightml;*/
+/* 		$scope.disabled = false;*/
+/* 	};*/
 /* */
-/* */
+/* </script>*/
 /* */
 /* */
 /*     */

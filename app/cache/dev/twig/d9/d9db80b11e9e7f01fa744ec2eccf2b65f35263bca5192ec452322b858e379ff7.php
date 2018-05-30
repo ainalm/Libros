@@ -181,12 +181,15 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                     <div class=\"col-md-12\">
 
                         <div class=\"md-form mb-5\">
+
                             <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"11\"  name=\"contCapitulo\" value=\"";
-        // line 122
+        // line 123
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
-        echo "</textarea>
+        echo "
+                         
+                            </textarea>
                             <label for=\"contact-message\" class=\"Lcontact-message valL cl\"  id=\"labelContC\">Escriba su historia aquí...</label>
 
                         </div>
@@ -197,6 +200,9 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     </div>
 
+      ";
+        // line 144
+        echo "    
 
     <div>
     
@@ -216,7 +222,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  186 => 122,  173 => 112,  160 => 101,  154 => 87,  146 => 81,  138 => 76,  130 => 71,  122 => 66,  114 => 61,  104 => 54,  100 => 52,  86 => 40,  78 => 34,  76 => 33,  72 => 31,  69 => 30,  55 => 18,  50 => 16,  44 => 13,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  205 => 144,  187 => 123,  173 => 112,  160 => 101,  154 => 87,  146 => 81,  138 => 76,  130 => 71,  122 => 66,  114 => 61,  104 => 54,  100 => 52,  86 => 40,  78 => 34,  76 => 33,  72 => 31,  69 => 30,  55 => 18,  50 => 16,  44 => 13,  35 => 7,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -340,7 +346,10 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                     <div class="col-md-12">*/
 /* */
 /*                         <div class="md-form mb-5">*/
-/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}</textarea>*/
+/* */
+/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}*/
+/*                          */
+/*                             </textarea>*/
 /*                             <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Escriba su historia aquí...</label>*/
 /* */
 /*                         </div>*/
@@ -351,6 +360,15 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /* */
 /*     </div>*/
 /* */
+/*       {# <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">*/
+/*   */
+/*  */
+/*   <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>*/
+/* */
+/*   <textarea ng-model="htmlcontent" style="width: 100%;height:100px"><h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style="color: green;">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class="text-danger">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p></textarea>*/
+/*  */
+/*     </div> #}*/
+/*     */
 /* */
 /*     <div>*/
 /*     */

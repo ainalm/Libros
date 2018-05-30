@@ -342,11 +342,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // dwes_libros_historia
-        if (0 === strpos($pathinfo, '/historia') && preg_match('#^/historia/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'dwes_libros_historia');
-            }
-
+        if (0 === strpos($pathinfo, '/historia') && preg_match('#^/historia/(?P<idLibro>[^/]++)/(?P<numCap>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_historia')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::historiaAction',));
         }
 
@@ -394,6 +390,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // dwes_libros_updateInfoLibro
         if (0 === strpos($pathinfo, '/updateInfoLibro') && preg_match('#^/updateInfoLibro/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_updateInfoLibro')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::updateInfoLibroAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/comentar')) {
+            // dwes_libros_comentarLibro
+            if (0 === strpos($pathinfo, '/comentarLibro') && preg_match('#^/comentarLibro/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_comentarLibro')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::comentarLibroAction',));
+            }
+
+            // dwes_libros_comentarCapitulo
+            if (0 === strpos($pathinfo, '/comentarCapitulo') && preg_match('#^/comentarCapitulo/(?P<idLibro>[^/]++)/(?P<numCap>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_comentarCapitulo')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::comentarCapituloAction',));
+            }
+
+        }
+
+        // dwes_libros_genero
+        if (0 === strpos($pathinfo, '/genero') && preg_match('#^/genero/(?P<tipo>[^/]++)/(?P<idGenero>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_genero')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::generoAction',));
         }
 
         // homepage
