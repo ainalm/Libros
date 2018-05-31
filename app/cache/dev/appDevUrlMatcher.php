@@ -359,9 +359,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::suscripcionAction',  '_route' => 'dwes_libros_suscripcion',);
         }
 
-        // dwes_libros_perfilhistoria
-        if (0 === strpos($pathinfo, '/perfilhistoria') && preg_match('#^/perfilhistoria/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_perfilhistoria')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilhistoriaAction',));
+        if (0 === strpos($pathinfo, '/p')) {
+            // dwes_libros_password
+            if (rtrim($pathinfo, '/') === '/password') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_password');
+                }
+
+                return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::passwordAction',  '_route' => 'dwes_libros_password',);
+            }
+
+            // dwes_libros_perfilhistoria
+            if (0 === strpos($pathinfo, '/perfilhistoria') && preg_match('#^/perfilhistoria/(?P<idLibro>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_perfilhistoria')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilhistoriaAction',));
+            }
+
         }
 
         // dwes_libros_updateDescLibro

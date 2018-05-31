@@ -11,7 +11,7 @@
             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">
                 <span class="mb-5">by {{item.username}}</span>
                 <br>
-                <a href="{{ path('dwes_libros_historia', {'idLibro' : app.request.get('idLibro')}) }}" class="btn peach-gradient btn-lg mt-4">Visualizar Historia</a>
+                <a href="{{ path('dwes_libros_historia', {'idLibro' : app.request.get('idLibro')}) }}" class="guardarScroll btn peach-gradient btn-lg mt-4">Visualizar Historia</a>
             </h6>
 
         </div>
@@ -141,7 +141,8 @@
 
                         <!--Card content-->
                         <div class="card-body pb-0">
-                            <form name="form"action="{{path('dwes_libros_updateInfoLibro', {'idLibro' : item.idLibro})}}" method="POST">
+                            <form name="form"action="{{path('dwes_libros_updateInfoLibro', {'idLibro' : item.idLibro})}}"  target="frame" method="POST">
+                            <iframe name="frame" style="display: none"></iframe>
                             <!--Panel data-->
                             <div class="row card-body pt-3">
 
@@ -237,7 +238,7 @@
                                 </div>
                                 <!--/Second column-->
                                         <div class="col-md-12 text-center my-4">
-                                            <div class="waves-input-wrapper waves-effect waves-light"><input type="submit" value="Actualizar" class="btn btn-info btn-rounded"></div>
+                                            <div class="waves-input-wrapper waves-effect waves-light"><input type="submit" value="Actualizar" onclick="toastr.success('Datos actualizados con éxito.');" class="btn btn-info btn-rounded"></div>
                                         </div>
                             </div>
                             <!--/Panel data-->
@@ -335,7 +336,7 @@
                         <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
             {% if  item.tipoLibro =="Gratis" %}
                         <div>
-                            <a data-toggle="tooltip"  data-placement="top" title="Añadir capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light"
+                            <a data-toggle="tooltip"  data-placement="top" title="Añadir capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light"
                                 href="{{ path('dwes_libros_nuevoCap', {'idLibro' : app.request.get('idLibro')}) }}">
                                 <i class="fas fa-plus"></i>
                             </a>
@@ -401,11 +402,11 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <a data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
+                                            <a data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
                                                 href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
-                                            <a data-toggle="tooltip" data-placement="top" title="Eliminar capítulo" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                            <a data-toggle="tooltip" data-placement="top" title="Eliminar capítulo"  class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                                 href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">
                                                 <i class="fa fa-remove mt-0"></i>
                                             </a>
@@ -430,7 +431,7 @@
                                 {% for item in enlaces %}
                                     <tr>
                                         <td>{{item.paginaLibro}}</td>
-                                        <td> <a target="_blank" href="{{item.enlaceLibro}}">{{item.enlaceLibro}}</a></td>
+                                        <td> <a target="_blank" class="guardarScroll" href="{{item.enlaceLibro}}">{{item.enlaceLibro}}</a></td>
                                      
                                         <td>
                                             <a href="" data-toggle="modal" data-target="#{{item.idEnlace}}">
@@ -440,7 +441,7 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </span>
                                         </a>    
-                                            <a  href="{{ path('dwes_libros_eliminarEnlace', {'idLibro' : app.request.get('idLibro'),'idEnlace':item.idEnlace}) }}" data-toggle="tooltip" data-placement="top" title="Eliminar enlace" class="btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                            <a  href="{{ path('dwes_libros_eliminarEnlace', {'idLibro' : app.request.get('idLibro'),'idEnlace':item.idEnlace}) }}" data-toggle="tooltip" data-placement="top" title="Eliminar enlace" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                               >
                                                 <i class="fa fa-remove mt-0"></i>
                                             </a>
@@ -471,7 +472,7 @@
                    
 
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-cyan mt-1">Actualizar</button>
+                        <button type="submit" class="btn btn-cyan mt-1 guardarScroll">Actualizar</button>
                     </div>
                 </div>
             </form>    

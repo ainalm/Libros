@@ -241,13 +241,13 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a id=\"addBiblio\" href=\"";
         // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-        echo "\"></a>
+        echo "\" class=\"guardarScroll\" ></a>
 
 
                     <a id=\"delBiblio\" href=\"";
         // line 165
         echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
-        echo "\"></a>
+        echo "\" class=\"guardarScroll\"></a>
                 </div>
                 <button type=\"button\" class=\"btn purple-gradient btn-sm gcapitulo \" data-toggle=\"modal\" data-target=\"#ModalCapitulos\">
                     <i class=\"fab fa-readme mr-2\"></i>
@@ -274,7 +274,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <a href=\"";
                 // line 181
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-                echo "\" class=\"text-dark cl \">Eliminar de mi lista</a>
+                echo "\" class=\"text-dark cl guardarScroll\">Eliminar de mi lista</a>
                         ";
             } else {
                 // line 183
@@ -282,7 +282,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <a href=\"";
                 // line 184
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-                echo "\" class=\"text-dark cl \"> Añadir a mi lista</a>
+                echo "\" class=\"text-dark cl guardarScroll\"> Añadir a mi lista</a>
 
                         ";
             }
@@ -298,7 +298,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <a href=\"";
                 // line 192
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-                echo "\" class=\"text-dark cl \"> Eliminar de favoritos</a>
+                echo "\" class=\"text-dark cl guardarScroll\"> Eliminar de favoritos</a>
                         ";
             } else {
                 // line 194
@@ -306,7 +306,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <a href=\"";
                 // line 195
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-                echo "\" class=\"text-dark cl \"> Añadir a favoritos</a>
+                echo "\" class=\"text-dark cl guardarScroll\"> Añadir a favoritos</a>
 
                         ";
             }
@@ -327,7 +327,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <a href=\"";
                 // line 203
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_deldeseos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-                echo "\" class=\"text-dark cl \"> En lista de deseos</a>
+                echo "\" class=\"text-dark cl guardarScroll\"> En lista de deseos</a>
                         ";
             } else {
                 // line 205
@@ -337,7 +337,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <a href=\"";
                 // line 208
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_adddeseos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
-                echo "\" class=\"text-dark cl \"> Añadir a lista de deseos</a>
+                echo "\" class=\"text-dark cl guardarScroll\"> Añadir a lista de deseos</a>
                         ";
             }
             // line 210
@@ -551,7 +551,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                                                     </div>
 
                                                                     <div class=\"text-right\">
-                                                                        <button type=\"submit\" class=\"btn btn-primary btn-sm\">Comentar</button>
+                                                                        <button type=\"submit\" class=\"btn btn-primary btn-sm guardarScroll\">Comentar</button>
                                                                     </div>
 
                                                                 </div>
@@ -1252,7 +1252,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                             </div>
 
                                             <div class=\"text-right\">
-                                                <button type=\"submit\" class=\"btn btn-primary btn-sm\">Comentar</button>
+                                                <button type=\"submit\" class=\"btn btn-primary btn-sm guardarScroll\">Comentar</button>
                                             </div>
 
                                         </div>
@@ -1270,7 +1270,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                 ";
         }
         // line 974
-        echo "                <div class=\"text-center mb-4\">
+        echo "                <div class=\"text-center mb-4\"> 
                     <h3>
                         <a data-toggle=\"collapse\" href=\"#comentarios\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\">
                             Comentarios
@@ -1519,10 +1519,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                 <p>*/
 /*                     <i class="fa fa-book pr-2" aria-hidden="true"></i>Título de la Historia</p> #}*/
 /*                 <div>*/
-/*                     <a id="addBiblio" href="{{ path('dwes_libros_addbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}"></a>*/
+/*                     <a id="addBiblio" href="{{ path('dwes_libros_addbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="guardarScroll" ></a>*/
 /* */
 /* */
-/*                     <a id="delBiblio" href="{{ path('dwes_libros_ajustes' ) }}"></a>*/
+/*                     <a id="delBiblio" href="{{ path('dwes_libros_ajustes' ) }}" class="guardarScroll"></a>*/
 /*                 </div>*/
 /*                 <button type="button" class="btn purple-gradient btn-sm gcapitulo " data-toggle="modal" data-target="#ModalCapitulos">*/
 /*                     <i class="fab fa-readme mr-2"></i>*/
@@ -1538,10 +1538,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                     <span class="text-dark  pr-2 cl" id="enbiblioteca">*/
 /*                         {% if lista %}*/
 /*                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>*/
-/*                         <a href="{{ path('dwes_libros_delbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl ">Eliminar de mi lista</a>*/
+/*                         <a href="{{ path('dwes_libros_delbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll">Eliminar de mi lista</a>*/
 /*                         {% else %}*/
 /*                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>*/
-/*                         <a href="{{ path('dwes_libros_addbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> Añadir a mi lista</a>*/
+/*                         <a href="{{ path('dwes_libros_addbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll"> Añadir a mi lista</a>*/
 /* */
 /*                         {% endif %}*/
 /*                     </span>*/
@@ -1549,10 +1549,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                     <span class="text-dark   pr-2 cl" id="enfavoritos">*/
 /*                         {% if favorito %}*/
 /*                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>*/
-/*                         <a href="{{ path('dwes_libros_delfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> Eliminar de favoritos</a>*/
+/*                         <a href="{{ path('dwes_libros_delfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll"> Eliminar de favoritos</a>*/
 /*                         {% else %}*/
 /*                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>*/
-/*                         <a href="{{ path('dwes_libros_addfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> Añadir a favoritos</a>*/
+/*                         <a href="{{ path('dwes_libros_addfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll"> Añadir a favoritos</a>*/
 /* */
 /*                         {% endif %}*/
 /*                     </span>*/
@@ -1560,12 +1560,12 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                     <span class="text-dark   pr-2 cl">*/
 /*                         {% if deseo %}*/
 /*                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>*/
-/*                         <a href="{{ path('dwes_libros_deldeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> En lista de deseos</a>*/
+/*                         <a href="{{ path('dwes_libros_deldeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll"> En lista de deseos</a>*/
 /*                         {% else %}*/
 /* */
 /* */
 /*                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>*/
-/*                         <a href="{{ path('dwes_libros_adddeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl "> Añadir a lista de deseos</a>*/
+/*                         <a href="{{ path('dwes_libros_adddeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll"> Añadir a lista de deseos</a>*/
 /*                         {% endif %}*/
 /*                     </span>*/
 /*                     {% endif %}*/
@@ -1704,7 +1704,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                                                                     </div>*/
 /* */
 /*                                                                     <div class="text-right">*/
-/*                                                                         <button type="submit" class="btn btn-primary btn-sm">Comentar</button>*/
+/*                                                                         <button type="submit" class="btn btn-primary btn-sm guardarScroll">Comentar</button>*/
 /*                                                                     </div>*/
 /* */
 /*                                                                 </div>*/
@@ -2315,7 +2315,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                                             </div>*/
 /* */
 /*                                             <div class="text-right">*/
-/*                                                 <button type="submit" class="btn btn-primary btn-sm">Comentar</button>*/
+/*                                                 <button type="submit" class="btn btn-primary btn-sm guardarScroll">Comentar</button>*/
 /*                                             </div>*/
 /* */
 /*                                         </div>*/
@@ -2331,7 +2331,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                 </section>*/
 /*                 <!--/Section: Leave a reply (Logged In User)-->*/
 /*                 {% endif %}*/
-/*                 <div class="text-center mb-4">*/
+/*                 <div class="text-center mb-4"> */
 /*                     <h3>*/
 /*                         <a data-toggle="collapse" href="#comentarios" role="button" aria-expanded="false" aria-controls="collapseExample">*/
 /*                             Comentarios*/

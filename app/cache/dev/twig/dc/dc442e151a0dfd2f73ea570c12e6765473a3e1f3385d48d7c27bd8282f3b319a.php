@@ -44,6 +44,9 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 
 ";
         }
+        // line 18
+        echo " 
+";
         // line 19
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")));
@@ -141,7 +144,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 
     public function getDebugInfo()
     {
-        return array (  129 => 74,  111 => 62,  105 => 59,  94 => 51,  83 => 43,  78 => 41,  65 => 31,  59 => 28,  52 => 23,  48 => 19,  38 => 12,  34 => 11,  22 => 2,  19 => 1,);
+        return array (  132 => 74,  114 => 62,  108 => 59,  97 => 51,  86 => 43,  81 => 41,  68 => 31,  62 => 28,  55 => 23,  51 => 19,  48 => 18,  38 => 12,  34 => 11,  22 => 2,  19 => 1,);
     }
 }
 /* <div class="row text-center col-12">*/
@@ -161,7 +164,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /*     </div>*/
 /*     <!--/.Panel-->*/
 /* */
-/* {% endif %}*/
+/* {% endif %} */
 /* {% for libro in libros %}*/
 /* {#  <img src="data:image/jpeg;base64,{{libro.fotoPort}}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
 /*                 max-width: 100px;*/

@@ -127,6 +127,11 @@ dwes_libros_historia:
 dwes_libros_suscripcion:
     path: /suscripcion/
     defaults: { _controller: DWESLibrosBundle:Default:suscripcion }
+    
+dwes_libros_password:
+    path: /password/
+    defaults: { _controller: DWESLibrosBundle:Default:password }
+
 
 dwes_libros_perfilhistoria:
     path: /perfilhistoria/{idLibro}

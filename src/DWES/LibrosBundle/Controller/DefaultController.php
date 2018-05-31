@@ -285,8 +285,6 @@ class DefaultController extends Controller
 			var_dump($imagen);
 		} */
 
-
-
 		$imagen = base64_encode($fotoPub);
 		$librosFavCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Favorito"');
 		$librosPubCount = $connection->fetchColumn('SELECT count(*) FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Gratis"');
@@ -388,7 +386,7 @@ class DefaultController extends Controller
 
 		$params = array('libros' => $librosPub, 'clibrosPub' => $librosPubCount, 'clibrosFav' => $librosFavCount, 'clibrosLis' => $librosLisCount, 'cVenta' => $librosVentaCount, 'cDeseo' => $librosDeseadoCount);
 		return $this->render('DWESLibrosBundle:Default:listaBib.html.twig', $params);
-	}
+	} 
 
 	public function historiaAction($idLibro)
 	{//TODO:
@@ -748,6 +746,41 @@ class DefaultController extends Controller
 
 		}
 		return $this->render('DWESLibrosBundle:Default:genero.html.twig', $params);
+	}
+
+	public function passwordAction()
+	{
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;		
+		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
+		
+		$peticion = $this->getRequest(); 	//Llamada al Form
+		$actualPass = sha1($peticion->request->get('actualPass'));
+		$nuevaPass = sha1($peticion->request->get('nuevaPass'));
+		
+
+		$passBD=$connection->fetchColumn('SELECT PASSWORD FROM `usuario` WHERE username = "' . $userlog . '"');
+		//$repitePass = ($peticion->request->get('repitePass'));
+
+		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
+
+			//Si la contraseña introducida es la misma que en la BD hago la update y si es diferente le informo del error
+			if ($passBD == $actualPass ) {
+
+				$connection->executeUpdate(' UPDATE usuario SET password = "' . $nuevaPass . '" WHERE username = "' . $userlog . '"');
+				
+				return $this->redirect($this->generateUrl('dwes_libros_ajustes'));
+
+			} else {
+				$params = array('password' => 'Contraseña actual incorrecta'
+		);
+		return $this->render('DWESLibrosBundle:Default:password.html.twig', $params);
+				
+			}
+		}
+
+		$params = array('password' => '');
+
+		return $this->render('DWESLibrosBundle:Default:password.html.twig', $params);
 	}
 
 

@@ -4,6 +4,10 @@ $(document).ready(function() {
     console.log("e");
     $(".contrAlert").hide();
   });
+
+  $("#nuevaPass, #repitePass").keyup(checkPasswordMatch1);
+
+  $("#actualPass, #passBD").keyup(checkPasswordMatch2);
 });
 // Tooltips Initialization
 $(function () {
@@ -157,6 +161,61 @@ $("#entrar").on("click", function(e) {
   });
 });
 
+/* START: Validación cambiar contraseña */
+
+function checkPasswordMatch1() {
+  var password = $("#nuevaPass").val();
+  var confirmPassword = $("#repitePass").val();
+
+
+  if (password != confirmPassword)
+      $("#divCheckPasswordMatch").html("Las contraseñas no coinciden!");
+  else
+      $("#divCheckPasswordMatch").html("Contraseña correcta");
+}
+
+function checkPasswordMatch2() {
+  var password = $("#actualPass").val();
+  var confirmPassword = $("#passBD").val();
+
+
+  if (password != confirmPassword){
+      $("#divCheckPasswordBD").html("Las contraseñas no coinciden!");
+      
+    }
+  else{
+      $("#divCheckPasswordBD").html("Contraseña correcta");
+}
+}
+$("#updatePass").on("click", function(e) {
+  //Valida form Login
+
+  var email = $("#actualPass");
+  var labelEmail = $("#val");
+
+  var password = $("#Form-pass2");
+  var labelPass = $("#labelPass");
+
+  if (email.val() == "") {
+    e.preventDefault();
+    $(".valI").css("border-bottom", " 1px solid red ");
+    $(".valL").css("color", "red ");
+  } else if (password.val() == "") {
+    e.preventDefault();
+    $(".valI").css("border-bottom", " 1px solid red ");
+    $(".valL").css("color", "red ");
+  }
+
+  email.keydown(function(event) {
+    validaCampo(email, labelEmail);
+  });
+
+  password.keydown(function(event) {
+    validaCampo(password, labelPass);
+  });
+});
+
+/* END: Validación cambiar contraseña */
 var tituloC = $("#titulohistoria");
 var labeltituloC = $("#labelTitC");
 var contC = $("#contact-message");
@@ -409,44 +468,38 @@ urlAñadir=""
  */
 
    
-
-
- /*     "oLanguage": {
-      "oPaginate": {
-        "sFirst": "Primera" //Primera página
-      }}
-
-        "oLanguage": {
-      "oPaginate": {
-        "sLast": "Última" //Última página
-      }}
-      "oLanguage": {
-      "oPaginate": {
-        "sNext": "Siguiente" //Página siguiente
-      }
-    }
-      "oLanguage": {
-      "oPaginate": {
-        "sPrevious": "Anterior" //Página anterior
-      }
-    }
-      "oLanguage": {
-      "sInfoEmpty": "No hay entradas para mostrar"
-    }
-
-     "oLanguage": {
-      "sInfoFiltered": " - resultados de _MAX_ records"
-    }
-
-
-    "language": {
-      "lengthMenu": "Display _MENU_ records per page",
-      "zeroRecords": "Vaya..sin resultados - Lo sentimos",
-      "info": "  _PAGE_ página de _PAGES_",
-      "infoEmpty": "No hay resultados",
-      "infoFiltered": "(filtrado de un total de   _MAX_ resultados)"
+/* Guarda la posición del Scroll después de refrescar la página */
+function refreshPage () {
+  var page_y = document.getElementsByTagName("body")[0].scrollTop;
+  window.location.href = window.location.href.split('?')[0] + '?page_y=' + page_y;
+}
+window.onload = function () {
+  if ( window.location.href.indexOf('page_y') != -1 ) {
+      var match = window.location.href.split('?')[1].split("&")[0].split("=");
+      document.getElementsByTagName("body")[0].scrollTop = match[1];
   }
-         */
-
-   
+}
     
+
+
+$(document).ready(function() {
+
+// If scroll AND location cookie is set, and the location is the same
+
+//Hacer scroll a la posición guardada en la cookie scroll.
+if ( $.cookie("scroll") !== null && $.cookie("location") !== null 
+           && $.cookie("location") == $(location).attr('href')) {
+    $(document).scrollTop( $.cookie("scroll") );
+}
+// Cuando se hace click en el botón...
+$('.guardarScroll').on("click", function() {
+
+
+//Defino una cookie que guarda la posición del scroll
+$.cookie("scroll", $(document).scrollTop() );
+
+//Defino una cookie que guarda la posición actual del scroll
+$.cookie("location", $(location).attr('href'));
+});
+
+});
