@@ -473,7 +473,8 @@ class DefaultController extends Controller
 			$connection->executeUpdate('INSERT INTO comentarlibro (username, idLibro, fecha, comentario, numCapitulo) VALUES ("' . $userlog . '", "' . $idLibro . '", CURRENT_TIMESTAMP, "' . $comentario . '", NULL);');
 
 
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			
 		}
 
 	}
@@ -584,11 +585,15 @@ class DefaultController extends Controller
 
 		if ($capExist == 0) {
 			$connection->executeUpdate('INSERT INTO enbiblioteca (username, idLibro, tipo) VALUES ("' . $userlog . '", "' . $idLibro . '", "Favorito")');
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => $numCap)));
+			
 
 		} else {
 			//Rediriga a la página de Biblioteca con un parámetro
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+		//	return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			
 		}
 	}
 	public function delfavoritosAction($idLibro)
@@ -597,7 +602,9 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 
 		$connection->executeUpdate('DELETE FROM enbiblioteca WHERE username = "' . $userlog . '" AND idLibro = "' . $idLibro . '" AND tipo = "Favorito"');
-		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+		
 	}
 
 	public function addbibliotecaAction($idLibro)
@@ -609,11 +616,14 @@ class DefaultController extends Controller
 
 		if ($capExist == 0) {
 			$connection->executeUpdate('INSERT INTO enbiblioteca (username, idLibro, tipo) VALUES ("' . $userlog . '", "' . $idLibro . '", "Lista")');
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+			
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => $numCap)));
+			
 
 		} else {
 			//Rediriga a la página de Biblioteca con un parámetro
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			
 		}
 
 	}
@@ -624,7 +634,9 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 
 		$connection->executeUpdate('DELETE FROM enbiblioteca WHERE username = "' . $userlog . '" AND idLibro = "' . $idLibro . '" AND tipo = "Lista"');
-		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+	
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+		
 	}
 	
 	//TODO:
@@ -637,11 +649,15 @@ class DefaultController extends Controller
 
 		if ($capExist == 0) {
 			$connection->executeUpdate('INSERT INTO enbiblioteca (username, idLibro, tipo) VALUES ("' . $userlog . '", "' . $idLibro . '", "Deseado")');
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+	
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			
 
 		} else {
 		//Rediriga a la página de Biblioteca con un parámetro
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+			
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			
 		}
 
 	}
@@ -652,7 +668,9 @@ class DefaultController extends Controller
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 
 		$connection->executeUpdate('DELETE FROM enbiblioteca WHERE username = "' . $userlog . '" AND idLibro = "' . $idLibro . '" AND tipo = "Deseado"');
-		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+		
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+		
 	}
 
 	public function ajustesAction()
