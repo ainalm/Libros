@@ -406,7 +406,7 @@
                                                 href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
-                                            <a data-toggle="tooltip" data-placement="top" title="Eliminar capítulo"  class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                            <a  onclick="return confirm('¿Estás seguro de eliminar este capíulot?')" data-toggle="tooltip" data-placement="top" title="Eliminar capítulo"  class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                                 href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">
                                                 <i class="fa fa-remove mt-0"></i>
                                             </a>
@@ -441,8 +441,9 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </span>
                                         </a>    
-                                            <a  href="{{ path('dwes_libros_eliminarEnlace', {'idLibro' : app.request.get('idLibro'),'idEnlace':item.idEnlace}) }}" data-toggle="tooltip" data-placement="top" title="Eliminar enlace" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                            <a  onclick="return confirm('¿Estás seguro de eliminar este enlace?')" href="{{ path('dwes_libros_eliminarEnlace', {'idLibro' : app.request.get('idLibro'),'idEnlace':item.idEnlace}) }}" data-toggle="tooltip" data-placement="top" title="Eliminar enlace" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                               >
+                                              
                                                 <i class="fa fa-remove mt-0"></i>
                                             </a>
                                         </td>

@@ -28,11 +28,11 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
         <div class=\"card\">
             <div class=\"card-body\">
                 <h3 class=\"card-title\">¡UPS...! Aún no tenemos historias en esta sección. </h3>
-                <p class=\"card-text\">Te invitamos a crear algo maravilloso. ¡Anímate y sorpréndenos!  </p>
+                <p class=\"card-text\">Te invitamos a crear algo maravilloso. ¡Anímate y sorpréndenos!  </p> 
                    <a class=\"btn blue-gradient waves-effect waves-light\" href=\"";
             // line 11
             echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "gratis"));
-            echo "\">Nueva historia</a>
+            echo "\">Escribir historia</a>
                     <a class=\"btn blue-gradient waves-effect waves-light\" href=\"";
             // line 12
             echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "anuncio"));
@@ -81,7 +81,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfilhistoria", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\"> <i class=\"fas fa-pencil-alt\"></i></a>
                                         <!--Google -->
-                                        <a type=\"button\"  href=\"";
+                                        <a  onclick=\"return confirm('¿Estás seguro de eliminar esta publicación?')\" type=\"button\"  href=\"";
             // line 43
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarLib", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\"  data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar historia\" class=\"btn-floating btn-gplus waves-effect waves-light\"> <i class=\"fa fa-remove mt-0\"></i></a>
@@ -156,8 +156,8 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /*         <div class="card">*/
 /*             <div class="card-body">*/
 /*                 <h3 class="card-title">¡UPS...! Aún no tenemos historias en esta sección. </h3>*/
-/*                 <p class="card-text">Te invitamos a crear algo maravilloso. ¡Anímate y sorpréndenos!  </p>*/
-/*                    <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Nueva historia</a>*/
+/*                 <p class="card-text">Te invitamos a crear algo maravilloso. ¡Anímate y sorpréndenos!  </p> */
+/*                    <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Escribir historia</a>*/
 /*                     <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>*/
 /*             </div>*/
 /*         </div>*/
@@ -189,7 +189,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /*                                         <!--Twitter-->*/
 /*                                         <a type="button"  data-toggle="tooltip" data-placement="top" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>*/
 /*                                         <!--Google -->*/
-/*                                         <a type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="top" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>*/
+/*                                         <a  onclick="return confirm('¿Estás seguro de eliminar esta publicación?')" type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="top" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>*/
 /*                                     </div>*/
 /*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
 /*                                 </div>*/

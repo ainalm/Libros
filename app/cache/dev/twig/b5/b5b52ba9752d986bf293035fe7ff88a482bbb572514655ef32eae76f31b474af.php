@@ -110,7 +110,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
                 <!--Panel-->
                 <a href=\"";
         // line 64
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_privacidad");
         echo "\">
                     <div class=\"card card-body hoverable cajaAjustes\">
                         <i class=\"mb-2\">
@@ -235,7 +235,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*             <!-- Third column -->*/
 /*             <div class="col-md-3 mb-5">*/
 /*                 <!--Panel-->*/
-/*                 <a href="{{ path('dwes_libros_crearperfil') }}">*/
+/*                 <a href="{{ path('dwes_libros_privacidad') }}">*/
 /*                     <div class="card card-body hoverable cajaAjustes">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/detective.png') }}"> </img>*/

@@ -127,7 +127,7 @@ dwes_libros_historia:
 dwes_libros_suscripcion:
     path: /suscripcion/
     defaults: { _controller: DWESLibrosBundle:Default:suscripcion }
-    
+
 dwes_libros_password:
     path: /password/
     defaults: { _controller: DWESLibrosBundle:Default:password }
@@ -180,11 +180,15 @@ dwes_libros_comentarCapitulo:
     defaults: { _controller: DWESLibrosBundle:Default:comentarCapitulo }
     requirements:
         page: \d+
-        
-
-        
+              
 dwes_libros_genero:
     path: /genero/{tipo}/{idGenero}
     defaults: { _controller: DWESLibrosBundle:Default:genero }
     requirements:
-        page: \d+ 
+        page: \d+
+        
+dwes_libros_privacidad:
+    path: /privacidad/
+    defaults: { _controller: DWESLibrosBundle:Default:privacidad }
+    requirements:
+        page: \d+

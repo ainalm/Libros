@@ -426,6 +426,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_genero')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::generoAction',));
         }
 
+        // dwes_libros_privacidad
+        if (rtrim($pathinfo, '/') === '/privacidad') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_privacidad');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::privacidadAction',  '_route' => 'dwes_libros_privacidad',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

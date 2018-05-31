@@ -106,8 +106,7 @@ class __TwigTemplate_bf84deb28595101c7f862ab5ad38b3439bc411af42074d2fcc1b8efa1c1
                                     <span>";
         // line 72
         echo twig_escape_filter($this->env, (isset($context["password"]) ? $context["password"] : $this->getContext($context, "password")), "html", null, true);
-        echo "</span>
-                                    
+        echo "</span> 
                                     <!--/.Third row-->
                                     <!-- Fourth row -->
                                     <div class=\"row\">
@@ -218,8 +217,7 @@ class __TwigTemplate_bf84deb28595101c7f862ab5ad38b3439bc411af42074d2fcc1b8efa1c1
 /*                                     </div>*/
 /*                                      <div class="registrationFormAlert" id="divCheckPasswordMatch">*/
 /*                                     </div><br>*/
-/*                                     <span>{{password}}</span>*/
-/*                                     */
+/*                                     <span>{{password}}</span> */
 /*                                     <!--/.Third row-->*/
 /*                                     <!-- Fourth row -->*/
 /*                                     <div class="row">*/
