@@ -202,7 +202,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                 </div>
                 <div id=\"ins\"></div>
                 <div class=\"text-center text-md-left mt-4\">
-                   <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\" value=\"Siguiente: 02.Personaliza\" ></input>
+                   <button type=\"button\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso1\"> Siguiente: 02.Personaliza</button>
                 </div>
              <iframe name=\"frame\" style=\"display: none\"></iframe> 
         </div>
@@ -261,7 +261,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
               </div>
 
                 <div class=\"text-center text-md-left mt-4\">
-                <input class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" type=\"button\" value=\"Siguiente: 03. ¡Empieza ya!\" ></input>
+                <button type=\"button\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" >Siguiente: 03. ¡Empieza ya!</button>
                 </div>
 
                 <div class=\"text-center text-md-left mt-4\">
@@ -482,7 +482,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                 </div>*/
 /*                 <div id="ins"></div>*/
 /*                 <div class="text-center text-md-left mt-4">*/
-/*                    <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1" value="Siguiente: 02.Personaliza" ></input>*/
+/*                    <button type="button" class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso1"> Siguiente: 02.Personaliza</button>*/
 /*                 </div>*/
 /*              <iframe name="frame" style="display: none"></iframe> */
 /*         </div>*/
@@ -538,7 +538,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*               </div>*/
 /* */
 /*                 <div class="text-center text-md-left mt-4">*/
-/*                 <input class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" type="button" value="Siguiente: 03. ¡Empieza ya!" ></input>*/
+/*                 <button type="button" class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" >Siguiente: 03. ¡Empieza ya!</button>*/
 /*                 </div>*/
 /* */
 /*                 <div class="text-center text-md-left mt-4">*/

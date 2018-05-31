@@ -390,10 +390,14 @@ class DefaultController extends Controller
 		return $this->render('DWESLibrosBundle:Default:listaBib.html.twig', $params);
 	}
 
-	public function historiaAction($idLibro, $numCap)
+	public function historiaAction($idLibro)
 	{//TODO:
 
-		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+		//Compruebo que existe un usuario logeado
+		if($this->getUser()) {
+			$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'	
+		}
+
 		$connection = $this->get("database_connection");
 		$libro = $connection->fetchAll('SELECT idLibro,video,username,progreso,RestEdad,Idioma,colorPortada,nombre,titulo,tipoLibro,fotoPort, libro.descripcion as descLib  FROM libro,genero WHERE libro.idLibro = "' . $idLibro . '" and genero.idGenero=libro.idGenero');
 		$capitulos = $connection->fetchAll('SELECT * FROM capitulo WHERE idLibro = "' . $idLibro . '" and estado ="Publicado" ');
@@ -419,12 +423,12 @@ class DefaultController extends Controller
 
 		$comentariosCap = $connection->fetchAll('SELECT comentarlibro.fecha,comentarlibro.comentario,comentarlibro.numCapitulo,comentarlibro.username,usuario.nombre,usuario.apellidos
 		 from comentarLibro,usuario where idLibro ="' . $idLibro . '" AND comentarlibro.username=usuario.username  AND comentarlibro.numCapitulo IS NOT NULL 
-		 and numCapitulo= "' . $numCap . '" GROUP BY fecha ORDER BY fecha desc');
+		  GROUP BY fecha ORDER BY fecha desc');
 
-		$cComentCap = $connection->fetchColumn('SELECT count(*) from comentarLibro where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo IS NOT NULL  and numCapitulo= "' . $numCap . '"');
+		$cComentCap = $connection->fetchColumn('SELECT count(*) from comentarLibro where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo IS NOT NULL ');
 
-
-		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'	
+		
+		
 		$fotoUser = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username ="' . $userlog . '"');
 		$fUser = base64_encode($fotoUser);
 
@@ -473,7 +477,7 @@ class DefaultController extends Controller
 			$connection->executeUpdate('INSERT INTO comentarlibro (username, idLibro, fecha, comentario, numCapitulo) VALUES ("' . $userlog . '", "' . $idLibro . '", CURRENT_TIMESTAMP, "' . $comentario . '", NULL);');
 
 
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => 0 */)));
 			
 		}
 
@@ -488,7 +492,7 @@ class DefaultController extends Controller
 
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
 			$connection->executeUpdate('INSERT INTO comentarlibro (username, idLibro, fecha, comentario, numCapitulo) VALUES ("' . $userlog . '", "' . $idLibro . '", CURRENT_TIMESTAMP, "' . $comentario . '", "' . $numCap . '");');
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => $numCap)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => $numCap */)));
 		}
 
 	}
@@ -592,7 +596,7 @@ class DefaultController extends Controller
 		} else {
 			//Rediriga a la página de Biblioteca con un parámetro
 		//	return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => 0 */)));
 			
 		}
 	}
@@ -603,7 +607,7 @@ class DefaultController extends Controller
 
 		$connection->executeUpdate('DELETE FROM enbiblioteca WHERE username = "' . $userlog . '" AND idLibro = "' . $idLibro . '" AND tipo = "Favorito"');
 
-		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => 0 */)));
 		
 	}
 
@@ -622,7 +626,7 @@ class DefaultController extends Controller
 
 		} else {
 			//Rediriga a la página de Biblioteca con un parámetro
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => 0 */)));
 			
 		}
 
@@ -635,7 +639,7 @@ class DefaultController extends Controller
 
 		$connection->executeUpdate('DELETE FROM enbiblioteca WHERE username = "' . $userlog . '" AND idLibro = "' . $idLibro . '" AND tipo = "Lista"');
 	
-		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => 0 */)));
 		
 	}
 	
@@ -656,7 +660,7 @@ class DefaultController extends Controller
 		} else {
 		//Rediriga a la página de Biblioteca con un parámetro
 			
-			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro, 'numCap' => 0)));
+			return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro/* , 'numCap' => 0 */)));
 			
 		}
 

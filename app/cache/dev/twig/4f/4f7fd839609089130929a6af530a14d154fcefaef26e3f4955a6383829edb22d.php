@@ -95,7 +95,7 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
                     </div>
 
                     <!--Grid row-->
-                    <div class=\"row d-flex align-items-center mb-4\">
+                    <div class=\"row d-flex align-items-center mb-4\"> 
 
                         <!--Grid column-->
                         <div class=\"col-md-3 col-md-6 text-center\">
@@ -106,7 +106,10 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
                         <!--Grid column-->
                         <div class=\"col-md-6\">
                         
-                            <p class=\"font-small grey-text d-flex justify-content-end\">¿No tienes cuenta? <a href=\"#\" class=\"blue-text ml-1\"> Regístrate </a></p>
+                            <p class=\"font-small grey-text d-flex justify-content-end\">¿No tienes cuenta? <a href=\"";
+        // line 65
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
+        echo "\" class=\"blue-text ml-1\"> Regístrate </a></p>
                         </div>
                         <!--Grid column-->
 
@@ -151,7 +154,7 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 
     public function getDebugInfo()
     {
-        return array (  86 => 43,  80 => 39,  74 => 37,  72 => 36,  60 => 27,  53 => 24,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  111 => 65,  86 => 43,  80 => 39,  74 => 37,  72 => 36,  60 => 27,  53 => 24,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -207,7 +210,7 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 /*                     </div>*/
 /* */
 /*                     <!--Grid row-->*/
-/*                     <div class="row d-flex align-items-center mb-4">*/
+/*                     <div class="row d-flex align-items-center mb-4"> */
 /* */
 /*                         <!--Grid column-->*/
 /*                         <div class="col-md-3 col-md-6 text-center">*/
@@ -218,7 +221,7 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 /*                         <!--Grid column-->*/
 /*                         <div class="col-md-6">*/
 /*                         */
-/*                             <p class="font-small grey-text d-flex justify-content-end">¿No tienes cuenta? <a href="#" class="blue-text ml-1"> Regístrate </a></p>*/
+/*                             <p class="font-small grey-text d-flex justify-content-end">¿No tienes cuenta? <a href="{{ path('dwes_libros_registro') }}" class="blue-text ml-1"> Regístrate </a></p>*/
 /*                         </div>*/
 /*                         <!--Grid column-->*/
 /* */

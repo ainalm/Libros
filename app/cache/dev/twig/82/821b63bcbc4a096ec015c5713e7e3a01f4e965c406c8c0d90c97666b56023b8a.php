@@ -55,7 +55,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                 <br>
                 <a href=\"";
             // line 14
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCap" => 0)), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
             echo "\" class=\"btn peach-gradient btn-lg mt-4\">Visualizar Historia</a>
             </h6>
 
@@ -749,7 +749,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <span class="mb-5">by {{item.username}}</span>*/
 /*                 <br>*/
-/*                 <a href="{{ path('dwes_libros_historia', {'idLibro' : app.request.get('idLibro'),'numCap':0}) }}" class="btn peach-gradient btn-lg mt-4">Visualizar Historia</a>*/
+/*                 <a href="{{ path('dwes_libros_historia', {'idLibro' : app.request.get('idLibro')}) }}" class="btn peach-gradient btn-lg mt-4">Visualizar Historia</a>*/
 /*             </h6>*/
 /* */
 /*         </div>*/

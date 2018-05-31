@@ -67,9 +67,9 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
  
                                         <a href=\"";
             // line 34
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()), "numCap" => 0)), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\">
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
+                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div> 
                                         </a>
                                     </div>
                                     <!--/.Card image-->
@@ -99,7 +99,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
                                         <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
                                                 <a href=\"";
             // line 65
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()), "numCap" => 0)), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\">Leer más
                                                     <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
                                                 </a>
@@ -172,8 +172,8 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
 /*                                     <div class="view overlay {{libro.colorPortada}}">*/
 /*                                         <img src="https://books.google.com/books/content/images/frontcover/wDumDAAAQBAJ?fife=w200-h300" style="height:200px ; width:150px;" class=" mx-auto" alt="sample image">*/
 /*  */
-/*                                         <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro,'numCap':0}) }}">*/
-/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
+/*                                         <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">*/
+/*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div> */
 /*                                         </a>*/
 /*                                     </div>*/
 /*                                     <!--/.Card image-->*/
@@ -203,7 +203,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
 /*                                         ">{{libro.descripcion}}*/
 /*                                         </p>*/
 /*                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">*/
-/*                                                 <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro,'numCap':0}) }}">Leer más*/
+/*                                                 <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">Leer más*/
 /*                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>*/
 /*                                                 </a>*/
 /*                                             </p>*/

@@ -42,6 +42,9 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
+
+
+
 <div class=\"container-fluid mb-5\">
 
             <!--Grid row-->
@@ -69,10 +72,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 
                                         <!--Grid column-->
                                         <div class=\"col-md-8 col-xl-9\">
-                                            <form name=\"formBusqueda\" action=\"";
-        // line 41
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
-        echo "\" method=\"POST\">
+                                            <form method=\"POST\" action=\"https://formspree.io/aina.lahm@gmail.com\">
 
                                                 <!--Grid row-->
                                                 <div class=\"row\">
@@ -81,8 +81,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                                     <div class=\"col-md-6\">
                                                         <div class=\"md-form\">
                                                             <div class=\"md-form\">
-                                                                <input type=\"text\" id=\"contact-name\" class=\"form-control\">
-                                                                <label for=\"contact-name\" class=\"\">Tu nombre</label>
+                                                                <input type=\"text\" id=\"nombre\"  name=\"nombre\" class=\"form-control\">
+                                                                <label for=\"nombre\" class=\"\">Tu nombre</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -92,8 +92,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                                     <div class=\"col-md-6\">
                                                         <div class=\"md-form\">
                                                             <div class=\"md-form\">
-                                                                <input type=\"text\" id=\"contact-email\" class=\"form-control\">
-                                                                <label for=\"contact-email\" class=\"\">Tu email</label>
+                                                                <input type=\"text\" id=\"correo\" name=\"correo\" class=\"form-control\">
+                                                                <label for=\"correo\" class=\"\">Tu email</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -106,8 +106,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                                 <div class=\"row\">
                                                     <div class=\"col-md-12\">
                                                         <div class=\"md-form\">
-                                                            <input type=\"text\" id=\"contact-Subject\" class=\"form-control\">
-                                                            <label for=\"contact-Subject\" class=\"\">Asunto</label>
+                                                            <input type=\"text\" id=\"asunto\" name=\"asunto\" class=\"form-control\">
+                                                            <label for=\"asunto\" class=\"\">Asunto</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -121,19 +121,19 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                                     <div class=\"col-md-12\">
 
                                                         <div class=\"md-form\">
-                                                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control\" rows=\"3\"></textarea>
-                                                            <label for=\"contact-message\">Tu mensaje</label>
+                                                            <textarea type=\"text\" id=\"mensaje\"  name=\"mensaje\" class=\"md-textarea form-control\" rows=\"3\"></textarea>
+                                                            <label for=\"mensaje\">Tu mensaje</label>
                                                         </div>
 
                                                     </div>
                                                 </div>
                                                 <!--Grid row-->
-
+                                            <div class=\"text-center text-md-left mt-4\">
+                                                <button  type=\"Enviar\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\">Enviar</button>
+                                            </div>
                                             </form>
 
-                                            <div class=\"text-center text-md-left mt-4\">
-                                                <a class=\"btn pink-gradient btn-rounded waves-effect waves-light\">Send</a>
-                                            </div>
+                                          
                                         </div>
                                         <!--Grid column-->
 
@@ -190,7 +190,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 
     public function getDebugInfo()
     {
-        return array (  74 => 41,  42 => 13,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  42 => 13,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -206,6 +206,9 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /* {% endblock %}*/
 /* */
 /* {% block contenido %} */
+/* */
+/* */
+/* */
 /* <div class="container-fluid mb-5">*/
 /* */
 /*             <!--Grid row-->*/
@@ -233,7 +236,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /* */
 /*                                         <!--Grid column-->*/
 /*                                         <div class="col-md-8 col-xl-9">*/
-/*                                             <form name="formBusqueda" action="{{ path('dwes_libros_contacto') }}" method="POST">*/
+/*                                             <form method="POST" action="https://formspree.io/aina.lahm@gmail.com">*/
 /* */
 /*                                                 <!--Grid row-->*/
 /*                                                 <div class="row">*/
@@ -242,8 +245,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                                     <div class="col-md-6">*/
 /*                                                         <div class="md-form">*/
 /*                                                             <div class="md-form">*/
-/*                                                                 <input type="text" id="contact-name" class="form-control">*/
-/*                                                                 <label for="contact-name" class="">Tu nombre</label>*/
+/*                                                                 <input type="text" id="nombre"  name="nombre" class="form-control">*/
+/*                                                                 <label for="nombre" class="">Tu nombre</label>*/
 /*                                                             </div>*/
 /*                                                         </div>*/
 /*                                                     </div>*/
@@ -253,8 +256,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                                     <div class="col-md-6">*/
 /*                                                         <div class="md-form">*/
 /*                                                             <div class="md-form">*/
-/*                                                                 <input type="text" id="contact-email" class="form-control">*/
-/*                                                                 <label for="contact-email" class="">Tu email</label>*/
+/*                                                                 <input type="text" id="correo" name="correo" class="form-control">*/
+/*                                                                 <label for="correo" class="">Tu email</label>*/
 /*                                                             </div>*/
 /*                                                         </div>*/
 /*                                                     </div>*/
@@ -267,8 +270,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                                 <div class="row">*/
 /*                                                     <div class="col-md-12">*/
 /*                                                         <div class="md-form">*/
-/*                                                             <input type="text" id="contact-Subject" class="form-control">*/
-/*                                                             <label for="contact-Subject" class="">Asunto</label>*/
+/*                                                             <input type="text" id="asunto" name="asunto" class="form-control">*/
+/*                                                             <label for="asunto" class="">Asunto</label>*/
 /*                                                         </div>*/
 /*                                                     </div>*/
 /*                                                 </div>*/
@@ -282,19 +285,19 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                                     <div class="col-md-12">*/
 /* */
 /*                                                         <div class="md-form">*/
-/*                                                             <textarea type="text" id="contact-message" class="md-textarea form-control" rows="3"></textarea>*/
-/*                                                             <label for="contact-message">Tu mensaje</label>*/
+/*                                                             <textarea type="text" id="mensaje"  name="mensaje" class="md-textarea form-control" rows="3"></textarea>*/
+/*                                                             <label for="mensaje">Tu mensaje</label>*/
 /*                                                         </div>*/
 /* */
 /*                                                     </div>*/
 /*                                                 </div>*/
 /*                                                 <!--Grid row-->*/
-/* */
+/*                                             <div class="text-center text-md-left mt-4">*/
+/*                                                 <button  type="Enviar" class="btn pink-gradient btn-rounded waves-effect waves-light">Enviar</button>*/
+/*                                             </div>*/
 /*                                             </form>*/
 /* */
-/*                                             <div class="text-center text-md-left mt-4">*/
-/*                                                 <a class="btn pink-gradient btn-rounded waves-effect waves-light">Send</a>*/
-/*                                             </div>*/
+/*                                           */
 /*                                         </div>*/
 /*                                         <!--Grid column-->*/
 /* */

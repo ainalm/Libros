@@ -1,4 +1,21 @@
 <div class="row text-center col-12">
+{% if libros is empty %} 
+
+
+    <!--Panel-->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">¡UPS...! Aún no tenemos historias en esta sección. </h3>
+                <p class="card-text">Te invitamos a crear algo maravilloso. ¡Anímate y sorpréndenos!  </p>
+                   <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Nueva historia</a>
+                    <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>
+            </div>
+        </div>
+    </div>
+    <!--/.Panel-->
+
+{% endif %} 
 {% for libro in libros %}
 {#  <img src="data:image/jpeg;base64,{{libro.fotoPort}}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="
                 max-width: 100px;
@@ -11,7 +28,7 @@
                                     <div class="view overlay {{libro.colorPortada}}">
                                         <img src="https://books.google.com/books/content/images/frontcover/wDumDAAAQBAJ?fife=w200-h300" style="height:200px ; width:150px;" class=" mx-auto" alt="sample image">
  
-                                        <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro,'numCap':0}) }}">
+                                        <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">
                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>
                                         </a>
                                     </div>
@@ -42,7 +59,7 @@
                                         ">{{libro.descripcion}}
                                         </p>
                                         <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">
-                                                <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro,'numCap':0}) }}">Leer más
+                                                <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">Leer más
                                                     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                                                 </a>
                                             </p>

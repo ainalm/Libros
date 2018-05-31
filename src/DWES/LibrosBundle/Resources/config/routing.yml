@@ -119,7 +119,7 @@ dwes_libros_eliminarLib:
 
 
 dwes_libros_historia:
-    path: /historia/{idLibro}/{numCap}
+    path: /historia/{idLibro}/
     defaults: { _controller: DWESLibrosBundle:Default:historia }
     requirements:
         page: \d+

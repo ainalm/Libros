@@ -36,10 +36,10 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
         <div class=\"container my-5 pt-5\">
 
             <!-- Section heading -->
-            <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+            <h6 class=\" white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>BIBLIOTECA</strong>
-            </h3>
-            <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mis libros favoritos</h6>
+            </h6>
+            <h1 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mis libros favoritos</h1>
 
 
         </div>
@@ -230,10 +230,10 @@ class __TwigTemplate_bcc30234637a019dac0581c294cd4540d075d84085a837657cda1409be8
 /*         <div class="container my-5 pt-5">*/
 /* */
 /*             <!-- Section heading -->*/
-/*             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*             <h6 class=" white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>BIBLIOTECA</strong>*/
-/*             </h3>*/
-/*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mis libros favoritos</h6>*/
+/*             </h6>*/
+/*             <h1 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mis libros favoritos</h1>*/
 /* */
 /* */
 /*         </div>*/

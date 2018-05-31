@@ -36,22 +36,19 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
         <div class=\"container my-5 pt-5\">
 
             <!-- Section heading -->
-            <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+            <h6 class=\"white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>BIBLIOTECA</strong>
-            </h3>
-            <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mi listado de libro</h6>
+            </h6>
+            <h1 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mi listado de libros</h1>
 
 
         </div>
     </div>
 </div>
-
-
-
 ";
     }
 
-    // line 25
+    // line 22
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
@@ -70,12 +67,12 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                                 <ul class=\"list-group z-depth-1\">
                                  <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                                         <a href=\"";
-        // line 40
+        // line 37
         echo $this->env->getExtension('routing')->getPath("dwes_libros_publicadosBib");
         echo "\" class=\"dark-grey-text font-small navL\">
                                           Mis libros publicados</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 42
+        // line 39
         echo twig_escape_filter($this->env, (isset($context["clibrosPub"]) ? $context["clibrosPub"] : $this->getContext($context, "clibrosPub")), "html", null, true);
         echo "</span>
                                     </li>
@@ -83,18 +80,18 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                                         <a class=\"dark-grey-text font-small navL\">
                                             Mi lista de lectura</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 47
+        // line 44
         echo twig_escape_filter($this->env, (isset($context["clibrosLis"]) ? $context["clibrosLis"] : $this->getContext($context, "clibrosLis")), "html", null, true);
         echo "</span>
                                     </li>
                                      <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                                         <a  href=\"";
-        // line 50
+        // line 47
         echo $this->env->getExtension('routing')->getPath("dwes_libros_favoritoBib");
         echo "\" class=\"dark-grey-text font-small navL\">
                                           Favoritos</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 52
+        // line 49
         echo twig_escape_filter($this->env, (isset($context["clibrosFav"]) ? $context["clibrosFav"] : $this->getContext($context, "clibrosFav")), "html", null, true);
         echo "</span>
                                     </li>
@@ -103,7 +100,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                                             Mi lista de deseos</a>
                                         <a href=\"\"></a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 58
+        // line 55
         echo twig_escape_filter($this->env, (isset($context["cDeseo"]) ? $context["cDeseo"] : $this->getContext($context, "cDeseo")), "html", null, true);
         echo "</span>
                                         
@@ -111,12 +108,12 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                                    
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                                        <a   href=\"";
-        // line 63
+        // line 60
         echo $this->env->getExtension('routing')->getPath("dwes_libros_ventaBib");
         echo "\" class=\"dark-grey-text font-small navL\">
                                             Mis libros en venta</a>
                                         <span class=\"badge badge-danger badge-pill\">";
-        // line 65
+        // line 62
         echo twig_escape_filter($this->env, (isset($context["cVenta"]) ? $context["cVenta"] : $this->getContext($context, "cVenta")), "html", null, true);
         echo "</span>
                                     </li>
@@ -135,10 +132,10 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                             <!--Grid row-->
                             <div class=\"row text-center\">
                             ";
-        // line 82
-        $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:listaBib.html.twig", 82)->display(array_merge($context, array("libros" =>         // line 83
+        // line 79
+        $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:listaBib.html.twig", 79)->display(array_merge($context, array("libros" =>         // line 80
 (isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")))));
-        // line 85
+        // line 82
         echo "                            <!--/Grid row-->
                         <!--Grid row-->
                             
@@ -176,7 +173,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 
     public function getDebugInfo()
     {
-        return array (  142 => 85,  140 => 83,  139 => 82,  120 => 65,  115 => 63,  107 => 58,  98 => 52,  93 => 50,  87 => 47,  79 => 42,  74 => 40,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  139 => 82,  137 => 80,  136 => 79,  117 => 62,  112 => 60,  104 => 55,  95 => 49,  90 => 47,  84 => 44,  76 => 39,  71 => 37,  52 => 22,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -189,18 +186,15 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*         <div class="container my-5 pt-5">*/
 /* */
 /*             <!-- Section heading -->*/
-/*             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*             <h6 class="white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>BIBLIOTECA</strong>*/
-/*             </h3>*/
-/*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mi listado de libro</h6>*/
+/*             </h6>*/
+/*             <h1 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mi listado de libros</h1>*/
 /* */
 /* */
 /*         </div>*/
 /*     </div>*/
 /* </div>*/
-/* */
-/* */
-/* */
 /* {% endblock %} */
 /* */
 /* {% block contenido %} */

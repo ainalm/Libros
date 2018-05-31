@@ -36,10 +36,10 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
         <div class=\"container my-5 pt-5\">
 
             <!-- Section heading -->
-            <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+            <h6 class=\"white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>BIBLIOTECA</strong>
-            </h3>
-            <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mis libros publicados</h6>
+            </h6>
+            <h1 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mis libros publicados</h1>
 
 
         </div>
@@ -229,10 +229,10 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
 /*         <div class="container my-5 pt-5">*/
 /* */
 /*             <!-- Section heading -->*/
-/*             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*             <h6 class="white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>BIBLIOTECA</strong>*/
-/*             </h3>*/
-/*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mis libros publicados</h6>*/
+/*             </h6>*/
+/*             <h1 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mis libros publicados</h1>*/
 /* */
 /* */
 /*         </div>*/
