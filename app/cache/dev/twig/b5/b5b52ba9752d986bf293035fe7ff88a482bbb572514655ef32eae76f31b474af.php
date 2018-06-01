@@ -119,7 +119,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/detective.png"), "html", null, true);
         echo "\"> </img>
                         </i>
-                        <h5 class=\"feature-title mb-4\">Mi privacidad</h5>
+                        <h5 class=\"feature-title mb-4\">Mi privacidad</h5> 
 
                     </div>
                 </a>
@@ -240,7 +240,7 @@ class __TwigTemplate_da30d987ef69eb1d2fac2a99687608a2d5f48227dc084376f83910f4f47
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/detective.png') }}"> </img>*/
 /*                         </i>*/
-/*                         <h5 class="feature-title mb-4">Mi privacidad</h5>*/
+/*                         <h5 class="feature-title mb-4">Mi privacidad</h5> */
 /* */
 /*                     </div>*/
 /*                 </a>*/

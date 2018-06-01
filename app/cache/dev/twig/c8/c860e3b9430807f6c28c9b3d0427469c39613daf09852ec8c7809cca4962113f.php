@@ -70,8 +70,6 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
 
                 <div class=\"row\">
                     <!--First column-->
-                   
-
                     <div class=\"col-md-12\">
                         <h1> Quiero eliminar mi cuenta BellRead.</h1>
                         <h3 class=\"mb-4\"> Antes de eliminar su cuenta BellRead, sepa esto:</h3>
@@ -160,8 +158,6 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
 /* */
 /*                 <div class="row">*/
 /*                     <!--First column-->*/
-/*                    */
-/* */
 /*                     <div class="col-md-12">*/
 /*                         <h1> Quiero eliminar mi cuenta BellRead.</h1>*/
 /*                         <h3 class="mb-4"> Antes de eliminar su cuenta BellRead, sepa esto:</h3>*/

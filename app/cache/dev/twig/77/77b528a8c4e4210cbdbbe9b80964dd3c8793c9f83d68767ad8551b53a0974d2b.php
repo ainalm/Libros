@@ -129,7 +129,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                                 </div>
                                                 <!--Grid row-->
                                             <div class=\"text-center text-md-left mt-4\">
-                                                <button  type=\"Enviar\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\">Enviar</button>
+                                                <button  type=\"submit\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\">Enviar</button>
                                             </div>
                                             </form>
 
@@ -293,7 +293,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                                 </div>*/
 /*                                                 <!--Grid row-->*/
 /*                                             <div class="text-center text-md-left mt-4">*/
-/*                                                 <button  type="Enviar" class="btn pink-gradient btn-rounded waves-effect waves-light">Enviar</button>*/
+/*                                                 <button  type="submit" class="btn pink-gradient btn-rounded waves-effect waves-light">Enviar</button>*/
 /*                                             </div>*/
 /*                                             </form>*/
 /* */

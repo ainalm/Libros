@@ -279,12 +279,11 @@ class DefaultController extends Controller
 		$librosPub = $connection->fetchAll('SELECT * FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Gratis"');
 		$fotoPub = $connection->fetchAll('SELECT fotoPort FROM libro WHERE username = "' . $userlog . '" ');
 		$cFotoPub = $connection->fetchAll('SELECT count(fotoPort) FROM libro WHERE username = "' . $userlog . '" ');
-		/* 	foreach ($fotoPub as $productIndex => $product)
+		 	/* foreach ($f as $fotoPub => $item)
 		{
-			$imagen=$product;
-			var_dump($imagen);
-		} */
-
+			$imagen=$item;
+		} 
+		var_dump($imagen); */
 		$imagen = base64_encode($fotoPub);
 		$librosFavCount = $connection->fetchColumn('SELECT count(*) FROM enbiblioteca WHERE username = "' . $userlog . '" and tipo ="Favorito"');
 		$librosPubCount = $connection->fetchColumn('SELECT count(*) FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Gratis"');
@@ -403,6 +402,8 @@ class DefaultController extends Controller
 		$cHTML = htmlspecialchars_decode(stripslashes("<div><b>raw HTML</b></div>"));
 
 		$numCapitulos = $connection->fetchColumn('SELECT count(*) FROM capitulo WHERE idLibro = "' . $idLibro . '" and estado ="Publicado" ');
+		
+		$countCap=$connection->fetchAll('SELECT numCapitulo FROM capitulo WHERE idLibro = "' . $idLibro . '" and estado ="Publicado" ');
 		$fotoLibro = $connection->fetchColumn('SELECT fotoPort FROM libro WHERE idLibro="' . $idLibro . '"');
 		$lista = $connection->fetchColumn('SELECT idLibro FROM enbiblioteca WHERE idLibro="' . $idLibro . '" and tipo ="Lista"  and username="' . $userlog . '"');
 		$favorito = $connection->fetchColumn('SELECT idLibro FROM enbiblioteca WHERE idLibro="' . $idLibro . '" and tipo ="Favorito"  and username="' . $userlog . '"');
@@ -419,22 +420,31 @@ class DefaultController extends Controller
 
 		$cComentLibro = $connection->fetchColumn('SELECT count(*) from comentarLibro where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo IS NULL');
 
-		$comentariosCap = $connection->fetchAll('SELECT comentarlibro.fecha,comentarlibro.comentario,comentarlibro.numCapitulo,comentarlibro.username,usuario.nombre,usuario.apellidos
+		/* $comentariosCap = $connection->fetchAll('SELECT comentarlibro.fecha,comentarlibro.comentario,comentarlibro.numCapitulo,comentarlibro.username,usuario.nombre,usuario.apellidos
 		 from comentarLibro,usuario where idLibro ="' . $idLibro . '" AND comentarlibro.username=usuario.username  AND comentarlibro.numCapitulo IS NOT NULL 
-		  GROUP BY fecha ORDER BY fecha desc');
+		  GROUP BY fecha ORDER BY fecha desc'); */
 
+		  $comentariosCap= array();
+		  $countComent=array();
 		$cComentCap = $connection->fetchColumn('SELECT count(*) from comentarLibro where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo IS NOT NULL ');
-
-
 
 		$fotoUser = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username ="' . $userlog . '"');
 		$fUser = base64_encode($fotoUser);
 
+		for ($i=1; $i <=$numCapitulos+1 ; $i++) { 
+			$comentariosC = $connection->fetchAll('SELECT comentarlibro.fecha,comentarlibro.comentario,comentarlibro.numCapitulo,comentarlibro.username,usuario.nombre,usuario.apellidos
+			from comentarLibro,usuario where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo = "' . $i. '"
+			 GROUP BY fecha ORDER BY fecha desc');
+			 $comentariosCap[]=$comentariosC;
+		}
+		
+		//var_dump( $numCapitulos);Exit;
+	
 		$params = array(
 			'libro' => $libro, 'foto' => $imagenLibro, 'capitulos' => $capitulos,
 			'numCap' => $numCapitulos, 'lista' => $lista, 'favorito' => $favorito, 'deseo' => $deseo,
 			'tipoLibro' => $tipoLibro, 'autor' => $autor, 'fotoAutor' => $fAutor, 'comentarios' => $comentariosLibro, 'cComent' => $cComentLibro,
-			'fUser' => $fUser, 'comentario' => '', 'comentarioCap' => '', 'comentariosCap' => $comentariosCap, 'cComentCap' => $cComentCap, 'html' => $cHTML
+			'fUser' => $fUser, 'comentario' => '', 'comentarioCap' => '', 'comentariosCap' => $comentariosCap, 'cComentCap' => $cComentCap, 'html' => $cHTML,'cCap'=>$comentariosCount
 		);
 
 		return $this->render('DWESLibrosBundle:Default:historia.html.twig', $params);

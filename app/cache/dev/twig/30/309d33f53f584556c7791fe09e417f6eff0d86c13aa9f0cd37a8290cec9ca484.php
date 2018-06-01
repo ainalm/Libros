@@ -32,7 +32,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
                    <a class=\"btn blue-gradient waves-effect waves-light\" href=\"";
             // line 11
             echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "gratis"));
-            echo "\">Nueva historia</a>
+            echo "\">Escribir historia</a>
                     <a class=\"btn blue-gradient waves-effect waves-light\" href=\"";
             // line 12
             echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "anuncio"));
@@ -149,7 +149,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
 /*             <div class="card-body">*/
 /*                 <h3 class="card-title">¡UPS...! Aún no tenemos historias en esta sección. </h3>*/
 /*                 <p class="card-text">Te invitamos a crear algo maravilloso. ¡Anímate y sorpréndenos!  </p>*/
-/*                    <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Nueva historia</a>*/
+/*                    <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Escribir historia</a>*/
 /*                     <a class="btn blue-gradient waves-effect waves-light" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>*/
 /*             </div>*/
 /*         </div>*/

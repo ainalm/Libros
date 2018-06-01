@@ -162,15 +162,12 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
         </nav>
         </div> 
         <!--Grid column-->
-
 <div class=\"container card mt-1 pb-1\" id=\"container2\">
         <div class=\"row mt-4 \">
                     <div class=\"col-md-12\">
-                
-
-                <div class=\"md-form\" >
+                    <div class=\"md-form\" >
                             <input type=\"text\" id=\"titulohistoria\" class=\"form-control valI\" name=\"tituloCapitulo\" value=\"";
-        // line 113
+        // line 110
         echo twig_escape_filter($this->env, (isset($context["tituloCapitulo"]) ? $context["tituloCapitulo"] : $this->getContext($context, "tituloCapitulo")), "html", null, true);
         echo "\">
                             <label for=\"titulohistoria\" class=\"Ltitulohistoria valL cl\" id=\"labelTitC\"><span class=\"font-weight-bold pr-1 idCap\">#1</span>Título del capítulo </label>
@@ -184,7 +181,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                         <div class=\"md-form mb-5\">
 
                             <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"11\"  name=\"contCapitulo\" value=\"";
-        // line 124
+        // line 121
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
@@ -196,22 +193,11 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                         </div>
                     </div>
                 </div>
-
-
-
     </div>
 
-       <div ng-app=\"textAngularTest\" ng-controller=\"wysiwygeditor\" class=\"container app\">
-  
- 
-  <div text-angular=\"text-angular\" name=\"htmlcontent\" ng-model=\"htmlcontent\" ta-disabled='disabled'></div>
-
-  <textarea ng-model=\"htmlcontent\" style=\"width: 100%;height:100px\"><h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style=\"color: green;\">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class=\"text-danger\">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href=\"https://github.com/fraywing/textAngular\">Here</a> </p></textarea>
- 
-    </div> 
-    
-
-    <div>
+      ";
+        // line 139
+        echo "    <div>
     
      <form> 
 ";
@@ -229,7 +215,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  188 => 124,  174 => 113,  161 => 102,  155 => 88,  147 => 82,  139 => 77,  131 => 72,  123 => 67,  115 => 62,  105 => 55,  101 => 53,  87 => 41,  79 => 35,  77 => 34,  73 => 32,  70 => 31,  56 => 19,  51 => 17,  45 => 14,  36 => 8,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  200 => 139,  185 => 121,  171 => 110,  161 => 102,  155 => 88,  147 => 82,  139 => 77,  131 => 72,  123 => 67,  115 => 62,  105 => 55,  101 => 53,  87 => 41,  79 => 35,  77 => 34,  73 => 32,  70 => 31,  56 => 19,  51 => 17,  45 => 14,  36 => 8,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -337,13 +323,10 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*         </nav>*/
 /*         </div> */
 /*         <!--Grid column-->*/
-/* */
 /* <div class="container card mt-1 pb-1" id="container2">*/
 /*         <div class="row mt-4 ">*/
 /*                     <div class="col-md-12">*/
-/*                 */
-/* */
-/*                 <div class="md-form" >*/
+/*                     <div class="md-form" >*/
 /*                             <input type="text" id="titulohistoria" class="form-control valI" name="tituloCapitulo" value="{{tituloCapitulo}}">*/
 /*                             <label for="titulohistoria" class="Ltitulohistoria valL cl" id="labelTitC"><span class="font-weight-bold pr-1 idCap">#1</span>Título del capítulo </label>*/
 /*                         </div>*/
@@ -363,21 +346,16 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                         </div>*/
 /*                     </div>*/
 /*                 </div>*/
-/* */
-/* */
-/* */
 /*     </div>*/
 /* */
-/*        <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">*/
+/*       {# <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">*/
 /*   */
 /*  */
 /*   <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>*/
 /* */
 /*   <textarea ng-model="htmlcontent" style="width: 100%;height:100px"><h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style="color: green;">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class="text-danger">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p></textarea>*/
 /*  */
-/*     </div> */
-/*     */
-/* */
+/*     </div> #}*/
 /*     <div>*/
 /*     */
 /*      <form> */
