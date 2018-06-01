@@ -422,7 +422,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // dwes_libros_genero
-        if (0 === strpos($pathinfo, '/genero') && preg_match('#^/genero/(?P<tipo>[^/]++)/(?P<idGenero>[^/]++)$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/genero') && preg_match('#^/genero/(?P<idGenero>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_genero')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::generoAction',));
         }
 
@@ -433,6 +433,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::privacidadAction',  '_route' => 'dwes_libros_privacidad',);
+        }
+
+        // dwes_libros_delCuenta
+        if (0 === strpos($pathinfo, '/delCuenta') && preg_match('#^/delCuenta/(?P<userlog>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delCuenta')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delCuentaAction',));
         }
 
         // homepage

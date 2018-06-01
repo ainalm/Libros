@@ -13,7 +13,7 @@
 </div>
 {% endblock %} {% block contenido %}
 
-<!-- Second column -->
+<!-- Second column --> 
 <div class="col-lg-8 mb-4 container pt-4">
 
     <!--Card-->
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center my-4">
                         <div class="waves-input-wrapper waves-effect waves-light">
-                            <input id="updatePass" type="submit" name="updatePass" value="ELIMINAR CUENTA" class="guardarScroll btn btn-danger waves-effect waves-light">
+                            <a onclick="return confirm('¿Estás seguro de eliminar tu cuenta para siempre?No habrá vuelta atrás una vez acepte.')"  href="{{ path('dwes_libros_delCuenta', {'userlog' : app.user.username}) }}" id="updatePass"  class="guardarScroll btn btn-danger waves-effect waves-light">ELIMINAR CUENTA</a>
                         </div>
                     </div>
                 </div>

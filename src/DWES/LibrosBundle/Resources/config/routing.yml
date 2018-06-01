@@ -182,7 +182,7 @@ dwes_libros_comentarCapitulo:
         page: \d+
               
 dwes_libros_genero:
-    path: /genero/{tipo}/{idGenero}
+    path: /genero/{idGenero}
     defaults: { _controller: DWESLibrosBundle:Default:genero }
     requirements:
         page: \d+
@@ -190,5 +190,11 @@ dwes_libros_genero:
 dwes_libros_privacidad:
     path: /privacidad/
     defaults: { _controller: DWESLibrosBundle:Default:privacidad }
+    requirements:
+        page: \d+
+
+dwes_libros_delCuenta:
+    path: /delCuenta/{userlog}
+    defaults: { _controller: DWESLibrosBundle:Default:delCuenta }
     requirements:
         page: \d+

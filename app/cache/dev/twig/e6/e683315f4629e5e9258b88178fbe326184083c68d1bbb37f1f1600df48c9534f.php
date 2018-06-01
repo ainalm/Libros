@@ -95,7 +95,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
         echo "                                 \">
                         <a href=\"";
         // line 39
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 1)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 1));
         echo "\" class=\"dark-grey-text font-small navL\">
                                  
                             Aventura </a>
@@ -107,7 +107,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center\">
                         <a href=\"";
         // line 45
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 2)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 2));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Acción</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -118,7 +118,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
         // line 50
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 3)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 3));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Terror</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -129,7 +129,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
         // line 55
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 4)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 4));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Fantasía</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -142,7 +142,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
         // line 62
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 5)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 5));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Misterio</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -153,7 +153,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
         // line 67
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 6)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 6));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Poesía</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -164,7 +164,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
         // line 72
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 7)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 7));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Romance</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -175,7 +175,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
         // line 77
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 8)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 8));
         echo "\" class=\"dark-grey-text font-small navL\">
                             Drama</a>
                         <span class=\"badge badge-danger badge-pill\">";
@@ -314,45 +314,45 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
 /*                                 */
 /*                                  {% endif %}*/
 /*                                  ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':1}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':1}) }}" class="dark-grey-text font-small navL">*/
 /*                                  */
 /*                             Aventura </a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosAventura}}</span>*/
 /*                     </li>*/
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':2}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':2}) }}" class="dark-grey-text font-small navL">*/
 /*                             Acción</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosAccion}}</span>*/
 /*                     </li>*/
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':3}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':3}) }}" class="dark-grey-text font-small navL">*/
 /*                             Terror</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosTerror}}</span>*/
 /*                     </li>*/
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':4}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':4}) }}" class="dark-grey-text font-small navL">*/
 /*                             Fantasía</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosFantasia}}</span>*/
 /* */
 /*                     </li>*/
 /* */
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':5}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':5}) }}" class="dark-grey-text font-small navL">*/
 /*                             Misterio</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosMisterio}}</span>*/
 /*                     </li>*/
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':6}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':6}) }}" class="dark-grey-text font-small navL">*/
 /*                             Poesía</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosPoesia}}</span>*/
 /*                     </li>*/
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':7}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':7}) }}" class="dark-grey-text font-small navL">*/
 /*                             Romance</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosRomance}}</span>*/
 /*                     </li>*/
 /*                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':8}) }}" class="dark-grey-text font-small navL">*/
+/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':8}) }}" class="dark-grey-text font-small navL">*/
 /*                             Drama</a>*/
 /*                         <span class="badge badge-danger badge-pill">{{ClibrosDrama}}</span>*/
 /*                     </li>*/

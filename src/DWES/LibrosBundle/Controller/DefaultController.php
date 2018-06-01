@@ -137,7 +137,7 @@ class DefaultController extends Controller
 
 					if ($tipo == "anuncio") {
 						$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
-					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Anuncio", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"' . $colorFondo . '");');
+					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Anuncio", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "Completado", NULL, NULL,"' . $colorFondo . '");');
 					} elseif ($tipo == "gratis") {
 						$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Gratis", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"' . $colorFondo . '");');
@@ -189,6 +189,7 @@ class DefaultController extends Controller
 		$connection = $this->get("database_connection");
 
 		$connection->executeUpdate('DELETE FROM capitulo WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $numCapitulo . '";');
+		
 		return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
 	}
 	public function eliminarLibAction($idLibro)
@@ -394,7 +395,6 @@ class DefaultController extends Controller
 		if ($this->getUser()) {
 			$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'	
 		}
-
 		$connection = $this->get("database_connection");
 		$libro = $connection->fetchAll('SELECT idLibro,video,username,progreso,RestEdad,Idioma,colorPortada,nombre,titulo,tipoLibro,fotoPort, libro.descripcion as descLib  FROM libro,genero WHERE libro.idLibro = "' . $idLibro . '" and genero.idGenero=libro.idGenero');
 		$capitulos = $connection->fetchAll('SELECT * FROM capitulo WHERE idLibro = "' . $idLibro . '" and estado ="Publicado" ');
@@ -420,12 +420,12 @@ class DefaultController extends Controller
 
 		$cComentLibro = $connection->fetchColumn('SELECT count(*) from comentarLibro where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo IS NULL');
 
-		/* $comentariosCap = $connection->fetchAll('SELECT comentarlibro.fecha,comentarlibro.comentario,comentarlibro.numCapitulo,comentarlibro.username,usuario.nombre,usuario.apellidos
-		 from comentarLibro,usuario where idLibro ="' . $idLibro . '" AND comentarlibro.username=usuario.username  AND comentarlibro.numCapitulo IS NOT NULL 
-		  GROUP BY fecha ORDER BY fecha desc'); */
-
+		 $enlaces = $connection->fetchAll(' SELECT * FROM enlaces WHERE  idLibro ="' . $idLibro . '"'); 
+		$countEnlaces=$connection->fetchColumn(' SELECT count(*) FROM enlaces WHERE  idLibro ="' . $idLibro . '"'); 
+		$progreso=$connection->fetchColumn(' SELECT progreso FROM libro WHERE  idLibro ="' . $idLibro . '"');
+		
 		  $comentariosCap= array();
-		  $countComent=array();
+		 
 		$cComentCap = $connection->fetchColumn('SELECT count(*) from comentarLibro where idLibro ="' . $idLibro . '" AND comentarlibro.numCapitulo IS NOT NULL ');
 
 		$fotoUser = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username ="' . $userlog . '"');
@@ -444,7 +444,8 @@ class DefaultController extends Controller
 			'libro' => $libro, 'foto' => $imagenLibro, 'capitulos' => $capitulos,
 			'numCap' => $numCapitulos, 'lista' => $lista, 'favorito' => $favorito, 'deseo' => $deseo,
 			'tipoLibro' => $tipoLibro, 'autor' => $autor, 'fotoAutor' => $fAutor, 'comentarios' => $comentariosLibro, 'cComent' => $cComentLibro,
-			'fUser' => $fUser, 'comentario' => '', 'comentarioCap' => '', 'comentariosCap' => $comentariosCap, 'cComentCap' => $cComentCap, 'html' => $cHTML,'cCap'=>$comentariosCount
+			'fUser' => $fUser, 'comentario' => '', 'comentarioCap' => '', 'comentariosCap' => $comentariosCap, 'cComentCap' => $cComentCap, 'html' => $cHTML,'cCap'=>$comentariosCount,
+			'enlaces'=>$enlaces,'countEnlaces'=>$countEnlaces,'progreso'=>$progreso
 		);
 
 		return $this->render('DWESLibrosBundle:Default:historia.html.twig', $params);
@@ -713,40 +714,20 @@ class DefaultController extends Controller
 	}
 
 
-	public function generoAction($tipo, $idGenero)
+	public function generoAction( $idGenero)
 	{
 		$connection = $this->get("database_connection");
 
-		if ($tipo == "anuncio") {
-			$libros = $connection->fetchAll('SELECT * FROM libro WHERE idGenero = "' . $idGenero . '" and tipoLibro="Anuncio"');
+			$libros = $connection->fetchAll('SELECT * FROM libro WHERE idGenero = "' . $idGenero . '"');
 
-			$ClibrosAventura = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 1 and tipoLibro="Anuncio"');
-			$ClibrosAccion = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 2 and tipoLibro="Anuncio"');
-			$ClibrosTerror = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 3 and tipoLibro="Anuncio"');
-			$ClibrosFantasia = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 4 and tipoLibro="Anuncio"');
-			$ClibrosMisterio = $connection - fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 5 and tipoLibro="Anuncio"');
-			$ClibrosPoesia = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 6 and tipoLibro="Anuncio"');
-			$ClibrosRomance = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 7 and tipoLibro="Anuncio"');
-			$ClibrosDrama = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 8 and tipoLibro="Anuncio"');
-
-			$genero = $connection->fetchColumn('SELECT genero.nombre FROM genero,libro WHERE genero.idGenero = "' . $idGenero . '" GROUP BY genero.nombre');
-
-			$params = array(
-				'libros' => $libros, 'ClibrosAventura' => $ClibrosAventura, 'ClibrosAccion' => $ClibrosAccion,
-				'ClibrosTerror' => $ClibrosTerror, 'ClibrosFantasia' => $ClibrosFantasia, 'ClibrosMisterio' => $ClibrosMisterio,
-				'ClibrosPoesia' => $ClibrosPoesia, 'ClibrosRomance' => $ClibrosRomance, 'ClibrosDrama' => $ClibrosDrama, 'genero' => $genero
-			);
-		} elseif ($tipo == "gratis") {
-			$libros = $connection->fetchAll('SELECT * FROM libro WHERE idGenero = "' . $idGenero . '" and tipoLibro="Gratis"');
-
-			$ClibrosAventura = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 1 and tipoLibro="Gratis"');
-			$ClibrosAccion = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 2 and tipoLibro="Gratis"');
-			$ClibrosTerror = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 3 and tipoLibro="Gratis"');
-			$ClibrosFantasia = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 4 and tipoLibro="Gratis"');
-			$ClibrosMisterio = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 5 and tipoLibro="Gratis"');
-			$ClibrosPoesia = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 6 and tipoLibro="Gratis"');
-			$ClibrosRomance = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 7 and tipoLibro="Gratis"');
-			$ClibrosDrama = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 8 and tipoLibro="Gratis"');
+			$ClibrosAventura = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 1 ');
+			$ClibrosAccion = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 2 ');
+			$ClibrosTerror = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 3 ');
+			$ClibrosFantasia = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 4 ');
+			$ClibrosMisterio = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 5 ');
+			$ClibrosPoesia = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 6 ');
+			$ClibrosRomance = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 7 ');
+			$ClibrosDrama = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 8 ');
 
 			$genero = $connection->fetchColumn('SELECT genero.idGenero FROM genero,libro WHERE genero.idGenero = "' . $idGenero . '" GROUP BY genero.nombre');
 
@@ -756,7 +737,6 @@ class DefaultController extends Controller
 				'ClibrosPoesia' => $ClibrosPoesia, 'ClibrosRomance' => $ClibrosRomance, 'ClibrosDrama' => $ClibrosDrama, 'genero' => $genero
 			);
 
-		}
 		return $this->render('DWESLibrosBundle:Default:genero.html.twig', $params);
 	}
 
@@ -787,23 +767,32 @@ class DefaultController extends Controller
 
 	public function privacidadAction()
 	{
-		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;		
-		$connection = $this->get("database_connection");	//Conexión con la BD 1º Metodo
-
-		$peticion = $this->getRequest(); 	//Llamada al Form
-		$actualPass = sha1($peticion->request->get('actualPass'));
-		$nuevaPass = sha1($peticion->request->get('nuevaPass')); 
-
-		$passBD = $connection->fetchColumn('SELECT PASSWORD FROM `usuario` WHERE username = "' . $userlog . '"');
-	
-		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
-			//Si la contraseña introducida es la misma que en la BD hago la update y si es diferente le informo del error
-		
-				return $this->redirect($this->generateUrl('dwes_libros_privacidad'));
-			
-		}
-		$params = array('password' => '');
+		$params = array();
 		return $this->render('DWESLibrosBundle:Default:privacidad.html.twig', $params);
+	}
+	public function delCuentaAction($userlog)
+	{
+
+		$connection = $this->get("database_connection");
+		
+		$connection->executeUpdate('DELETE FROM operacionlibros WHERE username = "' . $userlog . '" ');
+		$connection->executeUpdate('DELETE FROM comentarlibro where username = "' . $userlog . '" ');
+		$connection->executeUpdate('DELETE capitulo
+		FROM capitulo
+		JOIN libro ON capitulo.idLibro = libro.idLibro
+		WHERE libro.username  = "' . $userlog . '" ');
+		$connection->executeUpdate(' DELETE enlaces 
+		FROM enlaces
+		JOIN libro ON libro.idLibro = enlaces.idLibro WHERE libro.username = "' . $userlog . '" ');
+		$connection->executeUpdate(' DELETE FROM enbiblioteca WHERE username= "' . $userlog . '" ');
+		$connection->executeUpdate(' DELETE FROM libro WHERE username = "' . $userlog . '" ');
+		$connection->executeUpdate('DELETE FROM operacionuser WHERE username = "' . $userlog . '" ');
+		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username  = "' . $userlog . '" ');
+		$connection->executeUpdate('DELETE FROM seleccprivacidad WHERE username  = "' . $userlog . '" ');
+		$connection->executeUpdate('DELETE FROM usuario WHERE username  = "' . $userlog . '" ');
+		//Elimino todos los datos del usuario;
+		$params = array('dd'=>'dd');
+		return $this->render('DWESLibrosBundle:Default:index.html.twig', $params);
 	}
 
 

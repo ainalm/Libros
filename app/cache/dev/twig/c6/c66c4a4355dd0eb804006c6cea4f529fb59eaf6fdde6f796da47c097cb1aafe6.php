@@ -80,35 +80,35 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo "
                          <a class=\"dropdown-item\" href=\"";
         // line 58
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 1)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 1));
         echo "\">Aventura</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 59
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 2)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 2));
         echo "\">Acción</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 60
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 3)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 3));
         echo "\">Terror</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 61
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 4)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 4));
         echo "\">Fantasía</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 62
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 5)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 5));
         echo "\">Misterio</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 63
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 6)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 6));
         echo "\">Poesía</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 64
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 7)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 7));
         echo "\">Romance</a>
                         <a class=\"dropdown-item\" href=\"";
         // line 65
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("tipo" => "gratis", "idGenero" => 8)), "html", null, true);
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 8));
         echo "\">Drama</a>
                     </div>
                 </li>
@@ -126,7 +126,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo "\" data-offset=\"90\">Contacto</a>
                 </li>
             </ul>
-            <!-- Social Icon  -->
+            <!-- Social Icon  --> 
             <ul class=\"navbar-nav nav-flex-icons\">
 
 
@@ -166,11 +166,12 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
             // line 92
             echo $this->env->getExtension('routing')->getPath("dwes_libros_logout");
             echo "\">Cerrar sesión</a>
-
                             ";
         }
-        // line 95
-        echo "                    </div>
+        // line 94
+        echo "                             
+                             
+                    </div>
                 </li>
 
                 </li>
@@ -182,11 +183,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
 ";
-        // line 106
+        // line 107
         $this->displayBlock('portadaInicio', $context, $blocks);
         echo " ";
         $this->displayBlock('portada', $context, $blocks);
-        // line 107
+        // line 108
         echo "
 <!-- Navigation & Intro -->
 
@@ -196,9 +197,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
     ";
-        // line 115
-        $this->displayBlock('contenido', $context, $blocks);
         // line 116
+        $this->displayBlock('contenido', $context, $blocks);
+        // line 117
         echo "
 </main>
 
@@ -252,11 +253,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 <p>
                     <a href=\"#!\">Eliminar cuenta</a>
                     ";
-        // line 168
+        // line 169
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
             echo " ";
         }
-        // line 169
+        // line 170
         echo "                </p>
             </div>
             <!--/.Third column-->
@@ -287,22 +288,21 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
             © 2018 Copyright:
             <a href=\"#\" target=\"_blank\"> Aina Lahmam </a>
             ";
-        // line 198
+        // line 199
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
             echo " ¡Bienvenido,
             <b>";
-            // line 199
+            // line 200
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</b>! ";
         } else {
-            echo " -DWES- ";
+            echo " -BellRead- ";
         }
-        // line 200
+        // line 201
         echo "
         </div>
     </div>
     <!--/.Copyright -->
-
 </footer>
 <!--/.Footer-->
 
@@ -349,7 +349,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 ";
     }
 
-    // line 106
+    // line 107
     public function block_portadaInicio($context, array $blocks = array())
     {
         echo " ";
@@ -360,7 +360,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo " ";
     }
 
-    // line 115
+    // line 116
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
@@ -499,7 +499,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     public function getDebugInfo()
     {
-        return array (  430 => 240,  425 => 236,  422 => 234,  418 => 232,  414 => 231,  409 => 229,  404 => 228,  399 => 223,  394 => 221,  388 => 218,  382 => 215,  377 => 213,  373 => 211,  370 => 210,  364 => 115,  353 => 106,  344 => 15,  339 => 13,  334 => 11,  329 => 9,  324 => 7,  318 => 3,  315 => 2,  301 => 200,  295 => 199,  291 => 198,  260 => 169,  256 => 168,  202 => 116,  200 => 115,  190 => 107,  186 => 106,  173 => 95,  167 => 92,  163 => 91,  158 => 90,  155 => 89,  150 => 88,  145 => 87,  141 => 85,  139 => 84,  125 => 73,  119 => 70,  111 => 65,  107 => 64,  103 => 63,  99 => 62,  95 => 61,  91 => 60,  87 => 59,  83 => 58,  80 => 57,  70 => 42,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
+        return array (  430 => 240,  425 => 236,  422 => 234,  418 => 232,  414 => 231,  409 => 229,  404 => 228,  399 => 223,  394 => 221,  388 => 218,  382 => 215,  377 => 213,  373 => 211,  370 => 210,  364 => 116,  353 => 107,  344 => 15,  339 => 13,  334 => 11,  329 => 9,  324 => 7,  318 => 3,  315 => 2,  302 => 201,  296 => 200,  292 => 199,  261 => 170,  257 => 169,  203 => 117,  201 => 116,  191 => 108,  187 => 107,  172 => 94,  167 => 92,  163 => 91,  158 => 90,  155 => 89,  150 => 88,  145 => 87,  141 => 85,  139 => 84,  125 => 73,  119 => 70,  111 => 65,  107 => 64,  103 => 63,  99 => 62,  95 => 61,  91 => 60,  87 => 59,  83 => 58,  80 => 57,  70 => 42,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
     }
 }
 /* */
@@ -559,14 +559,14 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_gRomance', {'tipo':"gratis"}) }}">Romance</a>*/
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_gDrama', {'tipo':"gratis"}) }}">Drama</a> #}*/
 /* */
-/*                          <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':1}) }}">Aventura</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':2}) }}">Acción</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':3}) }}">Terror</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero',{ 'tipo':"gratis",'idGenero':4}) }}">Fantasía</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':5}) }}">Misterio</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':6}) }}">Poesía</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':7}) }}">Romance</a>*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':8}) }}">Drama</a>*/
+/*                          <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':1}) }}">Aventura</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':2}) }}">Acción</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':3}) }}">Terror</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero',{ 'idGenero':4}) }}">Fantasía</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':5}) }}">Misterio</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':6}) }}">Poesía</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':7}) }}">Romance</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':8}) }}">Drama</a>*/
 /*                     </div>*/
 /*                 </li>*/
 /* */
@@ -577,7 +577,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                     <a class="nav-link title" href="{{ path('dwes_libros_contacto') }}" data-offset="90">Contacto</a>*/
 /*                 </li>*/
 /*             </ul>*/
-/*             <!-- Social Icon  -->*/
+/*             <!-- Social Icon  --> */
 /*             <ul class="navbar-nav nav-flex-icons">*/
 /* */
 /* */
@@ -594,8 +594,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                             <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_perfil') }}">Perfil</a>*/
 /*                             <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_ajustes') }}">Ajustes</a>*/
 /*                             <a class="dropdown-item waves-effect waves-light" href="{{path('dwes_libros_logout')}}">Cerrar sesión</a>*/
-/* */
 /*                             {% endif %}*/
+/*                              */
+/*                              */
 /*                     </div>*/
 /*                 </li>*/
 /* */
@@ -700,12 +701,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*             © 2018 Copyright:*/
 /*             <a href="#" target="_blank"> Aina Lahmam </a>*/
 /*             {% if app.user %} ¡Bienvenido,*/
-/*             <b>{{ app.user.username }}</b>! {% else %} -DWES- {% endif %}*/
+/*             <b>{{ app.user.username }}</b>! {% else %} -BellRead- {% endif %}*/
 /* */
 /*         </div>*/
 /*     </div>*/
 /*     <!--/.Copyright -->*/
-/* */
 /* </footer>*/
 /* <!--/.Footer-->*/
 /* */

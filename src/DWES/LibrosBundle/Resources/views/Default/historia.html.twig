@@ -25,7 +25,17 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ModalCapitulosLabel">Capítulos de : {{item.titulo}}</h5>
+                <h5 class="modal-title" id="ModalCapitulosLabel">
+                
+                    {% if tipoLibro == "Anuncio" %}
+                    Enlnaces de compra  de : {{item.titulo}}
+                    {% else %}
+                   Capítulos de : {{item.titulo}}
+                    {% endif %}
+
+                
+                
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -36,20 +46,34 @@
                 <table id="capitulos2" class="mdl-data-table capitulos" style="width:100%">
                     <thead>
                         <tr>
-                            <th>#</th>
+                         
+                           {% if tipoLibro == "Anuncio" %}
+                     <th>Página de compra</th>
+                            <th>Enlace</th>
+                    {% else %}
+                     <th>Nº Capítulo</th>
                             <th>Titulo</th>
-                            <th>Contenido</th>
+                    {% endif %}
+
 
                         </tr>
                     </thead>
                     <tbody>
-                        {% for item in capitulos %}
+                         {% if tipoLibro == "Anuncio" %}
+                     {% for item in enlaces %} 
+                        <tr>
+                            <td class="tdl">{{item.paginaLibro}}</td>
+                            <td class="tdl"> <a target="_blank" href="{{item.enlaceLibro}}">{{item.enlaceLibro}}</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                      {% for item in capitulos %} 
                         <tr>
                             <td class="tdl">{{item.numCapitulo}}</td>
                             <td class="tdl">{{item.tituloCap}}</td>
-                            <td class="lineas mb-3 tdl">{{item.contenidoCap}}</td>
                         </tr>
                         {% endfor %}
+                    {% endif %}
                     </tbody>
                 </table>
             </div>
@@ -106,15 +130,21 @@
                 <!--Grid column-->
                 <div class="col-lg-8 col-md-12 pb-lg-5 mb-4">
                     <div class="mask rgba-white-light">
-                        <div class="dark-grey-text  pt-4 ml-3 pl-3">
+                        <div class="dark-grey-text  pt-4 ml-3 pl-3"> 
                             <div>
                                 <a>
                                     <span class="badge badge-danger">{{item.nombre}}</span>
                                 </a>
                                 <h2 class="card-title font-weight-bold pt-2  " style="color:  black;">
-                                    <strong>{{item.titulo}}</strong>
+                                    <strong>{{item.titulo}}</strong> 
+                                    {% if tipoLibro == "Anuncio" %}
+                                    <span class="badge blue">En venta</span>
+
+                                    {% endif %}
                                 </h2>
+                                <div class="col-12">
                                 <p style="min-height: 120px;color:  black;">{{item.descLib}} </p>
+                              </div>
                                 <!-- Button  modal -->
                                 <button type="button" class="btn btn-danger btn-sm btn-rounded clearfix  d-md-inline-block waves-effect waves-light video videoff"
                                     data-video="https://www.youtube.com/embed/8uYspagia_s?rel=0&showinfo=0" data-toggle="modal"
@@ -166,12 +196,18 @@
                 </div>
                 <button type="button" class="btn purple-gradient btn-sm gcapitulo " data-toggle="modal" data-target="#ModalCapitulos">
                     <i class="fab fa-readme mr-2"></i>
+                    
+
+                    {% if tipoLibro == "Anuncio" %}
+                     <span>{{countEnlaces}}</span> Enlaces
+                    {% else %}
                     <span>{{numCap}}</span> Capítulos
+                    {% endif %}
                 </button>
                 {#
                 <button id="cmd">Generar</button> #}
 
-                <span class="green-text font-weight-bold pr-2 small">En progreso</span>
+                <span class="green-text font-weight-bold pr-2 small">{{progreso}}</span>
                 {#
                 <form name="formUpdatePerfil" action="{{ path('dwes_libros_addbiblioteca'),{'idLibro':app.request.get('idLibro')} }}" method="POST"
                     enctype="multipart/form-data"> #} {% if tipoLibro == "Gratis" %}
@@ -257,6 +293,29 @@
         <div class="card-body">
            {#    <a href="javascript:pruebaDivAPdf()" class="button">Pasar a PDF</a>  #}
             <div id="imprimir">
+            {% for item in enlaces%}
+            <div id="accordion" class="mt-1">
+                <div class="card">
+                    <div class="card-header" id="heading{{item.idEnlace}}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{item.idEnlace}}" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                Enlace de compra
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse{{item.idEnlace}}" class="collapse" aria-labelledby="heading{{item.idEnlace}}" data-parent="#accordion">
+                        <div class="card-body bigtext text-center">
+                            {# {{html}} #}
+
+                            <a target="_blank" href=" {{item.enlaceLibro}}"> {{item.paginaLibro}}</a> 
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
                 {% for item in capitulos%}
 
                 <!-- TODO:  Imprimir con este formato

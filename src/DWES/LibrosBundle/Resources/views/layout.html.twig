@@ -55,14 +55,14 @@
                         <a class="dropdown-item" href="{{ path('dwes_libros_gRomance', {'tipo':"gratis"}) }}">Romance</a>
                         <a class="dropdown-item" href="{{ path('dwes_libros_gDrama', {'tipo':"gratis"}) }}">Drama</a> #}
 
-                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':1}) }}">Aventura</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':2}) }}">Acción</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':3}) }}">Terror</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero',{ 'tipo':"gratis",'idGenero':4}) }}">Fantasía</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':5}) }}">Misterio</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':6}) }}">Poesía</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':7}) }}">Romance</a>
-                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'tipo':"gratis",'idGenero':8}) }}">Drama</a>
+                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':1}) }}">Aventura</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':2}) }}">Acción</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':3}) }}">Terror</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero',{ 'idGenero':4}) }}">Fantasía</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':5}) }}">Misterio</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':6}) }}">Poesía</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':7}) }}">Romance</a>
+                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':8}) }}">Drama</a>
                     </div>
                 </li>
 
@@ -73,7 +73,7 @@
                     <a class="nav-link title" href="{{ path('dwes_libros_contacto') }}" data-offset="90">Contacto</a>
                 </li>
             </ul>
-            <!-- Social Icon  -->
+            <!-- Social Icon  --> 
             <ul class="navbar-nav nav-flex-icons">
 
 
@@ -90,8 +90,9 @@
                             <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_perfil') }}">Perfil</a>
                             <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_ajustes') }}">Ajustes</a>
                             <a class="dropdown-item waves-effect waves-light" href="{{path('dwes_libros_logout')}}">Cerrar sesión</a>
-
                             {% endif %}
+                             
+                             
                     </div>
                 </li>
 
@@ -196,12 +197,11 @@
             © 2018 Copyright:
             <a href="#" target="_blank"> Aina Lahmam </a>
             {% if app.user %} ¡Bienvenido,
-            <b>{{ app.user.username }}</b>! {% else %} -DWES- {% endif %}
+            <b>{{ app.user.username }}</b>! {% else %} -BellRead- {% endif %}
 
         </div>
     </div>
     <!--/.Copyright -->
-
 </footer>
 <!--/.Footer-->
 

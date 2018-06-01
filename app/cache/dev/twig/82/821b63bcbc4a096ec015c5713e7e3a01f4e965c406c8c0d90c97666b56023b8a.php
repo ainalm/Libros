@@ -236,7 +236,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                             <form name=\"form\"action=\"";
                 // line 144
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_updateInfoLibro", array("idLibro" => $this->getAttribute($context["item"], "idLibro", array()))), "html", null, true);
-                echo "\"  target=\"frame\" method=\"POST\">
+                echo "\" method=\"POST\">
                             <iframe name=\"frame\" style=\"display: none\"></iframe>
                             <!--Panel data-->
                             <div class=\"row card-body pt-3\">
@@ -881,7 +881,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /* */
 /*                         <!--Card content-->*/
 /*                         <div class="card-body pb-0">*/
-/*                             <form name="form"action="{{path('dwes_libros_updateInfoLibro', {'idLibro' : item.idLibro})}}"  target="frame" method="POST">*/
+/*                             <form name="form"action="{{path('dwes_libros_updateInfoLibro', {'idLibro' : item.idLibro})}}" method="POST">*/
 /*                             <iframe name="frame" style="display: none"></iframe>*/
 /*                             <!--Panel data-->*/
 /*                             <div class="row card-body pt-3">*/

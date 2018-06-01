@@ -48,7 +48,7 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
     {
         // line 15
         echo "
-<!-- Second column -->
+<!-- Second column --> 
 <div class=\"col-lg-8 mb-4 container pt-4\">
 
     <!--Card-->
@@ -87,7 +87,10 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
                 <div class=\"row\">
                     <div class=\"col-md-12 text-center my-4\">
                         <div class=\"waves-input-wrapper waves-effect waves-light\">
-                            <input id=\"updatePass\" type=\"submit\" name=\"updatePass\" value=\"ELIMINAR CUENTA\" class=\"guardarScroll btn btn-danger waves-effect waves-light\">
+                            <a onclick=\"return confirm('¿Estás seguro de eliminar tu cuenta para siempre?No habrá vuelta atrás una vez acepte.')\"  href=\"";
+        // line 52
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delCuenta", array("userlog" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()))), "html", null, true);
+        echo "\" id=\"updatePass\"  class=\"guardarScroll btn btn-danger waves-effect waves-light\">ELIMINAR CUENTA</a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +124,7 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
 
     public function getDebugInfo()
     {
-        return array (  65 => 28,  50 => 15,  47 => 14,  31 => 2,  11 => 1,);
+        return array (  92 => 52,  65 => 28,  50 => 15,  47 => 14,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -139,7 +142,7 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
 /* </div>*/
 /* {% endblock %} {% block contenido %}*/
 /* */
-/* <!-- Second column -->*/
+/* <!-- Second column --> */
 /* <div class="col-lg-8 mb-4 container pt-4">*/
 /* */
 /*     <!--Card-->*/
@@ -175,7 +178,7 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
 /*                 <div class="row">*/
 /*                     <div class="col-md-12 text-center my-4">*/
 /*                         <div class="waves-input-wrapper waves-effect waves-light">*/
-/*                             <input id="updatePass" type="submit" name="updatePass" value="ELIMINAR CUENTA" class="guardarScroll btn btn-danger waves-effect waves-light">*/
+/*                             <a onclick="return confirm('¿Estás seguro de eliminar tu cuenta para siempre?No habrá vuelta atrás una vez acepte.')"  href="{{ path('dwes_libros_delCuenta', {'userlog' : app.user.username}) }}" id="updatePass"  class="guardarScroll btn btn-danger waves-effect waves-light">ELIMINAR CUENTA</a>*/
 /*                         </div>*/
 /*                     </div>*/
 /*                 </div>*/
