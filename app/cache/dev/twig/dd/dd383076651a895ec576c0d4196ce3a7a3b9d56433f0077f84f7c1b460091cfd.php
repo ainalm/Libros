@@ -61,7 +61,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
  <!--Sidebar-->
                     <div class=\"col-lg-3 col-md-12 mb-4 ml-4\">
 
-                            <!-- Section: Categories -->
+                            <!-- Section: Categories --> 
                             <section class=\"section\">
 
                                 <ul class=\"list-group z-depth-1\">
@@ -96,9 +96,12 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
         echo "</span>
                                     </li>
                                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
-                                        <a class=\"dark-grey-text font-small navL\">
+                                        <a href=\"";
+        // line 52
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_deseadoBib");
+        echo "\" class=\"dark-grey-text font-small navL\">
                                             Mi lista de deseos</a>
-                                        <a href=\"\"></a>
+                                     
                                         <span class=\"badge badge-danger badge-pill\">";
         // line 55
         echo twig_escape_filter($this->env, (isset($context["cDeseo"]) ? $context["cDeseo"] : $this->getContext($context, "cDeseo")), "html", null, true);
@@ -173,7 +176,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 
     public function getDebugInfo()
     {
-        return array (  139 => 82,  137 => 80,  136 => 79,  117 => 62,  112 => 60,  104 => 55,  95 => 49,  90 => 47,  84 => 44,  76 => 39,  71 => 37,  52 => 22,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  142 => 82,  140 => 80,  139 => 79,  120 => 62,  115 => 60,  107 => 55,  101 => 52,  95 => 49,  90 => 47,  84 => 44,  76 => 39,  71 => 37,  52 => 22,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -207,7 +210,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*  <!--Sidebar-->*/
 /*                     <div class="col-lg-3 col-md-12 mb-4 ml-4">*/
 /* */
-/*                             <!-- Section: Categories -->*/
+/*                             <!-- Section: Categories --> */
 /*                             <section class="section">*/
 /* */
 /*                                 <ul class="list-group z-depth-1">*/
@@ -227,9 +230,9 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*                                         <span class="badge badge-danger badge-pill">{{clibrosFav}}</span>*/
 /*                                     </li>*/
 /*                                     <li class="list-group-item d-flex justify-content-between align-items-center ">*/
-/*                                         <a class="dark-grey-text font-small navL">*/
+/*                                         <a href="{{ path('dwes_libros_deseadoBib') }}" class="dark-grey-text font-small navL">*/
 /*                                             Mi lista de deseos</a>*/
-/*                                         <a href=""></a>*/
+/*                                      */
 /*                                         <span class="badge badge-danger badge-pill">{{cDeseo}}</span>*/
 /*                                         */
 /*                                     </li>*/

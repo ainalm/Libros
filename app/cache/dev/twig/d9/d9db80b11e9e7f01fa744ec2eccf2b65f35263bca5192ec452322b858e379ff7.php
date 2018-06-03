@@ -186,7 +186,6 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
         echo "\">";
         echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
         echo "
-                         
                             </textarea>
                             <label for=\"contact-message\" class=\"Lcontact-message valL cl\"  id=\"labelContC\">Escriba su historia aquí...</label>
 
@@ -196,7 +195,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
     </div>
 
       ";
-        // line 139
+        // line 138
         echo "    <div>
     
      <form> 
@@ -215,7 +214,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  200 => 139,  185 => 121,  171 => 110,  161 => 102,  155 => 88,  147 => 82,  139 => 77,  131 => 72,  123 => 67,  115 => 62,  105 => 55,  101 => 53,  87 => 41,  79 => 35,  77 => 34,  73 => 32,  70 => 31,  56 => 19,  51 => 17,  45 => 14,  36 => 8,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  199 => 138,  185 => 121,  171 => 110,  161 => 102,  155 => 88,  147 => 82,  139 => 77,  131 => 72,  123 => 67,  115 => 62,  105 => 55,  101 => 53,  87 => 41,  79 => 35,  77 => 34,  73 => 32,  70 => 31,  56 => 19,  51 => 17,  45 => 14,  36 => 8,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -339,7 +338,6 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                         <div class="md-form mb-5">*/
 /* */
 /*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}*/
-/*                          */
 /*                             </textarea>*/
 /*                             <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Escriba su historia aquí...</label>*/
 /* */

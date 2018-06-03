@@ -64,7 +64,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                         <a class=\"dropdown-item\" href=\"";
         // line 41
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "gratis"));
-        echo "\">Nueva historia</a>
+        echo "\">Nueva historia </a>
                         <a class=\"dropdown-item\" href=\"";
         // line 42
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "anuncio"));
@@ -315,7 +315,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 3
-        echo "
+        echo " 
 <!-- Font Awesome -->
 <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 <!-- Bootstrap core CSS -->
@@ -504,7 +504,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 }
 /* */
 /* {% extends '::base.html.twig' %} {% block body %} {% block stylesheets %}*/
-/* */
+/*  */
 /* <!-- Font Awesome -->*/
 /* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">*/
 /* <!-- Bootstrap core CSS -->*/
@@ -542,7 +542,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*                 <li class="nav-item dropdown ml-4">*/
 /*                     <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crear </a>*/
 /*                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">*/
-/*                         <a class="dropdown-item" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Nueva historia</a>*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Nueva historia </a>*/
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>*/
 /*                         */
 /*                     </div>*/

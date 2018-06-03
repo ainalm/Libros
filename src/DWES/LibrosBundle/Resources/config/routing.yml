@@ -198,3 +198,15 @@ dwes_libros_delCuenta:
     defaults: { _controller: DWESLibrosBundle:Default:delCuenta }
     requirements:
         page: \d+
+
+dwes_libros_delComentarioCap:
+    path: /delComentarioCap/{idLibro}/{numCapitulo}/{username}/{comentario}
+    defaults: { _controller: DWESLibrosBundle:Default:delComentarioCap }
+    requirements:
+        page: \d+
+
+dwes_libros_delComentarioLib:
+    path: /delComentarioLib/{idLibro}/{username}/{comentario}
+    defaults: { _controller: DWESLibrosBundle:Default:delComentarioLib }
+    requirements:
+        page: \d+

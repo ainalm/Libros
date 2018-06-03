@@ -25,10 +25,20 @@ $("#crearCuenta").on("click", function(e) {
 
   var password = $("#orangeForm-pass");
   var labelPass = $("#labelPassword");
+
+  var isChecked = jQuery("input[name=sexo]:checked").val();
+
   if (username.val() == "" || email.val() == "" || password.val() == "") {
     e.preventDefault();
     $(".valI").css("border-bottom", " 1px solid red ");
     $(".valL").css("color", "red ");
+  }
+  if (!isChecked) {
+    e.preventDefault();
+    $(".form-check-label").css("color", "red");
+  } else {
+    //alert('You have selected :'+isChecked);
+    $(".form-check-label").css("color", "black");
   }
 
   username.keydown(function(event) {

@@ -435,9 +435,25 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::privacidadAction',  '_route' => 'dwes_libros_privacidad',);
         }
 
-        // dwes_libros_delCuenta
-        if (0 === strpos($pathinfo, '/delCuenta') && preg_match('#^/delCuenta/(?P<userlog>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delCuenta')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delCuentaAction',));
+        if (0 === strpos($pathinfo, '/delC')) {
+            // dwes_libros_delCuenta
+            if (0 === strpos($pathinfo, '/delCuenta') && preg_match('#^/delCuenta/(?P<userlog>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delCuenta')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delCuentaAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/delComentario')) {
+                // dwes_libros_delComentarioCap
+                if (0 === strpos($pathinfo, '/delComentarioCap') && preg_match('#^/delComentarioCap/(?P<idLibro>[^/]++)/(?P<numCapitulo>[^/]++)/(?P<username>[^/]++)/(?P<comentario>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delComentarioCap')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delComentarioCapAction',));
+                }
+
+                // dwes_libros_delComentarioLib
+                if (0 === strpos($pathinfo, '/delComentarioLib') && preg_match('#^/delComentarioLib/(?P<idLibro>[^/]++)/(?P<username>[^/]++)/(?P<comentario>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delComentarioLib')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delComentarioLibAction',));
+                }
+
+            }
+
         }
 
         // homepage

@@ -58,7 +58,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
                                 <!--Card-->
                                 <div class=\"card\">
 
-                                    <!--Card image-->
+                                    <!--Card image--> 
                                     <div class=\"view overlay ";
             // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["libro"], "colorPortada", array()), "html", null, true);
@@ -168,7 +168,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
 /*                                 <!--Card-->*/
 /*                                 <div class="card">*/
 /* */
-/*                                     <!--Card image-->*/
+/*                                     <!--Card image--> */
 /*                                     <div class="view overlay {{libro.colorPortada}}">*/
 /*                                         <img src="https://books.google.com/books/content/images/frontcover/wDumDAAAQBAJ?fife=w200-h300" style="height:200px ; width:150px;" class=" mx-auto" alt="sample image">*/
 /*  */

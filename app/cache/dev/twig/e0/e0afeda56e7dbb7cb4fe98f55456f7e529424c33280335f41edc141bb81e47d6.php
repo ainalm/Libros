@@ -99,8 +99,10 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 \t                    
                         ";
             } else {
+                // line 53
+                echo " 
+                             ";
                 // line 54
-                echo "                             ";
                 if (($this->getAttribute($context["item"], "sexo", array()) == "Mujer")) {
                     // line 55
                     echo "                            <img src=\"";
@@ -187,7 +189,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 
     public function getDebugInfo()
     {
-        return array (  144 => 73,  134 => 66,  128 => 65,  121 => 60,  118 => 59,  112 => 57,  106 => 55,  103 => 54,  96 => 51,  94 => 50,  71 => 29,  67 => 28,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  146 => 73,  136 => 66,  130 => 65,  123 => 60,  120 => 59,  114 => 57,  108 => 55,  106 => 54,  103 => 53,  96 => 51,  94 => 50,  71 => 29,  67 => 28,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -242,7 +244,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /*                          {% if fotoPerfil %}*/
 /*                           <img src="data:image/jpeg;base64,{{ fotoPerfil }}" class=" img-fluid rad" alt="First sample avatar image">*/
 /* 	                    */
-/*                         {% else %}*/
+/*                         {% else %} */
 /*                              {% if item.sexo == "Mujer" %}*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/Perfil/avatarM.jpg') }}" class=" img-fluid rad" alt="First sample avatar image">*/
 /*                              {% else %}*/

@@ -55,7 +55,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
                     <div class=\"col-lg-8 mb-4 container pt-4\">
 
                         <!--Card-->
-                        <div class=\"card card-cascade narrower\">
+                        <div class=\"card card-cascade narrower\"> 
 
                             <!--Card image-->
                             <div class=\"view gradient-card-header blue-gradient\">
@@ -231,7 +231,7 @@ class __TwigTemplate_8b82060c7661dc1cf0ae1a07141e00ec41d814be1b1a90367e5f939fe4c
 /*                     <div class="col-lg-8 mb-4 container pt-4">*/
 /* */
 /*                         <!--Card-->*/
-/*                         <div class="card card-cascade narrower">*/
+/*                         <div class="card card-cascade narrower"> */
 /* */
 /*                             <!--Card image-->*/
 /*                             <div class="view gradient-card-header blue-gradient">*/

@@ -200,7 +200,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                             ";
         // line 96
         $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:genero.html.twig", 96)->display(array_merge($context, array("libros" =>         // line 97
-(isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")))));
+(isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")), "ClibrosDrama" => (isset($context["ClibrosDrama"]) ? $context["ClibrosDrama"] : $this->getContext($context, "ClibrosDrama")))));
         // line 99
         echo "                            <!--/Grid row-->
                         <!--Grid row-->
@@ -372,7 +372,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
 /*                             <div class="row text-center">*/
 /*                             {%*/
 /*                             include 'DWESLibrosBundle:Default:_libros.html.twig' */
-/*                             with {'libros': libros}*/
+/*                             with {'libros': libros,'ClibrosDrama':ClibrosDrama}*/
 /*                             %}*/
 /*                             <!--/Grid row-->*/
 /*                         <!--Grid row-->*/
