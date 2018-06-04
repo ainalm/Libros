@@ -446,6 +446,8 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     // Material Select Initialization
     \$(document).ready(function () {
+
+        
         \$('.mdb-select').material_select();
        \$('.capitulos').DataTable( {
             \"info\":     false,
@@ -480,11 +482,16 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 \$('.dt-table').addClass('col-lg-12');
 \$(\"#capitulos1_filter\").insertAfter(\".dt-table\");
 
-//\$(\"#capitulos2_filter\").insertAfter(\".dt-table\");
+
     });
+
+
+    
 </script>
 
- ";
+
+     
+";
     }
 
     public function getTemplateName()
@@ -760,6 +767,8 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* */
 /*     // Material Select Initialization*/
 /*     $(document).ready(function () {*/
+/* */
+/*         */
 /*         $('.mdb-select').material_select();*/
 /*        $('.capitulos').DataTable( {*/
 /*             "info":     false,*/
@@ -794,15 +803,13 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* $('.dt-table').addClass('col-lg-12');*/
 /* $("#capitulos1_filter").insertAfter(".dt-table");*/
 /* */
-/* //$("#capitulos2_filter").insertAfter(".dt-table");*/
+/* */
 /*     });*/
+/* */
+/* */
+/*     */
 /* </script>*/
 /* */
-/*  {#  columnDefs: [*/
-/*             {*/
-/*                 targets: [ 0, 1, 2 ],*/
-/*                 className: 'mdl-data-table__cell--non-numeric'*/
-/*                */
-/*             }*/
-/*         ] #}*/
+/* */
+/*      */
 /* {% endblock %}  */

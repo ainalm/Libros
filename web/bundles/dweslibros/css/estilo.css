@@ -149,3 +149,22 @@ cursor: pointer;
   margin-left: 100px;
 
 }
+/* Muestra/ Oculta resultados */
+
+.mostrar{ display:none;
+}
+#loadMore {
+    color:green;
+    cursor:pointer;
+}
+#loadMore:hover {
+    color:black;
+}
+#showLess {
+    color:red;
+    cursor:pointer;
+    display:none;
+}
+#showLess:hover {
+    color:black;
+}

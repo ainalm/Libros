@@ -145,12 +145,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
                       
 
                         </section>
-                        <!--Section: Blog v.3-->
-
-                        <!--Pagination dark grey-->
-                        <nav class=\"mb-5 pb-2\">
-                        </nav>
-                        <!--Pagination dark grey-->
+                       
 
                     </div>
                     <!--Main listing-->
@@ -266,12 +261,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*                       */
 /* */
 /*                         </section>*/
-/*                         <!--Section: Blog v.3-->*/
-/* */
-/*                         <!--Pagination dark grey-->*/
-/*                         <nav class="mb-5 pb-2">*/
-/*                         </nav>*/
-/*                         <!--Pagination dark grey-->*/
+/*                        */
 /* */
 /*                     </div>*/
 /*                     <!--Main listing-->*/

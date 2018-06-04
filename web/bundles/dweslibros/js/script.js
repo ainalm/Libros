@@ -473,3 +473,8 @@ $.cookie("location", $(location).attr('href'));
 });
 
 });
+
+
+/* Mostrar/ocultar más resultados  */
+
+ 

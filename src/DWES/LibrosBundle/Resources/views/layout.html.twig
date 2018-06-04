@@ -256,6 +256,8 @@
 
     // Material Select Initialization
     $(document).ready(function () {
+
+        
         $('.mdb-select').material_select();
        $('.capitulos').DataTable( {
             "info":     false,
@@ -290,15 +292,13 @@
 $('.dt-table').addClass('col-lg-12');
 $("#capitulos1_filter").insertAfter(".dt-table");
 
-//$("#capitulos2_filter").insertAfter(".dt-table");
+
     });
+
+
+    
 </script>
 
- {#  columnDefs: [
-            {
-                targets: [ 0, 1, 2 ],
-                className: 'mdl-data-table__cell--non-numeric'
-               
-            }
-        ] #}
+
+     
 {% endblock %}  

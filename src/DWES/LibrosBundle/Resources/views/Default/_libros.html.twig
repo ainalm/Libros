@@ -1,3 +1,7 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 <div class="row text-center col-12">
 {% if libros is empty %} 
 
@@ -23,7 +27,7 @@
 {#   <img src="data:image/jpeg;base64,{{libro.fotoPort}}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="
                 max-width: 100px;
                 max-height: 100px;">  #}
-                               <div class="col-md-4 mb-4"> 
+                               <div class="col-md-4 mb-4 mostrar"> 
                                 <!--Card-->
                                 <div class="card">
 
@@ -75,7 +79,39 @@
                                 </div>
   
 	{% endfor %}
+                            </div> 
+{% if libros | length > 6 %}
+   
+   <button type="button" id="loadMore" class="btn btn-default btn-lg btn-block blue-gradient">Mostrar más</button>
+{% endif %}
 
-    
+{# <div id="showLess" class="text-center">Show less</div>  #}                          
 
-                            </div>
+<script>
+$(document).ready(function () {
+    size_li = $(".mostrar").length; 
+    x=6;
+    $('.mostrar:lt('+x+')').show();
+    $('#loadMore').click(function () {
+        x= (x+3 <= size_li) ? x+3 : size_li;
+        $('.mostrar:lt('+x+')').show();
+        // $('#showLess').show();
+        if(x == size_li){
+            $('#loadMore').hide();
+        }
+    });
+   /* $('#showLess').click(function () {
+        x=(x-3<0) ? 6 : x-3;
+        $('.mostrar').not(':lt('+x+')').hide();
+        $('#loadMore').show();
+         $('#showLess').show();
+            console.log(x + "Muestra showLess");
+         
+        if(x == 6 || x <6){
+            console.log(x + "Oculta showLess");
+            $('#showLess').hide();
+        }
+    });*/
+});
+</script>                            
+
