@@ -470,6 +470,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_suscriSelect')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::suscriSelectAction',));
         }
 
+        // dwes_libros_delSuscri
+        if (0 === strpos($pathinfo, '/delSuscri') && preg_match('#^/delSuscri/(?P<tipo>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_delSuscri');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delSuscri')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delSuscriAction',));
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

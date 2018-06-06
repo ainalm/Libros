@@ -44,7 +44,7 @@ class DefaultController extends Controller
 		$fotoSubidaM = addslashes(file_get_contents($_FILES['imagen']['tmp_name'])); //Imagen Subida del  usuario
 		
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-			var_dump($imagen);exit;
+			
 			if (!empty($username) && !empty($email) && !empty($password)) {
 
 				$connection = $this->get("database_connection");		//Conexión con la BD  
@@ -149,8 +149,6 @@ class DefaultController extends Controller
 				
 			} elseif ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
 				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
-			}elseif ($tipoSusc == "premium" && $numAnunActual > $numAnunPremium || $tipoSusc == NULL) {
-				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
 			}
 			
 		}
@@ -164,6 +162,13 @@ class DefaultController extends Controller
 					//$connection->executeUpdate('UPDATE `usuario` SET fotoPerfil ="'. $fotoSubida .'" WHERE username ="'. $userlog .'" ;');
 
 					if ($tipo == "anuncio") {
+						if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis || $tipoSusc == NULL) {
+							return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
+							
+						} elseif ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
+							return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
+						}
+						
 						$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Anuncio", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "Completado", NULL, NULL,"' . $colorFondo . '");');
 						/*	SELECT Id del libro creado */
@@ -758,6 +763,8 @@ class DefaultController extends Controller
 		if ($susGratis && $numAnunActual > $numAnunGratis) {
 		//var_dump($susGratis);Exit;
 			$vencida="vencidaE";
+		}else {
+			$vencida="validaE";
 		}
 			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis ) {
 				$vencida="vencidaG";
@@ -859,7 +866,7 @@ class DefaultController extends Controller
 		 and numCapitulo ="' . $numCapitulo . '" and username= "' . $username . '"  and comentario ="' . $comentario . '"');
 		
 
-	return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
 	}
 
 	public function delComentarioLibAction($idLibro,$username,$comentario)
@@ -869,7 +876,7 @@ class DefaultController extends Controller
 		$connection->executeUpdate('DELETE FROM comentarlibro where idLibro = "' . $idLibro . '" and username= "' . $username . '"  and comentario ="' . $comentario . '"');
 		
 
-	return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+		return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
 	}
 	public function normasAction()
 	{
@@ -893,40 +900,43 @@ class DefaultController extends Controller
 		$numAnunActual = $connection->fetchColumn('SELECT count(*) FROM libro WHERE tipoLibro ="anuncio" and username="' . $userlog . '"'); //Libros anunciados del usuario
 		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" '); //tipo suscripcion actual
 
-		if ($existGratis && $tipoSusc == "gratis" && $numAnunActual > $numAnunGratis) {
-			//var_dump("existe");Exit;
-			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "finalizada");');
+		if ($existGratis  && $tipoSusc == "gratis" && $numAnunActual > $numAnunGratis && $tipo =="gratis") {
 		
-			$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "gratis" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "gratis"');
+			$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "Valida" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "finalizada"');
 			
-
+			$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "gratis" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "gratis"');
+			//$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "gratis" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "gratis"');
 		} 
 		elseif($existGratis && $tipoSusc == "gratis" && $numAnunActual < $numAnunGratis){
-			$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "gratis" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "gratis"');
+		
+			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "finalizada");');
 
+		} 
+		elseif($tipo =="gratis" && $existGratis == null) {
+		
+		$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "gratis");');	
 		}
-		elseif($tipo =="gratis") {
-			
-		$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "gratis");');
-			
-	
-			
-		}
-
 		 if ($tipo =="basica") {
 			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "basica");');
 
 		} elseif ($tipo =="premium") {
 			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "premium");');
-		
-			
-		}
 		 
+		}
 		
-		$params = array('tipo' =>$tipo);
-
-		return $this->render('DWESLibrosBundle:Default:suscriGratis.html.twig', $params);
+		return $this->render('DWESLibrosBundle:Default:suscriGratis.html.twig', array('tipo' =>$tipo));
 	
+	}
+	public function delSuscriAction($tipo)
+	{
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
+
+		$connection = $this->get("database_connection");	
+		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username = "' . $userlog . '" AND tipoSuscripcion = "' . $tipo . '";');
+		//var_dump('DELETE FROM suscripseleccionada WHERE username = "' . $userlog . '" AND tipoSuscripcion = "' . $tipo . '";');exit;
+		return $this->render('DWESLibrosBundle:Default:suscriGratis.html.twig', array('tipo' =>"cancelar"));
+
+
 	}
 
 }

@@ -80,7 +80,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                 <div class=\"row\">
 
                     <!--Grid column-->
-                    <div class=\"col-lg-4 col-md-12 mb-5\">
+                    <div class=\"col-lg-6 col-md-12 mb-5\">
                         <!--Card-->
                         <div class=\"pricing-card card\" style=\"
                                 min-height: 471.08px;
@@ -97,7 +97,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                 <ul class=\"list-unstyled striped title\">
                                     <li>
                                         <p>
-                                           <strong>";
+                                           <strong> ";
         // line 63
         echo twig_escape_filter($this->env, (isset($context["numGratis"]) ? $context["numGratis"] : $this->getContext($context, "numGratis")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
@@ -112,54 +112,38 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
             // line 70
             echo "                                    <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
                                 cursor: context-menu;
-                            \">Eliga otro plan </a>
-                                                
-                                    
-                                          
+                            \">Fin prueba gratuita </a>      
                             ";
-        } elseif ((        // line 76
+        } elseif ((        // line 73
 (isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis")) {
-            // line 77
-            echo "                            <a href=\"";
-            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
-            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
-                                cursor: context-menu;
-                            \">Plan actual </a>
+            // line 74
+            echo "                           
+                    <a href=\"";
+            // line 75
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "gratis"));
+            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Cancelar suscripción</a>
+                            
                                     ";
         }
-        // line 81
+        // line 78
         echo "                            ";
         if (twig_test_empty((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")))) {
-            // line 82
+            // line 79
             echo "                            <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
-            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar </a>
-
-
+            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar  </a>
                            ";
         }
-        // line 86
-        echo "                           ";
-        // line 88
-        echo " 
-
-                                ";
-        // line 90
-        if ((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaE") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) != "gratis"))) {
+        // line 81
+        echo "                                ";
+        if (((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaE") || (((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaG") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) != "gratis"))) || ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica"))) {
             echo " 
                              <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
                                 cursor: context-menu;
-                            \">Fin prueba </a>
-                            ";
-        } else {
-            // line 95
-            echo "                            <a href=\"";
-            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
-            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar </a>
-                            
+                            \">Fin prueba gratuita </a>
                             ";
         }
-        // line 98
+        // line 86
         echo "
                             </div>
                         </div>
@@ -168,7 +152,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                     <!--Grid column-->
 
                     <!--Grid column-->
-                    <div class=\"col-lg-4 col-md-12 mb-5\">
+                    <div class=\"col-lg-6 col-md-12 mb-5\">
 
                         <!-- Card -->
                         <div class=\"card card-image\" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(8).jpg');min-height: 471.08px;\">
@@ -190,7 +174,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                         <li>
                                             <p>
                                                 <strong>";
-        // line 127
+        // line 115
         echo twig_escape_filter($this->env, (isset($context["numBasica"]) ? $context["numBasica"] : $this->getContext($context, "numBasica")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
                                         </li>
@@ -199,21 +183,23 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                     </ul>
                                     
                                        ";
-        // line 133
+        // line 121
         if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica")) {
-            // line 134
-            echo "                                                <a class=\" btn btn-rounded btn-outline-white waves-effect waves-light\" style=\"
-                        cursor: context-menu;
-                    \">Plan actual </a>
+            // line 122
+            echo "                                          
+                    <a href=\"";
+            // line 123
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "basica"));
+            echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Cancelar suscripción</a>
                             ";
         } else {
-            // line 138
+            // line 125
             echo "                            <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "basica"));
             echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Seleccionar</a>
                                     ";
         }
-        // line 140
+        // line 127
         echo "
                                 </div>
 
@@ -223,55 +209,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                     </div>
                     <!--Grid column-->
 
-                    <!--Grid column-->
-                    <div class=\"col-lg-4 col-md-12 mb-5\">
-                        <!--Card-->
-                        <div class=\"pricing-card card\" style=\"
-                            min-height: 471.08px;
-                        \">
-
-                            <!--Content-->
-                            <div class=\"card-body\">
-                                <h5 class=\"font-weight-bold mt-3\">Premium</h5>
-                                <!--Price-->
-                                <div class=\"price pt-0\">
-                                    <h2 class=\"number orange-text mb-0\">30</h2>
-                                </div>
-                                <!--Price-->
-                                <ul class=\"list-unstyled striped title\">
-                                    <li>
-                                        <p>
-                                            <strong>";
-        // line 167
-        echo twig_escape_filter($this->env, (isset($context["numPremium"]) ? $context["numPremium"] : $this->getContext($context, "numPremium")), "html", null, true);
-        echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
-                                    </li>
-                                    
-                                </ul>
-                                 ";
-        // line 171
-        if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "premium")) {
-            // line 172
-            echo "                                                <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
-                        cursor: context-menu;\">Plan actual</a>
-                            ";
-        } else {
-            // line 175
-            echo "                            <a href=\"";
-            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "premium"));
-            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar</a>
-                                    ";
-        }
-        // line 177
-        echo "                                    
-
-                                    
-                            </div>
-
-                        </div>
-                        <!--Card-->
-                    </div>
-                    <!--Grid column-->
+                    
 
                 </div>
                 <!--Grid row-->
@@ -295,7 +233,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
     public function getDebugInfo()
     {
-        return array (  266 => 177,  260 => 175,  255 => 172,  253 => 171,  246 => 167,  217 => 140,  211 => 138,  205 => 134,  203 => 133,  194 => 127,  163 => 98,  156 => 95,  148 => 90,  144 => 88,  142 => 86,  134 => 82,  131 => 81,  123 => 77,  121 => 76,  113 => 70,  110 => 69,  102 => 63,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  203 => 127,  197 => 125,  192 => 123,  189 => 122,  187 => 121,  178 => 115,  147 => 86,  138 => 81,  132 => 79,  129 => 78,  123 => 75,  120 => 74,  118 => 73,  113 => 70,  110 => 69,  102 => 63,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -343,7 +281,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                 <div class="row">*/
 /* */
 /*                     <!--Grid column-->*/
-/*                     <div class="col-lg-4 col-md-12 mb-5">*/
+/*                     <div class="col-lg-6 col-md-12 mb-5">*/
 /*                         <!--Card-->*/
 /*                         <div class="pricing-card card" style="*/
 /*                                 min-height: 471.08px;*/
@@ -360,7 +298,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                                 <ul class="list-unstyled striped title">*/
 /*                                     <li>*/
 /*                                         <p>*/
-/*                                            <strong>{{numGratis}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>*/
+/*                                            <strong> {{numGratis}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>*/
 /*                                     </li>*/
 /*                                    */
 /*                                 </ul>*/
@@ -369,31 +307,19 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                                     {% if vencida == "vencidaG" and suscripcion == "gratis" %}*/
 /*                                     <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
 /*                                 cursor: context-menu;*/
-/*                             ">Eliga otro plan </a>*/
-/*                                                 */
-/*                                     */
-/*                                           */
+/*                             ">Fin prueba gratuita </a>      */
 /*                             {% elseif  suscripcion == "gratis" %}*/
-/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
-/*                                 cursor: context-menu;*/
-/*                             ">Plan actual </a>*/
+/*                            */
+/*                     <a href="{{ path('dwes_libros_delSuscri',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Cancelar suscripción</a>*/
+/*                             */
 /*                                     {% endif %}*/
 /*                             {% if suscripcion is empty %}*/
-/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar </a>*/
-/* */
-/* */
+/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar  </a>*/
 /*                            {% endif %}*/
-/*                            {# {% endif %}*/
-/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar {{vencida}}2</a>*/
-/*                                    #} */
-/* */
-/*                                 {% if vencida == "vencidaE" and suscripcion != "gratis" %} */
+/*                                 {% if vencida == "vencidaE" or vencida =="vencidaG" and suscripcion != "gratis" or suscripcion =="basica" %} */
 /*                              <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
 /*                                 cursor: context-menu;*/
-/*                             ">Fin prueba </a>*/
-/*                             {% else %}*/
-/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar </a>*/
-/*                             */
+/*                             ">Fin prueba gratuita </a>*/
 /*                             {% endif%}*/
 /* */
 /*                             </div>*/
@@ -403,7 +329,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                     <!--Grid column-->*/
 /* */
 /*                     <!--Grid column-->*/
-/*                     <div class="col-lg-4 col-md-12 mb-5">*/
+/*                     <div class="col-lg-6 col-md-12 mb-5">*/
 /* */
 /*                         <!-- Card -->*/
 /*                         <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(8).jpg');min-height: 471.08px;">*/
@@ -431,9 +357,8 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                                     </ul>*/
 /*                                     */
 /*                                        {% if suscripcion == "basica"  %}*/
-/*                                                 <a class=" btn btn-rounded btn-outline-white waves-effect waves-light" style="*/
-/*                         cursor: context-menu;*/
-/*                     ">Plan actual </a>*/
+/*                                           */
+/*                     <a href="{{ path('dwes_libros_delSuscri',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Cancelar suscripción</a>*/
 /*                             {% else %}*/
 /*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Seleccionar</a>*/
 /*                                     {% endif %}*/
@@ -446,43 +371,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                     </div>*/
 /*                     <!--Grid column-->*/
 /* */
-/*                     <!--Grid column-->*/
-/*                     <div class="col-lg-4 col-md-12 mb-5">*/
-/*                         <!--Card-->*/
-/*                         <div class="pricing-card card" style="*/
-/*                             min-height: 471.08px;*/
-/*                         ">*/
-/* */
-/*                             <!--Content-->*/
-/*                             <div class="card-body">*/
-/*                                 <h5 class="font-weight-bold mt-3">Premium</h5>*/
-/*                                 <!--Price-->*/
-/*                                 <div class="price pt-0">*/
-/*                                     <h2 class="number orange-text mb-0">30</h2>*/
-/*                                 </div>*/
-/*                                 <!--Price-->*/
-/*                                 <ul class="list-unstyled striped title">*/
-/*                                     <li>*/
-/*                                         <p>*/
-/*                                             <strong>{{numPremium}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>*/
-/*                                     </li>*/
-/*                                     */
-/*                                 </ul>*/
-/*                                  {% if suscripcion == "premium"  %}*/
-/*                                                 <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
-/*                         cursor: context-menu;">Plan actual</a>*/
-/*                             {% else %}*/
-/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'premium' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>*/
-/*                                     {% endif %}*/
-/*                                     */
-/* */
-/*                                     */
-/*                             </div>*/
-/* */
-/*                         </div>*/
-/*                         <!--Card-->*/
-/*                     </div>*/
-/*                     <!--Grid column-->*/
+/*                     */
 /* */
 /*                 </div>*/
 /*                 <!--Grid row-->*/
