@@ -66,21 +66,32 @@
                                 </ul>
                                
                                 {# {% if suscripcion == "gratis" %} #}
-                                    {% if vencida == "vencida" %}
-                            <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
-                        cursor: context-menu;
-                     ">Eliga otro plan </a>
-                                         
+                                    {% if vencida == "vencida" and suscripcion == "gratis" %}
+                                    <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
+                                cursor: context-menu;
+                            ">Prueba gratuita finalizada </a>
+                                                
                                     
                                           
-                            {% else %}
-                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Plan actual {{vencida}}</a>
+                            {% elseif  suscripcion == "gratis" %}
+                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
+                                cursor: context-menu;
+                            ">Plan actual </a>
                                     {% endif %}
+                            {% if suscripcion is empty %}
+                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar </a>
 
-                           
+
+                           {% endif %}
                            {# {% endif %}
                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar {{vencida}}2</a>
-                                   #}  
+                                   #} 
+
+                                {% if vencida == "vencida" and suscripcion != "gratis" %} 
+                             <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
+                                cursor: context-menu;
+                            ">Prueba gratuita finalizada </a>
+                            {% endif %}
 
                             </div>
                         </div>
@@ -158,8 +169,9 @@
                                                 <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
                         cursor: context-menu;">Plan actual</a>
                             {% else %}
-                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>
+                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'premium' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>
                                     {% endif %}
+                                    
                             </div>
 
                         </div>

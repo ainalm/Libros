@@ -747,14 +747,19 @@ class DefaultController extends Controller
 		$connection = $this->get("database_connection");
 		
 		$numAnunActual = $connection->fetchColumn('SELECT count(*) FROM libro WHERE tipoLibro ="anuncio" and username="' . $userlog . '"'); //Libros anunciados del usuario
-		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '"'); //tipo suscripcion actual
+		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" '); //tipo suscripcion actual
 		$numAnunPremium = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="premium"'); //Numero de anuncios permitios para anunciar un libro "Premium" 
 		$numAnunGratis = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="gratis"'); 
 		$numAnunBasica = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="basica"'); 
-		
 		// Comprueba que si no tiene un tipo de suscripción selecciona le envío a la página de suscripción para que selecciona una
 		// y también si ya ha superado el límite de números anunciados permitidos por suscripción.
-			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis || $tipoSusc == NULL) {
+
+		$susGratis = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" and tipoSuscripcion="gratis"'); //tipo suscripcion actual
+		if ($susGratis ) {
+		//var_dump($susGratis);Exit;
+			$vencida="vencida";
+		}
+			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis ) {
 				$vencida="vencida";
 
 				
@@ -881,11 +886,26 @@ class DefaultController extends Controller
 		
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
 
-		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username= "' . $userlog . '"');
-		 if ($tipo== "gratis") {
-		$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "gratis");');
+		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username= "' . $userlog . '"  and tipoSuscripcion ="basica"');
+		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username= "' . $userlog . '"  and tipoSuscripcion ="premium"');
 		
-		} elseif ($tipo =="basica") {
+		$existGratis = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" and tipoSuscripcion ="gratis"'); //tipo suscripcion actual
+	
+
+		if ($existGratis) {
+			//var_dump("existe");Exit;
+		$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "gratis" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "gratis"');
+			
+
+		} else {
+			var_dump("no existe");Exit;
+		$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "gratis");');
+			
+	
+			
+		}
+
+		 if ($tipo =="basica") {
 			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "basica");');
 
 		} elseif ($tipo =="premium") {
