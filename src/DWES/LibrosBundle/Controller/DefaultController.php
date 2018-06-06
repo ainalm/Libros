@@ -116,6 +116,8 @@ class DefaultController extends Controller
 		8:Drama
 		 */
 
+
+		
 		$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'file_upload' => '', 'colorFondo' => '', 'tipoLib' => '');/* Guardo en el array los campos del form*/
 		$userlog = $this->getUser()->getUsername();
 		$peticion = $this->getRequest(); 	//Llamada al Form
@@ -131,6 +133,29 @@ class DefaultController extends Controller
 		$numExist = $connection->fetchColumn('SELECT COUNT(titulo) FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '" GROUP BY titulo HAVING COUNT(titulo) > 1'); //Id genero seleccionado
 		$idLibro = "";
 		$red = $tipo;
+
+		if ($tipo == "anuncio") {
+			
+		$numAnunActual = $connection->fetchColumn('SELECT count(*) FROM libro WHERE tipoLibro ="anuncio" and username="' . $userlog . '"'); //Libros anunciados del usuario
+		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '"'); //tipo suscripcion actual
+		$numAnunPremium = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="premium"'); //Numero de anuncios permitios para anunciar un libro "Premium" 
+		$numAnunGratis = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="gratis"'); 
+		$numAnunBasica = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="basica"'); 
+		
+		// Comprueba que si no tiene un tipo de suscripción selecciona le envío a la página de suscripción para que selecciona una
+		// y también si ya ha superado el límite de números anunciados permitidos por suscripción.
+			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis || $tipoSusc == NULL) {
+				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
+				
+			} elseif ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
+				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
+			}elseif ($tipoSusc == "premium" && $numAnunActual > $numAnunPremium || $tipoSusc == NULL) {
+				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
+			}
+			
+		}
+
+
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {
 				/* FIXME: Evitar meter libros duplicado */
 			if (empty($numExist) && $numExist == 0) {
@@ -141,33 +166,38 @@ class DefaultController extends Controller
 					if ($tipo == "anuncio") {
 						$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Anuncio", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "Completado", NULL, NULL,"' . $colorFondo . '");');
+						/*	SELECT Id del libro creado */
+						$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
+
+						/* INSERT OPERACIÓN Añadir Libro */
+								$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
+								return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
 					} elseif ($tipo == "gratis") {
 						$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
 					VALUES (NULL, "' . $userlog . '", "' . $idGeneroSelecc . '", "' . $titulohistoria . '","Gratis", "' . $fotoSubida . '", "' . $resuHist . '", CURRENT_TIMESTAMP, "En progreso", NULL, NULL,"' . $colorFondo . '");');
-					}
-				
-			/*	SELECT Id del libro creado */
+					
+						/*	SELECT Id del libro creado */
 					$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
 
-			/* INSERT OPERACIÓN Añadir Libro */
-					$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
+					/* INSERT OPERACIÓN Añadir Libro */
+							$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
+					
+					/*  INSERT 1º Capitulo  FANTASMA*/
+		
+							$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", 1, "", "", "Fantasma");');
+							return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro, 'numCapitulo' => 1)));
+				
+				
+				}
+				
 			
-			/*  INSERT 1º Capitulo  FANTASMA*/
-
-					$connection->executeUpdate('INSERT INTO capitulo ( idLibro, numCapitulo, tituloCap, contenidoCap, estado) VALUES ( "' . $idLibro . '", 1, "", "", "Fantasma");');
 
 				}
 			} else {
 				var_dump("ya existe el libro");
 				exit;
 			}
-			//Genera una ruta depende del tipo de libro escrito
-			$params = array('titulohistoria' => '', 'resuHist' => '', 'genero' => '', 'idLibro' => $idLibro);
-			if ($tipo == "anuncio") {
-				return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
-			} elseif ($tipo == "gratis") {
-				return $this->redirect($this->generateUrl('dwes_libros_capitulo', array('idLibro' => $idLibro, 'numCapitulo' => 1)));
-			}
+			
 		}
 
 		return $this->render('DWESLibrosBundle:Default:escribirhistoria.html.twig', $params);
@@ -253,11 +283,16 @@ class DefaultController extends Controller
 		$titCapInsert = $connection->fetchColumn('SELECT tituloCap  FROM capitulo WHERE idLibro =' . $idLibro . ' AND numCapitulo =' . $SelectultimoCapitulo . '');
 		$contCapInser = $connection->fetchColumn('SELECT contenidoCap  FROM capitulo WHERE idLibro =' . $idLibro . ' AND numCapitulo =' . $SelectultimoCapitulo . '');
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
-
+			
 			if (isset($titulocapitulo) && isset($contCapitulo)) {
 				/* INSERT DEL CAPITULO */
-				$connection->executeUpdate('UPDATE capitulo SET   tituloCap = "' . $titulocapitulo . '", contenidoCap = "' . $contCapitulo . '" , estado = "Publicado" 
-					WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $numCapitulo . '";');
+  
+				
+				$connection->executeUpdate("UPDATE capitulo SET   tituloCap = '" . $titulocapitulo . "', contenidoCap = '" . $contCapitulo . "' , estado = 'Publicado' 
+					WHERE capitulo.idLibro = " . $idLibro . " AND capitulo.numCapitulo = " . $numCapitulo . ";");
+
+					/* $connection->executeUpdate('UPDATE capitulo SET   tituloCap = "' . $titulocapitulo . '", contenidoCap = "' . $contCapitulo . '" , estado = "Publicado" 
+					WHERE capitulo.idLibro = "' . $idLibro . '" AND capitulo.numCapitulo = "' . $numCapitulo . '";'); */
 				/* UPDATE OPERACIÓN INSERTAR */
 				$connection->executeUpdate('UPDATE operacionlibros SET motivoOL = "Capitulo grabado" , fechaOL = CURRENT_TIMESTAMP
 					 WHERE operacionlibros.codOperacion = 2 AND operacionlibros.idLibro = "' . $idLibro . '" AND operacionlibros.username = "' . $userlog . '"');
@@ -285,7 +320,7 @@ class DefaultController extends Controller
 	{
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		$connection = $this->get("database_connection");
-		$librosPub = $connection->fetchAll('SELECT * FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Gratis"');
+		$librosPub = $connection->fetchAll('SELECT * FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Gratis" order by fechaPubli desc');
 		$fotoPub = $connection->fetchAll('SELECT fotoPort FROM libro WHERE username = "' . $userlog . '" ');
 		$cFotoPub = $connection->fetchAll('SELECT count(fotoPort) FROM libro WHERE username = "' . $userlog . '" ');
 		 	/* foreach ($f as $fotoPub => $item)
@@ -307,7 +342,7 @@ class DefaultController extends Controller
 	{
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
 		$connection = $this->get("database_connection");
-		$librosPub = $connection->fetchAll('SELECT * FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Anuncio"');
+		$librosPub = $connection->fetchAll('SELECT * FROM libro WHERE username = "' . $userlog . '" and tipoLibro="Anuncio" order by fechaPubli desc');
 		$fotoPub = $connection->fetchAll('SELECT fotoPort FROM libro WHERE username = "' . $userlog . '" ');
 		/* foreach ($fotoPub as $productIndex => $imagen) {
 			$f = base64_encode($imagen);
@@ -447,8 +482,6 @@ class DefaultController extends Controller
 			 $comentariosCap[]=$comentariosC;
 		}
 	
-		
-		//var_dump( $numCapitulos);Exit;
 	
 		$params = array(
 			'libro' => $libro, 'foto' => $imagenLibro, 'capitulos' => $capitulos,
@@ -709,17 +742,32 @@ class DefaultController extends Controller
 	}
 	public function suscripcionAction()
 	{
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;		
 
-		$em = $this->getDoctrine()->getManager(); //Llamada a la BD
+		$connection = $this->get("database_connection");
+		
+		$numAnunActual = $connection->fetchColumn('SELECT count(*) FROM libro WHERE tipoLibro ="anuncio" and username="' . $userlog . '"'); //Libros anunciados del usuario
+		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '"'); //tipo suscripcion actual
+		$numAnunPremium = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="premium"'); //Numero de anuncios permitios para anunciar un libro "Premium" 
+		$numAnunGratis = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="gratis"'); 
+		$numAnunBasica = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="basica"'); 
+		
+		// Comprueba que si no tiene un tipo de suscripción selecciona le envío a la página de suscripción para que selecciona una
+		// y también si ya ha superado el límite de números anunciados permitidos por suscripción.
+			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis || $tipoSusc == NULL) {
+				$vencida="vencida";
 
-		$QUERY = 'SELECT * FROM `suscripcion`'; //Consulta SQL
+				
+			} elseif	 ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
+				$vencida="vencida";
+			
+			}elseif ($tipoSusc == "premium" && $numAnunActual > $numAnunPremium || $tipoSusc == NULL) {
+				$vencida="vencida";
+				
+			}
 
-		$statement = $em->getConnection()->prepare($QUERY); //Preparo la consulta  
-		$statement->execute(); 	//Ejecuto consulta
-
-		$result = $statement->fetchAll(); //Obtengo los datos		
-		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
-		return $this->render('DWESLibrosBundle:Default:suscripcion.html.twig', array('suscripciones' => $result));
+		$params = array('suscripcion' => $tipoSusc,'vencida'=>$vencida,'numGratis'=>$numAnunGratis,'numBasica'=>$numAnunBasica,'numPremium'=>$numAnunPremium);
+		return $this->render('DWESLibrosBundle:Default:suscripcion.html.twig', $params);
 	}
 
 
@@ -772,7 +820,7 @@ class DefaultController extends Controller
 		}
 		$params = array('password' => '');
 		return $this->render('DWESLibrosBundle:Default:password.html.twig', $params);
-	}
+	} 
 
 	public function privacidadAction()
 	{
@@ -817,6 +865,40 @@ class DefaultController extends Controller
 		
 
 	return $this->redirect($this->generateUrl('dwes_libros_historia', array('idLibro' => $idLibro)));
+	}
+	public function normasAction()
+	{
+		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
+		return $this->render('DWESLibrosBundle:Default:normas.html.twig', $params);
+	}
+
+	public function suscriSelectAction($tipo)
+	{
+
+		$connection = $this->get("database_connection");	
+		
+		//$connection->executeUpdate('DELETE FROM comentarlibro where idLibro = "' . $idLibro . '" and username= "' . $username . '"  and comentario ="' . $comentario . '"');
+		
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
+
+		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username= "' . $userlog . '"');
+		 if ($tipo== "gratis") {
+		$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "gratis");');
+		
+		} elseif ($tipo =="basica") {
+			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "basica");');
+
+		} elseif ($tipo =="premium") {
+			$connection->executeUpdate('INSERT INTO suscripseleccionada (username, tipoSuscripcion) VALUES ("' . $userlog . '", "premium");');
+		
+			
+		}
+		 
+		
+		$params = array('tipo' =>$tipo);
+
+		return $this->render('DWESLibrosBundle:Default:suscriGratis.html.twig', $params);
+	
 	}
 
 }

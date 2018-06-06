@@ -112,29 +112,32 @@
                         </div>
                 </div>
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-3"> 
                     <!--Grid column-->
                     <div class="col-md-12">
 
                         <div class="md-form mb-5">
+ 
+                            {# <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}</textarea> #}
+                            
+                                {# 
+                                <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">
+  
+ 
+                                <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>
 
-                            <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}
-                            </textarea>
-                            <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Escriba su historia aquí...</label>
+                                <textarea ng-model="htmlcontent" style="width: 100%;height:100px" name="contCapitulo"></textarea>
+                                
+                                    </div>   #}
 
+                                <textarea id="summernote"  name="contCapitulo">{{contCapitulo}}</textarea>
                         </div>
                     </div>
                 </div>
     </div>
 
-      {# <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">
-  
- 
-  <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>
+    
 
-  <textarea ng-model="htmlcontent" style="width: 100%;height:100px"><h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style="color: green;">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class="text-danger">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p></textarea>
- 
-    </div> #}
     <div>
     
      <form> 

@@ -174,29 +174,30 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                         </div>
                 </div>
                 </div>
-                <div class=\"row mt-3\">
+                <div class=\"row mt-3\"> 
                     <!--Grid column-->
                     <div class=\"col-md-12\">
 
                         <div class=\"md-form mb-5\">
-
-                            <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"11\"  name=\"contCapitulo\" value=\"";
-        // line 121
-        echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
-        echo "\">";
-        echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
+ 
+                            ";
+        // line 122
+        echo "                            
+                                ";
+        // line 132
         echo "
-                            </textarea>
-                            <label for=\"contact-message\" class=\"Lcontact-message valL cl\"  id=\"labelContC\">Escriba su historia aquí...</label>
-
+                                <textarea id=\"summernote\"  name=\"contCapitulo\">";
+        // line 133
+        echo twig_escape_filter($this->env, (isset($context["contCapitulo"]) ? $context["contCapitulo"] : $this->getContext($context, "contCapitulo")), "html", null, true);
+        echo "</textarea>
                         </div>
                     </div>
                 </div>
     </div>
 
-      ";
-        // line 138
-        echo "    <div>
+    
+
+    <div>
     
      <form> 
 ";
@@ -214,7 +215,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  199 => 138,  185 => 121,  171 => 110,  161 => 102,  155 => 88,  147 => 82,  139 => 77,  131 => 72,  123 => 67,  115 => 62,  105 => 55,  101 => 53,  87 => 41,  79 => 35,  77 => 34,  73 => 32,  70 => 31,  56 => 19,  51 => 17,  45 => 14,  36 => 8,  32 => 6,  29 => 5,  11 => 1,);
+        return array (  191 => 133,  188 => 132,  185 => 122,  171 => 110,  161 => 102,  155 => 88,  147 => 82,  139 => 77,  131 => 72,  123 => 67,  115 => 62,  105 => 55,  101 => 53,  87 => 41,  79 => 35,  77 => 34,  73 => 32,  70 => 31,  56 => 19,  51 => 17,  45 => 14,  36 => 8,  32 => 6,  29 => 5,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -331,29 +332,32 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                         </div>*/
 /*                 </div>*/
 /*                 </div>*/
-/*                 <div class="row mt-3">*/
+/*                 <div class="row mt-3"> */
 /*                     <!--Grid column-->*/
 /*                     <div class="col-md-12">*/
 /* */
 /*                         <div class="md-form mb-5">*/
+/*  */
+/*                             {# <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}</textarea> #}*/
+/*                             */
+/*                                 {# */
+/*                                 <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">*/
+/*   */
+/*  */
+/*                                 <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>*/
 /* */
-/*                             <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11"  name="contCapitulo" value="{{contCapitulo}}">{{contCapitulo}}*/
-/*                             </textarea>*/
-/*                             <label for="contact-message" class="Lcontact-message valL cl"  id="labelContC">Escriba su historia aquí...</label>*/
+/*                                 <textarea ng-model="htmlcontent" style="width: 100%;height:100px" name="contCapitulo"></textarea>*/
+/*                                 */
+/*                                     </div>   #}*/
 /* */
+/*                                 <textarea id="summernote"  name="contCapitulo">{{contCapitulo}}</textarea>*/
 /*                         </div>*/
 /*                     </div>*/
 /*                 </div>*/
 /*     </div>*/
 /* */
-/*       {# <div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">*/
-/*   */
-/*  */
-/*   <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>*/
+/*     */
 /* */
-/*   <textarea ng-model="htmlcontent" style="width: 100%;height:100px"><h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style="color: green;">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class="text-danger">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p></textarea>*/
-/*  */
-/*     </div> #}*/
 /*     <div>*/
 /*     */
 /*      <form> */

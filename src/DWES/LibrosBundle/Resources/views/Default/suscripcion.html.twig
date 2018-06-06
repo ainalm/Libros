@@ -1,129 +1,167 @@
-{% extends 'DWESLibrosBundle::layout.html.twig' %}
+{% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}
+<!--Intro Section-->
+<div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}'); margin-top: 27px;">
+    <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">
+        <div class="container my-5 pt-5">
+
+            <!-- Section heading -->
+            <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>Suscripción</strong>
+            </h3>
+            <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>
 
 
-{% block portada %}
-    <!--Intro Section-->
-   <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}'); margin-top: 27px;">
-            <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">
-                <div class="container my-5 pt-5">
-
-                    <!-- Section heading -->
-                    <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
-                        <strong>Suscripción</strong>
-                    </h3>
-                    <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>
-                    
-
-                </div>
-            </div>
-        </div> 
-            
+        </div>
+    </div>
+</div>
 
 
 
 
-{% endblock %}
 
-{% block contenido %} 
+{% endblock %} {% block contenido %}
 <div class="container">
-<section class="section pb-3 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
-{% for item in suscripciones %}
-    {{item.tipoSuscripcion}}
-  
- {% endfor %}
- 
-                <!--Section heading-->
-                <h1 class="section-heading h1 pt-4">Nuestros planes</h1>
-                <!--Section description-->
-                <p class="section-description mb-5 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
 
-                <!--Grid row-->
-                <div class="row">
- -
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Card-->
-                        <div class="card">
+    <!--Section: Pricing v.5-->
+    <section class="text-center my-5">
 
-                            <!--Content-->
-                            <div class="text-center">
-                                <div class="card-body">
-                                    <h5>Gratis</h5>
-                                    <div class="flex-center">
-                                        <div class="card-circle">
-                                            <i class="fa fa-home light-blue-text"></i>
-                                        </div>
-                                    </div>
+        <!--Section heading-->
+        <h2 class="title font-weight-bold my-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+            <strong>Nuestros planes de precios</strong>
+        </h2>
 
-                                    <!--Price-->
-                                    <h2 class="font-weight-bold mb-2">0€</h2>
-                                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa pariatur id nobis accusamus deleniti cumque hic laborum.</p>
-                                    <a class="btn btn-light-blue btn-rounded waves-effect waves-light">Seleccionar</a>
-                                </div>
+        <!--Section description-->
+        <p class="grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse
+            quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-5">
+                <!--Card-->
+                <div class="pricing-card card" style="
+    min-height: 471.08px;
+">
+
+                    <!--Content-->
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mt-3">Gratuita</h5>
+                        <!--Price-->
+                        <div class="price pt-0">
+                            <h2 class="number orange-text mb-0">10</h2>
+                        </div>
+                        <!--Price-->
+                        <ul class="list-unstyled striped title">
+                            <li>
+                                <p>
+                                    <strong>{{numGratis}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
+                            </li>
+
+                        </ul>
+
+                        {% if suscripcion == "gratis" %}
+                                 {% if vencida == "vencida" %}
+                            <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
+                            cursor: context-menu;
+                            ">Eliga otro plan </a>
+
+                                {% endif %}
+                        {% else %}
+
+                        <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <!--Card-->
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-5">
+
+                <!-- Card -->
+                <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(8).jpg');min-height: 471.08px;">
+
+                    <!-- Content -->
+                    <div class="text-white text-center pricing-card d-flex align-items-center rgba-indigo-strong py-3 px-3 rounded" style="
+    min-height: 471.08px;
+">
+
+                        <!--Content-->
+                        <div class="card-body">
+                            <h5 class="font-weight-bold mt-2">Básica</h5>
+                            <!--Price-->
+                            <div class="price pt-0">
+                                <h2 class="number mb-0">20</h2>
                             </div>
+                            <!--Price-->
+                            <ul class="list-unstyled striped">
+                                <li>
+                                    <p>
+                                        <strong>{{numBasica}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
+                                </li>
+
+
+                            </ul>
+
+                            {% if suscripcion == "basica" %}
+                            <a class=" btn btn-rounded btn-outline-white waves-effect waves-light" style="
+                        cursor: context-menu;
+                    ">Plan actual </a>
+                            {% else %}
+                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Seleccionar</a>
+                            {% endif %}
 
                         </div>
-                        <!--Card-->
+
                     </div>
-                    <!--Grid column-->
+                </div>
+                <!--Card-->
+            </div>
+            <!--Grid column-->
 
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Card-->
-                        <div class="card purple-gradient">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-5">
+                <!--Card-->
+                <div class="pricing-card card" style="
+                            min-height: 471.08px;
+                        ">
 
-                            <!--Content-->
-                            <div class="text-center white-text">
-                                <div class="card-body">
-                                    <h5>Básica</h5>
-                                    <div class="flex-center">
-                                        <div class="card-circle">
-                                            <i class="fa fa-group white-text"></i>
-                                        </div>
-                                    </div>
-
-                                    <!--Price-->
-                                    <h2 class="font-weight-bold mb-2">10€</h2>
-                                    <p>Esse corporis saepe laudantium velit adipisci cumque iste ratione facere non distinctio cupiditate sequi atque.</p>
-                                    <a class="btn btn-outline-white btn-rounded waves-effect waves-light">Seleccionar</a>
-                                </div>
-                            </div>
-
+                    <!--Content-->
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mt-3">Premium</h5>
+                        <!--Price-->
+                        <div class="price pt-0">
+                            <h2 class="number orange-text mb-0">30</h2>
                         </div>
-                        <!--Card-->
+                        <!--Price-->
+                        <ul class="list-unstyled striped title">
+                            <li>
+                                <p>
+                                    <strong>{{numPremium}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
+                            </li>
+
+                        </ul>
+                        {% if suscripcion == "premium" %}
+                        <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
+                        cursor: context-menu;">Plan actual</a>
+                        {% else %}
+                        <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>
+                        {% endif %}
                     </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Content-->
-                            <div class="text-center">
-                                <div class="card-body">
-                                    <h5>premium</h5>
-                                    <div class="flex-center">
-                                        <div class="card-circle">
-                                            <i class="fa fa-bar-chart light-blue-text"></i>
-                                        </div>
-                                    </div>
-
-                                    <!--Price-->
-                                    <h2 class="font-weight-bold mb-2">25€</h2>
-                                    <p class="grey-text">At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium repellat eveniet quia vitae.</p>
-                                    <a class="btn btn-light-blue btn-rounded waves-effect waves-light">Seleccionar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--Card-->
-                    </div>
-                    <!--Grid column-->
 
                 </div>
-                <!--Grid row-->
+                <!--Card-->
+            </div>
+            <!--Grid column-->
 
-            </section>
+        </div>
+        <!--Grid row-->
+
+    </section>
+    <!--Section: Pricing v.5-->
+
 </div>
 {%endblock %}

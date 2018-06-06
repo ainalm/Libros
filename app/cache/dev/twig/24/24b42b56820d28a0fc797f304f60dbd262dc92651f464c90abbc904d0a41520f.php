@@ -151,46 +151,6 @@ class __TwigTemplate_7f6555676a486573f2d47c6f06b139deb1313c55568cf11293e90f94fc8
                       
 
                         </section>
-                        <!--Section: Blog v.3-->
-
-                        <!--Pagination dark grey-->
-                        <nav class=\"mb-5 pb-2\">
-                            <ul class=\"pagination pg-darkgrey flex-center\">
-                                <!--Arrow left-->
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\" aria-label=\"Previous\">
-                                        <span aria-hidden=\"true\">«</span>
-                                        <span class=\"sr-only\">Previous</span>
-                                    </a>
-                                </li>
-
-                                <!--Numbers-->
-                                <li class=\"page-item active\">
-                                    <a class=\"page-link waves-effect waves-effect\">1</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">2</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">3</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">4</a>
-                                </li>
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\">5</a>
-                                </li>
-
-                                <!--Arrow right-->
-                                <li class=\"page-item\">
-                                    <a class=\"page-link waves-effect waves-effect\" aria-label=\"Next\">
-                                        <span aria-hidden=\"true\">»</span>
-                                        <span class=\"sr-only\">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--Pagination dark grey-->
 
                     </div>
                     <!--Main listing-->
@@ -309,46 +269,6 @@ class __TwigTemplate_7f6555676a486573f2d47c6f06b139deb1313c55568cf11293e90f94fc8
 /*                       */
 /* */
 /*                         </section>*/
-/*                         <!--Section: Blog v.3-->*/
-/* */
-/*                         <!--Pagination dark grey-->*/
-/*                         <nav class="mb-5 pb-2">*/
-/*                             <ul class="pagination pg-darkgrey flex-center">*/
-/*                                 <!--Arrow left-->*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect" aria-label="Previous">*/
-/*                                         <span aria-hidden="true">«</span>*/
-/*                                         <span class="sr-only">Previous</span>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/* */
-/*                                 <!--Numbers-->*/
-/*                                 <li class="page-item active">*/
-/*                                     <a class="page-link waves-effect waves-effect">1</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">2</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">3</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">4</a>*/
-/*                                 </li>*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect">5</a>*/
-/*                                 </li>*/
-/* */
-/*                                 <!--Arrow right-->*/
-/*                                 <li class="page-item">*/
-/*                                     <a class="page-link waves-effect waves-effect" aria-label="Next">*/
-/*                                         <span aria-hidden="true">»</span>*/
-/*                                         <span class="sr-only">Next</span>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                             </ul>*/
-/*                         </nav>*/
-/*                         <!--Pagination dark grey-->*/
 /* */
 /*                     </div>*/
 /*                     <!--Main listing-->*/

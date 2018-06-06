@@ -456,6 +456,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // dwes_libros_normas
+        if (rtrim($pathinfo, '/') === '/normas') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_normas');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::normasAction',  '_route' => 'dwes_libros_normas',);
+        }
+
+        // dwes_libros_suscriSelect
+        if (0 === strpos($pathinfo, '/suscriSelect') && preg_match('#^/suscriSelect/(?P<tipo>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_suscriSelect')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::suscriSelectAction',));
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

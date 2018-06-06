@@ -210,3 +210,15 @@ dwes_libros_delComentarioLib:
     defaults: { _controller: DWESLibrosBundle:Default:delComentarioLib }
     requirements:
         page: \d+
+
+dwes_libros_normas:
+    path: /normas/
+    defaults: { _controller: DWESLibrosBundle:Default:normas }
+    requirements:
+        page: \d+
+
+dwes_libros_suscriSelect:
+    path: /suscriSelect/{tipo}
+    defaults: { _controller: DWESLibrosBundle:Default:suscriSelect }
+    requirements:
+        page: \d+

@@ -303,23 +303,12 @@ $("#negra").on("click",function(e) {
 //Cuento los carácteres y palabras introducidas
 
 
-
-$("#contact-message").keydown(function(event) {
-  char_count = $("#contact-message").val().length;
-word_count = $("#contact-message").val().split(" ").length;
-
-  $("#carac").text(char_count);
-  $("#palab").text(word_count);
-  
-});
-
-
 //Cambio del tamaño fuente (CAPITULO)
-// When + or - buttons are clicked the font size of the h1 is increased/decreased by 2
-// The max is set to 50px for this demo, the min is set by min font in the user's style sheet
+//Si el usuairo pulsa + o - , el tamaño aumento/disminuye 2px en cada click
+// El tamaño máximo de fuente es 50
 
 function getSize() {
-  size = $( "#contact-message" ).css( "font-size" );
+  size = $( ".fuente > *" ).css( "font-size" );
   size = parseInt(size, 10);
  // $( "#font-size" ).text(  size  );
 }
@@ -328,20 +317,25 @@ function getSize() {
 getSize();
 
 $( "#letraUp" ).on( "click", function() {
-  console.log("+")
+
   
   // parse font size
   if ((size + 2) <= 50) {
-    $( "#contact-message" ).css( "font-size", "+=2" );
+    console.log("+")
+    $( ".fuente > *" ).css( "font-size", "+=2" );
+
+
    
   }
 });
 
 $( "#letraDown" ).on( "click", function() {
-  console.log("-")
+  
   
   if ((size - 2) >= 12) {
-    $( "#contact-message" ).css( "font-size", "-=2" );
+    console.log("-")
+    $( ".fuente > *" ).css( "font-size", "-=2" );
+
   
   }
 
@@ -350,7 +344,7 @@ $( "#letraDown" ).on( "click", function() {
 });
 
 $( "#updatePerfil" ).on( "click", function() {
-//Previsualiza la imagen seleccionada de perfil antes de actualizar el perfil
+//Previsualiza la imagen seleccionada de perfil antes de actualizar el perfil y comprueba que el formato es de una imagen
   var image_name = $('#file-upload').val();
                 var extension = $('#file-upload').val().split('.').pop().toLowerCase();  
                 if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','']) == -1)  
@@ -361,6 +355,7 @@ $( "#updatePerfil" ).on( "click", function() {
                 }  
 });
 
+/* Borro la imágen de portada y pongo una por defecto */
 $( ".borrarImg" ).on( "click", function() {
   $("#camb").attr("src","http://www.iconarchive.com/download/i86027/graphicloads/100-flat-2/arrow-upload.ico");
 
@@ -374,7 +369,7 @@ $( ".borrarImgL" ).on( "click", function() {
   $(".titPortada").css("display", "initial");
 });
 
-//Modal Video
+//Pone la URL del vídeo 
 
 $(".video").click(function () {
       var theModal = $(this).data("target"),
@@ -385,7 +380,7 @@ $(".video").click(function () {
      
     });
 
-
+/* Cierra el vídeo */
     $(".cldose").click(function () {
      
       $("#videof").attr('src', "");
@@ -393,48 +388,6 @@ $(".video").click(function () {
      
     });
 
-    //Toggle añadir a biblioteca / Favoritos
-/* 
-urlAñadir=""
-    $("#enbiblioteca").click(function () { 
-      icon=$(".bibIco");
-      if ($(icon).hasClass('select')) {
-        $(icon).attr("class", "fas fa-plus mr-1 font-weight-bold favoritIcon deselect bibIco");
-        $(this).html("<a class='text-dark cl' href='#'><i class='fas fa-plus mr-1 font-weight-bold favoritIcon deselect bibIco' ></i>  Añadir a  mi lista</a>");
-        $('.cl').attr('style', 'color: #4285f4 !important');  
-         add=$("#addBiblio").attr("href");
-          $(".addhref").attr("href",add);
-          return false; 
-    }
-    else {
-        $(icon).removeClass('deselect').addClass('select');
-        $(icon).attr("class", " far fa-bookmark mr-1 font-weight-bold select bibIco");
-        $(this).html(" <a class='text-dark addhref cl' href='#' > <i class='far fa-bookmark mr-1 font-weight-bold select bibIco' ></i>En mi lista</a>");
-        $('.cl').attr('style', 'color: #4285f4 !important');  
-
-    
-        
-    }
-
-    });
-
-
-    $("#enfavoritos").click(function () { 
-      icon=$(".favIco");
-      if ($(icon).hasClass('select')) {
-        $(icon).attr("class", "fas fa-plus mr-1 font-weight-bold favoritIcon deselect favIco");
-        $(this).html("<i class='fas fa-plus mr-1 font-weight-bold favoritIcon deselect favIco' ></i> <a class='text-dark cl' href='#'> Añadir a favoritos</a>");
-        $('.cl').attr('style', 'color: #4285f4 !important');   
-    }
-    else {
-        $(icon).removeClass('deselect').addClass('select');
-        $(icon).attr("class", " far fa-bookmark mr-1 font-weight-bold select favIco");
-        $(this).html("<i class='far fa-bookmark mr-1 font-weight-bold select favIco' ></i> <a class='text-dark' href='#'> En favoritos</a>");
-        $('.cl').attr('style', 'color: #4285f4 !important');  
-    }
-
-    });
- */
 
    
 /* Guarda la posición del Scroll después de refrescar la página */

@@ -25,32 +25,31 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
     public function block_portada($context, array $blocks = array())
     {
-        // line 5
-        echo "    <!--Intro Section-->
-   <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
-        // line 6
+        // line 2
+        echo "<!--Intro Section-->
+<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
+        // line 3
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
         echo "'); margin-top: 27px;\">
-            <div class=\"flex-center  \" style=\"background-color: rgba(17, 27, 43, 0.7);\">
-                <div class=\"container my-5 pt-5\">
+    <div class=\"flex-center  \" style=\"background-color: rgba(17, 27, 43, 0.7);\">
+        <div class=\"container my-5 pt-5\">
 
-                    <!-- Section heading -->
-                    <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
-                        <strong>Suscripción</strong>
-                    </h3>
-                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">@";
-        // line 14
+            <!-- Section heading -->
+            <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+                <strong>Suscripción</strong>
+            </h3>
+            <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">@";
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
         echo "</h6>
-                    
 
-                </div>
-            </div>
-        </div> 
-            
+
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -58,122 +57,194 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 ";
     }
 
-    // line 27
+    // line 22
     public function block_contenido($context, array $blocks = array())
     {
-        echo " 
-<div class=\"container\">
-<section class=\"section pb-3 wow fadeIn\" data-wow-delay=\"0.3s\" style=\"visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;\">
-";
-        // line 30
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["suscripciones"]) ? $context["suscripciones"] : $this->getContext($context, "suscripciones")));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 31
-            echo "    ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tipoSuscripcion", array()), "html", null, true);
+        // line 23
+        echo "<div class=\"container\">
+
+    <!--Section: Pricing v.5-->
+    <section class=\"text-center my-5\">
+
+        <!--Section heading-->
+        <h2 class=\"title font-weight-bold my-5 wow fadeIn\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;\">
+            <strong>Nuestros planes de precios</strong>
+        </h2>
+
+        <!--Section description-->
+        <p class=\"grey-text w-responsive mx-auto mb-5\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse
+            quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+
+        <!--Grid row-->
+        <div class=\"row\">
+
+            <!--Grid column-->
+            <div class=\"col-lg-4 col-md-12 mb-5\">
+                <!--Card-->
+                <div class=\"pricing-card card\" style=\"
+    min-height: 471.08px;
+\">
+
+                    <!--Content-->
+                    <div class=\"card-body\">
+                        <h5 class=\"font-weight-bold mt-3\">Gratuita</h5>
+                        <!--Price-->
+                        <div class=\"price pt-0\">
+                            <h2 class=\"number orange-text mb-0\">10</h2>
+                        </div>
+                        <!--Price-->
+                        <ul class=\"list-unstyled striped title\">
+                            <li>
+                                <p>
+                                    <strong>";
+        // line 58
+        echo twig_escape_filter($this->env, (isset($context["numGratis"]) ? $context["numGratis"] : $this->getContext($context, "numGratis")), "html", null, true);
+        echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
+                            </li>
+
+                        </ul>
+
+                        ";
+        // line 63
+        if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis")) {
+            // line 64
+            echo "                                 ";
+            if (((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencida")) {
+                // line 65
+                echo "                            <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
+                            cursor: context-menu;
+                            \">Eliga otro plan </a>
+
+                                ";
+            }
+            // line 70
+            echo "                        ";
+        } else {
+            // line 71
             echo "
-  
- ";
+                        <a href=\"";
+            // line 72
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
+            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar</a>
+                        ";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
-        echo " 
-                <!--Section heading-->
-                <h1 class=\"section-heading h1 pt-4\">Nuestros planes</h1>
-                <!--Section description-->
-                <p class=\"section-description mb-5 pb-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
-
-                <!--Grid row-->
-                <div class=\"row\">
-
-                    <!--Grid column-->
-                    <div class=\"col-lg-4 col-md-12 mb-4\">
-                        <!--Card-->
-                        <div class=\"card\">
-
-                            <!--Content-->
-                            <div class=\"text-center\">
-                                <div class=\"card-body\">
-                                    <h5>Gratis</h5>
-                                    <div class=\"flex-center\">
-                                        <div class=\"card-circle\">
-                                            <i class=\"fa fa-home light-blue-text\"></i>
-                                        </div>
-                                    </div>
-
-                                    <!--Price-->
-                                    <h2 class=\"font-weight-bold mb-2\">0€</h2>
-                                    <p class=\"grey-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa pariatur id nobis accusamus deleniti cumque hic laborum.</p>
-                                    <a class=\"btn btn-light-blue btn-rounded waves-effect waves-light\">Seleccionar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--Card-->
+        // line 74
+        echo "
                     </div>
-                    <!--Grid column-->
+                </div>
+                <!--Card-->
+            </div>
+            <!--Grid column-->
 
-                    <!--Grid column-->
-                    <div class=\"col-lg-4 col-md-12 mb-4\">
-                        <!--Card-->
-                        <div class=\"card purple-gradient\">
+            <!--Grid column-->
+            <div class=\"col-lg-4 col-md-12 mb-5\">
 
-                            <!--Content-->
-                            <div class=\"text-center white-text\">
-                                <div class=\"card-body\">
-                                    <h5>Básica</h5>
-                                    <div class=\"flex-center\">
-                                        <div class=\"card-circle\">
-                                            <i class=\"fa fa-group white-text\"></i>
-                                        </div>
-                                    </div>
+                <!-- Card -->
+                <div class=\"card card-image\" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(8).jpg');min-height: 471.08px;\">
 
-                                    <!--Price-->
-                                    <h2 class=\"font-weight-bold mb-2\">10€</h2>
-                                    <p>Esse corporis saepe laudantium velit adipisci cumque iste ratione facere non distinctio cupiditate sequi atque.</p>
-                                    <a class=\"btn btn-outline-white btn-rounded waves-effect waves-light\">Seleccionar</a>
-                                </div>
+                    <!-- Content -->
+                    <div class=\"text-white text-center pricing-card d-flex align-items-center rgba-indigo-strong py-3 px-3 rounded\" style=\"
+    min-height: 471.08px;
+\">
+
+                        <!--Content-->
+                        <div class=\"card-body\">
+                            <h5 class=\"font-weight-bold mt-2\">Básica</h5>
+                            <!--Price-->
+                            <div class=\"price pt-0\">
+                                <h2 class=\"number mb-0\">20</h2>
                             </div>
+                            <!--Price-->
+                            <ul class=\"list-unstyled striped\">
+                                <li>
+                                    <p>
+                                        <strong>";
+        // line 103
+        echo twig_escape_filter($this->env, (isset($context["numBasica"]) ? $context["numBasica"] : $this->getContext($context, "numBasica")), "html", null, true);
+        echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
+                                </li>
 
+
+                            </ul>
+
+                            ";
+        // line 109
+        if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica")) {
+            // line 110
+            echo "                            <a class=\" btn btn-rounded btn-outline-white waves-effect waves-light\" style=\"
+                        cursor: context-menu;
+                    \">Plan actual </a>
+                            ";
+        } else {
+            // line 114
+            echo "                            <a href=\"";
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "basica"));
+            echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Seleccionar</a>
+                            ";
+        }
+        // line 116
+        echo "
                         </div>
-                        <!--Card-->
+
                     </div>
-                    <!--Grid column-->
+                </div>
+                <!--Card-->
+            </div>
+            <!--Grid column-->
 
-                    <!--Grid column-->
-                    <div class=\"col-lg-4 col-md-12 mb-4\">
-                        <!--Card-->
-                        <div class=\"card\">
+            <!--Grid column-->
+            <div class=\"col-lg-4 col-md-12 mb-5\">
+                <!--Card-->
+                <div class=\"pricing-card card\" style=\"
+                            min-height: 471.08px;
+                        \">
 
-                            <!--Content-->
-                            <div class=\"text-center\">
-                                <div class=\"card-body\">
-                                    <h5>premium</h5>
-                                    <div class=\"flex-center\">
-                                        <div class=\"card-circle\">
-                                            <i class=\"fa fa-bar-chart light-blue-text\"></i>
-                                        </div>
-                                    </div>
-
-                                    <!--Price-->
-                                    <h2 class=\"font-weight-bold mb-2\">25€</h2>
-                                    <p class=\"grey-text\">At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium repellat eveniet quia vitae.</p>
-                                    <a class=\"btn btn-light-blue btn-rounded waves-effect waves-light\">Seleccionar</a>
-                                </div>
-                            </div>
-
+                    <!--Content-->
+                    <div class=\"card-body\">
+                        <h5 class=\"font-weight-bold mt-3\">Premium</h5>
+                        <!--Price-->
+                        <div class=\"price pt-0\">
+                            <h2 class=\"number orange-text mb-0\">30</h2>
                         </div>
-                        <!--Card-->
-                    </div>
-                    <!--Grid column-->
+                        <!--Price-->
+                        <ul class=\"list-unstyled striped title\">
+                            <li>
+                                <p>
+                                    <strong>";
+        // line 143
+        echo twig_escape_filter($this->env, (isset($context["numPremium"]) ? $context["numPremium"] : $this->getContext($context, "numPremium")), "html", null, true);
+        echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
+                            </li>
+
+                        </ul>
+                        ";
+        // line 147
+        if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "premium")) {
+            // line 148
+            echo "                        <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
+                        cursor: context-menu;\">Plan actual</a>
+                        ";
+        } else {
+            // line 151
+            echo "                        <a href=\"";
+            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "basica"));
+            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar</a>
+                        ";
+        }
+        // line 153
+        echo "                    </div>
 
                 </div>
-                <!--Grid row-->
+                <!--Card-->
+            </div>
+            <!--Grid column-->
 
-            </section>
+        </div>
+        <!--Grid row-->
+
+    </section>
+    <!--Section: Pricing v.5-->
+
 </div>
 ";
     }
@@ -190,135 +261,173 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
     public function getDebugInfo()
     {
-        return array (  83 => 34,  73 => 31,  69 => 30,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  235 => 153,  229 => 151,  224 => 148,  222 => 147,  215 => 143,  186 => 116,  180 => 114,  174 => 110,  172 => 109,  163 => 103,  132 => 74,  127 => 72,  124 => 71,  121 => 70,  114 => 65,  111 => 64,  109 => 63,  101 => 58,  64 => 23,  61 => 22,  45 => 11,  34 => 3,  31 => 2,  11 => 1,);
     }
 }
-/* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
+/* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
+/* <!--Intro Section-->*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}'); margin-top: 27px;">*/
+/*     <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">*/
+/*         <div class="container my-5 pt-5">*/
+/* */
+/*             <!-- Section heading -->*/
+/*             <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*                 <strong>Suscripción</strong>*/
+/*             </h3>*/
+/*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>*/
 /* */
 /* */
-/* {% block portada %}*/
-/*     <!--Intro Section-->*/
-/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}'); margin-top: 27px;">*/
-/*             <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">*/
-/*                 <div class="container my-5 pt-5">*/
-/* */
-/*                     <!-- Section heading -->*/
-/*                     <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
-/*                         <strong>Suscripción</strong>*/
-/*                     </h3>*/
-/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>*/
-/*                     */
-/* */
-/*                 </div>*/
-/*             </div>*/
-/*         </div> */
-/*             */
+/*         </div>*/
+/*     </div>*/
+/* </div>*/
 /* */
 /* */
 /* */
 /* */
-/* {% endblock %}*/
 /* */
-/* {% block contenido %} */
+/* {% endblock %} {% block contenido %}*/
 /* <div class="container">*/
-/* <section class="section pb-3 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">*/
-/* {% for item in suscripciones %}*/
-/*     {{item.tipoSuscripcion}}*/
-/*   */
-/*  {% endfor %}*/
-/*  */
-/*                 <!--Section heading-->*/
-/*                 <h1 class="section-heading h1 pt-4">Nuestros planes</h1>*/
-/*                 <!--Section description-->*/
-/*                 <p class="section-description mb-5 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>*/
 /* */
-/*                 <!--Grid row-->*/
-/*                 <div class="row">*/
+/*     <!--Section: Pricing v.5-->*/
+/*     <section class="text-center my-5">*/
 /* */
-/*                     <!--Grid column-->*/
-/*                     <div class="col-lg-4 col-md-12 mb-4">*/
-/*                         <!--Card-->*/
-/*                         <div class="card">*/
+/*         <!--Section heading-->*/
+/*         <h2 class="title font-weight-bold my-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">*/
+/*             <strong>Nuestros planes de precios</strong>*/
+/*         </h2>*/
 /* */
-/*                             <!--Content-->*/
-/*                             <div class="text-center">*/
-/*                                 <div class="card-body">*/
-/*                                     <h5>Gratis</h5>*/
-/*                                     <div class="flex-center">*/
-/*                                         <div class="card-circle">*/
-/*                                             <i class="fa fa-home light-blue-text"></i>*/
-/*                                         </div>*/
-/*                                     </div>*/
+/*         <!--Section description-->*/
+/*         <p class="grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse*/
+/*             quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>*/
 /* */
-/*                                     <!--Price-->*/
-/*                                     <h2 class="font-weight-bold mb-2">0€</h2>*/
-/*                                     <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa pariatur id nobis accusamus deleniti cumque hic laborum.</p>*/
-/*                                     <a class="btn btn-light-blue btn-rounded waves-effect waves-light">Seleccionar</a>*/
-/*                                 </div>*/
+/*         <!--Grid row-->*/
+/*         <div class="row">*/
+/* */
+/*             <!--Grid column-->*/
+/*             <div class="col-lg-4 col-md-12 mb-5">*/
+/*                 <!--Card-->*/
+/*                 <div class="pricing-card card" style="*/
+/*     min-height: 471.08px;*/
+/* ">*/
+/* */
+/*                     <!--Content-->*/
+/*                     <div class="card-body">*/
+/*                         <h5 class="font-weight-bold mt-3">Gratuita</h5>*/
+/*                         <!--Price-->*/
+/*                         <div class="price pt-0">*/
+/*                             <h2 class="number orange-text mb-0">10</h2>*/
+/*                         </div>*/
+/*                         <!--Price-->*/
+/*                         <ul class="list-unstyled striped title">*/
+/*                             <li>*/
+/*                                 <p>*/
+/*                                     <strong>{{numGratis}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>*/
+/*                             </li>*/
+/* */
+/*                         </ul>*/
+/* */
+/*                         {% if suscripcion == "gratis" %}*/
+/*                                  {% if vencida == "vencida" %}*/
+/*                             <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
+/*                             cursor: context-menu;*/
+/*                             ">Eliga otro plan </a>*/
+/* */
+/*                                 {% endif %}*/
+/*                         {% else %}*/
+/* */
+/*                         <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>*/
+/*                         {% endif %}*/
+/* */
+/*                     </div>*/
+/*                 </div>*/
+/*                 <!--Card-->*/
+/*             </div>*/
+/*             <!--Grid column-->*/
+/* */
+/*             <!--Grid column-->*/
+/*             <div class="col-lg-4 col-md-12 mb-5">*/
+/* */
+/*                 <!-- Card -->*/
+/*                 <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(8).jpg');min-height: 471.08px;">*/
+/* */
+/*                     <!-- Content -->*/
+/*                     <div class="text-white text-center pricing-card d-flex align-items-center rgba-indigo-strong py-3 px-3 rounded" style="*/
+/*     min-height: 471.08px;*/
+/* ">*/
+/* */
+/*                         <!--Content-->*/
+/*                         <div class="card-body">*/
+/*                             <h5 class="font-weight-bold mt-2">Básica</h5>*/
+/*                             <!--Price-->*/
+/*                             <div class="price pt-0">*/
+/*                                 <h2 class="number mb-0">20</h2>*/
 /*                             </div>*/
+/*                             <!--Price-->*/
+/*                             <ul class="list-unstyled striped">*/
+/*                                 <li>*/
+/*                                     <p>*/
+/*                                         <strong>{{numBasica}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>*/
+/*                                 </li>*/
+/* */
+/* */
+/*                             </ul>*/
+/* */
+/*                             {% if suscripcion == "basica" %}*/
+/*                             <a class=" btn btn-rounded btn-outline-white waves-effect waves-light" style="*/
+/*                         cursor: context-menu;*/
+/*                     ">Plan actual </a>*/
+/*                             {% else %}*/
+/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Seleccionar</a>*/
+/*                             {% endif %}*/
 /* */
 /*                         </div>*/
-/*                         <!--Card-->*/
+/* */
 /*                     </div>*/
-/*                     <!--Grid column-->*/
+/*                 </div>*/
+/*                 <!--Card-->*/
+/*             </div>*/
+/*             <!--Grid column-->*/
 /* */
-/*                     <!--Grid column-->*/
-/*                     <div class="col-lg-4 col-md-12 mb-4">*/
-/*                         <!--Card-->*/
-/*                         <div class="card purple-gradient">*/
+/*             <!--Grid column-->*/
+/*             <div class="col-lg-4 col-md-12 mb-5">*/
+/*                 <!--Card-->*/
+/*                 <div class="pricing-card card" style="*/
+/*                             min-height: 471.08px;*/
+/*                         ">*/
 /* */
-/*                             <!--Content-->*/
-/*                             <div class="text-center white-text">*/
-/*                                 <div class="card-body">*/
-/*                                     <h5>Básica</h5>*/
-/*                                     <div class="flex-center">*/
-/*                                         <div class="card-circle">*/
-/*                                             <i class="fa fa-group white-text"></i>*/
-/*                                         </div>*/
-/*                                     </div>*/
-/* */
-/*                                     <!--Price-->*/
-/*                                     <h2 class="font-weight-bold mb-2">10€</h2>*/
-/*                                     <p>Esse corporis saepe laudantium velit adipisci cumque iste ratione facere non distinctio cupiditate sequi atque.</p>*/
-/*                                     <a class="btn btn-outline-white btn-rounded waves-effect waves-light">Seleccionar</a>*/
-/*                                 </div>*/
-/*                             </div>*/
-/* */
+/*                     <!--Content-->*/
+/*                     <div class="card-body">*/
+/*                         <h5 class="font-weight-bold mt-3">Premium</h5>*/
+/*                         <!--Price-->*/
+/*                         <div class="price pt-0">*/
+/*                             <h2 class="number orange-text mb-0">30</h2>*/
 /*                         </div>*/
-/*                         <!--Card-->*/
+/*                         <!--Price-->*/
+/*                         <ul class="list-unstyled striped title">*/
+/*                             <li>*/
+/*                                 <p>*/
+/*                                     <strong>{{numPremium}}</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>*/
+/*                             </li>*/
+/* */
+/*                         </ul>*/
+/*                         {% if suscripcion == "premium" %}*/
+/*                         <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
+/*                         cursor: context-menu;">Plan actual</a>*/
+/*                         {% else %}*/
+/*                         <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Seleccionar</a>*/
+/*                         {% endif %}*/
 /*                     </div>*/
-/*                     <!--Grid column-->*/
-/* */
-/*                     <!--Grid column-->*/
-/*                     <div class="col-lg-4 col-md-12 mb-4">*/
-/*                         <!--Card-->*/
-/*                         <div class="card">*/
-/* */
-/*                             <!--Content-->*/
-/*                             <div class="text-center">*/
-/*                                 <div class="card-body">*/
-/*                                     <h5>premium</h5>*/
-/*                                     <div class="flex-center">*/
-/*                                         <div class="card-circle">*/
-/*                                             <i class="fa fa-bar-chart light-blue-text"></i>*/
-/*                                         </div>*/
-/*                                     </div>*/
-/* */
-/*                                     <!--Price-->*/
-/*                                     <h2 class="font-weight-bold mb-2">25€</h2>*/
-/*                                     <p class="grey-text">At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium repellat eveniet quia vitae.</p>*/
-/*                                     <a class="btn btn-light-blue btn-rounded waves-effect waves-light">Seleccionar</a>*/
-/*                                 </div>*/
-/*                             </div>*/
-/* */
-/*                         </div>*/
-/*                         <!--Card-->*/
-/*                     </div>*/
-/*                     <!--Grid column-->*/
 /* */
 /*                 </div>*/
-/*                 <!--Grid row-->*/
+/*                 <!--Card-->*/
+/*             </div>*/
+/*             <!--Grid column-->*/
 /* */
-/*             </section>*/
+/*         </div>*/
+/*         <!--Grid row-->*/
+/* */
+/*     </section>*/
+/*     <!--Section: Pricing v.5-->*/
+/* */
 /* </div>*/
 /* {%endblock %}*/

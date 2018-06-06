@@ -307,7 +307,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 <!--/.Footer-->
 
 
-
+ 
 ";
     }
 
@@ -399,44 +399,36 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/script.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
-  ";
-        // line 228
+";
+        // line 226
         echo "     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/material.min.css"), "html", null, true);
         echo "\" /> 
     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-        // line 229
+        // line 227
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/dataTables.material.min.css"), "html", null, true);
         echo "\" /> 
 
      <script src=\"";
-        // line 231
+        // line 229
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script> 
      <script src=\"";
-        // line 232
+        // line 230
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/dataTables.material.min.js"), "html", null, true);
         echo "\"></script> 
- ";
-        // line 234
-        echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js\"></script>
 ";
-        // line 236
-        echo " <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js'></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script>
-  ";
-        // line 240
-        echo "  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js\"></script>
- <script>
-    \tangular.module(\"textAngularTest\", ['textAngular']);
-\t    function wysiwygeditor(\$scope) {
-\t\t\$scope.orightml = '<h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style=\"color: green;\">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class=\"text-danger\">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href=\"https://github.com/fraywing/textAngular\">Here</a> </p>';
-\t\t\$scope.htmlcontent = \$scope.orightml;
-\t\t\$scope.disabled = false;
-\t};
+        // line 232
+        echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js\"></script>
 
-</script>
+";
+        // line 235
+        echo " <link href=\"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css\" rel=\"stylesheet\">
+ <script src=\"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js\"></script>
+ <script src=\"";
+        // line 237
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/editorSpanish.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
 
 
     
@@ -479,18 +471,39 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
   }    
     } ); 
                
-\$('.dt-table').addClass('col-lg-12');
-\$(\"#capitulos1_filter\").insertAfter(\".dt-table\");
+    \$('.dt-table').addClass('col-lg-12');
+    \$(\"#capitulos1_filter\").insertAfter(\".dt-table\");
 
 
     });
 
+\t
+        \$('#summernote').summernote({
+            callbacks: {
+        onChange: function() {
 
+            ///Cuento los carácteres y palabras introducidas
+        char_count = \$(\"#summernote\").val().length;
+        word_count = \$(\"#summernote\").val().split(\" \").length;
+
+  \$(\"#carac\").text(char_count);
+  \$(\"#palab\").text(word_count);
+    }
+  },
+        placeholder: 'Escriba su historia aquí...',
+        tabsize: 2,
+        height: 350,
+         lang: 'es-ES',
+
+       
+      });
     
 </script>
 
 
-     
+     <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type=\"text/javascript\" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b16754fa71e965a\"></script>
+
 ";
     }
 
@@ -506,7 +519,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     public function getDebugInfo()
     {
-        return array (  430 => 240,  425 => 236,  422 => 234,  418 => 232,  414 => 231,  409 => 229,  404 => 228,  399 => 223,  394 => 221,  388 => 218,  382 => 215,  377 => 213,  373 => 211,  370 => 210,  364 => 116,  353 => 107,  344 => 15,  339 => 13,  334 => 11,  329 => 9,  324 => 7,  318 => 3,  315 => 2,  302 => 201,  296 => 200,  292 => 199,  261 => 170,  257 => 169,  203 => 117,  201 => 116,  191 => 108,  187 => 107,  172 => 94,  167 => 92,  163 => 91,  158 => 90,  155 => 89,  150 => 88,  145 => 87,  141 => 85,  139 => 84,  125 => 73,  119 => 70,  111 => 65,  107 => 64,  103 => 63,  99 => 62,  95 => 61,  91 => 60,  87 => 59,  83 => 58,  80 => 57,  70 => 42,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
+        return array (  430 => 237,  426 => 235,  422 => 232,  418 => 230,  414 => 229,  409 => 227,  404 => 226,  399 => 223,  394 => 221,  388 => 218,  382 => 215,  377 => 213,  373 => 211,  370 => 210,  364 => 116,  353 => 107,  344 => 15,  339 => 13,  334 => 11,  329 => 9,  324 => 7,  318 => 3,  315 => 2,  302 => 201,  296 => 200,  292 => 199,  261 => 170,  257 => 169,  203 => 117,  201 => 116,  191 => 108,  187 => 107,  172 => 94,  167 => 92,  163 => 91,  158 => 90,  155 => 89,  150 => 88,  145 => 87,  141 => 85,  139 => 84,  125 => 73,  119 => 70,  111 => 65,  107 => 64,  103 => 63,  99 => 62,  95 => 61,  91 => 60,  87 => 59,  83 => 58,  80 => 57,  70 => 42,  66 => 41,  58 => 36,  47 => 28,  37 => 20,  11 => 2,);
     }
 }
 /* */
@@ -717,7 +730,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* <!--/.Footer-->*/
 /* */
 /* */
-/* */
+/*  */
 /* {% endblock %} {% block javascripts %}*/
 /* <!-- SCRIPTS -->*/
 /* <!-- JQuery -->*/
@@ -733,31 +746,19 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /* <!-- Mi JavaScript -->*/
 /* <script src="{{ asset('bundles/dweslibros/js/script.js') }}" type="text/javascript"></script>*/
 /* */
-/*   {#   <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />*/
-/* */
-/*  #}*/
+/* {# Librería DataTable #}*/
 /*      <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/dweslibros/dataTable/css/material.min.css') }}" /> */
 /*     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/dweslibros/dataTable/css/dataTables.material.min.css') }}" /> */
 /* */
 /*      <script src="{{ asset('bundles/dweslibros/dataTable/js/jquery.dataTables.min.js') }}"></script> */
 /*      <script src="{{ asset('bundles/dweslibros/dataTable/js/dataTables.material.min.js') }}"></script> */
-/*  {# Librería PDF #}*/
+/* {# Librería PDF #}*/
 /* <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>*/
-/* {# Librería Editor de Textos #}*/
-/*  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js'></script>*/
-/*   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js'></script>*/
-/*   <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script>*/
-/*   {# Cookie plugin para JQUERY #}*/
-/*   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>*/
-/*  <script>*/
-/*     	angular.module("textAngularTest", ['textAngular']);*/
-/* 	    function wysiwygeditor($scope) {*/
-/* 		$scope.orightml = '<h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li>Super Easy <b>Theming</b> Options</li><li style="color: green;">Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li class="text-danger">Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p>';*/
-/* 		$scope.htmlcontent = $scope.orightml;*/
-/* 		$scope.disabled = false;*/
-/* 	};*/
 /* */
-/* </script>*/
+/* {# Librería Editor de Textos #}*/
+/*  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">*/
+/*  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>*/
+/*  <script src="{{ asset('bundles/dweslibros/js/editorSpanish.js') }}" type="text/javascript"></script>*/
 /* */
 /* */
 /*     */
@@ -800,16 +801,37 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 /*   }    */
 /*     } ); */
 /*                */
-/* $('.dt-table').addClass('col-lg-12');*/
-/* $("#capitulos1_filter").insertAfter(".dt-table");*/
+/*     $('.dt-table').addClass('col-lg-12');*/
+/*     $("#capitulos1_filter").insertAfter(".dt-table");*/
 /* */
 /* */
 /*     });*/
 /* */
+/* 	*/
+/*         $('#summernote').summernote({*/
+/*             callbacks: {*/
+/*         onChange: function() {*/
 /* */
+/*             ///Cuento los carácteres y palabras introducidas*/
+/*         char_count = $("#summernote").val().length;*/
+/*         word_count = $("#summernote").val().split(" ").length;*/
+/* */
+/*   $("#carac").text(char_count);*/
+/*   $("#palab").text(word_count);*/
+/*     }*/
+/*   },*/
+/*         placeholder: 'Escriba su historia aquí...',*/
+/*         tabsize: 2,*/
+/*         height: 350,*/
+/*          lang: 'es-ES',*/
+/* */
+/*        */
+/*       });*/
 /*     */
 /* </script>*/
 /* */
 /* */
-/*      */
+/*      <!-- Go to www.addthis.com/dashboard to customize your tools -->*/
+/* <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b16754fa71e965a"></script>*/
+/* */
 /* {% endblock %}  */

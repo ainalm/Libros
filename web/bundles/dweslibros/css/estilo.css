@@ -168,3 +168,14 @@ cursor: pointer;
 #showLess:hover {
     color:black;
 }
+
+/* No muestra la opcón de subir una imagen */
+.note-group-select-from-files {
+  display: none;
+}
+
+.imgNormas{
+
+  width: 150px;
+  height: 139px;
+}

@@ -149,7 +149,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
         if(x == size_li){
             \$('#loadMore').hide();
         }
-    });
+    });  
    /* \$('#showLess').click(function () {
         x=(x-3<0) ? 6 : x-3;
         \$('.mostrar').not(':lt('+x+')').hide();
@@ -284,7 +284,7 @@ class __TwigTemplate_40b3d0385d14331c6441ff23199fee75c1cfde794204553ed61033a9c55
 /*         if(x == size_li){*/
 /*             $('#loadMore').hide();*/
 /*         }*/
-/*     });*/
+/*     });  */
 /*    /* $('#showLess').click(function () {*/
 /*         x=(x-3<0) ? 6 : x-3;*/
 /*         $('.mostrar').not(':lt('+x+')').hide();*/
