@@ -758,7 +758,7 @@ class DefaultController extends Controller
 				$vencida="vencida";
 
 				
-			} elseif	 ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
+			} elseif ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
 				$vencida="vencida";
 			
 			}elseif ($tipoSusc == "premium" && $numAnunActual > $numAnunPremium || $tipoSusc == NULL) {
