@@ -32,18 +32,19 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
         echo "    <!--Intro Section-->
    <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
         // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
         echo "');margin-top: 27px;\">
             <div class=\"flex-center  \" style=\"background-color: rgba(17, 27, 43, 0.7);\">
-                <div class=\"container my-5 pt-5\">
+                <div class=\"container my-4 pt-5\">
 
                     <!-- Section heading -->
                     <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                         <strong>PERFIL</strong>
                     </h3>
-                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">@";
-        // line 14
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
+
+                    <h6 class=\"text-center white-text pb-5 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">@";
+        // line 15
+        echo twig_escape_filter($this->env, (isset($context["username"]) ? $context["username"] : $this->getContext($context, "username")), "html", null, true);
         echo "</h6>
                     
 
@@ -52,22 +53,22 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
         </div> 
             
 
-
+ 
 
 
 ";
     }
 
-    // line 27
+    // line 28
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
 ";
-        // line 28
+        // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["test"]) ? $context["test"] : $this->getContext($context, "test")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 29
+            // line 30
             echo "     <div class=\"row\" style=\"background-color: #f4f5f6;\">
 
         <!--Grid column-->
@@ -90,65 +91,75 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
                         <!--Avatar-->
                         <div class=\"avatar mx-auto white rad\" >
                          ";
-            // line 50
+            // line 51
             if ((isset($context["fotoPerfil"]) ? $context["fotoPerfil"] : $this->getContext($context, "fotoPerfil"))) {
-                // line 51
+                // line 52
                 echo "                          <img src=\"data:image/jpeg;base64,";
                 echo twig_escape_filter($this->env, (isset($context["fotoPerfil"]) ? $context["fotoPerfil"] : $this->getContext($context, "fotoPerfil")), "html", null, true);
                 echo "\" class=\" img-fluid rad\" alt=\"First sample avatar image\">
 \t                    
                         ";
             } else {
-                // line 53
+                // line 54
                 echo " 
                              ";
-                // line 54
+                // line 55
                 if (($this->getAttribute($context["item"], "sexo", array()) == "Mujer")) {
-                    // line 55
+                    // line 56
                     echo "                            <img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Perfil/avatarM.jpg"), "html", null, true);
                     echo "\" class=\" img-fluid rad\" alt=\"First sample avatar image\">
                              ";
                 } else {
-                    // line 57
+                    // line 58
                     echo "                               <img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Perfil/avatarH.jpg"), "html", null, true);
                     echo "\" class=\" img-fluid rad\" alt=\"First sample avatar image\">
                               ";
                 }
-                // line 59
+                // line 60
                 echo "                        ";
             }
-            // line 60
+            // line 61
             echo "                       
                         </div>
 
                         <!--Content-->
                         <div class=\"card-body container\">
                             <h4 class=\"mt-1\"> ";
-            // line 65
+            // line 66
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
             echo "  ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "apellidos", array()), "html", null, true);
             echo "</h4>
                             <p class=\"font-weight-bold dark-grey-text\"> ";
-            // line 66
+            // line 67
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "paginaWeb", array()), "html", null, true);
             echo "</p>
                             <!--Triggering button-->
                                <!--Content-->
-                        <h4 class=\"font-weight-bold mt-4 mb-2\">
+                        
+                        ";
+            // line 71
+            if ($this->getAttribute($context["item"], "biografia", array())) {
+                // line 72
+                echo "                        <h4 class=\"font-weight-bold mt-4 mb-2\">
                             <strong>Biografía</strong>
                         </h4>
-                        <hr>
+ <hr>
                         <p>";
-            // line 73
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "biografia", array()), "html", null, true);
-            echo " 
+                // line 76
+                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "biografia", array()), "html", null, true);
+                echo " 
+
                        <br> 
                        
                         </p>
                         <hr>
+                        ";
+            }
+            // line 83
+            echo "                       
                      
 
                         </div>
@@ -189,7 +200,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 
     public function getDebugInfo()
     {
-        return array (  146 => 73,  136 => 66,  130 => 65,  123 => 60,  120 => 59,  114 => 57,  108 => 55,  106 => 54,  103 => 53,  96 => 51,  94 => 50,  71 => 29,  67 => 28,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  162 => 83,  152 => 76,  146 => 72,  144 => 71,  137 => 67,  131 => 66,  124 => 61,  121 => 60,  115 => 58,  109 => 56,  107 => 55,  104 => 54,  97 => 52,  95 => 51,  72 => 30,  68 => 29,  63 => 28,  47 => 15,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -197,15 +208,16 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /* */
 /* {% block portada %}*/
 /*     <!--Intro Section-->*/
-/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');margin-top: 27px;">*/
+/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}');margin-top: 27px;">*/
 /*             <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">*/
-/*                 <div class="container my-5 pt-5">*/
+/*                 <div class="container my-4 pt-5">*/
 /* */
 /*                     <!-- Section heading -->*/
 /*                     <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                         <strong>PERFIL</strong>*/
 /*                     </h3>*/
-/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>*/
+/* */
+/*                     <h6 class="text-center white-text pb-5 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ username }}</h6>*/
 /*                     */
 /* */
 /*                 </div>*/
@@ -213,7 +225,7 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /*         </div> */
 /*             */
 /* */
-/* */
+/*  */
 /* */
 /* */
 /* {% endblock %}*/
@@ -260,15 +272,20 @@ class __TwigTemplate_b580a8784e9a7f4e44742f398b04cae762956aa26e4ef9b2f9910f9fb8f
 /*                             <p class="font-weight-bold dark-grey-text"> {{item.paginaWeb}}</p>*/
 /*                             <!--Triggering button-->*/
 /*                                <!--Content-->*/
+/*                         */
+/*                         {% if item.biografia %}*/
 /*                         <h4 class="font-weight-bold mt-4 mb-2">*/
 /*                             <strong>Biografía</strong>*/
 /*                         </h4>*/
-/*                         <hr>*/
+/*  <hr>*/
 /*                         <p>{{item.biografia}} */
+/* */
 /*                        <br> */
 /*                        */
 /*                         </p>*/
 /*                         <hr>*/
+/*                         {% endif %}*/
+/*                        */
 /*                      */
 /* */
 /*                         </div>*/

@@ -81,7 +81,7 @@
 <!-- /.Modal Capítulos -->
 
 <!--Intro Section-->
-<div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;">
+<div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">
     <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">
         <div class="container my-5 pt-5">
 
@@ -160,10 +160,7 @@
 </div>
 
 
-{% endfor %} {% endblock %} {% block contenido %} 
-
- 
-{#
+{% endfor %} {% endblock %} {% block contenido %} {#
 <div class="small col-lg-2 ">
     <select class="mdb-select colorful-select dropdown-primary" multiple style="position:relative; width: 50px !important;;">
         <option value="" disabled selected>Añadir libro a </option>
@@ -176,7 +173,7 @@
 
 
 
-<div class="container-fluid pl-0 pr-0" style="background-color: #f4f5f6;" id="container1">
+<div class="container-fluid pl-0 pr-0 container1" style="background-color: #f4f5f6;">
 
     <!--Grid column-->
     <div class="col-lg-12 col-md-12 mb-12 pl-0 pr-0">
@@ -216,7 +213,7 @@
                         {% else %}
                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>
                         <a href="{{ path('dwes_libros_addbiblioteca', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll">
-                        Añadir a mi lista</a>
+                            Añadir a mi lista</a>
 
                         {% endif %}
                     </span>
@@ -225,38 +222,38 @@
                         {% if favorito %}
                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href="{{ path('dwes_libros_delfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll">
-                        Eliminar de favoritos</a>
+                            Eliminar de favoritos</a>
                         {% else %}
                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>
                         <a href="{{ path('dwes_libros_addfavoritos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll">
-                        Añadir a favoritos</a>
+                            Añadir a favoritos</a>
 
                         {% endif %}
                     </span>
-                     <span class="text-dark   pr-2 cl">
-                   
-                        <i class='fas fa-download'></i>
-                        <a  class="text-dark cl guardarScroll">
-                       </a>
+                    <span class="text-dark   pr-2 cl">
 
-                         <a href="javascript:pruebaDivAPdf()" class="button text-dark cl"> Descargar PDF</a> 
-                     
+                        <i class='fas fa-download'></i>
+                        <a class="text-dark cl guardarScroll">
+                        </a>
+
+                        <a href="javascript:pruebaDivAPdf()" class="button text-dark cl"> Descargar PDF</a>
+
                     </span>
-                    {% endif %}  {% if tipoLibro == "Anuncio" %}
+                    {% endif %} {% if tipoLibro == "Anuncio" %}
                     <span class="text-dark   pr-2 cl">
                         {% if deseo %}
                         <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href="{{ path('dwes_libros_deldeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll">
-                        En lista de deseos</a>
+                            En lista de deseos</a>
                         {% else %}
 
 
                         <i class="fas fa-plus mr-1 font-weight-bold deselect bibIco "></i>
                         <a href="{{ path('dwes_libros_adddeseos', {'idLibro' : app.request.get('idLibro')}) }}" class="text-dark cl guardarScroll">
-                        Añadir a lista de deseos</a>
+                            Añadir a lista de deseos</a>
                         {% endif %}
                     </span>
-                    
+
                     {% endif %}
             </div>
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
@@ -301,12 +298,12 @@
     </div>
     <!--Grid column-->
 
-    <div class="container card mt-1 mb-5 px-0 py-0" id="container2">
+    <div class="container card mt-1 mb-5 px-0 py-0 container2">
 
         <div class="card-body">
-            
-           
-            <div >
+
+
+            <div>
                 {% for item in enlaces%}
                 <div id="accordion" class="mt-1">
                     <div class="card">
@@ -334,8 +331,8 @@
 
             <!--Panel FIXME: -->
             <div class="col-12 text-center">
-                <h3 class="card-title">¡UPS...! Esto parece vacío. CAPÍTULOS</h3>
-                <p class="card-text"> Sé paciente, ¡pronto habrá algo maravilloso aquí! </p>
+                <h3 class="card-title">¡UPS...! Esto parece vacío</h3>
+                <p class="card-text"> Sé paciente. </p>
             </div>
             <!--/.Panel-->
 
@@ -344,30 +341,28 @@
 
             <!--Panel FIXME: -->
             <div class="col-12 text-center">
-                <h3 class="card-title">¡UPS...! Esto parece vacío.ENLACES </h3>
-                <p class="card-text"> Sé paciente, pronto habrá algo maravilloso aquí! </p>
+                <h3 class="card-title">¡UPS...! Esto parece vacío </h3>
+                <p class="card-text"> Sé paciente. </p>
             </div>
             <!--/.Panel-->
             {% endif %}
             <div id="imprimir" style="display:  none;">
-             {% for item in capitulos %}
-             
-              <h4 class="card-title">
+                {% for item in capitulos %}
+
+                <h4 class="card-title">
                     <span class="indigo-text pr-2 small"> Capítulo {{item.numCapitulo}}:</span>
-                    
+
                     <strong class="font-weight-bold indigo-text ">{{item.tituloCap}}</strong>
                 </h4>
                 <hr>
-               
-                <p class="card-text" style="    ">{{item.contenidoCap | raw}}
-                </p> 
-        
-               {% endfor %} 
-               </div>
-             {% for item in capitulos %}
 
-           {#   TODO:  Imprimir con este formato #}
-              
+                <p class="card-text" style="    ">{{item.contenidoCap | raw}}
+                </p>
+
+                {% endfor %}
+            </div>
+            {% for item in capitulos %} {# TODO: Imprimir con este formato #}
+
             <div id="accordion" class="mt-1">
                 <div class="card">
                     <div class="card-header" id="heading{{item.numCapitulo}}">
@@ -381,8 +376,7 @@
 
                     <div id="collapse{{item.numCapitulo}}" class="collapse" aria-labelledby="heading{{item.numCapitulo}}" data-parent="#accordion">
                         <div class="card-body bigtext">
-                             {# {{html}} #}
-                            {# raw --> Para mostrar el HTML con el formato insertado #}
+                            {# {{html}} #} {# raw --> Para mostrar el HTML con el formato insertado #}
                             <div class="fuente">{{item.contenidoCap | raw}}</div>
                             <!-- Comentarios capitulo -->
                             <!--Main wrapper-->
@@ -467,6 +461,7 @@
                                             <!--Content column-->
                                             <div class="col-sm-10 col-12">
                                                 <a>
+                                                    {% if app.user %}
                                                     <h4 class="font-weight-bold">{{item.nombre}} {{item.apellidos}} {% if app.user.username == item.username
                                                         %}
                                                         <a href="{{ path('dwes_libros_delComentarioCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo,'username':app.user.username,'comentario' :item.comentario}) }}"
@@ -478,6 +473,7 @@
                                                         </a>
                                                         {% endif %}
                                                     </h4>
+                                                    {% endif %}
                                                 </a>
 
                                                 <div class="mt-2">
@@ -515,9 +511,9 @@
 
         <!-- ./ Autor -->
 
-       
 
-    </div>
+
+    
     <!-- Autor -->
     <div class="container card mt-1 mb-5 px-0 py-0">
         <section class="text-center text-md-left">
@@ -538,12 +534,15 @@
                         <p>
                             <strong>{{item.nombre}} {{item.apellidos}}</strong>
                         </p>
+
                         <div class="personal-sm">
-                            <a href="" class="pr-2 fb-ic">
+                            <a href="{{ path('dwes_libros_perfil', {'username':item.username}) }}" class="pr-2 fb-ic">
                                 Ver perfil
                             </a>
 
                         </div>
+
+
                         <p class="dark-grey-text article">{{item.biografia}}
                         </p>
                         {% endfor %}
@@ -555,7 +554,7 @@
 
     </div>
     <!-- Te puede gustar -->
-    <div class="container  mt-1 mb-5 px-0 py-0"> 
+    <div class="container  mt-1 mb-5 px-0 py-0">
         <section class="text-left mt-4">
 
             <h5 class="font-weight-bold mt-5">
@@ -1092,36 +1091,43 @@
         </div>
         <!-- ./Comentarios -->
     </div>
- <script>
-            function pruebaDivAPdf() {
-                var pdf = new jsPDF('p', 'pt', 'letter');
-                source = $('#imprimir')[0];
+</div> 
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b16754fa71e965a"></script>
 
-                specialElementHandlers = {
-                    '#imprimir': function (element, renderer) {
-                        return true
-                    }
-                };
-                margins = {
-                    top: 80,
-                    bottom: 60,
-                    left: 40,
-                    width: 522
-                };
+    <script>
+        function pruebaDivAPdf() {
+            var pdf = new jsPDF('p', 'pt', 'letter');
+            source = $('#imprimir')[0];
 
-                pdf.fromHTML(
-                    source,
-                    margins.left, // x coord
-                    margins.top, { // y coord
-                        'width': margins.width,
-                        'elementHandlers': specialElementHandlers
-                    },
+            specialElementHandlers = {
+                '#imprimir': function (element, renderer) {
+                    return true
+                }
+            };
+            margins = {
+                top: 80,
+                bottom: 60,
+                left: 40,
+                width: 522
+            };
 
-                    function (dispose) {
-                        pdf.save({{app.request.get('idLibro')}}+'.pdf');
-                    }, margins
-                );
-            }
-        </script>
+            pdf.fromHTML(
+                source,
+                margins.left, // x coord
+                margins.top, { // y coord
+                    'width': margins.width,
+                    'elementHandlers': specialElementHandlers
+                },
+
+                function (dispose) {
+                    pdf.save({
+                        {
+                            app.request.get('idLibro')
+                        }
+                    } + '.pdf');
+                }, margins
+            );
+        }
+    </script>
 
     {%endblock %}

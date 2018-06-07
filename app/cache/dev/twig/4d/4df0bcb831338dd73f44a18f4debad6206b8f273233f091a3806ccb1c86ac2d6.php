@@ -91,7 +91,10 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
                             <div class=\"mt-1\">
                                 <p class=\"mx-3 grey-text\">Disfruta de una de las mejores experiencias para escribir en línea .
                               
-                                No olvides seguir nuestras <a href=\"\">pautas</a>.</p>
+                                No olvides seguir nuestras <a href=\"";
+        // line 63
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_normas");
+        echo "\">pautas</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -608,7 +611,7 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 
     public function getDebugInfo()
     {
-        return array (  66 => 35,  63 => 34,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  96 => 63,  66 => 35,  63 => 34,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -673,7 +676,7 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 /*                             <div class="mt-1">*/
 /*                                 <p class="mx-3 grey-text">Disfruta de una de las mejores experiencias para escribir en línea .*/
 /*                               */
-/*                                 No olvides seguir nuestras <a href="">pautas</a>.</p>*/
+/*                                 No olvides seguir nuestras <a href="{{path('dwes_libros_normas')}}">pautas</a>.</p>*/
 /*                             </div>*/
 /*                         </div>*/
 /*                     </div>*/

@@ -29,14 +29,17 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
     {
         // line 2
         echo "<!--Intro Section-->
-<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');\">
+<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
+        // line 3
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
+        echo "');\">
     <div class=\"flex-center  \" style=\"       background-color: rgba(17, 27, 43, 0.7);\">
         <div class=\"container my-5 pt-5\">
 
             <!-- Section heading -->
-            <h3 class=\"text-center pt-5 pb-5 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
+            <h1 class=\"text-center pt-5 pb-5 white-text  wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>Privacidad</strong>
-            </h3>
+            </h1>
         </div>
     </div>
 </div>
@@ -124,19 +127,19 @@ class __TwigTemplate_078ea53081bed99c6b4c23c0776f7e6c59751802a8dc198e6219ce4a57a
 
     public function getDebugInfo()
     {
-        return array (  92 => 52,  65 => 28,  50 => 15,  47 => 14,  31 => 2,  11 => 1,);
+        return array (  95 => 52,  68 => 28,  53 => 15,  50 => 14,  34 => 3,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
 /* <!--Intro Section-->*/
-/* <div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}');">*/
 /*     <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">*/
 /*         <div class="container my-5 pt-5">*/
 /* */
 /*             <!-- Section heading -->*/
-/*             <h3 class="text-center pt-5 pb-5 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
+/*             <h1 class="text-center pt-5 pb-5 white-text  wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>Privacidad</strong>*/
-/*             </h3>*/
+/*             </h1>*/
 /*         </div>*/
 /*     </div>*/
 /* </div>*/

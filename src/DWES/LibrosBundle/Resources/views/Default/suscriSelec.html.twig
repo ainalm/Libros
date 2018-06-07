@@ -1,0 +1,50 @@
+{% extends 'DWESLibrosBundle::layout.html.twig' %}
+
+
+{% block portada %}
+    <!--Intro Section-->
+   <div  class="streak streak-photo streak-md  view jarallax  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">
+        <div class=" mask rgba-indigo-light  " style="background-color: rgba(17, 27, 43, 0.7);">
+            <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">
+                <div class="container my-5 pt-5">
+
+
+            <div class="text-center white-text">
+                                <ul class="list-unstyled ">
+                                    <li>
+                                        <h1 class="display-4 mt-md-5 mt-lg-0 mb-5 font-weight-bold white-text wow fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
+                                            <strong>
+                                                 ¡ GRACIAS POR SU CONFIANZA !</strong>
+                                        </h1> 
+                                    </li>
+                                    <li>
+                                        <h5 class="white-text description mb-5 wow fadeIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+                                           {% if tipo == "gratis" %} 
+                Su suscripción <span  class="red-text"> GRATUITA </span> ha sido seleccionada con éxito.<br>
+                  <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>
+                {#  <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_suscripcion') }}"><i class="fas fa-cogs"></i> suscripción</a> #}
+                  
+                {% elseif tipo == "basica" %}  
+                Su suscripción <span  class="red-text"> PREMIUM</span> ha sido seleccionada con éxito.<br>
+                 <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>
+               {#   <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_suscripcion') }}"><i class="fas fa-cogs"></i> suscripción</a> #}
+                 {% elseif tipo == "cancelar" %} 
+                  Suscripción <span  class="red-text">CANCELADA</span>   con éxito.<br>
+                 {# <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_suscripcion') }}"><i class="fas fa-cogs"></i> suscripción</a> #}
+                  
+
+                 {% endif %}
+                                        </h5>
+                                    </li>
+                                </ul>
+                            </div>
+
+            </div>
+            </div>
+        </div>
+        </div>
+{% endblock %}
+
+{% block contenido %}  
+
+{%endblock %}

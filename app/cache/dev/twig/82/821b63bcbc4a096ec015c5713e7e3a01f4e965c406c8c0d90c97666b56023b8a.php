@@ -35,7 +35,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
             echo "<!--Intro Section-->
 <div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
             // line 3
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
             echo "');margin-top: 27px;\">
     <div class=\"flex-center\" style=\"background-color: rgba(17, 27, 43, 0.7);\">
         <div class=\"container my-4 pt-5\">
@@ -48,7 +48,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
             echo "</strong>
             </h3>
             <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
-                <span class=\"mb-5\">by ";
+                <span class=\"mb-5\">by @";
             // line 12
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "username", array()), "html", null, true);
             echo "</span>
@@ -58,7 +58,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
             echo "\" class=\"guardarScroll btn peach-gradient btn-lg mt-4\">Visualizar Historia</a>
             </h6>
-
+ 
         </div>
     </div>
 </div>
@@ -740,7 +740,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %} {% for item in infoLibro %}*/
 /* <!--Intro Section-->*/
-/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');margin-top: 27px;">*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}');margin-top: 27px;">*/
 /*     <div class="flex-center" style="background-color: rgba(17, 27, 43, 0.7);">*/
 /*         <div class="container my-4 pt-5">*/
 /* */
@@ -749,16 +749,16 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                 <strong>{{item.titulo}}</strong>*/
 /*             </h3>*/
 /*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
-/*                 <span class="mb-5">by {{item.username}}</span>*/
+/*                 <span class="mb-5">by @{{item.username}}</span>*/
 /*                 <br>*/
 /*                 <a href="{{ path('dwes_libros_historia', {'idLibro' : app.request.get('idLibro')}) }}" class="guardarScroll btn peach-gradient btn-lg mt-4">Visualizar Historia</a>*/
 /*             </h6>*/
-/* */
+/*  */
 /*         </div>*/
 /*     </div>*/
 /* </div>*/
 /*  {% endfor %} {% endblock %}*/
-/* */
+/*  */
 /* */
 /* */
 /*  {% block contenido %} {% for item in infoLibro %}*/

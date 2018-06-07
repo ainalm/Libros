@@ -28,7 +28,9 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
     public function block_portada($context, array $blocks = array())
     {
         // line 2
-        echo "<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');\">
+        echo "<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
+        echo "');\">
     <div class=\"flex-center  \" style=\"       background-color:rgba(98, 84, 111, 0.7)\">
         <div class=\"container my-5 pt-5\">
 
@@ -109,7 +111,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         echo "                    <!-- target=\"frame\" -->
 
                 <!--Grid row-->
-                <div class=\"row\">
+                <div class=\"row\"> 
                     <div class=\"col-md-12\">
                 
 
@@ -335,11 +337,11 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  314 => 244,  308 => 242,  306 => 241,  242 => 180,  137 => 78,  119 => 63,  109 => 55,  102 => 52,  97 => 50,  94 => 49,  92 => 48,  71 => 29,  68 => 28,  57 => 21,  50 => 16,  41 => 9,  39 => 8,  31 => 2,  11 => 1,);
+        return array (  316 => 244,  310 => 242,  308 => 241,  244 => 180,  139 => 78,  121 => 63,  111 => 55,  104 => 52,  99 => 50,  96 => 49,  94 => 48,  73 => 29,  70 => 28,  59 => 21,  52 => 16,  43 => 9,  41 => 8,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
-/* <div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}');">*/
 /*     <div class="flex-center  " style="       background-color:rgba(98, 84, 111, 0.7)">*/
 /*         <div class="container my-5 pt-5">*/
 /* */
@@ -395,7 +397,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                     <!-- target="frame" -->*/
 /* */
 /*                 <!--Grid row-->*/
-/*                 <div class="row">*/
+/*                 <div class="row"> */
 /*                     <div class="col-md-12">*/
 /*                 */
 /* */

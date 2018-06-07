@@ -50,7 +50,8 @@ class DefaultController extends Controller
 				$connection = $this->get("database_connection");		//Conexión con la BD  
 				  
 				$connection->executeUpdate('INSERT INTO usuario (username, id, nombre,sexo,tipoUser, fechaNacimiento, biografia,paginaWeb, fotoPerfil, apellidos, salt, password, email, isActive, tokenRegistro) VALUES ("' . $username . '",NULL ,"", "' . $sexo . '","usuario", NULL, NULL, NULL, NULL, "", "", "' . $password . '", "' . $email . '", "1", "");');
-				return $this->redirect($this->generateUrl('dwes_libros_crearperfil')); 		//Redirección al registrarse para crear el perfil
+				return $this->redirect($this->generateUrl('dwes_libros_crearperfil')); 
+						//Redirección al registrarse para crear el perfil
 
 			}
 		}
@@ -85,8 +86,8 @@ class DefaultController extends Controller
 			$connection->executeUpdate('UPDATE `usuario` SET fotoPerfil ="' . $fotoSubida . '" WHERE username ="' . $userlog . '" ;');
 
 			//var_dump('INSERT INTO test(imagen) VALUES ("'. $contImagen .'");');exit;
-			return $this->redirect($this->generateUrl('dwes_libros_perfil'));
-			return $this->redirect($this->generateUrl('dwes_libros_perfil', array('idLibro' => $idLibro)));
+			//return $this->redirect($this->generateUrl('dwes_libros_perfil'));
+			return $this->redirect($this->generateUrl('dwes_libros_perfil', array('username' => $userlog)));
 		}
 		//Relleno los datos para editar
 		$nombre = $connection->fetchColumn('SELECT nombre FROM usuario WHERE username = "' . $userlog . '"');
@@ -99,6 +100,7 @@ class DefaultController extends Controller
 		$params = array('nombre' => $nombre, 'apellidos' => $apellidos, 'fnacimiento' => $fnacimiento, 'pweb' => $pweb, 'biografia' => $biografia, 'fotoPerfil' => $imagen);
 
 		return $this->render('DWESLibrosBundle:Default:crearperfil.html.twig', $params);
+		
 
 	}
 
@@ -175,7 +177,7 @@ class DefaultController extends Controller
 						$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
 
 						/* INSERT OPERACIÓN Añadir Libro */
-								$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
+								//$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
 								return $this->redirect($this->generateUrl('dwes_libros_perfilhistoria', array('idLibro' => $idLibro)));
 					} elseif ($tipo == "gratis") {
 						$connection->executeUpdate('INSERT INTO libro (idLibro, username, idGenero, titulo,tipoLibro, fotoPort, descripcion, fechaPubli, progreso, RestEdad, Idioma,colorPortada)
@@ -185,7 +187,7 @@ class DefaultController extends Controller
 					$idLibro = $connection->fetchColumn('SELECT idLibro FROM libro WHERE username="' . $userlog . '" and titulo="' . $titulohistoria . '"'); 	
 
 					/* INSERT OPERACIÓN Añadir Libro */
-							$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
+							//$connection->executeUpdate('INSERT INTO operacionlibros (codOperacion, idLibro, username, motivoOL) VALUES ("1","' . $idLibro . '","' . $userlog . '","Libro Añadido")');
 					
 					/*  INSERT 1º Capitulo  FANTASMA*/
 		
@@ -198,10 +200,10 @@ class DefaultController extends Controller
 			
 
 				}
-			} else {
-				var_dump("ya existe el libro");
-				exit;
-			}
+			 } else {
+				$idLilbroE = $connection->fetchColumn('SELECT idLibro FROM libro WHERE titulo ="' . $titulohistoria . '"');
+				return $this->redirect($this->generateUrl('dwes_libros_existeLib', array('idLibro' => $idLilbroE))); 
+			} 
 			
 		}
 
@@ -309,15 +311,15 @@ class DefaultController extends Controller
 		return $this->render('DWESLibrosBundle:Default:capitulo.html.twig', $params);
 	}
 
-	public function perfilAction()
-	{
-		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado; '.$userlog.'
+	public function perfilAction($username)
+	{	
+		
 		$connection = $this->get("database_connection");
-		$get_info = $connection->fetchAll('SELECT * FROM usuario WHERE username = "' . $userlog . '"');
-		$fotodPefil = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username = "' . $userlog . '"');
+		$get_info = $connection->fetchAll('SELECT * FROM usuario WHERE username = "' . $username . '"');
+		$fotodPefil = $connection->fetchColumn('SELECT fotoPerfil FROM usuario WHERE username = "' . $username . '"');
 		$imagen = base64_encode($fotodPefil);
 
-		return $this->render('DWESLibrosBundle:Default:perfil.html.twig', array('test' => $get_info, 'fotoPerfil' => $imagen));
+		return $this->render('DWESLibrosBundle:Default:perfil.html.twig', array('test' => $get_info, 'fotoPerfil' => $imagen,'username'=>$username));
 
 	}
 
@@ -739,7 +741,7 @@ class DefaultController extends Controller
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
 		return $this->render('DWESLibrosBundle:Default:ajustes.html.twig', $params);
 	}
-
+ 
 	public function contactoAction()
 	{
 		$params = array('mensaje' => 'Este es el mensaje de bienvenida.');
@@ -896,9 +898,12 @@ class DefaultController extends Controller
 		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username= "' . $userlog . '"  and tipoSuscripcion ="basica"');
 		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username= "' . $userlog . '"  and tipoSuscripcion ="premium"');
 		
+		$numAnunGratis = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="gratis"'); 
+		
 		$existGratis = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" and tipoSuscripcion ="gratis"'); //tipo suscripcion actual
 		$numAnunActual = $connection->fetchColumn('SELECT count(*) FROM libro WHERE tipoLibro ="anuncio" and username="' . $userlog . '"'); //Libros anunciados del usuario
 		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" '); //tipo suscripcion actual
+		$numPermi = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="' . $tipo . '"'); 
 
 		if ($existGratis  && $tipoSusc == "gratis" && $numAnunActual > $numAnunGratis && $tipo =="gratis") {
 		
@@ -924,7 +929,7 @@ class DefaultController extends Controller
 		 
 		}
 		
-		return $this->render('DWESLibrosBundle:Default:suscriGratis.html.twig', array('tipo' =>$tipo));
+		return $this->render('DWESLibrosBundle:Default:suscriSelec.html.twig', array('tipo' =>$tipo,'numPermitido'=>$numPermi,'numActual'=>$numAnunActual));
 	
 	}
 	public function delSuscriAction($tipo)
@@ -934,7 +939,22 @@ class DefaultController extends Controller
 		$connection = $this->get("database_connection");	
 		$connection->executeUpdate('DELETE FROM suscripseleccionada WHERE username = "' . $userlog . '" AND tipoSuscripcion = "' . $tipo . '";');
 		//var_dump('DELETE FROM suscripseleccionada WHERE username = "' . $userlog . '" AND tipoSuscripcion = "' . $tipo . '";');exit;
-		return $this->render('DWESLibrosBundle:Default:suscriGratis.html.twig', array('tipo' =>"cancelar"));
+		return $this->render('DWESLibrosBundle:Default:suscriSelec.html.twig', array('tipo' =>"cancelar"));
+
+
+	}
+
+	public function existeLibAction($idLibro)
+	{
+		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
+
+		$connection = $this->get("database_connection");	
+		$libro= $connection->fetchAll('SELECT * from libro WHERE idLibro = "' . $idLibro . '";');
+		$fotoBD = $connection->fetchColumn('SELECT fotoPort FROM libro WHERE idLibro ="' . $idLibro . '"');
+		$foto = base64_encode($fotoBD);
+	
+
+		return $this->render('DWESLibrosBundle:Default:existeLib.html.twig', array('libros' =>$libro,'foto'=>$foto));
 
 
 	}

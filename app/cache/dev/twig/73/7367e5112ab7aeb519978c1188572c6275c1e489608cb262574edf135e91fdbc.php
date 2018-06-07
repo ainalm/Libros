@@ -29,9 +29,12 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
     public function block_portada($context, array $blocks = array())
     {
         // line 4
-        echo "<!--Intro Section-->
+        echo "<!--Intro Section--> 
 <!--Intro Section-->
-<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;\">
+<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
+        echo "'); margin-top: 27px;\">
     <div class=\"flex-center  \" style=\"       background-color: rgba(17, 27, 43, 0.7);\">
         <div class=\"container my-5 pt-5\">
 
@@ -39,12 +42,12 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
             <h6 class=\"white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>BIBLIOTECA</strong>
             </h6>
-            <h1 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mis libros publicados</h1>
+            <h1 class=\"text-center white-text pb-4  wow fadeIn \" data-wow-delay=\"0.2s\">Mis libros publicados</h1>
 
-
-        </div>
+ 
+        </div> 
     </div>
-</div>
+</div> 
 
 
 
@@ -60,7 +63,7 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
   <div class=\"container-fluid\">
 
                 <!--Blog-->
-                <div class=\"row mt-5 pt-3\">
+                <div class=\"row mt-4\">
  <!--Sidebar-->
                     <div class=\"col-lg-3 col-md-12 mb-4 ml-4\">
 
@@ -175,15 +178,15 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
 
     public function getDebugInfo()
     {
-        return array (  148 => 85,  146 => 83,  145 => 82,  126 => 65,  121 => 63,  113 => 58,  107 => 55,  101 => 52,  96 => 50,  90 => 47,  85 => 45,  79 => 42,  74 => 40,  55 => 25,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  151 => 85,  149 => 83,  148 => 82,  129 => 65,  124 => 63,  116 => 58,  110 => 55,  104 => 52,  99 => 50,  93 => 47,  88 => 45,  82 => 42,  77 => 40,  58 => 25,  36 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
 /* */
 /*  {% block portada %}*/
+/* <!--Intro Section--> */
 /* <!--Intro Section-->*/
-/* <!--Intro Section-->*/
-/* <div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;">*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">*/
 /*     <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">*/
 /*         <div class="container my-5 pt-5">*/
 /* */
@@ -191,12 +194,12 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
 /*             <h6 class="white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>BIBLIOTECA</strong>*/
 /*             </h6>*/
-/*             <h1 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mis libros publicados</h1>*/
+/*             <h1 class="text-center white-text pb-4  wow fadeIn " data-wow-delay="0.2s">Mis libros publicados</h1>*/
 /* */
-/* */
-/*         </div>*/
+/*  */
+/*         </div> */
 /*     </div>*/
-/* </div>*/
+/* </div> */
 /* */
 /* */
 /* */
@@ -208,7 +211,7 @@ class __TwigTemplate_538a2b76eefc3287efe8f2bbda365e7e71e95e0fe2d9e31cccb29590d93
 /*   <div class="container-fluid">*/
 /* */
 /*                 <!--Blog-->*/
-/*                 <div class="row mt-5 pt-3">*/
+/*                 <div class="row mt-4">*/
 /*  <!--Sidebar-->*/
 /*                     <div class="col-lg-3 col-md-12 mb-4 ml-4">*/
 /* */

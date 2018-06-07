@@ -3,15 +3,16 @@
 
 {% block portada %}
     <!--Intro Section-->
-   <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}');margin-top: 27px;">
+   <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}');margin-top: 27px;">
             <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">
-                <div class="container my-5 pt-5">
+                <div class="container my-4 pt-5">
 
                     <!-- Section heading -->
                     <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
                         <strong>PERFIL</strong>
                     </h3>
-                    <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>
+
+                    <h6 class="text-center white-text pb-5 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ username }}</h6>
                     
 
                 </div>
@@ -19,7 +20,7 @@
         </div> 
             
 
-
+ 
 
 
 {% endblock %}
@@ -66,15 +67,20 @@
                             <p class="font-weight-bold dark-grey-text"> {{item.paginaWeb}}</p>
                             <!--Triggering button-->
                                <!--Content-->
+                        
+                        {% if item.biografia %}
                         <h4 class="font-weight-bold mt-4 mb-2">
                             <strong>Biografía</strong>
                         </h4>
-                        <hr>
+ <hr>
                         <p>{{item.biografia}} 
+
                        <br> 
                        
                         </p>
                         <hr>
+                        {% endif %}
+                       
                      
 
                         </div>

@@ -187,12 +187,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/p')) {
             // dwes_libros_perfil
-            if (rtrim($pathinfo, '/') === '/perfil') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'dwes_libros_perfil');
-                }
-
-                return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilAction',  '_route' => 'dwes_libros_perfil',);
+            if (0 === strpos($pathinfo, '/perfil') && preg_match('#^/perfil/(?P<username>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_perfil')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::perfilAction',));
             }
 
             // dwes_libros_publicadosBib
@@ -477,6 +473,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_delSuscri')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::delSuscriAction',));
+        }
+
+        // dwes_libros_existeLib
+        if (0 === strpos($pathinfo, '/existeLib') && preg_match('#^/existeLib/(?P<idLibro>[^/]++)/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_existeLib');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_existeLib')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::existeLibAction',));
         }
 
         // homepage

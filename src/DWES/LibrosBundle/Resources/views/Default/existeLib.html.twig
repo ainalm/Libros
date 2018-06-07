@@ -1,0 +1,108 @@
+{% extends 'DWESLibrosBundle::layout.html.twig' %}
+
+ 
+{% block portada %}
+    <!--Intro Section-->
+   <div  class="streak streak-photo streak-md  view jarallax  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">
+        <div class=" mask rgba-indigo-light  " style="background-color: rgba(17, 27, 43, 0.7);">
+            <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">
+                <div class="container my-5 pt-5">
+
+{% for libro in libros %}
+            <div class="text-center">
+                                <ul class="list-unstyled ">
+                                    <li>
+                                        <h3 class=" mt-md-5 mt-lg-0 mb-5  white-textfont-weight-bold white-text wow fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
+                                            <strong>
+                                                 Su libro  <span  class="red-text">{{libro.titulo}}  </span>  ya lo ha creado antes.</strong>
+                                        </h3> 
+                                    </li>
+                                    <li class=" white-text">
+                        Le recomendamos crear otra historia con un título diferente.<br>
+                                    </li>
+                            <div class="container row h-100 justify-content-center align-items-center mt-4"> 
+
+
+  
+                               <div class="col-md-4 mb-4 ">
+                                <!--Card-->
+                                <div class="card">
+
+                                    <!--Card image-->
+                                   
+                                        {% if foto %} 
+                                         <div class="view overlay {{libro.colorPortada}}">
+                    <img src="data:image/jpeg;base64,{{foto}}"style="height:200px ; width:150px;" class=" mx-auto" alt="sample image">
+                    
+                     {% else %}
+                        <div class="view overlay {{libro.colorPortada}}">
+                        <div class=" flex-center text-center"  style="height:200px ;" alt="sample image"><p>{{libro.titulo}}</p></div>
+                    {% endif %}
+
+                     
+ 
+                                        <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">
+                                            <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                    <!--/.Card image--> 
+ <!--Buttons-->
+                                 <div class="card-share">
+                                    <div class="social-reveal">
+                                       
+                                        <!--Twitter-->
+                                        <a type="button"  data-toggle="tooltip" data-placement="top" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>
+                                        <!--Google -->
+                                        <a  onclick="return confirm('¿Estás seguro de eliminar esta publicación?')" type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="top" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>
+                                    </div>
+                                    <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>
+                                </div>
+                                 <!--/. Buttons-->                                    
+                                    <!--Card content-->
+                                    <div class="card-body">
+                                        <!--Title-->
+                                        <h4 class="card-title"><strong>{{libro.titulo}}</strong></h4>
+                                        <hr>
+                                        <!--Text-->
+                                        <p  class="card-text" style="
+                                            width: 250px;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                        ">{{libro.descripcion}}
+                                        </p>
+                                        <p class="text-right mb-0 text-uppercase font-small spacing font-weight-bold">
+                                                <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">Leer más
+                                                    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                    </div>
+                                    <!--/.Card content-->
+
+                                </div>
+                                <!--/.Card-->
+
+                                </div>
+	{% endfor %}
+                            </div>
+                            <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "gratis"}) }}">Nueva historia </a>
+                    <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_escribirhistoria', {'tipo' : "anuncio"}) }}">Anunciar mi libro</a>
+
+                            </div>
+                   
+                {#  <a class="btn blue-gradient waves-effect waves-light mt-4" href="{{ path('dwes_libros_suscripcion') }}"><i class="fas fa-cogs"></i> suscripción</a> #}
+
+                                       
+                                </ul>
+                            </div>
+
+            </div>
+            </div>
+        </div>
+        </div>
+{% endblock %}
+
+{% block contenido %}
+
+ 
+{%endblock %}

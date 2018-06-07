@@ -39,12 +39,9 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
                     <!-- Section heading -->
                     <h3 class=\"text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
-                        <strong>Suscripción</strong>
+                        <strong>SUSCRIPCIÓN</strong>
                     </h3>
-                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">@";
-        // line 14
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
-        echo "</h6>
+                    <h6 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Selecciona el plan que más le convenga.</h6>
                     
 
                 </div>
@@ -62,6 +59,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
+
 <div class=\"container\">
 
             <!--Section: Pricing v.5-->
@@ -91,14 +89,14 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                 <h5 class=\"font-weight-bold mt-3\">Gratuita</h5>
                                 <!--Price-->
                                 <div class=\"price pt-0\">
-                                    <h2 class=\"number orange-text mb-0\">10</h2>
+                                    <h2 class=\" orange-text mb-0\">0</h2>
                                 </div>
                                 <!--Price-->
                                 <ul class=\"list-unstyled striped title\">
                                     <li>
                                         <p>
                                            <strong> ";
-        // line 63
+        // line 64
         echo twig_escape_filter($this->env, (isset($context["numGratis"]) ? $context["numGratis"] : $this->getContext($context, "numGratis")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
                                     </li>
@@ -106,35 +104,35 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                 </ul>
                                
                                 ";
-        // line 69
+        // line 70
         echo "                                    ";
         if ((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaG") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis"))) {
-            // line 70
+            // line 71
             echo "                                    <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
                                 cursor: context-menu;
                             \">Fin prueba gratuita </a>      
                             ";
-        } elseif ((        // line 73
+        } elseif ((        // line 74
 (isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis")) {
-            // line 74
+            // line 75
             echo "                           
                     <a href=\"";
-            // line 75
+            // line 76
             echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "gratis"));
             echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Cancelar suscripción</a>
                             
                                     ";
         }
-        // line 78
+        // line 79
         echo "                            ";
         if (twig_test_empty((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")))) {
-            // line 79
+            // line 80
             echo "                            <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
             echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar  </a>
                            ";
         }
-        // line 81
+        // line 82
         echo "                                ";
         if (((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaE") || (((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaG") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) != "gratis"))) || ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica"))) {
             echo " 
@@ -143,7 +141,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                             \">Fin prueba gratuita </a>
                             ";
         }
-        // line 86
+        // line 87
         echo "
                             </div>
                         </div>
@@ -164,17 +162,17 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
                                 <!--Content-->
                                 <div class=\"card-body\">
-                                    <h5 class=\"font-weight-bold mt-2\">Básica</h5>
+                                    <h5 class=\"font-weight-bold mt-2\">Premium</h5>
                                     <!--Price-->
                                     <div class=\"price pt-0\">
-                                        <h2 class=\"number mb-0\">20</h2>
+                                        <h2 class=\"number mb-0\">9,99</h2>
                                     </div>
                                     <!--Price-->
                                     <ul class=\"list-unstyled striped\">
                                         <li>
                                             <p>
                                                 <strong>";
-        // line 115
+        // line 116
         echo twig_escape_filter($this->env, (isset($context["numBasica"]) ? $context["numBasica"] : $this->getContext($context, "numBasica")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
                                         </li>
@@ -183,23 +181,23 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                     </ul>
                                     
                                        ";
-        // line 121
+        // line 122
         if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica")) {
-            // line 122
+            // line 123
             echo "                                          
                     <a href=\"";
-            // line 123
+            // line 124
             echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "basica"));
             echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Cancelar suscripción</a>
                             ";
         } else {
-            // line 125
+            // line 126
             echo "                            <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "basica"));
             echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Seleccionar</a>
                                     ";
         }
-        // line 127
+        // line 128
         echo "
                                 </div>
 
@@ -233,7 +231,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
     public function getDebugInfo()
     {
-        return array (  203 => 127,  197 => 125,  192 => 123,  189 => 122,  187 => 121,  178 => 115,  147 => 86,  138 => 81,  132 => 79,  129 => 78,  123 => 75,  120 => 74,  118 => 73,  113 => 70,  110 => 69,  102 => 63,  62 => 27,  46 => 14,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  201 => 128,  195 => 126,  190 => 124,  187 => 123,  185 => 122,  176 => 116,  145 => 87,  136 => 82,  130 => 80,  127 => 79,  121 => 76,  118 => 75,  116 => 74,  111 => 71,  108 => 70,  100 => 64,  59 => 27,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -247,9 +245,9 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /* */
 /*                     <!-- Section heading -->*/
 /*                     <h3 class="text-center pt-4 pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
-/*                         <strong>Suscripción</strong>*/
+/*                         <strong>SUSCRIPCIÓN</strong>*/
 /*                     </h3>*/
-/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">@{{ app.user.username }}</h6>*/
+/*                     <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Selecciona el plan que más le convenga.</h6>*/
 /*                     */
 /* */
 /*                 </div>*/
@@ -263,6 +261,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /* {% endblock %}*/
 /* */
 /* {% block contenido %} */
+/* */
 /* <div class="container">*/
 /* */
 /*             <!--Section: Pricing v.5-->*/
@@ -292,7 +291,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                                 <h5 class="font-weight-bold mt-3">Gratuita</h5>*/
 /*                                 <!--Price-->*/
 /*                                 <div class="price pt-0">*/
-/*                                     <h2 class="number orange-text mb-0">10</h2>*/
+/*                                     <h2 class=" orange-text mb-0">0</h2>*/
 /*                                 </div>*/
 /*                                 <!--Price-->*/
 /*                                 <ul class="list-unstyled striped title">*/
@@ -341,10 +340,10 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /* */
 /*                                 <!--Content-->*/
 /*                                 <div class="card-body">*/
-/*                                     <h5 class="font-weight-bold mt-2">Básica</h5>*/
+/*                                     <h5 class="font-weight-bold mt-2">Premium</h5>*/
 /*                                     <!--Price-->*/
 /*                                     <div class="price pt-0">*/
-/*                                         <h2 class="number mb-0">20</h2>*/
+/*                                         <h2 class="number mb-0">9,99</h2>*/
 /*                                     </div>*/
 /*                                     <!--Price-->*/
 /*                                     <ul class="list-unstyled striped">*/

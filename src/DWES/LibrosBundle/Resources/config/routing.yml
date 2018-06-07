@@ -29,7 +29,7 @@ dwes_libros_escribirhistoria:
     defaults: { _controller: DWESLibrosBundle:Default:escribirhistoria }
 
 dwes_libros_perfil:
-    path: /perfil/
+    path: /perfil/{username}
     defaults: { _controller: DWESLibrosBundle:Default:perfil }
 
 dwes_libros_publicadosBib:
@@ -226,5 +226,11 @@ dwes_libros_suscriSelect:
 dwes_libros_delSuscri:
     path: /delSuscri/{tipo}/
     defaults: { _controller: DWESLibrosBundle:Default:delSuscri }
+    requirements:
+        page: \d+
+
+dwes_libros_existeLib:
+    path: /existeLib/{idLibro}/
+    defaults: { _controller: DWESLibrosBundle:Default:existeLib }
     requirements:
         page: \d+

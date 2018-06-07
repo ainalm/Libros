@@ -31,7 +31,10 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
         // line 4
         echo "<!--Intro Section-->
 <!--Intro Section-->
-<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;\">
+<div class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
+        echo "'); margin-top: 27px;\">
     <div class=\"flex-center  \" style=\"       background-color: rgba(17, 27, 43, 0.7);\">
         <div class=\"container my-5 pt-5\">
 
@@ -39,7 +42,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
             <h6 class=\"white-text font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">
                 <strong>BIBLIOTECA</strong>
             </h6>
-            <h1 class=\"text-center white-text pb-4 font-weight-bold wow fadeIn\" data-wow-delay=\"0.2s\">Mi listado de libros</h1>
+            <h1 class=\"text-center white-text pb-4  wow fadeIn\" data-wow-delay=\"0.2s\">Mi listado de libros</h1>
 
 
         </div>
@@ -57,7 +60,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
   <div class=\"container-fluid\">
 
                 <!--Blog-->
-                <div class=\"row mt-5 pt-3\">
+                <div class=\"row mt-4\">
  <!--Sidebar-->
                     <div class=\"col-lg-3 col-md-12 mb-4 ml-4\">
 
@@ -171,7 +174,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 
     public function getDebugInfo()
     {
-        return array (  142 => 82,  140 => 80,  139 => 79,  120 => 62,  115 => 60,  107 => 55,  101 => 52,  95 => 49,  90 => 47,  84 => 44,  76 => 39,  71 => 37,  52 => 22,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  145 => 82,  143 => 80,  142 => 79,  123 => 62,  118 => 60,  110 => 55,  104 => 52,  98 => 49,  93 => 47,  87 => 44,  79 => 39,  74 => 37,  55 => 22,  36 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -179,7 +182,7 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*  {% block portada %}*/
 /* <!--Intro Section-->*/
 /* <!--Intro Section-->*/
-/* <div class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); margin-top: 27px;">*/
+/* <div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">*/
 /*     <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">*/
 /*         <div class="container my-5 pt-5">*/
 /* */
@@ -187,21 +190,21 @@ class __TwigTemplate_daf6482cc1fb036ece61bf26f1b6184a58fb01a01681efa2d73f0c9450b
 /*             <h6 class="white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">*/
 /*                 <strong>BIBLIOTECA</strong>*/
 /*             </h6>*/
-/*             <h1 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Mi listado de libros</h1>*/
+/*             <h1 class="text-center white-text pb-4  wow fadeIn" data-wow-delay="0.2s">Mi listado de libros</h1>*/
 /* */
 /* */
 /*         </div>*/
 /*     </div>*/
 /* </div>*/
 /* {% endblock %} */
-/* */
+/*  */
 /* {% block contenido %} */
 /* */
 /* */
 /*   <div class="container-fluid">*/
 /* */
 /*                 <!--Blog-->*/
-/*                 <div class="row mt-5 pt-3">*/
+/*                 <div class="row mt-4">*/
 /*  <!--Sidebar-->*/
 /*                     <div class="col-lg-3 col-md-12 mb-4 ml-4">*/
 /* */

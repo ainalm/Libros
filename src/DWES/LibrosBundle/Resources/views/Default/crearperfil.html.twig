@@ -3,7 +3,7 @@
 
 {% block portada %}
     <!--Intro Section-->
-   <div  class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">
+   <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}');">
             <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">
                 <div class="container my-5 pt-5">
 
@@ -63,7 +63,7 @@
                                         <!--First column-->
                                        <div class="col-md-6">
                                             <div class="md-form"> 
-                                                <input type="text" id="form81" class="form-control validate"  name="nombre" value="{{nombre}}">
+                                                <input type="text" id="form81" class="form-control validate"   name="nombre" value="{{nombre}}">
                                                 <label for="form81">Nombre </label>
                                             </div>
                                         </div>
@@ -83,14 +83,14 @@
                                         <!--First column-->
                                         <div class="col-md-6">
                                             <div class="md-form">
-                                                <input type="text" id="form76" class="form-control validate" name="fnacimiento" value="{{fnacimiento}}"> 
+                                                <input type="text" id="form76" class="form-control validate" name="fnacimiento" placeholder="1997-09-26" value="{{fnacimiento}}"> 
                                                 <label for="form76" class="">Fecha de nacimiento</label>
                                             </div>
                                         </div>
                                         <!--Second column-->
                                         <div class="col-md-6">
-                                            <div class="md-form">
-                                                <input type="text" id="form77" class="form-control validate"  name="pweb" value="{{pweb}}">
+                                            <div class="md-form"> 
+                                                <input type="text" id="form77" class="form-control validate" placeholder="https://www.tu-pagina.com" name="pweb" value="{{pweb}}">
                                                 <label for="form77" class="">Página web</label>
                                             </div>
                                         </div>
