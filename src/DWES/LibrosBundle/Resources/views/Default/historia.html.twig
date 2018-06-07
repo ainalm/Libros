@@ -1060,7 +1060,11 @@
                     <!--Content column-->
                     <div class="col-sm-10 col-12">
                         <a>
-                            <h4 class="font-weight-bold">{{item.nombre}} {{item.apellidos}} {% if app.user.username == item.username %}
+                            <h4 class="font-weight-bold">{{item.nombre}} {{item.apellidos}} 
+                             {% if app.user %}
+ {% 
+                            
+                            if app.user.username == item.username %}
                                 <a href="{{ path('dwes_libros_delComentarioLib', {'idLibro' : app.request.get('idLibro'),'username':app.user.username,'comentario' :item.comentario}) }}"
                                     onclick="return confirm('¿Estás seguro de eliminar este comentario?')" data-toggle="tooltip"
                                     data-placement="top" title="Eliminar comentario" class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
@@ -1068,6 +1072,8 @@
                                     <i class="fa fa-remove mt-0"></i>
                                 </a>
                                 {% endif %}
+                             {% endif %}
+                           
                             </h4>
                         </a>
                         <div class="mt-2">

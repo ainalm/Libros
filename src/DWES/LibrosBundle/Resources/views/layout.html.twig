@@ -112,38 +112,52 @@ drift.load('knp8trrbfyw8');
             </ul>
             <!-- Social Icon  -->  
             
-            <ul class="navbar-nav nav-flex-icons">
-
+          {#   <ul class="navbar-nav nav-flex-icons">
+ 
                     <li class="nav-item dropdown ml-4 show">
-                    <a class="nav-link dropdown-toggle waves-effect btn peach-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                   <i class="fa fa-language" aria-hidden="true"></i>Idioma </a>
+                   <a class="nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" 
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i>Mi cuenta </a>
                     <div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink">
                         <i></i>
-                         <a href="#googtrans(es|es)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="es"><img src="{{ asset('bundles/dweslibros/img/langs/es.png') }}" alt="SPAIN">Español</a>
-            <a href="#googtrans(es|en)" class="lang-en lang-select dropdown-item waves-effect waves-light" data-lang="en"><img src="{{ asset('bundles/dweslibros/img/langs/en.png') }}" alt="USA">Inglés</a>
-		  <a href="#googtrans(es|fr)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="fr"><img src="{{ asset('bundles/dweslibros/img/langs/fr.png') }}" alt="FRANCE">Francés</a>
-		  <a href="#googtrans(es|ja)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="ja"><img src="{{ asset('bundles/dweslibros/img/langs/ja.png') }}" alt="JAPAN">Japonés</a>
-            <a href="#googtrans(es|ar)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="ar"><img src="{{ asset('bundles/dweslibros/img/langs/ar.png') }}" alt="Árabe">Árabe</a>
+		 
                                                           
                              
                     </div>
                 </li>
 
                 
-            </ul>
+            </ul> #}
+             <ul class="navbar-nav nav-flex-icons">
+		
+                   
+              
+              
+                    <li class="nav-item dropdown ml-4">
+                    <a class="nav-link dropdown-toggle waves-effect btn peach-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" 
+                    aria-haspopup="true" aria-expanded="false">
+                   <i class="fa fa-language" aria-hidden="true"></i>Idioma </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a href="#googtrans(es|es)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="es"><img src="{{ asset('bundles/dweslibros/img/langs/es.png') }}" alt="SPAIN">Español</a>
+                     
+            <a href="#googtrans(es|en)" class="lang-en lang-select dropdown-item waves-effect waves-light" data-lang="en"><img src="{{ asset('bundles/dweslibros/img/langs/en.png') }}" alt="USA">Inglés</a>
+                    
+                   
+		  <a href="#googtrans(es|fr)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="fr"><img src="{{ asset('bundles/dweslibros/img/langs/fr.png') }}" alt="FRANCE">Francés</a>
+		  <a href="#googtrans(es|no)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="zh-CN"><img src="{{ asset('bundles/dweslibros/img/langs/no.png') }}" alt="RUSIA">Noruego</a>
+		  <a href="#googtrans(es|ja)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="ja"><img src="{{ asset('bundles/dweslibros/img/langs/ja.png') }}" alt="JAPAN">Japonés</a>
+            <a href="#googtrans(es|ar)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="ja"><img src="{{ asset('bundles/dweslibros/img/langs/ar.png') }}" alt="Árabe">Árabe</a>
+                            
+                             
+                    </div>
+                </li>
 
-            <ul class="navbar-nav nav-flex-icons">
-		 {#   <a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="https://www.solodev.com/assets/google-translate/flag-usa.png" alt="USA"></a>
-		  <a href="#googtrans(en|es)" class="lang-es lang-select" data-lang="es"><img src="https://www.solodev.com/assets/google-translate/flag-mexico.png" alt="MEXICO"></a>
-		  <a href="#googtrans(en|fr)" class="lang-es lang-select" data-lang="fr"><img src="https://www.solodev.com/assets/google-translate/flag-france.png" alt="FRANCE"></a>
-		  <a href="#googtrans(en|ru)" class="lang-es lang-select" data-lang="zh-CN"><img src="https://www.solodev.com/assets/google-translate/flag-china.png" alt="CHINA"></a>
-		  <a href="#googtrans(en|ja)" class="lang-es lang-select" data-lang="ja"><img src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a>
-            <a href="#googtrans(es|ar)" class="lang-es lang-select" data-lang="ja"><img src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a> #}
-          
-                   {#  <div id="google_translate_element"></div>  #}
+                </li>
+            </ul>
+     {#  <div id="google_translate_element"></div>  #} 
             
-              
-              
+            <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item dropdown ml-4">
                     <a class="nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" 
                     aria-haspopup="true" aria-expanded="false">
@@ -303,16 +317,17 @@ drift.load('knp8trrbfyw8');
  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
  <script src="{{ asset('bundles/dweslibros/js/editorSpanish.js') }}" type="text/javascript"></script>
-
-    
+ <script src="  https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  
 <script>
     //Animación de Inicio
     new WOW().init();
-
+ 
     // Material Select Initialization
     $(document).ready(function () {
-setcookie('googtrans', '/es/es');
-        
+//setcookie('googtrans', '/es');
+        $.cookie("googtrans", '/es' );
+
         $('.mdb-select').material_select();
        $('.capitulos').DataTable( {
             "info":     false,
@@ -370,6 +385,25 @@ setcookie('googtrans', '/es/es');
 
        
       });
+   {# Google Translate Library #}
+   function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+{#  function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    } #} 
+function triggerHtmlEvent(element, eventName) {
+	  var event;
+	  if (document.createEvent) {
+		event = document.createEvent('HTMLEvents');
+		event.initEvent(eventName, true, true);
+		element.dispatchEvent(event);
+	  } else {
+		event = document.createEventObject();
+		event.eventType = eventName;
+		element.fireEvent('on' + event.eventType, event);
+	  }
+	}
       jQuery('.lang-select').click(function() {
 	  var theLang = jQuery(this).attr('data-lang');
 	  jQuery('.goog-te-combo').val(theLang);
@@ -378,15 +412,11 @@ setcookie('googtrans', '/es/es');
 	  location.reload();
 	});
 
-      {# Google Translate Library #}
    
 </script>
 
-<div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+{# <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> #}
      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
 {% endblock %}  
