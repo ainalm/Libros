@@ -31,9 +31,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
     public function block_body($context, array $blocks = array())
     {
-        echo " 
-
-";
+        // line 3
+        echo "   
+ ";
         // line 4
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 50
@@ -42,12 +42,13 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 <!-- Navigation & Intro -->
 
 
-
 <!-- Navbar -->
-<nav class=\"navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white\">
+<nav class=\"navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white\" style=\"
+    
+\">
     <div class=\"container\">
         <a class=\"navbar-brand font-weight-bold title\" href=\"";
-        // line 59
+        // line 60
         echo $this->env->getExtension('routing')->getPath("dwes_libros_homepage");
         echo "\">Brand</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\" aria-controls=\"navbarTogglerDemo02\"
@@ -58,7 +59,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
             <ul class=\"list-unstyled navbar-nav mr-auto\">
                 <li class=\"nav-item ml-4\">
                     <a class=\"nav-link title\" href=\"";
-        // line 67
+        // line 68
         echo $this->env->getExtension('routing')->getPath("dwes_libros_homepage");
         echo "\" data-offset=\"90\">Inicio</a>
                 </li>
@@ -66,11 +67,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                     <a class=\"nav-link dropdown-toggle title\" id=\"navbarDropdownMenuLink12\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Crear </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                         <a class=\"dropdown-item\" href=\"";
-        // line 72
+        // line 73
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "gratis"));
         echo "\">Nueva historia </a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 73
+        // line 74
         echo $this->env->getExtension('routing')->getPath("dwes_libros_escribirhistoria", array("tipo" => "anuncio"));
         echo "\">Anunciar mi libro</a>
                         
@@ -80,38 +81,41 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                     <a class=\"nav-link dropdown-toggle title\" id=\"navbarDropdownMenuLink2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Explorar </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                        ";
-        // line 88
-        echo "
-                         <a class=\"dropdown-item\" href=\"";
         // line 89
+        echo "
+
+
+     
+                         <a class=\"dropdown-item\" href=\"";
+        // line 93
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 1));
         echo "\">Aventura</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 90
+        // line 94
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 2));
         echo "\">Acción</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 91
+        // line 95
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 3));
         echo "\">Terror</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 92
+        // line 96
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 4));
         echo "\">Fantasía</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 93
+        // line 97
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 5));
         echo "\">Misterio</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 94
+        // line 98
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 6));
         echo "\">Poesía</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 95
+        // line 99
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 7));
         echo "\">Romance</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 96
+        // line 100
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 8));
         echo "\">Drama</a>
                     </div>
@@ -119,62 +123,107 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
                  <li class=\"nav-item ml-4\">
                     <a class=\"nav-link title\" href=\"";
-        // line 101
+        // line 105
         echo $this->env->getExtension('routing')->getPath("dwes_libros_publicadosBib");
         echo "\" data-offset=\"90\">Mi Biblioteca</a>
                 </li>
                 <li class=\"nav-item ml-4\">
                     <a class=\"nav-link title\" href=\"";
-        // line 104
+        // line 108
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" data-offset=\"90\">Contacto</a>
                 </li>
+                
+                
             </ul>
-            <!-- Social Icon  --> 
+            <!-- Social Icon  -->  
+            
             <ul class=\"navbar-nav nav-flex-icons\">
 
+                    <li class=\"nav-item dropdown ml-4 show\">
+                    <a class=\"nav-link dropdown-toggle waves-effect btn peach-gradient btn-rounded btn-sm font-weight-bold\" id=\"navbarDropdownMenuLink3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">
+                   <i class=\"fa fa-language\" aria-hidden=\"true\"></i>Idioma </a>
+                    <div class=\"dropdown-menu show\" aria-labelledby=\"navbarDropdownMenuLink\">
+                        <i></i>
+                         <a href=\"#googtrans(es|es)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"es\"><img src=\"";
+        // line 122
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/es.png"), "html", null, true);
+        echo "\" alt=\"SPAIN\">Español</a>
+            <a href=\"#googtrans(es|en)\" class=\"lang-en lang-select dropdown-item waves-effect waves-light\" data-lang=\"en\"><img src=\"";
+        // line 123
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/en.png"), "html", null, true);
+        echo "\" alt=\"USA\">Inglés</a>
+\t\t  <a href=\"#googtrans(es|fr)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"fr\"><img src=\"";
+        // line 124
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/fr.png"), "html", null, true);
+        echo "\" alt=\"FRANCE\">Francés</a>
+\t\t  <a href=\"#googtrans(es|ja)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"ja\"><img src=\"";
+        // line 125
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/ja.png"), "html", null, true);
+        echo "\" alt=\"JAPAN\">Japonés</a>
+            <a href=\"#googtrans(es|ar)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"ar\"><img src=\"";
+        // line 126
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/ar.png"), "html", null, true);
+        echo "\" alt=\"Árabe\">Árabe</a>
+                                                          
+                             
+                    </div>
+                </li>
 
+                
+            </ul>
+
+            <ul class=\"navbar-nav nav-flex-icons\">
+\t\t ";
+        // line 142
+        echo "          
+                   ";
+        // line 144
+        echo "            
+              
               
                     <li class=\"nav-item dropdown ml-4\">
-                    <a class=\"nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold\" id=\"navbarDropdownMenuLink3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-user\"></i>Mi cuenta </a>
+                    <a class=\"nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold\" id=\"navbarDropdownMenuLink3\" data-toggle=\"dropdown\" 
+                    aria-haspopup=\"true\" aria-expanded=\"false\">
+                    <i class=\"fa fa-user\"></i>Mi cuenta </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                          ";
-        // line 115
+        // line 152
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 116
+            // line 153
             echo "                            <i></i>
                             ";
         } else {
-            // line 117
+            // line 154
             echo " 
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 118
+            // line 155
             echo $this->env->getExtension('routing')->getPath("dwes_libros_login");
             echo "\">Iniciar sesión</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 119
+            // line 156
             echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
             echo "\">Crear cuenta</a>
                             ";
         }
-        // line 120
+        // line 157
         echo " ";
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_REGISTRADO"))) {
-            // line 121
+            // line 158
             echo "                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfil", array("username" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()))), "html", null, true);
             echo "\">Perfil</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 122
+            // line 159
             echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
             echo "\">Ajustes</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 123
+            // line 160
             echo $this->env->getExtension('routing')->getPath("dwes_libros_logout");
             echo "\">Cerrar sesión</a>
                             ";
         }
-        // line 125
+        // line 162
         echo "                              
                              
                     </div>
@@ -189,11 +238,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
 ";
-        // line 138
+        // line 175
         $this->displayBlock('portadaInicio', $context, $blocks);
         echo " ";
         $this->displayBlock('portada', $context, $blocks);
-        // line 139
+        // line 176
         echo "
 <!-- Navigation & Intro -->
 
@@ -203,9 +252,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
     ";
-        // line 147
+        // line 184
         $this->displayBlock('contenido', $context, $blocks);
-        // line 148
+        // line 185
         echo "
 </main>
 
@@ -259,11 +308,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                 <p>
                    
                     ";
-        // line 200
+        // line 237
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
             echo " <a href=\"#!\">Eliminar cuenta</a> ";
         }
-        // line 201
+        // line 238
         echo "                </p>
             </div>
             <!--/.Third column-->
@@ -294,17 +343,17 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
             © 2018 Copyright:
             <a href=\"#\" target=\"_blank\"> Aina Lahmam </a>
             ";
-        // line 230
+        // line 267
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
             echo " ¡Bienvenido,
             <b>";
-            // line 231
+            // line 268
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</b>! ";
         } else {
             echo " -BellRead- ";
         }
-        // line 232
+        // line 269
         echo "
         </div>
     </div>
@@ -321,7 +370,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 5
-        echo "  
+        echo " 
 <!-- Font Awesome -->
 <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 <!-- Bootstrap core CSS -->
@@ -383,7 +432,7 @@ drift.load('knp8trrbfyw8');
 ";
     }
 
-    // line 138
+    // line 175
     public function block_portadaInicio($context, array $blocks = array())
     {
         echo " ";
@@ -394,76 +443,75 @@ drift.load('knp8trrbfyw8');
         echo " ";
     }
 
-    // line 147
+    // line 184
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 241
+    // line 278
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 242
+        // line 279
         echo "<!-- SCRIPTS -->
 <!-- JQuery --> 
 <script src=\"";
-        // line 244
+        // line 281
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap tooltips -->
 <script src=\"";
-        // line 246
+        // line 283
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/popper.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap core JavaScript -->
 
 <script src=\"";
-        // line 249
+        // line 286
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js\"></script>
 <script src=\"";
-        // line 252
+        // line 289
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/mdb.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Mi JavaScript -->
 <script src=\"";
-        // line 254
+        // line 291
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/script.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
 ";
-        // line 257
+        // line 294
         echo "     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/material.min.css"), "html", null, true);
         echo "\" /> 
     <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-        // line 258
+        // line 295
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/dataTables.material.min.css"), "html", null, true);
         echo "\" /> 
 
      <script src=\"";
-        // line 260
+        // line 297
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script> 
      <script src=\"";
-        // line 261
+        // line 298
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/dataTables.material.min.js"), "html", null, true);
         echo "\"></script> 
 ";
-        // line 263
+        // line 300
         echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js\"></script>
 
 ";
-        // line 266
+        // line 303
         echo " <link href=\"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css\" rel=\"stylesheet\">
  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js\"></script>
  <script src=\"";
-        // line 268
+        // line 305
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/editorSpanish.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
-
 
     
 <script>
@@ -472,7 +520,7 @@ drift.load('knp8trrbfyw8');
 
     // Material Select Initialization
     \$(document).ready(function () {
-
+setcookie('googtrans', '/es/es');
         
         \$('.mdb-select').material_select();
        \$('.capitulos').DataTable( {
@@ -507,7 +555,7 @@ drift.load('knp8trrbfyw8');
                
     \$('.dt-table').addClass('col-lg-12');
     \$(\"#capitulos1_filter\").insertAfter(\".dt-table\");
-
+ 
 
     });
 
@@ -531,12 +579,26 @@ drift.load('knp8trrbfyw8');
 
        
       });
-    
+      jQuery('.lang-select').click(function() {
+\t  var theLang = jQuery(this).attr('data-lang');
+\t  jQuery('.goog-te-combo').val(theLang);
+\t  //alert(jQuery(this).attr('href'));
+\t  window.location = jQuery(this).attr('href');
+\t  location.reload();
+\t});
+
+      ";
+        // line 382
+        echo "   
 </script>
 
-
+<div id=\"google_translate_element\"></div><script type=\"text/javascript\">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type=\"text/javascript\" src=\"//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"></script>
+        
      <!-- Go to www.addthis.com/dashboard to customize your tools -->
-
 ";
     }
 
@@ -552,14 +614,14 @@ drift.load('knp8trrbfyw8');
 
     public function getDebugInfo()
     {
-        return array (  464 => 268,  460 => 266,  456 => 263,  452 => 261,  448 => 260,  443 => 258,  438 => 257,  433 => 254,  428 => 252,  422 => 249,  416 => 246,  411 => 244,  407 => 242,  404 => 241,  398 => 147,  387 => 138,  350 => 17,  345 => 15,  340 => 13,  335 => 11,  330 => 9,  324 => 5,  321 => 4,  308 => 232,  302 => 231,  298 => 230,  267 => 201,  263 => 200,  209 => 148,  207 => 147,  197 => 139,  193 => 138,  178 => 125,  173 => 123,  169 => 122,  164 => 121,  161 => 120,  156 => 119,  152 => 118,  149 => 117,  145 => 116,  143 => 115,  129 => 104,  123 => 101,  115 => 96,  111 => 95,  107 => 94,  103 => 93,  99 => 92,  95 => 91,  91 => 90,  87 => 89,  84 => 88,  74 => 73,  70 => 72,  62 => 67,  51 => 59,  40 => 50,  38 => 4,  11 => 2,);
+        return array (  592 => 382,  513 => 305,  509 => 303,  505 => 300,  501 => 298,  497 => 297,  492 => 295,  487 => 294,  482 => 291,  477 => 289,  471 => 286,  465 => 283,  460 => 281,  456 => 279,  453 => 278,  447 => 184,  436 => 175,  399 => 17,  394 => 15,  389 => 13,  384 => 11,  379 => 9,  373 => 5,  370 => 4,  357 => 269,  351 => 268,  347 => 267,  316 => 238,  312 => 237,  258 => 185,  256 => 184,  246 => 176,  242 => 175,  227 => 162,  222 => 160,  218 => 159,  213 => 158,  210 => 157,  205 => 156,  201 => 155,  198 => 154,  194 => 153,  192 => 152,  182 => 144,  179 => 142,  166 => 126,  162 => 125,  158 => 124,  154 => 123,  150 => 122,  133 => 108,  127 => 105,  119 => 100,  115 => 99,  111 => 98,  107 => 97,  103 => 96,  99 => 95,  95 => 94,  91 => 93,  85 => 89,  75 => 74,  71 => 73,  63 => 68,  52 => 60,  40 => 50,  38 => 4,  35 => 3,  11 => 2,);
     }
 }
 /* */
-/* {% extends '::base.html.twig' %} {% block body %} */
-/* */
-/* {% block stylesheets %}*/
-/*   */
+/* {% extends '::base.html.twig' %} {% block body %}*/
+/*    */
+/*  {% block stylesheets %}*/
+/*  */
 /* <!-- Font Awesome -->*/
 /* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">*/
 /* <!-- Bootstrap core CSS -->*/
@@ -609,9 +671,10 @@ drift.load('knp8trrbfyw8');
 /* <!-- Navigation & Intro -->*/
 /* */
 /* */
-/* */
 /* <!-- Navbar -->*/
-/* <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white">*/
+/* <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white" style="*/
+/*     */
+/* ">*/
 /*     <div class="container">*/
 /*         <a class="navbar-brand font-weight-bold title" href="{{ path('dwes_libros_homepage') }}">Brand</a>*/
 /*         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"*/
@@ -643,6 +706,9 @@ drift.load('knp8trrbfyw8');
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_gRomance', {'tipo':"gratis"}) }}">Romance</a>*/
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_gDrama', {'tipo':"gratis"}) }}">Drama</a> #}*/
 /* */
+/* */
+/* */
+/*      */
 /*                          <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':1}) }}">Aventura</a>*/
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':2}) }}">Acción</a>*/
 /*                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':3}) }}">Terror</a>*/
@@ -660,14 +726,47 @@ drift.load('knp8trrbfyw8');
 /*                 <li class="nav-item ml-4">*/
 /*                     <a class="nav-link title" href="{{ path('dwes_libros_contacto') }}" data-offset="90">Contacto</a>*/
 /*                 </li>*/
+/*                 */
+/*                 */
 /*             </ul>*/
-/*             <!-- Social Icon  --> */
+/*             <!-- Social Icon  -->  */
+/*             */
 /*             <ul class="navbar-nav nav-flex-icons">*/
 /* */
+/*                     <li class="nav-item dropdown ml-4 show">*/
+/*                     <a class="nav-link dropdown-toggle waves-effect btn peach-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">*/
+/*                    <i class="fa fa-language" aria-hidden="true"></i>Idioma </a>*/
+/*                     <div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink">*/
+/*                         <i></i>*/
+/*                          <a href="#googtrans(es|es)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="es"><img src="{{ asset('bundles/dweslibros/img/langs/es.png') }}" alt="SPAIN">Español</a>*/
+/*             <a href="#googtrans(es|en)" class="lang-en lang-select dropdown-item waves-effect waves-light" data-lang="en"><img src="{{ asset('bundles/dweslibros/img/langs/en.png') }}" alt="USA">Inglés</a>*/
+/* 		  <a href="#googtrans(es|fr)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="fr"><img src="{{ asset('bundles/dweslibros/img/langs/fr.png') }}" alt="FRANCE">Francés</a>*/
+/* 		  <a href="#googtrans(es|ja)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="ja"><img src="{{ asset('bundles/dweslibros/img/langs/ja.png') }}" alt="JAPAN">Japonés</a>*/
+/*             <a href="#googtrans(es|ar)" class="lang-es lang-select dropdown-item waves-effect waves-light" data-lang="ar"><img src="{{ asset('bundles/dweslibros/img/langs/ar.png') }}" alt="Árabe">Árabe</a>*/
+/*                                                           */
+/*                              */
+/*                     </div>*/
+/*                 </li>*/
 /* */
+/*                 */
+/*             </ul>*/
+/* */
+/*             <ul class="navbar-nav nav-flex-icons">*/
+/* 		 {#   <a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="https://www.solodev.com/assets/google-translate/flag-usa.png" alt="USA"></a>*/
+/* 		  <a href="#googtrans(en|es)" class="lang-es lang-select" data-lang="es"><img src="https://www.solodev.com/assets/google-translate/flag-mexico.png" alt="MEXICO"></a>*/
+/* 		  <a href="#googtrans(en|fr)" class="lang-es lang-select" data-lang="fr"><img src="https://www.solodev.com/assets/google-translate/flag-france.png" alt="FRANCE"></a>*/
+/* 		  <a href="#googtrans(en|ru)" class="lang-es lang-select" data-lang="zh-CN"><img src="https://www.solodev.com/assets/google-translate/flag-china.png" alt="CHINA"></a>*/
+/* 		  <a href="#googtrans(en|ja)" class="lang-es lang-select" data-lang="ja"><img src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a>*/
+/*             <a href="#googtrans(es|ar)" class="lang-es lang-select" data-lang="ja"><img src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a> #}*/
+/*           */
+/*                    {#  <div id="google_translate_element"></div>  #}*/
+/*             */
+/*               */
 /*               */
 /*                     <li class="nav-item dropdown ml-4">*/
-/*                     <a class="nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>Mi cuenta </a>*/
+/*                     <a class="nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" */
+/*                     aria-haspopup="true" aria-expanded="false">*/
+/*                     <i class="fa fa-user"></i>Mi cuenta </a>*/
 /*                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">*/
 /*                          {% if app.user %}*/
 /*                             <i></i>*/
@@ -824,7 +923,6 @@ drift.load('knp8trrbfyw8');
 /*  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>*/
 /*  <script src="{{ asset('bundles/dweslibros/js/editorSpanish.js') }}" type="text/javascript"></script>*/
 /* */
-/* */
 /*     */
 /* <script>*/
 /*     //Animación de Inicio*/
@@ -832,7 +930,7 @@ drift.load('knp8trrbfyw8');
 /* */
 /*     // Material Select Initialization*/
 /*     $(document).ready(function () {*/
-/* */
+/* setcookie('googtrans', '/es/es');*/
 /*         */
 /*         $('.mdb-select').material_select();*/
 /*        $('.capitulos').DataTable( {*/
@@ -867,7 +965,7 @@ drift.load('knp8trrbfyw8');
 /*                */
 /*     $('.dt-table').addClass('col-lg-12');*/
 /*     $("#capitulos1_filter").insertAfter(".dt-table");*/
-/* */
+/*  */
 /* */
 /*     });*/
 /* */
@@ -891,10 +989,23 @@ drift.load('knp8trrbfyw8');
 /* */
 /*        */
 /*       });*/
-/*     */
+/*       jQuery('.lang-select').click(function() {*/
+/* 	  var theLang = jQuery(this).attr('data-lang');*/
+/* 	  jQuery('.goog-te-combo').val(theLang);*/
+/* 	  //alert(jQuery(this).attr('href'));*/
+/* 	  window.location = jQuery(this).attr('href');*/
+/* 	  location.reload();*/
+/* 	});*/
+/* */
+/*       {# Google Translate Library #}*/
+/*    */
 /* </script>*/
 /* */
-/* */
+/* <div id="google_translate_element"></div><script type="text/javascript">*/
+/* function googleTranslateElementInit() {*/
+/*   new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');*/
+/* }*/
+/* </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>*/
+/*         */
 /*      <!-- Go to www.addthis.com/dashboard to customize your tools -->*/
-/* */
 /* {% endblock %}  */

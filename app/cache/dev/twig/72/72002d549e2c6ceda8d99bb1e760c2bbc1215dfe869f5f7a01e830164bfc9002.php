@@ -28,11 +28,10 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        
         ";
-        // line 7
+        // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 8
+        // line 7
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
@@ -41,7 +40,6 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
     <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">
     </head>
     <body class=\"creative-lp\" style=\"background-color: #f4f5f6;\">
-
     <style>
         body {
             font-weight: 400;
@@ -54,24 +52,13 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
     </style>
      
         ";
-        // line 26
+        // line 24
         $this->displayBlock('body', $context, $blocks);
-        // line 27
+        // line 25
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 28
-        echo "        <div id=\"google_translate_element\"></div>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-            {pageLanguage: 'es'},
-            'google_translate_element'
-        );
-    }
-</script>
-<script src=\"http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"></script>
-
-    </body>
+        // line 26
+        echo "    </body>
 </html>
 ";
     }
@@ -82,17 +69,17 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
         echo "Welcome!";
     }
 
-    // line 7
+    // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
     }
 
-    // line 26
+    // line 24
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 27
+    // line 25
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -109,7 +96,7 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
 
     public function getDebugInfo()
     {
-        return array (  96 => 27,  91 => 26,  86 => 7,  80 => 5,  63 => 28,  60 => 27,  58 => 26,  36 => 8,  34 => 7,  29 => 5,  23 => 1,);
+        return array (  83 => 25,  78 => 24,  73 => 6,  67 => 5,  61 => 26,  58 => 25,  56 => 24,  35 => 7,  33 => 6,  29 => 5,  23 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -117,7 +104,6 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
 /*     <head>*/
 /*         <meta charset="UTF-8" />*/
 /*         <title>{% block title %}Welcome!{% endblock %}</title>*/
-/*         */
 /*         {% block stylesheets %}{% endblock %}*/
 /*         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />*/
 /*         */
@@ -125,7 +111,6 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
 /*     <meta http-equiv="x-ua-compatible" content="ie=edge">*/
 /*     </head>*/
 /*     <body class="creative-lp" style="background-color: #f4f5f6;">*/
-/* */
 /*     <style>*/
 /*         body {*/
 /*             font-weight: 400;*/
@@ -139,17 +124,6 @@ class __TwigTemplate_8951763eb3cdddc99d765ef483dfd22bd18467661803c86a27ce07e56a8
 /*      */
 /*         {% block body %}{% endblock %}*/
 /*         {% block javascripts %}{% endblock %}*/
-/*         <div id="google_translate_element"></div>*/
-/* <script>*/
-/*     function googleTranslateElementInit() {*/
-/*         new google.translate.TranslateElement(*/
-/*             {pageLanguage: 'es'},*/
-/*             'google_translate_element'*/
-/*         );*/
-/*     }*/
-/* </script>*/
-/* <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>*/
-/* */
 /*     </body>*/
 /* </html>*/
 /* */

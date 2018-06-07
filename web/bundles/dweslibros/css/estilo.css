@@ -179,3 +179,7 @@ cursor: pointer;
   width: 150px;
   height: 139px;
 }
+
+.goog-te-banner-frame{
+  display: none !important;
+}
