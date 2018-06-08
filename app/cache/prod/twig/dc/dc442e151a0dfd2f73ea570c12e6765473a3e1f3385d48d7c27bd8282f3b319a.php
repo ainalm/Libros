@@ -56,49 +56,52 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")));
         foreach ($context['_seq'] as $context["_key"] => $context["libro"]) {
-            // line 28
+            // line 25
+            echo "
+";
+            // line 29
             echo "                               <div class=\"col-md-4 mb-4 mostrar\">
                                 <!--Card-->
                                 <div class=\"card\">
 
                                     <!--Card image-->
                                     <div class=\"view overlay ";
-            // line 33
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["libro"], "colorPortada", array()), "html", null, true);
             echo "\">
                                         <img src=\"https://books.google.com/books/content/images/frontcover/wDumDAAAQBAJ?fife=w200-h300\" style=\"height:200px ; width:150px;\" class=\" mx-auto\" alt=\"sample image\">
  
                                         <a href=\"";
-            // line 36
+            // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\">
                                             <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
                                         </a>
                                     </div>
-                                    <!--/.Card image-->
-                                    <!--Buttons-->
+                                    <!--/.Card image--> 
+ <!--Buttons-->
                                  <div class=\"card-share\">
                                     <div class=\"social-reveal\">
                                        
                                         <!--Twitter-->
                                         <a type=\"button\"  data-toggle=\"tooltip\" data-placement=\"top\" title=\"Editar historia\"  class=\"btn-floating btn-tw waves-effect waves-light\" href=\"";
-            // line 46
+            // line 47
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfilhistoria", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\"> <i class=\"fas fa-pencil-alt\"></i></a>
                                         <!--Google -->
                                         <a  onclick=\"return confirm('¿Estás seguro de eliminar esta publicación?')\" type=\"button\"  href=\"";
-            // line 48
+            // line 49
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarLib", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\"  data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar historia\" class=\"btn-floating btn-gplus waves-effect waves-light\"> <i class=\"fa fa-remove mt-0\"></i></a>
                                     </div>
                                     <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
                                 </div>
-                                 <!--/. Buttons-->
+                                 <!--/. Buttons-->                                    
                                     <!--Card content-->
                                     <div class=\"card-body\">
                                         <!--Title-->
                                         <h4 class=\"card-title\"><strong>";
-            // line 56
+            // line 57
             echo twig_escape_filter($this->env, $this->getAttribute($context["libro"], "titulo", array()), "html", null, true);
             echo "</strong></h4>
                                         <hr>
@@ -109,13 +112,13 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                         \">";
-            // line 64
+            // line 65
             echo twig_escape_filter($this->env, $this->getAttribute($context["libro"], "descripcion", array()), "html", null, true);
             echo "
                                         </p>
                                         <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
                                                 <a href=\"";
-            // line 67
+            // line 68
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\">Leer más
                                                     <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
@@ -133,22 +136,22 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['libro'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 79
+        // line 80
         echo "                            </div>
 
 
 ";
-        // line 82
+        // line 83
         if ((twig_length_filter($this->env, (isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros"))) > 6)) {
-            // line 83
+            // line 84
             echo "   
    <button type=\"button\" id=\"loadMore\" class=\"btn btn-default btn-lg btn-block blue-gradient\">Mostrar más</button>
 ";
         }
-        // line 86
+        // line 87
         echo "
 ";
-        // line 87
+        // line 88
         echo "                          
 
 <script>
@@ -192,7 +195,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 
     public function getDebugInfo()
     {
-        return array (  152 => 87,  149 => 86,  144 => 83,  142 => 82,  137 => 79,  119 => 67,  113 => 64,  102 => 56,  91 => 48,  86 => 46,  73 => 36,  67 => 33,  60 => 28,  56 => 24,  53 => 23,  43 => 17,  39 => 16,  27 => 7,  19 => 1,);
+        return array (  155 => 88,  152 => 87,  147 => 84,  145 => 83,  140 => 80,  122 => 68,  116 => 65,  105 => 57,  94 => 49,  89 => 47,  76 => 37,  70 => 34,  63 => 29,  60 => 25,  56 => 24,  53 => 23,  43 => 17,  39 => 16,  27 => 7,  19 => 1,);
     }
 }
 /* */
@@ -219,6 +222,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /* */
 /* {% endif %} */
 /* {% for libro in libros %}*/
+/* */
 /* {#  <img src="data:image/jpeg;base64,{{libro.fotoPort}}" alt="User Photo" class="z-depth-1 mb-3 mx-auto" id="camb" style="*/
 /*                 max-width: 100px;*/
 /*                 max-height: 100px;"> #}*/
@@ -234,8 +238,8 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /*                                             <div class="mask rgba-white-slight waves-effect waves-light"></div>*/
 /*                                         </a>*/
 /*                                     </div>*/
-/*                                     <!--/.Card image-->*/
-/*                                     <!--Buttons-->*/
+/*                                     <!--/.Card image--> */
+/*  <!--Buttons-->*/
 /*                                  <div class="card-share">*/
 /*                                     <div class="social-reveal">*/
 /*                                        */
@@ -246,7 +250,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /*                                     </div>*/
 /*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
 /*                                 </div>*/
-/*                                  <!--/. Buttons-->*/
+/*                                  <!--/. Buttons-->                                    */
 /*                                     <!--Card content-->*/
 /*                                     <div class="card-body">*/
 /*                                         <!--Title-->*/

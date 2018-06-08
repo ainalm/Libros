@@ -73,7 +73,7 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 
                 <!-- Section sescription -->
                 <p class=\"section-description pb-4 wow fadeIn\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;\">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quas, eos officia maiores ipsam ipsum dolores reiciendis ad voluptas, animi obcaecati adipisci sapiente mollitia.</p>
+                  La misión de Booky es descubrir escritores talentosos y convertirlos en autores exitosos a nivel mundial.</p>
 
                 <!--Grid row-->
                 <div class=\"row features wow fadeIn\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;\">
@@ -89,8 +89,12 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
                             <br>
                             <h5 class=\"dark-grey-text font-weight-bold mt-2\">Escribe</h5>
                             <div class=\"mt-1\">
-                                <p class=\"mx-3 grey-text\">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit.</p>
+                                <p class=\"mx-3 grey-text\">Disfruta de una de las mejores experiencias para escribir en línea .
+                              
+                                No olvides seguir nuestras <a href=\"";
+        // line 63
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_normas");
+        echo "\">pautas</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -105,8 +109,7 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
                             <br>
                             <h5 class=\"dark-grey-text font-weight-bold mt-2\">Explora</h5>
                             <div class=\"mt-1\">
-                                <p class=\"mx-3 grey-text\">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit.</p>
+                                <p class=\"mx-3 grey-text\">Descubre miles de historias forma gratuita, deja tu opinión y pásala bien.</p>
                             </div>
                         </div>
                     </div>
@@ -121,8 +124,8 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
                             <br>
                             <h5 class=\"dark-grey-text font-weight-bold mt-2\">Publica</h5>
                             <div class=\"mt-1\">
-                                <p class=\"mx-3 grey-text\">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit.</p>
+                                <p class=\"mx-3 grey-text\"> Escribe y publica tus historias más rápido,haciéndolo por capítulos.
+                                Y se ya tienes un libro en venta, lo puedes anunciar aquí para que llege a más lectores.</p>
                             </div>
                         </div>
                     </div>
@@ -608,11 +611,11 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 
     public function getDebugInfo()
     {
-        return array (  66 => 35,  63 => 34,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  96 => 63,  66 => 35,  63 => 34,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
-/* */
+/*  */
 /* */
 /* {% block portadaInicio %}*/
 /*     <!--Intro Section-->*/
@@ -655,7 +658,7 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 /* */
 /*                 <!-- Section sescription -->*/
 /*                 <p class="section-description pb-4 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">*/
-/*                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quas, eos officia maiores ipsam ipsum dolores reiciendis ad voluptas, animi obcaecati adipisci sapiente mollitia.</p>*/
+/*                   La misión de Booky es descubrir escritores talentosos y convertirlos en autores exitosos a nivel mundial.</p>*/
 /* */
 /*                 <!--Grid row-->*/
 /*                 <div class="row features wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">*/
@@ -671,8 +674,9 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 /*                             <br>*/
 /*                             <h5 class="dark-grey-text font-weight-bold mt-2">Escribe</h5>*/
 /*                             <div class="mt-1">*/
-/*                                 <p class="mx-3 grey-text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit*/
-/*                                     amet, consectetur adipisicing elit.</p>*/
+/*                                 <p class="mx-3 grey-text">Disfruta de una de las mejores experiencias para escribir en línea .*/
+/*                               */
+/*                                 No olvides seguir nuestras <a href="{{path('dwes_libros_normas')}}">pautas</a>.</p>*/
 /*                             </div>*/
 /*                         </div>*/
 /*                     </div>*/
@@ -687,8 +691,7 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 /*                             <br>*/
 /*                             <h5 class="dark-grey-text font-weight-bold mt-2">Explora</h5>*/
 /*                             <div class="mt-1">*/
-/*                                 <p class="mx-3 grey-text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit*/
-/*                                     amet, consectetur adipisicing elit.</p>*/
+/*                                 <p class="mx-3 grey-text">Descubre miles de historias forma gratuita, deja tu opinión y pásala bien.</p>*/
 /*                             </div>*/
 /*                         </div>*/
 /*                     </div>*/
@@ -703,8 +706,8 @@ class __TwigTemplate_4e941d68ad91d40db57f18e05df20addac241cff47baf7ba09afc84b40c
 /*                             <br>*/
 /*                             <h5 class="dark-grey-text font-weight-bold mt-2">Publica</h5>*/
 /*                             <div class="mt-1">*/
-/*                                 <p class="mx-3 grey-text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem ipsum dolor sit*/
-/*                                     amet, consectetur adipisicing elit.</p>*/
+/*                                 <p class="mx-3 grey-text"> Escribe y publica tus historias más rápido,haciéndolo por capítulos.*/
+/*                                 Y se ya tienes un libro en venta, lo puedes anunciar aquí para que llege a más lectores.</p>*/
 /*                             </div>*/
 /*                         </div>*/
 /*                     </div>*/

@@ -941,7 +941,7 @@ class DefaultController extends Controller
 		//var_dump('DELETE FROM suscripseleccionada WHERE username = "' . $userlog . '" AND tipoSuscripcion = "' . $tipo . '";');exit;
 		return $this->render('DWESLibrosBundle:Default:suscriSelec.html.twig', array('tipo' =>"cancelar"));
 
-
+ 
 	}
 
 	public function existeLibAction($idLibro)

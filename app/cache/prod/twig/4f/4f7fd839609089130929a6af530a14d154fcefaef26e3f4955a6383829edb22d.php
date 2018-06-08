@@ -30,7 +30,7 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
     {
         // line 5
         echo "    <!--Intro Section-->
-   <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');margin-top: 57px;\">
+   <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');\">
             <div class=\"flex-center mask view intro-3\">
                 <div class=\"container my-5 pt-5\">
 
@@ -162,7 +162,7 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 /* */
 /* {% block portada %}*/
 /*     <!--Intro Section-->*/
-/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');margin-top: 57px;">*/
+/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');">*/
 /*             <div class="flex-center mask view intro-3">*/
 /*                 <div class="container my-5 pt-5">*/
 /* */
