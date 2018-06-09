@@ -39,14 +39,17 @@
                                         </a>
                                     </div>
                                     <!--/.Card image--> 
- <!--Buttons-->
+ <!--Buttons--> 
                                  <div class="card-share">
                                     <div class="social-reveal">
                                        
                                         <!--Twitter-->
-                                        <a type="button"  data-toggle="tooltip" data-placement="top" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>
+                                        
+                                        <a type="button"  data-toggle="tooltip" data-placement="bottom" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light tool"
+                                         href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>
                                         <!--Google -->
-                                        <a  onclick="return confirm('¿Estás seguro de eliminar esta publicación?')" type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="top" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>
+                                        <a  onclick="return confirm('¿Estás seguro de eliminar esta publicación?')" type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}" 
+                                         data-toggle="tooltip" data-placement="bottom" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light tool"> <i class="fa fa-remove mt-0"></i></a>
                                     </div>
                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>
                                 </div>

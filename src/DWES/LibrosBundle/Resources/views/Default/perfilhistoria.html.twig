@@ -287,7 +287,7 @@
                                         <strong>{{item.titulo}}</strong>
                                         <a href="" data-toggle="modal" data-target="#modalActualizar">
 
-                                            <span data-toggle="tooltip" data-placement="top" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
+                                            <span data-toggle="tooltip" data-placement="bottom" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
                                                 href="#" data-original-title="Editar información del libro">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </span>
@@ -336,7 +336,7 @@
                         <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
             {% if  item.tipoLibro =="Gratis" %}
                         <div>
-                            <a data-toggle="tooltip"  data-placement="top" title="Añadir capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light"
+                            <a data-toggle="tooltip"  data-placement="bottom" title="Añadir capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light"
                                 href="{{ path('dwes_libros_nuevoCap', {'idLibro' : app.request.get('idLibro')}) }}">
                                 <i class="fas fa-plus"></i>
                             </a>
@@ -350,7 +350,7 @@
                         <div>
  
                             <a href="" data-toggle="modal" data-target="#modalEnlace">
-                                            <span data-toggle="tooltip" data-placement="top" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light "
+                                            <span data-toggle="tooltip" data-placement="bottom" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light "
                                                 href="#" data-original-title="Añadir enlace">
                                                 <i class="fas fa-plus"></i>
                                             </span>
@@ -402,11 +402,11 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <a data-toggle="tooltip" data-placement="top" title="Editar capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
+                                            <a data-toggle="tooltip" data-placement="bottom" title="Editar capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
                                                 href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
-                                            <a  onclick="return confirm('¿Estás seguro de eliminar este capíulot?')" data-toggle="tooltip" data-placement="top" title="Eliminar capítulo"  class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                            <a  onclick="return confirm('¿Estás seguro de eliminar este capíulot?')" data-toggle="tooltip" data-placement="bottom" title="Eliminar capítulo"  class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                                 href="{{ path('dwes_libros_eliminarCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">
                                                 <i class="fa fa-remove mt-0"></i>
                                             </a>
@@ -436,12 +436,14 @@
                                         <td>
                                             <a href="" data-toggle="modal" data-target="#{{item.idEnlace}}">
 
-                                            <span data-toggle="tooltip" data-placement="top" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
+                                            <span data-toggle="tooltip" data-placement="bottom" title="" class=" btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
                                                 href="#" data-original-title="Editar enlace">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </span>
                                         </a>    
-                                            <a  onclick="return confirm('¿Estás seguro de eliminar este enlace?')" href="{{ path('dwes_libros_eliminarEnlace', {'idLibro' : app.request.get('idLibro'),'idEnlace':item.idEnlace}) }}" data-toggle="tooltip" data-placement="top" title="Eliminar enlace" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                            <a  onclick="return confirm('¿Estás seguro de eliminar este enlace?')"
+                                             href="{{ path('dwes_libros_eliminarEnlace', {'idLibro' : app.request.get('idLibro'),'idEnlace':item.idEnlace}) }}"
+                                              data-toggle="tooltip" data-placement="bottom" title="Eliminar enlace" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                               >
                                               
                                                 <i class="fa fa-remove mt-0"></i>

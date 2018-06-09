@@ -116,23 +116,22 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 (isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis")) {
             // line 75
             echo "                           
-                    <a href=\"";
-            // line 76
-            echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "gratis"));
-            echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Cancelar suscripción</a>
+                    <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
+                                cursor: context-menu;
+                            \">Plan actual</a>
                             
                                     ";
         }
-        // line 79
+        // line 81
         echo "                            ";
         if (twig_test_empty((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")))) {
-            // line 80
+            // line 82
             echo "                            <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
             echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar  </a>
                            ";
         }
-        // line 82
+        // line 84
         echo "                                ";
         if (((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaE") || (((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaG") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) != "gratis"))) || ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica"))) {
             echo " 
@@ -141,7 +140,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                             \">Fin prueba gratuita </a>
                             ";
         }
-        // line 87
+        // line 89
         echo "
                             </div>
                         </div>
@@ -172,7 +171,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                         <li>
                                             <p>
                                                 <strong>";
-        // line 116
+        // line 118
         echo twig_escape_filter($this->env, (isset($context["numBasica"]) ? $context["numBasica"] : $this->getContext($context, "numBasica")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
                                         </li>
@@ -181,24 +180,37 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                     </ul>
                                     
                                        ";
-        // line 122
+        // line 124
         if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica")) {
-            // line 123
+            // line 125
             echo "                                          
                     <a href=\"";
-            // line 124
+            // line 126
             echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "basica"));
             echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Cancelar suscripción</a>
                             ";
         } else {
-            // line 126
-            echo "                            <a href=\"";
-            echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "basica"));
-            echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Seleccionar</a>
+            // line 128
+            echo "                           ";
+            // line 129
+            echo "                                    <form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">
+<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">
+<input type=\"hidden\" name=\"hosted_button_id\" value=\"X39M4FKKMDE8Q\">
+<table style=\"display:none\">
+<tr><td><input type=\"hidden\" name=\"on0\" value=\"Compre ahora !\">Compre ahora !</td></tr><tr><td><input type=\"text\" name=\"os0\" maxlength=\"200\"></td></tr>
+</table>
+<input type=\"image\" src=\"";
+            // line 135
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Icons/pay.png"), "html", null, true);
+            echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\" border=\"0\" name=\"submit\" alt=\"PayPal, la forma rápida y segura de pagar en Internet.\">
+<img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/es_ES/i/scr/pixel.gif\" width=\"1\" height=\"1\">
+</form>
                                     ";
         }
-        // line 128
-        echo "
+        // line 139
+        echo "                                                   
+
+
                                 </div>
 
                             </div>
@@ -231,7 +243,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
     public function getDebugInfo()
     {
-        return array (  201 => 128,  195 => 126,  190 => 124,  187 => 123,  185 => 122,  176 => 116,  145 => 87,  136 => 82,  130 => 80,  127 => 79,  121 => 76,  118 => 75,  116 => 74,  111 => 71,  108 => 70,  100 => 64,  59 => 27,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  211 => 139,  204 => 135,  196 => 129,  194 => 128,  189 => 126,  186 => 125,  184 => 124,  175 => 118,  144 => 89,  135 => 84,  129 => 82,  126 => 81,  118 => 75,  116 => 74,  111 => 71,  108 => 70,  100 => 64,  59 => 27,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -309,7 +321,9 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                             ">Fin prueba gratuita </a>      */
 /*                             {% elseif  suscripcion == "gratis" %}*/
 /*                            */
-/*                     <a href="{{ path('dwes_libros_delSuscri',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Cancelar suscripción</a>*/
+/*                     <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="*/
+/*                                 cursor: context-menu;*/
+/*                             ">Plan actual</a>*/
 /*                             */
 /*                                     {% endif %}*/
 /*                             {% if suscripcion is empty %}*/
@@ -359,8 +373,19 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                                           */
 /*                     <a href="{{ path('dwes_libros_delSuscri',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Cancelar suscripción</a>*/
 /*                             {% else %}*/
-/*                             <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Seleccionar</a>*/
+/*                            {#  <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light"><i class="fab fa-paypal"></i> Pagar con Pay Pal</a> #}*/
+/*                                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">*/
+/* <input type="hidden" name="cmd" value="_s-xclick">*/
+/* <input type="hidden" name="hosted_button_id" value="X39M4FKKMDE8Q">*/
+/* <table style="display:none">*/
+/* <tr><td><input type="hidden" name="on0" value="Compre ahora !">Compre ahora !</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>*/
+/* </table>*/
+/* <input type="image" src="{{ asset('bundles/dweslibros/img/Icons/pay.png') }}" class="btn btn-rounded btn-outline-white waves-effect waves-light" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">*/
+/* <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">*/
+/* </form>*/
 /*                                     {% endif %}*/
+/*                                                    */
+/* */
 /* */
 /*                                 </div>*/
 /* */

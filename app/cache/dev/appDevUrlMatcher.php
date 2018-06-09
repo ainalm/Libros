@@ -461,6 +461,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::normasAction',  '_route' => 'dwes_libros_normas',);
         }
 
+        // dwes_libros_guia
+        if (rtrim($pathinfo, '/') === '/guia') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_guia');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::guiaAction',  '_route' => 'dwes_libros_guia',);
+        }
+
         // dwes_libros_suscriSelect
         if (0 === strpos($pathinfo, '/suscriSelect') && preg_match('#^/suscriSelect/(?P<tipo>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_suscriSelect')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::suscriSelectAction',));

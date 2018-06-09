@@ -79,20 +79,23 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
                                         </a>
                                     </div>
                                     <!--/.Card image--> 
- <!--Buttons-->
+ <!--Buttons--> 
                                  <div class=\"card-share\">
                                     <div class=\"social-reveal\">
                                        
                                         <!--Twitter-->
-                                        <a type=\"button\"  data-toggle=\"tooltip\" data-placement=\"top\" title=\"Editar historia\"  class=\"btn-floating btn-tw waves-effect waves-light\" href=\"";
-            // line 47
+                                        
+                                        <a type=\"button\"  data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Editar historia\"  class=\"btn-floating btn-tw waves-effect waves-light tool\"
+                                         href=\"";
+            // line 49
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfilhistoria", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\"> <i class=\"fas fa-pencil-alt\"></i></a>
                                         <!--Google -->
                                         <a  onclick=\"return confirm('¿Estás seguro de eliminar esta publicación?')\" type=\"button\"  href=\"";
-            // line 49
+            // line 51
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarLib", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
-            echo "\"  data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar historia\" class=\"btn-floating btn-gplus waves-effect waves-light\"> <i class=\"fa fa-remove mt-0\"></i></a>
+            echo "\" 
+                                         data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Eliminar historia\" class=\"btn-floating btn-gplus waves-effect waves-light tool\"> <i class=\"fa fa-remove mt-0\"></i></a>
                                     </div>
                                     <a class=\"btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light\"><i class=\"fa fa-chevron-right\"></i></a>
                                 </div>
@@ -101,7 +104,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
                                     <div class=\"card-body\">
                                         <!--Title-->
                                         <h4 class=\"card-title\"><strong>";
-            // line 57
+            // line 60
             echo twig_escape_filter($this->env, $this->getAttribute($context["libro"], "titulo", array()), "html", null, true);
             echo "</strong></h4>
                                         <hr>
@@ -112,13 +115,13 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                         \">";
-            // line 65
+            // line 68
             echo twig_escape_filter($this->env, $this->getAttribute($context["libro"], "descripcion", array()), "html", null, true);
             echo "
                                         </p>
                                         <p class=\"text-right mb-0 text-uppercase font-small spacing font-weight-bold\">
                                                 <a href=\"";
-            // line 68
+            // line 71
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_historia", array("idLibro" => $this->getAttribute($context["libro"], "idLibro", array()))), "html", null, true);
             echo "\">Leer más
                                                     <i class=\"fa fa-chevron-circle-right\" aria-hidden=\"true\"></i>
@@ -136,22 +139,22 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['libro'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 80
+        // line 83
         echo "                            </div>
 
 
 ";
-        // line 83
+        // line 86
         if ((twig_length_filter($this->env, (isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros"))) > 6)) {
-            // line 84
+            // line 87
             echo "   
    <button type=\"button\" id=\"loadMore\" class=\"btn btn-default btn-lg btn-block blue-gradient\">Mostrar más</button>
 ";
         }
-        // line 87
+        // line 90
         echo "
 ";
-        // line 88
+        // line 91
         echo "                          
 
 <script>
@@ -195,7 +198,7 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 
     public function getDebugInfo()
     {
-        return array (  155 => 88,  152 => 87,  147 => 84,  145 => 83,  140 => 80,  122 => 68,  116 => 65,  105 => 57,  94 => 49,  89 => 47,  76 => 37,  70 => 34,  63 => 29,  60 => 25,  56 => 24,  53 => 23,  43 => 17,  39 => 16,  27 => 7,  19 => 1,);
+        return array (  158 => 91,  155 => 90,  150 => 87,  148 => 86,  143 => 83,  125 => 71,  119 => 68,  108 => 60,  96 => 51,  91 => 49,  76 => 37,  70 => 34,  63 => 29,  60 => 25,  56 => 24,  53 => 23,  43 => 17,  39 => 16,  27 => 7,  19 => 1,);
     }
 }
 /* */
@@ -239,14 +242,17 @@ class __TwigTemplate_36c137a556b7f6826895b4a605ca46584fbea3f4c9336c573d1d83216ef
 /*                                         </a>*/
 /*                                     </div>*/
 /*                                     <!--/.Card image--> */
-/*  <!--Buttons-->*/
+/*  <!--Buttons--> */
 /*                                  <div class="card-share">*/
 /*                                     <div class="social-reveal">*/
 /*                                        */
 /*                                         <!--Twitter-->*/
-/*                                         <a type="button"  data-toggle="tooltip" data-placement="top" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>*/
+/*                                         */
+/*                                         <a type="button"  data-toggle="tooltip" data-placement="bottom" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light tool"*/
+/*                                          href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>*/
 /*                                         <!--Google -->*/
-/*                                         <a  onclick="return confirm('¿Estás seguro de eliminar esta publicación?')" type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="top" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>*/
+/*                                         <a  onclick="return confirm('¿Estás seguro de eliminar esta publicación?')" type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}" */
+/*                                          data-toggle="tooltip" data-placement="bottom" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light tool"> <i class="fa fa-remove mt-0"></i></a>*/
 /*                                     </div>*/
 /*                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>*/
 /*                                 </div>*/

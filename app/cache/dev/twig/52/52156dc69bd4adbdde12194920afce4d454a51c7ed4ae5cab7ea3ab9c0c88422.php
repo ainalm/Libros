@@ -450,7 +450,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla blanca\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Pantalla blanca\">
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 264
@@ -460,7 +460,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla sefia\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Pantalla sefia\">
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 271
@@ -470,7 +470,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla negra\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Pantalla negra\">
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 278
@@ -480,7 +480,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aumentar letra\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Aumentar letra\">
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 285
@@ -490,7 +490,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Desminuir letra\">
+                    <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Desminuir letra\">
                         <i class=\"mb-2\">
                             <img src=\"";
         // line 292
@@ -812,7 +812,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delComentarioCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()), "username" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "comentario" => $this->getAttribute($context["item"], "comentario", array()))), "html", null, true);
                         echo "\"
                                                             onclick=\"return confirm('¿Estás seguro de eliminar este comentario?')\"
-                                                            data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar comentario\"
+                                                            data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Eliminar comentario\"
                                                             class=\"guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \"
                                                             href=\"\">
                                                             <i class=\"fa fa-remove mt-0\"></i>
@@ -1523,7 +1523,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delComentarioLib", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "username" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "comentario" => $this->getAttribute($context["item"], "comentario", array()))), "html", null, true);
                     echo "\"
                                     onclick=\"return confirm('¿Estás seguro de eliminar este comentario?')\" data-toggle=\"tooltip\"
-                                    data-placement=\"top\" title=\"Eliminar comentario\" class=\"guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \"
+                                    data-placement=\"bottom\" title=\"Eliminar comentario\" class=\"guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \"
                                     href=\"\">
                                     <i class=\"fa fa-remove mt-0\"></i>
                                 </a>
@@ -1572,39 +1572,38 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
     <script type=\"text/javascript\" src=\"http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b16754fa71e965a\"></script>
 
     <script>
-        function pruebaDivAPdf() {
-            var pdf = new jsPDF('p', 'pt', 'letter');
-            source = \$('#imprimir')[0];
+         function pruebaDivAPdf() {
+                var pdf = new jsPDF('p', 'pt', 'letter');
+                source = \$('#imprimir')[0];
 
-            specialElementHandlers = {
-                '#imprimir': function (element, renderer) {
-                    return true
-                }
-            };
-            margins = {
-                top: 80,
-                bottom: 60,
-                left: 40,
-                width: 522
-            };
+                specialElementHandlers = {
+                    '#imprimir': function (element, renderer) {
+                        return true
+                    }
+                };
+                margins = {
+                    top: 80,
+                    bottom: 60,
+                    left: 40,
+                    width: 522
+                };
 
-            pdf.fromHTML(
-                source,
-                margins.left, // x coord
-                margins.top, { // y coord
-                    'width': margins.width,
-                    'elementHandlers': specialElementHandlers
-                },
+                pdf.fromHTML(
+                    source,
+                    margins.left, // x coord
+                    margins.top, { // y coord
+                        'width': margins.width,
+                        'elementHandlers': specialElementHandlers
+                    },
 
-                function (dispose) {
-                    pdf.save({
-                        {
-                            app.request.get('idLibro')
-                        }
-                    } + '.pdf');
-                }, margins
-            );
-        }
+                    function (dispose) {
+                        pdf.save(";
+        // line 1129
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "html", null, true);
+        echo "+'.pdf');
+                    }, margins
+                );
+            }
     </script>
 
     ";
@@ -1622,7 +1621,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
     public function getDebugInfo()
     {
-        return array (  1562 => 1091,  1550 => 1085,  1544 => 1082,  1536 => 1076,  1533 => 1075,  1522 => 1068,  1520 => 1067,  1518 => 1065,  1516 => 1064,  1510 => 1063,  1503 => 1058,  1498 => 1057,  1495 => 1056,  1493 => 1055,  1488 => 1052,  1484 => 1051,  1474 => 1044,  1468 => 1040,  1445 => 1020,  1433 => 1011,  1425 => 1005,  1420 => 1004,  1415 => 1003,  1413 => 1002,  1400 => 991,  1398 => 990,  1393 => 987,  1389 => 985,  1387 => 984,  1384 => 983,  1382 => 982,  947 => 549,  938 => 546,  928 => 539,  919 => 535,  916 => 534,  912 => 533,  907 => 530,  902 => 529,  897 => 528,  895 => 527,  871 => 505,  852 => 491,  840 => 485,  834 => 482,  827 => 477,  823 => 475,  811 => 467,  804 => 465,  802 => 464,  791 => 455,  787 => 454,  782 => 452,  772 => 446,  768 => 444,  763 => 441,  740 => 421,  728 => 412,  720 => 406,  717 => 405,  712 => 404,  710 => 403,  696 => 391,  694 => 390,  689 => 388,  685 => 386,  679 => 385,  675 => 384,  667 => 380,  665 => 379,  658 => 377,  648 => 372,  643 => 370,  638 => 368,  633 => 365,  628 => 364,  625 => 363,  615 => 359,  608 => 355,  603 => 353,  599 => 351,  595 => 350,  592 => 349,  581 => 340,  578 => 339,  566 => 330,  563 => 329,  548 => 323,  545 => 322,  538 => 319,  528 => 312,  523 => 310,  519 => 308,  515 => 307,  497 => 292,  487 => 285,  477 => 278,  467 => 271,  457 => 264,  449 => 258,  444 => 255,  438 => 252,  433 => 249,  427 => 246,  424 => 245,  422 => 244,  419 => 243,  416 => 242,  403 => 232,  396 => 228,  393 => 227,  387 => 224,  384 => 223,  382 => 222,  377 => 219,  370 => 215,  367 => 214,  362 => 212,  359 => 211,  357 => 210,  354 => 209,  351 => 208,  347 => 205,  344 => 204,  341 => 201,  336 => 200,  331 => 199,  329 => 198,  320 => 192,  314 => 189,  311 => 188,  297 => 173,  290 => 163,  261 => 141,  257 => 139,  252 => 136,  250 => 135,  246 => 134,  240 => 131,  224 => 117,  214 => 110,  208 => 108,  203 => 107,  201 => 106,  187 => 94,  180 => 84,  166 => 72,  163 => 71,  154 => 69,  150 => 68,  147 => 67,  140 => 66,  128 => 63,  123 => 61,  120 => 60,  114 => 59,  107 => 54,  102 => 51,  97 => 48,  95 => 47,  78 => 32,  68 => 30,  42 => 7,  35 => 2,  11 => 1,);
+        return array (  1602 => 1129,  1562 => 1091,  1550 => 1085,  1544 => 1082,  1536 => 1076,  1533 => 1075,  1522 => 1068,  1520 => 1067,  1518 => 1065,  1516 => 1064,  1510 => 1063,  1503 => 1058,  1498 => 1057,  1495 => 1056,  1493 => 1055,  1488 => 1052,  1484 => 1051,  1474 => 1044,  1468 => 1040,  1445 => 1020,  1433 => 1011,  1425 => 1005,  1420 => 1004,  1415 => 1003,  1413 => 1002,  1400 => 991,  1398 => 990,  1393 => 987,  1389 => 985,  1387 => 984,  1384 => 983,  1382 => 982,  947 => 549,  938 => 546,  928 => 539,  919 => 535,  916 => 534,  912 => 533,  907 => 530,  902 => 529,  897 => 528,  895 => 527,  871 => 505,  852 => 491,  840 => 485,  834 => 482,  827 => 477,  823 => 475,  811 => 467,  804 => 465,  802 => 464,  791 => 455,  787 => 454,  782 => 452,  772 => 446,  768 => 444,  763 => 441,  740 => 421,  728 => 412,  720 => 406,  717 => 405,  712 => 404,  710 => 403,  696 => 391,  694 => 390,  689 => 388,  685 => 386,  679 => 385,  675 => 384,  667 => 380,  665 => 379,  658 => 377,  648 => 372,  643 => 370,  638 => 368,  633 => 365,  628 => 364,  625 => 363,  615 => 359,  608 => 355,  603 => 353,  599 => 351,  595 => 350,  592 => 349,  581 => 340,  578 => 339,  566 => 330,  563 => 329,  548 => 323,  545 => 322,  538 => 319,  528 => 312,  523 => 310,  519 => 308,  515 => 307,  497 => 292,  487 => 285,  477 => 278,  467 => 271,  457 => 264,  449 => 258,  444 => 255,  438 => 252,  433 => 249,  427 => 246,  424 => 245,  422 => 244,  419 => 243,  416 => 242,  403 => 232,  396 => 228,  393 => 227,  387 => 224,  384 => 223,  382 => 222,  377 => 219,  370 => 215,  367 => 214,  362 => 212,  359 => 211,  357 => 210,  354 => 209,  351 => 208,  347 => 205,  344 => 204,  341 => 201,  336 => 200,  331 => 199,  329 => 198,  320 => 192,  314 => 189,  311 => 188,  297 => 173,  290 => 163,  261 => 141,  257 => 139,  252 => 136,  250 => 135,  246 => 134,  240 => 131,  224 => 117,  214 => 110,  208 => 108,  203 => 107,  201 => 106,  187 => 94,  180 => 84,  166 => 72,  163 => 71,  154 => 69,  150 => 68,  147 => 67,  140 => 66,  128 => 63,  123 => 61,  120 => 60,  114 => 59,  107 => 54,  102 => 51,  97 => 48,  95 => 47,  78 => 32,  68 => 30,  42 => 7,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %} {% for item in libro %}*/
@@ -1886,35 +1885,35 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*             <ul class="nav navbar-nav nav-flex-icons ml-auto">*/
 /* */
 /*                 <li class="nav-item">*/
-/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla blanca">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Pantalla blanca">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/sun-selec.png') }}" id="blanca"> </img>*/
 /*                         </i>*/
 /*                     </a>*/
 /*                 </li>*/
 /*                 <li class="nav-item">*/
-/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla sefia">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Pantalla sefia">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/sunset.png') }}" id="sefia"> </img>*/
 /*                         </i>*/
 /*                     </a>*/
 /*                 </li>*/
 /*                 <li class="nav-item">*/
-/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla negra">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Pantalla negra">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/moon.png') }}" id="negra"> </img>*/
 /*                         </i>*/
 /*                     </a>*/
 /*                 </li>*/
 /*                 <li class="nav-item">*/
-/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Aumentar letra">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Aumentar letra">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letraUp"> </img>*/
 /*                         </i>*/
 /*                     </a>*/
 /*                 </li>*/
 /*                 <li class="nav-item">*/
-/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Desminuir letra">*/
+/*                     <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Desminuir letra">*/
 /*                         <i class="mb-2">*/
 /*                             <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letraDown"> </img>*/
 /*                         </i>*/
@@ -2093,7 +2092,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                                                         %}*/
 /*                                                         <a href="{{ path('dwes_libros_delComentarioCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo,'username':app.user.username,'comentario' :item.comentario}) }}"*/
 /*                                                             onclick="return confirm('¿Estás seguro de eliminar este comentario?')"*/
-/*                                                             data-toggle="tooltip" data-placement="top" title="Eliminar comentario"*/
+/*                                                             data-toggle="tooltip" data-placement="bottom" title="Eliminar comentario"*/
 /*                                                             class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "*/
 /*                                                             href="">*/
 /*                                                             <i class="fa fa-remove mt-0"></i>*/
@@ -2694,7 +2693,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                             if app.user.username == item.username %}*/
 /*                                 <a href="{{ path('dwes_libros_delComentarioLib', {'idLibro' : app.request.get('idLibro'),'username':app.user.username,'comentario' :item.comentario}) }}"*/
 /*                                     onclick="return confirm('¿Estás seguro de eliminar este comentario?')" data-toggle="tooltip"*/
-/*                                     data-placement="top" title="Eliminar comentario" class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "*/
+/*                                     data-placement="bottom" title="Eliminar comentario" class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "*/
 /*                                     href="">*/
 /*                                     <i class="fa fa-remove mt-0"></i>*/
 /*                                 </a>*/
@@ -2728,39 +2727,35 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*     <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b16754fa71e965a"></script>*/
 /* */
 /*     <script>*/
-/*         function pruebaDivAPdf() {*/
-/*             var pdf = new jsPDF('p', 'pt', 'letter');*/
-/*             source = $('#imprimir')[0];*/
+/*          function pruebaDivAPdf() {*/
+/*                 var pdf = new jsPDF('p', 'pt', 'letter');*/
+/*                 source = $('#imprimir')[0];*/
 /* */
-/*             specialElementHandlers = {*/
-/*                 '#imprimir': function (element, renderer) {*/
-/*                     return true*/
-/*                 }*/
-/*             };*/
-/*             margins = {*/
-/*                 top: 80,*/
-/*                 bottom: 60,*/
-/*                 left: 40,*/
-/*                 width: 522*/
-/*             };*/
+/*                 specialElementHandlers = {*/
+/*                     '#imprimir': function (element, renderer) {*/
+/*                         return true*/
+/*                     }*/
+/*                 };*/
+/*                 margins = {*/
+/*                     top: 80,*/
+/*                     bottom: 60,*/
+/*                     left: 40,*/
+/*                     width: 522*/
+/*                 };*/
 /* */
-/*             pdf.fromHTML(*/
-/*                 source,*/
-/*                 margins.left, // x coord*/
-/*                 margins.top, { // y coord*/
-/*                     'width': margins.width,*/
-/*                     'elementHandlers': specialElementHandlers*/
-/*                 },*/
+/*                 pdf.fromHTML(*/
+/*                     source,*/
+/*                     margins.left, // x coord*/
+/*                     margins.top, { // y coord*/
+/*                         'width': margins.width,*/
+/*                         'elementHandlers': specialElementHandlers*/
+/*                     },*/
 /* */
-/*                 function (dispose) {*/
-/*                     pdf.save({*/
-/*                         {*/
-/*                             app.request.get('idLibro')*/
-/*                         }*/
-/*                     } + '.pdf');*/
-/*                 }, margins*/
-/*             );*/
-/*         }*/
+/*                     function (dispose) {*/
+/*                         pdf.save({{app.request.get('idLibro')}}+'.pdf');*/
+/*                     }, margins*/
+/*                 );*/
+/*             }*/
 /*     </script>*/
 /* */
 /*     {%endblock %}*/

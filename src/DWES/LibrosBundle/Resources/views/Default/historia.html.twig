@@ -259,35 +259,35 @@
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla blanca">
+                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Pantalla blanca">
                         <i class="mb-2">
                             <img src="{{ asset('bundles/dweslibros/img/icons/sun-selec.png') }}" id="blanca"> </img>
                         </i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla sefia">
+                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Pantalla sefia">
                         <i class="mb-2">
                             <img src="{{ asset('bundles/dweslibros/img/icons/sunset.png') }}" id="sefia"> </img>
                         </i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla negra">
+                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Pantalla negra">
                         <i class="mb-2">
                             <img src="{{ asset('bundles/dweslibros/img/icons/moon.png') }}" id="negra"> </img>
                         </i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Aumentar letra">
+                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Aumentar letra">
                         <i class="mb-2">
                             <img src="{{ asset('bundles/dweslibros/img/icons/font+.png') }}" id="letraUp"> </img>
                         </i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Desminuir letra">
+                    <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Desminuir letra">
                         <i class="mb-2">
                             <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letraDown"> </img>
                         </i>
@@ -466,7 +466,7 @@
                                                         %}
                                                         <a href="{{ path('dwes_libros_delComentarioCap', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo,'username':app.user.username,'comentario' :item.comentario}) }}"
                                                             onclick="return confirm('¿Estás seguro de eliminar este comentario?')"
-                                                            data-toggle="tooltip" data-placement="top" title="Eliminar comentario"
+                                                            data-toggle="tooltip" data-placement="bottom" title="Eliminar comentario"
                                                             class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                                             href="">
                                                             <i class="fa fa-remove mt-0"></i>
@@ -1067,7 +1067,7 @@
                             if app.user.username == item.username %}
                                 <a href="{{ path('dwes_libros_delComentarioLib', {'idLibro' : app.request.get('idLibro'),'username':app.user.username,'comentario' :item.comentario}) }}"
                                     onclick="return confirm('¿Estás seguro de eliminar este comentario?')" data-toggle="tooltip"
-                                    data-placement="top" title="Eliminar comentario" class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
+                                    data-placement="bottom" title="Eliminar comentario" class="guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient "
                                     href="">
                                     <i class="fa fa-remove mt-0"></i>
                                 </a>
@@ -1101,39 +1101,35 @@
     <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b16754fa71e965a"></script>
 
     <script>
-        function pruebaDivAPdf() {
-            var pdf = new jsPDF('p', 'pt', 'letter');
-            source = $('#imprimir')[0];
+         function pruebaDivAPdf() {
+                var pdf = new jsPDF('p', 'pt', 'letter');
+                source = $('#imprimir')[0];
 
-            specialElementHandlers = {
-                '#imprimir': function (element, renderer) {
-                    return true
-                }
-            };
-            margins = {
-                top: 80,
-                bottom: 60,
-                left: 40,
-                width: 522
-            };
+                specialElementHandlers = {
+                    '#imprimir': function (element, renderer) {
+                        return true
+                    }
+                };
+                margins = {
+                    top: 80,
+                    bottom: 60,
+                    left: 40,
+                    width: 522
+                };
 
-            pdf.fromHTML(
-                source,
-                margins.left, // x coord
-                margins.top, { // y coord
-                    'width': margins.width,
-                    'elementHandlers': specialElementHandlers
-                },
+                pdf.fromHTML(
+                    source,
+                    margins.left, // x coord
+                    margins.top, { // y coord
+                        'width': margins.width,
+                        'elementHandlers': specialElementHandlers
+                    },
 
-                function (dispose) {
-                    pdf.save({
-                        {
-                            app.request.get('idLibro')
-                        }
-                    } + '.pdf');
-                }, margins
-            );
-        }
+                    function (dispose) {
+                        pdf.save({{app.request.get('idLibro')}}+'.pdf');
+                    }, margins
+                );
+            }
     </script>
 
     {%endblock %}

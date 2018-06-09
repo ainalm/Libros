@@ -1638,7 +1638,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5b1a66ff64c28</argument>
+            <argument>5b1bbaeb66ef3</argument>
           </service>
         </argument>
       </argument>
@@ -1759,7 +1759,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/(registro|contacto|genero|historia|perfil)</argument>
+                      <argument>^/(registro|contacto|genero|historia|perfil|normas)</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1915,7 +1915,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5b1a66ff64c28</argument>
+            <argument>5b1bbaeb66ef3</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -1951,7 +1951,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/(registro|contacto|genero|historia|perfil)</argument>
+                      <argument>^/(registro|contacto|genero|historia|perfil|normas)</argument>
                     </service>
                   </argument>
                   <argument type="collection">

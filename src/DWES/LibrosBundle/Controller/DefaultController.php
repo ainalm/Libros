@@ -146,10 +146,10 @@ class DefaultController extends Controller
 		
 		// Comprueba que si no tiene un tipo de suscripción selecciona le envío a la página de suscripción para que selecciona una
 		// y también si ya ha superado el límite de números anunciados permitidos por suscripción.
-			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis || $tipoSusc == NULL) {
+			if ($tipoSusc == "gratis" && $numAnunActual >= $numAnunGratis || $tipoSusc == NULL) {
 				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
 				
-			} elseif ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
+			} elseif ($tipoSusc == "basica" && $numAnunActual >= $numAnunBasica || $tipoSusc == NULL) {
 				return $this->redirect($this->generateUrl('dwes_libros_suscripcion'));
 			}
 			
@@ -762,22 +762,19 @@ class DefaultController extends Controller
 		// y también si ya ha superado el límite de números anunciados permitidos por suscripción.
 
 		$susGratis = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" and tipoSuscripcion="finalizada"'); //tipo suscripcion actual
-		if ($susGratis && $numAnunActual > $numAnunGratis) {
+		if ($susGratis && $numAnunActual >= $numAnunGratis) {
 		//var_dump($susGratis);Exit;
 			$vencida="vencidaE";
 		}else {
 			$vencida="validaE";
 		}
-			if ($tipoSusc == "gratis" && $numAnunActual > $numAnunGratis ) {
+			if ($tipoSusc == "gratis" && $numAnunActual >= $numAnunGratis ) {
 				$vencida="vencidaG";
 
 				
-			} elseif ($tipoSusc == "basica" && $numAnunActual > $numAnunBasica || $tipoSusc == NULL) {
+			} elseif ($tipoSusc == "basica" && $numAnunActual >= $numAnunBasica || $tipoSusc == NULL) {
 				$vencida="vencida";
 			
-			}elseif ($tipoSusc == "premium" && $numAnunActual > $numAnunPremium || $tipoSusc == NULL) {
-				$vencida="vencida";
-				
 			}
 
 		$params = array('suscripcion' => $tipoSusc,'vencida'=>$vencida,'numGratis'=>$numAnunGratis,'numBasica'=>$numAnunBasica,'numPremium'=>$numAnunPremium);
@@ -890,7 +887,7 @@ class DefaultController extends Controller
 	{
 
 		$connection = $this->get("database_connection");	
-		
+		   
 		//$connection->executeUpdate('DELETE FROM comentarlibro where idLibro = "' . $idLibro . '" and username= "' . $username . '"  and comentario ="' . $comentario . '"');
 		
 		$userlog = $this->getUser()->getUsername();		//Variable donde guardamos el usuario logeado;
@@ -905,7 +902,7 @@ class DefaultController extends Controller
 		$tipoSusc = $connection->fetchColumn('SELECT tipoSuscripcion FROM suscripseleccionada WHERE username="' . $userlog . '" '); //tipo suscripcion actual
 		$numPermi = $connection->fetchColumn('SELECT numAnuncios FROM suscripcion WHERE tipoSuscripcion ="' . $tipo . '"'); 
 
-		if ($existGratis  && $tipoSusc == "gratis" && $numAnunActual > $numAnunGratis && $tipo =="gratis") {
+		if ($existGratis  && $tipoSusc == "gratis" && $numAnunActual >= $numAnunGratis && $tipo =="gratis") {
 		
 			$connection->executeUpdate('UPDATE suscripseleccionada SET tipoSuscripcion = "Valida" WHERE username = "' . $userlog . '" AND tipoSuscripcion = "finalizada"');
 			
@@ -955,6 +952,15 @@ class DefaultController extends Controller
 	
 
 		return $this->render('DWESLibrosBundle:Default:existeLib.html.twig', array('libros' =>$libro,'foto'=>$foto));
+
+
+	}
+
+	public function guiaAction()
+	{
+		
+
+		return $this->render('DWESLibrosBundle:Default:guia.html.twig');
 
 
 	}

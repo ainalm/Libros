@@ -73,7 +73,9 @@
                             ">Fin prueba gratuita </a>      
                             {% elseif  suscripcion == "gratis" %}
                            
-                    <a href="{{ path('dwes_libros_delSuscri',{'tipo' : 'gratis' } )}}" class="btn pink-gradient btn-rounded mb-4 waves-effect waves-light">Cancelar suscripción</a>
+                    <a class=" btn pink-gradient btn-rounded mb-4 waves-effect waves-light" style="
+                                cursor: context-menu;
+                            ">Plan actual</a>
                             
                                     {% endif %}
                             {% if suscripcion is empty %}
@@ -123,8 +125,19 @@
                                           
                     <a href="{{ path('dwes_libros_delSuscri',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Cancelar suscripción</a>
                             {% else %}
-                            <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light">Seleccionar</a>
+                           {#  <a href="{{ path('dwes_libros_suscriSelect',{'tipo' : 'basica' } )}}" class="btn btn-rounded btn-outline-white waves-effect waves-light"><i class="fab fa-paypal"></i> Pagar con Pay Pal</a> #}
+                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="X39M4FKKMDE8Q">
+<table style="display:none">
+<tr><td><input type="hidden" name="on0" value="Compre ahora !">Compre ahora !</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
+</table>
+<input type="image" src="{{ asset('bundles/dweslibros/img/Icons/pay.png') }}" class="btn btn-rounded btn-outline-white waves-effect waves-light" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
+</form>
                                     {% endif %}
+                                                   
+
 
                                 </div>
 

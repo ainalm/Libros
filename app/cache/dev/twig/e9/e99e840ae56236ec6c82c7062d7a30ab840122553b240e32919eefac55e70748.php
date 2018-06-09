@@ -29,8 +29,11 @@ class __TwigTemplate_40c1931d9d5761cca60a8e3bbcbfb60b4c002918e3689da4b20431ad5b9
     {
         // line 2
         echo "<section>
-    <div class=\"\">
-        <img src=\"http://mdbootstrap.com/img/Photos/Others/nature4.jpg\" style=\"width: 100%\">
+    <div  class=\"col-sm-12 text-center\">
+        <img class=\"center-block\" src=\"";
+        // line 4
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/port.png"), "html", null, true);
+        echo "\" style=\"width: 40%;max-height: 500px;margin-top: 60px;\">
     </div>
 </section>
 
@@ -191,13 +194,13 @@ class __TwigTemplate_40c1931d9d5761cca60a8e3bbcbfb60b4c002918e3689da4b20431ad5b9
 
     public function getDebugInfo()
     {
-        return array (  110 => 67,  94 => 54,  79 => 42,  45 => 10,  42 => 9,  31 => 2,  11 => 1,);
+        return array (  113 => 67,  97 => 54,  82 => 42,  48 => 10,  45 => 9,  35 => 4,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
 /* <section>*/
-/*     <div class="">*/
-/*         <img src="http://mdbootstrap.com/img/Photos/Others/nature4.jpg" style="width: 100%">*/
+/*     <div  class="col-sm-12 text-center">*/
+/*         <img class="center-block" src="{{ asset('bundles/dweslibros/img/Fondos/port.png') }}" style="width: 40%;max-height: 500px;margin-top: 60px;">*/
 /*     </div>*/
 /* </section>*/
 /* */

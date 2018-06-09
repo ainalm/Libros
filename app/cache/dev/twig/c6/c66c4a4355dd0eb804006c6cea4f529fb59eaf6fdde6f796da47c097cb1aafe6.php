@@ -525,7 +525,7 @@ drift.load('knp8trrbfyw8');
         echo "\" type=\"text/javascript\"></script>
 <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
    
-<script>
+<script> 
    //Animación de Inicio
    new WOW().init();
 
@@ -619,7 +619,7 @@ drift.load('knp8trrbfyw8');
      window.location = \$(this).attr('href');
      location.reload();
      //alert(\$(this).attr('href'));
-   
+   ffd
    });
 
     
@@ -975,7 +975,7 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /* <script src="{{ asset('bundles/dweslibros/js/editorSpanish.js') }}" type="text/javascript"></script>*/
 /* <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*/
 /*    */
-/* <script>*/
+/* <script> */
 /*    //Animación de Inicio*/
 /*    new WOW().init();*/
 /* */
@@ -1069,7 +1069,7 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /*      window.location = $(this).attr('href');*/
 /*      location.reload();*/
 /*      //alert($(this).attr('href'));*/
-/*    */
+/*    ffd*/
 /*    });*/
 /* */
 /*     */

@@ -216,6 +216,11 @@ dwes_libros_normas:
     defaults: { _controller: DWESLibrosBundle:Default:normas }
     requirements:
         page: \d+
+dwes_libros_guia:
+    path: /guia/
+    defaults: { _controller: DWESLibrosBundle:Default:guia }
+    requirements:
+        page: \d+
 
 dwes_libros_suscriSelect:
     path: /suscriSelect/{tipo}
