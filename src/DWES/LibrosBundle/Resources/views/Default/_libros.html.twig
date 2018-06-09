@@ -38,19 +38,33 @@
                                         <a href="{{ path('dwes_libros_historia', {'idLibro' : libro.idLibro}) }}">
                                             <div class="mask rgba-white-slight waves-effect waves-light"></div> 
                                         </a>
-                                    </div>
+                                    </div> 
                                     <!--/.Card image-->
                                     <!--Buttons-->
-                                 {# <div class="card-share">
+                                    {% if  is_granted('ROLE_ADMIN') %} 
+                                    
+                                    <div class="card-share">
                                     <div class="social-reveal">
                                        
-                                        <!--Twitter-->
-                                        <a type="button"  data-toggle="tooltip" data-placement="top" title="Editar historia"  class="btn-floating btn-tw waves-effect waves-light" href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : libro.idLibro}) }}"> <i class="fas fa-pencil-alt"></i></a>
+                                        <!--Twitter FIXME: APARECE USUARIO AVISADO EN TODOS LO GENEROS-->
+                                        
+                                        {% if libro.tipoAviso is defined and libro.tipoAviso %}
+                                        <a   style="
+                                cursor: context-menu;
+                            " type="button"  data-toggle="tooltip" data-placement="bottom" title="Usuario avisado"  class="btn-floating btn-tw waves-effect waves-light"
+                                         href="#"> <i class="fas fa-exclamation-triangle"></i></a>
+                                        {% else %}
+                                        <a type="button"  data-toggle="tooltip" data-placement="bottom" title="Enviar aviso"  class="btn-floating btn-tw waves-effect waves-light"
+                                         href="{{ path('dwes_libros_avisar', {'idLibro' : libro.idLibro,'admin':app.user.username,'autor':libro.username,'tipo':"libros"}) }}"> <i class="fas fa-exclamation-triangle"></i></a>
+                                       
+                                       {% endif %}
                                         <!--Google -->
-                                        <a type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="top" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>
+                                        <a type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : libro.idLibro}) }}"  data-toggle="tooltip" data-placement="bottom" title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>
                                     </div>
                                     <a class="btn-floating btn-action share-toggle float-right mdb-color lighten-3 waves-effect waves-light"><i class="fa fa-chevron-right"></i></a>
-                                </div> #}
+                                </div>
+                                     {% endif %}
+                                 
                                  <!--/. Buttons-->
                                     <!--Card content-->
                                     <div class="card-body">

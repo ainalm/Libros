@@ -317,7 +317,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                    <a href=\"#!\">Privacidad</a>
                </p>
                <p>
-                  
+                   
                    ";
         // line 255
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
@@ -903,7 +903,7 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /*                    <a href="#!">Privacidad</a>*/
 /*                </p>*/
 /*                <p>*/
-/*                   */
+/*                    */
 /*                    {% if  is_granted('ROLE_ADMIN') %} <a href="#!">Eliminar cuenta</a> {% endif %}*/
 /*                </p>*/
 /*            </div>*/

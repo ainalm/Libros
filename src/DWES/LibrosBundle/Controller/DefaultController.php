@@ -786,7 +786,7 @@ class DefaultController extends Controller
 	{
 		$connection = $this->get("database_connection");
 
-			$libros = $connection->fetchAll('SELECT * FROM libro WHERE idGenero = "' . $idGenero . '"');
+			$libros = $connection->fetchAll('SELECT * FROM operacionuser,libro where   idGenero = "' . $idGenero . '"  ');
 
 			$ClibrosAventura = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 1 ');
 			$ClibrosAccion = $connection->fetchColumn('SELECT count(*) FROM libro WHERE idGenero = 2 ');
@@ -961,6 +961,52 @@ class DefaultController extends Controller
 		
 
 		return $this->render('DWESLibrosBundle:Default:guia.html.twig');
+
+
+	}
+
+	public function avisarAction($idLibro,$admin,$autor,$tipo)
+	{
+
+		
+		$connection = $this->get("database_connection");
+		$exist=$connection->fetchColumn('SELECT idLibro FROM operacionuser WHERE codOperacion ="5" AND tipoAviso ="Libro" and idLibro=  "' . $idLibro . '"');
+		
+		if ($exist) {
+		return $this->redirect($this->generateUrl('dwes_libros_moderar'));
+		# code...
+		} else {
+			$connection->executeUpdate('INSERT INTO operacionuser (codOperacion, username, fechaOU, nickAdmin, idLibro, motivoOU,tipoAviso) 
+		VALUES ("5", "' . $autor . '", CURRENT_TIMESTAMP, "' . $admin . '","' . $idLibro . '" , "avisao","Libro")');
+		}
+		
+
+		
+		
+
+			//Rediriga a la página de Biblioteca con un parámetro
+		/* 	$params = array('libros'=>$avisoLib,'cLibrosAvisados'=>$avisoLibc);
+			return $this->render('DWESLibrosBundle:Default:moderar.html.twig',$params);
+ */
+
+		return $this->redirect($this->generateUrl('dwes_libros_moderar'));
+	}
+
+	public function moderarAction()
+	{
+		$params = array('libros' => '', 'cLibrosAvisados' => '');/* Guardo en el array los campos del form*/
+		
+		$connection = $this->get("database_connection");
+
+		
+		$avisoLib=$connection->fetchAll('SELECT * FROM operacionuser,libro WHERE operacionuser.idLibro = libro.idLibro and codOperacion = "5" GROUP BY  operacionuser.idLibro');
+		$avisoLibc=$connection->fetchColumn('SELECT count(*) FROM operacionuser WHERE codOperacion ="5" AND tipoAviso ="Libro"');
+		
+		
+		$params = array('libros'=>$avisoLib,'cLibrosAvisados'=>$avisoLibc);
+
+		return $this->render('DWESLibrosBundle:Default:moderar.html.twig', $params);
+	
 
 
 	}

@@ -36,7 +36,7 @@ class __TwigTemplate_40c1931d9d5761cca60a8e3bbcbfb60b4c002918e3689da4b20431ad5b9
         echo "\" style=\"width: 40%;max-height: 500px;margin-top: 60px;\">
     </div>
 </section>
-
+ 
 
 ";
     }
@@ -47,7 +47,7 @@ class __TwigTemplate_40c1931d9d5761cca60a8e3bbcbfb60b4c002918e3689da4b20431ad5b9
         // line 10
         echo "
 <div class=\"container-fluid mb-5\">
-
+ 
     <!--Grid row-->
     <div class=\"row\" style=\"margin-top: -100px;\">
 
@@ -203,12 +203,12 @@ class __TwigTemplate_40c1931d9d5761cca60a8e3bbcbfb60b4c002918e3689da4b20431ad5b9
 /*         <img class="center-block" src="{{ asset('bundles/dweslibros/img/Fondos/port.png') }}" style="width: 40%;max-height: 500px;margin-top: 60px;">*/
 /*     </div>*/
 /* </section>*/
-/* */
+/*  */
 /* */
 /* {% endblock %} {% block contenido %}*/
 /* */
 /* <div class="container-fluid mb-5">*/
-/* */
+/*  */
 /*     <!--Grid row-->*/
 /*     <div class="row" style="margin-top: -100px;">*/
 /* */

@@ -112,7 +112,7 @@ dwes_libros_adddeseos:
         page: \d+
 
 dwes_libros_eliminarLib:
-    path: /eliminarLib/{idLibro}
+    path: /eliminarLib/{idLibro}/
     defaults: { _controller: DWESLibrosBundle:Default:eliminarLib }
     requirements:
         page: \d+
@@ -234,8 +234,21 @@ dwes_libros_delSuscri:
     requirements:
         page: \d+
 
+
 dwes_libros_existeLib:
     path: /existeLib/{idLibro}/
     defaults: { _controller: DWESLibrosBundle:Default:existeLib }
+    requirements:
+        page: \d+
+
+dwes_libros_avisar:
+    path: /avisar/{idLibro}/{admin}/{autor}/{tipo}
+    defaults: { _controller: DWESLibrosBundle:Default:avisar }
+    requirements:
+        page: \d+
+
+dwes_libros_moderar:
+    path: /moderar/
+    defaults: { _controller: DWESLibrosBundle:Default:moderar }
     requirements:
         page: \d+
