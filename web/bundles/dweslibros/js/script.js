@@ -286,7 +286,7 @@ $("#blanca").on("click",function(e) {
 
   $('.cl').attr('style', 'color: #4285f4 !important');
 });
-
+  
 $("#negra").on("click",function(e) {
   console.log("En negro");
   $(".container1").css("background-color", "rgb(30, 42, 50)");
@@ -297,7 +297,10 @@ $("#negra").on("click",function(e) {
   $("#blanca").attr("src","/Libros/web/bundles/dweslibros/img/icons/dark-sun.png");
   $("#contact-message").css("color", " #efe8e8");
   $("#titulohistoria").css("color", " #efe8e8");
- 
+  $(".bigtext").css("background-color", "#253238");
+  $(".bigtext").css("color", "white");
+  $(".perfil").css("background-color", "#dfe8e8");
+  $("#heading1").css("background-color", "#a6aaab");
   $('.cl').attr('style', 'color: #d65d69 !important');
 });
 
@@ -314,19 +317,15 @@ function getSize() {
  // $( "#font-size" ).text(  size  );
 }
 
+
 //Valor inicial de fontSize
 getSize();
 
 $( "#letraUp" ).on( "click", function() {
-
-  
   // parse font size
   if ((size + 2) <= 50) {
     console.log("+")
     $( ".fuente > *" ).css( "font-size", "+=2" );
-
-
-   
   }
 });
 
@@ -428,25 +427,9 @@ $.cookie("location", $(location).attr('href'));
 
 });
 
-$('.borrarAlert').on('click', function(){
-  return false;
-  swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover this imaginary file!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-   
-  })
-  .then((willDelete) => {
-    if (willDelete) {
-      swal("Poof! Your imaginary file has been deleted!", {
-        icon: "success",
-      });
-    } else {
-      swal("Your imaginary file is safe!");
-    }
-  });
+$('#grabado').on('click', function(){
+  $('.gr').html("Grabado");
+
 });
 /* Mostrar/ocultar más resultados  */
 

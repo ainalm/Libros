@@ -82,7 +82,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
 
                 <!--Blog-->
                 <div class=\"row mt-4\">
- <!--Sidebar-->
+    <!--Sidebar-->
                     <div class=\"col-lg-3 col-md-12 mb-4 ml-4\">
 
                             <!-- Section: Categories -->
@@ -201,13 +201,13 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
                         <!--Section: Blog v.3-->
                         <section class=\"section extra-margins pb-3 text-center text-lg-left\">
                             <!--Grid row-->
-                            <div class=\"row text-center\">
+                            <div class=\"row text-center\"> 
                             ";
         // line 101
         $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:genero.html.twig", 101)->display(array_merge($context, array("libros" =>         // line 102
-(isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")), "ClibrosDrama" => (isset($context["ClibrosDrama"]) ? $context["ClibrosDrama"] : $this->getContext($context, "ClibrosDrama")))));
+(isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")), "fotos" => (isset($context["fotos"]) ? $context["fotos"] : $this->getContext($context, "fotos")))));
         // line 104
-        echo "                            <!--/Grid row-->
+        echo "                            <!--/Grid row ,'fotos':fotos-->
                         <!--Grid row-->
                             
                       
@@ -274,7 +274,7 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
 /* */
 /*                 <!--Blog-->*/
 /*                 <div class="row mt-4">*/
-/*  <!--Sidebar-->*/
+/*     <!--Sidebar-->*/
 /*                     <div class="col-lg-3 col-md-12 mb-4 ml-4">*/
 /* */
 /*                             <!-- Section: Categories -->*/
@@ -340,12 +340,12 @@ class __TwigTemplate_457bdd7fa97e7a92479c330214a266ee92958fd4b155dec0e4235093de2
 /*                         <!--Section: Blog v.3-->*/
 /*                         <section class="section extra-margins pb-3 text-center text-lg-left">*/
 /*                             <!--Grid row-->*/
-/*                             <div class="row text-center">*/
+/*                             <div class="row text-center"> */
 /*                             {%*/
 /*                             include 'DWESLibrosBundle:Default:_libros.html.twig' */
-/*                             with {'libros': libros,'ClibrosDrama':ClibrosDrama}*/
+/*                             with {'libros': libros,'fotos':fotos}*/
 /*                             %}*/
-/*                             <!--/Grid row-->*/
+/*                             <!--/Grid row ,'fotos':fotos-->*/
 /*                         <!--Grid row-->*/
 /*                             */
 /*                       */

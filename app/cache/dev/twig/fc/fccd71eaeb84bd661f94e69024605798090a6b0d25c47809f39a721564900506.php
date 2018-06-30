@@ -62,10 +62,11 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
              <a target=\"_blank\" href=\"";
             // line 25
             echo $this->env->getExtension('routing')->getPath("dwes_libros_normas");
-            echo "\"> pautas. </a> </h6>
+            echo "\"> pautas. </a> 
+            </h6>
                 ";
         }
-        // line 27
+        // line 28
         echo "                 
             
           
@@ -79,13 +80,13 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
 ";
     }
 
-    // line 39
+    // line 40
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
 
 ";
-        // line 46
+        // line 47
         echo "  <div class=\"container-fluid\">
 
                 <!--Blog-->
@@ -99,25 +100,16 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
                                 <ul class=\"list-group z-depth-1\">
                     <li class=\"list-group-item d-flex justify-content-between align-items-center \">
                         <a href=\"";
-        // line 58
+        // line 59
         echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 1));
         echo "\" class=\"dark-grey-text font-small navL\">
                                  
                             Libros en aviso </a>
                         <span class=\"badge badge-danger badge-pill\">";
-        // line 61
+        // line 62
         echo twig_escape_filter($this->env, (isset($context["cLibrosAvisados"]) ? $context["cLibrosAvisados"] : $this->getContext($context, "cLibrosAvisados")), "html", null, true);
         echo "</span>
-                    </li>
-                    <li class=\"list-group-item d-flex justify-content-between align-items-center\">
-                        <a href=\"";
-        // line 64
-        echo $this->env->getExtension('routing')->getPath("dwes_libros_genero", array("idGenero" => 2));
-        echo "\" class=\"dark-grey-text font-small navL\">
-                            Comentarios en aviso</a>
-                        <span class=\"badge badge-danger badge-pill\">0</span>
-                    </li>
-                    
+                    </li>    
                 </ul>
                             </section>
                             <!-- Section: Categories FIXME: -->
@@ -132,10 +124,10 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
                             <!--Grid row-->
                             <div class=\"row text-center\">
                             ";
-        // line 83
-        $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:moderar.html.twig", 83)->display(array_merge($context, array("libros" =>         // line 84
+        // line 78
+        $this->loadTemplate("DWESLibrosBundle:Default:_libros.html.twig", "DWESLibrosBundle:Default:moderar.html.twig", 78)->display(array_merge($context, array("libros" =>         // line 79
 (isset($context["libros"]) ? $context["libros"] : $this->getContext($context, "libros")))));
-        // line 86
+        // line 81
         echo "                            <!--/Grid row-->
                         <!--Grid row-->
                             
@@ -168,7 +160,7 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
 
     public function getDebugInfo()
     {
-        return array (  139 => 86,  137 => 84,  136 => 83,  115 => 64,  109 => 61,  103 => 58,  89 => 46,  83 => 39,  69 => 27,  64 => 25,  55 => 18,  44 => 10,  35 => 4,  31 => 2,  11 => 1,);
+        return array (  131 => 81,  129 => 79,  128 => 78,  110 => 62,  104 => 59,  90 => 47,  84 => 40,  70 => 28,  64 => 25,  55 => 18,  44 => 10,  35 => 4,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -195,7 +187,8 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
 /*              REVISE LAS SIGUIENTES PUBLICACIONES*/
 /*             </h1>*/
 /*             <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Nos veremos obligados a retirarlas si no las rectifica respetando nuestras*/
-/*              <a target="_blank" href="{{path('dwes_libros_normas')}}"> pautas. </a> </h6>*/
+/*              <a target="_blank" href="{{path('dwes_libros_normas')}}"> pautas. </a> */
+/*             </h6>*/
 /*                 {% endif  %}*/
 /*                  */
 /*             */
@@ -232,13 +225,7 @@ class __TwigTemplate_f60b5dae39e8413073f0452ca2f2bd35ffe4451124ba075df221d361b51
 /*                                  */
 /*                             Libros en aviso </a>*/
 /*                         <span class="badge badge-danger badge-pill">{{cLibrosAvisados}}</span>*/
-/*                     </li>*/
-/*                     <li class="list-group-item d-flex justify-content-between align-items-center">*/
-/*                         <a href="{{ path('dwes_libros_genero', {'idGenero':2}) }}" class="dark-grey-text font-small navL">*/
-/*                             Comentarios en aviso</a>*/
-/*                         <span class="badge badge-danger badge-pill">0</span>*/
-/*                     </li>*/
-/*                     */
+/*                     </li>    */
 /*                 </ul>*/
 /*                             </section>*/
 /*                             <!-- Section: Categories FIXME: -->*/

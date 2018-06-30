@@ -47,11 +47,7 @@ drift.load('knp8trrbfyw8');
 </script>
 <!-- End of Async Drift Code -->
 {% endblock %}
-
-
 <!-- Navigation & Intro -->
-
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white" style="
    
@@ -78,18 +74,6 @@ drift.load('knp8trrbfyw8');
                <li class="nav-item dropdown ml-4">
                    <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorar </a>
                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      {#  <a class="dropdown-item" href="{{ path('dwes_libros_gAventura', {'tipo':"gratis"}) }}">Aventura</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gAccion', {'tipo':"gratis"}) }}">Acción</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gTerror', {'tipo':"gratis"}) }}">Terror</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gFantasia',{ 'tipo':"gratis"}) }}">Fantasía</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gMisterio', {'tipo':"gratis"}) }}">Misterio</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gPoesia', {'tipo':"gratis"}) }}">Poesía</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gRomance', {'tipo':"gratis"}) }}">Romance</a>
-                       <a class="dropdown-item" href="{{ path('dwes_libros_gDrama', {'tipo':"gratis"}) }}">Drama</a> #}
-
-
-
-    
                         <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':1}) }}">Aventura</a>
                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':2}) }}">Acción</a>
                        <a class="dropdown-item" href="{{ path('dwes_libros_genero', {'idGenero':3}) }}">Terror</a>
@@ -110,24 +94,6 @@ drift.load('knp8trrbfyw8');
                
                
            </ul>
-           <!-- Social Icon  -->  
-           
-         {#   <ul class="navbar-nav nav-flex-icons">
-
-                   <li class="nav-item dropdown ml-4 show">
-                  <a class="nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" 
-                   aria-haspopup="true" aria-expanded="false">
-                   <i class="fa fa-user"></i>Mi cuenta </a>
-                   <div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink">
-                       <i></i>
-        
-                                                         
-                            
-                   </div>
-               </li>
-
-               
-           </ul> #}
             <ul class="navbar-nav nav-flex-icons">
        
                   
@@ -162,7 +128,7 @@ drift.load('knp8trrbfyw8');
                   
              
              
-                   <li class="nav-item dropdown ml-4">
+                   <li class="nav-item dropdown ml-4"> 
                    <a class="nav-link dropdown-toggle waves-effect btn pink-gradient btn-rounded btn-sm font-weight-bold" id="navbarDropdownMenuLink3" data-toggle="dropdown" 
                    aria-haspopup="true" aria-expanded="false">
                    <i class="fa fa-user"></i>Mi cuenta </a>
@@ -173,10 +139,17 @@ drift.load('knp8trrbfyw8');
                            <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_login') }}">Iniciar sesión</a>
                            <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_registro') }}">Crear cuenta</a>
                            {% endif %} {% if app.user and is_granted('ROLE_REGISTRADO') %}
+                          
                            <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_perfil', {'username':app.user.username}) }}">Perfil</a>
                            <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_ajustes') }}">Ajustes</a>
+                            <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_notificar') }}">Notificaciones</a>
+                               {% if  is_granted('ROLE_ADMIN') %}
+                              <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_moderar') }}">Moderar</a>
+                                <a class="dropdown-item waves-effect waves-light" href="{{ path('dwes_libros_baja') }}">Cuentas</a>
+                            {% endif %}
                            <a class="dropdown-item waves-effect waves-light" href="{{path('dwes_libros_logout')}}">Cerrar sesión</a>
                            {% endif %}
+                          
                              
                             
                    </div>
@@ -211,9 +184,6 @@ drift.load('knp8trrbfyw8');
 
            <!--Grid row-->
            <div class="row py-4 d-flex align-items-center">
-
-
-
            </div>
            <!--Grid row-->
        </div>
@@ -226,10 +196,11 @@ drift.load('knp8trrbfyw8');
            <!--First column-->
            <div class="col-md-3 col-lg-4 col-xl-3 mb-5">
                <h6 class="spacing font-weight-bold">
-                   <strong>Mi Comunidad </strong>
+                   <strong>Nuestra Comunidad </strong>
                </h6>
-               <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-               <p>Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla. </p>
+               <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto " style="width: 60px;">
+               <p  class="text-justify">Siente la magia de poder leer historias creativas.
+                Con Booky, has encontrado un lugar para compartir tu pasión por la lectura y para conectar con miles de escritores talentosos. </p>
            </div>
            <!--/.First column-->
            <!--Third column-->
@@ -239,49 +210,52 @@ drift.load('knp8trrbfyw8');
                </h6>
                <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                <p>
-                   <a href="#!">Mi Cuenta</a>
+                   <a href="{{ path('dwes_libros_crearperfil') }}">Mi Cuenta</a>
                </p>
                <p>
-                   <a href="#!">Mi Biblioteca</a>
+                   <a href="{{ path('dwes_libros_publicadosBib') }}">Mi Biblioteca</a>
                </p>
                <p>
-                   <a href="#!">Suscripción</a>
+                   <a href="{{ path('dwes_libros_suscripcion') }}">Suscripción</a>
                </p>
                <p>
-                   <a href="#!">Privacidad</a>
+                   <a href="{{ path('dwes_libros_privacidad') }}">Eliminar cuenta</a>
                </p>
-               <p>
-                   
-                   {% if  is_granted('ROLE_ADMIN') %} <a href="#!">Eliminar cuenta</a> {% endif %}
-               </p>
+                   {% if  is_granted('ROLE_ADMIN') %}
+                    <p> <a href="{{ path('dwes_libros_moderar') }}">Moderar Publicaciones</a>
+                    </p>
+                    <p> <a href="{{ path('dwes_libros_baja') }}">Moderar cuentas</a>
+                    </p>
+                     {% endif %}
+               
            </div>
            <!--/.Third column-->
 
-           <!--Fourth column -->
+           <!--Fourth column --> 
            <div class="col-md-4 col-lg-3 col-xl-3">
                <h6 class="spacing font-weight-bold">
                    <strong>Contacto</strong>
                </h6>
                <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                <p>
-                   <i class="fa fa-home mr-3"></i>Benidorm, 03570, ES</p>
+                 <i class="fa fa-home mr-3"></i>Benidorm, 03570, ES </p>
                <p>
-                   <i class="fa fa-envelope mr-3"></i> info@gmail.com</p>
+                   <a href="mailto:aina.lahm@gmail.com">  <i class="fa fa-envelope mr-3"></i> aina.lahm@gmail.com </a></p>
                <p>
-                   <i class="fa fa-phone mr-3"></i> + 34 634 567 88</p>
+                   <i class="fa fa-phone mr-3"></i> +34 697 46 36 21</p>
 
            </div>
            <!--/.Fourth column-->
-
+ 
        </div>
-   </div>
+   </div> 
    <!--/.Footer Links-->
 
    <!-- Copyright-->
    <div class="footer-copyright text-center py-3">
        <div class="container-fluid">
            © 2018 Copyright:
-           <a href="#" target="_blank"> Aina Lahmam </a>
+           <a > Aina Lahmam </a>
            {% if app.user %} ¡Bienvenido,
            <b>{{ app.user.username }}</b>! {% else %} -BellRead- {% endif %}
 
@@ -333,7 +307,7 @@ drift.load('knp8trrbfyw8');
        
        $('.mdb-select').material_select();
       $('.capitulos').DataTable( {
-           "info":     false,
+           "info":     false, 
            "lengthChange": false,
            "iDisplayLength":5,
             "language": {
@@ -379,6 +353,7 @@ drift.load('knp8trrbfyw8');
 
  $("#carac").text(char_count);
  $("#palab").text(word_count);
+  $('.gr').html(' <a style="color:red !important;">Sin guardar</a>');
    }
  },
        placeholder: 'Escriba su historia aquí...',

@@ -511,6 +511,45 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::moderarAction',  '_route' => 'dwes_libros_moderar',);
         }
 
+        // dwes_libros_notificar
+        if (rtrim($pathinfo, '/') === '/notificar') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_notificar');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::notificarAction',  '_route' => 'dwes_libros_notificar',);
+        }
+
+        // dwes_libros_baja
+        if (rtrim($pathinfo, '/') === '/baja') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'dwes_libros_baja');
+            }
+
+            return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::bajaAction',  '_route' => 'dwes_libros_baja',);
+        }
+
+        if (0 === strpos($pathinfo, '/dar')) {
+            // dwes_libros_darBaja
+            if (rtrim($pathinfo, '/') === '/darDaja') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_darBaja');
+                }
+
+                return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::darBajaAction',  '_route' => 'dwes_libros_darBaja',);
+            }
+
+            // dwes_libros_darAlta
+            if (rtrim($pathinfo, '/') === '/darAlta') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dwes_libros_darAlta');
+                }
+
+                return array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::darAltaAction',  '_route' => 'dwes_libros_darAlta',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

@@ -252,3 +252,29 @@ dwes_libros_moderar:
     defaults: { _controller: DWESLibrosBundle:Default:moderar }
     requirements:
         page: \d+
+
+dwes_libros_notificar:
+    path: /notificar/
+    defaults: { _controller: DWESLibrosBundle:Default:notificar }
+    requirements:
+        page: \d+
+
+
+dwes_libros_baja:
+    path: /baja/
+    defaults: { _controller: DWESLibrosBundle:Default:baja }
+    requirements:
+        page: \d+
+
+dwes_libros_darBaja:
+    path: /darDaja/
+    defaults: { _controller: DWESLibrosBundle:Default:darBaja }
+    requirements:
+        page: \d+
+
+
+dwes_libros_darAlta:
+    path: /darAlta/
+    defaults: { _controller: DWESLibrosBundle:Default:darAlta }
+    requirements:
+        page: \d+

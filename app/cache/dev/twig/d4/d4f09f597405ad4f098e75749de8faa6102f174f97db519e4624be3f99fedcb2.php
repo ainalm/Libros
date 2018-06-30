@@ -92,8 +92,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                                      <h4 class=\"feature-title text-center\">
                                          <strong>Book Trailer </strong>
                                      </h4>
-                                     <p class=\"dark-grey-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                                         maiores nam, aperiam minima assumenda deleniti hic.</p>
+                                     <p class=\"dark-grey-text\">Este libro ofrece el relato de una vivencia muy personal, como fue la que sostuvo Rafael Pérez Gay con su hermano en el espacio.</p>
                                  </div>
                                 
             
@@ -101,7 +100,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
    <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
 </div>
                          
-                             </div>
+                             </div> 
                              <!--Grid row-->
  
                              
@@ -116,29 +115,17 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"row pb-4 d-flex justify-content-center mb-4\">
  
                                  <h4 class=\"mt-3 mr-4\">
-                                     <strong>Entrar con</strong>
+                                     <strong>Crea tu cuenta</strong>
                                  </h4>
  
-                                 <div class=\"inline-ul text-center d-flex justify-content-center\">
-                                     <a class=\"p-2 m-2 fa-lg tw-ic\">
-                                         <i class=\"fa fa-twitter fa-lg orange-text\"></i>
-                                     </a>
-                                     <a class=\"p-2 m-2 fa-lg li-ic\">
-                                         <i class=\"fa fa-linkedin fa-lg orange-text\"> </i>
-                                     </a>
-                                     <a class=\"p-2 m-2 fa-lg ins-ic\">
-                                         <i class=\"fa fa-instagram fa-lg orange-text\"> </i>
-                                     </a>
-                                 </div>
+                                 
  
-                                 <h4 class=\"mt-3 ml-4\">
-                                     <strong>o:</strong>
-                                 </h4>
+                               
  
                              </div> 
                              <!--/Grid row-->
     <form name=\"formCrearCuenta\" action=\"";
-        // line 109
+        // line 96
         echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
         echo "\" method=\"POST\" ";
         echo " class=\"ml-4\">
@@ -146,7 +133,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"md-form\">
                                  
                                  <input type=\"text\" id=\"orangeForm-name\" name=\"username\" value=\"";
-        // line 113
+        // line 100
         echo twig_escape_filter($this->env, (isset($context["username"]) ? $context["username"] : $this->getContext($context, "username")), "html", null, true);
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-name\" id=\"labelNombre\"  class=\"valL\">Tu nombre de usuario</label>
@@ -154,7 +141,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"md-form\">
                                
                                  <input type=\"email\" id=\"orangeForm-email\" name=\"email\" value=\"";
-        // line 118
+        // line 105
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-email\" id=\"labelEmail\" class=\"valL\">Tu email</label>
@@ -163,7 +150,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"md-form\">
                                
                                  <input type=\"password\" id=\"orangeForm-pass\" name=\"password\" value=\"";
-        // line 124
+        // line 111
         echo twig_escape_filter($this->env, (isset($context["password"]) ? $context["password"] : $this->getContext($context, "password")), "html", null, true);
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-pass\" id=\"labelPassword\"  class=\"valL\">Tu contraseña</label>
@@ -229,7 +216,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 
     public function getDebugInfo()
     {
-        return array (  167 => 124,  158 => 118,  150 => 113,  142 => 109,  53 => 24,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  154 => 111,  145 => 105,  137 => 100,  129 => 96,  53 => 24,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -295,8 +282,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                                      <h4 class="feature-title text-center">*/
 /*                                          <strong>Book Trailer </strong>*/
 /*                                      </h4>*/
-/*                                      <p class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit*/
-/*                                          maiores nam, aperiam minima assumenda deleniti hic.</p>*/
+/*                                      <p class="dark-grey-text">Este libro ofrece el relato de una vivencia muy personal, como fue la que sostuvo Rafael Pérez Gay con su hermano en el espacio.</p>*/
 /*                                  </div>*/
 /*                                 */
 /*             */
@@ -304,7 +290,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*    <iframe width="560" height="315" src="https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*/
 /* </div>*/
 /*                          */
-/*                              </div>*/
+/*                              </div> */
 /*                              <!--Grid row-->*/
 /*  */
 /*                              */
@@ -319,24 +305,12 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                              <div class="row pb-4 d-flex justify-content-center mb-4">*/
 /*  */
 /*                                  <h4 class="mt-3 mr-4">*/
-/*                                      <strong>Entrar con</strong>*/
+/*                                      <strong>Crea tu cuenta</strong>*/
 /*                                  </h4>*/
 /*  */
-/*                                  <div class="inline-ul text-center d-flex justify-content-center">*/
-/*                                      <a class="p-2 m-2 fa-lg tw-ic">*/
-/*                                          <i class="fa fa-twitter fa-lg orange-text"></i>*/
-/*                                      </a>*/
-/*                                      <a class="p-2 m-2 fa-lg li-ic">*/
-/*                                          <i class="fa fa-linkedin fa-lg orange-text"> </i>*/
-/*                                      </a>*/
-/*                                      <a class="p-2 m-2 fa-lg ins-ic">*/
-/*                                          <i class="fa fa-instagram fa-lg orange-text"> </i>*/
-/*                                      </a>*/
-/*                                  </div>*/
+/*                                  */
 /*  */
-/*                                  <h4 class="mt-3 ml-4">*/
-/*                                      <strong>o:</strong>*/
-/*                                  </h4>*/
+/*                                */
 /*  */
 /*                              </div> */
 /*                              <!--/Grid row-->*/

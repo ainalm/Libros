@@ -1,0 +1,48 @@
+{% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}
+<!--Intro Section-->
+<!--Intro Section-->
+<div class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">
+    <div class="flex-center  " style="       background-color: rgba(17, 27, 43, 0.7);">
+        <div class="container my-5 pt-5">
+
+             <h6 class="white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>NOTIFICACIONES</strong> 
+            </h6>
+                   <h1 class="text-center white-text pb-4  wow fadeIn" data-wow-delay="0.2s">
+             REVISE SUS PUBLICACIONES
+            </h1>
+            <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Nos veremos obligados a retirarlas si no las rectifica respetando nuestras
+             <a target="_blank" href="{{path('dwes_libros_normas')}}"> pautas. </a> 
+            </h6>
+
+        </div>
+    </div>
+</div> 
+
+
+
+{% endblock %} {% block contenido %}
+<div class="container">
+<div>
+
+{% for item in noti %}
+    <!--Panel-->
+    <div class="card  mb-2 mt-2">
+        <div class="card-body">
+            <h5 class="card-title">
+            {% if item.tipoAviso =="Libro" %}
+           Aviso sobre su publicación : <a  href="{{ path('dwes_libros_perfilhistoria', {'idLibro' : item.idLibro}) }}" >{{item.titulo}}</a>
+            {% elseif item.tipoAviso =="Cuenta" %}
+            Aviso sobre su cuenta
+            {% endif %}
+            </h5>
+            <p class="card-text">{{item.motivoOU}}</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Última actualización : {{item.fechaOU}}</small>
+        </div>
+    </div>
+    <!--/.Panel-->
+  {% endfor %}  
+</div>
+{% endblock %}

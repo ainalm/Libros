@@ -385,7 +385,7 @@
                                         <th> Capítulo</th>
                                         <th>Título </th>
                                         <th> Última actualización</th>
-                                        <th> Estado de publicación</th>
+                                         <th> Estado de publicación</th> 
                                         <th> Acción</th>
                                     </tr>
                                 </thead>
@@ -394,13 +394,10 @@
                                     <tr>
                                         <td>{{item.numCapitulo}}</td>
                                         <td>{{item.tituloCap}}</td>
-                                        <td>{{item.actualizado}}</td>
-                                        <td>
-                                            <select class="mdb-select colorful-select dropdown-primary">
-                                                <option value="1">{{item.estado}}</option>
-                                                <option value="2"></option>
-                                            </select>
-                                        </td>
+                                        <td>{{item.fecha}}</td>
+                                         <td>
+                                          {{item.estado}}
+                                        </td> 
                                         <td>
                                             <a data-toggle="tooltip" data-placement="bottom" title="Editar capítulo" class=" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4"
                                                 href="{{ path('dwes_libros_capitulo', {'idLibro' : app.request.get('idLibro'),'numCapitulo':item.numCapitulo}) }}">

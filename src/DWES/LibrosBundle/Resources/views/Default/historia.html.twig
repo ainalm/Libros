@@ -102,7 +102,7 @@
 
 
                         <!--Card image TODO: Imagen libro view overlay  -->
-                        <div class="  view overlay">
+                        <div class="view overlay">
                             {% if foto %}
                             <img src="data:image/jpeg;base64,{{foto}}" style="height:270px ; width:180px;" class=" mx-auto" alt="sample image"> {% else %}
                             <div class="  {{item.colorPortada}} " style="height:270px;width:180px;">
@@ -122,16 +122,89 @@
                 </div>
                 <!--Grid column-->
 
+<!--Modal : Reportar -->
+<div class="modal fade" id="modalEnlace" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+             <form name="formUpdatePerfil"  action="{{ path('dwes_libros_avisar', {'idLibro' : item.idLibro,'admin':app.user.username,'autor':item.username,'tipo':"libros"})}}" 
+             method="POST" enctype="multipart/form-data" >
+              <iframe name="frame" style="display: none"></iframe>
+               
+                <!--Body-->
+                <div class="modal-body text-center mb-1">
+                    <div class="md-form ml-0 mr-0">
+                         <textarea id="aviso" rows=8 name="aviso" class="form-control form-control-sm validate ml-0">{{avisoText}}</textarea>
+                        <label for="aviso" class="ml-0">Mensaje al usuario:</label>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-cyan mt-1">
+                         {% if avisado !="" %} 
+                                         Actualizar
+                                                {% endif %}
+ 
+                                                {% if  avisado =="" %}
+                                              Enviar
+                                                {% endif %}         
+                        </button>
+                    </div>
+                </div>
+            </form>    
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Reportar -->
+
                 <!--Grid column-->
                 <div class="col-lg-8 col-md-12 pb-lg-5 mb-4">
                     <div class="mask rgba-white-light">
                         <div class="dark-grey-text  pt-4 ml-3 pl-3">
+                        
                             <div>
-                                <a>
+                                <div style="float:right">
+                                      {% if  is_granted('ROLE_ADMIN') %}
+                                        <!--Twitter FIXME: APARECE USUARIO AVISADO EN TODOS LO GENEROS-->
+                                       {#  <a   style="
+                                cursor: context-menu;
+                            " type="button"  data-toggle="tooltip" data-placement="bottom" title="Usuario avisado"  class="btn-floating btn-tw waves-effect waves-light"
+                                         href="#"> <i class="fas fa-exclamation-triangle"></i></a> #}
+                                      {#   {% else %} #}
+                                      
+                                        <a href="" data-toggle="modal" data-target="#modalEnlace">
+                                            <span data-toggle="tooltip" data-placement="bottom" title="" class=" btn-floating warning-color waves-effect waves-light"
+                                                href="#" data-original-title=  
+                                                   {% if avisado !="" %} 
+                                         "Ver aviso enviado"
+                                                {% endif %}
+
+                                                {% if  avisado =="" %}
+                                              "Enviar aviso"
+                                                {% endif %}
+
+                                               >
+                                                 {% if avisado =="" %} 
+                                          <i class="fas fa-eye"></i>
+                                                {% endif %}
+
+                                                {% if  avisado !="" %}
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                                {% endif %}
+                                            </span>
+                                        </a>
+                                      {#  {% endif %} #}
+                                        <!--Google -->
+                                        <a type="button"  href="{{ path('dwes_libros_eliminarLib', {'idLibro' : item.idLibro}) }}"  data-toggle="tooltip" data-placement="bottom"
+                                         title="Eliminar historia" class="btn-floating btn-gplus waves-effect waves-light"> <i class="fa fa-remove mt-0"></i></a>
+                                     {% endif %}
+                                    </div>
                                     <span class="badge badge-danger">{{item.nombre}}</span>
-                                </a>
                                 <h2 class="card-title font-weight-bold pt-2  " style="color:  black;">
                                     <strong>{{item.titulo}}</strong>
+                                  
+
                                     {% if tipoLibro == "Anuncio" %}
                                     <span class="badge blue">En venta</span>
 
@@ -146,7 +219,7 @@
                                     data-target="#exampleModal">
                                     <i class="fab fa-youtube mr-1"></i> Book Trailer
                                 </button>
-
+                                    
                             </div>
 
                         </div>
@@ -517,7 +590,7 @@
     <!-- Autor -->
     <div class="container card mt-1 mb-5 px-0 py-0">
         <section class="text-center text-md-left">
-            <div class="card card-body">
+            <div class="card card-body perfil">
 
                 <div class="row">
                     <!--Avatar-->
