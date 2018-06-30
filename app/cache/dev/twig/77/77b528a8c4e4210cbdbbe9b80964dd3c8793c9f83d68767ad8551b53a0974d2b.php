@@ -31,14 +31,15 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
         // line 5
         echo "    <!--Intro Section-->
 <div class=\"mdb-map\">
-                <div id=\"map-container\" class=\"z-depth-1-half map-container\" style=\"height: 500px; position: relative; overflow: hidden;\"><div ><iframe style=\"height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12482.49612783444!2d-0.14203676712368438!3d38.54243395715187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDMyJzMyLjciTiAwwrAwNyc1OS44Ilc!5e0!3m2!1ses!2ses!4v1522671130697\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe></div>
+                <div id=\"map-container\" class=\"z-depth-1-half map-container\" style=\"height: 500px; position: relative; overflow: hidden;\"><div ><iframe style=\"height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);\"
+                 src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12482.49612783444!2d-0.14203676712368438!3d38.54243395715187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDMyJzMyLjciTiAwwrAwNyc1OS44Ilc!5e0!3m2!1ses!2ses!4v1522671130697\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe></div>
             </div>
             
 
 ";
     }
 
-    // line 13
+    // line 14
     public function block_contenido($context, array $blocks = array())
     {
         echo " 
@@ -144,10 +145,10 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                                     <i class=\"fa fa-map-marker fa-2x orange-text\"></i>
                                                     <p>Benidorm, 03570, ES</p>
                                                 </li>
-
+ 
                                                 <li>
                                                     <i class=\"fa fa-phone fa-2x orange-text\"></i>
-                                                    <p>+ 34 634 567 88</p>
+                                                    <p>+34 666 54 52 42</p>
                                                 </li>
 
                                                 <li>
@@ -190,7 +191,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 
     public function getDebugInfo()
     {
-        return array (  42 => 13,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  43 => 14,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -199,7 +200,8 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /* {% block portada %}*/
 /*     <!--Intro Section-->*/
 /* <div class="mdb-map">*/
-/*                 <div id="map-container" class="z-depth-1-half map-container" style="height: 500px; position: relative; overflow: hidden;"><div ><iframe style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12482.49612783444!2d-0.14203676712368438!3d38.54243395715187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDMyJzMyLjciTiAwwrAwNyc1OS44Ilc!5e0!3m2!1ses!2ses!4v1522671130697" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>*/
+/*                 <div id="map-container" class="z-depth-1-half map-container" style="height: 500px; position: relative; overflow: hidden;"><div ><iframe style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"*/
+/*                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12482.49612783444!2d-0.14203676712368438!3d38.54243395715187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDMyJzMyLjciTiAwwrAwNyc1OS44Ilc!5e0!3m2!1ses!2ses!4v1522671130697" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>*/
 /*             </div>*/
 /*             */
 /* */
@@ -308,10 +310,10 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                                     <i class="fa fa-map-marker fa-2x orange-text"></i>*/
 /*                                                     <p>Benidorm, 03570, ES</p>*/
 /*                                                 </li>*/
-/* */
+/*  */
 /*                                                 <li>*/
 /*                                                     <i class="fa fa-phone fa-2x orange-text"></i>*/
-/*                                                     <p>+ 34 634 567 88</p>*/
+/*                                                     <p>+34 666 54 52 42</p>*/
 /*                                                 </li>*/
 /* */
 /*                                                 <li>*/

@@ -117,14 +117,26 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
         echo $this->env->getExtension('routing')->getPath("dwes_libros_publicadosBib");
         echo "\" data-offset=\"90\">Mi Biblioteca</a>
                </li>
-               <li class=\"nav-item ml-4\">
+              
+                <li class=\"nav-item dropdown ml-4\">
+                   <a class=\"nav-link dropdown-toggle title\" id=\"navbarDropdownMenuLink2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Info</a>
+                   <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+                        <a class=\"dropdown-item\" href=\"";
+        // line 95
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_normas");
+        echo "\">Normas</a>
+                       <a class=\"dropdown-item\" href=\"";
+        // line 96
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_guia");
+        echo "\">Guia</a>
+                   </div>
+               </li>
+                <li class=\"nav-item ml-4\">
                    <a class=\"nav-link title\" href=\"";
-        // line 92
+        // line 100
         echo $this->env->getExtension('routing')->getPath("dwes_libros_contacto");
         echo "\" data-offset=\"90\">Contacto</a>
                </li>
-               
-               
            </ul>
             <ul class=\"navbar-nav nav-flex-icons\">
        
@@ -138,30 +150,30 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                    
                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                     <a href=\"#googtrans(es|es)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"es\"><img src=\"";
-        // line 108
+        // line 114
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/es.png"), "html", null, true);
         echo "\" alt=\"SPAIN\">Español</a>
                     
            <a href=\"#googtrans(es|en)\" class=\"lang-en lang-select dropdown-item waves-effect waves-light\" data-lang=\"en\"><img src=\"";
-        // line 110
+        // line 116
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/en.png"), "html", null, true);
         echo "\" alt=\"USA\">Inglés</a>
                    
                   
          <a href=\"#googtrans(es|fr)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"fr\"><img src=\"";
-        // line 113
+        // line 119
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/fr.png"), "html", null, true);
         echo "\" alt=\"FRANCE\">Francés</a>
          <a href=\"#googtrans(es|no)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"zh-CN\"><img src=\"";
-        // line 114
+        // line 120
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/no.png"), "html", null, true);
         echo "\" alt=\"RUSIA\">Noruego</a>
          <a href=\"#googtrans(es|ja)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"ja\"><img src=\"";
-        // line 115
+        // line 121
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/ja.png"), "html", null, true);
         echo "\" alt=\"JAPAN\">Japonés</a>
            <a href=\"#googtrans(es|ar)\" class=\"lang-es lang-select dropdown-item waves-effect waves-light\" data-lang=\"ja\"><img src=\"";
-        // line 116
+        // line 122
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/langs/ar.png"), "html", null, true);
         echo "\" alt=\"Árabe\">Árabe</a>
                            
@@ -172,7 +184,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                </li>
            </ul>
 ";
-        // line 125
+        // line 131
         echo "           
            <ul class=\"navbar-nav nav-flex-icons\">
        
@@ -185,61 +197,61 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                    <i class=\"fa fa-user\"></i>Mi cuenta </a>
                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                         ";
-        // line 136
+        // line 142
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 137
+            // line 143
             echo "                           <i></i>
                            ";
         } else {
-            // line 138
+            // line 144
             echo " 
                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 139
+            // line 145
             echo $this->env->getExtension('routing')->getPath("dwes_libros_login");
             echo "\">Iniciar sesión</a>
                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 140
+            // line 146
             echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
             echo "\">Crear cuenta</a>
                            ";
         }
-        // line 141
+        // line 147
         echo " ";
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) && $this->env->getExtension('security')->isGranted("ROLE_REGISTRADO"))) {
-            // line 142
+            // line 148
             echo "                          
                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 143
+            // line 149
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfil", array("username" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()))), "html", null, true);
             echo "\">Perfil</a>
                            <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 144
+            // line 150
             echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
             echo "\">Ajustes</a>
                             <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-            // line 145
+            // line 151
             echo $this->env->getExtension('routing')->getPath("dwes_libros_notificar");
             echo "\">Notificaciones</a>
                                ";
-            // line 146
+            // line 152
             if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-                // line 147
+                // line 153
                 echo "                              <a class=\"dropdown-item waves-effect waves-light\" href=\"";
                 echo $this->env->getExtension('routing')->getPath("dwes_libros_moderar");
                 echo "\">Moderar</a>
                                 <a class=\"dropdown-item waves-effect waves-light\" href=\"";
-                // line 148
+                // line 154
                 echo $this->env->getExtension('routing')->getPath("dwes_libros_baja");
                 echo "\">Cuentas</a>
                             ";
             }
-            // line 150
+            // line 156
             echo "                           <a class=\"dropdown-item waves-effect waves-light\" href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_logout");
             echo "\">Cerrar sesión</a>
                            ";
         }
-        // line 152
+        // line 158
         echo "                          
                              
                             
@@ -255,11 +267,11 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
 ";
-        // line 166
+        // line 172
         $this->displayBlock('portadaInicio', $context, $blocks);
         echo " ";
         $this->displayBlock('portada', $context, $blocks);
-        // line 167
+        // line 173
         echo "
 <!-- Navigation & Intro -->
 
@@ -269,9 +281,9 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
 
 
    ";
-        // line 175
+        // line 181
         $this->displayBlock('contenido', $context, $blocks);
-        // line 176
+        // line 182
         echo "
 </main>
 
@@ -310,44 +322,44 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                <hr class=\"pink accent-2 mb-4 mt-0 d-inline-block mx-auto\" style=\"width: 60px;\">
                <p>
                    <a href=\"";
-        // line 213
+        // line 219
         echo $this->env->getExtension('routing')->getPath("dwes_libros_crearperfil");
         echo "\">Mi Cuenta</a>
                </p>
                <p>
                    <a href=\"";
-        // line 216
+        // line 222
         echo $this->env->getExtension('routing')->getPath("dwes_libros_publicadosBib");
         echo "\">Mi Biblioteca</a>
                </p>
                <p>
                    <a href=\"";
-        // line 219
+        // line 225
         echo $this->env->getExtension('routing')->getPath("dwes_libros_suscripcion");
         echo "\">Suscripción</a>
                </p>
                <p>
                    <a href=\"";
-        // line 222
+        // line 228
         echo $this->env->getExtension('routing')->getPath("dwes_libros_privacidad");
         echo "\">Eliminar cuenta</a>
                </p>
                    ";
-        // line 224
+        // line 230
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-            // line 225
+            // line 231
             echo "                    <p> <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_moderar");
             echo "\">Moderar Publicaciones</a>
                     </p>
                     <p> <a href=\"";
-            // line 227
+            // line 233
             echo $this->env->getExtension('routing')->getPath("dwes_libros_baja");
             echo "\">Moderar cuentas</a>
                     </p>
                      ";
         }
-        // line 230
+        // line 236
         echo "               
            </div>
            <!--/.Third column-->
@@ -363,7 +375,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
                <p>
                    <a href=\"mailto:aina.lahm@gmail.com\">  <i class=\"fa fa-envelope mr-3\"></i> aina.lahm@gmail.com </a></p>
                <p>
-                   <i class=\"fa fa-phone mr-3\"></i> +34 697 46 36 21</p>
+                   <i class=\"fa fa-phone mr-3\"></i> +34 666 54 52 42</p>
 
            </div>
            <!--/.Fourth column-->
@@ -378,17 +390,17 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
            © 2018 Copyright:
            <a > Aina Lahmam </a>
            ";
-        // line 259
+        // line 265
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
             echo " ¡Bienvenido,
            <b>";
-            // line 260
+            // line 266
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</b>! ";
         } else {
             echo " -BellRead- ";
         }
-        // line 261
+        // line 267
         echo "
        </div>
    </div>
@@ -467,7 +479,7 @@ drift.load('knp8trrbfyw8');
 ";
     }
 
-    // line 166
+    // line 172
     public function block_portadaInicio($context, array $blocks = array())
     {
         echo " ";
@@ -478,73 +490,73 @@ drift.load('knp8trrbfyw8');
         echo " ";
     }
 
-    // line 175
+    // line 181
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 270
+    // line 276
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 271
+        // line 277
         echo "<!-- SCRIPTS -->
 <!-- JQuery --> 
 <script src=\"";
-        // line 273
+        // line 279
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap tooltips -->
 <script src=\"";
-        // line 275
+        // line 281
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/popper.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Bootstrap core JavaScript -->
 
 <script src=\"";
-        // line 278
+        // line 284
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js\"></script>
 <script src=\"";
-        // line 281
+        // line 287
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/MDB/js/mdb.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <!-- Mi JavaScript -->
 <script src=\"";
-        // line 283
+        // line 289
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/script.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
 ";
-        // line 286
+        // line 292
         echo "    <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/material.min.css"), "html", null, true);
         echo "\" /> 
    <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-        // line 287
+        // line 293
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/css/dataTables.material.min.css"), "html", null, true);
         echo "\" /> 
 
     <script src=\"";
-        // line 289
+        // line 295
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script> 
     <script src=\"";
-        // line 290
+        // line 296
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/dataTable/js/dataTables.material.min.js"), "html", null, true);
         echo "\"></script> 
 ";
-        // line 292
+        // line 298
         echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js\"></script>
 
 ";
-        // line 295
+        // line 301
         echo "<link href=\"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css\" rel=\"stylesheet\">
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js\"></script>
 <script src=\"";
-        // line 297
+        // line 303
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/js/editorSpanish.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
@@ -672,7 +684,7 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 
     public function getDebugInfo()
     {
-        return array (  548 => 297,  544 => 295,  540 => 292,  536 => 290,  532 => 289,  527 => 287,  522 => 286,  517 => 283,  512 => 281,  506 => 278,  500 => 275,  495 => 273,  491 => 271,  488 => 270,  482 => 175,  471 => 166,  434 => 17,  429 => 15,  424 => 13,  419 => 11,  414 => 9,  408 => 5,  405 => 4,  392 => 261,  386 => 260,  382 => 259,  351 => 230,  345 => 227,  339 => 225,  337 => 224,  332 => 222,  326 => 219,  320 => 216,  314 => 213,  275 => 176,  273 => 175,  263 => 167,  259 => 166,  243 => 152,  237 => 150,  232 => 148,  227 => 147,  225 => 146,  221 => 145,  217 => 144,  213 => 143,  210 => 142,  207 => 141,  202 => 140,  198 => 139,  195 => 138,  191 => 137,  189 => 136,  176 => 125,  165 => 116,  161 => 115,  157 => 114,  153 => 113,  147 => 110,  142 => 108,  123 => 92,  117 => 89,  109 => 84,  105 => 83,  101 => 82,  97 => 81,  93 => 80,  89 => 79,  85 => 78,  81 => 77,  71 => 70,  67 => 69,  59 => 64,  48 => 56,  40 => 50,  38 => 4,  35 => 3,  11 => 2,);
+        return array (  560 => 303,  556 => 301,  552 => 298,  548 => 296,  544 => 295,  539 => 293,  534 => 292,  529 => 289,  524 => 287,  518 => 284,  512 => 281,  507 => 279,  503 => 277,  500 => 276,  494 => 181,  483 => 172,  446 => 17,  441 => 15,  436 => 13,  431 => 11,  426 => 9,  420 => 5,  417 => 4,  404 => 267,  398 => 266,  394 => 265,  363 => 236,  357 => 233,  351 => 231,  349 => 230,  344 => 228,  338 => 225,  332 => 222,  326 => 219,  287 => 182,  285 => 181,  275 => 173,  271 => 172,  255 => 158,  249 => 156,  244 => 154,  239 => 153,  237 => 152,  233 => 151,  229 => 150,  225 => 149,  222 => 148,  219 => 147,  214 => 146,  210 => 145,  207 => 144,  203 => 143,  201 => 142,  188 => 131,  177 => 122,  173 => 121,  169 => 120,  165 => 119,  159 => 116,  154 => 114,  137 => 100,  130 => 96,  126 => 95,  117 => 89,  109 => 84,  105 => 83,  101 => 82,  97 => 81,  93 => 80,  89 => 79,  85 => 78,  81 => 77,  71 => 70,  67 => 69,  59 => 64,  48 => 56,  40 => 50,  38 => 4,  35 => 3,  11 => 2,);
     }
 }
 /* */
@@ -765,11 +777,17 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /*                 <li class="nav-item ml-4">*/
 /*                    <a class="nav-link title" href="{{ path('dwes_libros_publicadosBib') }}" data-offset="90">Mi Biblioteca</a>*/
 /*                </li>*/
-/*                <li class="nav-item ml-4">*/
+/*               */
+/*                 <li class="nav-item dropdown ml-4">*/
+/*                    <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</a>*/
+/*                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">*/
+/*                         <a class="dropdown-item" href="{{ path('dwes_libros_normas') }}">Normas</a>*/
+/*                        <a class="dropdown-item" href="{{ path('dwes_libros_guia') }}">Guia</a>*/
+/*                    </div>*/
+/*                </li>*/
+/*                 <li class="nav-item ml-4">*/
 /*                    <a class="nav-link title" href="{{ path('dwes_libros_contacto') }}" data-offset="90">Contacto</a>*/
 /*                </li>*/
-/*                */
-/*                */
 /*            </ul>*/
 /*             <ul class="navbar-nav nav-flex-icons">*/
 /*        */
@@ -919,7 +937,7 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /*                <p>*/
 /*                    <a href="mailto:aina.lahm@gmail.com">  <i class="fa fa-envelope mr-3"></i> aina.lahm@gmail.com </a></p>*/
 /*                <p>*/
-/*                    <i class="fa fa-phone mr-3"></i> +34 697 46 36 21</p>*/
+/*                    <i class="fa fa-phone mr-3"></i> +34 666 54 52 42</p>*/
 /* */
 /*            </div>*/
 /*            <!--/.Fourth column-->*/

@@ -42,12 +42,20 @@ class DefaultController extends Controller
 		$sexo = $peticion->request->get('sexo');
 		$imagen = $peticion->request->get('imagen');
 		$fotoSubidaM = addslashes(file_get_contents($_FILES['imagen']['tmp_name'])); //Imagen Subida del  usuario
-
+ 
+		/* $existe = $connection->fetchColumn('SELECT username FROM usuario WHERE username = "admin" ');
+ */
 		if ($peticion->server->get('REQUEST_METHOD') == 'POST') {  //Comprueba si se ha enviado el Form
 
 			if (!empty($username) && !empty($email) && !empty($password)) {
 
 				$connection = $this->get("database_connection");		//Conexión con la BD  
+
+
+				/* if ($existe) {
+					var_dump($existe);exit;
+				} */
+				
 
 				$connection->executeUpdate('INSERT INTO usuario (username, id, nombre,sexo,tipoUser, fechaNacimiento, biografia,paginaWeb, fotoPerfil, apellidos, salt, password, email, isActive, tokenRegistro) VALUES ("' . $username . '",NULL ,"", "' . $sexo . '","usuario", NULL, NULL, NULL, NULL, "", "", "' . $password . '", "' . $email . '", "1", "");');
 				return $this->redirect($this->generateUrl('dwes_libros_crearperfil')); 

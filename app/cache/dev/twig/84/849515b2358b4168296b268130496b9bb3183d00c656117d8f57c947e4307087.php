@@ -32,7 +32,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
         echo "    <!--Intro Section-->
    <div  class=\"streak streak-photo streak-md  portada \" style=\"background-image: url('";
         // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo2.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Fondos/Fondo3.jpg"), "html", null, true);
         echo "'); margin-top: 27px;\">
             <div class=\"flex-center  \" style=\"background-color: rgba(17, 27, 43, 0.7);\">
                 <div class=\"container my-5 pt-5\">
@@ -251,7 +251,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /* */
 /* {% block portada %}*/
 /*     <!--Intro Section-->*/
-/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo2.jpg') }}'); margin-top: 27px;">*/
+/*    <div  class="streak streak-photo streak-md  portada " style="background-image: url('{{ asset('bundles/dweslibros/img/Fondos/Fondo3.jpg') }}'); margin-top: 27px;">*/
 /*             <div class="flex-center  " style="background-color: rgba(17, 27, 43, 0.7);">*/
 /*                 <div class="container my-5 pt-5">*/
 /* */
