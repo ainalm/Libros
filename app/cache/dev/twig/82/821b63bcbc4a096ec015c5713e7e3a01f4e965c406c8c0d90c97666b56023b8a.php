@@ -134,15 +134,9 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                 echo "\">
                         <label for=\"form29\" class=\"ml-0\">Título del libro</label>
                     </div>
-                    <div class=\"md-form ml-0 mr-0\">
-                        <input type=\"text\" type=\"text\" id=\"form29\" class=\"form-control form-control-sm validate ml-0\" name=\"trailer\" value=\"";
-                // line 61
-                echo twig_escape_filter($this->env, (isset($context["trailer"]) ? $context["trailer"] : $this->getContext($context, "trailer")), "html", null, true);
-                echo "\">
-                        <label for=\"form29\" class=\"ml-0\">Booktrailer Video URL</label>
-
-                    </div>
-                    <div class=\"md-form ml-0 mr-0\">
+                    ";
+                // line 65
+                echo "                    <div class=\"md-form ml-0 mr-0\">
                         <textarea type=\"text\" id=\"contact-message\" class=\"md-textarea form-control valI\" rows=\"11\" name=\"descripcionLibro\" value=\"\">";
                 // line 66
                 echo twig_escape_filter($this->env, (isset($context["descripcionLibro"]) ? $context["descripcionLibro"] : $this->getContext($context, "descripcionLibro")), "html", null, true);
@@ -251,8 +245,6 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "progreso", array()), "html", null, true);
                 echo "</span>
                                     </p>
-
-
                                     <!--Blue select-->
                                     <select name=\"progreso\" class=\"mdb-select colorful-select dropdown-primary\">
                                    
@@ -261,63 +253,10 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     </select>
 
                                     <!--/Blue select-->
-
-                                    <!--Date pickers-->
-                                    <p class=\"lead \">
-                                        <span class=\"badge info-color p-2\">Clasificación de edad : ";
-                // line 169
-                echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "RestEdad", array()), "html", null, true);
-                echo "</span>
-                                    </p>
-                                    <br>
-
-                                    <!--Blue select-->
-                                    <select name=\"edad\" class=\"mdb-select colorful-select dropdown-primary\">
-                                   ";
-                // line 176
-                echo "                                        <option value=\"Todo público\">Todo público</option>
-                                        <option value=\"13\">+ 13 años</option>
-                                        <option value=\"18\">+ 18 años</option>
-
-                                    </select>
-
-                                    <!--/Blue select-->
-
-
-                                </div>
-                                <!--/First column-->
-
-                                <!--Second column-->
-                                <div class=\"col-md-6 \">
-                                    <!--Date select-->
-                                    <p class=\"lead\">
-                                        <span class=\"badge info-color p-2\">Género :";
-                // line 192
-                echo twig_escape_filter($this->env, (isset($context["g"]) ? $context["g"] : $this->getContext($context, "g")), "html", null, true);
-                echo " </span>
-                                    </p>
-
-
-                                    <!--Blue select-->
-                                    <select name=\"genero\" class=\"mdb-select colorful-select dropdown-primary\">
-                                   ";
-                // line 199
-                echo "                                        <option value=\"1\">Aventura</option>
-                                        <option value=\"2\">Acción</option>
-                                        <option value=\"3\">Terror</option>
-                                        <option value=\"4\"> Fantasia</option>
-                                        <option value=\"5\">Misterio</option>
-                                        <option value=\"6\">Poesía</option>
-                                        <option value=\"7\">Romance</option>
-                                        <option value=\"8\">Drama</option>
-                                    </select>
-
-                                    <!--/Blue select-->
-
-                                    <!--Date pickers-->
+ <!--Date pickers-->
                                     <p class=\"lead \">
                                         <span class=\"badge info-color p-2\">Idioma : ";
-                // line 213
+                // line 166
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "Idioma", array()), "html", null, true);
                 echo "</span>
                                     </p>
@@ -326,7 +265,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     <!--Blue select-->
                                     <select name=\"idioma\" class=\"mdb-select colorful-select dropdown-primary\">
                                       ";
-                // line 220
+                // line 173
                 echo "                                        <option value=\"Español\">Español</option>
                                         <option value=\"English\">English</option>
                                         <option value=\"Portugês\">Portugês</option>
@@ -343,6 +282,39 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     </select>
 
                                     <!--/Blue select-->
+
+
+                                </div>
+                                <!--/First column-->
+
+                                <!--Second column-->
+                                <div class=\"col-md-6 \">
+                                    <!--Date select-->
+                                    <p class=\"lead\">
+                                        <span class=\"badge info-color p-2\">Género :";
+                // line 198
+                echo twig_escape_filter($this->env, (isset($context["g"]) ? $context["g"] : $this->getContext($context, "g")), "html", null, true);
+                echo " </span>
+                                    </p>
+
+
+                                    <!--Blue select-->
+                                    <select name=\"genero\" class=\"mdb-select colorful-select dropdown-primary\">
+                                   ";
+                // line 205
+                echo "                                        <option value=\"1\">Aventura</option>
+                                        <option value=\"2\">Acción</option>
+                                        <option value=\"3\">Terror</option>
+                                        <option value=\"4\"> Fantasia</option>
+                                        <option value=\"5\">Misterio</option>
+                                        <option value=\"6\">Poesía</option>
+                                        <option value=\"7\">Romance</option>
+                                        <option value=\"8\">Drama</option>
+                                    </select>
+
+                                    <!--/Blue select-->
+
+                                   
 
 
                                 </div>
@@ -377,26 +349,26 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
                                 <!--Card image TODO: Imagen libro view overlay  -->
                                 <div class=\" ";
-                // line 269
+                // line 251
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "colorPortada", array()), "html", null, true);
                 echo "\">
                                      ";
-                // line 270
+                // line 252
                 if ((isset($context["foto"]) ? $context["foto"] : $this->getContext($context, "foto"))) {
-                    // line 271
+                    // line 253
                     echo "                        <img src=\"data:image/jpeg;base64,";
                     echo twig_escape_filter($this->env, (isset($context["foto"]) ? $context["foto"] : $this->getContext($context, "foto")), "html", null, true);
                     echo "\" style=\"height:200px ; width:150px;\" class=\" mx-auto\" alt=\"sample image\">
                             
                             ";
                 } else {
-                    // line 274
+                    // line 256
                     echo "                        <div class=\" flex-center text-center\"  style=\"height:200px ;\" alt=\"sample image\"><p>";
                     echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
                     echo "</p></div>
                             ";
                 }
-                // line 276
+                // line 258
                 echo "
                                     <a >
                                         <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
@@ -409,7 +381,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     <!--Title-->
                                     <h5 class=\"card-title dark-grey-text text-center grey lighten-4 py-2\">
                                         <strong>";
-                // line 287
+                // line 269
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
                 echo "</strong>
                                         <a href=\"\" data-toggle=\"modal\" data-target=\"#modalActualizar\">
@@ -428,7 +400,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                     -webkit-line-clamp: 2;
                                     -webkit-box-orient: vertical;\">
                                         <em>";
-                // line 303
+                // line 285
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "descripcion", array()), "html", null, true);
                 echo "
                                             <div class=\"text-center\">
@@ -458,7 +430,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
             <!--Section: Table-->
            ";
-                // line 331
+                // line 313
                 echo "            
             <section>
                 <div class=\"card card-cascade narrower z-depth-0\">
@@ -466,13 +438,13 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                     <!--Card image-->
                         <div class=\"view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center\">
             ";
-                // line 337
+                // line 319
                 if (($this->getAttribute($context["item"], "tipoLibro", array()) == "Gratis")) {
-                    // line 338
+                    // line 320
                     echo "                        <div>
                             <a data-toggle=\"tooltip\"  data-placement=\"bottom\" title=\"Añadir capítulo\" class=\" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light\"
                                 href=\"";
-                    // line 340
+                    // line 322
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_nuevoCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                     echo "\">
                                 <i class=\"fas fa-plus\"></i>
@@ -484,7 +456,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                        
                         ";
                 } else {
-                    // line 349
+                    // line 331
                     echo "                    
                         <div>
  
@@ -501,10 +473,10 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                      
                         ";
                 }
-                // line 364
+                // line 346
                 echo "                        <div>
                             ";
-                // line 373
+                // line 355
                 echo "                        </div>
                     </div>
                     <!--/Card image-->
@@ -513,9 +485,9 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                         <div class=\"table-responsive\">
                             <!--Tabla Capitulos-->
                              ";
-                // line 380
+                // line 362
                 if (($this->getAttribute($context["item"], "tipoLibro", array()) == "Gratis")) {
-                    // line 381
+                    // line 363
                     echo "                            <table id=\"capitulos1\" class=\"mdl-data-table col-lg-12 \" style=\"width:100%\">
 
                                 <thead>
@@ -529,41 +501,41 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                 </thead>
                                 <tbody>
                                 ";
-                    // line 393
+                    // line 375
                     $context['_parent'] = $context;
                     $context['_seq'] = twig_ensure_traversable((isset($context["infoCapitulo"]) ? $context["infoCapitulo"] : $this->getContext($context, "infoCapitulo")));
                     foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                         echo " 
                                     <tr>
                                         <td>";
-                        // line 395
+                        // line 377
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
                         echo "</td>
                                         <td>";
-                        // line 396
+                        // line 378
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
                         echo "</td>
                                         <td>";
-                        // line 397
+                        // line 379
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "fecha", array()), "html", null, true);
                         echo "</td>
                                          <td>
                                           ";
-                        // line 399
+                        // line 381
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "estado", array()), "html", null, true);
                         echo "
                                         </td> 
                                         <td>
                                             <a data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Editar capítulo\" class=\" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient mr-3 ml-4\"
                                                 href=\"";
-                        // line 403
+                        // line 385
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_capitulo", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
                         echo "\">
                                                 <i class=\"fas fa-pencil-alt\"></i>
                                             </a>
                                             <a  onclick=\"return confirm('¿Estás seguro de eliminar este capíulot?')\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Eliminar capítulo\"  class=\"guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \"
                                                 href=\"";
-                        // line 407
+                        // line 389
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
                         echo "\">
                                                 <i class=\"fa fa-remove mt-0\"></i>
@@ -575,14 +547,14 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 413
+                    // line 395
                     echo "                                </tbody>
                             </table>
                             <!--./ Tabla Capitulos TODO:-->
                         <!--Tabla Capitulos-->
                         ";
                 } else {
-                    // line 418
+                    // line 400
                     echo "                            <table id=\"capitulos1\" class=\"mdl-data-table col-lg-12 \" style=\"width:100%\">
 
                                 <thead>
@@ -594,18 +566,18 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                 </thead>
                                 <tbody>
                                 ";
-                    // line 428
+                    // line 410
                     $context['_parent'] = $context;
                     $context['_seq'] = twig_ensure_traversable((isset($context["enlaces"]) ? $context["enlaces"] : $this->getContext($context, "enlaces")));
                     foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                        // line 429
+                        // line 411
                         echo "                                    <tr>
                                         <td>";
-                        // line 430
+                        // line 412
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "paginaLibro", array()), "html", null, true);
                         echo "</td>
                                         <td> <a target=\"_blank\" class=\"guardarScroll\" href=\"";
-                        // line 431
+                        // line 413
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "enlaceLibro", array()), "html", null, true);
                         echo "\">";
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "enlaceLibro", array()), "html", null, true);
@@ -613,7 +585,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                      
                                         <td>
                                             <a href=\"\" data-toggle=\"modal\" data-target=\"#";
-                        // line 434
+                        // line 416
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "idEnlace", array()), "html", null, true);
                         echo "\">
 
@@ -624,7 +596,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                                         </a>    
                                             <a  onclick=\"return confirm('¿Estás seguro de eliminar este enlace?')\"
                                              href=\"";
-                        // line 442
+                        // line 424
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarEnlace", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "idEnlace" => $this->getAttribute($context["item"], "idEnlace", array()))), "html", null, true);
                         echo "\"
                                               data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Eliminar enlace\" class=\" guardarScroll btn btn-outline-white btn-rounded btn-sm px-2 waves-effect waves-light blue-gradient \"
@@ -637,7 +609,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
                                     <!--Modal : Añdir enlace -->
 <div class=\"modal fade\" id=\"";
-                        // line 452
+                        // line 434
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "idEnlace", array()), "html", null, true);
                         echo "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
     <div class=\"modal-dialog cascading-modal modal-avatar modal-sm\" role=\"document\">
@@ -646,7 +618,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
             <!--Header-->
             <form name=\"formUpdatePerfil\"  action=\"";
-                        // line 458
+                        // line 440
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_editarEnlace", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "idEnlace" => $this->getAttribute($context["item"], "idEnlace", array()))), "html", null, true);
                         echo "\"  method=\"POST\" enctype=\"multipart/form-data\" >
               <iframe name=\"frame\" style=\"display: none\"></iframe>
@@ -655,14 +627,14 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                 <div class=\"modal-body text-center mb-1\">
                     <div class=\"md-form ml-0 mr-0\">
                         <input type=\"text\" type=\"text\" id=\"paginaLibro\" class=\"form-control form-control-sm validate ml-0\" name=\"paginaLibro\" value=\"";
-                        // line 464
+                        // line 446
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "paginaLibro", array()), "html", null, true);
                         echo "\">
                         <label for=\"paginaLibro\" class=\"ml-0\">Página</label>
                     </div>
                     <div class=\"md-form ml-0 mr-0\">
                         <input type=\"text\" type=\"text\" id=\"form29\" class=\"form-control form-control-sm validate ml-0\" name=\"enlaceLibro\" value=\"";
-                        // line 468
+                        // line 450
                         echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "enlaceLibro", array()), "html", null, true);
                         echo "\">
                         <label for=\"enlaceLibro\" class=\"ml-0\">Enlace</label>
@@ -686,13 +658,13 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 486
+                    // line 468
                     echo "                                </tbody>
                             </table>
                             <!--Table-->
                             ";
                 }
-                // line 490
+                // line 472
                 echo "                        </div>
                         <!--Bottom Table UI-->
                         <div class=\"d-flex justify-content-between\">
@@ -713,7 +685,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 <br>
 ";
             }
-            // line 509
+            // line 491
             echo " ";
         }
         $_parent = $context['_parent'];
@@ -734,7 +706,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 
     public function getDebugInfo()
     {
-        return array (  717 => 509,  696 => 490,  690 => 486,  666 => 468,  659 => 464,  650 => 458,  641 => 452,  628 => 442,  617 => 434,  609 => 431,  605 => 430,  602 => 429,  598 => 428,  586 => 418,  579 => 413,  567 => 407,  560 => 403,  553 => 399,  548 => 397,  544 => 396,  540 => 395,  533 => 393,  519 => 381,  517 => 380,  508 => 373,  505 => 364,  488 => 349,  476 => 340,  472 => 338,  470 => 337,  462 => 331,  432 => 303,  413 => 287,  400 => 276,  394 => 274,  387 => 271,  385 => 270,  381 => 269,  330 => 220,  321 => 213,  305 => 199,  296 => 192,  278 => 176,  269 => 169,  251 => 154,  238 => 144,  190 => 99,  183 => 95,  174 => 89,  148 => 66,  140 => 61,  133 => 57,  118 => 44,  112 => 42,  105 => 39,  103 => 38,  96 => 34,  87 => 27,  85 => 26,  82 => 25,  75 => 24,  71 => 20,  58 => 14,  53 => 12,  47 => 9,  38 => 3,  35 => 2,  11 => 1,);
+        return array (  689 => 491,  668 => 472,  662 => 468,  638 => 450,  631 => 446,  622 => 440,  613 => 434,  600 => 424,  589 => 416,  581 => 413,  577 => 412,  574 => 411,  570 => 410,  558 => 400,  551 => 395,  539 => 389,  532 => 385,  525 => 381,  520 => 379,  516 => 378,  512 => 377,  505 => 375,  491 => 363,  489 => 362,  480 => 355,  477 => 346,  460 => 331,  448 => 322,  444 => 320,  442 => 319,  434 => 313,  404 => 285,  385 => 269,  372 => 258,  366 => 256,  359 => 253,  357 => 252,  353 => 251,  305 => 205,  296 => 198,  269 => 173,  260 => 166,  245 => 154,  232 => 144,  184 => 99,  177 => 95,  168 => 89,  142 => 66,  139 => 65,  133 => 57,  118 => 44,  112 => 42,  105 => 39,  103 => 38,  96 => 34,  87 => 27,  85 => 26,  82 => 25,  75 => 24,  71 => 20,  58 => 14,  53 => 12,  47 => 9,  38 => 3,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %} {% for item in infoLibro %}*/
@@ -796,11 +768,11 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                         <input type="text" type="text" id="form29" class="form-control form-control-sm validate ml-0" name="tituloLibro" value="{{tituloLibro}}">*/
 /*                         <label for="form29" class="ml-0">Título del libro</label>*/
 /*                     </div>*/
-/*                     <div class="md-form ml-0 mr-0">*/
+/*                     {# <div class="md-form ml-0 mr-0">*/
 /*                         <input type="text" type="text" id="form29" class="form-control form-control-sm validate ml-0" name="trailer" value="{{trailer}}">*/
 /*                         <label for="form29" class="ml-0">Booktrailer Video URL</label>*/
 /* */
-/*                     </div>*/
+/*                     </div> #}*/
 /*                     <div class="md-form ml-0 mr-0">*/
 /*                         <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11" name="descripcionLibro" value="">{{descripcionLibro}}</textarea>*/
 /*                         <label for="contact-message" class="Lcontact-message valL cl" id="labelContC">Resumen</label>*/
@@ -892,8 +864,6 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                                     <p class="lead">*/
 /*                                         <span class="badge info-color p-2">Progreso de la historia: {{item.progreso}}</span>*/
 /*                                     </p>*/
-/* */
-/* */
 /*                                     <!--Blue select-->*/
 /*                                     <select name="progreso" class="mdb-select colorful-select dropdown-primary">*/
 /*                                    */
@@ -902,20 +872,28 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /*                                     </select>*/
 /* */
 /*                                     <!--/Blue select-->*/
-/* */
-/*                                     <!--Date pickers-->*/
+/*  <!--Date pickers-->*/
 /*                                     <p class="lead ">*/
-/*                                         <span class="badge info-color p-2">Clasificación de edad : {{item.RestEdad}}</span>*/
+/*                                         <span class="badge info-color p-2">Idioma : {{item.Idioma}}</span>*/
 /*                                     </p>*/
 /*                                     <br>*/
 /* */
 /*                                     <!--Blue select-->*/
-/*                                     <select name="edad" class="mdb-select colorful-select dropdown-primary">*/
-/*                                    {#  <option selected>{{item.RestEdad}}</option> #}*/
-/*                                         <option value="Todo público">Todo público</option>*/
-/*                                         <option value="13">+ 13 años</option>*/
-/*                                         <option value="18">+ 18 años</option>*/
-/* */
+/*                                     <select name="idioma" class="mdb-select colorful-select dropdown-primary">*/
+/*                                       {#   <option selected>{{item.Idioma}}</option> #}*/
+/*                                         <option value="Español">Español</option>*/
+/*                                         <option value="English">English</option>*/
+/*                                         <option value="Portugês">Portugês</option>*/
+/*                                         <option value="Russian" >Russian</option>*/
+/*                                         <option value="Filipino">Filipino</option>*/
+/*                                         <option value="Hindi">Hindi</option>*/
+/*                                         <option value="Dutch">Dutch</option>*/
+/*                                         <option value="Italiano">Italiano</option>*/
+/*                                         <option value="Chinese">Chinese</option>*/
+/*                                         <option value="Turkish">Turkish</option>*/
+/*                                         <option value="Deutsch">Deutsch</option>*/
+/*                                         <option value="Français">Français</option>*/
+/*                                         <option value="Other">Other</option>*/
 /*                                     </select>*/
 /* */
 /*                                     <!--/Blue select-->*/
@@ -947,31 +925,7 @@ class __TwigTemplate_2eab02cf13939b8a76d54a176571d2d907186a91eb3593fc670021a7c11
 /* */
 /*                                     <!--/Blue select-->*/
 /* */
-/*                                     <!--Date pickers-->*/
-/*                                     <p class="lead ">*/
-/*                                         <span class="badge info-color p-2">Idioma : {{item.Idioma}}</span>*/
-/*                                     </p>*/
-/*                                     <br>*/
-/* */
-/*                                     <!--Blue select-->*/
-/*                                     <select name="idioma" class="mdb-select colorful-select dropdown-primary">*/
-/*                                       {#   <option selected>{{item.Idioma}}</option> #}*/
-/*                                         <option value="Español">Español</option>*/
-/*                                         <option value="English">English</option>*/
-/*                                         <option value="Portugês">Portugês</option>*/
-/*                                         <option value="Russian" >Russian</option>*/
-/*                                         <option value="Filipino">Filipino</option>*/
-/*                                         <option value="Hindi">Hindi</option>*/
-/*                                         <option value="Dutch">Dutch</option>*/
-/*                                         <option value="Italiano">Italiano</option>*/
-/*                                         <option value="Chinese">Chinese</option>*/
-/*                                         <option value="Turkish">Turkish</option>*/
-/*                                         <option value="Deutsch">Deutsch</option>*/
-/*                                         <option value="Français">Français</option>*/
-/*                                         <option value="Other">Other</option>*/
-/*                                     </select>*/
-/* */
-/*                                     <!--/Blue select-->*/
+/*                                    */
 /* */
 /* */
 /*                                 </div>*/

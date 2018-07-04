@@ -66,14 +66,10 @@
                                 
             
                             <div class="embed-responsive embed-responsive-16by9">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-                         
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
                              </div> 
                              <!--Grid row-->
- 
-                             
- 
                          </div>
                          <!--Grid column-->
  
@@ -87,13 +83,9 @@
                                      <strong>Crea tu cuenta</strong>
                                  </h4>
  
-                                 
- 
-                               
- 
                              </div> 
                              <!--/Grid row-->
-    <form name="formCrearCuenta" action="{{ path('dwes_libros_registro') }}" method="POST" {# target="frame" #} class="ml-4">
+                        <form name="formCrearCuenta" action="{{ path('dwes_libros_registro') }}" method="POST" {# target="frame" #} class="ml-4">
                              <!--Body-->
                              <div class="md-form">
                                  
@@ -130,17 +122,21 @@
                              <div class="text-center">
                                  <button class="btn pink-gradient btn-rounded mt-3 waves-effect waves-light" id="crearCuenta" type="submit" name="crearCuenta" value="crearCuenta">Crear cuenta</button>
                              </div>
-                             
+                              <!--Grid column-->
+                                <div class="text-center"><br>
+                                 <span style="color:red">{{mensaje}} </span>
+                                </div>
+                                <!--Grid column-->
                             </form>
                              <div class="text-center">
-                                 <p class="font-small grey-text d-flex justify-content-end">¿Ya tienes cuenta? <a href="#" class="blue-text ml-1"> Entrar</a></p>
+                                 <p class="font-small grey-text d-flex justify-content-end">¿Ya tienes cuenta? <a href="{{ path('dwes_libros_login') }}" class="blue-text ml-1"> Entrar</a></p>
                              </div>
                              
  
                          </div>
                          <!--Grid column-->
                        
-                 <p id="errormsg" style="display:none;">ERROR</p>
+                
                      </div>
                      <!--Grid row-->
  

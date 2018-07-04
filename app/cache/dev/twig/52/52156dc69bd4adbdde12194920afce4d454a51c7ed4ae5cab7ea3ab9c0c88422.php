@@ -235,48 +235,53 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         <!--Content-->
         <div class=\"modal-content\">
             <!--Header-->
-             <form name=\"formUpdatePerfil\"  action=\"";
+            ";
             // line 131
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_avisar", array("idLibro" => $this->getAttribute($context["item"], "idLibro", array()), "admin" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "autor" => $this->getAttribute($context["item"], "username", array()), "tipo" => "libros")), "html", null, true);
-            echo "\" 
+            if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "user", array(), "any", false, true), "username", array(), "any", true, true)) {
+                // line 132
+                echo "             <form name=\"formUpdatePerfil\"  action=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_avisar", array("idLibro" => $this->getAttribute($context["item"], "idLibro", array()), "admin" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "autor" => $this->getAttribute($context["item"], "username", array()), "tipo" => "libros")), "html", null, true);
+                echo "\" 
              method=\"POST\" enctype=\"multipart/form-data\" >
               <iframe name=\"frame\" style=\"display: none\"></iframe>
-               
+                
                 <!--Body-->
                 <div class=\"modal-body text-center mb-1\">
                     <div class=\"md-form ml-0 mr-0\">
                          <textarea id=\"aviso\" rows=8 name=\"aviso\" class=\"form-control form-control-sm validate ml-0\">";
-            // line 138
-            echo twig_escape_filter($this->env, (isset($context["avisoText"]) ? $context["avisoText"] : $this->getContext($context, "avisoText")), "html", null, true);
-            echo "</textarea>
+                // line 139
+                echo twig_escape_filter($this->env, (isset($context["avisoText"]) ? $context["avisoText"] : $this->getContext($context, "avisoText")), "html", null, true);
+                echo "</textarea>
                         <label for=\"aviso\" class=\"ml-0\">Mensaje al usuario:</label>
                     </div>
                     <div class=\"text-center mt-4\">
                         <button type=\"submit\" class=\"btn btn-cyan mt-1\">
                          ";
-            // line 143
-            if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) != "")) {
-                echo " 
+                // line 144
+                if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) != "")) {
+                    echo " 
                                          Actualizar
                                                 ";
-            }
-            // line 146
-            echo " 
+                }
+                // line 147
+                echo " 
                                                 ";
-            // line 147
-            if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) == "")) {
                 // line 148
-                echo "                                              Enviar
+                if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) == "")) {
+                    // line 149
+                    echo "                                              Enviar
                                                 ";
-            }
-            // line 149
-            echo "         
+                }
+                // line 150
+                echo "         
                         </button>
                     </div>
                 </div>
             </form>    
-
-        </div>
+";
+            }
+            // line 156
+            echo "        </div>
         <!--/.Content-->
     </div>
 </div>
@@ -290,103 +295,99 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                             <div>
                                 <div style=\"float:right\">
                                       ";
-            // line 168
+            // line 169
             if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-                // line 169
+                // line 170
                 echo "                                        <!--Twitter FIXME: APARECE USUARIO AVISADO EN TODOS LO GENEROS-->
                                        ";
-                // line 174
-                echo "                                      ";
                 // line 175
+                echo "                                      ";
+                // line 176
                 echo "                                      
                                         <a href=\"\" data-toggle=\"modal\" data-target=\"#modalEnlace\">
                                             <span data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"\" class=\" btn-floating warning-color waves-effect waves-light\"
                                                 href=\"#\" data-original-title=  
                                                    ";
-                // line 179
+                // line 180
                 if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) != "")) {
                     echo " 
                                          \"Ver aviso enviado\"
                                                 ";
                 }
-                // line 182
+                // line 183
                 echo "
                                                 ";
-                // line 183
+                // line 184
                 if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) == "")) {
-                    // line 184
+                    // line 185
                     echo "                                              \"Enviar aviso\"
                                                 ";
                 }
-                // line 186
+                // line 187
                 echo "
                                                >
                                                  ";
-                // line 188
+                // line 189
                 if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) == "")) {
                     echo " 
                                           <i class=\"fas fa-eye\"></i>
                                                 ";
                 }
-                // line 191
+                // line 192
                 echo "
                                                 ";
-                // line 192
+                // line 193
                 if (((isset($context["avisado"]) ? $context["avisado"] : $this->getContext($context, "avisado")) != "")) {
-                    // line 193
+                    // line 194
                     echo "                                                <i class=\"fas fa-exclamation-triangle\"></i>
                                                 ";
                 }
-                // line 195
+                // line 196
                 echo "                                            </span>
                                         </a>
                                       ";
-                // line 198
+                // line 199
                 echo "                                        <!--Google -->
                                         <a type=\"button\"  href=\"";
-                // line 199
+                // line 200
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_eliminarLib", array("idLibro" => $this->getAttribute($context["item"], "idLibro", array()))), "html", null, true);
                 echo "\"  data-toggle=\"tooltip\" data-placement=\"bottom\"
                                          title=\"Eliminar historia\" class=\"btn-floating btn-gplus waves-effect waves-light\"> <i class=\"fa fa-remove mt-0\"></i></a>
                                      ";
             }
-            // line 202
+            // line 203
             echo "                                    </div>
                                     <span class=\"badge badge-danger\">";
-            // line 203
+            // line 204
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
             echo "</span>
                                 <h2 class=\"card-title font-weight-bold pt-2  \" style=\"color:  black;\">
                                     <strong>";
-            // line 205
+            // line 206
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
             echo "</strong>
                                   
 
                                     ";
-            // line 208
+            // line 209
             if (((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Anuncio")) {
-                // line 209
+                // line 210
                 echo "                                    <span class=\"badge blue\">En venta</span>
 
                                     ";
             }
-            // line 212
+            // line 213
             echo "                                </h2>
                                 <div class=\"col-12\">
                                     <p style=\"min-height: 120px;color:  black;\">";
-            // line 214
+            // line 215
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "descLib", array()), "html", null, true);
             echo " </p>
                                 </div>
                                 <!-- Button  modal -->
-                                <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded clearfix  d-md-inline-block waves-effect waves-light video videoff\"
-                                    data-video=\"https://www.youtube.com/embed/8uYspagia_s?rel=0&showinfo=0\" data-toggle=\"modal\"
-                                    data-target=\"#exampleModal\">
-                                    <i class=\"fab fa-youtube mr-1\"></i> Book Trailer
-                                </button>
-                                    
-                            </div>
+                              ";
+            // line 225
+            echo "                            </div>
 
                         </div>
                     </div>
@@ -404,14 +405,14 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 236
+        // line 238
         echo " ";
     }
 
     public function block_contenido($context, array $blocks = array())
     {
         echo " ";
-        // line 246
+        // line 248
         echo "
 
 
@@ -425,16 +426,16 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             <!-- Breadcrumb-->
             <div class=\"\">
                 ";
-        // line 261
+        // line 263
         echo "                <div>
                     <a id=\"addBiblio\" href=\"";
-        // line 262
+        // line 264
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
         echo "\" class=\"guardarScroll\"></a>
 
 
                     <a id=\"delBiblio\" href=\"";
-        // line 265
+        // line 267
         echo $this->env->getExtension('routing')->getPath("dwes_libros_ajustes");
         echo "\" class=\"guardarScroll\"></a>
                 </div>
@@ -443,81 +444,81 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
 
                     ";
-        // line 271
+        // line 273
         if (((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Anuncio")) {
-            // line 272
+            // line 274
             echo "                    <span>";
             echo twig_escape_filter($this->env, (isset($context["countEnlaces"]) ? $context["countEnlaces"] : $this->getContext($context, "countEnlaces")), "html", null, true);
             echo "</span> Enlaces ";
         } else {
-            // line 273
+            // line 275
             echo "                    <span>";
             echo twig_escape_filter($this->env, (isset($context["numCap"]) ? $context["numCap"] : $this->getContext($context, "numCap")), "html", null, true);
             echo "</span> Capítulos ";
         }
-        // line 274
+        // line 276
         echo "                </button>
                 ";
-        // line 277
+        // line 279
         echo "
                 <span class=\"green-text font-weight-bold pr-2 small\">";
-        // line 278
+        // line 280
         echo twig_escape_filter($this->env, (isset($context["progreso"]) ? $context["progreso"] : $this->getContext($context, "progreso")), "html", null, true);
         echo "</span>
                 ";
-        // line 281
+        // line 283
         echo " ";
         if (((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Gratis")) {
-            // line 282
+            // line 284
             echo "                    <span class=\"text-dark  pr-2 cl\" id=\"enbiblioteca\">
                         ";
-            // line 283
+            // line 285
             if ((isset($context["lista"]) ? $context["lista"] : $this->getContext($context, "lista"))) {
-                // line 284
+                // line 286
                 echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href=\"";
-                // line 285
+                // line 287
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                 echo "\" class=\"text-dark cl guardarScroll\">Eliminar de mi lista</a>
                         ";
             } else {
-                // line 287
+                // line 289
                 echo "                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
                         <a href=\"";
-                // line 288
+                // line 290
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addbiblioteca", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                 echo "\" class=\"text-dark cl guardarScroll\">
                             Añadir a mi lista</a>
 
                         ";
             }
-            // line 292
+            // line 294
             echo "                    </span>
 
                     <span class=\"text-dark   pr-2 cl\" id=\"enfavoritos\">
                         ";
-            // line 295
+            // line 297
             if ((isset($context["favorito"]) ? $context["favorito"] : $this->getContext($context, "favorito"))) {
-                // line 296
+                // line 298
                 echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href=\"";
-                // line 297
+                // line 299
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                 echo "\" class=\"text-dark cl guardarScroll\">
                             Eliminar de favoritos</a>
                         ";
             } else {
-                // line 300
+                // line 302
                 echo "                        <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
                         <a href=\"";
-                // line 301
+                // line 303
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_addfavoritos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                 echo "\" class=\"text-dark cl guardarScroll\">
                             Añadir a favoritos</a>
 
                         ";
             }
-            // line 305
+            // line 307
             echo "                    </span>
                     <span class=\"text-dark   pr-2 cl\">
 
@@ -530,40 +531,40 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     </span>
                     ";
         }
-        // line 315
+        // line 317
         echo " ";
         if (((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Anuncio")) {
-            // line 316
+            // line 318
             echo "                    <span class=\"text-dark   pr-2 cl\">
                         ";
-            // line 317
+            // line 319
             if ((isset($context["deseo"]) ? $context["deseo"] : $this->getContext($context, "deseo"))) {
-                // line 318
+                // line 320
                 echo "                        <i class='far fa-bookmark mr-1 font-weight-bold select favIco'></i>
                         <a href=\"";
-                // line 319
+                // line 321
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_deldeseos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                 echo "\" class=\"text-dark cl guardarScroll\">
                             En lista de deseos</a>
                         ";
             } else {
-                // line 322
+                // line 324
                 echo "
 
                         <i class=\"fas fa-plus mr-1 font-weight-bold deselect bibIco \"></i>
                         <a href=\"";
-                // line 325
+                // line 327
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_adddeseos", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
                 echo "\" class=\"text-dark cl guardarScroll\">
                             Añadir a lista de deseos</a>
                         ";
             }
-            // line 328
+            // line 330
             echo "                    </span>
 
                     ";
         }
-        // line 331
+        // line 333
         echo "            </div>
             <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
 
@@ -571,7 +572,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Pantalla blanca\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 337
+        // line 339
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sun-selec.png"), "html", null, true);
         echo "\" id=\"blanca\"> </img>
                         </i>
@@ -581,7 +582,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Pantalla sefia\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 344
+        // line 346
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sunset.png"), "html", null, true);
         echo "\" id=\"sefia\"> </img>
                         </i>
@@ -591,7 +592,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Pantalla negra\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 351
+        // line 353
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/moon.png"), "html", null, true);
         echo "\" id=\"negra\"> </img>
                         </i>
@@ -601,7 +602,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Aumentar letra\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 358
+        // line 360
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font+.png"), "html", null, true);
         echo "\" id=\"letraUp\"> </img>
                         </i>
@@ -611,7 +612,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Desminuir letra\">
                         <i class=\"mb-2\">
                             <img src=\"";
-        // line 365
+        // line 367
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font-.png"), "html", null, true);
         echo "\" id=\"letraDown\"> </img>
                         </i>
@@ -629,20 +630,20 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
             <div>
                 ";
-        // line 380
+        // line 382
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["enlaces"]) ? $context["enlaces"] : $this->getContext($context, "enlaces")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 381
+            // line 383
             echo "                <div id=\"accordion\" class=\"mt-1\">
                     <div class=\"card\">
                         <div class=\"card-header\" id=\"heading";
-            // line 383
+            // line 385
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "idEnlace", array()), "html", null, true);
             echo "\">
                             <h5 class=\"mb-0\">
                                 <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapse";
-            // line 385
+            // line 387
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "idEnlace", array()), "html", null, true);
             echo "\" aria-expanded=\"false\"
                                     aria-controls=\"collapseExample\">
@@ -652,17 +653,17 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         </div>
 
                         <div id=\"collapse";
-            // line 392
+            // line 394
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "idEnlace", array()), "html", null, true);
             echo "\" class=\"collapse\" aria-labelledby=\"heading";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "idEnlace", array()), "html", null, true);
             echo "\" data-parent=\"#accordion\">
                             <div class=\"card-body bigtext text-center\">
                                 ";
-            // line 395
+            // line 397
             echo "
                                 <a target=\"_blank\" href=\" ";
-            // line 396
+            // line 398
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "enlaceLibro", array()), "html", null, true);
             echo "\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "paginaLibro", array()), "html", null, true);
@@ -677,10 +678,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 402
+        // line 404
         echo " ";
         if (( !(isset($context["capitulos"]) ? $context["capitulos"] : $this->getContext($context, "capitulos")) && ((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) != "Anuncio"))) {
-            // line 403
+            // line 405
             echo "
 
             <!--Panel FIXME: -->
@@ -692,10 +693,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
             ";
         }
-        // line 412
+        // line 414
         echo " ";
         if (( !(isset($context["enlaces"]) ? $context["enlaces"] : $this->getContext($context, "enlaces")) && ((isset($context["tipoLibro"]) ? $context["tipoLibro"] : $this->getContext($context, "tipoLibro")) == "Anuncio"))) {
-            // line 413
+            // line 415
             echo "
 
             <!--Panel FIXME: -->
@@ -706,30 +707,46 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             <!--/.Panel-->
             ";
         }
-        // line 422
+        // line 424
         echo "            <div id=\"imprimir\" style=\"display:  none;\">
+          
+            ";
+        // line 426
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["libro"]) ? $context["libro"] : $this->getContext($context, "libro")));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 427
+            echo "              <h1 class=\" green-text mb-4\" >
+                Título de la historia: ";
+            // line 428
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "titulo", array()), "html", null, true);
+            echo "
+                </h1>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 431
+        echo "            
                 ";
-        // line 423
+        // line 432
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["capitulos"]) ? $context["capitulos"] : $this->getContext($context, "capitulos")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 424
+            // line 433
             echo "
                 <h4 class=\"card-title\">
-                    <span class=\"indigo-text pr-2 small\"> Capítulo ";
-            // line 426
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
-            echo ":</span>
-
-                    <strong class=\"font-weight-bold indigo-text \">";
-            // line 428
+                    <span class=\"indigo-text pr-2 small\"> ";
+            // line 435
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
-            echo "</strong>
+            echo "</span>
+            
                 </h4>
                 <hr>
 
                 <p class=\"card-text\" style=\"    \">";
-            // line 432
+            // line 440
             echo $this->getAttribute($context["item"], "contenidoCap", array());
             echo "
                 </p>
@@ -739,32 +756,30 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 436
+        // line 444
         echo "            </div>
             ";
-        // line 437
+        // line 445
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["capitulos"]) ? $context["capitulos"] : $this->getContext($context, "capitulos")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             echo " ";
-            // line 438
+            // line 446
             echo "
             <div id=\"accordion\" class=\"mt-1\">
                 <div class=\"card\">
                     <div class=\"card-header\" id=\"heading";
-            // line 441
+            // line 449
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo "\">
                         <h5 class=\"mb-0\">
                             <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapse";
-            // line 443
+            // line 451
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo "\" aria-expanded=\"false\"
                                 aria-controls=\"collapseExample\">
-                                #";
-            // line 445
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
-            echo " ";
+                                ";
+            // line 453
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "tituloCap", array()), "html", null, true);
             echo "
                             </button>
@@ -772,16 +787,16 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                     </div>
 
                     <div id=\"collapse";
-            // line 450
+            // line 458
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo "\" class=\"collapse\" aria-labelledby=\"heading";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo "\" data-parent=\"#accordion\">
                         <div class=\"card-body bigtext\">
                             ";
-            // line 452
+            // line 460
             echo " ";
-            // line 453
+            // line 461
             echo "                            <div class=\"fuente\">";
             echo $this->getAttribute($context["item"], "contenidoCap", array());
             echo "</div>
@@ -789,28 +804,28 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                             <!--Main wrapper-->
                             <div class=\"section-heading h3 text-center\">
                                 <a data-toggle=\"collapse\" href=\"#comentariosss";
-            // line 457
+            // line 465
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo " \" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\">
                                     ";
-            // line 458
+            // line 466
             if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
                 echo " Deja un comentario ";
             } elseif ( !$this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
                 echo " Inicia sesión o Regístrate para comentar ";
             }
-            // line 459
+            // line 467
             echo "                                </a>
                             </div>
                             <div id=\"comentariosss";
-            // line 461
+            // line 469
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo " \" class=\"collapse\">
-                                <div class=\"comments-list text-center text-md-left mb-5\">
+                                <div class=\"comments-list text-center text-md-left\">
                                     ";
-            // line 463
+            // line 471
             if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-                // line 464
+                // line 472
                 echo "                                    <!--Section: Leave a reply (Logged In User)-->
                                     <section class=\"mb-4 mt-4\">
 
@@ -824,17 +839,19 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                                     <div class=\"col-sm-2 col-12\">
 
                                                         ";
-                // line 476
+                // line 484
                 if ((isset($context["fUser"]) ? $context["fUser"] : $this->getContext($context, "fUser"))) {
-                    // line 477
+                    // line 485
                     echo "                                                        <img src=\"data:image/jpeg;base64,";
                     echo twig_escape_filter($this->env, (isset($context["fUser"]) ? $context["fUser"] : $this->getContext($context, "fUser")), "html", null, true);
                     echo "\" class=\" img-fluid avatar rounded-circle z-depth-2\"> ";
                 } else {
-                    // line 478
-                    echo "                                                        <img src=\"https://mdbootstrap.com/img/Photos/Avatars/img (32).jpg\" alt=\"Sample avatar image\" class=\"\"> ";
+                    // line 486
+                    echo "                                                       <img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Otros/profile.png"), "html", null, true);
+                    echo "\" class=\"img-fluid rounded-circle\" alt=\"sample image\">  ";
                 }
-                // line 479
+                // line 487
                 echo "                                                    </div>
                                                     <!--/.Image column-->
 
@@ -842,7 +859,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                                     <div class=\"col-sm-10 col-12\">
                                                         <!--Grid row-->
                                                         <form name=\"formUpdatePerfil\" action=\"";
-                // line 485
+                // line 493
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_comentarCapitulo", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCap" => $this->getAttribute($context["item"], "numCapitulo", array()))), "html", null, true);
                 echo "\"
                                                             method=\"POST\" enctype=\"multipart/form-data\">
@@ -854,7 +871,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
                                                                         <textarea class=\"form-control\" id=\"exampleFormControlTextarea6\" rows=\"5\" placeholder=\"Tu comentario...\" name=\"comentarioCap\"
                                                                             value=";
-                // line 494
+                // line 502
                 echo twig_escape_filter($this->env, (isset($context["comentarioCap"]) ? $context["comentarioCap"] : $this->getContext($context, "comentarioCap")), "html", null, true);
                 echo "></textarea>
                                                                     </div>
@@ -877,16 +894,16 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                     <!--/Section: Leave a reply (Logged In User)-->
                                     ";
             }
-            // line 514
+            // line 522
             echo "                                    <div class=\"text-center mb-4\">
 
                                         <h3>
                                             <a data-toggle=\"collapse\" href=\"#comentarios";
-            // line 517
+            // line 525
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo " \" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\">
                                                 Comentarios ";
-            // line 519
+            // line 527
             echo "                                                <span class=\"badge blue\">";
             echo twig_escape_filter($this->env, twig_length_filter($this->env, $this->getAttribute((isset($context["comentariosCap"]) ? $context["comentariosCap"] : $this->getContext($context, "comentariosCap")), ($this->getAttribute($context["item"], "numCapitulo", array()) - 1), array(), "array")), "html", null, true);
             echo "</span>
@@ -896,17 +913,17 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                     </div>
                                     <!--Comment row-->
                                     <div id=\"comentarios";
-            // line 525
+            // line 533
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "numCapitulo", array()), "html", null, true);
             echo " \" class=\"collapse\">
 
                                         ";
-            // line 527
+            // line 535
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["comentariosCap"]) ? $context["comentariosCap"] : $this->getContext($context, "comentariosCap")), ($this->getAttribute($context["item"], "numCapitulo", array()) - 1), array(), "array"));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 528
-                echo "                                        <div class=\"row mb-4\">
+                // line 536
+                echo "                                        <div class=\"row \">
                                             <!--Image column-->
                                             <div class=\"col-sm-2 col-12 mb-md-0 mb-3\">
                                                 <img src=\"https://mdbootstrap.com/img/Photos/Avatars/img (20).jpg\" class=\"avatar rounded-circle z-depth-1-half\">
@@ -916,16 +933,16 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                             <div class=\"col-sm-10 col-12\">
                                                 <a>
                                                     ";
-                // line 537
+                // line 545
                 if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-                    // line 538
+                    // line 546
                     echo "                                                    <h4 class=\"font-weight-bold\">";
                     echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
                     echo " ";
                     echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "apellidos", array()), "html", null, true);
                     echo " ";
                     if (($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()) == $this->getAttribute($context["item"], "username", array()))) {
-                        // line 540
+                        // line 548
                         echo "                                                        <a href=\"";
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delComentarioCap", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "numCapitulo" => $this->getAttribute($context["item"], "numCapitulo", array()), "username" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "comentario" => $this->getAttribute($context["item"], "comentario", array()))), "html", null, true);
                         echo "\"
@@ -937,24 +954,24 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                                         </a>
                                                         ";
                     }
-                    // line 548
+                    // line 556
                     echo "                                                    </h4>
                                                     ";
                 }
-                // line 550
+                // line 558
                 echo "                                                </a>
 
                                                 <div class=\"mt-2\">
                                                     <ul class=\"list-unstyled\">
                                                         <li class=\"comment-date\">
                                                             <i class=\"fa fa-clock-o\"></i> ";
-                // line 555
+                // line 563
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "fecha", array()), "html", null, true);
                 echo "</li>
                                                     </ul>
                                                 </div>
                                                 <p class=\"grey-text\">";
-                // line 558
+                // line 566
                 echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "comentario", array()), "html", null, true);
                 echo "</p>
                                             </div>
@@ -966,7 +983,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 564
+            // line 572
             echo "
                                     </div>
                                     <!--/.Comment row-->
@@ -985,7 +1002,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 578
+        // line 586
         echo "                </div>
             </div>
 
@@ -1009,31 +1026,31 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
 
                         ";
-        // line 600
+        // line 608
         if ((isset($context["fotoAutor"]) ? $context["fotoAutor"] : $this->getContext($context, "fotoAutor"))) {
-            // line 601
+            // line 609
             echo "                        <img src=\"data:image/jpeg;base64,";
             echo twig_escape_filter($this->env, (isset($context["fotoAutor"]) ? $context["fotoAutor"] : $this->getContext($context, "fotoAutor")), "html", null, true);
             echo "\" class=\" img-fluid rounded-circle\" alt=\"sample image\"> ";
         } else {
-            // line 602
+            // line 610
             echo "                        <img src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Otros/profile.png"), "html", null, true);
             echo "\" class=\"img-fluid rounded-circle\" alt=\"sample image\"> ";
         }
-        // line 603
+        // line 611
         echo "                    </div>
                     <!--Author Data-->
                     <div class=\"col-12 col-sm-10\">
                         ";
-        // line 606
+        // line 614
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["autor"]) ? $context["autor"] : $this->getContext($context, "autor")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 607
+            // line 615
             echo "                        <p>
                             <strong>";
-            // line 608
+            // line 616
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "apellidos", array()), "html", null, true);
@@ -1041,8 +1058,8 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         </p>
 
                         <div class=\"personal-sm\">
-                            <a href=\"";
-            // line 612
+                            <a target=\"_blank\" href=\"";
+            // line 620
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_perfil", array("username" => $this->getAttribute($context["item"], "username", array()))), "html", null, true);
             echo "\" class=\"pr-2 fb-ic\">
                                 Ver perfil
@@ -1052,7 +1069,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
 
                         <p class=\"dark-grey-text article\">";
-            // line 619
+            // line 627
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "biografia", array()), "html", null, true);
             echo "
                         </p>
@@ -1061,8 +1078,8 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 622
-        echo "                    </div>
+        // line 630
+        echo "                    </div> 
                 </div>
             </div>
         </section>
@@ -1070,451 +1087,34 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
     </div>
     <!-- Te puede gustar -->
-    <div class=\"container  mt-1 mb-5 px-0 py-0\">
-        <section class=\"text-left mt-4\">
-
-            <h5 class=\"font-weight-bold mt-5\">
-                <strong>YOU MIGHT ALSO LIKE</strong>
-            </h5>
-            <hr class=\"red title-hr\">
-
-            <!--Carousel Wrapper-->
-            <div id=\"multi-item-example\" class=\"carousel slide carousel-multi-item\" data-ride=\"carousel\">
-
-                <!--Indicators-->
-                <ol class=\"carousel-indicators\">
-                    <li data-target=\"#multi-item-example\" data-slide-to=\"0\" class=\"active\"></li>
-                    <li data-target=\"#multi-item-example\" data-slide-to=\"1\" class=\"\"></li>
-                    <li data-target=\"#multi-item-example\" data-slide-to=\"2\" class=\"\"></li>
-                </ol>
-                <!--/.Indicators-->
-
-                <!--Slides-->
-                <div class=\"carousel-inner\" role=\"listbox\">
-
-                    <!--First slide-->
-                    <div class=\"carousel-item active\">
-
-                        <!--Grid row-->
-                        <div class=\"row mb-4\">
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 my-3\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (43).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p></p>
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 text-left mt-3\">
-
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (39).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 text-left mt-3\">
-
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (46).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--/Grid row-->
-
-                    </div>
-                    <!--/.First slide-->
-
-                    <!--Second slide-->
-                    <div class=\"carousel-item\">
-
-                        <!--Grid row-->
-                        <div class=\"row mb-4\">
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 my-3\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (40).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p></p>
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 text-left mt-3\">
-
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (45).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 text-left mt-3\">
-
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (35).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--/Grid row-->
-                    </div>
-                    <!--/.Second slide-->
-
-                    <!--Third slide-->
-                    <div class=\"carousel-item\">
-
-                        <!--Grid row-->
-                        <div class=\"row mb-4\">
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 my-3\">
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (30).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p></p>
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 text-left mt-3\">
-
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (28).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class=\"col-lg-4 text-left mt-3\">
-
-                                <!--Card-->
-                                <div class=\"card\">
-
-                                    <!--Card image-->
-                                    <div class=\"view overlay\">
-                                        <img src=\"http://mdbootstrap.com/img/Photos/Others/img (33).jpg\" class=\"card-img-top\" alt=\"sample image\">
-                                        <a>
-                                            <div class=\"mask rgba-white-slight waves-effect waves-light\"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class=\"card-body\">
-                                        <!--Title-->
-                                        <h4 class=\"card-title\">
-                                            <strong>Card title</strong>
-                                        </h4>
-                                        <hr>
-
-                                        <p class=\"font-small font-weight-bold dark-grey-text mb-1\">
-                                            <i class=\"fa fa-clock-o\"></i> 27/08/2017</p>
-                                        <p class=\"font-small grey-text mb-0\">Anna Smith</p>
-                                        <p class=\"text-right mb-0 font-small font-weight-bold\">
-                                            <a>read more
-                                                <i class=\"fa fa-angle-right\"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-                        </div>
-                        <!--/Grid row-->
-                    </div>
-                    <!--/.Third slide-->
-
-                </div>
-                <!--/.Slides-->
-
-            </div>
-            <!--/.Carousel Wrapper-->
-
-        </section>
-
-
-    </div>
-    <!-- ./ Te puede gustar -->
+    ";
+        // line 1057
+        echo "    <!-- ./ Te puede gustar -->
 
     <!-- Comntarios -->
-    <div class=\"container  mt-1 mb-5 px-0 py-0\">
+    <div class=\"container  mt-1 \">
 
         <!--Main wrapper-->
         ";
-        // line 1055
-        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 1056
-            echo "        <h3 class=\"section-heading h3 \">Deja un comentario </h3>
-        ";
-        } elseif ( !$this->getAttribute(        // line 1057
-(isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 1058
-            echo "        <h3 class=\"section-heading h3 \">Inicia sesión o Regístrate para comentar</h3>
-        ";
-        }
-        // line 1060
-        echo "
-
-        <div class=\"comments-list text-center text-md-left mb-5\">
-            ";
         // line 1063
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
             // line 1064
+            echo "        <h3 class=\"section-heading h3 \">Deja un comentario </h3>
+        ";
+        } elseif ( !$this->getAttribute(        // line 1065
+(isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
+            // line 1066
+            echo "        <h3 class=\"section-heading h3 \">Inicia sesión o Regístrate para comentar</h3>
+        ";
+        }
+        // line 1068
+        echo "
+
+        <div class=\"comments-list text-center text-md-left \">
+            ";
+        // line 1071
+        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
+            // line 1072
             echo "            <!--Section: Leave a reply (Logged In User)-->
             <section class=\"mb-4 mt-4\">
 
@@ -1527,19 +1127,19 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <div class=\"col-sm-2 col-12\">
 
                             ";
-            // line 1075
+            // line 1083
             if ((isset($context["fUser"]) ? $context["fUser"] : $this->getContext($context, "fUser"))) {
-                // line 1076
+                // line 1084
                 echo "                            <img src=\"data:image/jpeg;base64,";
                 echo twig_escape_filter($this->env, (isset($context["fUser"]) ? $context["fUser"] : $this->getContext($context, "fUser")), "html", null, true);
                 echo "\" class=\" img-fluid avatar rounded-circle z-depth-2\"> ";
             } else {
-                // line 1077
+                // line 1085
                 echo "                            <img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Otros/idea.png"), "html", null, true);
                 echo "\" alt=\"Sample avatar image\" class=\" img-fluid avatar rounded-circle z-depth-2\"> ";
             }
-            // line 1078
+            // line 1086
             echo "                        </div>
                         <!--/.Image column-->
 
@@ -1547,7 +1147,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                         <div class=\"col-sm-10 col-12\">
                             <!--Grid row-->
                             <form name=\"formUpdatePerfil\" action=\"";
-            // line 1084
+            // line 1092
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_comentarLibro", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"))), "html", null, true);
             echo "\" method=\"POST\"
                                 enctype=\"multipart/form-data\">
@@ -1559,7 +1159,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
                                             <textarea class=\"form-control\" id=\"exampleFormControlTextarea6\" rows=\"5\" placeholder=\"Tu comentario...\" name=\"comentario\"
                                                 value=";
-            // line 1093
+            // line 1101
             echo twig_escape_filter($this->env, (isset($context["comentario"]) ? $context["comentario"] : $this->getContext($context, "comentario")), "html", null, true);
             echo "></textarea>
                                         </div>
@@ -1582,13 +1182,13 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             <!--/Section: Leave a reply (Logged In User)-->
             ";
         }
-        // line 1113
-        echo "            <div class=\"text-center mb-4\">
+        // line 1121
+        echo "            <div class=\"text-center \">
                 <h3>
                     <a data-toggle=\"collapse\" href=\"#comentarios\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\">
                         Comentarios
                         <span class=\"badge blue\">";
-        // line 1117
+        // line 1125
         echo twig_escape_filter($this->env, (isset($context["cComent"]) ? $context["cComent"] : $this->getContext($context, "cComent")), "html", null, true);
         echo "</span>
                     </a>
@@ -1598,45 +1198,48 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
             <!--Comment row-->
             <div id=\"comentarios\" class=\"collapse\">
                 ";
-        // line 1124
+        // line 1132
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["comentarios"]) ? $context["comentarios"] : $this->getContext($context, "comentarios")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 1125
-            echo "                <div class=\"row mb-4\">
+            // line 1133
+            echo "                <div class=\"row \">
                     <!--Image column-->
                     <div class=\"col-sm-2 col-12 mb-md-0 mb-3\">
                         ";
-            // line 1128
+            // line 1136
             if ($this->getAttribute($context["item"], "fotoPerfil", array())) {
-                // line 1129
-                echo "                        <img src=\"https://mdbootstrap.com/img/Photos/Avatars/img (20).jpg\" class=\"avatar rounded-circle z-depth-1-half\"> ";
+                // line 1137
+                echo "                           <img src=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/chat.png"), "html", null, true);
+                echo "\" class=\"avatar rounded-circle z-depth-1-half\"> </img>
+                         ";
             } else {
-                // line 1130
+                // line 1139
                 echo "                        <img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Otros/idea.png"), "html", null, true);
                 echo "\" class=\" avatar rounded-circle z-depth-1-half\"> ";
             }
-            // line 1131
+            // line 1140
             echo "                    </div>
                     <!--/.Image column-->
                     <!--Content column-->
                     <div class=\"col-sm-10 col-12\">
                         <a>
                             <h4 class=\"font-weight-bold\">";
-            // line 1136
+            // line 1145
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nombre", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "apellidos", array()), "html", null, true);
             echo " 
                              ";
-            // line 1137
+            // line 1146
             if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-                // line 1138
+                // line 1147
                 echo " ";
-                // line 1140
+                // line 1149
                 if (($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()) == $this->getAttribute($context["item"], "username", array()))) {
-                    // line 1141
+                    // line 1150
                     echo "                                <a href=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("dwes_libros_delComentarioLib", array("idLibro" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "username" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "comentario" => $this->getAttribute($context["item"], "comentario", array()))), "html", null, true);
                     echo "\"
@@ -1647,10 +1250,10 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                                 </a>
                                 ";
                 }
-                // line 1148
+                // line 1157
                 echo "                             ";
             }
-            // line 1149
+            // line 1158
             echo "                           
                             </h4>
                         </a>
@@ -1658,13 +1261,13 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
                             <ul class=\"list-unstyled\">
                                 <li class=\"comment-date\">
                                     <i class=\"fa fa-clock-o\"></i> ";
-            // line 1155
+            // line 1164
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "fecha", array()), "html", null, true);
             echo "</li>
                             </ul>
                         </div>
                         <p class=\"grey-text\">";
-            // line 1158
+            // line 1167
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "comentario", array()), "html", null, true);
             echo "</p>
                     </div>
@@ -1676,7 +1279,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 1164
+        // line 1173
         echo "            </div>
             <!--/.Comment row-->
 
@@ -1716,7 +1319,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
                     function (dispose) {
                         pdf.save(";
-        // line 1202
+        // line 1211
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "get", array(0 => "idLibro"), "method"), "html", null, true);
         echo "+'.pdf');
                     }, margins
@@ -1739,7 +1342,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 
     public function getDebugInfo()
     {
-        return array (  1720 => 1202,  1680 => 1164,  1668 => 1158,  1662 => 1155,  1654 => 1149,  1651 => 1148,  1640 => 1141,  1638 => 1140,  1636 => 1138,  1634 => 1137,  1628 => 1136,  1621 => 1131,  1616 => 1130,  1613 => 1129,  1611 => 1128,  1606 => 1125,  1602 => 1124,  1592 => 1117,  1586 => 1113,  1563 => 1093,  1551 => 1084,  1543 => 1078,  1538 => 1077,  1533 => 1076,  1531 => 1075,  1518 => 1064,  1516 => 1063,  1511 => 1060,  1507 => 1058,  1505 => 1057,  1502 => 1056,  1500 => 1055,  1065 => 622,  1056 => 619,  1046 => 612,  1037 => 608,  1034 => 607,  1030 => 606,  1025 => 603,  1020 => 602,  1015 => 601,  1013 => 600,  989 => 578,  970 => 564,  958 => 558,  952 => 555,  945 => 550,  941 => 548,  929 => 540,  922 => 538,  920 => 537,  909 => 528,  905 => 527,  900 => 525,  890 => 519,  886 => 517,  881 => 514,  858 => 494,  846 => 485,  838 => 479,  835 => 478,  830 => 477,  828 => 476,  814 => 464,  812 => 463,  807 => 461,  803 => 459,  797 => 458,  793 => 457,  785 => 453,  783 => 452,  776 => 450,  766 => 445,  761 => 443,  756 => 441,  751 => 438,  746 => 437,  743 => 436,  733 => 432,  726 => 428,  721 => 426,  717 => 424,  713 => 423,  710 => 422,  699 => 413,  696 => 412,  684 => 403,  681 => 402,  666 => 396,  663 => 395,  656 => 392,  646 => 385,  641 => 383,  637 => 381,  633 => 380,  615 => 365,  605 => 358,  595 => 351,  585 => 344,  575 => 337,  567 => 331,  562 => 328,  556 => 325,  551 => 322,  545 => 319,  542 => 318,  540 => 317,  537 => 316,  534 => 315,  521 => 305,  514 => 301,  511 => 300,  505 => 297,  502 => 296,  500 => 295,  495 => 292,  488 => 288,  485 => 287,  480 => 285,  477 => 284,  475 => 283,  472 => 282,  469 => 281,  465 => 278,  462 => 277,  459 => 274,  454 => 273,  449 => 272,  447 => 271,  438 => 265,  432 => 262,  429 => 261,  415 => 246,  408 => 236,  379 => 214,  375 => 212,  370 => 209,  368 => 208,  362 => 205,  357 => 203,  354 => 202,  348 => 199,  345 => 198,  341 => 195,  337 => 193,  335 => 192,  332 => 191,  326 => 188,  322 => 186,  318 => 184,  316 => 183,  313 => 182,  307 => 179,  301 => 175,  299 => 174,  296 => 169,  294 => 168,  273 => 149,  269 => 148,  267 => 147,  264 => 146,  258 => 143,  250 => 138,  240 => 131,  224 => 117,  214 => 110,  208 => 108,  203 => 107,  201 => 106,  187 => 94,  180 => 84,  166 => 72,  163 => 71,  154 => 69,  150 => 68,  147 => 67,  140 => 66,  128 => 63,  123 => 61,  120 => 60,  114 => 59,  107 => 54,  102 => 51,  97 => 48,  95 => 47,  78 => 32,  68 => 30,  42 => 7,  35 => 2,  11 => 1,);
+        return array (  1323 => 1211,  1283 => 1173,  1271 => 1167,  1265 => 1164,  1257 => 1158,  1254 => 1157,  1243 => 1150,  1241 => 1149,  1239 => 1147,  1237 => 1146,  1231 => 1145,  1224 => 1140,  1219 => 1139,  1213 => 1137,  1211 => 1136,  1206 => 1133,  1202 => 1132,  1192 => 1125,  1186 => 1121,  1163 => 1101,  1151 => 1092,  1143 => 1086,  1138 => 1085,  1133 => 1084,  1131 => 1083,  1118 => 1072,  1116 => 1071,  1111 => 1068,  1107 => 1066,  1105 => 1065,  1102 => 1064,  1100 => 1063,  1092 => 1057,  1082 => 630,  1073 => 627,  1063 => 620,  1054 => 616,  1051 => 615,  1047 => 614,  1042 => 611,  1037 => 610,  1032 => 609,  1030 => 608,  1006 => 586,  987 => 572,  975 => 566,  969 => 563,  962 => 558,  958 => 556,  946 => 548,  939 => 546,  937 => 545,  926 => 536,  922 => 535,  917 => 533,  907 => 527,  903 => 525,  898 => 522,  875 => 502,  863 => 493,  855 => 487,  850 => 486,  845 => 485,  843 => 484,  829 => 472,  827 => 471,  822 => 469,  818 => 467,  812 => 466,  808 => 465,  800 => 461,  798 => 460,  791 => 458,  783 => 453,  778 => 451,  773 => 449,  768 => 446,  763 => 445,  760 => 444,  750 => 440,  742 => 435,  738 => 433,  734 => 432,  731 => 431,  722 => 428,  719 => 427,  715 => 426,  711 => 424,  700 => 415,  697 => 414,  685 => 405,  682 => 404,  667 => 398,  664 => 397,  657 => 394,  647 => 387,  642 => 385,  638 => 383,  634 => 382,  616 => 367,  606 => 360,  596 => 353,  586 => 346,  576 => 339,  568 => 333,  563 => 330,  557 => 327,  552 => 324,  546 => 321,  543 => 320,  541 => 319,  538 => 318,  535 => 317,  522 => 307,  515 => 303,  512 => 302,  506 => 299,  503 => 298,  501 => 297,  496 => 294,  489 => 290,  486 => 289,  481 => 287,  478 => 286,  476 => 285,  473 => 284,  470 => 283,  466 => 280,  463 => 279,  460 => 276,  455 => 275,  450 => 274,  448 => 273,  439 => 267,  433 => 264,  430 => 263,  416 => 248,  409 => 238,  390 => 225,  384 => 215,  380 => 213,  375 => 210,  373 => 209,  367 => 206,  362 => 204,  359 => 203,  353 => 200,  350 => 199,  346 => 196,  342 => 194,  340 => 193,  337 => 192,  331 => 189,  327 => 187,  323 => 185,  321 => 184,  318 => 183,  312 => 180,  306 => 176,  304 => 175,  301 => 170,  299 => 169,  284 => 156,  276 => 150,  272 => 149,  270 => 148,  267 => 147,  261 => 144,  253 => 139,  242 => 132,  240 => 131,  224 => 117,  214 => 110,  208 => 108,  203 => 107,  201 => 106,  187 => 94,  180 => 84,  166 => 72,  163 => 71,  154 => 69,  150 => 68,  147 => 67,  140 => 66,  128 => 63,  123 => 61,  120 => 60,  114 => 59,  107 => 54,  102 => 51,  97 => 48,  95 => 47,  78 => 32,  68 => 30,  42 => 7,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %} {% for item in libro %}*/
@@ -1872,10 +1475,11 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*         <!--Content-->*/
 /*         <div class="modal-content">*/
 /*             <!--Header-->*/
+/*             {% if app.user.username is defined %}*/
 /*              <form name="formUpdatePerfil"  action="{{ path('dwes_libros_avisar', {'idLibro' : item.idLibro,'admin':app.user.username,'autor':item.username,'tipo':"libros"})}}" */
 /*              method="POST" enctype="multipart/form-data" >*/
 /*               <iframe name="frame" style="display: none"></iframe>*/
-/*                */
+/*                 */
 /*                 <!--Body-->*/
 /*                 <div class="modal-body text-center mb-1">*/
 /*                     <div class="md-form ml-0 mr-0">*/
@@ -1895,7 +1499,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                     </div>*/
 /*                 </div>*/
 /*             </form>    */
-/* */
+/* {% endif %}*/
 /*         </div>*/
 /*         <!--/.Content-->*/
 /*     </div>*/
@@ -1958,12 +1562,13 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                                     <p style="min-height: 120px;color:  black;">{{item.descLib}} </p>*/
 /*                                 </div>*/
 /*                                 <!-- Button  modal -->*/
+/*                               {#  {% if item.video is defined %}*/
 /*                                 <button type="button" class="btn btn-danger btn-sm btn-rounded clearfix  d-md-inline-block waves-effect waves-light video videoff"*/
 /*                                     data-video="https://www.youtube.com/embed/8uYspagia_s?rel=0&showinfo=0" data-toggle="modal"*/
 /*                                     data-target="#exampleModal">*/
 /*                                     <i class="fab fa-youtube mr-1"></i> Book Trailer*/
 /*                                 </button>*/
-/*                                     */
+/*                                     {% endif %} #}*/
 /*                             </div>*/
 /* */
 /*                         </div>*/
@@ -2164,12 +1769,18 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*             <!--/.Panel-->*/
 /*             {% endif %}*/
 /*             <div id="imprimir" style="display:  none;">*/
+/*           */
+/*             {% for item in libro %}*/
+/*               <h1 class=" green-text mb-4" >*/
+/*                 Título de la historia: {{item.titulo}}*/
+/*                 </h1>*/
+/*             {% endfor %}*/
+/*             */
 /*                 {% for item in capitulos %}*/
 /* */
 /*                 <h4 class="card-title">*/
-/*                     <span class="indigo-text pr-2 small"> Capítulo {{item.numCapitulo}}:</span>*/
-/* */
-/*                     <strong class="font-weight-bold indigo-text ">{{item.tituloCap}}</strong>*/
+/*                     <span class="indigo-text pr-2 small"> {{item.tituloCap}}</span>*/
+/*             */
 /*                 </h4>*/
 /*                 <hr>*/
 /* */
@@ -2186,7 +1797,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                         <h5 class="mb-0">*/
 /*                             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{item.numCapitulo}}" aria-expanded="false"*/
 /*                                 aria-controls="collapseExample">*/
-/*                                 #{{item.numCapitulo}} {{item.tituloCap}}*/
+/*                                 {{item.tituloCap}}*/
 /*                             </button>*/
 /*                         </h5>*/
 /*                     </div>*/
@@ -2203,7 +1814,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                                 </a>*/
 /*                             </div>*/
 /*                             <div id="comentariosss{{item.numCapitulo}} " class="collapse">*/
-/*                                 <div class="comments-list text-center text-md-left mb-5">*/
+/*                                 <div class="comments-list text-center text-md-left">*/
 /*                                     {% if app.user %}*/
 /*                                     <!--Section: Leave a reply (Logged In User)-->*/
 /*                                     <section class="mb-4 mt-4">*/
@@ -2219,7 +1830,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /* */
 /*                                                         {% if fUser %}*/
 /*                                                         <img src="data:image/jpeg;base64,{{fUser}}" class=" img-fluid avatar rounded-circle z-depth-2"> {% else %}*/
-/*                                                         <img src="https://mdbootstrap.com/img/Photos/Avatars/img (32).jpg" alt="Sample avatar image" class=""> {% endif %}*/
+/*                                                        <img src="{{ asset('bundles/dweslibros/img/Otros/profile.png') }}" class="img-fluid rounded-circle" alt="sample image">  {% endif %}*/
 /*                                                     </div>*/
 /*                                                     <!--/.Image column-->*/
 /* */
@@ -2269,7 +1880,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                                     <div id="comentarios{{item.numCapitulo}} " class="collapse">*/
 /* */
 /*                                         {% for item in comentariosCap[item.numCapitulo -1 ] %}*/
-/*                                         <div class="row mb-4">*/
+/*                                         <div class="row ">*/
 /*                                             <!--Image column-->*/
 /*                                             <div class="col-sm-2 col-12 mb-md-0 mb-3">*/
 /*                                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img (20).jpg" class="avatar rounded-circle z-depth-1-half">*/
@@ -2353,7 +1964,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                         </p>*/
 /* */
 /*                         <div class="personal-sm">*/
-/*                             <a href="{{ path('dwes_libros_perfil', {'username':item.username}) }}" class="pr-2 fb-ic">*/
+/*                             <a target="_blank" href="{{ path('dwes_libros_perfil', {'username':item.username}) }}" class="pr-2 fb-ic">*/
 /*                                 Ver perfil*/
 /*                             </a>*/
 /* */
@@ -2363,7 +1974,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*                         <p class="dark-grey-text article">{{item.biografia}}*/
 /*                         </p>*/
 /*                         {% endfor %}*/
-/*                     </div>*/
+/*                     </div> */
 /*                 </div>*/
 /*             </div>*/
 /*         </section>*/
@@ -2371,7 +1982,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /* */
 /*     </div>*/
 /*     <!-- Te puede gustar -->*/
-/*     <div class="container  mt-1 mb-5 px-0 py-0">*/
+/*     {# <div class="container  mt-1 mb-5 px-0 py-0">*/
 /*         <section class="text-left mt-4">*/
 /* */
 /*             <h5 class="font-weight-bold mt-5">*/
@@ -2789,11 +2400,11 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*         </section>*/
 /* */
 /* */
-/*     </div>*/
+/*     </div> #}*/
 /*     <!-- ./ Te puede gustar -->*/
 /* */
 /*     <!-- Comntarios -->*/
-/*     <div class="container  mt-1 mb-5 px-0 py-0">*/
+/*     <div class="container  mt-1 ">*/
 /* */
 /*         <!--Main wrapper-->*/
 /*         {% if app.user %}*/
@@ -2803,7 +2414,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*         {% endif %}*/
 /* */
 /* */
-/*         <div class="comments-list text-center text-md-left mb-5">*/
+/*         <div class="comments-list text-center text-md-left ">*/
 /*             {% if app.user %}*/
 /*             <!--Section: Leave a reply (Logged In User)-->*/
 /*             <section class="mb-4 mt-4">*/
@@ -2854,7 +2465,7 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*             </section>*/
 /*             <!--/Section: Leave a reply (Logged In User)-->*/
 /*             {% endif %}*/
-/*             <div class="text-center mb-4">*/
+/*             <div class="text-center ">*/
 /*                 <h3>*/
 /*                     <a data-toggle="collapse" href="#comentarios" role="button" aria-expanded="false" aria-controls="collapseExample">*/
 /*                         Comentarios*/
@@ -2866,11 +2477,12 @@ class __TwigTemplate_f31f8c3d143bd7d655154ec7397ea407fa64aaa466da5e9ed2ce1426155
 /*             <!--Comment row-->*/
 /*             <div id="comentarios" class="collapse">*/
 /*                 {% for item in comentarios %}*/
-/*                 <div class="row mb-4">*/
+/*                 <div class="row ">*/
 /*                     <!--Image column-->*/
 /*                     <div class="col-sm-2 col-12 mb-md-0 mb-3">*/
 /*                         {% if item.fotoPerfil %}*/
-/*                         <img src="https://mdbootstrap.com/img/Photos/Avatars/img (20).jpg" class="avatar rounded-circle z-depth-1-half"> {% else %}*/
+/*                            <img src="{{ asset('bundles/dweslibros/img/icons/chat.png') }}" class="avatar rounded-circle z-depth-1-half"> </img>*/
+/*                          {% else %}*/
 /*                         <img src="{{ asset('bundles/dweslibros/img/Otros/idea.png') }}" class=" avatar rounded-circle z-depth-1-half"> {% endif %}*/
 /*                     </div>*/
 /*                     <!--/.Image column-->*/

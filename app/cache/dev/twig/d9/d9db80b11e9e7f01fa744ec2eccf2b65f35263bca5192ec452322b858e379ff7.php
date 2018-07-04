@@ -108,68 +108,19 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
                     <span class=\"text-dark  pr-2 cl\">palabras</span>
                 </div>
                 <ul class=\"nav navbar-nav nav-flex-icons ml-auto\">
-
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla blanca\">
-                            <i class=\"mb-2\">
-                                <img src=\"";
-        // line 59
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sun-selec.png"), "html", null, true);
-        echo "\" id=\"blanca\"> </img>
-                            </i>
-                        </a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla sefia\">
-                            <i class=\"mb-2\">
-                                <img src=\"";
-        // line 66
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/sunset.png"), "html", null, true);
-        echo "\" id=\"sefia\"> </img>
-                            </i>
-                        </a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pantalla negra\">
-                            <i class=\"mb-2\">
-                                <img src=\"";
-        // line 73
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/moon.png"), "html", null, true);
-        echo "\" id=\"negra\"> </img>
-                            </i>
-                        </a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aumentar letra\">
-                            <i class=\"mb-2\">
-                                <img src=\"";
-        // line 80
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font+.png"), "html", null, true);
-        echo "\" id=\"letraUp\"> </img>
-                            </i>
-                        </a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link waves-effect waves-light\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Desminuir letra\">
-                            <i class=\"mb-2\">
-                                <img src=\"";
-        // line 87
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/icons/font-.png"), "html", null, true);
-        echo "\" id=\"letraDown\"> </img>
-                            </i>
-                        </a>
-                    </li>
-                   ";
+";
+        // line 91
+        echo "                   ";
         // line 98
         echo "                    <li class=\"nav-item\">
                    <div class=\"btn-group\" data-toggle=\"buttons\">
 
-    <label class=\"btn btn-cyan btn-rounded active form-check-label\">
-        <input class=\"form-check-input\" type=\"radio\" checked autocomplete=\"off\" name=\"borrador\" value=\"Borrador\">Borrador
+    <label class=\"btn btn-cyan btn-rounded  form-check-label\">
+        <input class=\"form-check-input\" type=\"radio\"  autocomplete=\"off\" name=\"borrador\" value=\"Borrador\">Borrador
     </label>
 
-    <label class=\"btn btn-cyan btn-rounded form-check-label\"> 
-        <input class=\"form-check-input\" type=\"radio\" autocomplete=\"off\" name=\"borrador\" value=\"Publicado\"> Publicado
+    <label class=\"btn btn-cyan btn-rounded active form-check-label\"> 
+        <input class=\"form-check-input\" type=\"radio\" checked autocomplete=\"off\" name=\"borrador\" value=\"Publicado\"> Publicado
 
     </div>
                     </li>
@@ -227,7 +178,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 
     public function getDebugInfo()
     {
-        return array (  203 => 142,  189 => 131,  178 => 122,  164 => 98,  157 => 87,  147 => 80,  137 => 73,  127 => 66,  117 => 59,  103 => 48,  99 => 46,  84 => 32,  82 => 31,  72 => 25,  58 => 16,  53 => 14,  44 => 10,  35 => 4,  31 => 2,  11 => 1,);
+        return array (  154 => 142,  140 => 131,  129 => 122,  115 => 98,  113 => 91,  103 => 48,  99 => 46,  84 => 32,  82 => 31,  72 => 25,  58 => 16,  53 => 14,  44 => 10,  35 => 4,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -284,7 +235,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                     <span class="text-dark  pr-2 cl">palabras</span>*/
 /*                 </div>*/
 /*                 <ul class="nav navbar-nav nav-flex-icons ml-auto">*/
-/* */
+/* {# */
 /*                     <li class="nav-item">*/
 /*                         <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Pantalla blanca">*/
 /*                             <i class="mb-2">*/
@@ -319,7 +270,7 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                                 <img src="{{ asset('bundles/dweslibros/img/icons/font-.png') }}" id="letraDown"> </img>*/
 /*                             </i>*/
 /*                         </a>*/
-/*                     </li>*/
+/*                     </li> #}*/
 /*                    {#  <li class="nav-item">*/
 /*                         <a class="nav-link waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Para despublicar este capítulo, debes de cambiar su estado de publicación desde el Perfil de Historia">*/
 /*                             <i class="mb-2">*/
@@ -330,12 +281,12 @@ class __TwigTemplate_2b848cac2b16a7b968a317c4c33191241c870f6eb45ac64744cf9a90584
 /*                     <li class="nav-item">*/
 /*                    <div class="btn-group" data-toggle="buttons">*/
 /* */
-/*     <label class="btn btn-cyan btn-rounded active form-check-label">*/
-/*         <input class="form-check-input" type="radio" checked autocomplete="off" name="borrador" value="Borrador">Borrador*/
+/*     <label class="btn btn-cyan btn-rounded  form-check-label">*/
+/*         <input class="form-check-input" type="radio"  autocomplete="off" name="borrador" value="Borrador">Borrador*/
 /*     </label>*/
 /* */
-/*     <label class="btn btn-cyan btn-rounded form-check-label"> */
-/*         <input class="form-check-input" type="radio" autocomplete="off" name="borrador" value="Publicado"> Publicado*/
+/*     <label class="btn btn-cyan btn-rounded active form-check-label"> */
+/*         <input class="form-check-input" type="radio" checked autocomplete="off" name="borrador" value="Publicado"> Publicado*/
 /* */
 /*     </div>*/
 /*                     </li>*/

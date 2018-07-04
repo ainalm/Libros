@@ -57,11 +57,11 @@
                         <input type="text" type="text" id="form29" class="form-control form-control-sm validate ml-0" name="tituloLibro" value="{{tituloLibro}}">
                         <label for="form29" class="ml-0">Título del libro</label>
                     </div>
-                    <div class="md-form ml-0 mr-0">
+                    {# <div class="md-form ml-0 mr-0">
                         <input type="text" type="text" id="form29" class="form-control form-control-sm validate ml-0" name="trailer" value="{{trailer}}">
                         <label for="form29" class="ml-0">Booktrailer Video URL</label>
 
-                    </div>
+                    </div> #}
                     <div class="md-form ml-0 mr-0">
                         <textarea type="text" id="contact-message" class="md-textarea form-control valI" rows="11" name="descripcionLibro" value="">{{descripcionLibro}}</textarea>
                         <label for="contact-message" class="Lcontact-message valL cl" id="labelContC">Resumen</label>
@@ -153,8 +153,6 @@
                                     <p class="lead">
                                         <span class="badge info-color p-2">Progreso de la historia: {{item.progreso}}</span>
                                     </p>
-
-
                                     <!--Blue select-->
                                     <select name="progreso" class="mdb-select colorful-select dropdown-primary">
                                    
@@ -163,20 +161,28 @@
                                     </select>
 
                                     <!--/Blue select-->
-
-                                    <!--Date pickers-->
+ <!--Date pickers-->
                                     <p class="lead ">
-                                        <span class="badge info-color p-2">Clasificación de edad : {{item.RestEdad}}</span>
+                                        <span class="badge info-color p-2">Idioma : {{item.Idioma}}</span>
                                     </p>
                                     <br>
 
                                     <!--Blue select-->
-                                    <select name="edad" class="mdb-select colorful-select dropdown-primary">
-                                   {#  <option selected>{{item.RestEdad}}</option> #}
-                                        <option value="Todo público">Todo público</option>
-                                        <option value="13">+ 13 años</option>
-                                        <option value="18">+ 18 años</option>
-
+                                    <select name="idioma" class="mdb-select colorful-select dropdown-primary">
+                                      {#   <option selected>{{item.Idioma}}</option> #}
+                                        <option value="Español">Español</option>
+                                        <option value="English">English</option>
+                                        <option value="Portugês">Portugês</option>
+                                        <option value="Russian" >Russian</option>
+                                        <option value="Filipino">Filipino</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Dutch">Dutch</option>
+                                        <option value="Italiano">Italiano</option>
+                                        <option value="Chinese">Chinese</option>
+                                        <option value="Turkish">Turkish</option>
+                                        <option value="Deutsch">Deutsch</option>
+                                        <option value="Français">Français</option>
+                                        <option value="Other">Other</option>
                                     </select>
 
                                     <!--/Blue select-->
@@ -208,31 +214,7 @@
 
                                     <!--/Blue select-->
 
-                                    <!--Date pickers-->
-                                    <p class="lead ">
-                                        <span class="badge info-color p-2">Idioma : {{item.Idioma}}</span>
-                                    </p>
-                                    <br>
-
-                                    <!--Blue select-->
-                                    <select name="idioma" class="mdb-select colorful-select dropdown-primary">
-                                      {#   <option selected>{{item.Idioma}}</option> #}
-                                        <option value="Español">Español</option>
-                                        <option value="English">English</option>
-                                        <option value="Portugês">Portugês</option>
-                                        <option value="Russian" >Russian</option>
-                                        <option value="Filipino">Filipino</option>
-                                        <option value="Hindi">Hindi</option>
-                                        <option value="Dutch">Dutch</option>
-                                        <option value="Italiano">Italiano</option>
-                                        <option value="Chinese">Chinese</option>
-                                        <option value="Turkish">Turkish</option>
-                                        <option value="Deutsch">Deutsch</option>
-                                        <option value="Français">Français</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-
-                                    <!--/Blue select-->
+                                   
 
 
                                 </div>

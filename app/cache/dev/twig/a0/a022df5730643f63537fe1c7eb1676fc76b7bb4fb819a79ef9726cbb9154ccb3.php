@@ -245,7 +245,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
         echo "\">
                                 
                   </div>
-                  <div class=\"col-lg-4\">
+                  <div class=\"col-lg-4\"> 
                     <div class=\"row flex-center\">
                         <div class=\" col-md-12 \" style=\"max-width: 200px;\">
     
@@ -259,15 +259,13 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                         </div>
                     </div>
                   </div>
-                </div>
+                </div> 
               </div>
-
                 <div class=\"text-center text-md-left mt-4\">
                 <button type=\"button\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" id=\"paso2\" >Siguiente: 03. ¡Empieza ya!</button>
                 </div>
 
-                <div class=\"text-center text-md-left mt-4\">
-                     
+                <div class=\"text-center text-md-left mt-4\">  
                 </div>
         </div>
         <!--/.Panel 2-->
@@ -304,15 +302,15 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
                             <p id=\"resumen\"></p>
                             </div>
                             ";
-        // line 241
+        // line 239
         if (array_key_exists("idLibro", $context)) {
-            // line 242
+            // line 240
             echo "                            ";
             echo twig_escape_filter($this->env, (isset($context["idLibro"]) ? $context["idLibro"] : $this->getContext($context, "idLibro")), "html", null, true);
             echo "
                           ";
         }
-        // line 244
+        // line 242
         echo "                           <br><button  type=\"submit\" class=\"btn pink-gradient btn-rounded waves-effect waves-light\" >Empezar Hisotria</button>
   
                            
@@ -337,7 +335,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 
     public function getDebugInfo()
     {
-        return array (  316 => 244,  310 => 242,  308 => 241,  244 => 180,  139 => 78,  121 => 63,  111 => 55,  104 => 52,  99 => 50,  96 => 49,  94 => 48,  73 => 29,  70 => 28,  59 => 21,  52 => 16,  43 => 9,  41 => 8,  31 => 2,  11 => 1,);
+        return array (  314 => 242,  308 => 240,  306 => 239,  244 => 180,  139 => 78,  121 => 63,  111 => 55,  104 => 52,  99 => 50,  96 => 49,  94 => 48,  73 => 29,  70 => 28,  59 => 21,  52 => 16,  43 => 9,  41 => 8,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %} {% block portada %}*/
@@ -522,7 +520,7 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                                 <input type="text" id="colorF" style="display:none" name="colorFondo" value="{{colorFondo}}">*/
 /*                                 */
 /*                   </div>*/
-/*                   <div class="col-lg-4">*/
+/*                   <div class="col-lg-4"> */
 /*                     <div class="row flex-center">*/
 /*                         <div class=" col-md-12 " style="max-width: 200px;">*/
 /*     */
@@ -536,15 +534,13 @@ class __TwigTemplate_441d21e5ff6b48a542b986adcaf7cd58c504ab6a0ffdb76bc5526597a21
 /*                         </div>*/
 /*                     </div>*/
 /*                   </div>*/
-/*                 </div>*/
+/*                 </div> */
 /*               </div>*/
-/* */
 /*                 <div class="text-center text-md-left mt-4">*/
 /*                 <button type="button" class="btn pink-gradient btn-rounded waves-effect waves-light" id="paso2" >Siguiente: 03. ¡Empieza ya!</button>*/
 /*                 </div>*/
 /* */
-/*                 <div class="text-center text-md-left mt-4">*/
-/*                      */
+/*                 <div class="text-center text-md-left mt-4">  */
 /*                 </div>*/
 /*         </div>*/
 /*         <!--/.Panel 2-->*/

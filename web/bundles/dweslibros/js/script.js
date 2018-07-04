@@ -252,7 +252,12 @@ var elem = document.getElementById('colorSelecc');
   $(".container1").css("background-color", "beige");
   $(".container2").css("background-color", "rgb(255, 249, 236)");
 
+  $(".bigtext").css("background-color", "#fff9ec");
+  $(".bigtext").css("color", "black");
+  $("#heading1").css("background-color", "beige");
+  $(".perfil").css("background-color", "#fff9ec");
   
+
   $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/sunset-selec.png");
   $("#negra").attr("src","/Libros/web/bundles/dweslibros/img/icons/moon.png");
   $("#blanca").attr("src","/Libros/web/bundles/dweslibros/img/icons/sun.png");
@@ -274,6 +279,12 @@ $("#blanca").on("click",function(e) {
   $(".container1").css("background-color", "#f4f5f6");
   $(".container2").css("background-color", "#fff");
 
+  $(".bigtext").css("background-color", "white");
+  $(".bigtext").css("color", "black");
+  $("#heading1").css("background-color", "#f2efef");
+  $(".perfil").css("background-color", "white");
+
+  
   
   $(this).attr("src","/Libros/web/bundles/dweslibros/img/icons/sun-selec.png");
   $("#sefia").attr("src","/Libros/web/bundles/dweslibros/img/icons/sunset.png");
@@ -432,4 +443,8 @@ $('#grabado').on('click', function(){
 
 });
 /* Mostrar/ocultar más resultados  */
-
+$( ".azar" ).on( "click", function() {
+  //Previsualiza la imagen seleccionada de perfil antes de actualizar el perfil y comprueba que el formato es de una imagen
+  location.reload(); 
+  });
+  

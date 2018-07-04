@@ -65,9 +65,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
                                     <!--Section heading-->
                                     <h2 class=\"section-heading title h1 pt-4\">Contáctanos</h2>
                                     <!--Section description-->
-                                    <p class=\"section-description\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure
-                                        provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro
-                                        a pariatur accusamus veniam.</p>
+                                    <p class=\"section-description\">Si tiene algún problema , sugerencia para mejorar su experiencia en la página o duda, háznosla saber y estaremos encantados de ayudarte.</p>
 
                                     <div class=\"row pt-5\">
 
@@ -230,9 +228,7 @@ class __TwigTemplate_932b8a0f302279165cfc8d40f1aaaa16dc64946d5b238d8914ff6c01017
 /*                                     <!--Section heading-->*/
 /*                                     <h2 class="section-heading title h1 pt-4">Contáctanos</h2>*/
 /*                                     <!--Section description-->*/
-/*                                     <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure*/
-/*                                         provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro*/
-/*                                         a pariatur accusamus veniam.</p>*/
+/*                                     <p class="section-description">Si tiene algún problema , sugerencia para mejorar su experiencia en la página o duda, háznosla saber y estaremos encantados de ayudarte.</p>*/
 /* */
 /*                                     <div class="row pt-5">*/
 /* */

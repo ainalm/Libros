@@ -71,8 +71,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                 </h2>
 
                 <!--Section description-->
-                <p class=\"grey-text w-responsive mx-auto mb-5\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
-                    esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+                <p class=\"grey-text w-responsive mx-auto mb-5\">Si tienes un libro en venta publicado en otras plataformas web, anúncialo aquí y házselo llegar a más gente. </p>
 
                 <!--Grid row-->
                 <div class=\"row\">
@@ -96,7 +95,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                     <li>
                                         <p>
                                            <strong> ";
-        // line 64
+        // line 63
         echo twig_escape_filter($this->env, (isset($context["numGratis"]) ? $context["numGratis"] : $this->getContext($context, "numGratis")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
                                     </li>
@@ -104,17 +103,17 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                 </ul>
                                
                                 ";
-        // line 70
+        // line 69
         echo "                                    ";
         if ((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaG") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis"))) {
-            // line 71
+            // line 70
             echo "                                    <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
                                 cursor: context-menu;
                             \">Fin prueba gratuita </a>      
                             ";
-        } elseif ((        // line 74
+        } elseif ((        // line 73
 (isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "gratis")) {
-            // line 75
+            // line 74
             echo "                           
                     <a class=\" btn pink-gradient btn-rounded mb-4 waves-effect waves-light\" style=\"
                                 cursor: context-menu;
@@ -122,16 +121,16 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                             
                                     ";
         }
-        // line 81
+        // line 80
         echo "                            ";
         if (twig_test_empty((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")))) {
-            // line 82
+            // line 81
             echo "                            <a href=\"";
             echo $this->env->getExtension('routing')->getPath("dwes_libros_suscriSelect", array("tipo" => "gratis"));
             echo "\" class=\"btn pink-gradient btn-rounded mb-4 waves-effect waves-light\">Seleccionar  </a>
                            ";
         }
-        // line 84
+        // line 83
         echo "                                ";
         if (((((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaE") || (((isset($context["vencida"]) ? $context["vencida"] : $this->getContext($context, "vencida")) == "vencidaG") && ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) != "gratis"))) || ((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica"))) {
             echo " 
@@ -140,7 +139,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                             \">Fin prueba gratuita </a>
                             ";
         }
-        // line 89
+        // line 88
         echo "
                             </div>
                         </div>
@@ -171,7 +170,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                         <li>
                                             <p>
                                                 <strong>";
-        // line 118
+        // line 117
         echo twig_escape_filter($this->env, (isset($context["numBasica"]) ? $context["numBasica"] : $this->getContext($context, "numBasica")), "html", null, true);
         echo "</strong> Anuncios de tus libros en venta en cualquier plataforma web</p>
                                         </li>
@@ -180,19 +179,19 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
                                     </ul>
                                     
                                        ";
-        // line 124
+        // line 123
         if (((isset($context["suscripcion"]) ? $context["suscripcion"] : $this->getContext($context, "suscripcion")) == "basica")) {
-            // line 125
+            // line 124
             echo "                                          
                     <a href=\"";
-            // line 126
+            // line 125
             echo $this->env->getExtension('routing')->getPath("dwes_libros_delSuscri", array("tipo" => "basica"));
             echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\">Cancelar suscripción</a>
                             ";
         } else {
-            // line 128
+            // line 127
             echo "                           ";
-            // line 129
+            // line 128
             echo "                                    <form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">
 <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">
 <input type=\"hidden\" name=\"hosted_button_id\" value=\"X39M4FKKMDE8Q\">
@@ -200,14 +199,14 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 <tr><td><input type=\"hidden\" name=\"on0\" value=\"Compre ahora !\">Compre ahora !</td></tr><tr><td><input type=\"text\" name=\"os0\" maxlength=\"200\"></td></tr>
 </table>
 <input type=\"image\" src=\"";
-            // line 135
+            // line 134
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dweslibros/img/Icons/pay.png"), "html", null, true);
             echo "\" class=\"btn btn-rounded btn-outline-white waves-effect waves-light\" border=\"0\" name=\"submit\" alt=\"PayPal, la forma rápida y segura de pagar en Internet.\">
 <img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/es_ES/i/scr/pixel.gif\" width=\"1\" height=\"1\">
 </form>
                                     ";
         }
-        // line 139
+        // line 138
         echo "                                                   
 
 
@@ -243,7 +242,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 
     public function getDebugInfo()
     {
-        return array (  211 => 139,  204 => 135,  196 => 129,  194 => 128,  189 => 126,  186 => 125,  184 => 124,  175 => 118,  144 => 89,  135 => 84,  129 => 82,  126 => 81,  118 => 75,  116 => 74,  111 => 71,  108 => 70,  100 => 64,  59 => 27,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  210 => 138,  203 => 134,  195 => 128,  193 => 127,  188 => 125,  185 => 124,  183 => 123,  174 => 117,  143 => 88,  134 => 83,  128 => 81,  125 => 80,  117 => 74,  115 => 73,  110 => 70,  107 => 69,  99 => 63,  59 => 27,  35 => 6,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -285,8 +284,7 @@ class __TwigTemplate_9ab47bc8ec652b14c29171eab4f88003ee8116e441c974ad34c5160ce37
 /*                 </h2>*/
 /* */
 /*                 <!--Section description-->*/
-/*                 <p class="grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate*/
-/*                     esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>*/
+/*                 <p class="grey-text w-responsive mx-auto mb-5">Si tienes un libro en venta publicado en otras plataformas web, anúncialo aquí y házselo llegar a más gente. </p>*/
 /* */
 /*                 <!--Grid row-->*/
 /*                 <div class="row">*/

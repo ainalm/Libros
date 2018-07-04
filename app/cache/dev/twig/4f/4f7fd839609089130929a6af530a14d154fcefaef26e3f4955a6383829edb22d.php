@@ -120,17 +120,10 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
                 <!--Footer-->
                 <div class=\"footer pt-3 mdb-color lighten-3 pb-0\">
 
-                    <div class=\"row d-flex justify-content-center\">
-                        <p class=\"font-small white-text mb-2 pt-3\"> Iniciar sesión con:</p>
-                    </div>
+                    
 
                     <div class=\"row mt-2 mb-3 d-flex justify-content-center\">
-                        <!--Facebook-->
-                        <a class=\"fa-lg p-2 m-2 fb-ic\"><i class=\"fa fa-facebook white-text fa-lg\"> </i></a>
-                        <!--Twitter-->
-                        <a class=\"fa-lg p-2 m-2 tw-ic\"><i class=\"fa fa-twitter white-text fa-lg\"> </i></a>
-                        <!--Google +-->
-                        <a class=\"fa-lg p-2 m-2 gplus-ic\"><i class=\"fa fa-google-plus white-text fa-lg\"> </i></a>
+                       
                     </div>
 
                 </div>
@@ -232,17 +225,10 @@ class __TwigTemplate_193be0a1bd1d1e5b4c896538329db03b1912c74b866b259b6a30c33b4b9
 /*                 <!--Footer-->*/
 /*                 <div class="footer pt-3 mdb-color lighten-3 pb-0">*/
 /* */
-/*                     <div class="row d-flex justify-content-center">*/
-/*                         <p class="font-small white-text mb-2 pt-3"> Iniciar sesión con:</p>*/
-/*                     </div>*/
+/*                     */
 /* */
 /*                     <div class="row mt-2 mb-3 d-flex justify-content-center">*/
-/*                         <!--Facebook-->*/
-/*                         <a class="fa-lg p-2 m-2 fb-ic"><i class="fa fa-facebook white-text fa-lg"> </i></a>*/
-/*                         <!--Twitter-->*/
-/*                         <a class="fa-lg p-2 m-2 tw-ic"><i class="fa fa-twitter white-text fa-lg"> </i></a>*/
-/*                         <!--Google +-->*/
-/*                         <a class="fa-lg p-2 m-2 gplus-ic"><i class="fa fa-google-plus white-text fa-lg"> </i></a>*/
+/*                        */
 /*                     </div>*/
 /* */
 /*                 </div>*/

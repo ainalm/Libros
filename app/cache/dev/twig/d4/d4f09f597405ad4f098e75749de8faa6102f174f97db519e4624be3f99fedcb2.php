@@ -97,14 +97,10 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                                 
             
                             <div class=\"embed-responsive embed-responsive-16by9\">
-   <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
-</div>
-                         
+                            <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+                            </div>
                              </div> 
                              <!--Grid row-->
- 
-                             
- 
                          </div>
                          <!--Grid column-->
  
@@ -118,14 +114,10 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                                      <strong>Crea tu cuenta</strong>
                                  </h4>
  
-                                 
- 
-                               
- 
                              </div> 
                              <!--/Grid row-->
-    <form name=\"formCrearCuenta\" action=\"";
-        // line 96
+                        <form name=\"formCrearCuenta\" action=\"";
+        // line 88
         echo $this->env->getExtension('routing')->getPath("dwes_libros_registro");
         echo "\" method=\"POST\" ";
         echo " class=\"ml-4\">
@@ -133,7 +125,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"md-form\">
                                  
                                  <input type=\"text\" id=\"orangeForm-name\" name=\"username\" value=\"";
-        // line 100
+        // line 92
         echo twig_escape_filter($this->env, (isset($context["username"]) ? $context["username"] : $this->getContext($context, "username")), "html", null, true);
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-name\" id=\"labelNombre\"  class=\"valL\">Tu nombre de usuario</label>
@@ -141,7 +133,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"md-form\">
                                
                                  <input type=\"email\" id=\"orangeForm-email\" name=\"email\" value=\"";
-        // line 105
+        // line 97
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-email\" id=\"labelEmail\" class=\"valL\">Tu email</label>
@@ -150,7 +142,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"md-form\">
                                
                                  <input type=\"password\" id=\"orangeForm-pass\" name=\"password\" value=\"";
-        // line 111
+        // line 103
         echo twig_escape_filter($this->env, (isset($context["password"]) ? $context["password"] : $this->getContext($context, "password")), "html", null, true);
         echo "\" class=\"form-control valI\">
                                  <label for=\"orangeForm-pass\" id=\"labelPassword\"  class=\"valL\">Tu contraseña</label>
@@ -174,17 +166,27 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
                              <div class=\"text-center\">
                                  <button class=\"btn pink-gradient btn-rounded mt-3 waves-effect waves-light\" id=\"crearCuenta\" type=\"submit\" name=\"crearCuenta\" value=\"crearCuenta\">Crear cuenta</button>
                              </div>
-                             
+                              <!--Grid column-->
+                                <div class=\"text-center\"><br>
+                                 <span style=\"color:red\">";
+        // line 127
+        echo twig_escape_filter($this->env, (isset($context["mensaje"]) ? $context["mensaje"] : $this->getContext($context, "mensaje")), "html", null, true);
+        echo " </span>
+                                </div>
+                                <!--Grid column-->
                             </form>
                              <div class=\"text-center\">
-                                 <p class=\"font-small grey-text d-flex justify-content-end\">¿Ya tienes cuenta? <a href=\"#\" class=\"blue-text ml-1\"> Entrar</a></p>
+                                 <p class=\"font-small grey-text d-flex justify-content-end\">¿Ya tienes cuenta? <a href=\"";
+        // line 132
+        echo $this->env->getExtension('routing')->getPath("dwes_libros_login");
+        echo "\" class=\"blue-text ml-1\"> Entrar</a></p>
                              </div>
                              
  
                          </div>
                          <!--Grid column-->
                        
-                 <p id=\"errormsg\" style=\"display:none;\">ERROR</p>
+                
                      </div>
                      <!--Grid row-->
  
@@ -216,7 +218,7 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 
     public function getDebugInfo()
     {
-        return array (  154 => 111,  145 => 105,  137 => 100,  129 => 96,  53 => 24,  32 => 5,  29 => 4,  11 => 1,);
+        return array (  181 => 132,  173 => 127,  146 => 103,  137 => 97,  129 => 92,  121 => 88,  53 => 24,  32 => 5,  29 => 4,  11 => 1,);
     }
 }
 /* {% extends 'DWESLibrosBundle::layout.html.twig' %}*/
@@ -287,14 +289,10 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                                 */
 /*             */
 /*                             <div class="embed-responsive embed-responsive-16by9">*/
-/*    <iframe width="560" height="315" src="https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*/
-/* </div>*/
-/*                          */
+/*                             <iframe width="560" height="315" src="https://www.youtube.com/embed/8uYspagia_s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*/
+/*                             </div>*/
 /*                              </div> */
 /*                              <!--Grid row-->*/
-/*  */
-/*                              */
-/*  */
 /*                          </div>*/
 /*                          <!--Grid column-->*/
 /*  */
@@ -308,13 +306,9 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                                      <strong>Crea tu cuenta</strong>*/
 /*                                  </h4>*/
 /*  */
-/*                                  */
-/*  */
-/*                                */
-/*  */
 /*                              </div> */
 /*                              <!--/Grid row-->*/
-/*     <form name="formCrearCuenta" action="{{ path('dwes_libros_registro') }}" method="POST" {# target="frame" #} class="ml-4">*/
+/*                         <form name="formCrearCuenta" action="{{ path('dwes_libros_registro') }}" method="POST" {# target="frame" #} class="ml-4">*/
 /*                              <!--Body-->*/
 /*                              <div class="md-form">*/
 /*                                  */
@@ -351,17 +345,21 @@ class __TwigTemplate_ac0131900386a80f47424fe4c1f84a469e75743c4b842b4c8d49168ff04
 /*                              <div class="text-center">*/
 /*                                  <button class="btn pink-gradient btn-rounded mt-3 waves-effect waves-light" id="crearCuenta" type="submit" name="crearCuenta" value="crearCuenta">Crear cuenta</button>*/
 /*                              </div>*/
-/*                              */
+/*                               <!--Grid column-->*/
+/*                                 <div class="text-center"><br>*/
+/*                                  <span style="color:red">{{mensaje}} </span>*/
+/*                                 </div>*/
+/*                                 <!--Grid column-->*/
 /*                             </form>*/
 /*                              <div class="text-center">*/
-/*                                  <p class="font-small grey-text d-flex justify-content-end">¿Ya tienes cuenta? <a href="#" class="blue-text ml-1"> Entrar</a></p>*/
+/*                                  <p class="font-small grey-text d-flex justify-content-end">¿Ya tienes cuenta? <a href="{{ path('dwes_libros_login') }}" class="blue-text ml-1"> Entrar</a></p>*/
 /*                              </div>*/
 /*                              */
 /*  */
 /*                          </div>*/
 /*                          <!--Grid column-->*/
 /*                        */
-/*                  <p id="errormsg" style="display:none;">ERROR</p>*/
+/*                 */
 /*                      </div>*/
 /*                      <!--Grid row-->*/
 /*  */

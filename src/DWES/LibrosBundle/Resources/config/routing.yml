@@ -278,3 +278,9 @@ dwes_libros_darAlta:
     defaults: { _controller: DWESLibrosBundle:Default:darAlta }
     requirements:
         page: \d+
+
+dwes_libros_buscador:
+    path: /buscador/{idGenero}
+    defaults: { _controller: DWESLibrosBundle:Default:buscador }
+    requirements:
+        page: \d+

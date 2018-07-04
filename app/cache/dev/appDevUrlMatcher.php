@@ -550,6 +550,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // dwes_libros_buscador
+        if (0 === strpos($pathinfo, '/buscador') && preg_match('#^/buscador/(?P<idGenero>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dwes_libros_buscador')), array (  '_controller' => 'DWES\\LibrosBundle\\Controller\\DefaultController::buscadorAction',));
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

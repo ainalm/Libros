@@ -46,7 +46,7 @@ class __TwigTemplate_9e1aad32760c027c033ab3f25a6eda5ccb47fdb536410acdb1374fa1816
        <a class=\"navbar-brand font-weight-bold title\" href=\"";
         // line 56
         echo $this->env->getExtension('routing')->getPath("dwes_libros_homepage");
-        echo "\">Brand</a>
+        echo "\">Booky</a>
        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\" aria-controls=\"navbarTogglerDemo02\"
            aria-expanded=\"false\" aria-label=\"Toggle navigation\">
            <span class=\"navbar-toggler-icon\"></span>
@@ -624,6 +624,20 @@ drift.load('knp8trrbfyw8');
        tabsize: 2,
        height: 350,
         lang: 'es-ES',
+        toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'clear']],
+        // ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+        ['fontname', ['fontname']],
+        ['fontsize', ['fontsize']],
+       // ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+      //  ['table', ['table']],
+        //['insert', ['link', 'picture', 'hr']],
+        ['view', ['fullscreen']],
+        ['help', ['help']]
+      ],
 
       
      });
@@ -742,7 +756,7 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /*    */
 /* ">*/
 /*    <div class="container">*/
-/*        <a class="navbar-brand font-weight-bold title" href="{{ path('dwes_libros_homepage') }}">Brand</a>*/
+/*        <a class="navbar-brand font-weight-bold title" href="{{ path('dwes_libros_homepage') }}">Booky</a>*/
 /*        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"*/
 /*            aria-expanded="false" aria-label="Toggle navigation">*/
 /*            <span class="navbar-toggler-icon"></span>*/
@@ -1055,6 +1069,20 @@ new google.translate.TranslateElement({pageLanguage: 'es', layout: google.transl
 /*        tabsize: 2,*/
 /*        height: 350,*/
 /*         lang: 'es-ES',*/
+/*         toolbar: [*/
+/*         ['style', ['style']],*/
+/*         ['font', ['bold', 'italic', 'underline', 'clear']],*/
+/*         // ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],*/
+/*         ['fontname', ['fontname']],*/
+/*         ['fontsize', ['fontsize']],*/
+/*        // ['color', ['color']],*/
+/*         ['para', ['ul', 'ol', 'paragraph']],*/
+/*         ['height', ['height']],*/
+/*       //  ['table', ['table']],*/
+/*         //['insert', ['link', 'picture', 'hr']],*/
+/*         ['view', ['fullscreen']],*/
+/*         ['help', ['help']]*/
+/*       ],*/
 /* */
 /*       */
 /*      });*/
